@@ -4,12 +4,23 @@ from pathlib import Path
 from add_transcripts import add_transcripts
 from llm_classifier import classify_videos
 from scrape_channels import CHANNELS_FILE, VIDEOS_ROOT, scrape_youtube_videos
+from transcript_fetcher import (
+    DEFAULT_ASR_COMPUTE_TYPE,
+    DEFAULT_ASR_DEVICE,
+    DEFAULT_ASR_FALLBACK_MODEL,
+    DEFAULT_ASR_FALLBACK_COMPUTE_TYPE,
+    DEFAULT_ASR_FALLBACK_DEVICE,
+    DEFAULT_ASR_MODEL,
+    PROVIDERS,
+)
 
 
 EXAMPLES = """Examples:
   uv run pipeline.py
   uv run pipeline.py videos
   uv run pipeline.py transcripts --no-overwrite
+  uv run pipeline.py transcripts --provider ytdlp-subtitles --cookies-from-browser chrome
+  uv run pipeline.py transcripts --video-json "..\\database\\Videos\\Code Blue Cam\\-BgAVL1Vh7c.json" --provider local-asr --verbose
   uv run pipeline.py transcripts --delay-seconds 10 --retries 1
   uv run pipeline.py classify --no-overwrite
   uv run pipeline.py pipeline
@@ -44,6 +55,17 @@ def main() -> None:
             delay_seconds=args.delay_seconds,
             retries=args.retries,
             retry_backoff_seconds=args.retry_backoff_seconds,
+            provider=args.provider,
+            allow_local_asr=args.allow_local_asr,
+            asr_model=args.asr_model,
+        asr_device=args.asr_device,
+        asr_compute_type=args.asr_compute_type,
+        asr_fallback_model=args.asr_fallback_model,
+        asr_fallback_device=None if args.no_asr_fallback or not args.asr_fallback_device else args.asr_fallback_device,
+            asr_fallback_compute_type=args.asr_fallback_compute_type,
+            cookies_from_browser=args.cookies_from_browser,
+            verbose=args.verbose,
+            mark_unavailable=args.mark_unavailable,
         )
     elif args.command == "classify":
         classify_videos(
@@ -70,6 +92,17 @@ def run_pipeline(args: argparse.Namespace) -> None:
             delay_seconds=args.delay_seconds,
             retries=args.retries,
             retry_backoff_seconds=args.retry_backoff_seconds,
+            provider=args.provider,
+            allow_local_asr=args.allow_local_asr,
+            asr_model=args.asr_model,
+            asr_device=args.asr_device,
+            asr_compute_type=args.asr_compute_type,
+            asr_fallback_model=args.asr_fallback_model,
+            asr_fallback_device=None if args.no_asr_fallback or not args.asr_fallback_device else args.asr_fallback_device,
+            asr_fallback_compute_type=args.asr_fallback_compute_type,
+            cookies_from_browser=args.cookies_from_browser,
+            verbose=args.verbose,
+            mark_unavailable=args.mark_unavailable,
         )
 
     if not args.skip_classify:
@@ -131,6 +164,18 @@ def add_transcript_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--delay-seconds", type=float, default=2.0)
     parser.add_argument("--retries", type=int, default=0)
     parser.add_argument("--retry-backoff-seconds", type=float, default=30.0)
+    parser.add_argument("--provider", choices=PROVIDERS, default="auto")
+    parser.add_argument("--allow-local-asr", action="store_true")
+    parser.add_argument("--asr-model", default=DEFAULT_ASR_MODEL)
+    parser.add_argument("--asr-device", default=DEFAULT_ASR_DEVICE)
+    parser.add_argument("--asr-compute-type", default=DEFAULT_ASR_COMPUTE_TYPE)
+    parser.add_argument("--asr-fallback-model", default=DEFAULT_ASR_FALLBACK_MODEL)
+    parser.add_argument("--asr-fallback-device", default=DEFAULT_ASR_FALLBACK_DEVICE)
+    parser.add_argument("--asr-fallback-compute-type", default=DEFAULT_ASR_FALLBACK_COMPUTE_TYPE)
+    parser.add_argument("--no-asr-fallback", action="store_true")
+    parser.add_argument("--cookies-from-browser")
+    parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--mark-unavailable", action="store_true")
 
 
 if __name__ == "__main__":

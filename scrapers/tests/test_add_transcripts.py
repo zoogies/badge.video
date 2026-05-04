@@ -47,8 +47,30 @@ def test_add_transcripts_passes_retry_options(monkeypatch):
             delay_seconds=0,
             retries=2,
             retry_backoff_seconds=5,
+            provider="local-asr",
+            allow_local_asr=True,
+            asr_model="large-v3",
+            asr_device="cuda",
+            asr_compute_type="int8_float16",
+            asr_fallback_model="small.en",
+            asr_fallback_device=None,
+            asr_fallback_compute_type="int8",
+            cookies_from_browser="chrome",
+            verbose=True,
+            mark_unavailable=True,
         )
 
     assert count == 1
     assert observed["retries"] == 2
     assert observed["retry_backoff_seconds"] == 5
+    assert observed["provider"] == "local-asr"
+    assert observed["allow_local_asr"] is True
+    assert observed["asr_model"] == "large-v3"
+    assert observed["asr_device"] == "cuda"
+    assert observed["asr_compute_type"] == "int8_float16"
+    assert observed["asr_fallback_model"] == "small.en"
+    assert observed["asr_fallback_device"] is None
+    assert observed["asr_fallback_compute_type"] == "int8"
+    assert observed["cookies_from_browser"] == "chrome"
+    assert observed["verbose"] is True
+    assert observed["mark_unavailable"] is True

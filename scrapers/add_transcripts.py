@@ -2,7 +2,18 @@ import argparse
 import time
 from pathlib import Path
 
-from transcript_fetcher import TranscriptNotFound, TranscriptRateLimited, add_transcript_to_video_file
+from transcript_fetcher import (
+    DEFAULT_ASR_MODEL,
+    DEFAULT_ASR_DEVICE,
+    DEFAULT_ASR_COMPUTE_TYPE,
+    DEFAULT_ASR_FALLBACK_MODEL,
+    DEFAULT_ASR_FALLBACK_COMPUTE_TYPE,
+    DEFAULT_ASR_FALLBACK_DEVICE,
+    PROVIDERS,
+    TranscriptNotFound,
+    TranscriptRateLimited,
+    add_transcript_to_video_file,
+)
 
 
 DEFAULT_VIDEOS_ROOT = Path(__file__).parent.parent / "database" / "Videos"
@@ -20,6 +31,17 @@ def add_transcripts(
     delay_seconds: float = 2.0,
     retries: int = 0,
     retry_backoff_seconds: float = 30.0,
+    provider: str = "auto",
+    allow_local_asr: bool = False,
+    asr_model: str = DEFAULT_ASR_MODEL,
+    asr_device: str = DEFAULT_ASR_DEVICE,
+    asr_compute_type: str = DEFAULT_ASR_COMPUTE_TYPE,
+    asr_fallback_model: str = DEFAULT_ASR_FALLBACK_MODEL,
+    asr_fallback_device: str | None = DEFAULT_ASR_FALLBACK_DEVICE,
+    asr_fallback_compute_type: str = DEFAULT_ASR_FALLBACK_COMPUTE_TYPE,
+    cookies_from_browser: str | None = None,
+    verbose: bool = False,
+    mark_unavailable: bool = False,
 ) -> int:
     paths = [video_json] if video_json else iter_video_files(videos_root)
     count = 0
@@ -33,6 +55,17 @@ def add_transcripts(
                 overwrite=overwrite,
                 retries=retries,
                 retry_backoff_seconds=retry_backoff_seconds,
+                provider=provider,
+                allow_local_asr=allow_local_asr,
+                asr_model=asr_model,
+                asr_device=asr_device,
+                asr_compute_type=asr_compute_type,
+                asr_fallback_model=asr_fallback_model,
+                asr_fallback_device=asr_fallback_device,
+                asr_fallback_compute_type=asr_fallback_compute_type,
+                cookies_from_browser=cookies_from_browser,
+                verbose=verbose,
+                mark_unavailable=mark_unavailable,
             ):
                 count += 1
                 print(f"transcript added {path}")
@@ -57,6 +90,18 @@ def main() -> None:
     parser.add_argument("--delay-seconds", type=float, default=2.0)
     parser.add_argument("--retries", type=int, default=0)
     parser.add_argument("--retry-backoff-seconds", type=float, default=30.0)
+    parser.add_argument("--provider", choices=PROVIDERS, default="auto")
+    parser.add_argument("--allow-local-asr", action="store_true")
+    parser.add_argument("--asr-model", default=DEFAULT_ASR_MODEL)
+    parser.add_argument("--asr-device", default=DEFAULT_ASR_DEVICE)
+    parser.add_argument("--asr-compute-type", default=DEFAULT_ASR_COMPUTE_TYPE)
+    parser.add_argument("--asr-fallback-model", default=DEFAULT_ASR_FALLBACK_MODEL)
+    parser.add_argument("--asr-fallback-device", default=DEFAULT_ASR_FALLBACK_DEVICE)
+    parser.add_argument("--asr-fallback-compute-type", default=DEFAULT_ASR_FALLBACK_COMPUTE_TYPE)
+    parser.add_argument("--no-asr-fallback", action="store_true")
+    parser.add_argument("--cookies-from-browser")
+    parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--mark-unavailable", action="store_true")
     args = parser.parse_args()
 
     add_transcripts(
@@ -67,6 +112,17 @@ def main() -> None:
         delay_seconds=args.delay_seconds,
         retries=args.retries,
         retry_backoff_seconds=args.retry_backoff_seconds,
+        provider=args.provider,
+        allow_local_asr=args.allow_local_asr,
+        asr_model=args.asr_model,
+        asr_device=args.asr_device,
+        asr_compute_type=args.asr_compute_type,
+        asr_fallback_model=args.asr_fallback_model,
+        asr_fallback_device=None if args.no_asr_fallback or not args.asr_fallback_device else args.asr_fallback_device,
+        asr_fallback_compute_type=args.asr_fallback_compute_type,
+        cookies_from_browser=args.cookies_from_browser,
+        verbose=args.verbose,
+        mark_unavailable=args.mark_unavailable,
     )
 
 
