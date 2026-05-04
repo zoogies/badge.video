@@ -2,6 +2,7 @@ import json
 import time
 from pathlib import Path
 import os
+import argparse
 
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
@@ -16,11 +17,12 @@ CHANNELS_FILE = Path(__file__).parent.parent / "database" / "channels.json"
 VIDEOS_ROOT = Path(__file__).parent.parent / "database" / "Videos"
 
 
-def main():
+def scrape_youtube_videos(channels_file: Path = CHANNELS_FILE, videos_root: Path = VIDEOS_ROOT) -> int:
     api_key = os.environ["YOUTUBE_API_KEY"]
     youtube = build("youtube", "v3", developerKey=api_key)
 
-    channels_data = json.loads(CHANNELS_FILE.read_text())
+    channels_data = json.loads(channels_file.read_text(encoding="utf-8"))
+    total = 0
 
     for channel in channels_data["channels"]:
         name = channel["name"]
@@ -38,16 +40,26 @@ def main():
         count = 0
         for video in fetch_videos_since(youtube, uploads_playlist_id, since_epoch):
             try:
-                write_video(VIDEOS_ROOT, name, video)
+                write_video(videos_root, name, video)
                 count += 1
             except Exception as e:
                 print(f"  WARNING: skipping {video.get('video_id')}: {e}")
 
         print(f"  Wrote {count} new videos.")
+        total += count
         channel["last_scraped_epoch"] = int(time.time())
 
-    CHANNELS_FILE.write_text(json.dumps(channels_data, indent=4), encoding="utf-8")
+    channels_file.write_text(json.dumps(channels_data, indent=4), encoding="utf-8")
     print("Done. Updated last_scraped_epoch in channels.json.")
+    return total
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Search configured YouTube channels for new videos.")
+    parser.add_argument("--channels-file", type=Path, default=CHANNELS_FILE)
+    parser.add_argument("--videos-root", type=Path, default=VIDEOS_ROOT)
+    args = parser.parse_args()
+    scrape_youtube_videos(channels_file=args.channels_file, videos_root=args.videos_root)
 
 
 if __name__ == "__main__":
