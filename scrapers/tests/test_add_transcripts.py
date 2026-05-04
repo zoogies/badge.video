@@ -45,11 +45,12 @@ def test_add_transcripts_passes_retry_options(monkeypatch):
         count = add_transcripts(
             video_json=path,
             delay_seconds=0,
+            overwrite=True,
             retries=2,
             retry_backoff_seconds=5,
             provider="local-asr",
             allow_local_asr=True,
-            asr_model="large-v3",
+            asr_model="distil-large-v3",
             asr_device="cuda",
             asr_compute_type="int8_float16",
             asr_fallback_model="small.en",
@@ -65,7 +66,7 @@ def test_add_transcripts_passes_retry_options(monkeypatch):
     assert observed["retry_backoff_seconds"] == 5
     assert observed["provider"] == "local-asr"
     assert observed["allow_local_asr"] is True
-    assert observed["asr_model"] == "large-v3"
+    assert observed["asr_model"] == "distil-large-v3"
     assert observed["asr_device"] == "cuda"
     assert observed["asr_compute_type"] == "int8_float16"
     assert observed["asr_fallback_model"] == "small.en"
@@ -74,3 +75,20 @@ def test_add_transcripts_passes_retry_options(monkeypatch):
     assert observed["cookies_from_browser"] == "chrome"
     assert observed["verbose"] is True
     assert observed["mark_unavailable"] is True
+
+
+def test_add_transcripts_defaults_to_no_overwrite(monkeypatch):
+    observed = {}
+
+    def fake_add(_path, **kwargs):
+        observed.update(kwargs)
+        return False
+
+    monkeypatch.setattr(add_transcripts_module, "add_transcript_to_video_file", fake_add)
+    with tempfile.TemporaryDirectory() as tmpdir:
+        path = Path(tmpdir) / "one.json"
+        path.write_text(json.dumps({"video_id": "one", "transcript": {"text": "existing"}}))
+
+        add_transcripts(video_json=path, delay_seconds=0)
+
+    assert observed["overwrite"] is False

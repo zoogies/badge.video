@@ -6,6 +6,9 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 from dotenv import load_dotenv
+from tqdm.auto import tqdm
+
+from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 
 
 PROMPT_PATH = Path(__file__).with_name("classifier_prompt.txt")
@@ -142,14 +145,21 @@ def classify_videos(
     videos_root: Path = DEFAULT_VIDEOS_ROOT,
     video_json: Path | None = None,
     overwrite: bool = True,
+    update_atlas: bool = True,
+    atlas_path: Path = DEFAULT_ATLAS_PATH,
 ) -> int:
-    paths = [video_json] if video_json else iter_video_files(videos_root)
+    paths = [video_json] if video_json else list(iter_video_files(videos_root))
     count = 0
-    for path in paths:
+    progress = tqdm(paths, desc="Classifying", unit="video")
+    for path in progress:
+        progress.set_postfix(generated=count)
         if classify_video_file(path, overwrite=overwrite):
             count += 1
-            print(f"classified {path}")
+            progress.set_postfix(generated=count)
+            tqdm.write(f"classified {path}")
     print(f"Generated classifications for {count} video JSON files.")
+    if update_atlas:
+        rebuild_metadata_atlas(videos_root=videos_root, atlas_path=atlas_path)
     return count
 
 
@@ -158,12 +168,16 @@ def main() -> None:
     parser.add_argument("--videos-root", type=Path, default=DEFAULT_VIDEOS_ROOT)
     parser.add_argument("--video-json", type=Path)
     parser.add_argument("--no-overwrite", action="store_true")
+    parser.add_argument("--no-atlas", action="store_true")
+    parser.add_argument("--atlas-path", type=Path, default=DEFAULT_ATLAS_PATH)
     args = parser.parse_args()
 
     classify_videos(
         videos_root=args.videos_root,
         video_json=args.video_json,
         overwrite=not args.no_overwrite,
+        update_atlas=not args.no_atlas,
+        atlas_path=args.atlas_path,
     )
 
 

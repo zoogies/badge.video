@@ -9,23 +9,49 @@ Rules:
 - Do not identify race or ethnicity unless it is explicitly stated in the supplied text, such as "black male arrested". Do not infer race or ethnicity from a name, voice, appearance, location, or context.
 - Distinguish alleged crimes from confirmed charges or case outcomes.
 - Use ISO dates when possible.
+- Try EXTREMELY hard to detect State, County, and City. You might not always receive all, but don't leave each empty and then include them aggregated in other fields. These fields are the most important, as we are generating a map marker from this incident.
+- Do not estimate ZIP code unless it is explicitly stated in the supplied text. If city/county/state is known but ZIP code is not stated, leave zip_code null.
+- Do not infer precise latitude or longitude. Only extract coordinates if they are explicitly supplied.
+- For location, alleged crimes, suspect names, incident date, and outcome, include evidence with a short quote and timestamp_seconds when available.
+- If supplied sources conflict, pick the better-supported value and add the conflict to warnings or extraction_quality.location_conflicts.
+- Prefer stable normalized labels for crime_categories and incident_types so videos can be sorted consistently.
+
+Preferred crime_categories values when supported:
+dui, traffic_stop, vehicle_pursuit, foot_pursuit, domestic_violence, assault, battery, shooting, homicide, robbery, burglary, theft, drug_offense, weapons_offense, warrant, resisting_arrest, mental_health, public_intoxication, reckless_driving, unknown
 
 JSON shape:
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "incident": {
     "incident_date": null,
+    "published_date": null,
     "location": {
       "state": null,
+      "state_abbreviation": null,
       "county": null,
       "city": null,
       "address_or_area": null,
+      "location_name": null,
       "confidence": "unknown"
     },
     "agency": {
       "name": null,
-      "type": null
+      "type": null,
+      "state": null,
+      "county": null,
+      "city": null
     }
+  },
+  "geo": {
+    "address_or_place": null,
+    "intersection": null,
+    "latitude": null,
+    "longitude": null,
+    "zip_code": null,
+    "county_fips": null,
+    "source": null,
+    "precision": "unknown",
+    "confidence": "unknown"
   },
   "people": [
     {
@@ -67,11 +93,23 @@ JSON shape:
       "foot_pursuit": null
     }
   },
+  "timeline": {
+    "dispatch_call": null,
+    "initial_contact": null,
+    "pursuit_started": null,
+    "arrest": null
+  },
+  "weapons": {
+    "suspect_weapon_reported": null,
+    "officer_weapon_used": null,
+    "shots_fired_by": []
+  },
   "classifications": {
     "incident_types": [],
     "crime_categories": [],
     "tags": [],
-    "content_warnings": []
+    "content_warnings": [],
+    "severity": "unknown"
   },
   "evidence": [
     {
@@ -82,6 +120,12 @@ JSON shape:
       "confidence": "unknown"
     }
   ],
+  "extraction_quality": {
+    "transcript_quality": "unknown",
+    "location_conflicts": [],
+    "missing_critical_fields": [],
+    "requires_manual_location_review": true
+  },
   "confidence": "unknown",
   "needs_human_review": true,
   "warnings": []

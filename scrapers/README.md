@@ -1,104 +1,121 @@
 # badge.video scrapers
 
-Minimal usage:
+Run commands from this folder:
 
 ```powershell
-uv run pipeline.py
+cd C:\Users\ryan\Documents\GitHub\badge.video\scrapers
 ```
 
-Discover new YouTube videos from `../database/channels.json`:
+## 1. Find New Videos
+
+Uses the official YouTube API and writes/updates video JSON files.
 
 ```powershell
 uv run pipeline.py videos
 ```
 
-Fetch transcripts for all videos:
+## 2. Generate Transcripts
+
+Recommended batch command:
 
 ```powershell
-uv run pipeline.py transcripts --no-overwrite
+uv run pipeline.py transcripts --provider local-asr --delay-seconds 5 --verbose
 ```
 
-Try YouTube captions through `yt-dlp`:
+This downloads audio with `yt-dlp` and transcribes locally with `faster-whisper`.
+
+Default model:
+
+```text
+distil-large-v3 on CUDA, int8_float16
+```
+
+Transcript runs skip existing transcripts by default, so you can stop and restart safely.
+
+To regenerate existing transcripts:
 
 ```powershell
-uv run pipeline.py transcripts --provider ytdlp-subtitles --cookies-from-browser chrome --verbose
+uv run pipeline.py transcripts --provider local-asr --overwrite --verbose
 ```
 
-High-quality local ASR for one video:
+Single-video test:
 
 ```powershell
-uv run pipeline.py transcripts --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --provider local-asr --asr-model large-v3 --asr-device cuda --asr-compute-type int8_float16 --cookies-from-browser chrome --verbose
+uv run pipeline.py transcripts --provider local-asr --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --verbose
 ```
 
-Use local ASR as a fallback in auto mode:
+## 3. Classify Videos
 
-```powershell
-uv run pipeline.py transcripts --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --provider auto --allow-local-asr --verbose
-```
-
-Install local transcript tools when needed:
-
-```powershell
-uv pip install yt-dlp faster-whisper
-```
-
-Use a slower transcript run if YouTube starts returning 429s:
-
-```powershell
-uv run pipeline.py transcripts --delay-seconds 10 --retries 1 --retry-backoff-seconds 120
-```
-
-Classify all videos with the configured LLM backend:
+Uses `LLM_BACKEND` from `../.env`.
 
 ```powershell
 uv run pipeline.py classify --no-overwrite
 ```
 
-Run the whole pipeline:
+Single-video classifier test:
 
 ```powershell
-uv run pipeline.py pipeline
-```
-
-Single-video local testing:
-
-```powershell
-uv run pipeline.py transcripts --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json"
 uv run pipeline.py classify --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json"
-uv run pipeline.py pipeline --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --skip-videos
 ```
 
-Review behavior:
+Classification rebuilds `..\database\metadata_atlas.json` by default. That file contains global frontend filter lists like states, counties, cities, location names, ZIP codes when explicitly known, agencies, crime categories, incident types, tags, and content warnings.
 
-- New video JSON files start with `"human_reviewed": false`.
-- Re-scraping preserves existing fields, including transcript, classification, and manual fields.
+To rebuild only the atlas:
+
+```powershell
+uv run pipeline.py atlas
+```
+
+## Full Pipeline
+
+Recommended:
+
+```powershell
+uv run pipeline.py videos
+uv run pipeline.py transcripts --provider local-asr --delay-seconds 5 --verbose
+uv run pipeline.py classify --no-overwrite
+uv run pipeline.py atlas
+```
+
+One command version:
+
+```powershell
+uv run pipeline.py pipeline --provider local-asr --delay-seconds 5 --verbose
+```
+
+## YouTube Transcript Routes
+
+There are three transcript providers:
+
+```text
+direct           YouTube timedtext/watch-page captions
+ytdlp-subtitles  YouTube captions through yt-dlp
+local-asr        Download audio and transcribe locally
+```
+
+The YouTube caption routes can work, but they are currently unreliable for this project because YouTube often returns `429 Too Many Requests`. If you want predictable batch runs, use:
+
+```powershell
+uv run pipeline.py transcripts --provider local-asr --delay-seconds 5 --verbose
+```
+
+If you want to try captions first and fall back to local ASR:
+
+```powershell
+uv run pipeline.py transcripts --provider auto --allow-local-asr --delay-seconds 5 --verbose
+```
+
+## Review Behavior
+
+- New videos start with `"human_reviewed": false`.
+- Re-scraping preserves transcript, classification, and manual fields.
 - Re-scraping clears `human_reviewed` only when core YouTube metadata changes.
 - Re-running classification clears `human_reviewed`.
+- Transcript generation does not clear `human_reviewed`.
 
-Transcript providers:
+## Environment
 
-- `auto`: direct YouTube caption extraction, then `yt-dlp` subtitles.
-- `direct`: current timedtext/watch-page caption extraction.
-- `ytdlp-subtitles`: `yt-dlp` auto/manual subtitles without downloading media.
-- `local-asr`: downloads audio with `yt-dlp` and transcribes locally with `faster-whisper`.
-
-`local-asr` defaults to `large-v3` on CUDA with `int8_float16`, which is the high-quality 8 GB GPU-oriented setting. For faster tests, use `--asr-model small.en`.
-
-CUDA is required by default for local ASR. The project installs NVIDIA cuBLAS/cuDNN CUDA 12 wheels and adds their DLL directories at runtime, so the RTX 3070 path should be used without editing global Windows PATH.
-
-Use CPU fallback only for a smoke test:
-
-```powershell
-uv run pipeline.py transcripts --provider local-asr --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --asr-fallback-device cpu --verbose
-```
-
-Disable fallback explicitly when debugging GPU setup:
-
-```powershell
-uv run pipeline.py transcripts --provider local-asr --video-json "..\database\Videos\Code Blue Cam\-BgAVL1Vh7c.json" --no-asr-fallback --verbose
-```
-
-LLM settings live in `../.env`:
+`../.env`:
 
 ```env
 YOUTUBE_API_KEY=...
@@ -107,3 +124,5 @@ LLM_MODEL=deepseek-chat
 DEEPSEEK_API_KEY=...
 OLLAMA_URL=http://localhost:11434/api/chat
 ```
+
+Use `LLM_BACKEND=dry_run` until you are ready to call DeepSeek or Ollama.

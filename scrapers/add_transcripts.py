@@ -2,6 +2,8 @@ import argparse
 import time
 from pathlib import Path
 
+from tqdm.auto import tqdm
+
 from transcript_fetcher import (
     DEFAULT_ASR_MODEL,
     DEFAULT_ASR_DEVICE,
@@ -27,7 +29,7 @@ def add_transcripts(
     videos_root: Path = DEFAULT_VIDEOS_ROOT,
     video_json: Path | None = None,
     languages: tuple[str, ...] = ("en",),
-    overwrite: bool = True,
+    overwrite: bool = False,
     delay_seconds: float = 2.0,
     retries: int = 0,
     retry_backoff_seconds: float = 30.0,
@@ -43,9 +45,11 @@ def add_transcripts(
     verbose: bool = False,
     mark_unavailable: bool = False,
 ) -> int:
-    paths = [video_json] if video_json else iter_video_files(videos_root)
+    paths = [video_json] if video_json else list(iter_video_files(videos_root))
     count = 0
-    for index, path in enumerate(paths):
+    progress = tqdm(paths, desc="Transcripts", unit="video")
+    for index, path in enumerate(progress):
+        progress.set_postfix(added=count)
         if index > 0 and delay_seconds > 0:
             time.sleep(delay_seconds)
         try:
@@ -68,15 +72,16 @@ def add_transcripts(
                 mark_unavailable=mark_unavailable,
             ):
                 count += 1
-                print(f"transcript added {path}")
+                progress.set_postfix(added=count)
+                tqdm.write(f"transcript added {path}")
         except TranscriptRateLimited as exc:
-            print(f"transcript rate limited {path}: {exc}")
-            print("Stopping transcript batch early. Retry later or increase --delay-seconds.")
+            tqdm.write(f"transcript rate limited {path}: {exc}")
+            tqdm.write("Stopping transcript batch early. Retry later or increase --delay-seconds.")
             break
         except TranscriptNotFound as exc:
-            print(f"transcript missing {path}: {exc}")
+            tqdm.write(f"transcript missing {path}: {exc}")
         except Exception as exc:
-            print(f"transcript error {path}: {exc}")
+            tqdm.write(f"transcript error {path}: {exc}")
     print(f"Added transcripts to {count} video JSON files.")
     return count
 
@@ -86,6 +91,7 @@ def main() -> None:
     parser.add_argument("--videos-root", type=Path, default=DEFAULT_VIDEOS_ROOT)
     parser.add_argument("--video-json", type=Path)
     parser.add_argument("--language", action="append", default=["en"])
+    parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--no-overwrite", action="store_true")
     parser.add_argument("--delay-seconds", type=float, default=2.0)
     parser.add_argument("--retries", type=int, default=0)
@@ -108,7 +114,7 @@ def main() -> None:
         videos_root=args.videos_root,
         video_json=args.video_json,
         languages=tuple(args.language),
-        overwrite=not args.no_overwrite,
+        overwrite=args.overwrite and not args.no_overwrite,
         delay_seconds=args.delay_seconds,
         retries=args.retries,
         retry_backoff_seconds=args.retry_backoff_seconds,

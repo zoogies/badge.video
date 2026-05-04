@@ -3,6 +3,7 @@ from pathlib import Path
 
 from add_transcripts import add_transcripts
 from llm_classifier import classify_videos
+from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 from scrape_channels import CHANNELS_FILE, VIDEOS_ROOT, scrape_youtube_videos
 from transcript_fetcher import (
     DEFAULT_ASR_COMPUTE_TYPE,
@@ -18,11 +19,13 @@ from transcript_fetcher import (
 EXAMPLES = """Examples:
   uv run pipeline.py
   uv run pipeline.py videos
-  uv run pipeline.py transcripts --no-overwrite
+  uv run pipeline.py transcripts
+  uv run pipeline.py transcripts --overwrite
   uv run pipeline.py transcripts --provider ytdlp-subtitles --cookies-from-browser chrome
   uv run pipeline.py transcripts --video-json "..\\database\\Videos\\Code Blue Cam\\-BgAVL1Vh7c.json" --provider local-asr --verbose
   uv run pipeline.py transcripts --delay-seconds 10 --retries 1
   uv run pipeline.py classify --no-overwrite
+  uv run pipeline.py atlas
   uv run pipeline.py pipeline
   uv run pipeline.py pipeline --skip-videos
   uv run pipeline.py pipeline --skip-classify
@@ -51,17 +54,17 @@ def main() -> None:
             videos_root=args.videos_root,
             video_json=args.video_json,
             languages=tuple(args.language),
-            overwrite=not args.no_overwrite,
+            overwrite=args.overwrite and not args.no_overwrite,
             delay_seconds=args.delay_seconds,
             retries=args.retries,
             retry_backoff_seconds=args.retry_backoff_seconds,
             provider=args.provider,
             allow_local_asr=args.allow_local_asr,
             asr_model=args.asr_model,
-        asr_device=args.asr_device,
-        asr_compute_type=args.asr_compute_type,
-        asr_fallback_model=args.asr_fallback_model,
-        asr_fallback_device=None if args.no_asr_fallback or not args.asr_fallback_device else args.asr_fallback_device,
+            asr_device=args.asr_device,
+            asr_compute_type=args.asr_compute_type,
+            asr_fallback_model=args.asr_fallback_model,
+            asr_fallback_device=None if args.no_asr_fallback or not args.asr_fallback_device else args.asr_fallback_device,
             asr_fallback_compute_type=args.asr_fallback_compute_type,
             cookies_from_browser=args.cookies_from_browser,
             verbose=args.verbose,
@@ -72,7 +75,11 @@ def main() -> None:
             videos_root=args.videos_root,
             video_json=args.video_json,
             overwrite=not args.no_overwrite,
+            update_atlas=not args.no_atlas,
+            atlas_path=args.atlas_path,
         )
+    elif args.command == "atlas":
+        rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
     elif args.command == "pipeline":
         run_pipeline(args)
 
@@ -88,7 +95,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             videos_root=args.videos_root,
             video_json=args.video_json,
             languages=tuple(args.language),
-            overwrite=not args.no_overwrite,
+            overwrite=args.overwrite and not args.no_overwrite,
             delay_seconds=args.delay_seconds,
             retries=args.retries,
             retry_backoff_seconds=args.retry_backoff_seconds,
@@ -110,7 +117,11 @@ def run_pipeline(args: argparse.Namespace) -> None:
             videos_root=args.videos_root,
             video_json=args.video_json,
             overwrite=not args.no_overwrite,
+            update_atlas=not args.no_atlas,
+            atlas_path=args.atlas_path,
         )
+    elif not args.no_atlas:
+        rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -133,6 +144,11 @@ def build_parser() -> argparse.ArgumentParser:
     add_videos_root(classify)
     add_video_json(classify)
     classify.add_argument("--no-overwrite", action="store_true")
+    add_atlas_options(classify, include_toggle=True)
+
+    atlas = subparsers.add_parser("atlas", help="rebuild global frontend metadata filters")
+    add_videos_root(atlas)
+    add_atlas_options(atlas)
 
     pipeline = subparsers.add_parser("pipeline", help="run video search, transcript fetch, and classification")
     add_channel_paths(pipeline)
@@ -141,6 +157,7 @@ def build_parser() -> argparse.ArgumentParser:
     pipeline.add_argument("--skip-videos", action="store_true")
     pipeline.add_argument("--skip-transcripts", action="store_true")
     pipeline.add_argument("--skip-classify", action="store_true")
+    add_atlas_options(pipeline, include_toggle=True)
 
     return parser
 
@@ -158,8 +175,15 @@ def add_video_json(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--video-json", type=Path)
 
 
+def add_atlas_options(parser: argparse.ArgumentParser, include_toggle: bool = False) -> None:
+    parser.add_argument("--atlas-path", type=Path, default=DEFAULT_ATLAS_PATH)
+    if include_toggle:
+        parser.add_argument("--no-atlas", action="store_true")
+
+
 def add_transcript_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--language", action="append", default=["en"])
+    parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--no-overwrite", action="store_true")
     parser.add_argument("--delay-seconds", type=float, default=2.0)
     parser.add_argument("--retries", type=int, default=0)

@@ -14,11 +14,13 @@ from urllib.parse import parse_qs, urlencode, urlparse
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
+from tqdm.auto import tqdm
+
 
 TIMEDTEXT_URL = "https://video.google.com/timedtext"
 WATCH_URL = "https://www.youtube.com/watch"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-DEFAULT_ASR_MODEL = "large-v3"
+DEFAULT_ASR_MODEL = "distil-large-v3"
 DEFAULT_ASR_DEVICE = "cuda"
 DEFAULT_ASR_COMPUTE_TYPE = "int8_float16"
 DEFAULT_ASR_FALLBACK_MODEL = "small.en"
@@ -370,11 +372,17 @@ def _transcribe_audio(
         condition_on_previous_text=False,
     )
     segments = []
-    for index, segment in enumerate(segments_iter, start=1):
+    progress = tqdm(
+        segments_iter,
+        desc=f"ASR {audio_path.stem}",
+        unit="seg",
+        leave=False,
+        disable=not verbose,
+    )
+    for segment in progress:
         if segment.text.strip():
             segments.append({"start": round(segment.start, 3), "end": round(segment.end, 3), "text": segment.text.strip()})
-        if verbose and index % 25 == 0:
-            print(f"Transcribed {index} ASR segments...", flush=True)
+        progress.set_postfix(kept=len(segments))
     return info.language or "en", segments, {"device": asr_device, "compute_type": asr_compute_type}
 
 

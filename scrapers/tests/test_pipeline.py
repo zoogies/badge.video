@@ -8,15 +8,16 @@ def test_default_pipeline_command_is_usage_only(capsys):
     parser.print_help()
     output = capsys.readouterr().out
     assert "uv run pipeline.py videos" in output
+    assert "uv run pipeline.py atlas" in output
     assert "uv run pipeline.py pipeline --skip-videos" in output
 
 
 def test_pipeline_parser_supports_partial_pipeline():
-    args = build_parser().parse_args(["pipeline", "--skip-videos", "--skip-classify", "--no-overwrite"])
+    args = build_parser().parse_args(["pipeline", "--skip-videos", "--skip-classify", "--overwrite"])
     assert args.command == "pipeline"
     assert args.skip_videos is True
     assert args.skip_classify is True
-    assert args.no_overwrite is True
+    assert args.overwrite is True
 
 
 def test_pipeline_parser_supports_single_video_file():
@@ -31,7 +32,7 @@ def test_pipeline_parser_supports_transcript_provider_options():
         "local-asr",
         "--allow-local-asr",
         "--asr-model",
-        "large-v3",
+        "distil-large-v3",
         "--asr-device",
         "cuda",
         "--asr-compute-type",
@@ -47,7 +48,7 @@ def test_pipeline_parser_supports_transcript_provider_options():
     ])
     assert args.provider == "local-asr"
     assert args.allow_local_asr is True
-    assert args.asr_model == "large-v3"
+    assert args.asr_model == "distil-large-v3"
     assert args.asr_device == "cuda"
     assert args.asr_compute_type == "int8_float16"
     assert args.asr_fallback_model == "small.en"
@@ -56,3 +57,19 @@ def test_pipeline_parser_supports_transcript_provider_options():
     assert args.cookies_from_browser == "chrome"
     assert args.verbose is True
     assert args.mark_unavailable is True
+
+
+def test_pipeline_parser_transcripts_default_restart_safe():
+    args = build_parser().parse_args(["transcripts"])
+    assert args.overwrite is False
+
+
+def test_pipeline_parser_supports_atlas_command():
+    args = build_parser().parse_args(["atlas", "--atlas-path", "atlas.json"])
+    assert args.command == "atlas"
+    assert args.atlas_path == Path("atlas.json")
+
+
+def test_pipeline_parser_classify_rebuilds_atlas_by_default():
+    args = build_parser().parse_args(["classify"])
+    assert args.no_atlas is False
