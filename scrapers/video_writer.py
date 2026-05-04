@@ -13,4 +13,4 @@ def write_video(videos_root: Path, channel_name: str, video: dict) -> None:
         "published_at": video["published_at"],
         "description": video["description"],
     }
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
