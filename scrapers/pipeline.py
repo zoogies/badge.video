@@ -10,6 +10,7 @@ EXAMPLES = """Examples:
   uv run pipeline.py
   uv run pipeline.py videos
   uv run pipeline.py transcripts --no-overwrite
+  uv run pipeline.py transcripts --delay-seconds 10 --retries 1
   uv run pipeline.py classify --no-overwrite
   uv run pipeline.py pipeline
   uv run pipeline.py pipeline --skip-videos
@@ -40,6 +41,9 @@ def main() -> None:
             video_json=args.video_json,
             languages=tuple(args.language),
             overwrite=not args.no_overwrite,
+            delay_seconds=args.delay_seconds,
+            retries=args.retries,
+            retry_backoff_seconds=args.retry_backoff_seconds,
         )
     elif args.command == "classify":
         classify_videos(
@@ -63,6 +67,9 @@ def run_pipeline(args: argparse.Namespace) -> None:
             video_json=args.video_json,
             languages=tuple(args.language),
             overwrite=not args.no_overwrite,
+            delay_seconds=args.delay_seconds,
+            retries=args.retries,
+            retry_backoff_seconds=args.retry_backoff_seconds,
         )
 
     if not args.skip_classify:
@@ -121,6 +128,9 @@ def add_video_json(parser: argparse.ArgumentParser) -> None:
 def add_transcript_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--language", action="append", default=["en"])
     parser.add_argument("--no-overwrite", action="store_true")
+    parser.add_argument("--delay-seconds", type=float, default=2.0)
+    parser.add_argument("--retries", type=int, default=0)
+    parser.add_argument("--retry-backoff-seconds", type=float, default=30.0)
 
 
 if __name__ == "__main__":

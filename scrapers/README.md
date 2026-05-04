@@ -18,6 +18,12 @@ Fetch transcripts for all videos:
 uv run pipeline.py transcripts --no-overwrite
 ```
 
+Use a slower transcript run if YouTube starts returning 429s:
+
+```powershell
+uv run pipeline.py transcripts --delay-seconds 10 --retries 1 --retry-backoff-seconds 120
+```
+
 Classify all videos with the configured LLM backend:
 
 ```powershell
