@@ -46,7 +46,7 @@ def main():
         print(f"  Wrote {count} new videos.")
         channel["last_scraped_epoch"] = int(time.time())
 
-    CHANNELS_FILE.write_text(json.dumps(channels_data, indent=4))
+    CHANNELS_FILE.write_text(json.dumps(channels_data, indent=4), encoding="utf-8")
     print("Done. Updated last_scraped_epoch in channels.json.")
 
 
