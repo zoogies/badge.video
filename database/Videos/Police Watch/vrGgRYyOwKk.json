@@ -5985,5 +5985,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-04-30",
+        "published_date": "2024-08-29T20:20:50Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": "Royal Palm Beach",
+          "address_or_area": "Aldi on St. Road 7",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Palm Beach County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": "Royal Palm Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "St. Road 7, Royal Palm Beach, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "passenger",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child neglect",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction of justice",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misuse of 911",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Driver threatened Aldi employees, then sped away with child in car, leading to traffic stop and arrest for reckless driving, child neglect, obstruction, and misuse of 911.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-04-30T21:20:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "disorderly_conduct"
+        ],
+        "crime_categories": [
+          "reckless_driving",
+          "child_neglect",
+          "obstruction"
+        ],
+        "tags": [
+          "Aldi",
+          "Instacart",
+          "child in car",
+          "autistic child"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 30th, 2023. Officers received a call...",
+          "timestamp_seconds": 46,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I'm from Royal Palm... Warrenson High School",
+          "timestamp_seconds": 1609,
+          "confidence": "medium"
+        },
+        {
+          "field": "alleged_crimes.0",
+          "source": "transcript",
+          "quote": "the reckless driving, the child neglect? Absolutely",
+          "timestamp_seconds": 1351,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.2",
+          "source": "transcript",
+          "quote": "you're being charged with obstruction of justice",
+          "timestamp_seconds": 1572,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you are being arrested today",
+          "timestamp_seconds": 1492,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "exact_address",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

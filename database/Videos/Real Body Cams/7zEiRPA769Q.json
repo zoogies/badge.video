@@ -1865,5 +1865,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:12:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-19",
+        "published_date": "2024-10-13",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Florida Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Trespass After Warning",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer Without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Trespass After Warning",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer Without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea deal: 24 months probation, $1,451.50 in court costs"
+      },
+      "event_summary": {
+        "short": "Drunk woman causes chaos at Florida bar, assaults officers, arrested for trespassing and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "deputies arrive at bar",
+        "pursuit_started": null,
+        "arrest": "after refusal to leave and kicking officer"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "assault_on_officer",
+          "trespass"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "tags": [
+          "drunk",
+          "bar",
+          "Florida",
+          "bodycam",
+          "arrest"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On May 19th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "deputies in Florida",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with two counts of battery and a law enforcement officer, trespass after warning, resisting an officer without violence and disorderly intoxication",
+          "timestamp_seconds": 1100,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "accepted a plea deal on the remaining charges and was ordered to serve 24 months of probation alongside paying a total of $1,451 in 50 cents in court cost",
+          "timestamp_seconds": 1120,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "title",
+          "quote": "Drunk Karen",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "You just kicked me",
+          "timestamp_seconds": 480,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specific; county and city unknown."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

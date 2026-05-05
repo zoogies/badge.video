@@ -2630,5 +2630,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-11",
+        "published_date": "2025-12-24T00:15:05Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Seminole County",
+          "city": "Sanford",
+          "address_or_area": "restaurant (drag show venue)",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Sanford Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Seminole County",
+          "city": "Sanford"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested, posted $150 bond, pleaded not guilty, case ongoing"
+      },
+      "event_summary": {
+        "short": "Man arrested for disorderly conduct and resisting arrest after causing disturbance at a drag show in Sanford, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-11",
+        "pursuit_started": null,
+        "arrest": "2025-10-11"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_disturbance",
+          "drag_show_incident"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Florida",
+          "Sanford",
+          "Marine",
+          "drag show",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On October 11th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I will sue the city of Stanford",
+          "timestamp_seconds": 951,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with disorderly conduct and resisting an officer without violence.",
+          "timestamp_seconds": 1750,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He pleaded not guilty to both charges. At this time, the court case is still ongoing.",
+          "timestamp_seconds": 1798,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "agency name",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City inferred as Sanford from transcript reference 'Stanford' (likely a mispronunciation or transcription error). County inferred from city. Agency name inferred from city."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

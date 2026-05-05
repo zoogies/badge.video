@@ -2880,5 +2880,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-15",
+        "published_date": "2023-01-11",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Sandoval",
+          "city": "Rio Rancho",
+          "address_or_area": "Burrito Express parking lot",
+          "location_name": "Burrito Express",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rio Rancho Police Department",
+          "type": "municipal police",
+          "state": "New Mexico",
+          "county": "Sandoval",
+          "city": "Rio Rancho"
+        }
+      },
+      "geo": {
+        "address_or_place": "Burrito Express",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ausencio",
+          "last_name": "Zaragoza",
+          "age": 55,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Interference with Officers (Resisting Arrest)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of Weapons (metallic knuckles)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Outstanding warrants (seatbelt violation and another)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Interference with Officers",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of Weapons",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect with outstanding warrants resists arrest after being found with rocks and metallic knuckles.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-09-15T19:23:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "metallic knuckles, rocks",
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "resisting_arrest",
+          "warrant_service"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Rio Rancho",
+          "police"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On the 15th of September 2022, at 7:23 pm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Rio Rancho Police Department officer was dispatched to a Burrito Express parking lot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Ausencio Zaragoza",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "55, male",
+          "timestamp_seconds": 927,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "description",
+          "quote": "officers eventually were able to safely take the suspect into custody",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "description",
+          "quote": "found metallic knuckles in the suspect's pocket",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "arrested on his outstanding warrants and charged with Interference with Officers (Resisting Arrest) and Unlawful Possession of Weapons",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

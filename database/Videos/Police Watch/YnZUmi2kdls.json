@@ -1030,5 +1030,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-01",
+        "published_date": "2025-01-07",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Indian River County",
+          "city": "Oak Harbor",
+          "address_or_area": "near the water",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indian River County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Indian River County",
+          "city": "Oak Harbor"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Julie",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk woman calls 911 because she can't start her car, arrested for DUI and battery on deputy.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "battery_on_officer"
+        ],
+        "crime_categories": [
+          "dui",
+          "battery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "drunk driving",
+          "open container",
+          "call 911 on self",
+          "battery on leo"
+        ],
+        "content_warnings": [
+          "drinking",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On April 1st, 2024.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "Indian River County Sheriff's Office",
+          "timestamp_seconds": 141,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "oak harbor",
+          "timestamp_seconds": 76,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I can take you to jail for DUI",
+          "timestamp_seconds": 53,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Now you're going for DUI and battery on a deputy",
+          "timestamp_seconds": 420,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She's going to jail",
+          "timestamp_seconds": 588,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "So is it Julie, that's your daughter?",
+          "timestamp_seconds": 567,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "She's already up at the jail now",
+          "timestamp_seconds": 614,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "suspect.last_name",
+          "suspect.age",
+          "suspect.race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

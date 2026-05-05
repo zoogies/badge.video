@@ -1135,5 +1135,170 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:02:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-02T21:40:25Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "David",
+          "last_name": null,
+          "age": 47,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Creating sexual AI images of minors",
+            "category": "child_exploitation",
+            "statute": null,
+            "confidence": "moderate"
+          },
+          {
+            "label": "Sharing illegal material online using school Wi-Fi",
+            "category": "technology_crime",
+            "statute": null,
+            "confidence": "moderate"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Sentenced to 135 years in prison"
+      },
+      "event_summary": {
+        "short": "Teacher sentenced to 135 years for creating sexual AI images of students.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "search_warrant",
+          "arrest",
+          "sentencing"
+        ],
+        "crime_categories": [
+          "child_exploitation",
+          "sexual_offense",
+          "technology_crime"
+        ],
+        "tags": [
+          "AI",
+          "teacher",
+          "Florida",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "sexual_content",
+          "child_exploitation"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "As Dawn breaks over a quiet Florida neighborhood",
+          "timestamp_seconds": 81,
+          "confidence": "moderate"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "David, a 47-year-old teacher",
+          "timestamp_seconds": 194,
+          "confidence": "moderate"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "ultimately leading to a 135-year prison sentence",
+          "timestamp_seconds": 696,
+          "confidence": "moderate"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "A dog suddenly attacks biting an officer",
+          "timestamp_seconds": 89,
+          "confidence": "moderate"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

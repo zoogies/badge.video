@@ -4460,5 +4460,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:15:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-02",
+        "published_date": "2023-10-23T18:30:25Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "residence",
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Trudy",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery against a Household Member",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, Evading, or Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery upon a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery against a Household Member",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, Evading, or Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery upon a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Woman assaults elderly mother, fakes injury, and resists arrest during domestic disturbance.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-09-02",
+        "initial_contact": "2023-09-02",
+        "pursuit_started": null,
+        "arrest": "2023-09-02"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic disturbance",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "battery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "domestic violence",
+          "elder abuse",
+          "fake injury",
+          "resisting arrest"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 2nd, 2023, officers responded to a report of a verbal domestic disturbance at a residence.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "The suspect was charged with Battery against a Household Member, Resisting, Evading, or Obstructing an Officer, and Battery upon a Peace Officer.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Officer refers to suspect as 'Trudy' multiple times, e.g., at [0:57] 'What's going on, Trudey?'",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Officers physically struggle to arrest suspect; suspect throws herself into wall and goes limp.",
+          "timestamp_seconds": 1542,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries_reported",
+          "source": "transcript",
+          "quote": "The suspect was medically cleared of any injuries and released for transport to jail.",
+          "timestamp_seconds": 2847,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Location unknown, manual review required"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

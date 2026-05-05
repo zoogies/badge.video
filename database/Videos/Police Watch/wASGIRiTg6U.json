@@ -2770,5 +2770,232 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-19",
+        "published_date": "2023-12-16",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": "West Palm Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Florida",
+          "county": "Palm Beach County",
+          "city": "West Palm Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Beth",
+          "last_name": null,
+          "age": 22,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure to obey a traffic control device",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Failure to obey a traffic control device",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Citation issued, court date scheduled"
+      },
+      "event_summary": {
+        "short": "22-year-old woman stopped for illegal turn, found to have suspended license, became argumentative, refused to exit vehicle, arrested for resisting, later released to boyfriend with citation for traffic violations.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "suspended license",
+          "female suspect",
+          "22-year-old",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 19th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "it's suspended in the state of Florida right now",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "North County Court, which is on 3188 P.J. Boulevard",
+          "timestamp_seconds": 1520,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "West Palm",
+          "timestamp_seconds": 318,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "My name is Beth",
+          "timestamp_seconds": 1157,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "title",
+          "quote": "22-Year-Old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "you fell to obey a traffic control device",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "you license suspended as August",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.2",
+          "source": "transcript",
+          "quote": "you're going to be arrested for resisting without",
+          "timestamp_seconds": 685,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "We're going to release you to him, okay? All that's going to be, this is a court date.",
+          "timestamp_seconds": 1175,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last_name",
+          "agency.name",
+          "address_or_area",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

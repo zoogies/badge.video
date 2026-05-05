@@ -920,5 +920,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-29",
+        "published_date": "2023-09-23T19:00:13Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Hamilton",
+          "city": "Blue Ash",
+          "address_or_area": "Embassy Suites Hotel",
+          "location_name": "Embassy Suites Hotel",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": "Hamilton",
+          "city": "Blue Ash"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for disorderly conduct at Embassy Suites Hotel after refusing to leave and becoming disruptive; later found to have active warrants.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "eviction",
+          "disorderly_conduct",
+          "warrant"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "Ohio",
+          "Embassy Suites",
+          "hotel",
+          "eviction",
+          "disorderly conduct",
+          "warrant",
+          "racial profiling claim"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 29, 2023, officers in Ohio responded to an urgent call at the Embassy Suites Hotel",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "You got one on blue ash, too.",
+          "timestamp_seconds": 1510,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "The female suspect was charged with disorderly conduct.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.resisting_arrest",
+          "source": "transcript",
+          "quote": "We had to wrestle with you to get the handcuffs on. That's a resisting trial.",
+          "timestamp_seconds": 1620,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "Officers handcuffed the suspect before placing her in the patrol car",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "We had to wrestle with you to get the handcuffs on.",
+          "timestamp_seconds": 1620,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race/ethnicity",
+          "precise location address",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

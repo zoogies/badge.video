@@ -1675,5 +1675,175 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-30",
+        "published_date": "2026-04-12",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": null,
+          "address_or_area": "airport",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "local_police",
+          "state": "Washington",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "criminal trespassing",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing a law enforcement officer",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "criminal trespassing",
+          "resisting arrest",
+          "obstructing a law enforcement officer"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman causes airport security breach by bypassing checkpoint, arrested for trespassing and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "security_breach",
+          "disorderly_conduct",
+          "trespassing"
+        ],
+        "crime_categories": [
+          "trespass",
+          "resisting_arrest",
+          "obstruction"
+        ],
+        "tags": [
+          "airport",
+          "security_breach",
+          "woman",
+          "bodycam",
+          "Washington"
+        ],
+        "content_warnings": [
+          "strong_language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 30th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Washington",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The suspect was charged with criminal trespassing resisting arrest and obstructing a law enforcement officer",
+          "timestamp_seconds": 740,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specific; city and county unknown."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

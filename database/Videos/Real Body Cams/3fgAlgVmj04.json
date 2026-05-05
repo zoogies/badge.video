@@ -2875,5 +2875,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:48Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-25",
+        "published_date": "2025-10-07",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "Seattle Station bus depot",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "transit security",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "Seattle Station",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nelson",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript (transit security describes 'Hispanic male')",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "malicious mischief",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "having a weapon capable of producing bodily harm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a dangerous weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "unlawful transit conduct",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "forgery",
+            "category": "fraud",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "urinating in public",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Armed man on bus in Seattle arrested after brandishing switchblade, damaging property, and assaulting officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-05-25T00:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2025-05-25T00:00:00Z"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "switchblade knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "transit_incident",
+          "weapon_related"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault",
+          "resisting_arrest",
+          "public_intoxication",
+          "property_damage"
+        ],
+        "tags": [
+          "switchblade",
+          "bus",
+          "Honduran",
+          "spitting",
+          "bite"
+        ],
+        "content_warnings": [
+          "violence",
+          "spitting"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "here at Seattle Station",
+          "timestamp_seconds": 30
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On May 25th, 2025",
+          "timestamp_seconds": 0
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Nelson? How do you have my name?",
+          "timestamp_seconds": 1177
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "Hispanic male",
+          "timestamp_seconds": 30
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "a large switchblade style knife",
+          "timestamp_seconds": 26
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The suspect was charged with malicious mischief, having a weapon capable of producing bodily harm, possession of a dangerous weapon, unlawful transit conduct, assault on a law enforcement officer, resisting arrest, forgery, and urinating in public.",
+          "timestamp_seconds": 1212
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "suspect_age",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Title states 'Illegal Honduran' but transcript only mentions 'Honduras' once; no explicit confirmation of immigration status."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

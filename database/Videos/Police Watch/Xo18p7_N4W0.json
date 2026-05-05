@@ -2995,5 +2995,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-01-11",
+        "published_date": "2023-10-05",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jahmiah",
+          "last_name": null,
+          "age": 16,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "theft of a cell phone",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "misdemeanor theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "16-year-old suspect steals iPhone, runs off, later apprehended after foot pursuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "theft",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "theft"
+        ],
+        "tags": [
+          "iPhone",
+          "juvenile"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 11, 2022, officers responded...",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "16-year-old Jamaya",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "16",
+          "timestamp_seconds": 132,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "theft of a cell phone",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "Officer engages in a foot pursuit with the suspect",
+          "timestamp_seconds": 239,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "state",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location information not found; review video for city/state."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

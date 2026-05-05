@@ -2375,5 +2375,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-07-10",
+        "published_date": "2025-04-15T20:01:02Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": "West Palm Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": "West Palm Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Giles",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Clemens",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child Neglect",
+            "category": "neglect",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Manslaughter of a Child",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Third-Degree Felony Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Manslaughter of a Child",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child Neglect",
+            "category": "neglect",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Toddler found dead on grandparents' doorstep; parents arrested for murder and neglect.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_death",
+          "neglect"
+        ],
+        "crime_categories": [
+          "homicide",
+          "drug_offense",
+          "neglect"
+        ],
+        "tags": [
+          "toddler",
+          "fentanyl",
+          "cocaine",
+          "doorstep"
+        ],
+        "content_warnings": [
+          "child_death",
+          "drug_overdose"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 10th, 2021.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "St. Mary's hospital (St. Mary's Medical Center in West Palm Beach)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charges of third-degree felony murder, aggravated manslaughter of a child, and child neglect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.last_name",
+          "source": "transcript",
+          "quote": "Giles in North Carolina and Clemens alongside him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_names",
+          "victim_name",
+          "exact_address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

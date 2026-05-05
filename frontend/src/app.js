@@ -25,6 +25,7 @@ const els = {
   stateFilter: document.querySelector("#stateFilter"),
   countyFilter: document.querySelector("#countyFilter"),
   crimeFilter: document.querySelector("#crimeFilter"),
+  channelFilter: document.querySelector("#channelFilter"),
   reviewFilter: document.querySelector("#reviewFilter"),
   sortSelect: document.querySelector("#sortSelect"),
   mapMode: document.querySelector("#mapMode"),
@@ -72,6 +73,7 @@ async function boot() {
   fillSelect(els.stateFilter, "All states", uniqueValues(allVideos.map(video => stateNameFromVideo(video))));
   fillCountyFilter();
   fillSelect(els.crimeFilter, "All crimes", uniqueValues(allVideos.flatMap(video => video.crime_categories || [])));
+  fillSelect(els.channelFilter, "All channels", uniqueValues(allVideos.map(video => video.channel)));
   initMap();
   render();
 }
@@ -115,11 +117,13 @@ function getFilteredVideos() {
   const state = els.stateFilter.value;
   const county = els.countyFilter.value;
   const crime = els.crimeFilter.value;
+  const channel = els.channelFilter.value;
   const review = els.reviewFilter.value;
   const filtered = allVideos.filter(video => {
     if (state && stateNameFromVideo(video) !== state) return false;
     if (county && normalizeCounty(video.county) !== county) return false;
     if (crime && !(video.crime_categories || []).includes(crime)) return false;
+    if (channel && video.channel !== channel) return false;
     if (review === "needs_review" && video.human_reviewed) return false;
     if (review === "reviewed" && !video.human_reviewed) return false;
     if (!query) return true;
@@ -1076,6 +1080,7 @@ for (const input of [
   els.stateFilter,
   els.countyFilter,
   els.crimeFilter,
+  els.channelFilter,
   els.reviewFilter,
   els.sortSelect,
   els.mapMode,

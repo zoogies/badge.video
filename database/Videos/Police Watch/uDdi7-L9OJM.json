@@ -3895,5 +3895,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-14",
+        "published_date": "2024-08-16",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Dallas County",
+          "city": "DFW Airport",
+          "address_or_area": "Dallas/Fort Worth International Airport",
+          "location_name": "Dallas/Fort Worth International Airport",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "DFW Airport Police",
+          "type": "police",
+          "state": "Texas",
+          "county": "Dallas County",
+          "city": "DFW Airport"
+        }
+      },
+      "geo": {
+        "address_or_place": "Dallas/Fort Worth International Airport",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "David",
+          "last_name": "Thomas",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Amanda",
+          "last_name": null,
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault (domestic violence)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested for public intoxication; assault referred to FBI"
+      },
+      "event_summary": {
+        "short": "Man arrested for public intoxication and investigated for domestic assault on a flight after witnesses reported he was belligerent and threw his watch at his girlfriend.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "watch (thrown at victim)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "airplane_incident"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "public_intoxication"
+        ],
+        "tags": [
+          "airport",
+          "flight",
+          "alcohol"
+        ],
+        "content_warnings": [
+          "domestic violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 14th, 2023. Officers were called to the airport regarding a man who was physically abusing his girlfriend before boarding and the duration of the flight.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "You're going to be arrested for public intoxication, all right?",
+          "timestamp_seconds": 1204,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "Texas is very strict on domestic violence.",
+          "timestamp_seconds": 1237,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "David Thomas.",
+          "timestamp_seconds": 724,
+          "confidence": "low"
+        },
+        {
+          "field": "people[1].name",
+          "source": "transcript",
+          "quote": "Amanda",
+          "timestamp_seconds": 1629,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "How old are you? 30. 31.",
+          "timestamp_seconds": 1742,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "We're staying at the hotel is not in Dallas.",
+          "timestamp_seconds": 846,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Texas is a real strict on domestic violence.",
+          "timestamp_seconds": 1237,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're going to be arrested for public intoxication.",
+          "timestamp_seconds": 1204,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect name inferred from transcript, low confidence."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

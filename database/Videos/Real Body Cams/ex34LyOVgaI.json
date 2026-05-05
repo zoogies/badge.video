@@ -2030,5 +2030,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-21",
+        "published_date": "2025-08-28",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City",
+          "address_or_area": null,
+          "location_name": "bar parking lot",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Oklahoma City Police Department",
+          "type": "local",
+          "state": "Oklahoma",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Actual Physical Control (APC) - equivalent to DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Public Intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI (male suspect)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Public Intoxication (female suspect)",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A couple was arrested after being found intoxicated in a vehicle outside a bar in Oklahoma City.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-02-21T00:00:00",
+        "initial_contact": "2025-02-21T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2025-02-21T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "public_intoxication"
+        ],
+        "tags": [
+          "bodycam",
+          "drunk driving",
+          "Oklahoma City"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On February 21st, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Oklahoma",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Oklahoma City PD!",
+          "timestamp_seconds": 583,
+          "confidence": "high"
+        },
+        {
+          "field": "charge.male",
+          "source": "transcript",
+          "quote": "the male suspect was charged with D-U-I",
+          "timestamp_seconds": 956,
+          "confidence": "high"
+        },
+        {
+          "field": "charge.female",
+          "source": "transcript",
+          "quote": "the female suspect was charged with public intoxication",
+          "timestamp_seconds": 951,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "precise address",
+          "suspect names",
+          "age",
+          "race/ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

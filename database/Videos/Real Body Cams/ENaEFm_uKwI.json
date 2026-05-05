@@ -1405,5 +1405,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-11",
+        "published_date": "2025-11-30T22:00:22Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": "Moe's Southwest Grill",
+          "location_name": "Moe's Southwest Grill",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Moe's Southwest Grill",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "Asian (Chinese and Hawaiian)",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted theft of toilet paper",
+            "category": "theft",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Battery (kicking manager)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Disorderly conduct / Public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded no contest to battery and battery on LEO; sentenced to 12 months probation, $1,120 fines and court costs."
+      },
+      "event_summary": {
+        "short": "Intoxicated woman kicks manager at Moe's, arrested and charged with battery, battery on LEO, and resisting arrest with violence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "assault",
+          "theft",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "assault",
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [],
+        "content_warnings": [
+          "language",
+          "violence"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 11th, 2025, officers in Florida got a call from the manager at a Moe's Southwest Grill",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "location.location_name",
+          "source": "description",
+          "quote": "Moe's Southwest Grill",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "description",
+          "quote": "two intoxicated women",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "I'm Chinese and Hawaiian",
+          "timestamp_seconds": 598,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "battery, battery on a law enforcement officer, resisting arrest with violence",
+          "timestamp_seconds": 848,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She pleaded no contest to battery and battery on a law enforcement officer. She was sentenced to 12 months of probation and ordered to pay $1,120 in fines and court costs.",
+          "timestamp_seconds": 860,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency name",
+          "suspect name",
+          "suspect age",
+          "precise address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

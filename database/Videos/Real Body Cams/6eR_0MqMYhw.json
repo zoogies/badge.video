@@ -4160,5 +4160,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:11:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-20",
+        "published_date": "2026-03-17",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "outdoor rodeo event",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": "Washington",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Evelyn",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fighting",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "assault fourth degree",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing second degree",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing justice",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies responded to a rodeo where an intoxicated woman was detained by security after fighting; they used bolt cutters to free her from non-standard handcuffs and arrested her for assault, trespassing, disorderly conduct, and obstructing.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_bodycam",
+          "detainment",
+          "arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "public_intoxication",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "bolt cutters",
+          "handcuffs",
+          "rodeo",
+          "intoxicated",
+          "trespassing",
+          "obstruction",
+          "strong_language"
+        ],
+        "content_warnings": [
+          "strong_language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 20th, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "deputies in Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Because Evelyn still has one half of the broken handcuffs",
+          "timestamp_seconds": 1539,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "The suspect was charged with assault, fourth degree, trespassing second degree, disorderly conduct and obstructing justice.",
+          "timestamp_seconds": 1924,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency.name",
+          "address_or_area"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -76,3 +76,4 @@ def test_build_frontend_data_writes_compact_classified_index():
     assert filters["crime_categories"] == [{"value": "resisting_arrest", "count": 1}]
     assert filters["outcomes"] == [{"value": "arrest_made", "count": 1}, {"value": "foot_pursuit", "count": 1}]
     assert filters["charges"] == [{"value": "Resisting arrest", "count": 1}]
+    assert filters["channels"] == [{"value": "Code Blue Cam", "count": 1}]

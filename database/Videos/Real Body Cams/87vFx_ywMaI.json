@@ -1585,5 +1585,183 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:12:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-05",
+        "published_date": "2025-11-26",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Snohomish County",
+          "city": "Arlington",
+          "address_or_area": "Arlington Municipal Airport",
+          "location_name": "Arlington Municipal Airport",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Arlington Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": "Snohomish County",
+          "city": "Arlington"
+        }
+      },
+      "geo": {
+        "address_or_place": "Arlington Municipal Airport",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Linda",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI (Driving Under the Influence)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Endangerment",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "DUI",
+          "Reckless Endangerment"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman drove minivan onto airport taxiway/runway, arrested for DUI and reckless endangerment.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 33,
+        "pursuit_started": null,
+        "arrest": 533
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "airport_security_breach",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "airport",
+          "runway",
+          "minivan",
+          "drunk driving",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On September 5th, 2025, officers in Washington rushed to an airport taxiway after pilots reported a minivan driving on the active runway.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I'm not familiar with Arlington area",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Linda?",
+          "timestamp_seconds": 234,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You're going to be under arrest for DUI",
+          "timestamp_seconds": 533,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "The suspect was charged with DUI and reckless endangerment.",
+          "timestamp_seconds": 1847,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "people[0].last_name",
+          "legal.case_number",
+          "geo.latitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

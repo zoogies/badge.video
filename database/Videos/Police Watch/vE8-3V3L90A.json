@@ -1810,5 +1810,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-12-16",
+        "published_date": "2026-02-06",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Osceola County",
+          "city": "Kissimmee",
+          "address_or_area": "West 192 near Missile Car Wash",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Osceola County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Osceola",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "West 192, Kissimmee, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12097",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Sakharovic",
+          "age": 32,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated battery with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "aggravated battery with a deadly weapon",
+          "assault with a deadly weapon"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Off-duty deputy cut by knife after road rage confrontation",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "road rage",
+          "assault on law enforcement"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "off-duty deputy",
+          "knife attack",
+          "PTSD",
+          "veteran"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 16th, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "West 192",
+          "timestamp_seconds": 99,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Oswald County Corrections",
+          "timestamp_seconds": 973,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Daniel Sakharovic",
+          "timestamp_seconds": 517,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "32-year-old Daniel",
+          "timestamp_seconds": 980,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with aggravated battery, assault with a deadly weapon",
+          "timestamp_seconds": 980,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "he pulls out a knife... I pulled my gun out",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "deputy sustained a minor cut to the shoulder",
+          "timestamp_seconds": 1010,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript mentions '13th in Connecticut' but later context points to Florida; likely a misheard call sign or address. Assumed Florida based on West 192 and Oswald County (Osceola)."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number",
+          "agency name exact"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Agency name inferred; not explicit in transcript.",
+        "County name 'Oswald' appears to be a misspelling of 'Osceola'."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

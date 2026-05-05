@@ -2085,5 +2085,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-03",
+        "published_date": "2023-10-20",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "a bar",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nicole",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing or Resisting an Officer Without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing or Resisting an Officer Without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to obstructing or resisting an officer without violence; disorderly conduct charge amended away; ordered to pay $529.14 in fines."
+      },
+      "event_summary": {
+        "short": "Woman intoxicated at bar, kicked officer, resisted arrest, later pleaded guilty to resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-01-03",
+        "initial_contact": "2023-01-03",
+        "pursuit_started": null,
+        "arrest": "2023-01-03"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "bar_disturbance",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "bar",
+          "disorderly",
+          "kicks officer"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 3rd, 2023, officers responded to a report of a disorderly woman at a bar.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "The suspect was charged with Disorderly Conduct and Obstructing Or Resisting an Officer Without Violence.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "The suspect's charges were amended to obstructing or resisting an officer without violence. The suspect pleaded not guilty, later changing her plea to guilty. The court ordered the suspect to pay $529 and 14 cents in fines.",
+          "timestamp_seconds": 1201,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Hey Nicole put the cuffs behind your back",
+          "timestamp_seconds": 847,
+          "confidence": "medium"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "She turned around and kick me in the legs.",
+          "timestamp_seconds": 286,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

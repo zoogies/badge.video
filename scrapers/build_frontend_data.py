@@ -34,6 +34,7 @@ def build_frontend_data(
     state_counts: Counter = Counter()
     county_counts: Counter = Counter()
     city_counts: Counter = Counter()
+    channel_counts: Counter = Counter()
     crime_counts: Counter = Counter()
     outcome_counts: Counter = Counter()
     charge_counts: Counter = Counter()
@@ -61,9 +62,11 @@ def build_frontend_data(
         state = record.get("state") or "Unknown"
         county = record.get("county") or "Unknown"
         city = record.get("city") or "Unknown"
+        channel = record.get("channel") or "Unknown"
         state_counts[state] += 1
         county_counts[county] += 1
         city_counts[city] += 1
+        channel_counts[channel] += 1
         reviewed_counts["reviewed" if record.get("human_reviewed") else "needs_review"] += 1
         if county != "Unknown":
             state_counties[state][county] += 1
@@ -120,6 +123,7 @@ def build_frontend_data(
         "crime_categories": _counter_items(crime_counts),
         "outcomes": _counter_items(outcome_counts),
         "charges": _counter_items(charge_counts),
+        "channels": _counter_items(channel_counts),
         "states": _counter_items(state_counts),
         "counties": _counter_items(county_counts),
         "cities": _counter_items(city_counts),

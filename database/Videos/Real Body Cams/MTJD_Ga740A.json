@@ -1175,5 +1175,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:21:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-04",
+        "published_date": "2026-03-24T21:00:00Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lake County",
+          "city": null,
+          "address_or_area": "property with gate",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lake County Sheriff's Office",
+          "type": "county_sheriff",
+          "state": "Florida",
+          "county": "Lake",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Patricia",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Misuse of 911",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening a public servant",
+            "category": "threats_to_officers",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Three counts of misuse of 911",
+          "Resisting an officer without violence",
+          "Two counts of threatening an officer"
+        ],
+        "case_number": null,
+        "disposition": "Dismissed (all charges dropped)"
+      },
+      "event_summary": {
+        "short": "Woman calls 911 four times, found intoxicated, threatens deputies, refuses to comply, is tased and arrested. Charges later dismissed.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:20",
+        "pursuit_started": null,
+        "arrest": "1:46"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "misuse of 911",
+          "taser",
+          "threats to officers"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On July 4th, 2025, deputies in Florida responded...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Don't take me out of Lake County.",
+          "timestamp_seconds": 670,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Are you Miss Patricia?",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with three counts of misuse of 911, resisting an officer without violence and two counts of threatening an officer.",
+          "timestamp_seconds": 785,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "both charges of threatening an officer were later dropped... the prosecutor dismissed her remaining charges",
+          "timestamp_seconds": 790,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "title",
+          "quote": "Meets A Taser Instead",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

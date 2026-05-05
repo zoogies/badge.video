@@ -3075,5 +3075,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:20:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-14",
+        "published_date": "2025-02-11",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": "UPS store",
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jane",
+          "last_name": "McNeil",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "guilty - no contest"
+      },
+      "event_summary": {
+        "short": "Woman arrested for trespassing and resisting at a Florida UPS store after a dispute over a refund.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:15",
+        "pursuit_started": null,
+        "arrest": "7:44"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "UPS",
+          "refund dispute",
+          "trespassing",
+          "resisting arrest"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 14th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Jane X. McNeil",
+          "timestamp_seconds": 258,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "charged with trespassing",
+          "timestamp_seconds": 1158,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1].label",
+          "source": "transcript",
+          "quote": "resisting an officer without violence",
+          "timestamp_seconds": 1158,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "did no contest to both charges and was found guilty",
+          "timestamp_seconds": 1165,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you're under arrest",
+          "timestamp_seconds": 470,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location is only state-level; city and county not specified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

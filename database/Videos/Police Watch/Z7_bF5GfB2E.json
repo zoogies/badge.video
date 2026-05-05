@@ -5065,5 +5065,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-02-05",
+        "published_date": "2023-05-02",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Eau Claire County",
+          "city": "Eau Claire",
+          "address_or_area": "off Birch, near Festival Foods and Dollar Tree",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Eau Claire Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Eau Claire County",
+          "city": "Eau Claire"
+        }
+      },
+      "geo": {
+        "address_or_place": "off Birch, near Festival Foods and Dollar Tree",
+        "intersection": "Birch and unknown street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "55035",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Courtney",
+          "last_name": "Moulton",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "passenger",
+          "first_name": "Michael",
+          "last_name": "Moulton",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI) - First Offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Keep Vehicle Under Control",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "OWI First Offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Keep Vehicle Under Control",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "citation issued, released to father"
+      },
+      "event_summary": {
+        "short": "Woman arrested for OWI after getting stuck in snowbank in Eau Claire, WI",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:57",
+        "pursuit_started": null,
+        "arrest": "39:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "DUI investigation"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "OWI",
+          "snowbank",
+          "drunk driving",
+          "bodycam",
+          "Wisconsin"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 5, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "in Eau Claire, Wisconsin",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "location:address_or_area",
+          "source": "transcript",
+          "quote": "next to a festival and Dollar Tree off of Birch",
+          "timestamp_seconds": 1118,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Courtney Moulton",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "the couple was identified as Courtney Moulton and Michael Moulton",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "two citations tonight. One is for operating under the influence, okay? And the second is for failure to keep your vehicle under control",
+          "timestamp_seconds": 3594,
+          "confidence": "high"
+        },
+        {
+          "field": "BAC",
+          "source": "transcript",
+          "quote": "point one four",
+          "timestamp_seconds": 2340,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "precise coordinates",
+          "case_number",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No suspect race or ethnicity stated; left null"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

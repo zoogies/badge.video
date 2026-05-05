@@ -3265,5 +3265,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:02:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-03-29",
+        "published_date": "2025-07-30T19:29:24Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Collier",
+          "city": null,
+          "address_or_area": "Orange Avenue and 20th Street",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": "Collier",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Orange Avenue and 20th Street",
+        "intersection": "Orange Avenue and 20th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child Abuse (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Child Abuse (two counts)",
+            "category": "assault",
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Intoxication",
+            "category": "public_intoxication",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman assaults multiple children with racial slurs, arrested for child abuse, disorderly intoxication, resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "child_abuse",
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "racial_slurs",
+          "multiple_victims",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "racial_slurs",
+          "child_abuse"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 29th, 2025.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "look me up in Collier County",
+          "timestamp_seconds": 313,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "On orange, orange and 20th",
+          "timestamp_seconds": 557,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "No, I'm 35.",
+          "timestamp_seconds": 117,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "two counts of child abuse... disorderly in toxin... resisting...",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She's going to go for two counts of child abuse...",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated; not inferred."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

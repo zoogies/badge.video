@@ -1810,5 +1810,183 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:02:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-27",
+        "published_date": "2024-02-21",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": null,
+          "address_or_area": "airport",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "airport",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct for displaying a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Road rage incident where a driver displayed a firearm at an Uber driver at an airport; suspect arrested for disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "road rage",
+          "brandishing"
+        ],
+        "crime_categories": [
+          "weapons_offense"
+        ],
+        "tags": [
+          "airport",
+          "uber",
+          "concealed carry",
+          "disorderly conduct"
+        ],
+        "content_warnings": [
+          "weapons"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 27th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "There's bad drivers all over Texas.",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Tomorrow morning they're going to transfer me to the Tarrant County Jail",
+          "timestamp_seconds": 1114,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Right now you're going to be arrested for disorderly conduct for displaying the firearm.",
+          "timestamp_seconds": 860,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "He's going to jail.",
+          "timestamp_seconds": 777,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "agency name",
+          "suspect name",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City not specified; location is airport in Tarrant County, Texas."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

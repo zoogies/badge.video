@@ -1825,5 +1825,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-16",
+        "published_date": "2024-06-06",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Sarasota County",
+          "city": "Sarasota",
+          "address_or_area": "convenience store",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Sarasota Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Sarasota County",
+          "city": "Sarasota"
+        }
+      },
+      "geo": {
+        "address_or_place": "convenience store",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Silva",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman trespassing and stealing at convenience store, resists arrest, makes threats, arrested for trespass and battery on officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-10-16T00:00:00",
+        "initial_contact": "2023-10-16T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2023-10-16T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "trespass",
+          "assault",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "arrest",
+          "mental health",
+          "convenience store",
+          "Florida"
+        ],
+        "content_warnings": [
+          "violence",
+          "language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On October 16th, 2023",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Officer Silva from Sarasota Police Department",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officer Silva from Sarasota Police Department",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "you're being currently at this time trespass",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "battery on a leo",
+          "timestamp_seconds": 1536,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Put your hands behind your back!",
+          "timestamp_seconds": 660,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Stop kicking!",
+          "timestamp_seconds": 660,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number",
+          "suspect full name",
+          "suspect race",
+          "officer full name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race not stated; not inferred.",
+        "Exact location of convenience store not specified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

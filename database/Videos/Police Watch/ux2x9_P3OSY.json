@@ -3340,5 +3340,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-12-08",
+        "published_date": "2024-02-19",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Sarasota County",
+          "city": null,
+          "address_or_area": "Taco Bell",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": "Sarasota County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Deanna",
+          "last_name": null,
+          "age": 22,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Leaving the scene of an accident",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving under the influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Possession of open alcohol container",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Possession of cannabis (weed)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Battery on an officer? (kicking)",
+            "category": "battery",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Leaving the scene of an accident",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "22-year-old female crashes into Taco Bell, flees on foot, is found and arrested for leaving the scene and suspected DUI.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_crash",
+          "hit_and_run",
+          "dui_suspected"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop",
+          "warrant"
+        ],
+        "tags": [
+          "Taco Bell",
+          "bodycam",
+          "female suspect",
+          "alcohol",
+          "weed"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 8th, 2022.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "This is Sarasota County Jail.",
+          "timestamp_seconds": 1330,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "fleeing the scene of the crash",
+          "timestamp_seconds": 820,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "I'm probably going to hit her with DUI.",
+          "timestamp_seconds": 820,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "open bottle of alcohol and weed",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "title",
+          "quote": "22-Year-Old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "description",
+          "quote": "female",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Deanna (officer calls her Deanna repeatedly)",
+          "timestamp_seconds": 720,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "agency name",
+          "specific charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect name inconsistency: initially says 'Maria' but later identified as 'Deanna' by officer."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

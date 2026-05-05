@@ -3095,5 +3095,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-02-26",
+        "published_date": "2024-04-20",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Santa Rosa County",
+          "city": "Navarre",
+          "address_or_area": "Navarre Parkway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Santa Rosa County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Santa Rosa County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Navarre Parkway, Navarre, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript, description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": "Florida Statute 316.193",
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding (68 mph in 45 mph zone)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with Suspended License",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "DUI",
+          "Speeding",
+          "Driving While License Suspended"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for speeding leads to DUI investigation and arrest. Suspect's license was suspended, and she exhibited signs of impairment. Field sobriety tests failed, breathalyzer results: .137 and .159 BAC. Arrested for DUI.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-02-26 (approximate)",
+        "pursuit_started": null,
+        "arrest": "2023-02-26 (approximate)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_investigation"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop"
+        ],
+        "tags": [
+          "DUI",
+          "speeding",
+          "suspended license",
+          "female suspect",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 26th, 2023",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Navarre Parkway",
+          "timestamp_seconds": 328,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Santa Rosa County",
+          "timestamp_seconds": 1785,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "placed under arrest for DUA",
+          "timestamp_seconds": 1209,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you were placed under arrest for driving under the influence",
+          "timestamp_seconds": 1324,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.2",
+          "source": "transcript",
+          "quote": "Are you aware that your driver license is suspended?",
+          "timestamp_seconds": 66,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "68 miles an hour in the 45 minor zone",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "exact coordinates",
+          "case number",
+          "disposition"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

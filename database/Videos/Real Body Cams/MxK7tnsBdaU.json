@@ -3360,5 +3360,166 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:21:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-30",
+        "published_date": "2026-01-13",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Washington",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Heather",
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop and DUI arrest of a 26-year-old female driver with a BAC over twice the legal limit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "00:32",
+        "pursuit_started": null,
+        "arrest": "20:53"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "DUI",
+          "Washington",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 30th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "I'm 26 years old.",
+          "timestamp_seconds": 463,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Heather",
+          "timestamp_seconds": 564,
+          "confidence": "high"
+        },
+        {
+          "field": "BAC_result",
+          "source": "transcript",
+          "quote": "first sample you blew 0.174, second sample was a 0.19",
+          "timestamp_seconds": 1253,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified beyond state; city/county unknown."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

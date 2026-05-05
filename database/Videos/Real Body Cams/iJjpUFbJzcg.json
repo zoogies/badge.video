@@ -1145,5 +1145,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-11",
+        "published_date": "2023-06-27",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Chaves County",
+          "city": "Roswell",
+          "address_or_area": "611 S Main",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Roswell Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "Chaves County",
+          "city": "Roswell"
+        }
+      },
+      "geo": {
+        "address_or_place": "611 S Main, Roswell, NM",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rain",
+          "last_name": "Birdsy",
+          "age": 19,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "warrant for failure to appear",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "failure to appear",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty and agreed to pay fine"
+      },
+      "event_summary": {
+        "short": "Woman arrested on warrant for failure to appear after consensual encounter during traffic stop.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "warrant"
+        ],
+        "tags": [
+          "failure to appear",
+          "no driver's license",
+          "consensual encounter"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 11, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "at 611 S Main",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "officers with Roswell Police Department",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The driver, Rain Birdsy",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Rain Birdsy",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "has a warrant for failing to appear in court due to previous no-driver's license charge",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "The suspect was arrested on an active warrant",
+          "timestamp_seconds": 720,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "In court, the suspect pleaded guilty and agreed to pay the fine",
+          "timestamp_seconds": 737,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips",
+          "race_ethnicity",
+          "timeline"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2870,5 +2870,170 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:21:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-28",
+        "published_date": "2026-04-24",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": "Palm Beach",
+          "address_or_area": null,
+          "location_name": "The Breakers",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Palm Beach Police Department",
+          "type": "local_police",
+          "state": "Florida",
+          "county": "Palm Beach County",
+          "city": "Palm Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Stephanie",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespass after warning",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "trespass after warning",
+          "resisting an officer without violence"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for trespassing and resisting at Palm Beach restaurant.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "other"
+        ],
+        "tags": [
+          "bodycam",
+          "Palm Beach",
+          "Breakers"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "On September 28, 2025, officers in Florida responded...",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "title",
+          "quote": "Palm Beach Princess",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.location_name",
+          "source": "transcript",
+          "quote": "This is owned by the Breakers property.",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "I'm placing you under arrest for trespass after warning.",
+          "timestamp_seconds": 1552,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "The suspect was charged with trespass after warning, resisting an officer without violence.",
+          "timestamp_seconds": 2100,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

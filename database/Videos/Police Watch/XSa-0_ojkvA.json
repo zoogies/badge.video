@@ -2650,5 +2650,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-02",
+        "published_date": "2024-07-08T18:04:06Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Sarasota",
+          "city": "Venice",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Sarasota Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Sarasota",
+          "city": "Sarasota"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic battery by strangulation",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal mischief",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Boyfriend arrested for choking and destroying property of sleeping girlfriend",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "box cutter",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "assault"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault"
+        ],
+        "tags": [
+          "choking",
+          "box cutter",
+          "sleeping victim",
+          "strangulation"
+        ],
+        "content_warnings": [
+          "domestic violence",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 2nd, 2023.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "So Venice Police Department is driving him up here.",
+          "timestamp_seconds": 1148,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "He's going to be transported to the Sarasota County Jail.",
+          "timestamp_seconds": 1147,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "he put his hand on her throat and said something to the effect of, like, is this what you want, is this how you like?",
+          "timestamp_seconds": 250,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "he had taken a box cutter and destroyed some property",
+          "timestamp_seconds": 310,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "he's already been taken into custody.",
+          "timestamp_seconds": 1117,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "transcript",
+          "quote": "I work for the Sarasota Police Department.",
+          "timestamp_seconds": 1190,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "victim_name",
+          "suspect_name",
+          "specific_address",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Agency name conflict: Sarasota PD vs Venice PD; primary assigned to Sarasota PD based on interview officer's statement."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

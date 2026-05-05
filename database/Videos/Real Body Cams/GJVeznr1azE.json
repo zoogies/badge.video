@@ -2365,5 +2365,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:17:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-19",
+        "published_date": "2025-10-28T00:57:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Texas Roadhouse",
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kayla",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal trespass",
+            "category": null,
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "menacing",
+            "category": "threat",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to disclose personal information",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to disorderly conduct and failure to disclose personal information; sentenced to 3 days jail, $250 fines, 2 years probation. Charge of obstructing official business dismissed."
+      },
+      "event_summary": {
+        "short": "Intoxicated woman arrested after threatening staff at Texas Roadhouse and refusing to leave or provide identification.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disturbance",
+          "public intoxication"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "Texas Roadhouse",
+          "Ohio"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title|description|transcript",
+          "quote": "On July 19th, 2025, officers in Ohio got a call about an intoxicated woman",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "location.location_name",
+          "source": "transcript",
+          "quote": "Texas Roadhouse",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Kayla",
+          "timestamp_seconds": 452,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "She pleaded guilty to the remaining charges of disorderly conduct and failure to disclose personal information",
+          "timestamp_seconds": 1152,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "sentenced to three days in jail and ordered to pay $250 in fines along with all court costs. The court also placed the suspect on two years of probation.",
+          "timestamp_seconds": 1158,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "suspect last name",
+          "suspect age"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No county or city specified; location based on context may be incomplete."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

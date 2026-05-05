@@ -2010,5 +2010,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-10-08",
+        "published_date": "2023-02-05",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Allen",
+          "city": "Fort Wayne",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Wayne Police Department",
+          "type": "local",
+          "state": "Indiana",
+          "county": "Allen",
+          "city": "Fort Wayne"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Thomas",
+          "last_name": "Henry",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating a Vehicle While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Endangering a Person",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a Vehicle with an Alcohol Concentration Equivalent to 0.15 or More",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Operating a Vehicle While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a Vehicle with an Alcohol Concentration Equivalent to 0.15 or More",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to first charge; sentenced to 365 days in jail suspended, fine, and restitution."
+      },
+      "event_summary": {
+        "short": "Fort Wayne Mayor Tom Henry arrested for DUI after hitting another car's mirror and failing field sobriety tests.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-10-08",
+        "pursuit_started": null,
+        "arrest": "2022-10-08"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "mayor",
+          "DUI",
+          "Fort Wayne",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 8th, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Fort Wayne Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Tom Henry",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with Operating a Vehicle While Intoxicated, Endangering a Person, and Operating a Vehicle with an Alcohol Concentration Equivalent to 0.15 or More",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "sentenced to a suspended jail term of 365 days",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Turn around for me, please. Behind your back.",
+          "timestamp_seconds": 420,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "The other driver was uninjured in the accident.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "inference",
+          "quote": "Fort Wayne is in Allen County",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

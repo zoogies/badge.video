@@ -4070,5 +4070,170 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-29",
+        "published_date": "2023-06-05",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Martin",
+          "city": "Stuart",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Martin County Sheriff's Office",
+          "type": "county sheriff",
+          "state": "Florida",
+          "county": "Martin",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Gabriel",
+          "last_name": null,
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "21-year-old Gabriel arrested for DUI after falling asleep at the wheel.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "sleeping at wheel",
+          "emotional breakdown"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 29, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "[3:34-3:42] downtown, uh, West Palm Beach... downtown fucking Stewart...",
+          "timestamp_seconds": 214,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "[22:38-22:41] I'm Deputy Thomas and Mark County Sheriff's Office, Traffic E.I Unit.",
+          "timestamp_seconds": 1358,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "He was identified as 21 year old Gabriel.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "[31:06-31:08] Okay, so at this point, you are under arrest for DUI.",
+          "timestamp_seconds": 1866,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last_name",
+          "precise_address",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

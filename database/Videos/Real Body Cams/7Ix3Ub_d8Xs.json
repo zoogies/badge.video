@@ -1885,5 +1885,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:12:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-29",
+        "published_date": "2025-08-20T19:30:01Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 28,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana over 20 grams",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana over 20 grams",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty of resisting, sentenced to one year of probation and $668 fines; marijuana conviction withheld"
+      },
+      "event_summary": {
+        "short": "Deputy in Florida stops a white Kia for careless driving; driver refuses to exit and is arrested for obstruction and marijuana possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "tags": [
+          "marijuana",
+          "obstruction",
+          "window break"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 29th, 2025, a deputy in Florida was out on patrol",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "a deputy in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "She's 28.",
+          "timestamp_seconds": 713,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with resisting an officer without violence and possession of marijuana over 20 grams.",
+          "timestamp_seconds": 942,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She was found guilty of resisting an officer without violence and was sentenced to one year of probation and ordered to pay $668 in fines and court costs. The judge withheld a conviction for her charge of possession of marijuana over 20 grams.",
+          "timestamp_seconds": 959,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Get out the car. If you don't come, I'm busting this window",
+          "timestamp_seconds": 248,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency_name",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

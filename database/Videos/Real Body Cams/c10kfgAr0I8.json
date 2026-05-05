@@ -1555,5 +1555,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:14:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-22",
+        "published_date": "2024-10-03",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "St. John's County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "St. John's County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "St. John's County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anastasia",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI with property damage",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and run (leaving scene of crash)",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI with damage",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the scene of a crash",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded no contest, found guilty, sentenced to 364 days probation, 50 hours community service, license suspended 6 months"
+      },
+      "event_summary": {
+        "short": "A female driver hit multiple cars in a parking lot and fled the scene. Deputies located her at a restaurant, and she was arrested for DUI, hit-and-run, and resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "hit_and_run"
+        ],
+        "crime_categories": [
+          "dui",
+          "hit_and_run",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "St. John's County",
+          "DUI",
+          "hit and run",
+          "female suspect",
+          "probation"
+        ],
+        "content_warnings": [
+          "mild language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 22nd, 2024, deputies in Florida got a call from a victim of a hit-and-run",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "My name's Deputy Evans, St. John's County Sheriff's Office.",
+          "timestamp_seconds": 150,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "What's your first name? Anastasia.",
+          "timestamp_seconds": 235,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "DUI with property damage, hit and run, resistant.",
+          "timestamp_seconds": 842,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect pleaded no contest to all charges and was later found guilty by the court. The suspect was ordered to serve 364 days of probation alongside 50 hours of community service. The court ordered the suspect's Florida driver's license to be suspended for a total of six months.",
+          "timestamp_seconds": 900,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "Adult dancer.",
+          "timestamp_seconds": 283,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

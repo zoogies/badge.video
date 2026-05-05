@@ -2805,5 +2805,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:08:48Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-10T23:13:28Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anella",
+          "last_name": null,
+          "age": 37,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child neglect",
+            "category": "neglect",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "seven counts of child neglect",
+            "category": "neglect",
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest without violence",
+            "category": "resisting_arrest",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police responded to a report of unsupervised children, found 7 kids living in a filthy home with minimal food and visible injuries. The mother was arrested after resisting at the hospital.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child welfare",
+          "neglect"
+        ],
+        "crime_categories": [
+          "neglect",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "children",
+          "filthy home",
+          "DCF"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "neglect"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "officers received a 911 call from a neighbor reporting young children running into the street unattended",
+          "timestamp_seconds": 35,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "Anella 37",
+          "timestamp_seconds": 1148,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "seven counts of child niggas (likely child neglect)",
+          "timestamp_seconds": 924,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "one count of resisting arrest without violence",
+          "timestamp_seconds": 1152,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Later, officers arrested Anella",
+          "timestamp_seconds": 1148,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "she resisted, leading to a physical struggle",
+          "timestamp_seconds": 852,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified; requires manual identification."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

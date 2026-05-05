@@ -2785,5 +2785,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:20:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-21",
+        "published_date": "2025-12-04",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Orange",
+          "city": "Orlando",
+          "address_or_area": "apartment complex",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "O'Lock County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Orange",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded not guilty, case ongoing"
+      },
+      "event_summary": {
+        "short": "Domestic argument leads to arrest after suspect locks herself in car, resists officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_disturbance"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "domestic",
+          "argument",
+          "car",
+          "resisting",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 21st, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "This is Deputy O'Lock County Sheriff's Office",
+          "timestamp_seconds": 25,
+          "confidence": "moderate"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Yeah, Orlando",
+          "timestamp_seconds": 1044,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with resisting an officer with violence and disorderly conduct",
+          "timestamp_seconds": 1129,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she pleaded not guilty to both charges. At this time, the court case is still ongoing.",
+          "timestamp_seconds": 1137,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "An arrest for resisting arrest and battery on the law enforcement officer",
+          "timestamp_seconds": 842,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Deputy stated 'O'Lock County' but city identified as Orlando, which is in Orange County; likely transcription error."
+        ],
+        "missing_critical_fields": [
+          "state",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "County name may be mis-transcribed; manual verification recommended."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

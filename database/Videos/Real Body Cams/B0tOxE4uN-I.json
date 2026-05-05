@@ -3360,5 +3360,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-09",
+        "published_date": "2024-01-12",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "state_only"
+        },
+        "agency": {
+          "name": null,
+          "type": "school_resource_officer",
+          "state": "Oklahoma",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother arrested for disorderly conduct and resisting arrest at school after argument with principal and SRO.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "school_incident"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "school",
+          "mother",
+          "SRO",
+          "profanity",
+          "argument"
+        ],
+        "content_warnings": [
+          "strong_language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 9th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "an SRO in Oklahoma",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with Disorderly Conduct and Resisting Arrest.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Female adult in custody for disorderly conduct.",
+          "timestamp_seconds": 510.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "City and county not specified; location precision low."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1295,5 +1295,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:08:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-09",
+        "published_date": "2023-10-02T17:34:11Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": "West Palm Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Roberto",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated assault (warrant)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening with a deadly weapon (box cutters)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man with warrant for aggravated assault arrested after threatening people with box cutters, then kicking officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "box cutters",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "warrant_arrest",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "warrant"
+        ],
+        "tags": [
+          "box cutters",
+          "homophobic slurs",
+          "spitting"
+        ],
+        "content_warnings": [
+          "strong language",
+          "violence"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 9th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Oh, West Palm Beach?",
+          "timestamp_seconds": 367,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "The man was identified as Roberto.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Aggravated assault.",
+          "timestamp_seconds": 348,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "There's a battery on a Leo. He kicked me.",
+          "timestamp_seconds": 421,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "man threatening people with box cutters",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Officer initially states 'We're not in Broward County' but later mentions 'Brower County' in context of warrant; incident location inferred as West Palm Beach (Palm Beach County) based on transcript query."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "state",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

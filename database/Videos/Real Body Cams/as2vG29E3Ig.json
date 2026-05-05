@@ -1455,5 +1455,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-12-01",
+        "published_date": "2024-04-17T22:00:03Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "healthcare facility",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 18,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Disorderly Conduct",
+          "Resisting Arrest"
+        ],
+        "case_number": null,
+        "disposition": "No contest plea; sentenced to 90 days jail suspended, $650 fine suspended for resisting arrest, $50 fine for disorderly conduct"
+      },
+      "event_summary": {
+        "short": "Fired teen nurse aide fights coworker, resists arrest, and is charged with disorderly conduct and resisting arrest in Ohio.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disturbance",
+          "fight",
+          "arrest"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "healthcare facility",
+          "nurse aide",
+          "fired",
+          "teen"
+        ],
+        "content_warnings": [
+          "violence",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 1st, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "She was charged with Disorderly Conduct and Resisting Arrest.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect was charged with resisting arrest and disorderly conduct... later amending her plea to no contest. The court sentenced the suspect to 90 days in jail with 90 days suspended... $650 fine for resisting arrest with $650 suspended, alongside the $50 fine for disorderly conduct.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "I'm 18",
+          "timestamp_seconds": 208.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.sex_or_gender",
+          "source": "description",
+          "quote": "the woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City and county not specified in video metadata."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

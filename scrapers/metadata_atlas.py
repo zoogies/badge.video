@@ -32,6 +32,7 @@ def rebuild_metadata_atlas(
 
 def build_metadata_atlas(videos_root: Path = DEFAULT_VIDEOS_ROOT) -> dict:
     counters: dict[str, Counter] = {
+        "channels": Counter(),
         "states": Counter(),
         "state_abbreviations": Counter(),
         "counties": Counter(),
@@ -63,6 +64,7 @@ def build_metadata_atlas(videos_root: Path = DEFAULT_VIDEOS_ROOT) -> dict:
 
     for path in iter_video_files(videos_root):
         total_videos += 1
+        _add(counters["channels"], path.parent.name)
         video = _load_json(path)
         if not isinstance(video, dict):
             continue

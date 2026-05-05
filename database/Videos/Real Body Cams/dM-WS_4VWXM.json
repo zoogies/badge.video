@@ -2250,5 +2250,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-10-22",
+        "published_date": "2023-04-05",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": "Target grocery store",
+          "location_name": "Target",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "Black or African American",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Menacing",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Menacing",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Acquitted of menacing; found guilty of disorderly conduct; sentenced to 2 days in jail"
+      },
+      "event_summary": {
+        "short": "Woman demanded Target compensate her over $1000 grocery bill, became disorderly, and was arrested for menacing and disorderly conduct after chasing employees.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-10-22T20:42:00",
+        "initial_contact": "2022-10-22T20:42:00",
+        "pursuit_started": null,
+        "arrest": "2022-10-22"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disturbance",
+          "trespass",
+          "arrest"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "other"
+        ],
+        "tags": [
+          "entitled",
+          "woman",
+          "target",
+          "compensate",
+          "grocery",
+          "bodycam",
+          "arrest"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 22nd, 2022, at 8:42 pm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "We have to go by the Ohio Revised Code.",
+          "timestamp_seconds": 1060,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "hit an older black woman",
+          "timestamp_seconds": 1256,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with Menacing and Disorderly Conduct",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "initial charge of menacing was acquitted, while the suspect was found guilty of disorderly conduct... sentenced to two days in jail",
+          "timestamp_seconds": 1339,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "security staff member punched the suspect in self-defense",
+          "timestamp_seconds": 147,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency_name",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

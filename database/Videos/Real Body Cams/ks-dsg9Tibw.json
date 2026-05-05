@@ -2375,5 +2375,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:19:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-01",
+        "published_date": "2024-12-26",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "running red light",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "open container",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to obstructing official business; charges of resisting arrest and open container dismissed"
+      },
+      "event_summary": {
+        "short": "Female driver ran a red light in Ohio, refused to provide ID during traffic stop, was arrested for obstruction, and later pleaded guilty to obstructing official business. Open container was found in vehicle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "obstruction"
+        ],
+        "tags": [
+          "bodycam",
+          "Ohio",
+          "female suspect",
+          "DUI alleged"
+        ],
+        "content_warnings": [
+          "use of force",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 1st, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Because I'm a black female",
+          "timestamp_seconds": 456,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "placed under arrest for obstruction",
+          "timestamp_seconds": 300,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2].label",
+          "source": "transcript",
+          "quote": "resisting arrest in open container",
+          "timestamp_seconds": 1267,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect did a guilty to the remaining charge of obstructing official business and was found guilty",
+          "timestamp_seconds": 1280,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "officer identities",
+          "suspect name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Drunk driving alleged in title but not confirmed by transcript or charges; open container present."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

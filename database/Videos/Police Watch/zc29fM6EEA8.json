@@ -2740,5 +2740,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:08:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-02",
+        "published_date": "2023-11-10",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Harrison County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Texas",
+          "county": "Harrison County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Zachary",
+          "last_name": "Scholl",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Lamar",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Warrant: violation of probation, evading arrest, evading with a vehicle (felony 3)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving without a license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading arrest (foot pursuit)",
+            "category": "evading",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for broken tail light leads to foot pursuit and arrest. Suspect had warrant and acted erratically, claiming to need bathroom. After chase, he was handcuffed and became unresponsive due to dehydration.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "warrant",
+          "evading"
+        ],
+        "tags": [
+          "dehydration",
+          "erratic_behavior"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 2nd, 2023. An officer conducted a traffic stop on a vehicle with a broken tail light.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "warrant hit out of Harrison County for violation of probation, evading arrest, attention with a vehicle felony three.",
+          "timestamp_seconds": 46,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "How long have you been in Texas?",
+          "timestamp_seconds": 410,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The subject we're out with is going to be Zachary Scholl.",
+          "timestamp_seconds": 363,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Lamar is the best we got.",
+          "timestamp_seconds": 1189,
+          "confidence": "low"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "warrant hit out of Harrison County for violation of probation, evading arrest, attention with a vehicle felony three.",
+          "timestamp_seconds": 526,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "Do you have a driver's license? No, I do not.",
+          "timestamp_seconds": 113,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "I got one running. Get on the ground now.",
+          "timestamp_seconds": 970,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Get on the ground. You don't have to do all that.",
+          "timestamp_seconds": 992,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "He started running.",
+          "timestamp_seconds": 1224,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

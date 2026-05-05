@@ -2460,5 +2460,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:27Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-08-27",
+        "published_date": "2026-03-05",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lake",
+          "city": "Claremont",
+          "address_or_area": "busy intersection",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI - Driving Under the Influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to stop at red light",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Property damage",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Partial plea: pleaded guilty to failure to stop at red light, pleaded not guilty to remaining charges; case ongoing"
+      },
+      "event_summary": {
+        "short": "Woman caused multi-vehicle crash after running a red light, suspected DUI, and arrested after resisting and battering officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_crash",
+          "dui",
+          "resisting_arrest",
+          "battery_on_leo"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "multi-vehicle crash",
+          "field sobriety test",
+          "Lake County Jail"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 27th, 2025, officers in Florida responded to a busy intersection",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "We're taking you to Lake County Jail.",
+          "timestamp_seconds": 1260,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "we're not at Claremont anymore",
+          "timestamp_seconds": 1499,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "property damage resisting arrest and battery on Leo",
+          "timestamp_seconds": 1430,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "two counts of DUI",
+          "timestamp_seconds": 1710,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she pleaded guilty to failure to stop at a red light... pleaded not guilty to the remaining charges",
+          "timestamp_seconds": 1730,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

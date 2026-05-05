@@ -3490,5 +3490,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:03:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-15",
+        "published_date": "2024-07-24",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Reginal",
+          "last_name": null,
+          "age": 48,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Traffic violation and child not wearing seatbelt",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing from police (vehicle pursuit)",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug deal (suspected narcotics)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to vehicle pursuit with child in car; suspect later arrested in drug deal",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "vehicle pursuit",
+          "drug offense",
+          "child endangerment"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "traffic_stop"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "arrest",
+          "foot chase"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 15th, 2023.",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "You're 48",
+          "timestamp_seconds": 1402,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Reginal",
+          "timestamp_seconds": 1481,
+          "confidence": "medium"
+        },
+        {
+          "field": "location (school)",
+          "source": "transcript",
+          "quote": "Rosebud Middle",
+          "timestamp_seconds": 174,
+          "confidence": "low"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "You got a knife right down the ground",
+          "timestamp_seconds": 1308,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not explicitly stated; unable to determine state/county/city from available information."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

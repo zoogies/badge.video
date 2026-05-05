@@ -3885,5 +3885,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:14:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-12-31",
+        "published_date": "2024-12-22",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": "Hilliard",
+          "address_or_area": "7-410 South Avenue",
+          "location_name": "Holiday Inn",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "municipal",
+          "state": "Ohio",
+          "county": null,
+          "city": "Hilliard"
+        }
+      },
+      "geo": {
+        "address_or_place": "7-410 South Avenue",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Benjamin",
+          "last_name": "Kadoo",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested, pleaded guilty to obstructing official business, sentenced to 2 years probation"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "intimidation",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "retaliation",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "obstructing official business",
+          "intimidation",
+          "retaliation",
+          "resisting arrest",
+          "criminal trespassing"
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to obstructing official business; other charges dismissed; sentenced to 2 years probation and outpatient treatment"
+      },
+      "event_summary": {
+        "short": "On NYE 2023, officers responded to a Holiday Inn in Hilliard, Ohio for a trespassing complaint. The suspect, Benjamin Kadoo, was intoxicated, uncooperative, and resisted arrest. He was charged with multiple offenses, later pleaded guilty to obstructing official business, and received probation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "resisting_arrest",
+          "intoxication"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "new_year",
+          "hotel",
+          "intoxicated",
+          "trespassing"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 31st, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "When my hands are up, Hilliard",
+          "timestamp_seconds": 636,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "7-410 South Avenue",
+          "timestamp_seconds": 1217,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Benjamin Joseph Kadoo",
+          "timestamp_seconds": 306,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "He's a tall white guy",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "That's a knife",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "pleaded guilty to obstructing official business... sentenced to two years of probation",
+          "timestamp_seconds": 1692,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1650,5 +1650,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-19",
+        "published_date": "2025-07-08",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Charlotte County",
+          "city": "Punta Gorda",
+          "address_or_area": null,
+          "location_name": "grocery store",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Charlotte County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Charlotte County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Barbara",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "complainant",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded no contest to DUI and resisting with violence; sentenced to 4 years probation; battery on officer dismissed."
+      },
+      "event_summary": {
+        "short": "Drunk wife arrested for DUI after husband called 911; she kicked officers and was charged with battery on LEO (later dismissed).",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "DUI",
+          "domestic disturbance",
+          "husband called 911"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On February 19th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "deputies in Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Do you ever live in Punta Gorda?",
+          "timestamp_seconds": 497,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Hello, Barbara.",
+          "timestamp_seconds": 610,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with DUI, resisting an officer with violence, and battery on an officer.",
+          "timestamp_seconds": 686,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "charged with DUI, resisting an officer with violence, and battery on an officer.",
+          "timestamp_seconds": 686,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county (inferred from city)"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

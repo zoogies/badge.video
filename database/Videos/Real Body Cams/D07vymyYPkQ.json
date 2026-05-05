@@ -2890,5 +2890,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:15:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-16",
+        "published_date": "2024-05-09",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Monroe",
+          "city": null,
+          "address_or_area": "Florida Keys area near Key Deer refuge",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Monroe",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Darla",
+          "last_name": "Vidal",
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, released on bond"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence",
+            "category": "dui",
+            "statute": "316.193",
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting an Officer Without Violence",
+            "category": "resisting_arrest",
+            "statute": "843.02",
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing or Attempting to Elude a Law Enforcement Officer",
+            "category": "vehicle_pursuit",
+            "statute": "316.1935",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Resisting an Officer Without Violence",
+          "Fleeing or Attempting to Elude a Law Enforcement Officer"
+        ],
+        "case_number": null,
+        "disposition": "Fleeing charge dismissed; resisting charge pending"
+      },
+      "event_summary": {
+        "short": "DUI driver flipped off officer, led pursuit, arrested on March 16, 2024 in Monroe County, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-03-16T00:00:00",
+        "pursuit_started": "2024-03-16T00:00:00",
+        "arrest": "2024-03-16T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "florida",
+          "monroe county",
+          "dui",
+          "flipping off cop",
+          "pursuit"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 16th, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Moron County",
+          "timestamp_seconds": 18.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Darla Vidal",
+          "timestamp_seconds": 23.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "I'm 35 years old",
+          "timestamp_seconds": 120.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with resisting an officer without violence and fleeing or attempting to elude a law enforcement officer",
+          "timestamp_seconds": 1570.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "charge against the suspect for fleeing or attempting to allude a law enforcement officer was dismissed",
+          "timestamp_seconds": 1595.0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you're going to jail",
+          "timestamp_seconds": 218.0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "speeding vehicle ... high speed pursuit",
+          "timestamp_seconds": 0.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "geo.coordinates",
+          "agency.city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County inferred from mispronunciation 'Moron County' as Monroe County; may need verification."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

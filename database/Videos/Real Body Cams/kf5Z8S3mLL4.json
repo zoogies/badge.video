@@ -2835,5 +2835,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:19:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-17",
+        "published_date": "2025-10-25",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": "Tacoma",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "law enforcement",
+          "state": "Washington",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kalani",
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": "RCW 46.61.502",
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and Run (Property Damage)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          "DUI (RCW 46.61.502)"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "DUI arrest after suspect crashed car into fence, no pants, and urinated in public.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 20,
+        "pursuit_started": null,
+        "arrest": 790
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "bodycam",
+          "Washington",
+          "DUI",
+          "no pants",
+          "park"
+        ],
+        "content_warnings": [
+          "profanity"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title|description|transcript",
+          "quote": "On July 17th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description|transcript",
+          "quote": "deputies in Washington",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "What's going on today, Kalani?",
+          "timestamp_seconds": 561,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "She's 23.",
+          "timestamp_seconds": 730,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You are under arrest or DUI.",
+          "timestamp_seconds": 1025,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].statute",
+          "source": "transcript",
+          "quote": "RCW 4661 502 driving or being an actual physical control",
+          "timestamp_seconds": 790,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I can't even hang out of a guy in Tacoma",
+          "timestamp_seconds": 31,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

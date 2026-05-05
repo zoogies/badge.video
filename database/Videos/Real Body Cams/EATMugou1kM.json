@@ -1715,5 +1715,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-18",
+        "published_date": "2026-04-16",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "ice cream parlor",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Morgan",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "operating a vehicle under the influence (OVI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failing to stop after an accident",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "OVI",
+            "disposition": "dismissed",
+            "confidence": "high"
+          },
+          {
+            "label": "failing to stop after an accident",
+            "disposition": "guilty plea",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to failing to stop after an accident; OVI dismissed"
+      },
+      "event_summary": {
+        "short": "Drunk mom nearly hits kids at Ohio ice cream shop, arrested for OVI and failing to stop after accident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-04-18",
+        "pursuit_started": null,
+        "arrest": "2025-04-18"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "drunk driving",
+          "bodycam",
+          "ice cream shop",
+          "mom",
+          "OVI"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 18th, 2025, officers in Ohio rushed to a local ice cream parlor",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Morgan.",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "you're under arrest for OVI",
+          "timestamp_seconds": 540,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "charged with OVI, failing to stop after an accident.",
+          "timestamp_seconds": 670,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].disposition",
+          "source": "transcript",
+          "quote": "her charge of OVI was later dismissed.",
+          "timestamp_seconds": 686,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1].disposition",
+          "source": "transcript",
+          "quote": "She later amended her plea to guilty to the charge of failing to stop after an accident",
+          "timestamp_seconds": 690,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "referred to as 'Mom' in title and 'Morgan'",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1925,5 +1925,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:09:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-03",
+        "published_date": "2024-01-19",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": "Exxon gas station",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Exxon gas station",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alyssa",
+          "last_name": null,
+          "age": 29,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer without Violence (Obstruction)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk woman resists arrest at Florida gas station, charged with disorderly conduct and resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "gas station",
+          "drunk",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 3rd, 2022, officers in Florida responded to a disturbance at an Exxon gas station.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Exxon gas station",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Alyssa, stop resisting us, okay?",
+          "timestamp_seconds": 816,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "I'm only 29 years old.",
+          "timestamp_seconds": 298,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "The suspect was charged with Disorderly Conduct, Resisting an Officer with Violence, and Resisting an Officer without Violence (Obstruction).",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "the suspect was transported to jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Stop! Stop! No! We're not doing that.",
+          "timestamp_seconds": 1200,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "state_abbreviation inferred from state"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "County and city not specified in available text."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

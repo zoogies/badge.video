@@ -1725,5 +1725,240 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:15:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-28",
+        "published_date": "2023-03-18",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Sandoval",
+          "city": "Rio Rancho",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Rio Rancho Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "Sandoval",
+          "city": "Rio Rancho"
+        }
+      },
+      "geo": {
+        "address_or_place": "South of Walmart, near Bernalillo",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "approximate",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mercedes",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Dominic",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery Upon a Peace Officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct (2 counts)",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DWI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery Upon a Peace Officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct (2 counts)",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk passenger arrested after interfering with DWI stop, charged with battery on officers and disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-01-28T23:16:00",
+        "pursuit_started": null,
+        "arrest": "2023-01-28T23:??"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "DWI",
+          "disorderly_conduct",
+          "battery_on_officer"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "intoxicated",
+          "uncooperative",
+          "passenger"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 28th, 2023, at 11:16 pm, officers pulled over a vehicle to investigate the driver for possible DWI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "you guys live here in Rio Rancho",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "we were in Albuquerque",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My first name is Mercedes.",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "charged with 2 x counts of Battery Upon a Peace Officer and 2 x counts of Disorderly Conduct.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "battery on a police officer",
+          "timestamp_seconds": 1053,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "I'm disordered",
+          "timestamp_seconds": 1067,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Dominic got arrested for DWI.",
+          "timestamp_seconds": 627,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She is going to be arrested",
+          "timestamp_seconds": 823,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "County and agency inferred from city name."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

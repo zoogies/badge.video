@@ -1970,5 +1970,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:02:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-01",
+        "published_date": "2024-09-02",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Orange County",
+          "city": "Orlando",
+          "address_or_area": "East State Drive area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Orlando Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Orange County",
+          "city": "Orlando"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing after refusal to leave hotel",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for refusing to leave a hotel room while intoxicated.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-09-01T12:30:00",
+        "pursuit_started": null,
+        "arrest": "2023-09-01T13:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespass",
+          "intoxication"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "trespass"
+        ],
+        "tags": [
+          "hotel",
+          "intoxicated",
+          "dog"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 1st, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "with the Orlando Police Department, you're in Orlando.",
+          "timestamp_seconds": 272,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address",
+          "source": "transcript",
+          "quote": "150 at East State Drive",
+          "timestamp_seconds": 910,
+          "confidence": "low"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Your refusal to leave is a criminal violation.",
+          "timestamp_seconds": 180,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You are under arrest",
+          "timestamp_seconds": 554,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_name",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

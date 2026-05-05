@@ -4205,5 +4205,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-08-09",
+        "published_date": "2025-10-11T20:00:03Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Kitsap",
+          "city": "Bremerton",
+          "address_or_area": "Corner of Kitsap and the doll behind the market",
+          "location_name": "Subway restaurant",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Bremerton Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "Kitsap",
+          "city": "Bremerton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Leah",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": "Assault 3",
+            "confidence": "high"
+          },
+          {
+            "label": "Malicious Mischief",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Assault",
+          "Malicious Mischief",
+          "Resisting Arrest"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Woman with rocks threatens passersby, tasered and arrested after foot pursuit in Bremerton",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:00",
+        "pursuit_started": "15:34",
+        "arrest": "15:11"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "foot_pursuit",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "taser",
+          "mental health",
+          "missing person",
+          "rocks"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 9th, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Bremerton Police Department",
+          "timestamp_seconds": 2.11,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name's Leah",
+          "timestamp_seconds": 21.06,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with assault, malicious mischief and resisting arrest.",
+          "timestamp_seconds": 31.34,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Put the rocks down or you will be tased.",
+          "timestamp_seconds": 15.54,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "She's running towards subway.",
+          "timestamp_seconds": 15.37,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "suspect_age",
+          "location.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

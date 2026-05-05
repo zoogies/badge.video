@@ -1680,5 +1680,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:12:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-08",
+        "published_date": "2024-07-06T21:40:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Portage County",
+          "city": "Ravenna",
+          "address_or_area": "Chestnut and Main Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Ravenna City Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Portage County",
+          "city": "Ravenna"
+        }
+      },
+      "geo": {
+        "address_or_place": "Chestnut and Main Street, Ravenna, Ohio",
+        "intersection": "Chestnut and Main Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Devon",
+          "last_name": "Kobach",
+          "age": 32,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "OVI (Operating a Vehicle Under the Influence) - 2nd offense",
+            "category": "dui",
+            "statute": "OVI",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Obey Traffic Control Devices",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Resisting Arrest (dismissed)",
+          "OVI - 2nd offense (pleaded guilty)",
+          "OVI - BAC 0.08 - 0.17 (dismissed as part of plea)",
+          "Citation for Failure to Obey Traffic Control Devices (dismissed as part of plea)"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to OVI 2nd offense; sentenced to 180 days jail with 175 days suspended (5 days to serve), driver's license suspended 1 year, fined $525 plus $117 court costs."
+      },
+      "event_summary": {
+        "short": "Traffic stop of female driver for illegal left turn leads to DUI arrest and plea.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-01-08T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2024-01-08T00:00:00Z"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "OVI",
+          "female suspect",
+          "THC",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 8th, 2024",
+          "timestamp_seconds": 0.0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Ravenna City Police Department",
+          "timestamp_seconds": 32.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "32-year-old Devon Kobach",
+          "timestamp_seconds": 22.0,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with resisting arrest, OVI second defense, OVI BACC .17, and issued a citation for failure to obit traffic control devices",
+          "timestamp_seconds": 912.0,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "pleaded guilty to the charge of OVI, second offense... sentenced to 180 days in jail with 175 days suspended",
+          "timestamp_seconds": 920.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

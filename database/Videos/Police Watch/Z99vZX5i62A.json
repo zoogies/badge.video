@@ -1440,5 +1440,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2023-06-01",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Martin County",
+          "city": "Palm City",
+          "address_or_area": "Wendy's",
+          "location_name": "Old Wendy's, 5 Palm City",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": "Martin County",
+          "city": "Palm City"
+        }
+      },
+      "geo": {
+        "address_or_place": "Wendy's, Palm City, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Stephanie",
+          "last_name": "Sylvesterie",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Elderly woman detained for trespassing and resisting arrest at a Wendy's in Palm City, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest",
+          "trespassing"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "The old Wendy's, five in Palm City.",
+          "timestamp_seconds": 33,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "What's your name, ma'am? ... Stephanie.",
+          "timestamp_seconds": 545,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "And your last name? ... Sylvesterie.",
+          "timestamp_seconds": 607,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "You're intoxicated, and you're not free to leave.",
+          "timestamp_seconds": 125,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "I'm not sure if you're trespassing or resisting arrest",
+          "timestamp_seconds": 739,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "I'm going to put you under arrest.",
+          "timestamp_seconds": 140,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "exact_address",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

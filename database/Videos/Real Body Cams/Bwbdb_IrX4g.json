@@ -1180,5 +1180,234 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:14:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-11",
+        "published_date": "2022-12-26",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Monroe",
+          "city": null,
+          "address_or_area": "US Route 1, between Mile Marker 23 and 31",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "county sheriff",
+          "state": "Florida",
+          "county": "Monroe",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "US Route 1, Monroe County, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding 117 mph in 45 mph zone",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing or eluding with disregard for safety",
+            "category": "vehicle_pursuit",
+            "statute": "Flee With Disregard of Safety to Persons or Property (felony)",
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving 1st offense",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Marijuana possession (not more than 20 grams)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Flee With Disregard of Safety to Persons or Property",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving 1st Offense",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Marijuana Possession of Not More Than 20 Grams",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Motorcyclist traveling 117 mph in a 45 mph zone fled from Monroe County deputies, was apprehended after a pursuit, and found with marijuana.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-11-11T07:43:00",
+        "pursuit_started": "2022-11-11T07:43:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "arrest"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "reckless_driving",
+          "drug_offense"
+        ],
+        "tags": [
+          "speeding",
+          "marijuana",
+          "fleeing",
+          "motorcycle"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 11th, 2022 at 7:43 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "a Monroe County Sheriff’s Officer was on patrol on US Route 1",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "the driver was going 117 MPH, a total of 72 MPH over the posted limit",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].category",
+          "source": "description",
+          "quote": "The reading showed the driver was going 117 MPH",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "description",
+          "quote": "charged with a felony charge of Flee With Disregard of Safety to Persons or Property",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2].label",
+          "source": "description",
+          "quote": "two misdemeanors of Reckless Driving 1st Offense",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3].label",
+          "source": "description",
+          "quote": "Marijuana Possession of Not More Than 20 Grams",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "The suspect was immediately taken into custody and handcuffed",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "actively fleeing from the officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

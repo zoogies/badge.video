@@ -2170,5 +2170,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:13:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-03-05",
+        "published_date": "2025-07-13T20:30:00Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lee",
+          "city": "Fort Myers",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Catherine",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "Hispanic or Latino",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for DUI and resisting officer after being found intoxicated in parking garage.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": null,
+          "use_of_force": null,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "Resisting Arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "unknown"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title|description|transcript|metadata",
+          "quote": "On March 5th, 2025...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Fort Myerstora",
+          "timestamp_seconds": 49,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Catherine",
+          "timestamp_seconds": 249,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "Puerto Rican",
+          "timestamp_seconds": 245,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The suspect was charged with DUI introducing an officer without violence.",
+          "timestamp_seconds": 1453,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "The suspect was charged with DUI introducing an officer without violence.",
+          "timestamp_seconds": 1453,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "geo.coordinates",
+          "location.address_or_area"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

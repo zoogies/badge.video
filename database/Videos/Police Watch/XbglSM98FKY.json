@@ -2065,5 +2065,235 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-08-07",
+        "published_date": "2025-03-09",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Malina",
+          "last_name": null,
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Victor",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Liquor by a Person Under 21",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on LEO",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Liquor by a 21-Year-Old",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to DUI arrest of driver Victor and subsequent arrest of passenger Malina for battery on LEO, resisting arrest, and underage possession of alcohol.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "DUI",
+          "resisting arrest",
+          "battery on officer"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "traffic stop",
+          "DUI",
+          "resisting arrest",
+          "battery",
+          "underage drinking"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 7th, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "Malina focus listen to me",
+          "timestamp_seconds": 641,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "title",
+          "quote": "Bratty 20-Year-Old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "She was charged with battery on LEO, resisting arrest and possession of liquor by a 21-year-old.",
+          "timestamp_seconds": 1056,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].name",
+          "source": "transcript",
+          "quote": "I guess it was her boyfriend who was the driver, Victor. He was arrested for DUI.",
+          "timestamp_seconds": 785,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "title",
+          "quote": "Police Drag Her Out",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified; may require manual review"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

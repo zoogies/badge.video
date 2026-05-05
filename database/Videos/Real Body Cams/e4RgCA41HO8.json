@@ -1020,5 +1020,175 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-29",
+        "published_date": "2023-05-31",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": "Edmond",
+          "address_or_area": "local business",
+          "location_name": null,
+          "confidence": "estimated"
+        },
+        "agency": {
+          "name": "Edmond Police Department",
+          "type": "municipal police",
+          "state": "Oklahoma",
+          "county": null,
+          "city": "Edmond"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": null,
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "obstructing an officer",
+            "category": "obstruction_of_justice",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea; bench warrant issued for failure to appear"
+      },
+      "event_summary": {
+        "short": "Man refused to leave bathroom after business hours, claimed he was praying, arrested for public intoxication and resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "18:43",
+        "initial_contact": "18:43",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "Public Intoxication",
+          "Resisting Arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bathroom",
+          "praying",
+          "Edmond Police"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 29th, 2022, at around 6:43 pm",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Edmund police",
+          "timestamp_seconds": 31,
+          "confidence": "estimated"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with public intoxication and resisting arrest. ... charges were amended to public intoxication and obstructing an officer.",
+          "timestamp_seconds": 477,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect pleaded guilty to both charges, but later failed to appear in court for sentencing. ... the court has issued a bench warrant",
+          "timestamp_seconds": 484,
+          "confidence": "confirmed"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript says 'Edmund' but likely Edmond, Oklahoma"
+        ],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location assumed to be Edmond, Oklahoma based on 'Edmund police' reference."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

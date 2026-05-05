@@ -2335,5 +2335,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:08:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-20",
+        "published_date": "2025-07-31T20:36:55Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 68,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic violence - assault on husband",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest / obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for domestic violence after traffic stop; transported to hospital then jail.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "meltdown",
+          "entitled"
+        ],
+        "content_warnings": [
+          "violence",
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 20th, 2025. A traffic stop was conducted after a woman had just assaulted her husband.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "I'm 68 years old.",
+          "timestamp_seconds": 602.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.sex_or_gender",
+          "source": "transcript",
+          "quote": "Entitled Woman",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.sex_or_gender",
+          "source": "transcript",
+          "quote": "my husband",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "For hitting your husband.",
+          "timestamp_seconds": 1058,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're in placed under the red for domestic violence... For hitting your husband.",
+          "timestamp_seconds": 1055,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "I have a big lump on my head from where I was pushed onto the floor.",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not provided in video metadata or transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

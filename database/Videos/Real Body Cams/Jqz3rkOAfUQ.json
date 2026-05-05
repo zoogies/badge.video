@@ -1240,5 +1240,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:19:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-28",
+        "published_date": "2024-10-17T21:40:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Operating vehicle under the influence (OVI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing official business",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless operation of a vehicle (two counts)",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "The suspect pled no contest to remaining charges (resisting arrest, domestic violence, one count reckless operation) and was found guilty. Sentenced to 50 days with 35 suspended, $375 suspended fines, ordered to pay $630 court costs."
+      },
+      "event_summary": {
+        "short": "Welfare check on couple fighting leads to DUI arrest and conviction for drunk driving, resisting arrest, and domestic violence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 17,
+        "pursuit_started": null,
+        "arrest": 544
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_dispute",
+          "dui",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "ohio",
+          "domestic",
+          "dui",
+          "female-suspect"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On March 28th, 24",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "an officer in Ohio",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with resisting arrest, domestic violence, assault, obstructing official business, and two counts of reckless operation of a vehicle.",
+          "timestamp_seconds": 663,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect plea did not guilty to the remaining charges, later amending her plea to no contest, and was found guilty in the case. The suspect was sentenced to 50 days with 35 days in jail suspended and issued $375 in suspended fines. The court ordered the suspect to pay the remaining $630 in court costs.",
+          "timestamp_seconds": 668,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "She",
+          "timestamp_seconds": 242,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name",
+          "suspect_name",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

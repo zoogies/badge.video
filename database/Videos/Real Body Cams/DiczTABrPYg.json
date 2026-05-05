@@ -2700,5 +2700,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:16:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-05",
+        "published_date": "2022-12-23",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Santa Rosa County",
+          "city": null,
+          "address_or_area": "Highway 98",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Santa Rosa County Sheriff's Office",
+          "type": "local",
+          "state": "Florida",
+          "county": "Santa Rosa County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 98, Santa Rosa County, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ludmila",
+          "last_name": "Mason",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "self-identified as Russian in transcript",
+            "confidence": "medium"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI (4th or subsequent)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI with Property Damage",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the Scene of a Crash",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Violation of a Driver's License Restriction",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bribery of a Public Servant",
+            "category": "bribery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk driver tries to bribe deputy after hitting trooper's car.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "hit_and_run",
+          "bribery"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop"
+        ],
+        "tags": [
+          "drunk",
+          "dui",
+          "bodycam",
+          "arrest",
+          "bribery"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 5th, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Santa Rosa County Sheriff’s Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Ludmia Mason",
+          "timestamp_seconds": 552,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Mason was later charged with DUI (4th or subsequent), DUI with Property Damage, Leaving the Scene of a Crash, Violation of a Driver's License Restriction, and Bribery of a Public Servant.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "exact address",
+          "zip code",
+          "case number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

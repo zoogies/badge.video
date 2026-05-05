@@ -2405,5 +2405,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:09:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-19",
+        "published_date": "2024-07-02T21:00:03Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "St. Johns",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "concert venue",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ashley",
+          "last_name": "Bloom",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting an Officer without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Trespass In An Occupied Structure Or Conveyance",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk woman at concert pushes security, fights police, arrested for resisting and trespass.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "concert",
+          "Florida",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language",
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On October 19th, 23",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Drunk Florida Woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "St. John's County Jail",
+          "timestamp_seconds": 309,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Ashley",
+          "timestamp_seconds": 1220,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "Ashley Bloom",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "30-year-old Ashley Bloom",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with Resisting an Officer without Violence and Trespass In An Occupied Structure Or Conveyance",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "battery on a law enforcement officer",
+          "timestamp_seconds": 1287,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "agency",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Battery charge mentioned in transcript but not in description; transcript may be inaccurate"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

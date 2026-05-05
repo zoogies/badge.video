@@ -1130,5 +1130,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:07:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-13",
+        "published_date": "2026-03-21",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "St. Lucie County",
+          "city": "Port St. Lucie",
+          "address_or_area": "GameStop",
+          "location_name": "GameStop",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Port St. Lucie Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "St. Lucie County",
+          "city": "Port St. Lucie"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": "fairly young dad",
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": "1",
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": "2",
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child neglect",
+            "category": "child_neglect",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "two counts of child neglect",
+            "category": "child_neglect",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $5,000 bond; case proceeding through court"
+      },
+      "event_summary": {
+        "short": "Father left two toddlers in a hot car without AC while shopping at GameStop; police arrested him for child neglect.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-06-13",
+        "pursuit_started": null,
+        "arrest": "2025-06-13"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_neglect",
+          "hot_car"
+        ],
+        "crime_categories": [
+          "child_neglect",
+          "drug_offense"
+        ],
+        "tags": [
+          "toddlers",
+          "hot car",
+          "GameStop",
+          "Port St. Lucie",
+          "child neglect"
+        ],
+        "content_warnings": [
+          "child_endangerment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 13th, 2025.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Officers with the Port St Lucie Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Port St Lucie Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "arrested a man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged him with two counts of child neglect",
+          "timestamp_seconds": 1235,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "arrested the father",
+          "timestamp_seconds": 1235,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "children found sweating heavily, faces red",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "a one-year-old and a two-year-old",
+          "timestamp_seconds": 1242,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "specific address",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

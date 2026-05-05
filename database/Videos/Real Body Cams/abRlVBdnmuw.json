@@ -1505,5 +1505,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:12:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-22",
+        "published_date": "2024-07-10",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": "intersection downtown",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a Police Officer",
+            "category": "assault",
+            "statute": "Ohio Revised Code 2903.13 (assault)",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Persistent Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault on a Police Officer (fourth-degree felony)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Persistent Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Charges of resisting arrest and disorderly conduct were dismissed. Assault on a police officer charge was sent to grand jury."
+      },
+      "event_summary": {
+        "short": "Intoxicated woman fights with son, resists arrest, assaults officer, and is taken into custody on Ohio street.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_disturbance",
+          "domestic_disturbance"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "intoxicated",
+          "mother",
+          "son",
+          "bodycam",
+          "police"
+        ],
+        "content_warnings": [
+          "violent content",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 22nd, 2023, officers in Ohio were dispatched...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "officers in Ohio were dispatched",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "title",
+          "quote": "Drunk Karen",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "charged with Assault on a Police Officer, Resisting Arrest, and Persistent Disorderly Conduct",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "In court, the prosecutor dismissed the charges of resisting arrest and disorderly conduct. ... directly sent to a grand jury",
+          "timestamp_seconds": 1148,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Missing specific city/county location; may require manual review."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

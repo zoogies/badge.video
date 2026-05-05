@@ -3050,5 +3050,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-02",
+        "published_date": "2025-04-12T22:00:04Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Butler",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Ohio",
+          "county": "Butler",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexa",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "Blake",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty of domestic violence. Sentenced to 6 months jail with 150 days suspended, 2 years probation, credit for 30 days served, $1,075 fines and costs with $600 suspended, attend anger management."
+      },
+      "event_summary": {
+        "short": "Officers in Ohio enforce custody order; mother assaults father and is arrested for domestic violence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:16",
+        "pursuit_started": null,
+        "arrest": "12:10"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "custody_dispute",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "custody",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "violence",
+          "child_involved"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On July 2nd, 24, officers in Ohio arrived at a home of a mother to enforce a custody order",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "if you're living within Butler County",
+          "timestamp_seconds": 1746,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "she's under arrest for domestic violence",
+          "timestamp_seconds": 944,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "she's under arrest for resisting arrest",
+          "timestamp_seconds": 1159,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The suspect was charged with domestic violence. ... found guilty. ... sentenced to six months of jail with 150 days suspended, alongside two years of probation with credit for 30 days served. ... ordered to pay $1,075 in fines and court costs with $600 suspended and attend anger management classes.",
+          "timestamp_seconds": 1960,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Are you Alexa? Yes.",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "So what's your phone number, Blake?",
+          "timestamp_seconds": 1334,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Court order from Marion County (Indiana) but incident location mentioned as Butler County, Ohio."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "zip code",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

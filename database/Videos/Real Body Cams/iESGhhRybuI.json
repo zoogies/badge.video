@@ -1115,5 +1115,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-04",
+        "published_date": "2023-11-19T18:30:23Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": null,
+          "city": null,
+          "address_or_area": "Dollar General",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "local",
+          "state": "New Mexico",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Chloe",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shoplifting $250 or Less",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery Upon a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, Evading, or Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shoplifting $250 or Less",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "ongoing"
+      },
+      "event_summary": {
+        "short": "Shoplifter at Dollar General in New Mexico resists arrest, charged with battery on officer, resisting, and shoplifting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Dollar General",
+          "New Mexico",
+          "shoplifter"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 4th, 2023, officers in New Mexico received a report of a shoplifter at Dollar General.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "state",
+          "source": "description",
+          "quote": "officers in New Mexico",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "shoplifter at Dollar General",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Chloe",
+          "timestamp_seconds": 2.35,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "The suspect was charged with Battery Upon A Peace Officer, Resisting, Evading, or Obstructing an Officer, and Shoplifting $250 or Less.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "The officers placed the suspect under arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City and county not specified; agency name not identified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2700,5 +2700,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-02",
+        "published_date": "2024-03-31",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Walmart",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Emma",
+          "last_name": null,
+          "age": 19,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "price tag switching",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mom and daughter arrested for shoplifting and drug possession at Walmart.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "drug possession"
+        ],
+        "crime_categories": [
+          "theft",
+          "drug_offense"
+        ],
+        "tags": [
+          "Walmart",
+          "self-checkout",
+          "price tag scam"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 2nd, 2022",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "How long have you been to Florida?",
+          "timestamp_seconds": 610,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "What's your personal name? Emma? Emma? Okay.",
+          "timestamp_seconds": 276,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "And you're 19?",
+          "timestamp_seconds": 642,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I used to stealing stuff, obviously.",
+          "timestamp_seconds": 160,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I changed some prices too.",
+          "timestamp_seconds": 165,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Meth, heroin, fentanyl, fent.",
+          "timestamp_seconds": 1001,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Both in handcuffs",
+          "timestamp_seconds": 1500,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location details incomplete"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

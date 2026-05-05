@@ -2455,5 +2455,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-14",
+        "published_date": "2025-08-06",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": null,
+          "address_or_area": "Goodwill parking lot",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Washington",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Judy",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving without a valid license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated woman arrested for DUI after witness report; used WRAP restraints due to non-compliance.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "DUI",
+          "WRAP restraints",
+          "Goodwill parking lot"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 14th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in Washington",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Goodwill parking lot",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Judy",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You're under arrest for DUI",
+          "timestamp_seconds": 740,
+          "confidence": "high"
+        },
+        {
+          "field": "charges[1]",
+          "source": "transcript",
+          "quote": "DUI and driving without a valid license",
+          "timestamp_seconds": 1057,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "wrap set up",
+          "timestamp_seconds": 850,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City and county not specified; manual review needed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

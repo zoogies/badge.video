@@ -1290,5 +1290,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:06:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-06",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": "Web Lake Road, near boat launch, state park",
+          "location_name": "CISO Web Wilderness Park (unverified)",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Gwendolyn",
+          "last_name": null,
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 12,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated child abuse",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "aggravated battery",
+          "aggravated child abuse"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother stabs 12-year-old daughter and leaves her for dead at a state park; victim found by passersby.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "pocket knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "assault"
+        ],
+        "crime_categories": [
+          "assault",
+          "domestic_violence",
+          "child_abuse"
+        ],
+        "tags": [
+          "mother stabs daughter",
+          "12-year-old",
+          "state park",
+          "bodycam",
+          "Florida"
+        ],
+        "content_warnings": [
+          "violence",
+          "child abuse"
+        ],
+        "severity": "severe"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Perjury has a crime of the state of Florida.",
+          "timestamp_seconds": 329.0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "We are in a state park. It's called, we're not from here. ... Web Lake Road",
+          "timestamp_seconds": 12.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the victim identifies 35 year old gwendoline as the attacker",
+          "timestamp_seconds": 132.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "35 year old gwendoline",
+          "timestamp_seconds": 132.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "title",
+          "quote": "Mother Stabs 12-Year-Old Daughter",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Officers arrested Gwendolyn, 35, and charged her with aggravated battery and aggravated child abuse.",
+          "timestamp_seconds": 610.0,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "She said it was like a pocket knife.",
+          "timestamp_seconds": 295.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "city",
+          "suspect_last_name",
+          "victim_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

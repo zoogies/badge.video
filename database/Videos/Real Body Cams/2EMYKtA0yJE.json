@@ -985,5 +985,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-02-20",
+        "published_date": "2023-04-02",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Lake",
+          "city": "Mentor",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "estimated"
+        },
+        "agency": {
+          "name": "Mentor Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Lake",
+          "city": "Mentor"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Aaron",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While Intoxicated (DWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Careless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated DWI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving While License Revoked (DWI Related)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Careless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "undergoing court proceedings"
+      },
+      "event_summary": {
+        "short": "Driver with revoked license almost crashes twice, arrested for aggravated DWI with BAC 0.24-0.25.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-02-20T17:54:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "DWI",
+          "BAC",
+          "revoked license"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 20th, 2023, at around 5:54 pm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "mental police department",
+          "timestamp_seconds": 42,
+          "confidence": "estimated"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Aaron? Is it A-A-R-O-N? Yeah.",
+          "timestamp_seconds": 108,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with Aggravated DWI, Driving While License Revoked (DWI Related), and Careless Driving.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "turn around and press your hand behind your back",
+          "timestamp_seconds": 487,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "city",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Location inferred from 'mental police department' as Mentor Police Department; not explicitly stated.",
+        "Incident date discrepancy between description (Feb 20) and transcript (Feb 28); description used."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

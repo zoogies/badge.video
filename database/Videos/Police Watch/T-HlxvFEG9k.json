@@ -2010,5 +2010,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:03:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-04-19",
+        "published_date": "2024-10-24",
+        "location": {
+          "state": "Missouri",
+          "state_abbreviation": "MO",
+          "county": null,
+          "city": "Mexico",
+          "address_or_area": null,
+          "location_name": "Centennial School",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "school police",
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Santiago",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged and released to parent"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "battery on a household member",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "battery on a household member",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charged, released to parent"
+      },
+      "event_summary": {
+        "short": "Juvenile slapped girlfriend at school, attempted to flee, charged with battery on a household member.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-04-19",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "foot_pursuit",
+          "school_incident"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault"
+        ],
+        "tags": [
+          "juvenile",
+          "school resource officer",
+          "bodycam",
+          "battery on a household member"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 19th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "anybody in the city of Mexico that is dating...",
+          "timestamp_seconds": 763,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Santiago",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "battery on a household member",
+          "timestamp_seconds": 760,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "took off on me",
+          "timestamp_seconds": 516,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I pulled my taser out",
+          "timestamp_seconds": 563,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "State inferred as Missouri based on city of Mexico; county not specified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

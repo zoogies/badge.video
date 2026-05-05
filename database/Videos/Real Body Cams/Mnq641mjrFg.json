@@ -1410,5 +1410,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:21:13Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-12-02",
+        "published_date": "2023-02-08T03:30:10Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Ross County",
+          "city": "Chillicothe",
+          "address_or_area": "Maple Avenue area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Chillicothe Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Ross County",
+          "city": "Chillicothe"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alfredo",
+          "last_name": "Hernandez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "witness statement in transcript",
+            "confidence": "high"
+          },
+          "status": "arrested and later found guilty"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating a Vehicle While Impaired (OVI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Control",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the Scene of a Crash",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Operating a Vehicle While Impaired",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Control",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the Scene of a Crash",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "found guilty, ordered to pay restitution"
+      },
+      "event_summary": {
+        "short": "DUI crash into residence in Chillicothe, OH",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle crash",
+          "DUI",
+          "hit and run"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "drunk driving",
+          "crash"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title and description",
+          "quote": "On December 2nd, 2022, at around 2:00 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Chillicothe Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Chillicothe",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Chilicothe Police Department in Ohio",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "inference",
+          "quote": "Chillicothe is in Ross County, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Alfredo Hernandez",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "witness: 'He looked white.'",
+          "timestamp_seconds": 87,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description and transcript",
+          "quote": "charged with operating a vehicle while impaired, failure to control & leaving the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "later found guilty in court and was asked to pay restitution",
+          "timestamp_seconds": 638,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "moderate",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

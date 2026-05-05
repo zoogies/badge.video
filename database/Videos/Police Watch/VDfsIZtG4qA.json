@@ -1440,5 +1440,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-01",
+        "published_date": "2024-07-11",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore City",
+          "city": "Baltimore",
+          "address_or_area": "apartment complex",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Menly Police Department",
+          "type": "municipal police",
+          "state": "Maryland",
+          "county": "Baltimore City",
+          "city": "Baltimore"
+        }
+      },
+      "geo": {
+        "address_or_place": "apartment complex",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Xavier",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "obstruction of justice",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "obstruction",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officers respond to domestic dispute, man arrested for obstruction after locking girlfriend out of apartment.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_dispute"
+        ],
+        "crime_categories": [
+          "obstruction"
+        ],
+        "tags": [
+          "bodycam",
+          "obstruction",
+          "domestic"
+        ],
+        "content_warnings": [
+          "mild language",
+          "partial nudity"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 1st, 2024.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Xavier, listen.",
+          "timestamp_seconds": 253,
+          "confidence": "high"
+        },
+        {
+          "field": "location_city",
+          "source": "transcript",
+          "quote": "North Baltimore",
+          "timestamp_seconds": 657,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency",
+          "source": "transcript",
+          "quote": "Menly Police Department",
+          "timestamp_seconds": 49,
+          "confidence": "low"
+        },
+        {
+          "field": "arrest_charge",
+          "source": "transcript",
+          "quote": "At this point, I don't believe that he's under arrest for domestic, so it will just be the obstruction.",
+          "timestamp_seconds": 795,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Agency name 'Menly Police Department' does not match city of Baltimore; possible transcription error."
+        ],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "victim_name",
+          "precise_location",
+          "age"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Potential transcription errors in agency name and location names."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

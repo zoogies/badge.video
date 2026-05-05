@@ -740,5 +740,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-05",
+        "published_date": "2025-10-29T22:12:00Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": "Walmart parking lot",
+          "location_name": "Walmart",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting/petty theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting/obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "petty theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pled no contest; fined $350 plus court costs; driver's license suspended 6 months"
+      },
+      "event_summary": {
+        "short": "Woman shoplifts from Walmart, flees from officer, is tased, and later charged with resisting, theft, and marijuana possession; pleads no contest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "foot_pursuit",
+          "tasing"
+        ],
+        "crime_categories": [
+          "theft",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "shoplifting",
+          "Walmart",
+          "Florida",
+          "bodycam",
+          "marijuana"
+        ],
+        "content_warnings": [
+          "language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On September 5th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "an officer in Florida",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "title",
+          "quote": "responded to a Walmart",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with, resisting an officer without violence, petty theft and possession of marijuana.",
+          "timestamp_seconds": 469,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "She was ordered to pay a $350 fine, along with all court costs, and her Florida driver's license was suspended for a total of six months.",
+          "timestamp_seconds": 483,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I'm a taze you.",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

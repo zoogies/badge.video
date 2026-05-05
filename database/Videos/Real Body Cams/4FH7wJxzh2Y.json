@@ -790,5 +790,176 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-22",
+        "published_date": "2025-04-30",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Oklahoma County",
+          "city": "Edmond",
+          "address_or_area": "Walmart",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Edmond Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": "Oklahoma County",
+          "city": "Edmond"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart, Edmond, Oklahoma",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "ordered to pay $1,160 in court costs"
+      },
+      "event_summary": {
+        "short": "Officers responded to a shoplifting at Walmart where a suspect switched barcodes on Lego sets, fled on foot, and was arrested after a brief chase. Charged with theft and resisting an officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-11-22T00:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Walmart",
+          "Lego",
+          "barcode switching"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 22nd, 24, officers in Oklahoma responded to a shoplifting in progress at a local Walmart.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "This can go from you going to the Edmund City jail and getting to bond down in a few hours, or I'm going to go through the process of just doing a state charge and taking you out to Oklahoma County.",
+          "timestamp_seconds": 380,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Walmart security reported a man had switched barcodes for multiple Lego sets before fleeing on foot.",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with resisting an officer and theft.",
+          "timestamp_seconds": 684,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "agency name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

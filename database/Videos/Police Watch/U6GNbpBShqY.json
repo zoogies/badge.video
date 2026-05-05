@@ -1895,5 +1895,184 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-05",
+        "published_date": "2024-01-02",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": null,
+          "city": "Fort Worth",
+          "address_or_area": "airport",
+          "location_name": "FW Airport",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "FW Airport Police",
+          "type": "airport police",
+          "state": "Texas",
+          "county": null,
+          "city": "Fort Worth"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for public intoxication at airport, resists arrest and assaults officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "resisting_arrest",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "assault"
+        ],
+        "tags": [
+          "airport",
+          "drunk",
+          "Germany",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 5th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "you're at the FW Airport police report",
+          "timestamp_seconds": 939,
+          "confidence": "medium"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "We're done. You're under arrest.",
+          "timestamp_seconds": 176,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "public intoxication",
+          "timestamp_seconds": 180,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "now you have assault on a peace officer",
+          "timestamp_seconds": 343,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "she kicked me and she headbutted me",
+          "timestamp_seconds": 317,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "exact airport name",
+          "county",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

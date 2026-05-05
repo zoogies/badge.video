@@ -1585,5 +1585,232 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:20:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-07",
+        "published_date": "2023-08-27",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Preble County",
+          "city": "Eaton",
+          "address_or_area": "Wendy's restaurant",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Eaton Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Preble County",
+          "city": "Eaton"
+        }
+      },
+      "geo": {
+        "address_or_place": "Wendy's, Eaton, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dena",
+          "last_name": "Craig",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Marlin",
+          "last_name": null,
+          "age": 73,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Damaging/Endangering",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing Official Business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Damaging/Endangering",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing Official Business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Grandma throws hamburger at Wendy's employee over wrong order, arrested with husband",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "disorderly_conduct"
+        ],
+        "crime_categories": [
+          "assault",
+          "disorderly_conduct",
+          "obstruction"
+        ],
+        "tags": [
+          "grandma",
+          "Wendy's",
+          "hamburger",
+          "drive-thru",
+          "Eaton"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 7th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "this is Officer Nickle, the Eaton Police Department",
+          "timestamp_seconds": 431,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "It's Dena Craig",
+          "timestamp_seconds": 729,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Marlin was charged with obstructing official business and resisting arrest",
+          "timestamp_seconds": 898,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Dina was charged with obstructing official business, criminal damaging slash endangering, and assault",
+          "timestamp_seconds": 909,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "both suspects pleaded not guilty to all charges... case is still undergoing court proceedings",
+          "timestamp_seconds": 912,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "precise_geo"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Name spelling discrepancy: Dena vs Dina"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2055,5 +2055,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:19:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-13",
+        "published_date": "2025-10-03T23:00:31Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": "Kirkland",
+          "address_or_area": "nearby parking lot",
+          "location_name": "Kirkland",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kirkland Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": null,
+          "city": "Kirkland"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "illegal left turn",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for illegal left turn leads to warrant arrest and resisting arrest charge.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 16,
+        "pursuit_started": null,
+        "arrest": 191
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "police",
+          "bodycam",
+          "Kirkland",
+          "Washington",
+          "racial profiling allegation"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "racial_profiling_allegations"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 13th, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "an officer in Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "I'm Officer, Kirkland Police",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Kirkland police is abusing their authority and abusing another black guy",
+          "timestamp_seconds": 360,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "making an illegal left turn",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "you have a warrant out of Bellevue",
+          "timestamp_seconds": 181,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "you're going to be under arrest for resisting arrest",
+          "timestamp_seconds": 822,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.arrest",
+          "source": "transcript",
+          "quote": "You are under arrest for the warrant",
+          "timestamp_seconds": 191,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

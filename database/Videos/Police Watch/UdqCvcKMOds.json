@@ -940,5 +940,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-03",
+        "published_date": "2024-02-08T18:08:20Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Lakewood",
+          "address_or_area": "Library",
+          "location_name": "Lakewood Public Library",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lakewood Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Lakewood"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Harassing a woman with racial slurs",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Open container of alcohol",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Open container",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police arrested a man for open container and resisting after he was accused of harassing a woman with racial slurs at a library.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 3,
+        "pursuit_started": null,
+        "arrest": 195
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "library",
+          "harassment",
+          "open container",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "library",
+          "racial slurs",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "harassment",
+          "racial slurs"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 3rd, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Lakewood, Ohio.",
+          "timestamp_seconds": 220,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "harassing a woman and calling her racial slurs",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "That's called beer, an open container.",
+          "timestamp_seconds": 129,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "you're under arrest",
+          "timestamp_seconds": 195,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

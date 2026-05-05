@@ -2735,5 +2735,184 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:05:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-02-22",
+        "published_date": "2023-10-17",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Bobby",
+          "last_name": "Davis",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of crack cocaine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False identification",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading detention",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated man found with crack cocaine and pipe, provides fake name, attempts to flee, OC sprayed and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-02-22",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "OC spray",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "drug_related",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "crack cocaine",
+          "false name",
+          "attempt to flee"
+        ],
+        "content_warnings": [
+          "drug use references"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 22nd, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "What's your name? Eric. Eric Davis? Bobby?",
+          "timestamp_seconds": 443,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "a pipe and crack cocaine on him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "possession evading PI",
+          "timestamp_seconds": 1625,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Is he spray him? He got spray, yes.",
+          "timestamp_seconds": 1907,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available to determine state, county, or city."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

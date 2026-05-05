@@ -1645,5 +1645,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-12-07",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Monroe",
+          "city": "Cudjoe Key",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Rojas",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Open Container",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child Neglect",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Open Container in a Vehicle",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Child Neglect",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Off-duty deputy arrested for DUI with minor in vehicle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "child_endangerment",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop",
+          "domestic_violence"
+        ],
+        "tags": [
+          "off-duty deputy",
+          "bodycam",
+          "DUI",
+          "child neglect",
+          "Florida",
+          "open container"
+        ],
+        "content_warnings": [
+          "child endangerment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Downtown, Key West, Broward.",
+          "timestamp_seconds": 130,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "cudjo key",
+          "timestamp_seconds": 650,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Deputy Rojas",
+          "timestamp_seconds": 70,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "He was later charged with DUI, open container in a vehicle, child neglect.",
+          "timestamp_seconds": 940,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency_name",
+          "city",
+          "suspect_first_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

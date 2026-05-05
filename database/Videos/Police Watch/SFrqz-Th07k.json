@@ -1725,5 +1725,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:02:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-07",
+        "published_date": "2024-07-06",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jenna",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "indecent exposure",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "arrested"
+      },
+      "event_summary": {
+        "short": "Woman arrested for indecent exposure after refusing to put on a shirt in a store.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_indecency"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "shirtless",
+          "trespassing",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "nudity"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 7th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.first_name",
+          "source": "transcript",
+          "quote": "Jenna",
+          "timestamp_seconds": 53,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.indecent_exposure",
+          "source": "transcript",
+          "quote": "Because the indecent exposure, that is an arrestable crime",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.trespassing",
+          "source": "description",
+          "quote": "officer was called to a store regarding a shirtless woman who was trespassing",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes.resisting_arrest",
+          "source": "transcript",
+          "quote": "she tried to get away from him... started kicking",
+          "timestamp_seconds": 720,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Get in the car",
+          "timestamp_seconds": 440,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location.state",
+          "location.county",
+          "location.city",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not explicitly stated; video may need manual review to determine jurisdiction."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

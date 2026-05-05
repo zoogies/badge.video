@@ -2055,5 +2055,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:18:36Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-28",
+        "published_date": "2024-09-30T18:10:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Kettering",
+          "address_or_area": "Kroger grocery store",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kettering Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Montgomery",
+          "city": "Kettering"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Monique",
+          "last_name": "Smith",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Misdemeanor theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Active felony warrant for assaulting a police officer and obstructing official business",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Obstructing official business",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Theft charge dismissed. Obstructing official business: found guilty, sentenced to probation and $362 court costs."
+      },
+      "event_summary": {
+        "short": "Woman arrested for theft from Kroger, found to have an active felony warrant, charged with theft and obstruction.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "retail theft",
+          "warrant arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "obstruction"
+        ],
+        "tags": [
+          "Kroger",
+          "Kettering",
+          "Ohio",
+          "bodycam",
+          "warrant"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 28th, 2024, officers in Ohio received a call reporting a theft from a grocery store.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "When's the last time Kettering PD3 on the ground?",
+          "timestamp_seconds": 1123,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "what is your name monique what's your last name smith",
+          "timestamp_seconds": 151,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "The suspect was charged with obstructing official business in misdemeanor theft. ... The court later dismissed the suspect's charge of misdemeanor theft. She later pleaded not guilty to obstructing of official business, but was found guilty and sentenced to pirees of probation in order to pay $362 in court costs.",
+          "timestamp_seconds": 1280,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact address",
+          "age",
+          "race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

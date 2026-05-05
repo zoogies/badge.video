@@ -2775,5 +2775,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:10:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-12",
+        "published_date": "2023-11-25",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": null,
+          "city": null,
+          "address_or_area": "Marshall's department store parking lot",
+          "location_name": "Marshall's",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Crystal",
+          "last_name": null,
+          "age": 19,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shoplifting (over $500 but not more than $2,500)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with Evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery upon a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, Evading, or Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Shoplifting (over $500 but not more than $2,500)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with Evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery upon a Peace Officer (3 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, Evading, or Obstructing an Officer (2 counts)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Female teen shoplifts from Marshall's, resists arrest, kicks officers, charged with multiple offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-01-12",
+        "initial_contact": "2023-01-12",
+        "pursuit_started": null,
+        "arrest": "2023-01-12"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "resisting_arrest",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "shoplifting",
+          "teen",
+          "female",
+          "Marshall's",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "physical altercation",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 12th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in New Mexico",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Crystal, get out of the car.",
+          "timestamp_seconds": 346,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "I'm only 19.",
+          "timestamp_seconds": 772,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "The suspect was charged with Shoplifting (over $500 but not more than $2,500), Tampering with Evidence, three counts of Battery upon a Peace Officer, and two counts of Resisting, Evading, or Obstructing an Officer.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name",
+          "agency_state"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location is only state-level; city and county unknown.",
+        "Agency not identified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

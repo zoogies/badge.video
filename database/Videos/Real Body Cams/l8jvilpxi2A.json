@@ -2605,5 +2605,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:20:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-29",
+        "published_date": "2023-01-13",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Pickaway",
+          "city": "Circleville",
+          "address_or_area": "819 South Seattle",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Circleville Police Department",
+          "type": "local",
+          "state": "Ohio",
+          "county": "Pickaway",
+          "city": "Circleville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Lisa",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "felony warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug possession (methamphetamine and fentanyl)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "tampering with evidence",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "K9 deployment misdemeanor",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "3rd degree felony drug possession",
+          "3rd degree felony tampering with evidence",
+          "3rd degree felony drug paraphernalia",
+          "4th degree misdemeanor K9 deployment"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Foot pursuit of male with felony warrant; drugs tossed; female driver arrested for drug possession, tampering, and paraphernalia.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-09-29T18:26:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "handgun drawn, taser drawn but not used",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "drug_offense"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "warrant"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "methamphetamine",
+          "fentanyl",
+          "k9"
+        ],
+        "content_warnings": [
+          "drugs"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 29th, 2022, at 6:26 pm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Circleville Police Department officer was on patrol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "819 South Seattle",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "I got a felony one",
+          "timestamp_seconds": 192,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "description",
+          "quote": "The driver was then placed under arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "29.09g Methamphetamine and 2.19g Fentanyl",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

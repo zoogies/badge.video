@@ -1265,5 +1265,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:04:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-21",
+        "published_date": "2024-06-20",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "DeLand",
+          "address_or_area": "South Ponce near Marietti's",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": "DeLand"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": null,
+          "status": "unknown"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman assaulted and robbed another woman, then resisted arrest while intoxicated.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "robbery",
+          "assault",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "robbery",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "intoxication",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "language",
+          "sexual assault mention"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On March 21st, 2023, officers received a 911 call",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "South Ponce, by the Marieti's over there",
+          "timestamp_seconds": 54,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "US 1 16th?",
+          "timestamp_seconds": 63,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.type",
+          "source": "transcript",
+          "quote": "they aren't to call the sheriff's office for that",
+          "timestamp_seconds": 597,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "this chick walked up and grabbed her purse, grabbed her phone, punched her in the face while she was doing it, and then ran off with it",
+          "timestamp_seconds": 363,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "started to hit me",
+          "timestamp_seconds": 37,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "she did not want a female officer to search her",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "she kept asking why she was being placed under arrest",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city inferred with medium confidence"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Location inferred from transcript mentions of South Ponce, Marietti's, US 1, likely DeLand, Florida. Manual verification recommended."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

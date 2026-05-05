@@ -2170,5 +2170,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:19:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-10-14",
+        "published_date": "2025-11-11T00:30:25Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Hamilton County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "local mall",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "county sheriff",
+          "state": "Ohio",
+          "county": "Hamilton County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Arianna",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Menacing",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal trespass (considered but not charged)",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Menacing",
+            "disposition": "dismissed"
+          },
+          {
+            "label": "Resisting arrest",
+            "disposition": "convicted by plea"
+          }
+        ],
+        "case_number": null,
+        "disposition": "The prosecutor dismissed the menacing charge; she was convicted by plea for resisting arrest and ordered to pay a $130 fine and court costs."
+      },
+      "event_summary": {
+        "short": "Woman threatened employees at a mall phone repair kiosk after a dispute over a screen repair, refused to leave, and was arrested for menacing and resisting arrest. She later pleaded to resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "deputies arrived at the mall and located the woman",
+        "pursuit_started": null,
+        "arrest": "after she refused to leave and made threats"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "civil dispute",
+          "threats",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "threats"
+        ],
+        "tags": [
+          "menacing",
+          "phone repair dispute",
+          "mall",
+          "trespass"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 14th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "I'm Hamilton County",
+          "timestamp_seconds": 536,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Arianna",
+          "timestamp_seconds": 1072,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "charged with menacing and resisting arrest",
+          "timestamp_seconds": 1118,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "prosecutor dismissed the suspect's charge of menacing ... convicted by plea for the remaining charge of resisting arrest",
+          "timestamp_seconds": 1122,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect last name",
+          "specific agency name",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

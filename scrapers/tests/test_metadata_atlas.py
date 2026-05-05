@@ -53,6 +53,7 @@ def test_metadata_atlas_collects_frontend_filter_values():
     assert atlas["summary"]["total_videos"] == 1
     assert atlas["summary"]["classified_videos"] == 1
     assert atlas["summary"]["transcribed_videos"] == 1
+    assert atlas["filters"]["channels"] == [{"value": "Code Blue Cam", "count": 1}]
     assert atlas["filters"]["crime_categories"][0] == {"value": "resisting_arrest", "count": 1}
     assert {"value": "traffic_stop", "count": 1} in atlas["filters"]["crime_categories"]
     assert atlas["filters"]["states"] == [{"value": "Wisconsin", "count": 1}]
