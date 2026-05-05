@@ -160,5 +160,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:43:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-12",
+        "published_date": "2022-12-01",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas",
+          "city": "Oldsmar",
+          "address_or_area": "East Lake Woodlands area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pinellas County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Pinellas",
+          "city": "Oldsmar"
+        },
+        "people": [
+          {
+            "role": "subject",
+            "first_name": "Mary",
+            "last_name": "O'Connor",
+            "age": null,
+            "sex_or_gender": "female",
+            "race_ethnicity": {
+              "value": null,
+              "source": null,
+              "confidence": "unknown"
+            },
+            "status": "resigned"
+          }
+        ],
+        "legal": {
+          "alleged_crimes": [
+            {
+              "label": "Driving unlicensed vehicle without a tag",
+              "category": "traffic_violation",
+              "statute": null,
+              "confidence": "high"
+            }
+          ],
+          "charges": [],
+          "case_number": null,
+          "disposition": "no citation issued; chief resigned"
+        },
+        "event_summary": {
+          "short": "Tampa Police Chief Mary O'Connor used her position to avoid a traffic citation for driving a golf cart without a license plate in Oldsmar, Florida.",
+          "outcome": {
+            "arrest_made": false,
+            "injuries_reported": false,
+            "shots_fired": false,
+            "fatality": false,
+            "use_of_force": false,
+            "vehicle_pursuit": false,
+            "foot_pursuit": false
+          }
+        },
+        "timeline": {
+          "dispatch_call": "2022-11-12",
+          "initial_contact": "2022-11-12",
+          "pursuit_started": null,
+          "arrest": null
+        },
+        "weapons": {
+          "suspect_weapon_reported": null,
+          "officer_weapon_used": null,
+          "shots_fired_by": []
+        },
+        "classifications": {
+          "incident_types": [
+            "traffic_stop",
+            "abuse_of_power"
+          ],
+          "crime_categories": [
+            "traffic_violation"
+          ],
+          "tags": [
+            "police chief",
+            "golf cart",
+            "no tag",
+            "bodycam"
+          ],
+          "content_warnings": [],
+          "severity": "low"
+        },
+        "evidence": [
+          {
+            "field": "incident_date",
+            "source": "description",
+            "quote": "On Novomber 12, 2022",
+            "timestamp_seconds": null,
+            "confidence": "high"
+          },
+          {
+            "field": "location.state",
+            "source": "description",
+            "quote": "Tampa, Florida — ... in Oldsmar",
+            "timestamp_seconds": null,
+            "confidence": "high"
+          },
+          {
+            "field": "location.city",
+            "source": "description",
+            "quote": "in Oldsmar",
+            "timestamp_seconds": null,
+            "confidence": "high"
+          },
+          {
+            "field": "agency.name",
+            "source": "transcript",
+            "quote": "I'm Deputy Chicago in the Sheriff's Office",
+            "timestamp_seconds": 39,
+            "confidence": "high"
+          },
+          {
+            "field": "event_summary.short",
+            "source": "transcript",
+            "quote": "I'm the police chief in Tampa. ... I'm hoping that you'll be just let us go tonight.",
+            "timestamp_seconds": 53,
+            "confidence": "high"
+          },
+          {
+            "field": "legal.alleged_crimes",
+            "source": "transcript",
+            "quote": "Stopped you because you driving a tag, or unregistered vehicle with no tag on it, on the roadway.",
+            "timestamp_seconds": 40,
+            "confidence": "high"
+          }
+        ],
+        "extraction_quality": {
+          "transcript_quality": "good",
+          "location_conflicts": [],
+          "missing_critical_fields": [
+            "geo.latitude",
+            "geo.longitude",
+            "geo.zip_code"
+          ],
+          "requires_manual_location_review": true
+        },
+        "confidence": "high",
+        "needs_human_review": false,
+        "warnings": []
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      }
+    }
+  },
+  "human_reviewed": false
 }

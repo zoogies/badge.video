@@ -900,5 +900,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:27:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-02-18",
+        "published_date": "2026-03-14",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Diego",
+          "city": "San Marcos",
+          "address_or_area": "600 block of N. Twin Oaks Valley Rd.",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Diego County Sheriff's Department",
+          "type": "county",
+          "state": "California",
+          "county": "San Diego",
+          "city": "San Marcos"
+        }
+      },
+      "geo": {
+        "address_or_place": "600 block of N. Twin Oaks Valley Rd., San Marcos, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andre",
+          "last_name": "Mendez",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "driver",
+          "first_name": null,
+          "last_name": null,
+          "age": 21,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "safe"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vehicle code violation (initial stop)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon (firing at officers)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to officer-involved shooting; suspect Andre Mendez killed after reaching for handgun and firing at deputies.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "semiautomatic handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting",
+          "fatal_shooting"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "bodycam",
+          "California",
+          "San Diego County",
+          "San Marcos",
+          "firearm",
+          "tasers"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Wednesday, February 18, 2026, shortly after 9 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "San Marcos, California ... 600 block of N. Twin Oaks Valley Rd.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "San Diego County Sheriff’s Deputy assigned to the San Marcos station",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "later identified as Andre Raphael Mendez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "33-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_death",
+          "source": "description",
+          "quote": "he did not survive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "Mendez then fired two rounds ... five deputies and one Palomar College Reserve Police officer to discharge their weapons",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "three deputies discharged their tasers, which appeared ineffective",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

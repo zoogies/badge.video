@@ -300,5 +300,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:59:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-31",
+        "published_date": "2016-04-05",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Clark",
+          "city": "Las Vegas",
+          "address_or_area": "Fast Elk Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Vegas Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Nevada",
+          "county": "Clark",
+          "city": "Las Vegas"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fast Elk Street, Las Vegas, NV",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James Craig",
+          "last_name": "Simpson",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "discharging a firearm at officers",
+            "category": "assault_on_officer",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "weapons offense",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Las Vegas police shootout on Fast Elk Street; suspect James Craig Simpson fired at officers, was shot and paralyzed; K9 Nicky killed by friendly fire.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "police shootout",
+          "K9 involved"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense",
+          "assault_on_officer"
+        ],
+        "tags": [
+          "bodycam",
+          "Las Vegas",
+          "K9 shot"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "took place last Thursday",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "on Fast Elk Street, in the northwest Valley",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "suspect James Craig Simpson, 31",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "Simpson then fired a shot at officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "shooting death of Metro K9 Nicky",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "officers recognized the threat and fired their weapons",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "When Simpson saw the dog coming, he began running",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips",
+          "charges",
+          "case_number",
+          "timeline times"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Multiple fatalities may be conflated; verify Branden Hughes and Felicia Wimberly-Hughes are part of same incident."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

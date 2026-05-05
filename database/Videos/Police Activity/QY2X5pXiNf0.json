@@ -225,5 +225,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:19:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-18",
+        "published_date": "2026-01-05",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": "Jefferson",
+          "city": "Louisville",
+          "address_or_area": "2327 West Chestnut Street",
+          "location_name": "alley near 2327 West Chestnut Street",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Louisville Metro Police Department",
+          "type": "municipal police",
+          "state": "Kentucky",
+          "county": "Jefferson",
+          "city": "Louisville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Asa",
+          "last_name": "McNealy",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "shot and transported to hospital in critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "wanton endangerment",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a handgun by a convicted felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "wanton endangerment",
+            "category": "weapons_offense",
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a handgun by a convicted felon",
+            "category": "weapons_offense",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LMPD officer shot an armed man who fled after a ShotSpotter call and reached for his gun during a foot pursuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-12-18T11:17:00",
+        "initial_contact": "2025-12-18T11:21:00",
+        "pursuit_started": "2025-12-18T11:21:00",
+        "arrest": "2025-12-18T11:25:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "ShotSpotter",
+          "LMPD",
+          "firearm"
+        ],
+        "content_warnings": [
+          "graphic violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 18, 2025, at 11:17 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Louisville, Kentucky ... 2327 West Chestnut Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "30-year-old Asa McNealy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "race_ethnicity",
+          "source": "transcript",
+          "quote": "running southbound from the alley black male",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "McNealy was charged with wanton endangerment and possession of a handgun by a convicted felon.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

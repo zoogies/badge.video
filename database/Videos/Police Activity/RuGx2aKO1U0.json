@@ -1230,5 +1230,235 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:21:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-03",
+        "published_date": "2017-07-11",
+        "location": {
+          "state": "North Carolina",
+          "state_abbreviation": "NC",
+          "county": "Mecklenburg",
+          "city": "Charlotte",
+          "address_or_area": "1016 Justice Ave",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Charlotte-Mecklenburg Police Department",
+          "type": "municipal",
+          "state": "North Carolina",
+          "county": "Mecklenburg",
+          "city": "Charlotte"
+        }
+      },
+      "geo": {
+        "address_or_place": "1016 Justice Ave",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript, description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Iarsalov",
+          "last_name": "Mosiiuk",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Brian",
+          "last_name": "Walsh",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "active"
+        },
+        {
+          "role": "officer",
+          "first_name": "Michael",
+          "last_name": "Dezenzo",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "active"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a firearm during a mental health crisis",
+            "category": "mental_health",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pointing a firearm at an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "No charges filed; shooting ruled justified"
+      },
+      "event_summary": {
+        "short": "Fatal police shooting of man armed with shotgun during mental health crisis in Charlotte, NC",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "shotgun (long gun)",
+        "officer_weapon_used": "handgun or patrol rifle",
+        "shots_fired_by": [
+          "Officer Brian Walsh"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "fatal shooting",
+          "mental health call"
+        ],
+        "crime_categories": [
+          "mental_health",
+          "weapons_offense"
+        ],
+        "tags": [
+          "CMPD",
+          "Charlotte",
+          "North Carolina",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "death",
+          "gun violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Charlotte, North Carolina",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "1016 Justice Ave, 1016 Justice Ave.",
+          "timestamp_seconds": 90,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Iarsalov Mosiiuk",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Officer Brian Walsh",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].first_name",
+          "source": "description",
+          "quote": "Officer Michael Dezenzo",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "March shooting",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "will not face charges",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Shot fired, shot fired.",
+          "timestamp_seconds": 93,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "armed with shotgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "age",
+          "race_ethnicity",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date only approximate (month and year)"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

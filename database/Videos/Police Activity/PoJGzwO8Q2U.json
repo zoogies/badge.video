@@ -35,5 +35,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:16:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-04-26T02:41:40Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Dallas County",
+          "city": "Mesquite",
+          "address_or_area": "parking lot near Lemmon Avenue and Peak Street, Dallas",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Mesquite Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Dallas County",
+          "city": "Mesquite"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Lemmon Avenue and Peak Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "at large"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "attempted robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Two taken into custody, driver escaped"
+      },
+      "event_summary": {
+        "short": "Police chase of a vehicle with masked occupants suspected of planning a robbery; two arrested, driver fled.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "tags": [
+          "mask",
+          "chase",
+          "Dallas"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "\"It is very likely that the suspects were planning to do a robbery in the parking lot,\" police said.",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "Two of those who were inside the vehicle were taken into custody -- the driver escaped.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "The officer tried to get the driver to pull over, but he refused and led the officer into Dallas.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "description",
+          "quote": "The driver stopped near Lemmon Avenue and Peak Street and three people jumped from the vehicle and ran on foot.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "The driver stopped near Lemmon Avenue and Peak Street and three people jumped from the vehicle",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect names",
+          "precise coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript segment appears unrelated to incident.",
+        "Incident date not specified; inferred from publish date."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

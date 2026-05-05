@@ -230,5 +230,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:44:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-01-04",
+        "published_date": "2020-03-05",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook",
+          "city": "Chicago",
+          "address_or_area": "79th and Marquette",
+          "location_name": "South Shore neighborhood",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Chicago Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Cook",
+          "city": "Chicago"
+        }
+      },
+      "geo": {
+        "address_or_place": "79th and Marquette, Chicago, IL",
+        "intersection": "79th and Marquette",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Davis",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons Offense (knife)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Chicago police shoot and kill a robbery suspect armed with a knife after foot pursuit and taser.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit",
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Chicago",
+          "knife",
+          "taser",
+          "fatal shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "occurred at South Shore neighborhood on Jan. 4, 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Chicago, Illinois",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "near 79th and Marquette",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.location_name",
+          "source": "description",
+          "quote": "South Shore neighborhood",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "Davis",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "male black",
+          "timestamp_seconds": 14.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "man with a large knife robbing people outside businesses",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "pronounced dead at the hospital",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "had to use lethal force. Davis was shot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "A female officer tased Davis",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [
+          "Description states '79th and Marquette', transcript says '79th in Burnham' (possibly '79th and Burnham')"
+        ],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location conflict between description and transcript regarding intersection"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

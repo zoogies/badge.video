@@ -1380,5 +1380,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:04:56Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-26",
+        "published_date": "2025-07-11",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "13000 block of Sherman Way (initial) / 20900 block of Arcana Road (termination)",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Claudia",
+          "last_name": "Corugedo",
+          "age": 42,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felony warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony evading",
+            "category": "vehicle_pursuit",
+            "statute": "2800.2(A) VC",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Evading",
+            "category": "vehicle_pursuit",
+            "statute": "2800.2(A) VC",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Los Angeles police shoot woman during standoff after pursuit; woman had BB gun and machete.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-05-26T07:15:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "BB gun designed to resemble semiautomatic pistol; metal machete",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "standoff",
+          "vehicle pursuit"
+        ],
+        "crime_categories": [
+          "warrant",
+          "vehicle_pursuit",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "BB gun",
+          "machete",
+          "felony evading",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force",
+          "shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On May 26, 2025, around 7:15 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "Los Angeles, California — On May 26, 2025... in the 13000 block of Sherman Way.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "identified as 42-year-old Claudia Corugedo",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "the officers learned she had a felony warrant",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "in possession of a BB gun designed to resemble a semiautomatic pistol. A metal machete was also recovered.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "The officers initiated a vehicle pursuit",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "an Officer-Involved Shooting occurred. Corugedo was struck by gunfire",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "Corugedo was eventually taken into custody by SWAT personnel",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "description",
+          "quote": "She was booked for 2800.2(A) Vehicle Code, Felony Evading.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number",
+          "detailed timeline",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

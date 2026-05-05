@@ -260,5 +260,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:33:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-27",
+        "published_date": "2023-11-24",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Kings",
+          "city": "New York",
+          "address_or_area": "Neptune Avenue at West 20th Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New York City Police Department",
+          "type": "municipal",
+          "state": "New York",
+          "county": "Kings",
+          "city": "New York"
+        }
+      },
+      "geo": {
+        "address_or_place": "Neptune Avenue & West 20th Street, Brooklyn, NY",
+        "intersection": "Neptune Avenue and West 20th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "criminal possession of a weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault (prior shooting of female)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "NYPD officers responded to a 911 call of a male with a firearm in Brooklyn. During a struggle to disarm the suspect, a shot was fired. No injuries occurred and the suspect was taken into custody. The suspect had previously shot a female.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "firearm_recovery",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "NYPD",
+          "Brooklyn",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "gun violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 27, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Neptune Avenue in West 20th Street within the confines of the 60th Precinct",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "a 34-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "a shot was fired",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries_reported",
+          "source": "description",
+          "quote": "No one was injured",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest_made",
+          "source": "description",
+          "quote": "take him into custody",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "prior_assault",
+          "source": "description",
+          "quote": "shot a female at an earlier point",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "struggle",
+          "source": "transcript",
+          "quote": "Look at the gun! ... Let go!",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "charges",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

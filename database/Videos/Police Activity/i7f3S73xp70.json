@@ -320,5 +320,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:56:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-21",
+        "published_date": "2025-06-24",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Santa Clara",
+          "city": "San Jose",
+          "address_or_area": "Interstate 680 near Mulberry Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Concord Police Department",
+          "type": "police",
+          "state": "California",
+          "county": "Contra Costa",
+          "city": "Concord"
+        }
+      },
+      "geo": {
+        "address_or_place": "San Jose, California",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Cruz",
+          "last_name": "Vargas",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "shot and arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Elijah",
+          "last_name": "Phillips",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Weapons violations (machine gun, high-capacity magazine)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          "Multiple counts of armed robbery",
+          "Multiple counts of carjacking",
+          "Multiple weapons violations"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Two suspects robbed a credit union in Concord, led police on a high-speed chase, carjacked multiple vehicles, and were apprehended in San Jose after one suspect was shot by police.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-04-21T10:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun modified to fully automatic with high-capacity drum magazine",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "bank robbery",
+          "police shooting",
+          "carjacking",
+          "high-speed pursuit",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "robbery",
+          "carjacking",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "armed robbery",
+          "carjacking",
+          "chase",
+          "officer involved shooting",
+          "bodycam",
+          "dashcam"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "police shooting"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 21, 2025 shortly before 10 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "San Jose, California",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "29-year-old Cruz Vargas",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "robbed the staff at gunpoint",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "handgun, illegally modified to be fully automatic and with a high-capacity drum magazine",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired.",
+          "timestamp_seconds": 323,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "one subject being taken into custody",
+          "timestamp_seconds": 324,
+          "confidence": "confirmed"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

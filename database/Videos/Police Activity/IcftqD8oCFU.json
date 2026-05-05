@@ -25,5 +25,167 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:56:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-09-07",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook County",
+          "city": "Chicago",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Chicago Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Cook County",
+          "city": "Chicago"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "kidnapping",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Chicago police officer shoots suspected kidnapper during bodycam incident",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "kidnapping"
+        ],
+        "tags": [
+          "shooting",
+          "kidnapping",
+          "bodycam",
+          "Chicago"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapon"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Chicago",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Chicago Police Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "title",
+          "quote": "Suspected Kidnapper",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "title",
+          "quote": "Shooting",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_info",
+          "exact_location",
+          "outcome_details"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "No transcript details beyond a brief segment",
+        "Incident date not provided",
+        "Suspect identity and status unknown"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

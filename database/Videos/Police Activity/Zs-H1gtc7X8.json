@@ -1010,5 +1010,229 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:44:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-14",
+        "published_date": "2025-07-28",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Sacramento County",
+          "city": "Sacramento",
+          "address_or_area": "3100 block of Occidental Drive",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Sacramento Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Sacramento County",
+          "city": "Sacramento"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Fred",
+          "last_name": "Douglas",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault with a deadly weapon on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "suspect arrested and transported to hospital in critical condition"
+      },
+      "event_summary": {
+        "short": "Suspect calls 911, states he is trying to kill his friend, then charges at officers with a sword, resulting in officer-involved shooting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-07-14T01:30:00",
+        "initial_contact": "2025-07-14T01:45:00",
+        "pursuit_started": null,
+        "arrest": "2025-07-14T02:15:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "sword",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "disturbance",
+          "mental health crisis"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "sword",
+          "suicide by cop",
+          "crisis negotiation"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 14, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Sacramento, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Sacramento County Main Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Hey, Fred.",
+          "timestamp_seconds": 301,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.last_name",
+          "source": "transcript",
+          "quote": "I think Douglas.",
+          "timestamp_seconds": 308,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.sex_or_gender",
+          "source": "description",
+          "quote": "he",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "assault with a deadly weapon on a peace officer and resisting arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "officer-involved shooting occurred",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "suspect will be booked into the Sacramento County Main Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "I have a big ass sword",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "suspect.race_ethnicity",
+          "suspect.age"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

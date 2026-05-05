@@ -50,5 +50,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:10:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-11-06",
+        "published_date": "2016-11-08",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "Douglas County",
+          "city": "Alexandria",
+          "address_or_area": "500 block of Broadway",
+          "location_name": "apartment building",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Alexandria Police Department",
+          "type": "municipal",
+          "state": "MN",
+          "county": "Douglas",
+          "city": "Alexandria"
+        }
+      },
+      "geo": {
+        "address_or_place": "500 block of Broadway, Alexandria, Minnesota",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jennifer",
+          "last_name": "Hillard",
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "arson",
+            "category": "arson",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony theft of a motor vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating a vehicle under the influence of a controlled substance",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "charge": "felony theft of a motor vehicle",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "charge": "possession of methamphetamine",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "charge": "operating a vehicle under the influence of a controlled substance",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Woman escapes handcuffs, steals police cruiser, leads high-speed pursuit in Minnesota.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2016-11-06T18:45",
+        "initial_contact": "2016-11-06T18:45",
+        "pursuit_started": "2016-11-06T19:00",
+        "arrest": "2016-11-06T19:30"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "theft of police vehicle",
+          "escape",
+          "high-speed chase"
+        ],
+        "crime_categories": [
+          "theft",
+          "drug_offense",
+          "dui",
+          "arson"
+        ],
+        "tags": [
+          "handcuff escape",
+          "squad car theft",
+          "stop sticks"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Just before 6:45 p.m. Sunday",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Alexandria woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Douglas County Court",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Alexandria",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Jennifer Hillard, age 35",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged ... with felony theft of a motor vehicle, possession of methamphetamine, and operating a vehicle under the influence of a controlled substance",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "Electronic tracking says Hillard hit speeds of between 100 and 126 mph... pursuit that finally ended",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "case_number",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

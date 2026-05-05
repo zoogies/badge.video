@@ -415,5 +415,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:14:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-07-07",
+        "published_date": "2020-11-02",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "Clinton Street and Virgil Avenue / Vermont Avenue at Melrose Avenue area",
+          "location_name": "Rampart Division",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "Clinton Street and Virgil Avenue, Los Angeles, CA",
+        "intersection": "Clinton Street and Virgil Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Yordy",
+          "last_name": "Ochoa",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic/Latino",
+            "source": "transcript: 'The man is American, Latino'",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a firearm (criminal threat)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest / failing to stop",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Case rejected by Los Angeles County District Attorney, referred to City Attorney"
+      },
+      "event_summary": {
+        "short": "LAPD officer used car door to stop bicycle pursuit suspect Yordy Ochoa after he brandished a gun and fled.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2020-07-07T01:20:00",
+        "initial_contact": "2020-07-07T01:20:00",
+        "pursuit_started": "2020-07-07T01:20:00",
+        "arrest": "2020-07-07"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "vehicle door",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bicycle pursuit",
+          "LAPD",
+          "car door stop"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "July 7th, 2020 around 1:20 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Los Angeles, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "thirty three year old Yordy Ochoa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "The man is American, Latino",
+          "timestamp_seconds": 77,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "man with a gun in the area of Clinton Street and Virgil Avenue, the comments of the call indicated that the suspect ... brandished a gun at a passerby",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "intentionally use the driver door of his police vehicle to push Ochoa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "treated Ochoa for minor abrasions",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "the case was presented to the Los Angeles County District Attorney's Office who, upon review rejected the felony filing and referred the case to the City Attorney's Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

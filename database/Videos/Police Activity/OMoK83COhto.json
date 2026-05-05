@@ -25,5 +25,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:13:48Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-04-26",
+        "published_date": "2016-04-28",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Angelina",
+          "city": "Lufkin",
+          "address_or_area": "Atkinson Drive area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Lufkin Police Department",
+          "type": "city",
+          "state": "Texas",
+          "county": "Angelina",
+          "city": "Lufkin"
+        }
+      },
+      "geo": {
+        "address_or_place": "FM 1277, San Augustine County, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Douglas",
+          "last_name": "Richard",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading arrest with vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Multiple traffic violations (expired plates, no signal, no insurance, no license, running red light)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony evading arrest",
+            "category": "evading arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Expired license plates",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to signal",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "No insurance",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "No driver's license",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Running a red light",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Bond not set"
+      },
+      "event_summary": {
+        "short": "Lufkin police chase reckless driver, arrest 18-year-old Douglas Richard after three-county pursuit reaching 120 mph.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2016-04-26T00:10:00",
+        "initial_contact": "2016-04-26T00:19:00",
+        "pursuit_started": "2016-04-26T00:19:00",
+        "arrest": "2016-04-26T00:38:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "traffic stop turned pursuit"
+        ],
+        "crime_categories": [
+          "reckless_driving",
+          "evading arrest",
+          "traffic violation"
+        ],
+        "tags": [
+          "Lufkin",
+          "police chase",
+          "high speed"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "early Tuesday morning ... arrest which occurred just before 1 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Lufkin teen ... chase began in Lufkin",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "three-county, 120-mph chase ... through Angelina, Nacogdoches and San Augustine Counties",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people",
+          "source": "description",
+          "quote": "Douglas Richard, 18",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with felony evading arrest and several misdemeanor traffic offenses including: expired license plates, fail to signal, no insurance, no driver's license and running a red light",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline",
+          "source": "description",
+          "quote": "call to dispatch at 12:10 a.m. ... chase began at 12:19 a.m. ... stopped at 12:38 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

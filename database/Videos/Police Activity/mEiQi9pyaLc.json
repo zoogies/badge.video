@@ -300,5 +300,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:08:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-04",
+        "published_date": "2024-07-08",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Dallas",
+          "city": "Dallas",
+          "address_or_area": "2900 block of South Lancaster Road",
+          "location_name": "parking lot near game room",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Dallas Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Dallas",
+          "city": "Dallas"
+        }
+      },
+      "geo": {
+        "address_or_place": "2900 block of South Lancaster Road",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "48113",
+        "source": "description",
+        "precision": "street_level",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Timothy",
+          "last_name": "Jefferson",
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "robbery in progress",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated assault on a police officer (pointing gun)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Dallas officer shoots robbery suspect who pointed a gun at him.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-07-04T01:00:00",
+        "initial_contact": "2024-07-04T01:00:00",
+        "pursuit_started": null,
+        "arrest": "2024-07-04"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "shooting"
+        ],
+        "tags": [
+          "Dallas",
+          "bodycam",
+          "robbery suspect",
+          "officer shooting"
+        ],
+        "content_warnings": [
+          "graphic_content",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 4, 24 at 1:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "2900 block of South Lancaster Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect pointed gun",
+          "source": "description",
+          "quote": "pointing a gun at officer Martinez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer fired",
+          "source": "description",
+          "quote": "Officer Martinez fired at the suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots fired",
+          "source": "transcript",
+          "quote": "Shots fire.",
+          "timestamp_seconds": 248,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect went for gun",
+          "source": "transcript",
+          "quote": "He went for the gun.",
+          "timestamp_seconds": 366,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name and age",
+          "source": "description",
+          "quote": "34-year-old Timothy Jefferson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "case_number",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

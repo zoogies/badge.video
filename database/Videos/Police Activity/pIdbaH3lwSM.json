@@ -240,5 +240,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:15:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-01-03",
+        "published_date": "2016-10-08",
+        "location": {
+          "state": "Virginia",
+          "state_abbreviation": "VA",
+          "county": "Lynchburg city",
+          "city": "Lynchburg",
+          "address_or_area": "Fort Avenue / Wards Road intersection",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Virginia State Police, Lynchburg Police Department",
+          "type": "state and local police",
+          "state": "Virginia",
+          "county": null,
+          "city": "Lynchburg"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fort Avenue / Wards Road, Lynchburg, VA",
+        "intersection": "Fort Avenue and Wards Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "rough",
+        "confidence": "moderate"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lewis Edward",
+          "last_name": "Fields",
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, pled guilty, awaiting sentencing"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding (83 mph in 35 mph zone)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving on suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor driving on suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to felony eluding and misdemeanor driving on suspended license; sentencing pending"
+      },
+      "event_summary": {
+        "short": "Motorcycle pursuit reaching 100 mph, crash, foot chase, arrest",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-01-03T00:10:00",
+        "pursuit_started": "2016-01-03T00:10:00",
+        "arrest": "2016-01-03T00:20:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "motorcycle",
+          "high-speed chase",
+          "felony eluding",
+          "Virginia"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Fields was arrested Jan. 3",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Lynchburg man... through city streets",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Lewis Edward Fields",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "pled guilty to charges of felony eluding and misdemeanor driving on a suspended license",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "high-speed chase ... 100 miles per hour",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

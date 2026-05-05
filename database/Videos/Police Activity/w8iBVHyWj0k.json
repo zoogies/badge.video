@@ -890,5 +890,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:34:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-14",
+        "published_date": "2024-05-29",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Diego County",
+          "city": "San Diego",
+          "address_or_area": "Denver Street and Clairemont Avenue, Bay Park",
+          "location_name": "Denver Street and Clairemont Avenue, Bay Park, San Diego, California",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Diego Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "San Diego County",
+          "city": "San Diego"
+        }
+      },
+      "geo": {
+        "address_or_place": "Denver Street and Clairemont Avenue, Bay Park, San Diego, CA",
+        "intersection": "Denver Street and Clairemont Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Anthony",
+          "last_name": "Hair",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "resigned"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "auto theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bench warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "San Diego police officer locks himself in backseat with female detainee during transport",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-08-14T20:38:00",
+        "pursuit_started": null,
+        "arrest": "2023-08-14T20:38:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "warrant arrest",
+          "transport incident",
+          "officer misconduct"
+        ],
+        "crime_categories": [
+          "theft",
+          "warrant"
+        ],
+        "tags": [
+          "bodycam",
+          "San Diego",
+          "police",
+          "officer locks self",
+          "detainee transport"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 14, 2023, around 8:38 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "intersection of Denver Street and Clairemont Avenue in Bay Park",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "San Diego Police Officer Anthony Hair",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "description",
+          "quote": "The female suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Officer Anthony Hair",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "suspected auto theft",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "description",
+          "quote": "had a bench warrant out for her arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "precise_coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

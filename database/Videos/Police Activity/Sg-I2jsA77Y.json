@@ -40,5 +40,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:23:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-04-27",
+        "published_date": "2022-04-28T16:15:18Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Whitehall",
+          "address_or_area": "Broad Street",
+          "location_name": "Whitehall, Ohio",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Whitehall Police",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Whitehall"
+        }
+      },
+      "geo": {
+        "address_or_place": "Whitehall, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 16,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Receiving Stolen Property",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "car theft",
+            "category": "motor_vehicle_theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "16-year-old car thief bails out of moving vehicle during police chase",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-04-27T01:15:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "juvenile related",
+          "stolen vehicle"
+        ],
+        "crime_categories": [
+          "theft",
+          "motor_vehicle_theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Whitehall",
+          "Ohio",
+          "16-year-old",
+          "car thief",
+          "stop sticks"
+        ],
+        "content_warnings": [
+          "mild"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 27, 2022 around 1:15 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Whitehall, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Franklin County Juvenile Court System",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "address_or_area",
+          "source": "transcript",
+          "quote": "On the bridge, on Broad Street.",
+          "timestamp_seconds": 133,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Whitehall Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "The driver and only occupant was 16 years old.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "Officers arrested him for Receiving Stolen Property.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "He was taken to Mt. Carmel East for minor injuries.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "title",
+          "quote": "During Police Chase",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_name",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

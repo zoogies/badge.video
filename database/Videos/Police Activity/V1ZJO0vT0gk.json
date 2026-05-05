@@ -380,5 +380,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:30:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-22",
+        "published_date": "2026-03-03T20:43:16Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Diego County",
+          "city": "San Diego",
+          "address_or_area": "Euclid Avenue and Imperial Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Diego Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "San Diego County",
+          "city": "San Diego"
+        }
+      },
+      "geo": {
+        "address_or_place": "Euclid Avenue and Imperial Avenue, San Diego, CA",
+        "intersection": "Euclid Avenue and Imperial Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Edwaun",
+          "last_name": "Thames",
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, transported to hospital in stable condition"
+        },
+        {
+          "role": "officer",
+          "first_name": "Henry",
+          "last_name": "Ingram",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "none"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felony Evading in a Motor Vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Stolen Vehicle",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle Theft",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony Evading in a Motor Vehicle",
+          "Possession of a Stolen Vehicle",
+          "Vehicle Theft"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "San Diego officer shoots suspect who reached for a lighter that looked like a revolver after a vehicle pursuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2026-01-22T12:40:00",
+        "initial_contact": "2026-01-22T13:30:00",
+        "pursuit_started": "2026-01-22T13:30:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "Officer Henry Ingram"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit",
+          "stolen_vehicle"
+        ],
+        "crime_categories": [
+          "vehicle_theft",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "pursuit",
+          "shooting",
+          "lighter",
+          "tasered"
+        ],
+        "content_warnings": [
+          "police shooting",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 22, 2026, at 12:40 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "intersection of Euclid Avenue and Imperial Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "39-year-old Edwaun Thames",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "gold lighter manufactured to appear as a revolver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Felony Evading in a Motor Vehicle, Possession of a Stolen Vehicle, Vehicle Theft",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire. [0:21-0:24]",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

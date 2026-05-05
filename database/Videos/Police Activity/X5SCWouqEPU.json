@@ -815,5 +815,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:35:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-05-30",
+        "published_date": "2022-06-07",
+        "location": {
+          "state": "North Carolina",
+          "state_abbreviation": "NC",
+          "county": "Chatham County",
+          "city": "Siler City",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "North Carolina State Highway Patrol",
+          "type": "state police",
+          "state": "North Carolina",
+          "county": "Chatham County",
+          "city": "Siler City"
+        }
+      },
+      "geo": {
+        "address_or_place": "Siler City, NC",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mark",
+          "last_name": "Diaz",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Rodney",
+          "last_name": "Cook",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "seatbelt violation",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "suspected drug use",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Trooper shoots and kills armed man during traffic stop in Siler City, NC",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "drug_offense",
+          "weapons_offense"
+        ],
+        "tags": [
+          "seatbelt violation",
+          "dashcam",
+          "Highway Patrol"
+        ],
+        "content_warnings": [
+          "death",
+          "violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Siler City, North Carolina",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "21-year-old Mark Diaz of Staley",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "young Hispanic males",
+          "timestamp_seconds": 1212,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He pulled a gun",
+          "timestamp_seconds": 488,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "No, there's only one shot fired",
+          "timestamp_seconds": 663,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -720,5 +720,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:44:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-09-30",
+        "published_date": "2024-10-01",
+        "location": {
+          "state": "Kansas",
+          "state_abbreviation": "KS",
+          "county": "Barton",
+          "city": "Great Bend",
+          "address_or_area": "10th and Morton (convenience store)",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Barton County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Kansas",
+          "county": "Barton",
+          "city": "Great Bend"
+        }
+      },
+      "geo": {
+        "address_or_place": "10th and Morton, Great Bend, KS",
+        "intersection": "10th and Morton",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Zuniga",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and released on bond"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Refusal to show driver's license (KSA 8-244)",
+            "category": "traffic_stop",
+            "statute": "KSA 8-244",
+            "confidence": "high"
+          },
+          {
+            "label": "Battery of a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Interference with a law enforcement officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery of a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Interference with a law enforcement officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Traffic charges",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "bonded out; sheriff's office found no policy violations"
+      },
+      "event_summary": {
+        "short": "Deputy tased a driver who refused to show his license and attempted to flee during a traffic stop in Great Bend, KS.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "0:11-0:24",
+        "initial_contact": "0:24",
+        "pursuit_started": null,
+        "arrest": "after 2:30"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "foot pursuit",
+          "taser deployment"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "Barton County",
+          "Great Bend",
+          "Daniel Zuniga",
+          "refusal to show license",
+          "battery of LEO",
+          "interference"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Great Bend, Kansas — On September 30, 2024, a little after 2 a.m., a deputy with the Barton County Sheriff’s office observed a vehicle traveling southbound on Main Street in the city of Great Bend.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 30, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_identity",
+          "source": "description",
+          "quote": "The suspect was identified as 18-Year-Old Daniel Zuniga of Hoisington.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Zuniga was booked on charges of battery of a law enforcement officer, interference of a law enforcement officer and the traffic charges.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "taser_deployment",
+          "source": "transcript",
+          "quote": "I will tase you. [2:02] Taser deployed. [2:08]",
+          "timestamp_seconds": 122,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "The suspect was able to escape the deputy’s grasp and attempted to flee on foot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

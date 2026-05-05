@@ -335,5 +335,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:28:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-02-03",
+        "published_date": "2026-02-12",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Washoe County",
+          "city": "Reno",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Reno Police Department",
+          "type": "municipal police",
+          "state": "Nevada",
+          "county": "Washoe County",
+          "city": "Reno"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": "Johnson",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, treated and released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon (chain and knife)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons violation (possession of knife and chain)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Welfare check escalates; suspect lunges at officers with tow chain, shot and killed. Officer injured.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife and tow chain",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "use_of_force",
+          "welfare_check"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest",
+          "mental_health"
+        ],
+        "tags": [
+          "welfare_check",
+          "knife",
+          "chain",
+          "Reno",
+          "Nevada",
+          "officer_injured"
+        ],
+        "content_warnings": [
+          "gunshot",
+          "death",
+          "violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Reno, Nevada",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "February 3, 2026, just before 4 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "27-year-old Michael J. Johnson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "27-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon (knife)",
+          "source": "transcript",
+          "quote": "Can we have you drop your pocket knife?",
+          "timestamp_seconds": 136,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon (chain)",
+          "source": "description",
+          "quote": "pulling a heavy metal chain from his jacket and rushing forward",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injury",
+          "source": "description",
+          "quote": "One officer was also hit by gunfire during the exchange and later treated and released",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_suspect",
+          "source": "description",
+          "quote": "pronounced dead at the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "Multiple officers fired their weapons, striking Johnson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "county",
+          "source": "description",
+          "quote": "The Washoe County Sheriff’s Office is conducting the investigation",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

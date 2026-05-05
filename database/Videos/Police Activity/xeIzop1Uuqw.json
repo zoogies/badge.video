@@ -255,5 +255,235 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:36:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-22",
+        "published_date": "2026-01-29T22:10:24Z",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Fulton",
+          "city": "Atlanta",
+          "address_or_area": "538 Lee Street SW",
+          "location_name": "Lee Street SW",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Atlanta Police Department",
+          "type": "municipal",
+          "state": "Georgia",
+          "county": "Fulton",
+          "city": "Atlanta"
+        }
+      },
+      "geo": {
+        "address_or_place": "538 Lee Street SW, Atlanta, GA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sylvon",
+          "last_name": "Brush",
+          "age": 30,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While License Suspended",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pedestrian in the Roadway",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Firearm by a Convicted Felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Firearm During the Commission of a Felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Willful Obstruction of Law Enforcement Officers",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Driving While License Suspended",
+          "Pedestrian in the Roadway",
+          "Possession of a Firearm by a Convicted Felon",
+          "Possession of a Firearm During the Commission of a Felony",
+          "Willful Obstruction of Law Enforcement Officers",
+          "Possession of Marijuana"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Atlanta police conducted a traffic stop on a vehicle driven by a convicted felon with suspended license; suspect attempted to flee on foot, was apprehended, and found with marijuana and a firearm.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "taser_incident"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "weapons_offense",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Atlanta",
+          "Georgia",
+          "convicted felon",
+          "marijuana",
+          "firearm",
+          "taser"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 22, 2026, at approximately 6:42 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "538 Lee Street SW",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Atlanta, Georgia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "30-year-old Sylvon Brush",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "30-year-old Sylvon Brush",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "Get your hand off, hey, get your hand. Hold on, no, don't do that",
+          "timestamp_seconds": 55,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "title",
+          "quote": "Convicted Felon Tased",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "officers recovered more than four pounds of marijuana and a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with the following offenses: Driving While License Suspended, ... Possession of Marijuana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

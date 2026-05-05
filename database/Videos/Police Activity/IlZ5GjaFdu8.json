@@ -1650,5 +1650,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:57:27Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-21",
+        "published_date": "2023-07-31T23:27:34Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Racine County",
+          "city": "Racine",
+          "address_or_area": "near 6th and Howland",
+          "location_name": "Clayton Park",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Racine Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Racine County",
+          "city": "Racine"
+        }
+      },
+      "geo": {
+        "address_or_place": "Clayton Park",
+        "intersection": "6th and Howland",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Timothy",
+          "last_name": "Burgess",
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Discharging firearm at law enforcement officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic disturbance with shots fired",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "No charges filed against officers; suspect deceased"
+      },
+      "event_summary": {
+        "short": "Police officers were fired upon by suspect during a traffic stop; officers returned fire, killing suspect.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-05-21T23:57:00",
+        "pursuit_started": "2023-05-21T23:57:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "shooting",
+          "foot_pursuit",
+          "traffic_stop",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "shooting",
+          "foot_pursuit"
+        ],
+        "tags": [
+          "officer_involved_shooting",
+          "fatal",
+          "no_officer_injuries",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "graphic_content",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Sunday, May 21, 2023, at approximately 11:57 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Racine, Wisconsin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Racine County Sheriff's Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "traffic stop near 6th and Howland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.location_name",
+          "source": "description",
+          "quote": "Clayton Park",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Timothy Burgess, 38-year-old black male",
+          "timestamp_seconds": 432,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "38-year-old",
+          "timestamp_seconds": 432,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "black male",
+          "timestamp_seconds": 432,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Burgess was pronounced deceased on scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "roughly 80 shots fired during the 7 seconds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "The Racine County District Attorney has determined that no charges will be filed against the officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

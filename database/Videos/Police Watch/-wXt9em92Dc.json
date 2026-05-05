@@ -1295,5 +1295,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:46:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-22",
+        "published_date": "2025-04-11T20:12:07Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Rodriguez",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Madeline",
+          "last_name": null,
+          "age": 4,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released to family"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child neglect",
+            "category": "child_neglect",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "arrested"
+      },
+      "event_summary": {
+        "short": "Mother arrested for child neglect after bringing her 4-year-old daughter to a bar, where the child was without shoes and undergarments and the mother appeared intoxicated.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_endangerment",
+          "public_intoxication"
+        ],
+        "crime_categories": [
+          "child_neglect"
+        ],
+        "tags": [
+          "bodycam",
+          "mom",
+          "toddler",
+          "bar",
+          "arrest",
+          "DCF"
+        ],
+        "content_warnings": [
+          "child_in_distress"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 22nd, 2021.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_last_name",
+          "source": "transcript",
+          "quote": "Ms. Rodriguez?",
+          "timestamp_seconds": 1257,
+          "confidence": "high"
+        },
+        {
+          "field": "child_first_name",
+          "source": "transcript",
+          "quote": "What's your name? Madeline.",
+          "timestamp_seconds": 103,
+          "confidence": "high"
+        },
+        {
+          "field": "child_age",
+          "source": "transcript",
+          "quote": "You're four?",
+          "timestamp_seconds": 114,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "You're being placed on the rest of the child neglect.",
+          "timestamp_seconds": 654,
+          "confidence": "high"
+        },
+        {
+          "field": "alcohol_intoxication",
+          "source": "transcript",
+          "quote": "they think you're under the influence",
+          "timestamp_seconds": 130,
+          "confidence": "medium"
+        },
+        {
+          "field": "child_condition",
+          "source": "transcript",
+          "quote": "no underwear, no shoes, crying",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not explicitly stated; inference from 'Grandview Public' may be possible but not confirmed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

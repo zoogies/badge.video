@@ -900,5 +900,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:40:57Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-07-04",
+        "published_date": "2020-07-20",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Maricopa",
+          "city": "Phoenix",
+          "address_or_area": "near 56th Avenue and Glenrosa",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Phoenix Police Department",
+          "type": "municipal",
+          "state": "Arizona",
+          "county": "Maricopa",
+          "city": "Phoenix"
+        }
+      },
+      "geo": {
+        "address_or_place": "56th Avenue and Glenrosa",
+        "intersection": "56th Avenue and Glenrosa",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Garcia",
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "description and transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stabbing (previous incident)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Outstanding warrants",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearm by prohibited person",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Phoenix police officers shot and killed James Garcia after he brandished a gun during a contact near 56th Avenue and Glenrosa.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-07-04T13:25:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "use of force"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "warrant",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "Phoenix",
+          "Arizona",
+          "officer-involved shooting",
+          "fatal"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "near 56th Avenue and Glenrosa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "July 4, 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "title",
+          "quote": "James Garcia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "28-year-old James Porter Garcia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "description",
+          "quote": "Hispanic man approximately 28 years old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_gun",
+          "source": "transcript",
+          "quote": "He's got a gun.",
+          "timestamp_seconds": 342,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "he did not survive the injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -675,5 +675,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:35:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-03-16",
+        "published_date": "2022-03-21T17:15:01Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Contra Costa County",
+          "city": "Pittsburg",
+          "address_or_area": "Hampton Inn, California Avenue",
+          "location_name": "Hampton Inn",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pittsburg Police Department",
+          "type": "local police",
+          "state": "California",
+          "county": "Contra Costa County",
+          "city": "Pittsburg"
+        }
+      },
+      "geo": {
+        "address_or_place": "Hampton Inn, California Avenue, Pittsburg, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ashton",
+          "last_name": "Porte",
+          "age": 45,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized, arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vandalism",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Brandishing a weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shot and wounded a man barricaded in a hotel room after he emerged wielding a knife.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-03-16T12:30:00",
+        "initial_contact": "2022-03-16T12:30:00",
+        "pursuit_started": null,
+        "arrest": "2022-03-17T08:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "large butcher knife",
+        "officer_weapon_used": "firearm, 40mm less-lethal rounds",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police_involved_shooting",
+          "mental_health_crisis",
+          "barricade"
+        ],
+        "crime_categories": [
+          "property_damage",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Pittsburg",
+          "California",
+          "knife",
+          "mental health"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "Earlier Wednesday afternoon, just after 12:30 P.M.",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Pittsburg Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Contra Costa County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "description",
+          "quote": "45-year-old Ashton Porte",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "He remains in stable condition and is expected to survive.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "large butcher knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "One of the officers fired his service weapon, striking Porte twice",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "charges",
+          "geo_coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

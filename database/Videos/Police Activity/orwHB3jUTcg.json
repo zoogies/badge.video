@@ -230,5 +230,210 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:14:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-12-03",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Brevard",
+          "city": "Rockledge",
+          "address_or_area": "Hawk and Cogswell streets",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rockledge Police Department",
+          "type": "municipal police",
+          "state": "Florida",
+          "county": "Brevard",
+          "city": "Rockledge"
+        }
+      },
+      "geo": {
+        "address_or_place": "Hawk and Cogswell streets, Rockledge, FL",
+        "intersection": "Hawk and Cogswell streets",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "shot, injury"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Pierre",
+          "age": 15,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "burglary (breaking into cars)",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "hitting police cruiser",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Teen burglary suspect shot by officer after pursuit in Rockledge, FL",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "just before midnight",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit",
+          "burglary"
+        ],
+        "crime_categories": [
+          "burglary",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "teen",
+          "car chase"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "title",
+          "quote": "Florida Police Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "intersection of Hawk and Cogswell streets",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "description",
+          "quote": "Rockledge Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "two individuals breaking into cars",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Shot fired!",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "people.age",
+          "source": "description",
+          "quote": "A 17-year-old burglary suspect was shot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.first_name and last_name for second suspect",
+          "source": "description",
+          "quote": "Anthony Pierre, 15, ran away",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

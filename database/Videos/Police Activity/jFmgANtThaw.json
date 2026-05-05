@@ -200,5 +200,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:59:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-30",
+        "published_date": "2025-07-08",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Berrien County",
+          "city": null,
+          "address_or_area": "South Third Street park area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Berrien County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Michigan",
+          "county": "Berrien County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "South Third Street, Berrien County, Michigan",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joshua",
+          "last_name": "Coffey",
+          "age": 48,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Cal",
+          "last_name": "Landon",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unknown"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing from police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect fired at deputy during foot pursuit, deputy returned fire, suspect killed.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense",
+          "resisting_arrest",
+          "foot_pursuit"
+        ],
+        "tags": [
+          "bodycam",
+          "fatal shooting",
+          "Michigan"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 30, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Berrien County, Michigan",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "48-year-old Joshua Coffey of South Bend",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "fatally striking Coffey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect weapon discharge",
+          "source": "description",
+          "quote": "firing two shots at Deputy Landon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer weapon discharge",
+          "source": "description",
+          "quote": "returned fire, fatally striking Coffey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot pursuit",
+          "source": "description",
+          "quote": "abruptly fled on foot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address",
+          "source": "transcript",
+          "quote": "South Third Street",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City not explicitly stated; location may be in Berrien County but city unspecified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

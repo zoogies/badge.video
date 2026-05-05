@@ -85,5 +85,174 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:03:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-30",
+        "published_date": "2023-08-18",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Fresno County",
+          "city": "Fresno",
+          "address_or_area": "100 block of East Warner Avenue",
+          "location_name": "100 block of East Warner Avenue",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fresno Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Fresno County",
+          "city": "Fresno"
+        }
+      },
+      "geo": {
+        "address_or_place": "100 block of East Warner Avenue",
+        "intersection": "North Effie Street and East Warner Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 15,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized stable, cited and released to guardian"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "brandishing imitation firearm",
+            "category": "weapons_offense",
+            "statute": "PC 417.4",
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "cited and released to guardian"
+      },
+      "event_summary": {
+        "short": "Fresno officer shoots 15-year-old boy brandishing replica Glock",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-07-30T10:32:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "unloaded Glock 19 X .177 caliber bb pistol (replica)",
+        "officer_weapon_used": "service pistol (unspecified)",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "use of force"
+        ],
+        "crime_categories": [
+          "weapons_offense"
+        ],
+        "tags": [
+          "replica gun",
+          "juvenile",
+          "Fresno"
+        ],
+        "content_warnings": [
+          "gun violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 30, 2023, at 10:32 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "100 block of East Warner Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "title",
+          "quote": "15-year-old Boy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "unloaded Glock 19 X .177 caliber bb pistol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].statute",
+          "source": "description",
+          "quote": "PC 417.4 (brandishing an imitation firearm)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "I got shots fired",
+          "timestamp_seconds": 83,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "exact coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

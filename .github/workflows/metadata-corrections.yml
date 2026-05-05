@@ -1,0 +1,136 @@
+name: Metadata corrections
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  validate:
+    if: github.event.action == 'opened' || github.event.action == 'edited'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Write issue body
+        run: |
+          python -c "import json, pathlib; pathlib.Path('issue_body.md').write_text(json.load(open('${{ github.event_path }}'))['issue'].get('body') or '', encoding='utf-8')"
+
+      - name: Load open correction issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue list --state open --label "requesting changes" --json number,body --limit 200 \
+            | python -c "import json, os, sys; current=int(os.environ['ISSUE_NUMBER']); print(json.dumps([issue for issue in json.load(sys.stdin) if issue.get('number') != current]))" \
+            > open_issues.json
+
+      - name: Validate correction payload
+        id: validate
+        continue-on-error: true
+        run: |
+          python scrapers/review_corrections.py validate \
+            --issue-body issue_body.md \
+            --open-issues open_issues.json \
+            --output-json correction_summary.json \
+            > validation.md
+
+      - name: Comment validation result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE_NUMBER" --body-file validation.md
+
+      - name: Update validation labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          if [[ "${{ steps.validate.outcome }}" == "success" ]]; then
+            gh issue edit "$ISSUE_NUMBER" --add-label "bot validated" --remove-label "bot invalidated" || true
+            if grep -q "Duplicate of:" validation.md; then
+              gh issue edit "$ISSUE_NUMBER" --add-label "duplicate" || true
+            else
+              gh issue edit "$ISSUE_NUMBER" --remove-label "duplicate" || true
+            fi
+            if grep -q "Conflicts with:" validation.md; then
+              gh issue edit "$ISSUE_NUMBER" --add-label "conflict" || true
+            else
+              gh issue edit "$ISSUE_NUMBER" --remove-label "conflict" || true
+            fi
+          else
+            gh issue edit "$ISSUE_NUMBER" --add-label "bot invalidated" --remove-label "bot validated" || true
+          fi
+
+  apply:
+    if: github.event.action == 'labeled' && github.event.label.name == 'accepted'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify labeler permission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACTOR: ${{ github.event.sender.login }}
+          REPO: ${{ github.repository }}
+        run: |
+          permission="$(gh api "repos/$REPO/collaborators/$ACTOR/permission" --jq .permission)"
+          case "$permission" in
+            admin|maintain|write) echo "Accepted by $ACTOR with $permission permission." ;;
+            *) echo "::error::Ignoring accepted label from $ACTOR with $permission permission."; exit 1 ;;
+          esac
+
+      - name: Write issue body
+        run: |
+          python -c "import json, pathlib; pathlib.Path('issue_body.md').write_text(json.load(open('${{ github.event_path }}'))['issue'].get('body') or '', encoding='utf-8')"
+
+      - name: Validate correction payload
+        run: |
+          python scrapers/review_corrections.py validate \
+            --issue-body issue_body.md \
+            --output-json correction_summary.json \
+            > validation.md
+
+      - name: Apply correction
+        run: |
+          python scrapers/review_corrections.py apply \
+            --issue-body issue_body.md \
+            --output-json correction_summary.json
+
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          branch="$(python -c "import json; print(json.load(open('correction_summary.json'))['branch'])")"
+          title="$(python -c "import json; print(json.load(open('correction_summary.json'))['title'])")"
+          data_path="$(python -c "import json; print(json.load(open('correction_summary.json'))['data_path'])")"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add "$data_path"
+          if git diff --cached --quiet; then
+            gh issue comment "$ISSUE_NUMBER" --body "No file changes were produced after applying this correction."
+            exit 0
+          fi
+          git commit -m "Apply metadata correction from #$ISSUE_NUMBER"
+          git push --set-upstream origin "$branch"
+          pr_url="$(gh pr create \
+            --title "$title" \
+            --body "Applies the accepted metadata correction from #$ISSUE_NUMBER." \
+            --label "pr opened" \
+            --reviewer "zoogies")"
+          gh issue comment "$ISSUE_NUMBER" --body "Opened PR: $pr_url"
+          gh issue edit "$ISSUE_NUMBER" --add-label "pr opened" || true

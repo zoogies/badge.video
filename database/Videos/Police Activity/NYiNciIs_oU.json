@@ -400,5 +400,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:12:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-22",
+        "published_date": "2023-08-17T17:59:47Z",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Montgomery County",
+          "city": "Silver Spring",
+          "address_or_area": "12200 block of Veirs Mill Road / 4100 block of Colie Drive / 4300 block of Havard Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Montgomery County Police Department",
+          "type": "local",
+          "state": "Maryland",
+          "county": "Montgomery County",
+          "city": "Silver Spring"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Franklin",
+          "last_name": "Castro Ordonez",
+          "age": 19,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stabbing (multiple victims)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Armed with a knife",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest / assault on officer (advancing with knife)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "19-year-old suspect shot and killed by Montgomery County police after stabbing spree in Silver Spring, Maryland.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-07-22T10:35:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "stabbing_spree",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "homicide",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "fatal_shooting",
+          "knife"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 22, 2023, at approximately 10:35 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Silver Spring, Maryland... 12200 block of Veirs Mill Road... 4100 block of Colie Drive... 4300 block of Havard Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Montgomery County Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "19-year-old Franklin Castro Ordonez of Gaithersburg, Maryland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_status",
+          "source": "description",
+          "quote": "Castro Ordonez was pronounced dead on scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired! Shots fired! Shots fired!",
+          "timestamp_seconds": 37,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "He's got a knife in his hand, right hand.",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_commands",
+          "source": "transcript",
+          "quote": "Drop the knife! Drop the knife!",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "transcript",
+          "quote": "he went in between those houses",
+          "timestamp_seconds": 120,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1120,5 +1120,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:05:35Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-03-25",
+        "published_date": "2025-03-27",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Columbus",
+          "address_or_area": "Victorian Village, near Denison and Second",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Columbus Police SWAT",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Columbus"
+        }
+      },
+      "geo": {
+        "address_or_place": "Victorian Village",
+        "intersection": "Denison and Second",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Darnell",
+          "last_name": "Jones",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized in stable condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "murder of a minor (13-year-old daughter)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felonious assault on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Columbus SWAT officers shot and wounded Darnell Jones, a suspect wanted for murdering his 13-year-old daughter, after he refused to comply and reached for a revolver.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "revolver",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "shooting"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "SWAT",
+          "fugitive",
+          "domestic violence"
+        ],
+        "content_warnings": [
+          "violence",
+          "death of a child"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, March 25, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Columbus, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Victorian Village neighborhood",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "Denison and second",
+          "timestamp_seconds": 144,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "33-year-old Darnell Jones",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "description",
+          "quote": "33-year-old Darnell Jones",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "now faces multiple charges, including felonious assault on a peace officer in Franklin County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon",
+          "source": "description",
+          "quote": "a revolver was later recovered",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries",
+          "source": "description",
+          "quote": "striking him in the arm, leg, and torso... transported to the hospital in stable condition",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -175,5 +175,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:03:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-10",
+        "published_date": "2025-02-07",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Kings County",
+          "city": "New York",
+          "address_or_area": "Intersection of East 80th Street and Flatlands Avenue",
+          "location_name": "69th Precinct area",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New York Police Department",
+          "type": "municipal police",
+          "state": "New York",
+          "county": "Kings County",
+          "city": "New York"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Moonra",
+          "last_name": "Durham",
+          "age": 50,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted Murder in the First Degree (police officer)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted Murder in the Second Degree",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Use of a Firearm in the First and Second Degree",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted Aggravated Assault Upon a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Possession of a Weapon in the Second Degree",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Attempted Murder in the First Degree (police officer)",
+          "Attempted Murder in the Second Degree",
+          "Criminal Use of a Firearm in the First and Second Degree",
+          "Attempted Aggravated Assault Upon a Police Officer",
+          "Criminal Possession of a Weapon in the Second Degree"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect points gun at NYPD sergeant, shot and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-01-10T21:43:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "service firearm",
+        "shots_fired_by": [
+          "Sergeant Salzman",
+          "Police Officer Okafor",
+          "Police Officer Wilson",
+          "Police Officer Zaheer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit",
+          "armed_suspect"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Friday, January 10, 2025, at approximately 9:43 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "intersection of East 80th Street and Flatlands Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "50-year-old Moonra Durham",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "arrested and charged with Attempted Murder in the First Degree (police officer)...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "pointed a firearm at Police Officer Zaheer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_actions",
+          "source": "description",
+          "quote": "Sergeant Salzman discharged three shots, Police Officer Okafor discharged four shots...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript contains racial slurs but does not explicitly state suspect's race; race not extracted."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

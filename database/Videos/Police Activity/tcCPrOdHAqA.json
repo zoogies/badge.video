@@ -950,5 +950,234 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:24:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-18",
+        "published_date": "2024-02-17",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Bexar County",
+          "city": "San Antonio",
+          "address_or_area": "700 block of Southcross",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Antonio Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Bexar County",
+          "city": "San Antonio"
+        }
+      },
+      "geo": {
+        "address_or_place": "700 block of Southcross, San Antonio, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jervon",
+          "last_name": "Harper",
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Edgardo",
+          "last_name": "Valladares",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "placed on administrative duty"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "traffic violation (right tail lamp out)",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana (odor)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on officer (physical struggle)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "San Antonio police officer fatally shoots Jervon Harper during traffic stop after struggle and suspect produced handgun.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0.26,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "traffic stop",
+          "use of force"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "drug_offense",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "fatality",
+          "SAPD",
+          "bodycam",
+          "dashcam"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 18, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "San Antonio, Texas — ... 700 block of Southcross",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name_age",
+          "source": "description",
+          "quote": "42-year-old Jervon Harper",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Officer Edgardo Valladares",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes_traffic",
+          "source": "transcript",
+          "quote": "The reason why I pulled you over is your right tail lamps out.",
+          "timestamp_seconds": 34.0,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes_marijuana",
+          "source": "transcript",
+          "quote": "I'm smelling the odor of marijuana",
+          "timestamp_seconds": 59.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "You got a gun! You got a gun! ... Yep, I got a gun.",
+          "timestamp_seconds": 304.0,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired.",
+          "timestamp_seconds": 314.0,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "Harper was transported to a local hospital where he was later pronounced deceased.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

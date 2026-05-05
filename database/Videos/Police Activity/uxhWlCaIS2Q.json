@@ -90,5 +90,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:30:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-07",
+        "published_date": "2025-06-16",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Orange County",
+          "city": "Orlando",
+          "address_or_area": "2793 N. Hiawassee Rd",
+          "location_name": "Save Discount Store",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Orange County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Orange County",
+          "city": "Orlando"
+        }
+      },
+      "geo": {
+        "address_or_place": "2793 N. Hiawassee Rd, Orlando, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Charles",
+          "last_name": "St. Fleur",
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized, stable"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized for head injuries, doing well"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Carrying concealed firearms",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect shot by deputy, hospitalized in stable condition"
+      },
+      "event_summary": {
+        "short": "Orange County deputy initiated a check on a suspicious person behind a store; suspect fled, fought deputy, two firearms were thrown; deputy shot suspect after he ran toward the firearms.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-06-07",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "service weapon",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer involved shooting",
+          "assault on officer",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "orange county",
+          "florida",
+          "store",
+          "discount store"
+        ],
+        "content_warnings": [
+          "violence",
+          "guns"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 7, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Orlando, Florida — ...behind the Save Discount Store at 2793 N. Hiawassee Rd",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "24-year-old Charles St. Fleur",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "description",
+          "quote": "two objects, later determined to be firearms, were flung from the area",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_shots_fired",
+          "source": "description",
+          "quote": "deputy was able to get to his feet and fire his service weapon, striking St. Fleur",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_injuries",
+          "source": "description",
+          "quote": "Deputy who fired his service weapon was also transported to the hospital for head injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript is garbled and minimally useful"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

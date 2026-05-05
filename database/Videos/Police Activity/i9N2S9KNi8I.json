@@ -50,5 +50,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:56:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-27",
+        "published_date": "2022-10-03",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Parker County",
+          "city": "Weatherford",
+          "address_or_area": "745 Adams Drive (First Financial Bank) and Olive Garden near I-20",
+          "location_name": "I-20 near Olive Garden",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Weatherford Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Parker County",
+          "city": "Weatherford"
+        }
+      },
+      "geo": {
+        "address_or_place": "745 Adams Drive, Weatherford, TX",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "detained (emergency detention)"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "strange behavior / mental crisis",
+            "category": "mental_health",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "emergency detention, no charges filed"
+      },
+      "event_summary": {
+        "short": "Police responded to a man behaving strangely; he fled on foot onto I-20 while armed with a knife, then was subdued with pepper spray and taken for mental evaluation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-09-27T09:30:00",
+        "initial_contact": "2022-09-27T09:37:00",
+        "pursuit_started": "2022-09-27T09:39:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "JPX Pepper Gun",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health_crisis",
+          "foot_pursuit",
+          "weapon_present"
+        ],
+        "crime_categories": [
+          "mental_health"
+        ],
+        "tags": [
+          "knife",
+          "I-20",
+          "pepper spray",
+          "excited delirium"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, September 27, 2022, at 9:30am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Weatherford, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Weatherford Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He's a knife in his hand.",
+          "timestamp_seconds": 80,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "Officer Yarbrough delivered one shot from the JPX",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "placed in handcuffs and removed from the roadway",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "The subject has no pending WPD charges.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "suspect_age",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

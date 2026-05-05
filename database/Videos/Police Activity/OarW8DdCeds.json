@@ -450,5 +450,180 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:13:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-30",
+        "published_date": "2022-09-13T22:10:13Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Pasadena",
+          "address_or_area": "600 block of N. Lake Ave",
+          "location_name": "shopping plaza at Lake Avenue and Orange Grove Boulevard",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pasadena Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Pasadena"
+        }
+      },
+      "geo": {
+        "address_or_place": "600 block of N. Lake Ave, Pasadena, CA",
+        "intersection": "Lake Avenue and Orange Grove Boulevard",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "06037",
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Adam",
+          "last_name": "Youines",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "carjacking with a firearm",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "evading police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Pasadena police shoot and kill armed carjacking suspect after pursuit and standoff",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-07-29T23:25:00",
+        "initial_contact": "2022-07-29T23:25:00",
+        "pursuit_started": "2022-07-30T02:24:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (silver)",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "standoff"
+        ],
+        "crime_categories": [
+          "carjacking",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "carjacking",
+          "suicide threat",
+          "PIT maneuver attempted"
+        ],
+        "content_warnings": [
+          "death",
+          "suicide threats",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 30, 2022, The Monrovia Police Department advised Pasadena Police Dispatch, they were pursuing a vehicle that had been carjacked in the City of Pasadena on July 29, 2022.",
+          "timestamp_seconds": null
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "the Pasadena PD pursued the vehicle ... before Youines pulled into a small shopping center in the 600 block of N. Lake Ave.",
+          "timestamp_seconds": null
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "The suspect, 35-year-old Adam Youines",
+          "timestamp_seconds": null
+        },
+        {
+          "field": "suspect_race",
+          "source": "transcript",
+          "quote": "unknown male Hispanic suspect who was armed with a handgun",
+          "timestamp_seconds": 19
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "brandishing a silver handgun",
+          "timestamp_seconds": 340
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Youines was shot and killed by Pasadena police",
+          "timestamp_seconds": null
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

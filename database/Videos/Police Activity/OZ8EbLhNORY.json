@@ -210,5 +210,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:14:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-29",
+        "published_date": "2024-01-31",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia County",
+          "city": "Port Orange",
+          "address_or_area": "7-Eleven gas station at Ridgewood Ave near Dunlawton Ave",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Port Orange Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Volusia County",
+          "city": "Port Orange"
+        }
+      },
+      "geo": {
+        "address_or_place": "7-Eleven gas station, Ridgewood Ave near Dunlawton Ave, Port Orange, FL",
+        "intersection": "Ridgewood Ave and Dunlawton Ave",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12127",
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sean Gary",
+          "last_name": "Hendershot",
+          "age": 57,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure of sex offender to report vacating a residence",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Providing a false name to law enforcement",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Failure to report change of residence (sex offender)",
+          "False name",
+          "Resisting arrest"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Registered sex offender Sean Hendershot, wanted on warrants for failing to report his residence, gave a false name and fled on foot but was quickly apprehended by Port Orange police.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-01-29T11:49:00",
+        "initial_contact": null,
+        "pursuit_started": "2024-01-29T~11:50",
+        "arrest": "2024-01-29T~11:51"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "foot_pursuit",
+          "warrant_arrest",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "warrant",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "tags": [
+          "sex_offender",
+          "false_identity",
+          "BOLO",
+          "license_plate_reader"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 29, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Port Orange, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "at the gas pumps at the 7-eleven gas station",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "57-year-old Sean Gary Hendershot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "description",
+          "quote": "57-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "warrants from both St. Lucie and Dixie County in reference to violation of sexual offender probation for failure to report change of residence",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "transcript",
+          "quote": "Stop running!",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        },
+        {
+          "field": "false_name",
+          "source": "transcript",
+          "quote": "So again, real quick, so you want to say the name is Blake Barry Anderson?",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -145,5 +145,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:39:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-30",
+        "published_date": "2025-02-13T19:04:56Z",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "Hartford",
+          "city": "Windsor",
+          "address_or_area": "Tiger Mart gas station at 160 Windsor Avenue, then Keney Park entrance",
+          "location_name": "Tiger Mart gas station",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Windsor Police Department",
+          "type": "municipal police",
+          "state": "Connecticut",
+          "county": "Hartford",
+          "city": "Windsor"
+        }
+      },
+      "geo": {
+        "address_or_place": "160 Windsor Avenue, Windsor, CT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Geovanni",
+          "last_name": "Nunez",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "description",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Brandon",
+          "last_name": "Thomas",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": null,
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Misuse of marker plate",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Windsor police officer fires gun at fleeing suspect, denies it; suspect unharmed, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit",
+          "use of force",
+          "denial of shooting"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "resisting_arrest",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Windsor CT",
+          "Geovanni Nunez",
+          "Brandon Thomas",
+          "Tiger Mart"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 30, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Windsor, Connecticut",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address",
+          "source": "description",
+          "quote": "Tiger Mart gas station at 160 Windsor Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Geovanni Nunez, a Hispanic male, age 21",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer.name",
+          "source": "description",
+          "quote": "Officer Brandon Thomas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "fired one round at Nunez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_denial",
+          "source": "transcript",
+          "quote": "No, I didn't.",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "county_fips",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

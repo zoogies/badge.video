@@ -480,5 +480,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:11:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-02-11T12:45:00",
+        "published_date": "2023-12-20T00:10:49Z",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Frederick County",
+          "city": "Frederick",
+          "address_or_area": "Waverly Drive and Key Parkway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Frederick Police Department",
+          "type": "municipal police",
+          "state": "Maryland",
+          "county": "Frederick County",
+          "city": "Frederick"
+        }
+      },
+      "geo": {
+        "address_or_place": "Waverly Drive and Key Parkway, Frederick, Maryland",
+        "intersection": "Waverly Drive and Key Parkway",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dominque",
+          "last_name": "Lewis",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "Found guilty but not criminally responsible; committed to mental health facility"
+        },
+        {
+          "role": "officer",
+          "first_name": "Kristen",
+          "last_name": "Kowalsky",
+          "age": 32,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "Injured, released that evening"
+        },
+        {
+          "role": "officer",
+          "first_name": "Bryan",
+          "last_name": "Snyder",
+          "age": 43,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "Injured, released that evening"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted murder of police officers",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Carrying a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Found guilty but not criminally responsible; sent to secure mental health facility"
+      },
+      "event_summary": {
+        "short": "Man shoots two police officers in Frederick, Maryland",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-02-11T12:45:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2022-02-11"
+      },
+      "weapons": {
+        "suspect_weapon_reported": ".45 caliber handgun",
+        "officer_weapon_used": "Glock pistols",
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "ambush"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault"
+        ],
+        "tags": [
+          "Frederick",
+          "Maryland",
+          "bodycam",
+          "police shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gun violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "On February 11, 2022, around 12:45 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Frederick, Maryland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Dominque Lamarr Lewis",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "a .45 caliber handgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "Lewis was found guilty, but not criminally responsible of shooting Kowalsky and Snyder. He was sent to a secure mental health facility",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Oh, 12 shots fired.",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "county_fips",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

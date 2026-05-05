@@ -95,5 +95,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:58:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-01-24",
+        "published_date": "2016-01-25",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Lubbock County",
+          "city": "Lubbock",
+          "address_or_area": "I-27 and FM 1294",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lubbock Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Lubbock County",
+          "city": "Lubbock"
+        }
+      },
+      "geo": {
+        "address_or_place": "I-27 and FM 1294, Lubbock, TX",
+        "intersection": "I-27 and FM 1294",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Coleton Neal",
+          "last_name": "Hinsley",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Unauthorized Use of a Motor Vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Evading Arrest in Motor Vehicle",
+          "Unauthorized Use of a Motor Vehicle",
+          "Reckless Driving",
+          "Felony Warrant",
+          "3 Misdemeanor Warrants"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "High-speed pursuit in Lubbock County ends with spike strips; suspect arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "03:45",
+        "initial_contact": "03:45",
+        "pursuit_started": "03:45",
+        "arrest": "05:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "reckless_driving",
+          "theft"
+        ],
+        "tags": [
+          "spike strips",
+          "High Speed Chase",
+          "Lubbock Police",
+          "Lubbock County Sheriff",
+          "DPS"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "The pursuit lasted about an hour and finally ended when LSO deployed spikes on the ground at I-27 and FM 1294.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "We have been informed that the suspect arrested is Coleton Neal Hinsley, age 21.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "He has been booked in the Lubbock County Detention Facility, and is facing the following charges: • Evading Arrest in Motor Vehicle • Unauthorized Use of a Motor Vehicle • Reckless Driving • Felony Warrant • X3 Misdemeanor Warrants",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.dispatch_call",
+          "source": "description",
+          "quote": "The incident began at 3:45 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2460,5 +2460,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:46:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-01",
+        "published_date": "2025-06-20",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": null,
+          "address_or_area": "Southbound and Douglas",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Florida",
+          "county": "Palm Beach County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Southbound and Douglas",
+        "intersection": "Southbound and Douglas",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure to come to a complete stop at stop sign",
+            "category": "traffic_infraction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Dark tint on vehicle",
+            "category": "traffic_infraction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to identify",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving while license suspended",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Failure to identify (obstruction)",
+            "category": "misdemeanor",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving while license suspended (felony)",
+            "category": "felony",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop escalates to arrest for failure to identify and driving on suspended license; daughter present leads to DCF involvement.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "traffic_stop"
+        ],
+        "tags": [
+          "mother",
+          "daughter",
+          "DCF",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "arrest",
+          "child_present"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 1st, 2024.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "You would come to Southbound, Southbound and Douglas",
+          "timestamp_seconds": 454,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "so it's failed to identify or obstruction whichever whichever route you want to go that's the name of the charge okay",
+          "timestamp_seconds": 549,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "I also driving while license suspended. So felony driving while license suspended?",
+          "timestamp_seconds": 1251,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Yeah, she's done. We're not trying. She is arrested.",
+          "timestamp_seconds": 323,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "agency_name",
+          "suspect_name",
+          "lat/long"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

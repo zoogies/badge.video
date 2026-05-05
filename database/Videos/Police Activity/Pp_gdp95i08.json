@@ -60,5 +60,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:16:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-03",
+        "published_date": "2024-03-22",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Riverside",
+          "city": "Jurupa Valley",
+          "address_or_area": "3300 block of Avalon Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Riverside County Sheriff's Office",
+          "type": "sheriff",
+          "state": "California",
+          "county": "Riverside",
+          "city": "Jurupa Valley"
+        }
+      },
+      "geo": {
+        "address_or_place": "3300 block of Avalon Street, Jurupa Valley, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ernesto",
+          "last_name": "Rodriguez",
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic dispute with a knife",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening family members with a knife",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Deputies responded to a domestic dispute where a suspect armed with a knife threatened family. After negotiations and less-lethal attempts, the suspect advanced with the knife and was fatally shot.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "03:48",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "deputy"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "officer_involved_shooting",
+          "suspect_deceased"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "weapons_offense"
+        ],
+        "tags": [
+          "knife",
+          "domestic dispute",
+          "deputy-involved shooting",
+          "Riverside",
+          "Jurupa Valley"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Saturday, February 3, 2024, at 3:48 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Riverside, California — ... Jurupa Valley ... 3300 block of Avalon Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "the suspect, 39-year-old Ernesto Rodriguez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "six inch knife with a black handle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Rodriguez was pronounced deceased at the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "dispatch",
+          "source": "transcript",
+          "quote": "And what's going on at this address right now? ... her husband is harassing him with a knife.",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated, left null"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

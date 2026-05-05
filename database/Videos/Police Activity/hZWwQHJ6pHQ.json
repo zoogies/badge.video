@@ -865,5 +865,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:55:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-07-01",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Semmel",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "estimated"
+        },
+        "agency": {
+          "name": "Semmel County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Semmel",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rocky",
+          "last_name": "Rudolph",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Violation of window tint law (Florida)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy stops vehicle for dark windows, smells marijuana, driver attempts to flee with deputy hanging onto SUV, deputy shoots driver.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": "unknown",
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "shooting"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "deputy",
+          "hanging onto SUV",
+          "shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "in the state of Florida",
+          "timestamp_seconds": 69,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Semmel County Sheriff's Office",
+          "timestamp_seconds": 46,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Rocky Money, Rudolph, Jr.",
+          "timestamp_seconds": 117,
+          "confidence": "low"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Rudolph",
+          "timestamp_seconds": 117,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Your front window is measuring at 3%",
+          "timestamp_seconds": 77,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "Do you have any marijuana in the car? Yes, sir.",
+          "timestamp_seconds": 437,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.shots_fired",
+          "source": "title",
+          "quote": "Before Shooting Driver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.use_of_force",
+          "source": "title",
+          "quote": "Deputy Hanging Onto SUV",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "County name 'Semmel' likely a misspelling of 'Seminole'"
+        ],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "outcome.details"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County name 'Semmel' may be misspelling of 'Seminole'."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -105,5 +105,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:39:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-25",
+        "published_date": "2025-10-31",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Stanislaus",
+          "city": "Modesto",
+          "address_or_area": "Park Faith Lane",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Park Faith Lane, Modesto, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Benjamin",
+          "last_name": "Vazquez",
+          "age": 22,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "armed home invasion",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted home invasion robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Four suspects arrested after armed home invasion in Modesto; linked to earlier incident in Union City.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-10-25T16:20:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "home_invasion",
+          "vehicle_pursuit",
+          "arrest"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense"
+        ],
+        "tags": [
+          "armed",
+          "masked suspects",
+          "juvenile suspects",
+          "multiple suspects"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 25, 2025, at approximately 4:20 p.m., Officers were dispatched to an armed home invasion on Park Faith Lane in Modesto",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "dispatched to an armed home invasion on Park Faith Lane in Modesto",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "22-year-old Benjamin Vazquez of Stockton",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age_range",
+          "source": "description",
+          "quote": "three juveniles, ages 14 to 17",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_pursuit",
+          "source": "transcript",
+          "quote": "Pit is mobilized and successful",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact address number",
+          "zip code",
+          "coordinates",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

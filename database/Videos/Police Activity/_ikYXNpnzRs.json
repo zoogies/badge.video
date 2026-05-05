@@ -270,5 +270,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:45:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-11-15",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Clark",
+          "city": "Las Vegas",
+          "address_or_area": "780 Pyle Ave.",
+          "location_name": "Silverado Ranch-area convenience store",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Vegas Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Nevada",
+          "county": "Clark",
+          "city": "Las Vegas"
+        }
+      },
+      "geo": {
+        "address_or_place": "780 Pyle Ave., near Pollock Drive, Las Vegas, NV",
+        "intersection": "Pyle Ave. & Pollock Drive",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Phillip",
+          "last_name": "Pitts",
+          "age": 41,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "officer",
+          "first_name": "David",
+          "last_name": "Nesheiwat",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic violence with deadly weapon (choking, gunpoint)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man fatally shot by officers after holding wife at gunpoint; wife wounded.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "17:34",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer_David_Nesheiwat"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "officer_involved_shooting",
+          "fatal_shooting"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "weapons_offense"
+        ],
+        "tags": [
+          "domestic_violence",
+          "officer_shooting",
+          "fatal",
+          "Las Vegas"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "firearm"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "outside a Silverado Ranch-area convenience store Saturday evening ... 780 Pyle Ave., near Pollock Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Phillip Pitts, 41",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "Pitts died there moments after the shooting",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "description",
+          "quote": "woman ... underwent surgery and survived",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].first_name",
+          "source": "description",
+          "quote": "Officer David Nesheiwat, 33",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.dispatch_call",
+          "source": "description",
+          "quote": "A concerned citizen called 911 at 5:34 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "description",
+          "quote": "Nesheiwat shot twice ... pulled the trigger twice more",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Pitts died there moments after the shooting",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -495,5 +495,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:04:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-21T19:21:50Z",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": "Jefferson",
+          "city": "Louisville",
+          "address_or_area": "6119 Rooneyville Road",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Kentucky State Police",
+          "type": "state",
+          "state": "Kentucky",
+          "county": "Jefferson",
+          "city": "Louisville"
+        }
+      },
+      "geo": {
+        "address_or_place": "6119 Rooneyville Road",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript (2:40-2:44) and description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dawson",
+          "last_name": "Blevins",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested (charges later dismissed)"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing Governmental Operations",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Dismissed"
+      },
+      "event_summary": {
+        "short": "Kentucky state trooper tased and maced a passenger during a traffic stop for a seatbelt violation; passenger suffered spinal fractures and was jailed for months before all charges were dismissed.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": {
+          "timestamp_seconds": 160.0,
+          "source": "transcript",
+          "quote": "905, start for 6119 Rooneyville Road at 5-11's location."
+        },
+        "initial_contact": {
+          "timestamp_seconds": 8.0,
+          "source": "transcript",
+          "quote": "All right, Mr. Balloon, let's step out for me real quick."
+        },
+        "pursuit_started": null,
+        "arrest": {
+          "timestamp_seconds": 45.0,
+          "source": "transcript",
+          "quote": "You're under arrest."
+        }
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser and mace/pepper spray",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "resisting_arrest"
+        ],
+        "tags": [
+          "taser",
+          "mace",
+          "spinal_fracture",
+          "lawsuit",
+          "federal_indictment",
+          "bodycam_footage"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "taser",
+          "pepper_spray",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "905, start for 6119 Rooneyville Road at 5-11's location.",
+          "timestamp_seconds": 160.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Disorderly conduct, resisting arrest, obstructed governmental operations.",
+          "timestamp_seconds": 177.0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "description",
+          "quote": "Kentucky State Trooper James Cameron Wright",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "suffered two spinal fractures during the arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "all charges were dismissed earlier this year",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified beyond year 2024.",
+        "Race/ethnicity not stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

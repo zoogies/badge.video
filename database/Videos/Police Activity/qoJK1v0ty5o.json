@@ -725,5 +725,240 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:19:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-31",
+        "published_date": "2025-10-31T20:23:23Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Thurston",
+          "city": null,
+          "address_or_area": "near Old Hwy 99",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Thurston County Sheriff Office",
+          "type": "sheriff",
+          "state": "Washington",
+          "county": "Thurston",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Robert",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Commercial burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at law enforcement officers",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Burglary 1st degree",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Auto theft",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Theft 1st degree",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted theft 1st degree (x2)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Malicious mischief 1st degree",
+            "category": "vandalism",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempting to elude",
+            "category": "eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a firearm by a felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Burglary suspect led deputies on a pursuit, fired at officers after a foot chase, and surrendered after negotiation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "burglary",
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "officer_involved_shooting",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "burglary",
+          "vehicle_theft",
+          "theft",
+          "weapons_offense",
+          "eluding",
+          "shooting"
+        ],
+        "tags": [
+          "grappler",
+          "K9",
+          "negotiation",
+          "felon"
+        ],
+        "content_warnings": [
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 31, 2025, in the early morning",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Thurston County, Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "near Old Hwy 99",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Thurston County Sheriff Office (TCSO)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "commercial burglary in progress",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1]",
+          "source": "description",
+          "quote": "the suspect opened fire",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "OK, Robert?",
+          "timestamp_seconds": 557.0,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

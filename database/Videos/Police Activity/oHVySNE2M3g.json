@@ -135,5 +135,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:13:24Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-18",
+        "published_date": "2022-10-13",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": null,
+          "city": "San Antonio",
+          "address_or_area": "3200 block of West Martin Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Antonio Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": null,
+          "city": "San Antonio"
+        }
+      },
+      "geo": {
+        "address_or_place": "3200 block of West Martin Street, San Antonio, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_level",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alejandro",
+          "last_name": "Vitela",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "warrants",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "San Antonio police officer shoots and kills Alejandro Vitela after he claimed to have a gun and reached for his waistband during a stop; no weapon found.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police_shooting",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "robbery",
+          "warrant"
+        ],
+        "tags": [
+          "no_weapon_found",
+          "false_claim"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "San Antonio, Texas — On September 18, 2022, at around 8:50 a.m., two SAPD officers on patrol received information from a confidential source about an individual suspected of robbing stores, who was also wanted on multiple warrants.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 18, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "29-year-old Alejandro Vitela",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_statement",
+          "source": "transcript",
+          "quote": "I'm going to shoot you",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Vitela was pronounced deceased at the scene. An investigation revealed that Vitela didn’t have a gun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

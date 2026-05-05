@@ -375,5 +375,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:02:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-09-15",
+        "published_date": "2021-09-23T16:00:07Z",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Denver",
+          "city": "Denver",
+          "address_or_area": "2499 S. Colorado Blvd",
+          "location_name": "apartment complex at 2499 S. Colorado Blvd",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Denver Police Department",
+          "type": "municipal",
+          "state": "Colorado",
+          "county": "Denver",
+          "city": "Denver"
+        }
+      },
+      "geo": {
+        "address_or_place": "2499 S. Colorado Blvd, Denver, CO",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mac",
+          "last_name": "McPherson",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "person with a handgun (intoxicated)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Denver police shot and killed Mac McPherson after he pulled a handgun from his pocket during a high-risk stop.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2020-09-15T22:34:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "duty weapon",
+        "shots_fired_by": [
+          "Corporal Robert Krelle",
+          "Officer Dennis Liss",
+          "Corporal Anthony Gutierrez-McKain"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "fatal shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "public_intoxication"
+        ],
+        "tags": [
+          "Denver",
+          "police shooting",
+          "bodycam",
+          "Mac McPherson",
+          "Colorado"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 15, 2020, at approximately 10:34 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "apartment complex at 2499 S. Colorado Blvd",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "22-year-old Mac McPherson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "He's got something in his pocket. I see it's a gun.",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "Corporal Krelle, Officer Liss and Corporal Gutierrez-MelCain fired their duty weapons at McPherson.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "he was pronounced deceased at 11:22 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

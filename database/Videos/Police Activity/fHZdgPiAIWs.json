@@ -1375,5 +1375,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:48:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-01-10",
+        "published_date": "2020-01-29T00:10:47Z",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore County",
+          "city": "Pikesville",
+          "address_or_area": "7000 block of North Alter Street",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Baltimore County Police Department",
+          "type": "municipal",
+          "state": "Maryland",
+          "county": "Baltimore County",
+          "city": "Pikesville"
+        }
+      },
+      "geo": {
+        "address_or_place": "7000 block of North Alter Street, Baltimore County, MD",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": "21207",
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_block",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 76,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Interfering with Lawful Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "76-year-old woman arrested for disorderly conduct after disturbance with knife; officer deployed pepper spray and taser.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "pepper spray, taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "disorderly conduct",
+          "use of force"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "unknown"
+        ],
+        "tags": [
+          "disorderly conduct",
+          "pepper spray",
+          "taser",
+          "76-year-old woman",
+          "Pikesville"
+        ],
+        "content_warnings": [
+          "use of force",
+          "pepper spray",
+          "taser"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "January 10 arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "in Pikesville",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "7000 block of North Alter Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "title",
+          "quote": "76-Year-Old Woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "Disordially conduct",
+          "timestamp_seconds": 20.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "they both assaulted me",
+          "timestamp_seconds": 54.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes.2",
+          "source": "transcript",
+          "quote": "interfering with the lawful arrest",
+          "timestamp_seconds": 57.0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "deployment of pepper spray, a tazer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [
+          "Description mentions two locations: initial disturbance at unit block of Western Winds Circle (21244) and arrest at 7000 block of North Alter Street (21207). Primary incident location set to arrest location."
+        ],
+        "missing_critical_fields": [
+          "suspect names",
+          "charges",
+          "case number",
+          "disposition"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not supplied; not inferred."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

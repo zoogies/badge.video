@@ -100,5 +100,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:20:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-05",
+        "published_date": "2024-05-23",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "Sixth Avenue South and South Snoqualmie Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "Sixth Avenue South and South Snoqualmie Street",
+        "intersection": "Sixth Avenue South & South Snoqualmie Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "53033",
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vehicular Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of a Firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Stolen Vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Vehicular Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of a Firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Stolen Vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "booked into King County Jail"
+      },
+      "event_summary": {
+        "short": "Suspect crashes into occupied tents while fleeing in stolen vehicle, hides in dumpster, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-05-05T05:40:00",
+        "pursuit_started": "2024-05-05T05:40:00",
+        "arrest": "2024-05-05"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "hit_and_run"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "tent encampment",
+          "dumpster",
+          "k-9"
+        ],
+        "content_warnings": [
+          "injury",
+          "vehicle crash"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 5, 2024, at around 5:40 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Seattle Police were near Sixth Avenue South and South Snoqualmie Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "description",
+          "quote": "The 30-year-old driver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries",
+          "source": "description",
+          "quote": "The two people who were hit were treated on-scene by the Seattle Fire Department for injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "booked in the King County Jail for vehicular assault, unlawful possession of a firearm and possession of a stolen vehicle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

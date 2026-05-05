@@ -215,5 +215,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:54:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-09-03",
+        "published_date": "2017-09-25T23:46:34Z",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Salt Lake County",
+          "city": "Cottonwood Heights",
+          "address_or_area": "I-15 near 1300 South",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Cottonwood Heights Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Salt Lake County",
+          "city": "Cottonwood Heights"
+        }
+      },
+      "geo": {
+        "address_or_place": "I-15 near 1300 South, Cottonwood Heights, Utah",
+        "intersection": "I-15 and 1300 South",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript: 'Black males continuing black leather coat red pants'",
+            "confidence": "high"
+          },
+          "status": "charged in juvenile court"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "illegal possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "fleeing",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "illegal possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charged in juvenile court"
+      },
+      "event_summary": {
+        "short": "17-year-old suspect shot by Cottonwood Heights police after traffic stop and pursuit; charged with fleeing and illegal firearm possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2017-09-03T03:00:00",
+        "pursuit_started": "2017-09-03T03:00:00",
+        "arrest": "2017-09-03T03:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "foot pursuit",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Utah",
+          "Cottonwood Heights",
+          "juvenile",
+          "shooting"
+        ],
+        "content_warnings": [
+          "gunshot",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "early morning officer-involved shooting on Sept. 3",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Cottonwood Heights Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "I-15 near 1300 South",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Black males continuing black leather coat red pants",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "17-year-old boy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged in juvenile court with fleeing and illegal possession of a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "fires a single shot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "did find a small .22-caliber handgun in the boy's pants",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

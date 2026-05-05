@@ -45,5 +45,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:51:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-11-14",
+        "published_date": "2016-11-18",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Clark County",
+          "city": "Las Vegas",
+          "address_or_area": "Bonanza Road and Nellis Boulevard / Del Amo Drive and Sandhill Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Vegas Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Nevada",
+          "county": "Clark County",
+          "city": "Las Vegas"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Prichard",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Scott",
+          "last_name": "Hinckley",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "paid administrative leave"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shooting of suspect attempting to run over officer during traffic stop",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting",
+          "vehicle_ramming"
+        ],
+        "crime_categories": [
+          "assault",
+          "reckless_driving",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "officer shooting",
+          "Las Vegas"
+        ],
+        "content_warnings": [
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in the area Bonanza Road and Nellis Boulevard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in the area of Del Amo Drive and Sandhill Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "We're taking the vehicle at Del Amo and La Cruz.",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name",
+          "source": "description",
+          "quote": "18-year-old Daniel Prichard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer name",
+          "source": "description",
+          "quote": "Scott Hinckley, 33",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "He faces charges including assault with a deadly weapon and reckless driving.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": [
+        "Missing precise coordinates"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

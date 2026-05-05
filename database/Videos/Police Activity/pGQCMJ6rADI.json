@@ -60,5 +60,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:15:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-25",
+        "published_date": "2016-11-19T19:38:42Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas",
+          "city": "St. Petersburg",
+          "address_or_area": "Mobile gas station, 4th Street North",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pinellas County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Pinellas",
+          "city": "St. Petersburg"
+        }
+      },
+      "geo": {
+        "address_or_place": "Mobile gas station, 4th Street North",
+        "intersection": "4th Street North",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_level",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Paige",
+          "last_name": "Taylor",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charges_dropped"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on a law enforcement officer",
+            "disposition": "dropped"
+          },
+          {
+            "label": "Resisting an officer with violence",
+            "disposition": "dropped"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charges_dropped"
+      },
+      "event_summary": {
+        "short": "Deputy fired for excessive force after traffic stop; charges against driver dropped.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-03-25T21:40:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "excessive_force"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "dashcam",
+          "deputy fired",
+          "Pinellas County"
+        ],
+        "content_warnings": [
+          "use_of_force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The traffic stop happened March 25 at 9:40 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Deputy Wayne Wagner stopped a truck at the Mobile gas station along 4th Street North in St. Petersburg.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "charged Taylor with battery on a law enforcement officer and resisting an officer with violence.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "The charges were dropped against Taylor.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "You're under arrest for battery on the law enforcement law.",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1895,5 +1895,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:46:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-02-16",
+        "published_date": "2024-05-04T17:02:58Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "emergency shelter",
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexis",
+          "last_name": null,
+          "age": 18,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "warrant for felonious assault on a parole officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing official business",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted assault on an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "18-year-old female arrested on warrant for assaulting parole officer; resisted and was physically subdued.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": 0
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "warrant_service"
+        ],
+        "crime_categories": [
+          "assault",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "parole officer",
+          "bodycam",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 16th, 2023, officers were called to an emergency shelter",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Alexis, stop, okay?",
+          "timestamp_seconds": 92,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "18!",
+          "timestamp_seconds": 644,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "You have a warrant on indictment for felonious assault on a parole.",
+          "timestamp_seconds": 196,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime_add",
+          "source": "transcript",
+          "quote": "That's attempted assault on an officer.",
+          "timestamp_seconds": 696,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime_add2",
+          "source": "transcript",
+          "quote": "Obstructing official business.",
+          "timestamp_seconds": 420,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location details not provided in video metadata or transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

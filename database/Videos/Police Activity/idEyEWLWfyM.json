@@ -1465,5 +1465,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:56:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-05-29",
+        "published_date": "2020-06-10",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Bay",
+          "city": "Springfield",
+          "address_or_area": "3200 block of Business 98",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Springfield Police Department",
+          "type": "city_police",
+          "state": "Florida",
+          "county": "Bay",
+          "city": "Springfield"
+        }
+      },
+      "geo": {
+        "address_or_place": "3200 block of Business 98",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "subject",
+          "first_name": "Solomon",
+          "last_name": "Smith",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Ronnie",
+          "last_name": "Nelson",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [
+          {
+            "label": "official misconduct (felony)",
+            "category": "official_misconduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery (misdemeanor)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officer tasers unarmed man with developmental disorder during stop for suspected false name; officer charged.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-05-29T00:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_misconduct",
+          "use_of_force",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "taser",
+          "mental handicap",
+          "Florida",
+          "Springfield",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "around midnight on May 29",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Springfield, Florida — A Springfield police officer...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "subject_name",
+          "source": "transcript",
+          "quote": "My name is Solomon E. Smith III.",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Former officer Ronnie Nelson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "taser_use",
+          "source": "transcript",
+          "quote": "Teasure Deploy",
+          "timestamp_seconds": 690,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "arrested and charged with a felony official misconduct charge and a misdemeanor battery charge",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

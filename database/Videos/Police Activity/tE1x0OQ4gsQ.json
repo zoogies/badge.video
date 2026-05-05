@@ -320,5 +320,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:25:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2014-10-03",
+        "published_date": "2016-10-08",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Hays",
+          "city": "Buda",
+          "address_or_area": "Wal-Mart on Old San Antonio Road",
+          "location_name": "Wal-Mart on Old San Antonio Road",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Buda Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Hays",
+          "city": "Buda"
+        }
+      },
+      "geo": {
+        "address_or_place": "Wal-Mart on Old San Antonio Road, Buda, TX",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Juan",
+          "last_name": "Martinez",
+          "age": 73,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Guadalupe",
+          "last_name": "Martinez",
+          "age": "70s",
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "interference with police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "shoplifting (theft)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "interference",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Elderly couple accused of shoplifting at Wal-Mart; officer used force on husband, resulting in broken ribs and federal lawsuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2014-10-03",
+        "pursuit_started": null,
+        "arrest": "2014-10-03"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "hands",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_encounter",
+          "use_of_force",
+          "federal_lawsuit"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Buda Police",
+          "Wal-Mart",
+          "elderly",
+          "federal lawsuit",
+          "excessive force"
+        ],
+        "content_warnings": [
+          "violence",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "October 3, 2014",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Wal-Mart on Old San Antonio Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "Juan Martinez, who was 73-years-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "Guadalupe Martinez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Guadalupe Martinez was charged for theft and Juan for interfering",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "officer then puts both hands on Martinez forcing him out of the office until he falls onto the ground, screaming in pain",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "Martinez lay on the ground, ribs broken",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "Their charges are still pending",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Race/ethnicity not explicitly stated, left null"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

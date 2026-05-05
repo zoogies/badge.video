@@ -710,5 +710,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:14:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2022-09-23",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Weld County",
+          "city": "Fort Lupton",
+          "address_or_area": "near Highway 85 and County Road 38",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Platteville Police Department",
+          "type": "local",
+          "state": "Colorado",
+          "county": "Weld County",
+          "city": "Platteville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 85 and County Road 38, Fort Lupton, Colorado",
+        "intersection": "Highway 85 and County Road 38",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Maria",
+          "last_name": "Rios-Gonzalez",
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "road rage involving a gun",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Train strikes police car with handcuffed woman inside during roadside stop",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": null,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "train_collision",
+          "in_custody_injury"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "traffic_stop"
+        ],
+        "tags": [
+          "road rage",
+          "train accident",
+          "handcuffed",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Fort Lupton, Colorado — ... near Highway 85 and County Road 38",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Maria Rios-Gonzalez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_details",
+          "source": "description",
+          "quote": "a 20-year-old woman handcuffed in the back seat ... suffered serious bodily injuries, including multiple broken ribs and a fractured sternum",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "train_hit",
+          "source": "transcript",
+          "quote": "Move your car!",
+          "timestamp_seconds": 319,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_recovery",
+          "source": "transcript",
+          "quote": "There's a round over there in the door.",
+          "timestamp_seconds": 430,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_recovery",
+          "source": "transcript",
+          "quote": "Here's your gun.",
+          "timestamp_seconds": 465,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not explicitly stated; race/ethnicity not identified"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

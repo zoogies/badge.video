@@ -1445,5 +1445,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:38:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-01-17",
+        "published_date": "2021-04-19T22:27:54Z",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Comanche",
+          "city": "Lawton",
+          "address_or_area": "10th Street and Park Avenue",
+          "location_name": "Lavish Lounge",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lawton Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": "Comanche",
+          "city": "Lawton"
+        }
+      },
+      "geo": {
+        "address_or_place": "Lavish Lounge, Lawton, OK",
+        "intersection": "10th Street and Park Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Zonterious",
+          "last_name": "Johnson",
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Nathan",
+          "last_name": "Ronan",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shooting a firearm in public",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing from police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police responded to shots fired at Lavish Lounge; pursuit and shooting of armed suspect Zonterious Johnson.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-01-17T03:30:00",
+        "pursuit_started": "2021-01-17T03:30:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Taurus 9mm pistol",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "fatal",
+          "OSBI"
+        ],
+        "content_warnings": [
+          "graphic_violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 17, 2021 at approximately 3:30 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Lawton, Oklahoma",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "24-year-old Zonterious Johnson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "Black male gray shirt, black pants",
+          "timestamp_seconds": 137,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "he succumbed to his injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Johnson standing in the street and shooting a weapon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired_by",
+          "source": "description",
+          "quote": "Officer Ronan then fired his weapon at Johnson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

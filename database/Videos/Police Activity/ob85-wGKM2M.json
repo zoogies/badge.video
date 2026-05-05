@@ -100,5 +100,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:13:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-16",
+        "published_date": "2024-11-18",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Hillsborough",
+          "city": "Tampa",
+          "address_or_area": "West Hillsborough Avenue and Elliot Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Hillsborough County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Hillsborough",
+          "city": "Tampa"
+        }
+      },
+      "geo": {
+        "address_or_place": "West Hillsborough Avenue and Elliot Drive, Tampa, FL",
+        "intersection": "West Hillsborough Avenue and Elliot Drive",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title and description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Traffic Violation (obscured tag)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons Violation (reaching for firearm)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy shoots suspect who reached for gun during traffic stop in Tampa",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-11-16T21:15:00-05:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "weapons_offense"
+        ],
+        "tags": [
+          "use_of_force",
+          "fatality"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 16, 2024, at 9:15 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Hillsborough County, Florida... West Hillsborough Avenue and Elliot Drive in Tampa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Hillsborough County Sheriff's Office Deputies",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_details",
+          "source": "description",
+          "quote": "the suspect reached for a firearm... deputy backed up before shooting the suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "transported to St. Joseph's Hospital, where he was pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript_contact",
+          "source": "transcript",
+          "quote": "Can I see your hands?",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript_alarm",
+          "source": "transcript",
+          "quote": "Hey! ... Whoa!",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "age",
+          "race_ethnicity",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

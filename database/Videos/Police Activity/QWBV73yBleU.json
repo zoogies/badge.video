@@ -1120,5 +1120,168 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:19:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-14",
+        "published_date": "2025-08-11T17:36:52Z",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": null,
+          "city": "Aurora",
+          "address_or_area": "15800 block of East Arkansas Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Aurora Police Department",
+          "type": "municipal police",
+          "state": "Colorado",
+          "county": null,
+          "city": "Aurora"
+        }
+      },
+      "geo": {
+        "address_or_place": "15800 block of East Arkansas Drive, Aurora, Colorado",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address_range",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 58,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized with life-threatening injuries"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Menacing with a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Aurora police officer shoots armed man during domestic disturbance call. Suspect produced handgun and pointed at officers, resulting in officer-involved shooting.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-06-14T17:45",
+        "initial_contact": "2025-06-14T17:45",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "domestic disturbance"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "officer-involved shooting",
+          "domestic disturbance",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Aurora, Colorado — On June 14, 2025, at about 5:45 p.m., Aurora Police Officers responded to a family dispute call, in the 15800 block of East Arkansas Drive.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "A 58-year-old Aurora man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Drop it! Drop the gun!",
+          "timestamp_seconds": 17.0,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "18. I need medical. Two shots to the chest.",
+          "timestamp_seconds": 53.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_name",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Missing county and precise location details; requires manual review"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -805,5 +805,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:21:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-03-10",
+        "published_date": "2026-04-06",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Sacramento County",
+          "city": "Sacramento",
+          "address_or_area": "3100 block of Northstead Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Sacramento Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Sacramento County",
+          "city": "Sacramento"
+        }
+      },
+      "geo": {
+        "address_or_place": "3100 block of Northstead Drive, Sacramento, California",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "block",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jamal",
+          "last_name": "Dearmond",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "confirmed"
+          },
+          "status": "injured, transported to hospital, then booked"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Multiple counts of assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "booked into Sacramento County Main Jail"
+      },
+      "event_summary": {
+        "short": "Knife-wielding suspect who called police on himself was shot by officers after advancing toward them in Sacramento.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2026-03-10T18:45:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2026-03-13"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "butcher knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "knife",
+          "mental health",
+          "suicide by cop"
+        ],
+        "content_warnings": [
+          "violence",
+          "injury"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 10, 2026",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Sacramento, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "3100 block of Northstead Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "29-year-old Jamal Dearmond",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "Black",
+          "timestamp_seconds": 52,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "description",
+          "quote": "booked into the Sacramento County Main Jail on multiple counts of assault with a deadly weapon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "shots fired, shots fired",
+          "timestamp_seconds": 301,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

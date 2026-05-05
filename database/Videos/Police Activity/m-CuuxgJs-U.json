@@ -25,5 +25,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:07:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-08",
+        "published_date": "2024-05-13",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Queens County",
+          "city": "Queens",
+          "address_or_area": "vicinity of 62nd Avenue and 102nd Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "NYPD",
+          "type": "municipal police",
+          "state": "New York",
+          "county": "Queens County",
+          "city": "New York City"
+        }
+      },
+      "geo": {
+        "address_or_place": "62nd Avenue and 102nd Street, Queens, NY",
+        "intersection": "62nd Avenue and 102nd Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Djamshed",
+          "last_name": "Nematov",
+          "age": 46,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stabbing",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "NYPD officers shot and killed a man who charged at them with a knife after he stabbed his wife at a birthday party.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-03-08T18:49:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm, Taser",
+        "shots_fired_by": [
+          "Officer O'Rourke",
+          "Officer Taveras"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault"
+        ],
+        "tags": [
+          "NYPD",
+          "Queens",
+          "bodycam",
+          "knife",
+          "officer_involved_shooting"
+        ],
+        "content_warnings": [
+          "graphic_content",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "Queens, New York — On Friday, March 8, 2024, at approximately 6:49 p.m., ... vicinity of 62nd Avenue and 102nd Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On Friday, March 8, 2024, at approximately 6:49 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "46-year-old Djamshed Nematov",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "stabbing his wife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript",
+          "source": "transcript",
+          "quote": "Get away first.",
+          "timestamp_seconds": 5,
+          "confidence": "unknown"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

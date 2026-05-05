@@ -345,5 +345,231 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:27:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2018-05-27",
+        "location": {
+          "state": "Idaho",
+          "state_abbreviation": "ID",
+          "county": "Kootenai",
+          "city": "Coeur d'Alene",
+          "address_or_area": "Kootenai Health",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Coeur d'Alene Police Department",
+          "type": "municipal",
+          "state": "Idaho",
+          "county": "Kootenai",
+          "city": "Coeur d'Alene"
+        }
+      },
+      "geo": {
+        "address_or_place": "Kootenai Health",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lindsay",
+          "last_name": "McLean",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Harrison",
+          "last_name": "McLean",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a police officer",
+            "category": "assault/battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Refusing a sobriety test",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assaulting an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on a police officer",
+            "category": "assault/battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Refusing a sobriety test",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assaulting an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Altercation between Coeur d'Alene couple and police at hospital over suspected DUI and allergic reaction, resulting in charges of battery and assault on officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "hospital_incident",
+          "dui_suspicion",
+          "police_altercation"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "resisting_arrest",
+          "dui"
+        ],
+        "tags": [
+          "bodycam",
+          "Coeur d'Alene",
+          "Kootenai Health",
+          "Lindsay McLean",
+          "Harrison McLean"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "arrest",
+          "verbal_altercation"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Coeur d’Alene couple",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Kootenai Health",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.name",
+          "source": "description",
+          "quote": "Lindsay and Harrison McLean",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "description",
+          "quote": "Lindsay is charged with battery on a police officer, resisting and refusing a sobriety test",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "description",
+          "quote": "Harrison is charged with assaulting an officer and resisting arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "age",
+          "coordinates",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

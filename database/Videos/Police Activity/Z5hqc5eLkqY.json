@@ -95,5 +95,231 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:42:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-18",
+        "published_date": "2025-12-19",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Stark",
+          "city": "Canton",
+          "address_or_area": null,
+          "location_name": "Walmart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Canton Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Stark",
+          "city": "Canton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Shane",
+          "last_name": "Newman",
+          "age": 21,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Katerina",
+          "last_name": "Jeffrey",
+          "age": 23,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "weapon possession by prohibited person",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug possession (suspected narcotics)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "complicity to commit robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Shoplifting suspect pulls gun on Canton police officer inside Walmart, gun fails to discharge; suspect and accomplice arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "armed confrontation",
+          "attempted murder"
+        ],
+        "crime_categories": [
+          "theft",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "Walmart",
+          "Canton",
+          "Ohio",
+          "shoplifting",
+          "gun",
+          "attempted murder"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 18, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Canton, Ohio — Canton, Ohio — On December 18, 2025, Walmart store employees contacted Canton Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "21-year-old Shane C. L. Newman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "accomplice_name",
+          "source": "description",
+          "quote": "23-year-old Katerina D. Jeffrey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Newman, now faces multiple felony charges, including attempted murder",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "produced a handgun... pointed the weapon at the officer and attempted to fire, but the gun did not discharge",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "The officer and a Walmart loss prevention employee immediately rushed Newman, wrestling him to the ground and securing him in handcuffs",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "geo.zip_code",
+          "geo.county_fips",
+          "agency.type"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

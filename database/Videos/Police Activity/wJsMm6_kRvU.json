@@ -25,5 +25,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:34:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-12-06",
+        "location": {
+          "state": "Kansas",
+          "state_abbreviation": "KS",
+          "county": "Sedgwick",
+          "city": "Wichita",
+          "address_or_area": "47th Street South and Broadway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Maize Police Department",
+          "type": "municipal police",
+          "state": "Kansas",
+          "county": "Sedgwick",
+          "city": "Maize"
+        }
+      },
+      "geo": {
+        "address_or_place": "47th Street South and Broadway, Wichita, KS",
+        "intersection": "47th Street South & Broadway",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "20173",
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "claimed to be armed",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Carjacking suspect rammed police car during pursuit in Wichita, Kansas.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-12-05T15:30:00",
+        "pursuit_started": "2016-12-05T15:30:00",
+        "arrest": "2016-12-05T15:30:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "carjacking"
+        ],
+        "crime_categories": [
+          "robbery",
+          "vehicle_theft"
+        ],
+        "tags": [
+          "carjacking",
+          "ramming",
+          "police pursuit",
+          "Kansas"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "a woman was carjacked Monday in Wichita, Kansas near 47th Street South and Broadway",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "near 47th Street South and Broadway",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "Officers arrested the suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "No one was hurt from any of the day's incidents",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "A suspected carjacker ran straight into law enforcement",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name",
+          "suspect_age",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -300,5 +300,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:28:56Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-22",
+        "published_date": "2022-09-03T18:58:53Z",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City",
+          "address_or_area": "2221 SW 78th St",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Oklahoma City Police Department",
+          "type": "municipal police",
+          "state": "Oklahoma",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City"
+        }
+      },
+      "geo": {
+        "address_or_place": "2221 SW 78th St, Oklahoma City, OK",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Benjamin",
+          "last_name": "Plank",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Bobby",
+          "last_name": "Swartz",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Mark",
+          "last_name": "Johns",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "First-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at law enforcement officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding police",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "First-degree murder",
+          "multiple other charges"
+        ],
+        "case_number": null,
+        "disposition": "arrested, pending investigation"
+      },
+      "event_summary": {
+        "short": "Police chase and shootout with suspect Benjamin Plank after he shot deputies during eviction service.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-08-22T13:18:00",
+        "initial_contact": "2022-08-22T13:30:00",
+        "pursuit_started": "2022-08-22T13:30:00",
+        "arrest": "2022-08-22T13:??:??"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "rifle",
+        "officer_weapon_used": "rifle",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "shootout",
+          "eviction service"
+        ],
+        "crime_categories": [
+          "homicide",
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "Oklahoma City",
+          "Tinker AFB",
+          "Benjamin Plank"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 22, 2022, at approximately 1:18 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Oklahoma City, Oklahoma — ... 2221 SW 78th St.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "35-year-old Benjamin Plank",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "accused of fatally shooting Sgt. Bobby Swartz",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired. He's shooting out of his window.",
+          "timestamp_seconds": 92,
+          "confidence": "high"
+        },
+        {
+          "field": "initial_contact_time",
+          "source": "transcript",
+          "quote": "At approximately 1.30 p.m., an Oklahoma City officer located the suspect",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -470,5 +470,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:38:13Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-01-13",
+        "published_date": "2021-03-16T23:07:02Z",
+        "location": {
+          "state": "Delaware",
+          "state_abbreviation": "DE",
+          "county": "New Castle",
+          "city": "Wilmington",
+          "address_or_area": "Rosemont Ave and East 24th Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New Castle County Division of Police",
+          "type": "county police",
+          "state": "Delaware",
+          "county": "New Castle",
+          "city": "Wilmington"
+        }
+      },
+      "geo": {
+        "address_or_place": "Rosemont Ave and East 24th Street, Wilmington, DE",
+        "intersection": "Rosemont Ave & East 24th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lymond",
+          "last_name": "Moses",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing from police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assault on officers with vehicle",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shoot Lymond Moses after he drives at officers during a stop in Wilmington, DE.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-01-13T01:10:00",
+        "pursuit_started": "2021-01-13T01:10:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "vehicle",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "shooting",
+          "New Castle County",
+          "Delaware"
+        ],
+        "content_warnings": [
+          "graphic_content"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 13, 20201 at approximately 1:10 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in the area of Rosemont Ave and East 24th Street in the City of Wilmington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "title",
+          "quote": "Lymond Moses",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Moses was pronounced dead at the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_pursuit",
+          "source": "description",
+          "quote": "the vehicle took off and fled down a dead-end road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire, shots fire, shots fired.",
+          "timestamp_seconds": 228,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_age",
+          "suspect_race_ethnicity",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -300,5 +300,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:39:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-12-27",
+        "published_date": "2025-01-02",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Macomb County",
+          "city": "Warren",
+          "address_or_area": "7-Eleven at 12 Mile and Schoenherr",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Warren Police Department",
+          "type": "police",
+          "state": "Michigan",
+          "county": "Macomb County",
+          "city": "Warren"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "12 Mile and Schoenherr",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brian",
+          "last_name": "Steele",
+          "age": 46,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing knives and threatening employees",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Crashing vehicle into building",
+            "category": "malicious_destruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault with intent to rob while armed (life felony)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Two counts of assault with a dangerous weapon (4-year felony)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Malicious destruction of a building $1,000 or more (5-year felony)",
+            "category": "malicious_destruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Not guilty plea entered; bond set at $250,000 cash/surety with GPS tether"
+      },
+      "event_summary": {
+        "short": "Police deployed Taser to subdue a knife-wielding man who crashed into a 7-Eleven in Warren, MI.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-12-27T23:58:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_crash",
+          "armed_suspect",
+          "taser_deployment"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "malicious_destruction"
+        ],
+        "tags": [
+          "Taser",
+          "knife",
+          "7-Eleven",
+          "Warren"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Friday, December 27, 2024, at approximately 11:58 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Warren, Michigan",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "12 on Schener on 7-Eleven",
+          "timestamp_seconds": 6,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "46-year-old Brian Steele",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged by Macomb County Prosecutor's Office with one count of assault with intent to rob while armed...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "successfully deployed a Taser",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

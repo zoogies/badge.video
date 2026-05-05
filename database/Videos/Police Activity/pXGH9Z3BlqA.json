@@ -660,5 +660,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:17:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-11-23",
+        "published_date": "2025-11-25",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "Fairfield",
+          "city": "Newtown",
+          "address_or_area": "Hanover Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Newtown Police Department",
+          "type": "Municipal",
+          "state": "Connecticut",
+          "county": "Fairfield",
+          "city": "Newtown"
+        }
+      },
+      "geo": {
+        "address_or_place": "Hanover Road, Newtown, Connecticut",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Morris",
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on Public Safety Personnel",
+            "category": "assault",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          },
+          {
+            "label": "Interfering with an Officer/Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault on Public Safety Personnel",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          },
+          {
+            "label": "Interfering with an Officer/Resisting Arrest",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "statute": "Connecticut General Statutes",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pending arraignment on 2025-11-24"
+      },
+      "event_summary": {
+        "short": "Suspect Daniel Morris punched officer during detention, leading to physical altercation and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-11-23T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2025-11-23T00:00:00Z"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "resisting_arrest",
+          "physical_altercation"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "punch",
+          "headlock",
+          "officer assaulted",
+          "bodycam",
+          "dashcam"
+        ],
+        "content_warnings": [
+          "use of force",
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 23, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Newtown, Connecticut — ... Hanover Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name_age",
+          "source": "description",
+          "quote": "40-year-old Daniel Morris",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Assault on Public Safety Personnel, Interfering with an Officer/Resisting Arrest, Disorderly Conduct",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Officer Hyvarinen",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon_claim",
+          "source": "transcript",
+          "quote": "I got a knife too.",
+          "timestamp_seconds": 283,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code",
+          "people.race_ethnicity.value"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

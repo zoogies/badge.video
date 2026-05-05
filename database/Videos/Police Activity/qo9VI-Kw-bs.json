@@ -295,5 +295,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:19:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-13",
+        "published_date": "2025-09-17",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Hillsborough",
+          "city": "Tampa",
+          "address_or_area": null,
+          "location_name": "I-4 eastbound",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tampa Police Department / Florida Highway Patrol",
+          "type": "police",
+          "state": "Florida",
+          "county": "Hillsborough",
+          "city": "Tampa"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kristian",
+          "last_name": "Beall",
+          "age": 24,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (BAC over 0.15)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Fleeing to Elude",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing to Elude at High Speed",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Driving Under the Influence (BAC over 0.15)",
+          "Aggravated Fleeing to Elude",
+          "Fleeing to Elude at High Speed"
+        ],
+        "case_number": null,
+        "disposition": "arrested and transported to Orient Road Jail"
+      },
+      "event_summary": {
+        "short": "24-year-old woman fled from police while driving wrong way on I-4 in Tampa; PIT maneuver used; arrested for DUI with BAC over .19.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-09-13T02:30:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "vehicle pursuit",
+          "wrong-way driver",
+          "PIT maneuver"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit",
+          "reckless_driving"
+        ],
+        "tags": [
+          "DUI",
+          "fleeing",
+          "wrong way",
+          "I-4",
+          "Tampa",
+          "Florida"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 13, 2025, just before 2:30 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Tampa, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "24-year-old Kristian Beall",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "description",
+          "quote": "Kristian Beall",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "arrested for driving under the influence (DUI). Her breath alcohol content (BrAC) was measured at .199 and .202",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "description",
+          "quote": "charged with ... Aggravated Fleeing to Elude; and Fleeing to Elude at High Speed",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "Beall was arrested",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "performed a successful Precision Immobilization Technique (PIT) maneuver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "continued to flee",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

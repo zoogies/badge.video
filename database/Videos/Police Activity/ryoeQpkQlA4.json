@@ -875,5 +875,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:22:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-28",
+        "published_date": "2024-04-01T23:27:36Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Bernardino",
+          "city": "Hesperia",
+          "address_or_area": "Main Street and Interstate 15",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Bernardino County Sheriff's Department",
+          "type": "sheriff",
+          "state": "California",
+          "county": "San Bernardino",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Main Street and Interstate 15, Hesperia, CA",
+        "intersection": "Main Street & I-15",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Graziano",
+          "age": 45,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Savannah",
+          "last_name": "Graziano",
+          "age": 15,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at police",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Both suspects deceased"
+      },
+      "event_summary": {
+        "short": "Police fatally shoot abducted teen during chaotic chase after her father killed wife and shot at others.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-09-28T00:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "fatal_police_shooting",
+          "amber_alert",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting",
+          "kidnapping",
+          "weapons_offense"
+        ],
+        "tags": [
+          "teen",
+          "abduction",
+          "police shooting",
+          "California"
+        ],
+        "content_warnings": [
+          "death",
+          "violence",
+          "gun violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The following morning, a 911 caller reported...",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Hesperia, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "description and transcript",
+          "quote": "main street and I-15",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "45-year-old Anthony Graziano",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "15-year-old Savannah Graziano",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Savannah died of her injuries. Anthony Graziano was pronounced dead at the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "Multiple firearms were located at the scene including hundreds of rounds of ammunition, flash bang and smoke grenades, as well as body-armor and tactical helmets.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "followed by a boom that appears to be at least one deputy shooting her",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

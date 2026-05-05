@@ -610,5 +610,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:32:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-30",
+        "published_date": "2023-06-30",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles County",
+          "city": "Long Beach",
+          "address_or_area": "Livingston Drive and Park Avenue",
+          "location_name": "Livingston Park",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Long Beach Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles County",
+          "city": "Long Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "Livingston Drive and Park Avenue, Long Beach, CA",
+        "intersection": "Livingston Drive and Park Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mario",
+          "last_name": "Najara",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault by means likely to produce great bodily injury",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, delaying or obstructing a peace officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Assault with a deadly weapon",
+          "Assault by means likely to produce great bodily injury",
+          "Attempted murder",
+          "Robbery",
+          "Resisting, delaying or obstructing a peace officer"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officer shot Mario Najara after he stabbed multiple people with a screwdriver in Long Beach, CA.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-05-30T11:56:00",
+        "initial_contact": "2023-05-30T12:01:00",
+        "pursuit_started": null,
+        "arrest": "2023-05-30T12:06:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "screwdriver",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "stabbing"
+        ],
+        "crime_categories": [
+          "assault",
+          "homicide",
+          "weapons_offense",
+          "robbery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "screwdriver",
+          "Long Beach",
+          "Livingston Park",
+          "multiple victims"
+        ],
+        "content_warnings": [
+          "violence",
+          "stabbing",
+          "gunshot"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 30, 2023, at approximately 11:56 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "area of Livingston Drive and Park Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "31-year-old Mario Najara",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "transcript",
+          "quote": "He is Mexican with a beard.",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "armed with a screwdriver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "charged with two counts of assault with a deadly weapon, two counts of assault by means likely to produce great bodily injury, and one count each of attempted murder, robbery and resisting, delaying or obstructing a peace officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

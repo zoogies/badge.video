@@ -1280,5 +1280,155 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:03:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-07-01",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Eagle County",
+          "city": "Avon",
+          "address_or_area": "Fairfield Inn and Suites on Colorado Avenue",
+          "location_name": "Fairfield Inn and Suites",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Avon Police Department",
+          "type": "municipal",
+          "state": "Colorado",
+          "county": null,
+          "city": "Avon"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fairfield Inn and Suites, Colorado Avenue, Avon, Colorado",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Arab",
+            "source": "title",
+            "confidence": "high"
+          },
+          "status": "not charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "false report of terrorism",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "no charges"
+      },
+      "event_summary": {
+        "short": "Police responded to a hotel after a clerk reported a man pledging allegiance to ISIS, but it was a misunderstanding. The man was handcuffed, searched, and released after collapsing from a panic attack.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mistaken identity",
+          "mental_health"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "ISIS",
+          "false alarm",
+          "panic attack"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Avon police said the man did not make any statements related to ISIS.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Fairfield Inn and Suites on Colorado Avenue in Avon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "title",
+          "quote": "Arab Man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "Police had guns drawn... handcuffed",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date not specified; only known as 'Wednesday evening' from description."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

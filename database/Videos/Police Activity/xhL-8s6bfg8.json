@@ -35,5 +35,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:36:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-21",
+        "published_date": "2016-03-23",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Smith County",
+          "city": "Tyler",
+          "address_or_area": "Loop 323 & Highway 110 North",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Smith County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Texas",
+          "county": "Smith County",
+          "city": "Tyler"
+        }
+      },
+      "geo": {
+        "address_or_place": "Intersection of Loop 323 and Highway 110 North, Tyler, TX",
+        "intersection": "Loop 323 & Highway 110 North",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "exact",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of marijuana and controlled substances",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearms",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/eluding police (high-speed chase)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "During a traffic stop, Smith County deputies were shot at by suspects, leading to a high-speed chase and arrest of three individuals. Drugs and guns were recovered.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "shooting"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "high-speed chase",
+          "shots fired",
+          "deputies",
+          "Tyler",
+          "Smith County",
+          "marijuana",
+          "firearms"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The stop was initiated... on Monday night. Video published March 23, 2016.",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Smith County Sheriff’s deputies found guns... at the intersection of Loop 323 and Highway 110 North",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Smith County Sheriff’s deputies",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.drug_offense",
+          "source": "description",
+          "quote": "found guns, marijuana and controlled substances",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Fire, shot fired, shots fired, being shot at.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "No, I'm still good.",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date (needs confirmation)",
+          "suspect names",
+          "specific charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

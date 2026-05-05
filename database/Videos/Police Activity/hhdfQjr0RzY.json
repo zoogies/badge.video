@@ -540,5 +540,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:53:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-09",
+        "published_date": "2023-05-12",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Jefferson County",
+          "city": null,
+          "address_or_area": "Interstate 64 eastbound at mile post 72",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Illinois State Police",
+          "type": "state police",
+          "state": "Illinois",
+          "county": "Jefferson County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Interstate 64 eastbound at mile post 72",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brandon",
+          "last_name": "Griffin",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "passenger",
+          "first_name": "Christine",
+          "last_name": "Santos",
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "uninjured"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shooting an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased on scene"
+      },
+      "event_summary": {
+        "short": "Illinois state trooper shot by motorist he stopped to assist on I-64; suspect killed in exchange of gunfire.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-05-09T03:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer involved shooting",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "assault",
+          "shooting"
+        ],
+        "tags": [
+          "Illinois State Police",
+          "Jefferson County",
+          "I-64",
+          "bodycam",
+          "dashcam"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, May 9, 2023 at approximately 3:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "on Interstate 64 eastbound at mile post 72, Jefferson County, Illinois",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "23-year-old Brandon Griffin of Albuquerque, NM",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "passenger_name",
+          "source": "description",
+          "quote": "31-year-old Christine Santos",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Griffin was pronounced deceased on scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "He's got a gun!",
+          "timestamp_seconds": 185.0,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injured",
+          "source": "transcript",
+          "quote": "Officer shot!",
+          "timestamp_seconds": 197.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1525,5 +1525,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:15:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-02-23",
+        "published_date": "2016-02-23T23:39:09Z",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Canadian County",
+          "city": null,
+          "address_or_area": "I-40 near Cimarron Road exit",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Oklahoma Bureau of Narcotics",
+          "type": "state",
+          "state": "Oklahoma",
+          "county": "Canadian County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "I-40 near Cimarron Road exit, Canadian County, Oklahoma",
+        "intersection": "I-40 and Cimarron Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "route",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andrew",
+          "last_name": "Sawyers",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Eluding a police officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapon charges (possession of handgun and rifles)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "High-speed chase in Canadian County, Oklahoma, after a traffic stop led to suspect Andrew Sawyers brandishing a handgun and fleeing. Chase ended in crash near Cimarron Road exit. Suspect arrested, hospitalized, and charged with eluding and weapon offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "traffic_stop",
+          "weapon_display"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "high-speed chase",
+          "OBN",
+          "Oklahoma",
+          "I-40",
+          "handgun",
+          "rifles"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "metadata",
+          "quote": "published_at: 2016-02-23T23:39:09Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "A high-speed chase in Canadian County ended in a crash near the Cimarron Road exit.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "authorities said Andrew Sawyers of Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "Sawyers faces charges including eluding a police officer as well as weapon charges.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "he pulled out a weapon, a hand gun, ... also found two rifles.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "Sawyers was taken to a hospital for his injuries.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "title",
+          "quote": "Raw Dashcam Video: Oklahoma High Speed Chase Ends In Crash",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

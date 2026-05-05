@@ -25,5 +25,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:13:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-09",
+        "published_date": "2025-10-13",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee",
+          "city": "Milwaukee",
+          "address_or_area": "4800 block of West Mill Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Milwaukee Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee",
+          "city": "Milwaukee"
+        }
+      },
+      "geo": {
+        "address_or_place": "4800 block of West Mill Road, Milwaukee, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address_range",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "law_enforcement",
+          "first_name": null,
+          "last_name": null,
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Off-duty Milwaukee police officer shot and killed a man who pistol-whipped him during a traffic crash scene.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-09T08:25:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "assault",
+          "shooting"
+        ],
+        "tags": [
+          "off-duty officer",
+          "Milwaukee",
+          "pistol whipping",
+          "crash scene",
+          "administrative duty"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, October 9, 2025 at approximately 8:25 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Milwaukee, Wisconsin — ...on the 4800 block of West Mill Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "the driver of the other vehicle approached the off-duty officer and produced a firearm. That subject proceeded to strike the off-duty officer in the face with his firearm.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.deceased",
+          "source": "description",
+          "quote": "The subject, a 26-year-old male, was pronounced deceased at the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.officer",
+          "source": "description",
+          "quote": "The officer that discharged his duty weapon during this incident is a 40-year-old male with over 21 years of service. The officer was conveyed to the hospital for treatment of injuries.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript",
+          "source": "transcript",
+          "quote": "What fuck are you doing?",
+          "timestamp_seconds": 17,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "zip code",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

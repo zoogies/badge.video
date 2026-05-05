@@ -25,5 +25,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:36:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-29",
+        "published_date": "2026-01-28T20:13:40Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Kern",
+          "city": "Bakersfield",
+          "address_or_area": "near Mohawk Street and Siena Lane",
+          "location_name": "Mohawk Street and Siena Lane",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Bakersfield Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Kern",
+          "city": "Bakersfield"
+        }
+      },
+      "geo": {
+        "address_or_place": "near Mohawk Street and Siena Lane, Bakersfield, California",
+        "intersection": "Mohawk Street and Siena Lane",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Fabian",
+          "last_name": "Lopez",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "attempted murder of a peace officer (multiple counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "firearm related charges",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "attempted murder of a peace officer (multiple counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "firearm related charges",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending booking after discharge"
+      },
+      "event_summary": {
+        "short": "Bakersfield officer shoots suspect who aimed gun during foot pursuit after traffic stop.",
+        "outcome": {
+          "arrest_made": "Yes",
+          "injuries_reported": "Yes",
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-12-29T02:15:00",
+        "pursuit_started": "2025-12-29T02:15:00 (approx after traffic stop)",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Bakersfield",
+          "Fabian Lopez",
+          "attempted murder",
+          "handgun"
+        ],
+        "content_warnings": [
+          "violence",
+          "shooting"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Monday, December 29, 2025, at approximately 2:15 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Bakersfield, California — ... near Mohawk Street and Siena Lane. ... near Latina Drive and Pisa Way",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "The suspect, identified as 37-year-old Fabian Lopez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "he will be booked ... for multiple counts of attempted murder of a peace officer and firearm related charges",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "the officer fired his weapon at the suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

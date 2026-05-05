@@ -1115,5 +1115,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:38:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-02",
+        "published_date": "2023-07-03",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles County",
+          "city": "Los Angeles",
+          "address_or_area": "5900 block of Venice Boulevard",
+          "location_name": "medical offices",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles County",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "5900 Venice Boulevard",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Uriah",
+          "last_name": "Sanders",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black or African American",
+            "source": "description/transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LAPD used a beanbag round to arrest a man armed with a spiked lawn edger after a 30-minute standoff. Suspect hospitalized with injuries.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "spiked lawn edger",
+        "officer_weapon_used": "beanbag shotgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "assault",
+          "mental_health"
+        ],
+        "tags": [
+          "beanbag",
+          "less lethal",
+          "spiked edger",
+          "standoff"
+        ],
+        "content_warnings": [
+          "use of force",
+          "injuries"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 2, 2023, around 11:15 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "suspect, later identified as Uriah Sanders",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Los Angeles, California — ... medical offices in the 5900 block of Venice Boulevard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "race_ethnicity",
+          "source": "transcript",
+          "quote": "African-American male",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_suspect",
+          "source": "description",
+          "quote": "holding an approximate four-foot spiked lawn edger",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "discharging a single beanbag shotgun round, striking Sanders in the upper right chest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries",
+          "source": "description",
+          "quote": "treated for a bruised lung, pulmonary contusion and two rib fractures",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "mental_health",
+          "source": "description",
+          "quote": "appeared to be suffering from a mental illness",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

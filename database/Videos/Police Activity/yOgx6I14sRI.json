@@ -1190,5 +1190,176 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:40:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-04-10",
+        "published_date": "2017-04-12",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Sacramento County",
+          "city": "Sacramento",
+          "address_or_area": "Del Paso Heights",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Sacramento Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Sacramento County",
+          "city": "Sacramento"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Cyprus and Grand",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "low",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nandi",
+          "last_name": "Cain Jr.",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Jaywalking",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Sacramento police dashcam video shows violent arrest of Nandi Cain Jr. for jaywalking in Del Paso Heights.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force",
+          "arrest"
+        ],
+        "crime_categories": [
+          "traffic_stop"
+        ],
+        "tags": [
+          "jaywalking",
+          "dashcam",
+          "Sacramento",
+          "officer_investigation"
+        ],
+        "content_warnings": [
+          "violence",
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Sacramento Police Dashcam Video",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.area",
+          "source": "description",
+          "quote": "Del Paso Heights",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You're Jaywalking",
+          "timestamp_seconds": 55.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Nandi Cain Jr.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "Monday",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.name",
+          "source": "title",
+          "quote": "Sacramento Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date (exact)",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

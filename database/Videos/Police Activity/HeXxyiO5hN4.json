@@ -210,5 +210,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:54:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-03-20",
+        "published_date": "2026-03-26",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Monroe County",
+          "city": "Rochester",
+          "address_or_area": "Lake Avenue near Driving Park",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rochester Police Department",
+          "type": "municipal police",
+          "state": "New York",
+          "county": "Monroe County",
+          "city": "Rochester"
+        }
+      },
+      "geo": {
+        "address_or_place": "Lake Avenue near Driving Park, Rochester, NY",
+        "intersection": "Lake Avenue & Driving Park",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated assault on a police officer (firing a handgun)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A Rochester police officer was shot by a suspect during an investigation on Lake Avenue. The suspect fled and later died from a self-inflicted gunshot wound.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police_shooting",
+          "officer_injured",
+          "suspect_deceased"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "Rochester",
+          "New York",
+          "Rochester Police Department",
+          "bodycam",
+          "officer shot",
+          "suspect suicide",
+          "handgun"
+        ],
+        "content_warnings": [
+          "violence",
+          "gun violence",
+          "self-harm",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 20th, 2026, around 1a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Rochester, N.Y. ... Lake Avenue, just south of Driving Park",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injured",
+          "source": "transcript",
+          "quote": "Oh shit! I'm shot!",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "he pulled out a handgun and fired three shots towards the Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_death",
+          "source": "description",
+          "quote": "he pulled out a handgun and shot himself in the upper body. ... found him to be deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_description",
+          "source": "transcript",
+          "quote": "Beanie, heavier build. He's got black jacket all black.",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "before running southbound",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "suspect_race",
+          "specific_address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

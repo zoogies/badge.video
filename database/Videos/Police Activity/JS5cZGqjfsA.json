@@ -85,5 +85,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:00:36Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-08-03",
+        "published_date": "2018-01-26",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": null,
+          "city": "West Valley City",
+          "address_or_area": "4th floor apartment",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "West Valley City Police",
+          "type": "municipal police",
+          "state": "Utah",
+          "county": null,
+          "city": "West Valley City"
+        }
+      },
+      "geo": {
+        "address_or_place": "West Valley City, Utah",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Fernando",
+          "last_name": "Coronado",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "civilian",
+          "first_name": "Tabeththa",
+          "last_name": "Coronado",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Threat to kill spouse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Weapons offense: knife to throat",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Barricading",
+            "category": "other",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Threat to kill officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Lawsuit filed by suspect against officers"
+      },
+      "event_summary": {
+        "short": "Utah man tased by West Valley City police during standoff, sues for excessive force",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "standoff",
+          "use_of_force",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "lawsuit",
+          "taser",
+          "West Valley City"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 3, 2016 Tabeththa Coronado called police for help.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "West Valley City Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "A Utah couple",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "description",
+          "quote": "Fernando Coronado",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "put a knife to his throat",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "description",
+          "quote": "deploying a stun gun on him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County not identified",
+        "Race not specified; not inferred"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -135,5 +135,169 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:06:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-10-02",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Montgomery County",
+          "city": "Crawfordsville",
+          "address_or_area": "Back Step Brewing Company",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indiana State Police",
+          "type": "state police",
+          "state": "Indiana",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Back Step Brewing Company, Crawfordsville, IN",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jeff",
+          "last_name": "Duff",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "robbery (reported, mistaken)",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police mistake actor for robbery suspect, fire shots.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "prop gun (appeared real)",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "mistaken identity",
+          "officer-involved shooting"
+        ],
+        "crime_categories": [
+          "other"
+        ],
+        "tags": [
+          "actor",
+          "movie set",
+          "prop gun",
+          "no injuries"
+        ],
+        "content_warnings": [
+          "gunfire"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Crawfordsville",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "description",
+          "quote": "Montgomery County Production",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "later identified as Jeff Duff",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired",
+          "source": "description",
+          "quote": "Officers fired at the man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Drop the gun now!",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "geo.latitude",
+          "geo.longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

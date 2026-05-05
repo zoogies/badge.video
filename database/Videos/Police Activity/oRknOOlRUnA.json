@@ -465,5 +465,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:14:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-12-16",
+        "published_date": "2023-01-07",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Harris",
+          "city": "Houston",
+          "address_or_area": "8300 block of Bellaire Boulevard near U.S. Highway 59 South",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Houston Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Harris",
+          "city": "Houston"
+        }
+      },
+      "geo": {
+        "address_or_place": "Bellaire Blvd near US 59 South",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joseph",
+          "last_name": "Taylor",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated robbery/carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "evading arrest in motor vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated assault against a public servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "unlawful possession of firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "aggravated assault against a public servant (3 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charged, awaiting trial"
+      },
+      "event_summary": {
+        "short": "Houston police officer shoots carjacking suspect after suspect produced gun during foot pursuit",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm (three firearms recovered)",
+        "officer_weapon_used": "duty weapon",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "foot pursuit",
+          "carjacking"
+        ],
+        "crime_categories": [
+          "robbery",
+          "assault",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "aggravated robbery",
+          "carjacking",
+          "evading",
+          "foot pursuit",
+          "officer shooting",
+          "Houston"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 16, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "30-year-old Joseph Taylor",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location_city_state",
+          "source": "description",
+          "quote": "Houston, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Taylor is charged with three counts of aggravated assault against a public servant and aggravated robbery",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "he produced a firearm... Three firearms were recovered",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_shot_suspect",
+          "source": "description",
+          "quote": "one officer discharged his duty weapon, striking Taylor in the ankle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_crash",
+          "source": "description",
+          "quote": "Taylor ran a light and struck another vehicle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -570,5 +570,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:50:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-23",
+        "published_date": "2024-05-03T22:01:19Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Brown",
+          "city": "Green Bay",
+          "address_or_area": "Green Ridge Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Green Bay Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Brown",
+          "city": "Green Bay"
+        }
+      },
+      "geo": {
+        "address_or_place": "Green Ridge Drive, Green Bay, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "street",
+        "confidence": "estimated"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Steve",
+          "last_name": "Ventura",
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black or Native American",
+            "source": "transcript",
+            "confidence": "estimated"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Daniel",
+          "last_name": "Skenandore",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": null,
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pointing a firearm at a person",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging a firearm at an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased"
+      },
+      "event_summary": {
+        "short": "Officer-involved shooting: suspect pointed gun at officer, officer fired through windshield, suspect later found with self-inflicted gunshot wound to head, pronounced dead.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-02-23T12:56:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "police_shootout"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "Green Bay",
+          "Wisconsin",
+          "bodycam",
+          "shootout",
+          "self-inflicted gunshot"
+        ],
+        "content_warnings": [
+          "graphic_content",
+          "self_inflicted_gunshot_wound"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Friday, February 23, 2024, at 12:56 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Green Bay, Wisconsin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "turned left onto Green Ridge Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name",
+          "source": "description",
+          "quote": "40-year-old Steve Ventura",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect age",
+          "source": "description",
+          "quote": "40-year-old Steve Ventura",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect race_ethnicity",
+          "source": "transcript",
+          "quote": "Black or native wearing a cream colored sweater.",
+          "timestamp_seconds": 4,
+          "confidence": "estimated"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Ventura was later transported to St. Vincent Hospital where he was pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "produced a black handgun and pointed it at Officer Skenandore",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "description",
+          "quote": "Ventura discharged his handgun at least three times. Officer Skenandore discharged a total of eighteen rounds from his duty handgun, and at least seven rounds from his duty rifle.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

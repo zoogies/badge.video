@@ -610,5 +610,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:30:57Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-22",
+        "published_date": "2024-08-28",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa",
+          "address_or_area": "10700 West Capitol Drive",
+          "location_name": "Pinelawn Cemetery",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Wauwatosa Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa"
+        }
+      },
+      "geo": {
+        "address_or_place": "10700 West Capitol Drive, Wauwatosa, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Johnny",
+          "last_name": "George",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "non-responsive"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assault on Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Wauwatosa police taser man during cemetery altercation; suspect becomes non-responsive.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "use_of_force",
+          "taser_deployment",
+          "medical_emergency"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Wauwatosa",
+          "Wisconsin",
+          "cemetery",
+          "bodycam",
+          "taser"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "medical_distress"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 22, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Wauwatosa, Wisconsin — Pinelawn Cemetery at 10700 West Capitol Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "37-year-old Johnny George",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_weapon_used",
+          "source": "description",
+          "quote": "officer Matthew Martell deployed his taser towards George",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "George still remains non-responsive as of this date",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "description",
+          "quote": "George grabbed the Officer’s vest and swung at the officer, striking Officer Gerstmeier to the head",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Fatality not explicitly confirmed; suspect is non-responsive, may be serious injury or death."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

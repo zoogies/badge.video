@@ -25,5 +25,161 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:24:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-08-31",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Muskogee County",
+          "city": "Muskogee",
+          "address_or_area": "Muscovy Place Apartments",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Muskogee Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": "Muskogee",
+          "city": "Muskogee"
+        }
+      },
+      "geo": {
+        "address_or_place": "Muscovy Place Apartments, Muskogee, OK",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Geneva",
+          "last_name": "Smith",
+          "age": 84,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "84-year-old woman pepper sprayed during arrest of her son",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "pepper spray",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "use_of_force",
+          "pepper_spray"
+        ],
+        "crime_categories": [
+          "resisting_arrest"
+        ],
+        "tags": [
+          "elderly",
+          "pepper_spray",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Muskogee police released video...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Geneva Smith's family says...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "title",
+          "quote": "84-Year-Old Woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "This is Muscovy Place Apart!",
+          "timestamp_seconds": 0,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "geo.latitude",
+          "geo.longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified; transcript truncated"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

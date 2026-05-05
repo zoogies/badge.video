@@ -185,5 +185,276 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:59:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-06-12",
+        "published_date": "2025-06-27",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Milwaukee",
+          "address_or_area": "4600 block of W. Hampton Avenue / 4800 block of N. 46th Street",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Milwaukee Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Milwaukee"
+        }
+      },
+      "geo": {
+        "address_or_place": "4600 block of W. Hampton Avenue, Milwaukee, WI",
+        "intersection": "W. Hampton Avenue and N. 46th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description",
+        "precision": "address_range",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "injured, transported to hospital, charged"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 19,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested, charged"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, transported to hospital, recovering at home, placed on administrative duty"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Foot chase and shootout between Milwaukee police and suspect; both officer and suspect injured, two suspects arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-06-12T18:46:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "ghost guns (two recovered)",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer",
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "foot_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "Milwaukee",
+          "Wisconsin",
+          "foot chase",
+          "shootout",
+          "ghost guns"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "injury",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, June 12, 2025, at approximately 6:46 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Milwaukee, Wisconsin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "4600 block of W. Hampton Avenue / 4800 block of N. 46th Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "description",
+          "quote": "The suspect that was shot, a 39-year-old male",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "2 black males",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.age",
+          "source": "description",
+          "quote": "The second suspect is a 19-year-old male",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.2.age",
+          "source": "description",
+          "quote": "The injured officer is a 30-year-old male",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "Two ghost guns were recovered",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "gunfire was exchanged between one of the suspects and the officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "One of the suspects and the officer were both struck by gunfire",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "description",
+          "quote": "the suspects fled on foot. An officer exited the vehicle and gave chase on foot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "description",
+          "quote": "two individuals flashing guns",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "description",
+          "quote": "attempted to conduct an investigatory stop when the suspects fled",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.2",
+          "source": "description",
+          "quote": "gunfire was exchanged between one of the suspects and the officer",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County not explicitly stated; assumed Milwaukee County based on city."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -250,5 +250,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:07:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-09-24",
+        "published_date": "2025-09-09",
+        "location": {
+          "state": "Idaho",
+          "state_abbreviation": "ID",
+          "county": "Ada County",
+          "city": "Boise",
+          "address_or_area": "N. Cole Road area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Boise Police Department",
+          "type": "municipal police",
+          "state": "Idaho",
+          "county": "Ada County",
+          "city": "Boise"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Adam",
+          "last_name": "Cook",
+          "age": 41,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "four counts of robbery",
+          "two counts of grand theft",
+          "felony eluding",
+          "unlawful possession of a firearm by a convicted felon",
+          "use of a deadly weapon enhancement"
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea to robbery, sentenced to life with fixed term of 40 years"
+      },
+      "event_summary": {
+        "short": "Robbery suspect uses stick to fake gun, shot by police after pursuit and foot chase in Boise, Idaho.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "Corporal Gutierrez",
+          "Officer Jayne"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "foot pursuit",
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "weapons_offense"
+        ],
+        "tags": [
+          "stick",
+          "fake gun",
+          "robbery",
+          "high-speed chase",
+          "K-9 deployment"
+        ],
+        "content_warnings": [
+          "shooting",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "Boise, Idaho — On September 2024, The Boise Police Department had been investigating...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "leading up to September 24, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "41-year-old Adam Lee Cook",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "series of three armed robberies ... felony eluding a police officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "Corporal Gutierrez and officer Jayne discharged their service weapons",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "Cook was transported to the hospital with multiple gunshot wounds and a dog bite",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "it was determined that Cook was holding a stick and pointing it at officers to simulate that he had a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

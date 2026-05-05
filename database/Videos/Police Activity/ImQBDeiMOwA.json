@@ -35,5 +35,158 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:57:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-05-30",
+        "location": {
+          "state": "Maine",
+          "state_abbreviation": "ME",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Drunk driving",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Police chase",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police chase with drunk driver ends in crash",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": null,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police chase"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "drunk driving",
+          "crash"
+        ],
+        "content_warnings": [],
+        "severity": "unknown"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "mcmerian maine",
+          "timestamp_seconds": 0,
+          "confidence": "low"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "title",
+          "quote": "Police Chase With Drunk Driver Ends In Crash",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "title",
+          "quote": "Police Chase With Drunk Driver Ends In Crash",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "county",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript is very short with unclear location."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

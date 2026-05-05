@@ -810,5 +810,152 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:53:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-09-17",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Denver County",
+          "city": "Denver",
+          "address_or_area": "1500 block",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Denver Police Department",
+          "type": "municipal",
+          "state": "Colorado",
+          "county": "Denver County",
+          "city": "Denver"
+        }
+      },
+      "geo": {
+        "address_or_place": "Denver",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Settled for $500,000 excessive force claim"
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to arrest and excessive force claim settled for $500,000",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 16,
+        "pursuit_started": null,
+        "arrest": 410
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "pepper spray",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "traffic_stop"
+        ],
+        "tags": [
+          "settlement",
+          "excessive_force"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "pepper_spray"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Police Traffic Stop Costs Denver $500,000",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "You're calling for backup for a white girl and a black dude?",
+          "timestamp_seconds": 161,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "And then you're gonna spray me in my eye with the mace.",
+          "timestamp_seconds": 588,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Everybody's in custody",
+          "timestamp_seconds": 562,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "exact address",
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

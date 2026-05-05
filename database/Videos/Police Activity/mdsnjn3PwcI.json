@@ -295,5 +295,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:08:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-01-12",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Troup",
+          "city": null,
+          "address_or_area": "Jackson Street",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Troup County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Georgia",
+          "county": "Troup",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Jackson Street, Troup County, Georgia",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Edmondson",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Michael",
+          "last_name": "Hockett",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "aggravated assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "false imprisonment",
+            "category": "other",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "aggravated assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "false imprisonment",
+            "category": "other",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy responds to welfare check for mental health episode, shootout ensues with suspect armed with shotgun; both injured but survive.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "shotgun",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "welfare check",
+          "shootout",
+          "dashcam",
+          "Troup County",
+          "shotgun",
+          "mental health"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Troup County Sheriff’s Office shows a shootout between a deputy and a suspect in Troup County.",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "suspect’s home on Jackson Street",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Edmondson eventually surrendered and is now facing several charges, including attempted murder, aggravated assault and false imprisonment.",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.suspect.last_name",
+          "source": "description",
+          "quote": "Edmondson's mother",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "I got shots fired down here where I'm at, Jackson Street.",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "pellets from a shotgun blast",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.officer.first_name",
+          "source": "description",
+          "quote": "Deputy Michael Hockett",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "suspect_first_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

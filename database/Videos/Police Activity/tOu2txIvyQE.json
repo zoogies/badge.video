@@ -250,5 +250,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:26:27Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-26",
+        "published_date": "2024-12-04",
+        "location": {
+          "state": "North Carolina",
+          "state_abbreviation": "NC",
+          "county": "Guilford",
+          "city": "Greensboro",
+          "address_or_area": "2109 Crestridge Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Greensboro Police Department",
+          "type": "municipal",
+          "state": "North Carolina",
+          "county": "Guilford",
+          "city": "Greensboro"
+        }
+      },
+      "geo": {
+        "address_or_place": "2109 Crestridge Road, Greensboro, NC",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Titus",
+          "last_name": "Kopp",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect died from gunshot wounds."
+      },
+      "event_summary": {
+        "short": "Greensboro officer shoots man charging with knife during domestic call",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-06-26T08:28:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "domestic disturbance"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "burglary",
+          "assault"
+        ],
+        "tags": [
+          "knife",
+          "domestic",
+          "Greensboro"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 26, 2024, at approximately 8:28 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "2109 Crestridge Road in Greensboro, North Carolina",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Titus Cop",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "He took a knife stuck to his belly",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_shots",
+          "source": "transcript",
+          "quote": "3312, I need an EMS. 1039. I've got a suspect with a gunshot.",
+          "timestamp_seconds": 104,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "Kopp was transported to the hospital but died from his injuries.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "race",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

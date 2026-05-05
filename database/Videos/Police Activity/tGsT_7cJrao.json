@@ -270,5 +270,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:25:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-06",
+        "published_date": "2025-02-18",
+        "location": {
+          "state": "Louisiana",
+          "state_abbreviation": "LA",
+          "county": "Orleans Parish",
+          "city": "New Orleans",
+          "address_or_area": "North Claiborne Avenue bridge at Poland Avenue",
+          "location_name": "North Claiborne Avenue bridge",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New Orleans Police Department",
+          "type": "municipal",
+          "state": "Louisiana",
+          "county": "Orleans Parish",
+          "city": "New Orleans"
+        }
+      },
+      "geo": {
+        "address_or_place": "North Claiborne Avenue bridge at Poland Avenue",
+        "intersection": "North Claiborne Avenue and Poland Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Juquan",
+          "last_name": "Dominick",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder (2 counts)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Attempted murder (2 counts)",
+          "Armed robbery"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "NOPD officers fired 11 shots at a stolen vehicle after the driver attempted to escape, striking an officer. The suspect, Juquan Dominick, was later arrested on multiple charges including attempted murder.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-02-06T17:11:00",
+        "pursuit_started": null,
+        "arrest": "2025-02-12"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police shooting",
+          "vehicle pursuit",
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "homicide",
+          "theft",
+          "weapons_offense"
+        ],
+        "tags": [
+          "NOPD",
+          "stolen vehicle",
+          "attempted murder",
+          "New Orleans"
+        ],
+        "content_warnings": [
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 6, 2025, at about 5:11 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "at the foot of the North Claiborne Avenue bridge at its intersection with Poland Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "20-year-old Juquan Dominick",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "arrest warrant was obtained for Dominick for two counts of attempted murder",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "Three officers fired gunshots at the car. The NOPD said 11 shots were fired.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "geo.zip_code",
+          "people[0].race_ethnicity",
+          "legal.case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

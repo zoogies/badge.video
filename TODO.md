@@ -6,3 +6,5 @@
 - new page with full stats aggregated
 - if someone with maintainer permissions approves changes, we can later auto consider them when we write new data
 - some sort of sort for "help out" to classify missing counties or information
+- tackle CI on issue open or PR approval by eligible maintainer perform the update and redeploy
+- optionally maybe we only want to redeploy the website manually or on a cron once a day if something changes. redeploying per issue correction would be rough if popular

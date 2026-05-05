@@ -945,5 +945,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:01:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-10-19",
+        "published_date": "2022-09-30",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Rosemead",
+          "address_or_area": "San Gabriel Boulevard near Keim Street",
+          "location_name": "auto body shop",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles County Sheriff's Department",
+          "type": "law enforcement",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Temple City"
+        }
+      },
+      "geo": {
+        "address_or_place": "San Gabriel Boulevard near Keim Street, Rosemead, California",
+        "intersection": "San Gabriel Blvd & Keim St",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "street_intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Adrian",
+          "last_name": "Abelar",
+          "age": 25,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested; treated for non-life-threatening injury"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felony probation violation (warrant)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy shoots armed man at auto body shop after he claimed murder warrant",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-10-19T15:19:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Ruger 9mm semiautomatic handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "suspicious_person_call",
+          "warrant_service",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "warrant",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "auto body shop",
+          "Rosemead",
+          "California"
+        ],
+        "content_warnings": [
+          "gun violence",
+          "shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 19, 2021, at approximately 3:19 PM",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "in the city of Rosemead",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "my address is Gabriel Boulevard in Rosebeet",
+          "timestamp_seconds": 43,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Adrian",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Abilar",
+          "timestamp_seconds": 55,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "25-year-old Adrian Abelar",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "he did have a $145,000 warrant for a felony probation violation",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "a loaded Ruger 9mm semiautomatic handgun was recovered at the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "Abelar sustained a single gunshot wound to the upper body",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

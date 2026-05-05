@@ -265,5 +265,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:05:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2018-01-26",
+        "published_date": "2018-02-27T21:00:43Z",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Jackson",
+          "city": "Jackson",
+          "address_or_area": "Robinson Road and Michigan Avenue",
+          "location_name": "Mobile gas station",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Jackson County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Michigan",
+          "county": "Jackson",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Mobile gas station at Robinson Road and Michigan Avenue",
+        "intersection": "Robinson Road and Michigan Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "26075",
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Eric",
+          "last_name": "Knox",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "threat to shoot teacher",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of loaded firearm on school property",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "active warrant for driving without a license",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "unlawfully carrying a concealed weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carrying a dangerous weapon with unlawful intent",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting or obstructing police (3 counts)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Armed suspended student threatened teacher with gun, led police on foot chase, tasered and arrested",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2018-01-26T07:53:00",
+        "initial_contact": "2018-01-26T08:10:00",
+        "pursuit_started": "2018-01-26T08:10:00",
+        "arrest": "2018-01-26T08:10:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "school threat",
+          "foot pursuit",
+          "weapon possession"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "school",
+          "tasered",
+          "bodycam",
+          "suspended student"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on Jan. 26",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Jackson County Sheriff's Office... Robinson Road and Michigan Avenue",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "18-year-old Eric D. Knox",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "loaded .22 revolver in his backpack",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "threat",
+          "source": "description",
+          "quote": "I'm going to fire on your ass",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Oh, that thing is in my back. I think I pissed myself.",
+          "timestamp_seconds": 113,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "transcript",
+          "quote": "Hey, you might as well just stop.",
+          "timestamp_seconds": 68,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not provided; not inferred"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

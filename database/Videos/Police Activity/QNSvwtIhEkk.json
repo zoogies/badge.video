@@ -385,5 +385,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:19:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-16",
+        "published_date": "2023-06-22",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion County",
+          "city": "Dunnellon",
+          "address_or_area": "10000 block of S Highway 41 / 11000 block of N Williams Street",
+          "location_name": "S Highway 41 and N Williams Street",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Marion County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Marion County",
+          "city": "Dunnellon"
+        }
+      },
+      "geo": {
+        "address_or_place": "10000 block of S Highway 41, Dunnellon, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address-level",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": "North",
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing to elude a law enforcement officer",
+            "category": "vehicle_pursuit",
+            "statute": "Florida Statute 316.1935",
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of marijuana over 20 grams",
+            "category": "drug_offense",
+            "statute": "Florida Statute 893.13",
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a vehicle without a valid license",
+            "category": "traffic_violation",
+            "statute": "Florida Statute 322.03",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Fleeing to elude (felony)",
+          "Possession of marijuana over 20 grams (felony)",
+          "Operating without valid license (misdemeanor)"
+        ],
+        "case_number": null,
+        "disposition": "arrested, held on $4,500 bond"
+      },
+      "event_summary": {
+        "short": "Man flees traffic stop, arrested on drug and fleeing charges",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-06-16T18:00:00",
+        "pursuit_started": "2023-06-16T18:00:00",
+        "arrest": "2023-06-16"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "drug_arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "traffic_violation",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "florida",
+          "no license",
+          "marijuana",
+          "fleeing"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 16, 2023, at around 6:00 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect",
+          "source": "description",
+          "quote": "34-year-old Christopher North",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "felony charges for fleeing to elude a law enforcement officer and possession of marijuana over 20 grams, along with a misdemeanor charge for operating a vehicle without a valid license",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "10000 block of S Highway 41, in Dunnellon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "substance",
+          "source": "description",
+          "quote": "approximately 85 grams of a green, leafy substance that tested positive for marijuana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_statement",
+          "source": "transcript",
+          "quote": "I wasn't even driving",
+          "timestamp_seconds": 210,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

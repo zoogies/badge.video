@@ -935,5 +935,236 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:00:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-21",
+        "published_date": "2023-08-01",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Clark",
+          "city": "Vancouver",
+          "address_or_area": "Walmart parking lot, west side",
+          "location_name": "Walmart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Vancouver Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "Clark",
+          "city": "Vancouver"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart, Vancouver, WA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Elijah",
+          "last_name": "Guffey-Prejean",
+          "age": 19,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript (\"black mill\" interpreted as \"black male\")",
+            "confidence": "moderate"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Andrea",
+          "last_name": "Mendoza",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft III",
+            "category": "theft",
+            "statute": "RCW 9A.56.050",
+            "confidence": "high"
+          },
+          {
+            "label": "Assault III",
+            "category": "assault",
+            "statute": "RCW 9A.36.031",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "moderate"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault IV",
+            "category": "assault",
+            "statute": "RCW 9A.36.041",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Vancouver PD officers respond to Walmart theft; suspect resists, punches and kicks officers; officer threatens Taser to genitals; suspect arrested; officer later charged with assault.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-05-21",
+        "pursuit_started": null,
+        "arrest": "2023-05-21"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "use_of_force",
+          "taser_deployment",
+          "threat",
+          "arrest",
+          "theft"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "resisting_arrest",
+          "official_misconduct"
+        ],
+        "tags": [
+          "Walmart",
+          "bodycam",
+          "Taser threat",
+          "officer charged"
+        ],
+        "content_warnings": [
+          "strong language",
+          "threat of sexual violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Vancouver, Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On May 21, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "19-year-old Elijah Guffey-Prejean",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Officer Andrea Mendoza",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "Theft III",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "description",
+          "quote": "Assault III",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "description",
+          "quote": "Assault IV charges on Officer Mendoza",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "description",
+          "quote": "Officer Mendoza deployed a Taser",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I will fucking tase you with the duck",
+          "timestamp_seconds": 40.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "moderate",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript contains garbled sections; race inferred from garbled phrase 'black mill'"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

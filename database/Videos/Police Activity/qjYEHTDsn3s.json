@@ -45,5 +45,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:18:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-11-18",
+        "published_date": "2016-11-19",
+        "location": {
+          "state": "Arkansas",
+          "state_abbreviation": "AR",
+          "county": "Washington County",
+          "city": "Fayetteville",
+          "address_or_area": "UA campus, south side, lot 46S, lot 56, Razorback Rd",
+          "location_name": "University of Arkansas campus",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Farmington Police Department",
+          "type": "local police",
+          "state": "Arkansas",
+          "county": "Washington County",
+          "city": "Farmington"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dakota",
+          "last_name": "King",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, injured, transported to hospital"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug possession or influence",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police pursuit of stolen vehicle driven by Dakota King ends at University of Arkansas campus with damage and suspect injuries.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-11-18 morning",
+        "pursuit_started": "2016-11-18 morning",
+        "arrest": "2016-11-18"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "campus incident",
+          "property damage"
+        ],
+        "crime_categories": [
+          "theft",
+          "reckless_driving",
+          "vehicle_pursuit",
+          "drug_offense"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "university",
+          "chase",
+          "injury"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On the morning of Nov. 18",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "UA campus",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Dakota King",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "driving reportedly stolen vehicle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "the only person to suffer injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [
+          "Description mentions Farmington Police Department but pursuit ends at UA campus in Fayetteville. City set to Fayetteville based on campus location."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City deduced from UA campus; actual start location Farmington may differ."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

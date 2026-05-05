@@ -205,5 +205,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:10:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-12",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas",
+          "city": "St. Pete Beach",
+          "address_or_area": "TradeWinds Resort",
+          "location_name": "TradeWinds Resort, St. Pete Beach, Florida",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pinellas County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Pinellas",
+          "city": "St. Pete Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "TradeWinds Resort",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "place",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Farthing",
+          "age": 50,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, released on bond"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Jacqueline",
+          "last_name": "Fightmaster",
+          "age": 42,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery (punching another patron)",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Parole violation",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Lottery winner James Farthing kicked a deputy in the face during a bar dispute and was tased and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved use of force",
+          "violent encounter"
+        ],
+        "crime_categories": [
+          "battery",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "lottery winner",
+          "Powerball",
+          "Taser",
+          "Pinellas County",
+          "St. Pete Beach",
+          "bar dispute"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Pinellas County, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "TradeWinds Resort in St. Pete Beach",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "description",
+          "quote": "50-year-old James Farthing",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "50-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "description",
+          "quote": "multiple charges including battery on a law enforcement officer, resisting arrest, and parole violation",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "body camera footage shows Farthing making a brief escape attempt before being stopped with a Taser and tackled",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "he fucking kicked me in the face",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].name",
+          "source": "description",
+          "quote": "42-year-old Jacqueline Fightmaster",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "race",
+          "precise latitude/longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

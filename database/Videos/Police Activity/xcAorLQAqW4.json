@@ -220,5 +220,168 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:36:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-11",
+        "published_date": "2023-05-26",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Duval",
+          "city": "Jacksonville",
+          "address_or_area": "929 South McDuff Avenue",
+          "location_name": "Family Dollar",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Jacksonville Sheriff's Office",
+          "type": "sheriff's office",
+          "state": "Florida",
+          "county": "Duval",
+          "city": "Jacksonville"
+        }
+      },
+      "geo": {
+        "address_or_place": "929 South McDuff Avenue, Jacksonville, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Forrest",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Jacksonville officer uses Taser on shoplifting suspect; suspect falls and hits head, hospitalized with internal bleeding.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 54,
+        "pursuit_started": null,
+        "arrest": 100
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "use_of_force",
+          "taser deployment",
+          "shoplifting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "theft"
+        ],
+        "tags": [
+          "taser",
+          "internal bleeding",
+          "Family Dollar"
+        ],
+        "content_warnings": [
+          "use of force",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, May 11, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Jacksonville, Florida — ... 929 South McDuff Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "a man, later identified as Daniel Forrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Brother, I'm gonna fucking tasey, man",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "injury",
+          "source": "description",
+          "quote": "internal bleeding",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

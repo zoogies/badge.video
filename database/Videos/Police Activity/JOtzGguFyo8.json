@@ -195,5 +195,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:00:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-29",
+        "published_date": "2023-06-30",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Hillsborough County",
+          "city": "Tampa",
+          "address_or_area": "N. 40th Street and E. 32nd Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tampa Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Hillsborough County",
+          "city": "Tampa"
+        }
+      },
+      "geo": {
+        "address_or_place": "N. 40th Street and E. 32nd Avenue, Tampa, FL",
+        "intersection": "N. 40th Street & E. 32nd Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12057",
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Laquincy Dartez",
+          "last_name": "Ward",
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Jeanette",
+          "last_name": "Lockard",
+          "age": 37,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted Murder of Law Enforcement Officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Firing Shots from a Vehicle",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Accessory After the Fact to Attempted Murder (7 counts)",
+            "category": "accessory",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with Evidence Related to a Felony",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Fleeing to Elude",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Tampa police responded to reports of shots fired; during a felony traffic stop, passenger Ward fired at officers, was shot and killed; driver Lockard fled but later surrendered and was arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-06-29T22:50:00",
+        "initial_contact": "2023-06-29T23:00:00",
+        "pursuit_started": "2023-06-29T23:00:00",
+        "arrest": "2023-06-29T23:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit"
+        ],
+        "crime_categories": [
+          "shooting",
+          "vehicle_pursuit",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "air unit",
+          "felony traffic stop",
+          "fatal shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "blood"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, June 29, 2023, at 10:50 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "intersection of N. 40th Street and E. 32nd Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].full_name",
+          "source": "description",
+          "quote": "passenger, 42-year-old Laquincy Dartez Ward",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].full_name",
+          "source": "description",
+          "quote": "driver, 37-year-old Jeanette Lockard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "Lockard was arrested and charged with seven counts of Accessory After the Fact to Attempted Murder, Tampering with Evidence Related to a Felony, and Felony Fleeing to Elude.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "Ward was pronounced deceased.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "automatic",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

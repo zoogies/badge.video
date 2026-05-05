@@ -25,5 +25,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:16:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-01",
+        "published_date": "2023-05-02",
+        "location": {
+          "state": "Virginia",
+          "state_abbreviation": "VA",
+          "county": "Fairfax",
+          "city": null,
+          "address_or_area": "Fairfax County Parkway near Braddock Rd",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fairfax County Police Department",
+          "type": "municipal",
+          "state": "Virginia",
+          "county": "Fairfax",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Fairfax County Parkway near Braddock Rd",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A juvenile driver lost control of a BMW M3 at high speed, crossed the median, and struck a community member's vehicle and a police cruiser during a traffic stop on Fairfax County Parkway. The officer and driver of the stopped vehicle sustained minor injuries. The juvenile was charged with reckless driving.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-05-01T11:38:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_crash"
+        ],
+        "crime_categories": [
+          "reckless_driving"
+        ],
+        "tags": [
+          "traffic stop",
+          "juvenile driver",
+          "crash",
+          "fairfax county"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 1, 2023, around 11:38 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "southbound Fairfax County Parkway prior to Braddock Rd",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "The juvenile was charged with reckless driving.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries",
+          "source": "description",
+          "quote": "The adult driver in the BMW 750 Series ... minor injuries ... The officer sustained minor injuries. The juvenile driver ... minor injuries.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "dispatch_call",
+          "source": "transcript",
+          "quote": "Sturbing units, accident, right here in Caddy Parkway, cruiser was hit.",
+          "timestamp_seconds": 28,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

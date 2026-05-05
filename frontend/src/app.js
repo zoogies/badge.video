@@ -311,7 +311,10 @@ function renderDetail(video) {
     <div class="dataSubtext">${escapeHtml(dataSubtext(video))}</div>
     <section>
       <h3>Summary</h3>
-      <p>${escapeHtml(video.summary || "No summary available.")}</p>
+      <div class="editableSection">
+        ${summaryEditor(draft)}
+        ${sectionEditButton("summary", draft.editing_summary ? "Done editing summary" : "Edit summary")}
+      </div>
     </section>
     <section>
       <h3>Crime Categories</h3>
@@ -352,6 +355,10 @@ function renderDetail(video) {
   if (chargesText) {
     chargesText.addEventListener("input", () => updateChargesFromMarkdown(video, chargesText.value));
   }
+  const summaryText = els.detailContent.querySelector("[data-edit-summary]");
+  if (summaryText) {
+    summaryText.addEventListener("input", () => updateSummary(video, summaryText.value));
+  }
   bindReviewControls(video);
   for (const button of els.detailContent.querySelectorAll("[data-outcome-field]")) {
     button.addEventListener("click", () => toggleOutcome(video, button.dataset.outcomeField));
@@ -379,10 +386,12 @@ function getDraft(video) {
       state: video.state || "",
       agency: video.agency || "",
       incident_date: video.incident_date || "",
+      summary: video.summary || "",
       crime_categories: dedupeLabels(video.crime_categories || []),
       outcome: { ...defaultOutcome(), ..._plainObject(video.outcome) },
       charges: normalizeCharges(video),
       charges_markdown: chargesMarkdown(normalizeCharges(video)),
+      editing_summary: false,
       editing_crime_categories: false,
       editing_outcomes: false,
       editing_charges: false,
@@ -446,6 +455,9 @@ function editSection(video, section) {
   if (section === "charges") {
     draft.editing_charges = !draft.editing_charges;
   }
+  if (section === "summary") {
+    draft.editing_summary = !draft.editing_summary;
+  }
   renderDetail(video);
 }
 
@@ -467,6 +479,11 @@ function updateChargesFromMarkdown(video, value) {
   const draft = getDraft(video);
   draft.charges_markdown = value;
   draft.charges = parseMarkdownList(value);
+  updateReviewArea(video);
+}
+
+function updateSummary(video, value) {
+  getDraft(video).summary = value;
   updateReviewArea(video);
 }
 
@@ -516,6 +533,7 @@ function draftChanged(video) {
     normalizeText(draft.state) !== normalizeText(video.state) ||
     normalizeText(draft.agency) !== normalizeText(video.agency) ||
     normalizeText(draft.incident_date) !== normalizeText(video.incident_date) ||
+    normalizeText(draft.summary) !== normalizeText(video.summary) ||
     listChanged(draft.crime_categories, video.crime_categories || []) ||
     outcomeChanged(draft.outcome, video.outcome || {}) ||
     normalizeText(draft.charges_markdown) !== normalizeText(chargesMarkdown(normalizeCharges(video)))
@@ -524,41 +542,61 @@ function draftChanged(video) {
 
 function buildReviewPatch(video, intent) {
   const draft = getDraft(video);
+  const changes = changedReviewFields(video, draft, intent);
   return {
+    schema_version: 1,
+    kind: "metadata_review",
     intent,
     video_id: video.video_id,
     data_path: video.data_path,
-    review_comment: emptyToNull(draft.review_comment),
-    human_reviewed: intent === "approve" ? true : intent === "disapprove" ? false : video.human_reviewed,
-    classification_updates: {
-      incident: {
-        location: {
-          city: emptyToNull(draft.city),
-          county: emptyToNull(draft.county),
-          state: emptyToNull(draft.state),
-        },
-        agency: {
-          name: emptyToNull(draft.agency),
-        },
-        incident_date: emptyToNull(draft.incident_date),
-      },
-      legal: {
-        charges: draft.charges,
-        alleged_crimes: draft.charges.map(charge => ({
-          label: charge,
-          category: null,
-          statute: null,
-          confidence: "human",
-        })),
-      },
-      event_summary: {
-        outcome: draft.outcome,
-      },
-      classifications: {
-        crime_categories: draft.crime_categories,
-      },
+    site: {
+      url: window.location.href,
+      submitted_at: new Date().toISOString(),
+      commit: document.querySelector('meta[name="badge-video-commit"]')?.content || null,
     },
+    review_comment: emptyToNull(draft.review_comment),
+    changes,
   };
+}
+
+function changedReviewFields(video, draft, intent) {
+  const changes = {};
+  addChangedText(changes, "classification.result.incident.location.city", draft.city, video.city);
+  addChangedText(changes, "classification.result.incident.location.county", draft.county, video.county);
+  addChangedText(changes, "classification.result.incident.location.state", draft.state, video.state);
+  addChangedText(changes, "classification.result.incident.agency.name", draft.agency, video.agency);
+  addChangedText(changes, "classification.result.incident.incident_date", draft.incident_date, video.incident_date);
+  addChangedText(changes, "classification.result.event_summary.short", draft.summary, video.summary);
+  if (listChanged(draft.crime_categories, video.crime_categories || [])) {
+    changes["classification.result.classifications.crime_categories"] = draft.crime_categories;
+  }
+  if (normalizeText(draft.charges_markdown) !== normalizeText(chargesMarkdown(normalizeCharges(video)))) {
+    changes["classification.result.legal.charges"] = draft.charges;
+    changes["classification.result.legal.alleged_crimes"] = draft.charges.map(charge => ({
+      label: charge,
+      category: null,
+      statute: null,
+      confidence: "human",
+    }));
+  }
+  for (const [key, value] of Object.entries(draft.outcome)) {
+    if (normalizeOutcome(video.outcome || {})[key] !== value) {
+      changes[`classification.result.event_summary.outcome.${key}`] = value;
+    }
+  }
+  if (intent === "approve" && video.human_reviewed !== true) {
+    changes.human_reviewed = true;
+  }
+  if (intent === "disapprove" && video.human_reviewed !== false) {
+    changes.human_reviewed = false;
+  }
+  return changes;
+}
+
+function addChangedText(changes, field, nextValue, currentValue) {
+  if (normalizeText(nextValue) !== normalizeText(currentValue)) {
+    changes[field] = emptyToNull(nextValue);
+  }
 }
 
 function openReviewIssue(video, intent) {
@@ -912,6 +950,13 @@ function editableOutcomeChips(outcome = {}) {
 function availableOutcomeOptions(outcome = {}) {
   const normalized = normalizeOutcome(outcome);
   return Object.keys(normalized).filter(key => normalized[key] !== true);
+}
+
+function summaryEditor(draft) {
+  if (!draft.editing_summary) return `<p>${escapeHtml(draft.summary || "No summary available.")}</p>`;
+  return `
+    <textarea class="summaryEdit" data-edit-summary rows="5" spellcheck="true" placeholder="Add a short incident summary.">${escapeHtml(draft.summary)}</textarea>
+  `;
 }
 
 function chargeItems(video) {

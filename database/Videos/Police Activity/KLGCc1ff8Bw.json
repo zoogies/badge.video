@@ -545,5 +545,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:02:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-11-11",
+        "published_date": "2025-11-19",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Summit County",
+          "city": "Akron",
+          "address_or_area": "2790 Albert Avenue",
+          "location_name": "Karam's Lounge",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Akron Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Summit County",
+          "city": "Akron"
+        }
+      },
+      "geo": {
+        "address_or_place": "2790 Albert Avenue, Akron, OH",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description + transcript",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Corrie",
+          "last_name": "Phillips",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Akron officer fires 15 rounds at man outside bar after reports of a gun; no weapon found.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-11-11T21:03:00",
+        "initial_contact": "2025-11-11T21:03:30",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police shooting",
+          "officer-involved shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "public_intoxication"
+        ],
+        "tags": [
+          "Akron",
+          "Ohio",
+          "bodycam",
+          "police shooting",
+          "Karam's Lounge"
+        ],
+        "content_warnings": [
+          "violence",
+          "gun violence",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, November 11th, 2025 at 9:03 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Akron, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "2790, Albert Avenue",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "location.location_name",
+          "source": "transcript",
+          "quote": "Karam's Lounge",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Corrie Phillips",
+          "timestamp_seconds": 26,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "description",
+          "quote": "36-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "He has a white male.",
+          "timestamp_seconds": 31,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "title",
+          "quote": "Fires 15 Rounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "did not find a gun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

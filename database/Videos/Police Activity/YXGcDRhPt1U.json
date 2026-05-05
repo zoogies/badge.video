@@ -80,5 +80,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:41:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-01-13",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Maricopa",
+          "city": null,
+          "address_or_area": "Interstate 8",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Maricopa County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Arizona",
+          "county": "Maricopa",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lisa",
+          "last_name": "Luna",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of patrol truck",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Naked woman steals police truck after claiming rape, leads chase on I-8",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle theft",
+          "pursuit",
+          "naked suspect"
+        ],
+        "crime_categories": [
+          "theft",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "naked",
+          "police truck theft",
+          "I-8",
+          "Maricopa County"
+        ],
+        "content_warnings": [
+          "nudity"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.county",
+          "source": "description",
+          "quote": "The Maricopa County Sheriff's Office released body camera footage",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "later identified as Lisa Luna",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "description",
+          "quote": "accused of stealing his patrol truck",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "led them on a chase along Interstate 8",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript",
+          "source": "transcript",
+          "quote": "You okay? Where's all your clothes out?",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript",
+          "source": "transcript",
+          "quote": "I was raped.",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "unknown",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "specific city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

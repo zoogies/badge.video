@@ -25,5 +25,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:29:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-04-10",
+        "published_date": "2016-04-12T15:58:12Z",
+        "location": {
+          "state": "Oregon",
+          "state_abbreviation": "OR",
+          "county": "Polk",
+          "city": "Dallas",
+          "address_or_area": "Highway 22",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Dallas Police Department",
+          "type": "local_municipal_police",
+          "state": "Oregon",
+          "county": "Polk",
+          "city": "Dallas"
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 22, Dallas, OR",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jeffery",
+          "last_name": "Rodgers",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Morgan",
+          "last_name": "Swyers",
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a stolen vehicle",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempt to elude on foot",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempt to elude in a vehicle",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful methamphetamine possession",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unauthorized use of a motor vehicle",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second-degree theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second-degree criminal mischief",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Dallas police chase of stolen car ends with Taser arrest of two suspects.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "vehicle_theft",
+          "drug_offense",
+          "reckless_driving",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "dashcam",
+          "bodycam",
+          "stolen car",
+          "methamphetamine",
+          "Taser",
+          "Polk County Sheriff"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "A Dallas police officer spotted a stolen Honda being driven by Jeffery Rodgers, of Dallas, shortly before 8 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "resulted in the arrest of a 26-year-old woman and a 22-year-old man Sunday night.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Jeffery Rodgers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Morgan Swyers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "We got one down and the other one is still running. Keep your hands right. I can see them.",
+          "timestamp_seconds": 64,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

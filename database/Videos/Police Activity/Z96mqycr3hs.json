@@ -365,5 +365,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:42:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-12",
+        "published_date": "2025-10-15",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Pierce County",
+          "city": "Bonney Lake",
+          "address_or_area": "120th St E and 198th Ave E",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pierce County Sheriff's Office",
+          "type": "county",
+          "state": "Washington",
+          "county": "Pierce County",
+          "city": "Bonney Lake"
+        }
+      },
+      "geo": {
+        "address_or_place": "120th St E and 198th Ave E, Bonney Lake, WA",
+        "intersection": "120th St E & 198th Ave E",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of stolen property",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on police officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Possession of stolen property",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on police officers",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "booked into jail"
+      },
+      "event_summary": {
+        "short": "Deputies used PIT maneuver to stop a stolen box truck in Bonney Lake, WA; both suspects extricated and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": null,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-12T00:45:00",
+        "pursuit_started": null,
+        "arrest": "2025-10-12"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police pursuit",
+          "stolen vehicle",
+          "pit maneuver"
+        ],
+        "crime_categories": [
+          "theft",
+          "vehicle_pursuit",
+          "assault"
+        ],
+        "tags": [
+          "stolen box truck",
+          "PIT maneuver",
+          "extraction"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 12th, 2025, around 12:45 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "eastbound on 120th St E from 198th Ave E in the Bonney Lake area",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age_driver",
+          "source": "description",
+          "quote": "The 42-year-old driver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges_driver",
+          "source": "description",
+          "quote": "booked into the Pierce County Jail for possession of stolen property, eluding, and assault on police officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fire_starting",
+          "source": "transcript",
+          "quote": "And the truck's starting to burn",
+          "timestamp_seconds": 100,
+          "confidence": "high"
+        },
+        {
+          "field": "pursuit_maneuver",
+          "source": "transcript",
+          "quote": "Two attempted pits. He drove out of both of them, third time's a charm",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

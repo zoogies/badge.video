@@ -540,5 +540,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:12:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-05",
+        "published_date": "2026-04-01T22:35:32Z",
+        "location": {
+          "state": "New Jersey",
+          "state_abbreviation": "NJ",
+          "county": "Hudson",
+          "city": "Jersey City",
+          "address_or_area": "John F. Kennedy Boulevard near Clinton Avenue",
+          "location_name": "JFK Blvd. & Clinton Ave",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Jersey City Police Department",
+          "type": "municipal",
+          "state": "New Jersey",
+          "county": "Hudson",
+          "city": "Jersey City"
+        }
+      },
+      "geo": {
+        "address_or_place": "JFK Blvd. near Clinton Ave, Jersey City, NJ",
+        "intersection": "John F. Kennedy Boulevard & Clinton Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Steven",
+          "last_name": "Sanchez",
+          "age": 26,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript: 'White male' at [1:33]",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Ricardo",
+          "last_name": "Reyes",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pointing a firearm at an officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted disarming of a police officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect Steven Sanchez, after being shot by police, attempted to grab an officer's gun during a struggle; he was taken into custody and later died at the hospital.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-09-05T13:23:00",
+        "pursuit_started": null,
+        "arrest": "2025-09-05T13:25:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "compressed air pistol (BB gun)",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer(s)",
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "use_of_force",
+          "death_in_custody"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "shootout",
+          "BB gun",
+          "Jersey City"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 5, 2025, at approximately 1:22 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Jersey City, New Jersey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "John F. Kennedy Boulevard (JFK Blvd.) near Clinton Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "26-year-old Steven Sanchez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "White male, Afro, he got stripes.",
+          "timestamp_seconds": 93,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "pronounced deceased at approximately 8:45 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "A compressed air pistol, as well as numerous projectiles believed to have been fired from that weapon, were recovered at the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.attempted_disarming",
+          "source": "title",
+          "quote": "Suspect Goes For Officer's Gun After Being Struck During Shootout",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

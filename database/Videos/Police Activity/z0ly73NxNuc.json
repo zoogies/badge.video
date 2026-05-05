@@ -90,5 +90,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:41:42Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-08",
+        "published_date": "2025-11-21T19:44:14Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Alameda",
+          "city": "Hayward",
+          "address_or_area": "29000 block of Mission Boulevard",
+          "location_name": "Convenience store",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Hayward Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Alameda",
+          "city": "Hayward"
+        }
+      },
+      "geo": {
+        "address_or_place": "29000 block of Mission Boulevard, Hayward, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jaime",
+          "last_name": "Mejia Lopez",
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and booked"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder",
+            "category": "shooting",
+            "statute": "California Penal Code 187/664",
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a firearm",
+            "category": "weapons_offense",
+            "statute": "California Penal Code 29800",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempted murder (3 counts)",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested and booked"
+      },
+      "event_summary": {
+        "short": "Hayward police engaged in shootout with armed suspect outside convenience store; suspect arrested after exchange of gunfire.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": "suspect minor thumb injury",
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-10-08T16:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "silver pistol",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "shootout"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Hayward",
+          "California",
+          "shootout",
+          "911 call"
+        ],
+        "content_warnings": [
+          "gun violence",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 8, 2025, just after 4 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in the 29000 block of mission boulevard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "40-year-old Jaime Mejia Lopez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "three counts of attempted murder and unlawful possession of a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "dispatch_call",
+          "source": "transcript",
+          "quote": "911, what is the address of your emergency?",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

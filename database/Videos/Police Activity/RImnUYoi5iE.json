@@ -245,5 +245,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:20:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-13",
+        "published_date": "2016-03-14T20:21:53Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": "Arlington",
+          "address_or_area": "State Highway 360 and Six Flags Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Arlington Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": "Arlington"
+        }
+      },
+      "geo": {
+        "address_or_place": "State Highway 360 & Six Flags Drive, Arlington, TX",
+        "intersection": "State Highway 360 & Six Flags Drive",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "48439",
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Josue",
+          "last_name": "Mendez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While Intoxicated (DWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault on a Public Servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated Assault on a Public Servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk driver rammed police car during pursuit in Arlington, TX",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 30,
+        "pursuit_started": 53,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "dui",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "drunk driving",
+          "police chase",
+          "ramming police car"
+        ],
+        "content_warnings": [
+          "violence",
+          "police chase"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Josue Pablo Mendez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "on State Highway 360... Six Flags Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "just before 5 a.m. Sunday",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "charged with aggravated assault on a public servant and evading arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "race_ethnicity",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

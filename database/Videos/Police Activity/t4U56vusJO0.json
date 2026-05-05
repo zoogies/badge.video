@@ -725,5 +725,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:24:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-23",
+        "published_date": "2024-03-11",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Outagamie",
+          "city": "Appleton",
+          "address_or_area": "336 W. Wisconsin Ave.",
+          "location_name": "Maritime Bar",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Appleton Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Outagamie",
+          "city": "Appleton"
+        }
+      },
+      "geo": {
+        "address_or_place": "336 W. Wisconsin Ave., Appleton, WI 54911",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": "54911",
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derk",
+          "last_name": "Brachmann",
+          "age": 41,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disturbance / gun shot fired within business",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging firearm at officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased after officer-involved shooting"
+      },
+      "event_summary": {
+        "short": "Appleton police officer fatally shoots man who fired at him inside a bar.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-01-23T01:33:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "bar_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Appleton",
+          "Wisconsin",
+          "Maritime Bar"
+        ],
+        "content_warnings": [
+          "graphic_content",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, January 23, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Maritime Bar, 336 W. Wisconsin Ave., Appleton, WI 54911",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "41-year-old Derk Brachmann",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "pronounced deceased at the hospital",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shooting",
+          "source": "transcript",
+          "quote": "He fired at me. One time at me.",
+          "timestamp_seconds": 410,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Brachmann was transported... pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

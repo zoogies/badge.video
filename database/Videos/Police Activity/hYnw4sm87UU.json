@@ -145,5 +145,246 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:55:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2018-07-24",
+        "published_date": "2018-07-27",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Utah County",
+          "city": "Provo",
+          "address_or_area": "Sam's Club",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Provo Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Utah County",
+          "city": "Provo"
+        }
+      },
+      "geo": {
+        "address_or_place": "Sam's Club, Provo, Utah",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "49049",
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Emiliano",
+          "last_name": "Medina",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Austin",
+          "last_name": "Williams",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        },
+        {
+          "role": "bystander",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted disarming of an officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "possession of methamphetamine (meth in system)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "assaulting an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "During a welfare check at a Sam's Club in Provo, a disoriented man reached for an officer's gun and punched him. A bystander body slammed the fleeing suspect, leading to arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "welfare_check",
+          "community_help"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Utah",
+          "Provo",
+          "bystander_intervention"
+        ],
+        "content_warnings": [
+          "use_of_force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Officer Austin Williams went to the Sam’s Club in Provo",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Senior Provo Police Department Officer Austin Williams",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Emiliano Medina",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "punching the officer in the head",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1]",
+          "source": "description",
+          "quote": "reaching for an officer’s gun",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "alleged_crimes[2]",
+          "source": "description",
+          "quote": "police say he did have meth in his system",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "It was Tuesday when Officer Austin Williams went to the Sam’s Club in Provo",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "bystanders jump in to help the officer arrest the man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Hey, don't touch.",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

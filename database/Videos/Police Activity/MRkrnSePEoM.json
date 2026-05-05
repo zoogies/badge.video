@@ -515,5 +515,154 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:09:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-07-01T22:59:51Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Escambia",
+          "city": "Pensacola",
+          "address_or_area": "mall parking lot",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pensacola Police Department",
+          "type": "municipal police",
+          "state": "Florida",
+          "county": "Escambia",
+          "city": "Pensacola"
+        }
+      },
+      "geo": {
+        "address_or_place": "mall parking lot",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Cruelty to Animal",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "civil penalty - $150 fine for first offenders"
+      },
+      "event_summary": {
+        "short": "Police rescue puppy from hot car in Pensacola, Florida.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "12:55",
+        "initial_contact": "1:17",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "baton",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "animal_rescue"
+        ],
+        "crime_categories": [
+          "other"
+        ],
+        "tags": [
+          "hot car",
+          "puppy rescue",
+          "animal cruelty"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "a mall parking lot in Pensacola, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "description",
+          "quote": "A dog-loving cop, saved the life of a little puppy who was left in a very hot car",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "The owners were given a civil penalty for Cruelty to Animal",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "description",
+          "quote": "Giorgio took a baton to the passenger side window",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.dispatch_call",
+          "source": "transcript",
+          "quote": "we got the call at 1255",
+          "timestamp_seconds": 195,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "smashing the glass to pieces and was able to unlock the door",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

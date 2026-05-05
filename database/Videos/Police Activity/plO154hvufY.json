@@ -140,5 +140,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:16:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-06",
+        "published_date": "2023-06-13",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Seminole",
+          "city": "Orlando",
+          "address_or_area": "State Road 434 and Hammock Lane",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Seminole County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Seminole",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "State Road 434 and Hammock Lane",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexander",
+          "last_name": "Shaouni",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released on bond"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding 80 mph in 45 mph zone",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding law enforcement",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting an officer",
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving",
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding a law enforcement officer",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $9,000 bond"
+      },
+      "event_summary": {
+        "short": "Orlando police officer pulled over for speeding, fled, then arrested and charged.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-06-06T12:15:00-04:00",
+        "initial_contact": "2023-06-06T12:15:00-04:00",
+        "pursuit_started": "2023-06-06T12:15:00-04:00",
+        "arrest": "2023-06-09"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "officer_involved"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "reckless_driving",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "speeding",
+          "police officer",
+          "Seminole County",
+          "Orlando",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 6, 2023, at 12:15 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Orlando, Florida",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "intersection of State Road 434 and Hammock Lane",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "35-year-old Alexander Shaouni",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with resisting an officer, reckless driving and fleeing and eluding a law enforcement officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "He turned himself in Friday to the Seminole County Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "drove through cars to avoid the deputy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [
+          "Title says 'Orlando Officer' but incident location is in Seminole County, possibly Longwood. Description says 'Orlando, Florida'."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race or ethnicity not stated; not inferred.",
+        "City location may be Longwood rather than Orlando; description says Orlando."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

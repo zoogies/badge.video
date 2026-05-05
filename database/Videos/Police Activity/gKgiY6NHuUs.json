@@ -360,5 +360,248 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:51:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-19",
+        "published_date": "2024-11-19T16:58:09Z",
+        "location": {
+          "state": "Tennessee",
+          "state_abbreviation": "TN",
+          "county": null,
+          "city": "Nashville",
+          "address_or_area": "Lewis Street in Napier Housing",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Metro Nashville Police Department",
+          "type": "municipal",
+          "state": "Tennessee",
+          "county": null,
+          "city": "Nashville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Lewis Street, Nashville, TN",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Knykholas",
+          "last_name": "Lane",
+          "age": 21,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, transported to hospital, arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Eric",
+          "last_name": "Ziegler",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "false imprisonment",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "domestic assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated burglary (prior conviction)",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "probation violation",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "shooting at officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "false imprisonment",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "domestic assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect fires at officer during domestic disturbance call, officer returns fire, suspect wounded in leg and buttocks.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-11-19T00:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2024-11-19"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "semi-automatic pistol",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer",
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "domestic_violence",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "domestic_violence",
+          "weapons_offense",
+          "burglary",
+          "warrant"
+        ],
+        "tags": [
+          "domestic disturbance",
+          "probation violation",
+          "bodycam",
+          "officer involved shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshot"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 19, 2024, just before 1a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Nashville, Tennessee",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name, people[0].last_name, people[0].age",
+          "source": "description",
+          "quote": "21-year-old Knykholas Lane",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name, people[1].last_name",
+          "source": "description",
+          "quote": "Officer Eric Ziegler",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "shots fired, shots fired",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "Lane fired his semi-automatic pistol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "Arrest warrants charging Lane with false imprisonment and domestic assault",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Lewis Street in Napier Housing",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -560,5 +560,230 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:28:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-01",
+        "published_date": "2023-10-04",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Fulton",
+          "city": "Atlanta",
+          "address_or_area": "Fair Drive SW and Metropolitan Parkway SW",
+          "location_name": "Peaches of Atlanta",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Atlanta Police Department",
+          "type": "municipal",
+          "state": "Georgia",
+          "county": "Fulton",
+          "city": "Atlanta"
+        }
+      },
+      "geo": {
+        "address_or_place": "779 Ralph David Abernathy Boulevard, Atlanta, GA",
+        "intersection": "Fair Drive SW and Metropolitan Parkway SW",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Samuel",
+          "last_name": "Smith",
+          "age": 47,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Patricia",
+          "last_name": "Smith",
+          "age": 42,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Terrence",
+          "last_name": "Jacks",
+          "age": 49,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Impersonating a Public Officer or Employee",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI Less Safe",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and Run",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving on a Suspended License",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Active Warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Impersonating a Public Officer or Employee",
+          "DUI Less Safe",
+          "Hit and Run",
+          "Reckless Driving",
+          "Driving on a Suspended License",
+          "Active Warrant (Fulton County)"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Fake cop handcuffs drunk man; real Atlanta officers arrest impersonator, DUI driver, and warrant suspect.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "impersonation",
+          "dui",
+          "hit_and_run",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving",
+          "warrant",
+          "other"
+        ],
+        "tags": [
+          "fake cop",
+          "handcuffs",
+          "Atlanta",
+          "DUI",
+          "impersonation"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 1st, 2023, at approximately 3:04 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Atlanta, Georgia — ... Fair Drive SW and Metropolitan Parkway SW",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "later identified as 47-year-old Samuel Smith",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race",
+          "source": "transcript",
+          "quote": "I have a black male with laceraceous to his face.",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Jacks was charged with Impersonating a Public Officer or Employee",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

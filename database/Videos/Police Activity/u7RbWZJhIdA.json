@@ -350,5 +350,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:28:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-14",
+        "published_date": "2023-03-29",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Maricopa County",
+          "city": "Phoenix",
+          "address_or_area": "67th Avenue and Camelback Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Phoenix Police Department",
+          "type": "municipal",
+          "state": "Arizona",
+          "county": "Maricopa",
+          "city": "Phoenix"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "67th Avenue and Camelback Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence / family fight with weapon",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at a convenience store (victim injured)",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Phoenix police responded to a family fight where a man armed with a gun and knife later shot someone at a convenience store. Officers fired when the suspect pointed his gun at them; he was arrested after a Taser deployment.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun and knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "domestic disturbance",
+          "shooting",
+          "weapons offense"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "domestic_violence",
+          "shooting"
+        ],
+        "tags": [
+          "family fight",
+          "convenience store shooting",
+          "suicide by cop gesture",
+          "Taser deployment"
+        ],
+        "content_warnings": [
+          "gun violence",
+          "suicide ideation"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, March 14, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location: area",
+          "source": "description",
+          "quote": "area of 67th Avenue and Camelback Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect: armed with gun and knife",
+          "source": "description",
+          "quote": "the caller stated that her brother was armed with both a gun and knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officers fired: suspect pointed gun",
+          "source": "description",
+          "quote": "The man made a motion with the gun in the officers’ direction. That is when two officers discharged their weapons.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome: suspect arrested",
+          "source": "description",
+          "quote": "the man was arrested",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome: suspect not injured",
+          "source": "description",
+          "quote": "He was not injured due to the officer involved shooting.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "victim from store: non-life-threatening injuries",
+          "source": "description",
+          "quote": "The man who was shot during the incident at the convenience store was treated at a local hospital for non-life-threatening injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race/ethnicity",
+          "exact coordinates",
+          "charges filed"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

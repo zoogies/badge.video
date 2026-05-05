@@ -785,5 +785,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:50:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2018-07",
+        "published_date": "2018-08-16",
+        "location": {
+          "state": "Iowa",
+          "state_abbreviation": "IA",
+          "county": "Polk County",
+          "city": "Des Moines",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Des Moines Police Department",
+          "type": "municipal police",
+          "state": "Iowa",
+          "county": "Polk County",
+          "city": "Des Moines"
+        }
+      },
+      "geo": {
+        "address_or_place": "Des Moines, Iowa",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Montray",
+          "last_name": "Little",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Jared",
+          "last_name": "Clinton",
+          "age": 21,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession of drugs",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "possession of weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "open container of alcohol",
+            "category": "other",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Des Moines police officers stop car of Montray Little and Jared Clinton, accuse them of having drugs and a weapon, but no contraband found, only an open alcohol bottle.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "weapons_offense"
+        ],
+        "tags": [
+          "racial profiling",
+          "no contraband found",
+          "open container"
+        ],
+        "content_warnings": [
+          "discussion of racial profiling"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "a July traffic stop",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Des Moines",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Polk County Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Go ahead and step out, Montre",
+          "timestamp_seconds": 204,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "It smells like marijuana in the car and I can see shake on the ground",
+          "timestamp_seconds": 142,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "And your buddy's given me the idea that maybe he's got a gun",
+          "timestamp_seconds": 152,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "can you dump out that bottle of alcohol for me?",
+          "timestamp_seconds": 560,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome",
+          "source": "description",
+          "quote": "No drugs or weapons were found",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "classifications.tags",
+          "source": "description",
+          "quote": "accusing two Des Moines police officers of racially profiling",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

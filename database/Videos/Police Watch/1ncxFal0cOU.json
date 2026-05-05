@@ -1330,5 +1330,178 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:47:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-24",
+        "published_date": "2024-05-23",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Bexar",
+          "city": "San Antonio",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Bexar",
+          "city": "San Antonio"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Unauthorized Use of a Motor Vehicle (UUMV)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fraudulent Use or Possession of Identifying Information",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Outstanding Warrant (San Antonio)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Employee attempts to steal company car from rental lot; arrested on warrant and for UUMV; found with stolen customer wallet.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2024-01-24"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "theft",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "warrant"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "arrest",
+          "car_rental"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 24th, 24th, 24",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "warrant",
+          "source": "transcript",
+          "quote": "you have a warrant for your arrest... out of San Antonio",
+          "timestamp_seconds": 370,
+          "confidence": "high"
+        },
+        {
+          "field": "UUMV charge",
+          "source": "transcript",
+          "quote": "you are under arrest for what's called UUMV",
+          "timestamp_seconds": 570,
+          "confidence": "high"
+        },
+        {
+          "field": "identifying information",
+          "source": "transcript",
+          "quote": "possession of identifying information",
+          "timestamp_seconds": 741,
+          "confidence": "high"
+        },
+        {
+          "field": "location_city_state",
+          "source": "description",
+          "quote": "a warrant out of San Antonio",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

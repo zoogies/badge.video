@@ -585,5 +585,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:25:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-14",
+        "published_date": "2023-11-01",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "New Haven",
+          "city": "Naugatuck",
+          "address_or_area": "Stop and Shop",
+          "location_name": "Naugatuck",
+          "confidence": "estimated"
+        },
+        "agency": {
+          "name": "Naugatuck Police Department",
+          "type": "municipal police",
+          "state": "Connecticut",
+          "county": "New Haven",
+          "city": "Naugatuck"
+        }
+      },
+      "geo": {
+        "address_or_place": "Stop and Shop, Naugatuck, CT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jarrell",
+          "last_name": "Day",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting (attempted theft of beer over $200)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "robbery (upgraded due to altercation with staff)",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "attempted second-degree assault",
+          "third-degree robbery",
+          "assault on police",
+          "illegal possession of a weapon in a vehicle",
+          "second-degree larceny",
+          "reckless driving",
+          "operating under suspension",
+          "evading responsibility"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Naugatuck PD responded to shoplifting at Stop and Shop; suspect Jarrell Day fled, hit police cruiser, crashed, and was tased by Officer Kehoss. Officer later charged with cruelty.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "use of force",
+          "vehicle pursuit",
+          "foot pursuit",
+          "taser deployment"
+        ],
+        "crime_categories": [
+          "theft",
+          "robbery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "shoplifting",
+          "robbery",
+          "taser",
+          "police chase",
+          "officer charged"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 14, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Naugatuck, Connecticut",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "33-year-old Jarrell Day of Waterbury",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Day was charged with attempted second-degree assault, third-degree robbery...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer charges",
+          "source": "description",
+          "quote": "charging him with intentional cruelty to persons and third-degree assault",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Taser, Taser, one down.",
+          "timestamp_seconds": 76,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

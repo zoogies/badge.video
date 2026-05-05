@@ -1245,5 +1245,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:41:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-02",
+        "published_date": "2020-06-20",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook",
+          "city": "Chicago",
+          "address_or_area": "Jackson Red Line platform",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Chicago Police Department",
+          "type": "municipal police",
+          "state": "IL",
+          "county": "Cook",
+          "city": "Chicago"
+        }
+      },
+      "geo": {
+        "address_or_place": "Jackson Red Line platform",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Martesa",
+          "last_name": "Lee",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and released without charges"
+        },
+        {
+          "role": "officer",
+          "first_name": "Raymond",
+          "last_name": "Haran",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "obstruction of a crime scene",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "released without charges"
+      },
+      "event_summary": {
+        "short": "CTA supervisor arrested for obstruction after dispute with police officer at crime scene, later released without charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "dispute",
+          "bodycam"
+        ],
+        "crime_categories": [
+          "obstruction"
+        ],
+        "tags": [
+          "CTA",
+          "Chicago",
+          "false arrest",
+          "lawsuit"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The incident happened back in February 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Chicago, Illinois — Newly released body camera footage shows ... at the Jackson Red Line platform.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "Arrest her.",
+          "timestamp_seconds": 274,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "description",
+          "quote": "Lee was arrested and kept on the platform for eight minutes before she was released without charges.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "lawsuit",
+          "source": "description",
+          "quote": "Lee is now suing the city of Chicago over the incident and she also has filed a federal lawsuit against the two officers, alleging false arrest and a violation of her First Amendment right to free speech.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date_day",
+          "suspect_age",
+          "exact_coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

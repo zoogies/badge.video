@@ -435,5 +435,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:34:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-01-20",
+        "published_date": "2016-02-24T00:11:03Z",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "St. Louis County",
+          "city": "Eveleth",
+          "address_or_area": "St. Louis County highways 7 and 101, about 3 miles west of Eveleth",
+          "location_name": "Railroad crossing at intersection of highways 7 and 101",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Minnesota State Patrol",
+          "type": "state police",
+          "state": "MN",
+          "county": "St. Louis",
+          "city": "Eveleth"
+        }
+      },
+      "geo": {
+        "address_or_place": "St. Louis County highways 7 and 101, 3 miles west of Eveleth",
+        "intersection": "Highways 7 and 101",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "27137",
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 67,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited for failing to stop at railroad crossing"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failing to stop at a railroad crossing",
+            "category": "traffic_violation",
+            "statute": "Minnesota Statute 169.28",
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "citation issued"
+      },
+      "event_summary": {
+        "short": "Train strikes semi-truck after driver ignores flashing lights and horn",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "train crash",
+          "railroad crossing incident"
+        ],
+        "crime_categories": [
+          "traffic_violation"
+        ],
+        "tags": [
+          "semi-truck",
+          "dashcam",
+          "Minnesota State Patrol",
+          "citation"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "The incident happened on Jan. 20",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "railroad crossing where St. Louis County highways 7 and 101 meet, about 3 miles west of Eveleth",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "cited for failing to stop at a railroad crossing",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "driver of the semi, a 67-year-old man from Iron",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "suffered a laceration near his eye",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.dispatch_call",
+          "source": "transcript",
+          "quote": "I just had a train strike a truck out here at 7-101.",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

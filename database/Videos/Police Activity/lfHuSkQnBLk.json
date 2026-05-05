@@ -510,5 +510,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:05:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-06-14",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": "White Settlement",
+          "address_or_area": "2025 Cherry Lane",
+          "location_name": "Chevron station",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "White Settlement Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": "White Settlement"
+        }
+      },
+      "geo": {
+        "address_or_place": "2025 Cherry Lane",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "address_level",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": "elderly",
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unknown"
+        },
+        {
+          "role": "witness",
+          "first_name": "Myndi",
+          "last_name": "Jordan",
+          "age": 38,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fraud (Bitcoin scam)",
+            "category": "fraud",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Theft by deception",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Elderly woman scammed into depositing $40k into Bitcoin ATM; good Samaritan calls police; officer intervenes and stops further loss.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "transcript timestamp 0:00-0:11 (call from Myndi Jordan)",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "scam",
+          "fraud",
+          "bitcoin scam"
+        ],
+        "crime_categories": [
+          "fraud",
+          "theft"
+        ],
+        "tags": [
+          "elderly victim",
+          "good Samaritan",
+          "bitcoin ATM",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "So I'm at the Chevron right here off of 20. It's 2025 Cherry Lane.",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.published_date",
+          "source": "metadata",
+          "quote": "2024-06-14T20:16:34Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Because no bank takes Bitcoin as payment. If you have a problem with this, you call the White Settlement Police Department... what you're doing is committing a crime.",
+          "timestamp_seconds": 357,
+          "confidence": "high"
+        },
+        {
+          "field": "people.witness",
+          "source": "description",
+          "quote": "Myndi Jordan, 38, intervened when she noticed the elderly woman depositing thousands of dollars into a Bitcoin ATM.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome",
+          "source": "transcript",
+          "quote": "No, she is not going to click. She is not going to click it.",
+          "timestamp_seconds": 325,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

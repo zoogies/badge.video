@@ -40,5 +40,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:25:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-02-03T00:58:45Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King County",
+          "city": "Seattle",
+          "address_or_area": "Magnolia neighborhood",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": "King County",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "Magnolia neighborhood, Seattle, WA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of purse",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Auto theft (stolen vehicle)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Burglary (string of burglaries)",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Fleeing police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving causing crash",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Seattle police chase of stolen car ends in crash; suspect arrested after foot pursuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "traffic_crash",
+          "burglary"
+        ],
+        "crime_categories": [
+          "theft",
+          "burglary",
+          "vehicle_theft",
+          "reckless_driving",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stolen car",
+          "purse snatching",
+          "Magnolia",
+          "Seattle PD",
+          "chase",
+          "crash"
+        ],
+        "content_warnings": [
+          "police chase",
+          "crash scene"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Seattle's Magnolia neighborhood",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.theft",
+          "source": "description",
+          "quote": "police say a purse thief crawled out of a burning car after it collided with another vehicle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.burglary",
+          "source": "description",
+          "quote": "suspect might be involved in a string of burglaries throughout the city",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "The suspect was taken into custody",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "description",
+          "quote": "the suspect fled on foot. Officers were able to capture him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name",
+          "suspect_demographics"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -145,5 +145,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:16:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-02-12",
+        "published_date": "2026-02-16T20:02:05Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King County",
+          "city": "Seattle",
+          "address_or_area": "Northwest 62nd Street and 28th Avenue Northwest",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "King County",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "Northwest 62nd Street and 28th Avenue Northwest, Seattle, WA",
+        "intersection": "NW 62nd St & 28th Ave NW",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": "Bowman",
+          "age": 62,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized_critical"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 18,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "safe"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "stalking",
+            "category": "stalking",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "assault with a deadly weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Seattle police exchanged gunfire with a 62-year-old man who was following his ex-girlfriend and was armed. The suspect was critically injured; an officer sustained minor injuries.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 0,
+        "initial_contact": 51,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "Seattle",
+          "gunfire",
+          "officer_involved_shooting",
+          "domestic_violence"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 12, 2026, at approximately 5:44 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Seattle, Washington — ... area of Northwest 62nd Street and 28th Avenue Northwest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "ex-boyfriend, 62-year-old Christopher Bowman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "he drew a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "Gunfire was exchanged between Bowman and Seattle officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_status",
+          "source": "description",
+          "quote": "Bowman was struck multiple times ... remains in critical condition",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injury",
+          "source": "description",
+          "quote": "One Seattle officer sustained a minor injury",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "initial_contact",
+          "source": "transcript",
+          "quote": "This is gonna be our guy. He's got it right hand in his pocket.",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "charges",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

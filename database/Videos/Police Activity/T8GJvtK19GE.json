@@ -130,5 +130,210 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:24:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-27",
+        "published_date": "2024-12-09",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Gwinnett County",
+          "city": "Duluth",
+          "address_or_area": "Sugarloaf Parkway and Duluth Highway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Gwinnett Police Department",
+          "type": "municipal",
+          "state": "Georgia",
+          "county": "Gwinnett County",
+          "city": "Duluth"
+        }
+      },
+      "geo": {
+        "address_or_place": "Sugarloaf Parkway and Duluth Highway",
+        "intersection": "Sugarloaf Parkway and Duluth Highway",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Emmanuel",
+          "last_name": "Williams",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted Murder (3 counts)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Fleeing to Elude a Police Officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving on Suspended License",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Driving without a Seatbelt",
+          "Felony Fleeing to Elude a Police Officer",
+          "Unsafe Lane Change",
+          "Willful Obstruction of an Officer",
+          "Reckless Driving",
+          "Failure to Obey Traffic Control Device",
+          "Driving on a Suspended License",
+          "Driving over a Gore",
+          "Speeding",
+          "Following Too Closely"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Gwinnett County officer used PIT maneuver to end pursuit of suspect wanted for attempted murder.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-11-27T19:00:00",
+        "pursuit_started": "2024-11-27T19:00:00",
+        "arrest": "2024-11-27T19:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "vehicle pursuit",
+          "pit maneuver"
+        ],
+        "crime_categories": [
+          "homicide",
+          "vehicle_pursuit",
+          "warrant",
+          "reckless_driving"
+        ],
+        "tags": [
+          "attempted murder",
+          "PIT maneuver",
+          "fleeing",
+          "warrant arrest"
+        ],
+        "content_warnings": [
+          "violence (prior shooting)"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 27, at approximately 7 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Gwinnett County, Georgia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Emmanuel Williams (20, Seneca, SC.)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "wanted for three counts of attempted murder out of their jurisdiction. Williams had shot three people",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "charged with Driving without a Seatbelt, Felony Fleeing to Elude a Police Officer, Unsafe Lane Change, Willful Obstruction of an Officer, Reckless Driving, Failure to Obey Traffic Control Device, Driving on a Suspended License, Driving over a Gore, Speeding, and Following Too Closely.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Williams was quickly placed under arrest... taken to the Gwinnett County Jail.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not provided; not inferred."
+      ]
+    }
+  },
+  "human_reviewed": false
 }
