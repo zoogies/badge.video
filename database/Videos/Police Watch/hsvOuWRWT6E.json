@@ -1575,5 +1575,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:54:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-11-26",
+        "published_date": "2024-03-18T16:19:26Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Manatee County",
+          "city": "Sarasota",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": null,
+          "type": "city police",
+          "state": "Florida",
+          "county": "Manatee County",
+          "city": "Sarasota"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Timothy",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "safe"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stalking",
+            "category": "stalking",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Harassment",
+            "category": "harassment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vandalism",
+            "category": "vandalism",
+            "statute": null,
+            "confidence": "moderate"
+          },
+          {
+            "label": "Domestic violence (past)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "moderate"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "arrested on warrant"
+      },
+      "event_summary": {
+        "short": "Officer responds to stalking complaint; suspect arrested on warrant after driving by.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "stalking",
+          "domestic disturbance"
+        ],
+        "crime_categories": [
+          "stalking",
+          "harassment",
+          "warrant"
+        ],
+        "tags": [
+          "stalking",
+          "GPS tracker",
+          "warrant",
+          "arrest"
+        ],
+        "content_warnings": [
+          "harassment",
+          "stalking"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 26th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "he's been arrested for it manatee county",
+          "timestamp_seconds": 648,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "woman whose ex husband had been stalking her for months",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "my ex-boyfriend is currently stalking me and has put numerous GPS trackers on my vehicle",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "he's admitted to putting, uh, tracking devices",
+          "timestamp_seconds": 117,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "What's his name? ... Timothy.",
+          "timestamp_seconds": 193,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "You have a warrant for your arrest.",
+          "timestamp_seconds": 720,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.type",
+          "source": "transcript",
+          "quote": "We work for the city, we don't work for the county.",
+          "timestamp_seconds": 732,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "address",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "City inferred as Sarasota based on UTC mention; verify."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

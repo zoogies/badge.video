@@ -1050,5 +1050,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:50:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-07-30",
+        "published_date": "2026-01-24T22:48:21Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Broward",
+          "city": null,
+          "address_or_area": "North Lake and B-line",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Broward County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Broward",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "North Lake and B-line",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vehicular Homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI Manslaughter",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Stolen Vehicle Possession/Driving",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/Eluding Police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "moderate"
+          }
+        ],
+        "charges": [
+          "Four counts of vehicular homicide",
+          "DUI manslaughter"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "17-year-old driving stolen SUV over 100 mph runs red light, kills four, including his two passengers and a married couple in other vehicle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "fatal_crash",
+          "vehicular_homicide",
+          "dui_related",
+          "stolen_vehicle",
+          "pursuit"
+        ],
+        "crime_categories": [
+          "homicide",
+          "dui",
+          "traffic_stop"
+        ],
+        "tags": [
+          "teen",
+          "stolen_car",
+          "high_speed",
+          "red_light",
+          "cannabis_impairment"
+        ],
+        "content_warnings": [
+          "death",
+          "graphic_content"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 30th, 2021.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Is it BDSO?",
+          "timestamp_seconds": 350.0,
+          "confidence": "moderate"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "initiated a traffic stop all the way back in North Lake and B-line",
+          "timestamp_seconds": 359.0,
+          "confidence": "moderate"
+        },
+        {
+          "field": "people[0].age",
+          "source": "title",
+          "quote": "17yo Going Over 100 MPH",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the driver later identified to be 17-year-old Christopher.",
+          "timestamp_seconds": 210.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with four counts of vehicular homicide, DUI manslaughter.",
+          "timestamp_seconds": 625.0,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "killing four people, including two teenage passengers in his car and a married couple in the other vehicle.",
+          "timestamp_seconds": 635.0,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "police had briefly attempted to stop the SUV earlier, but discontinued the pursuit before the collision.",
+          "timestamp_seconds": 655.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "suspect last name",
+          "precise coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

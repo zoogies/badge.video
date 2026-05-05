@@ -2590,5 +2590,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:57:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-21",
+        "published_date": "2024-08-14",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lee County",
+          "city": "Fort Myers",
+          "address_or_area": "Alaska and India streets",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Lee County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Lee County",
+          "city": "Fort Myers"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Alaska and India streets",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "street_intersection",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "John",
+          "last_name": "Luster",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Burglary of a dwelling",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated battery upon a pregnant victim",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Burglary of a dwelling",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated battery upon a pregnant victim",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested"
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to arrest of man with felony warrants for burglary and aggravated battery.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "burglary",
+          "assault",
+          "warrant"
+        ],
+        "tags": [
+          "felony warrants",
+          "resisting arrest"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 21st, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "He has three felony warrants out of Calder County.",
+          "timestamp_seconds": 3,
+          "confidence": "low"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "open booking sheet out of Lee County",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "burglary of a dwelling aggravated battery upon a pregnant victim",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "John, Lester, just get out of the car",
+          "timestamp_seconds": 16,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Mr. Luster",
+          "timestamp_seconds": 350,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcription mentions both 'Calder County' (likely misheard) and 'Lee County'; Lee County is a real county in Florida and is used as primary location. 'Calder County' may be a transcription error."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "state",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location details are partly inferred; 'Calder County' in transcript may be erroneous."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

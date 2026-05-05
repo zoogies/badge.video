@@ -2430,5 +2430,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:54:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-14",
+        "published_date": "2024-02-14T18:01:23Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": null,
+          "city": "Dallas/Fort Worth",
+          "address_or_area": "DFW Airport",
+          "location_name": "DFW Airport",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "DFW Airport Police",
+          "type": "airport police",
+          "state": "Texas",
+          "county": null,
+          "city": "Dallas/Fort Worth"
+        }
+      },
+      "geo": {
+        "address_or_place": "DFW Airport",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "no arrest"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault Family Violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault Family Violence",
+            "severity": "Class A Misdemeanor",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man arrested at DFW Airport for assaulting his fiancée on a plane after argument over carry-on bag.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-08-14",
+        "pursuit_started": null,
+        "arrest": "2023-08-14"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "elbows, hands",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "airport_incident"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault"
+        ],
+        "tags": [
+          "airport",
+          "bodycam",
+          "domestic violence",
+          "assault"
+        ],
+        "content_warnings": [
+          "domestic violence"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 14th, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "DFW airport jail",
+          "timestamp_seconds": 1177,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "assault family violence",
+          "timestamp_seconds": 1182,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_aggressor",
+          "source": "transcript",
+          "quote": "He was hitting me with the elbow",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_threat",
+          "source": "transcript",
+          "quote": "he said this when we get off this pain i'm gonna get you",
+          "timestamp_seconds": 1120,
+          "confidence": "medium"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "It's going to be upgraded to class a misdemeanor",
+          "timestamp_seconds": 1340,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "suspect_name",
+          "victim_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated; not inferred."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

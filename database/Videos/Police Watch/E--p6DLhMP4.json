@@ -2585,5 +2585,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:52:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-22",
+        "published_date": "2024-10-20",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Dayton",
+          "address_or_area": "parking lot near Cornell Market",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Dayton, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript mentions Dayton",
+        "precision": "city",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Kraft",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "received ticket, not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Misuse of 911",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with suspended license (alleged)",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "ticket issued for misuse of 911"
+      },
+      "event_summary": {
+        "short": "Woman parked on private property, refused to exit vehicle, called 911, received ticket for misuse of 911.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "obstruction"
+        ],
+        "crime_categories": [
+          "other"
+        ],
+        "tags": [
+          "bodycam",
+          "refusal to comply",
+          "suspended license"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 22nd, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "city",
+          "source": "transcript",
+          "quote": "sleeping and Dayton in a parking lot is not safe",
+          "timestamp_seconds": 715,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect last name",
+          "source": "transcript",
+          "quote": "All right, Ms. Kraft, stop out.",
+          "timestamp_seconds": 1106,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged crime",
+          "source": "transcript",
+          "quote": "Now you're getting a ticket for misuse of 911",
+          "timestamp_seconds": 250,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect weapon",
+          "source": "transcript",
+          "quote": "There's a big old knife right next to you.",
+          "timestamp_seconds": 570,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "zip_code",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "State inferred from city Dayton, Ohio"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

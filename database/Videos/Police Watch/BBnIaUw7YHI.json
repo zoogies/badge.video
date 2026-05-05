@@ -3370,5 +3370,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:50:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-02",
+        "published_date": "2023-09-20T18:09:41Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "airport",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Eric",
+          "last_name": "Wilson",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "criminal trespass",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug possession (meth)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "identity theft/fraud",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect Eric Wilson arrested for criminal trespass after refusing to leave airport, later found with drugs, IDs, and checks.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:45",
+        "pursuit_started": null,
+        "arrest": "6:22"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "airport",
+          "trespass",
+          "drug_offense",
+          "fraud"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "airport",
+          "criminal trespass",
+          "meth",
+          "identity theft",
+          "resisting arrest"
+        ],
+        "content_warnings": [
+          "drug use",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 2nd, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "a man named Eric",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_last_name",
+          "source": "transcript",
+          "quote": "Mr. Wilson, you gotta relax",
+          "timestamp_seconds": 1329,
+          "confidence": "medium"
+        },
+        {
+          "field": "alleged_crime_trespass",
+          "source": "transcript",
+          "quote": "Okay, you're under arrest. Criminal trespass.",
+          "timestamp_seconds": 382,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime_resisting",
+          "source": "transcript",
+          "quote": "Now you have a resisting charge, man.",
+          "timestamp_seconds": 425,
+          "confidence": "high"
+        },
+        {
+          "field": "drug_evidence",
+          "source": "transcript",
+          "quote": "they found... 3.6 grams of meth, several used needles",
+          "timestamp_seconds": 924,
+          "confidence": "high"
+        },
+        {
+          "field": "fraud_evidence",
+          "source": "transcript",
+          "quote": "multiple IDs not belonging to him... several checks from different accounts",
+          "timestamp_seconds": 924,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "American Airlines",
+          "timestamp_seconds": 160,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified beyond airport; agency unknown; suspect last name inferred from transcription 'Wilson' but may be incorrect."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

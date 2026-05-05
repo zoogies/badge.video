@@ -2375,5 +2375,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:53:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-14",
+        "published_date": "2024-03-24",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion",
+          "city": null,
+          "address_or_area": "Savannah area near a 7-Eleven",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Marion County Sheriff's Office",
+          "type": "county sheriff",
+          "state": "Florida",
+          "county": "Marion",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Richard",
+          "last_name": "Appler",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Traffic infractions (improper passing, driving on breakdown lane)",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/eluding a traffic stop",
+            "category": "fleeing_eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop escalates when suspect drives off, later arrested for resisting arrest at a convenience store.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 7,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_eluding",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "fleeing_eluding",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "CEO",
+          "belligerent",
+          "medical crisis"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 14th, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Deputy Leavener with the Marion County Sheriff's Office",
+          "timestamp_seconds": 1101,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Mr. Appler",
+          "timestamp_seconds": 691,
+          "confidence": "moderate"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "have you arrested Richard for resistant arrest?",
+          "timestamp_seconds": 1112,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "Deputy Hines, have you arrested Richard for resistant arrest? Yes, ma'am.",
+          "timestamp_seconds": 1112,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're under arrest, so.",
+          "timestamp_seconds": 642,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "excellent",
+        "location_conflicts": [
+          "Suspect references Palm Beach County but deputy states Marion County in transcript at 1101 seconds."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "latitude",
+          "longitude",
+          "zip_code",
+          "suspect full name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

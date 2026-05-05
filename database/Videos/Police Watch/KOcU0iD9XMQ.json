@@ -1905,5 +1905,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:56:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-24",
+        "published_date": "2024-06-11",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lee County",
+          "city": "Fort Myers",
+          "address_or_area": "Martin Downs and Martin Highway area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": "Lee County",
+          "city": "Fort Myers"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fort Myers, Florida",
+        "intersection": "Martin Downs and Martin Highway",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript and description",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Charlie",
+          "last_name": null,
+          "age": 53,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Trespassing on private property",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving under the influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving without a license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man trespassing on private property in Fort Myers, Florida, arrested for trespassing and DUI after refusing to cooperate with officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-03-24T00:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "dui",
+          "public_intoxication"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "dui",
+          "public_intoxication",
+          "warrant"
+        ],
+        "tags": [
+          "bodycam",
+          "trespassing",
+          "intoxication",
+          "Florida",
+          "Fort Myers"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title and description",
+          "quote": "On March 24th, 2023",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Fort Myers, Fort Myers, I'm a 30-year veteran of electricity, and I came down here...",
+          "timestamp_seconds": 480,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "you almost busted his line... you realize you're driving on his property marking up all of his dirt",
+          "timestamp_seconds": 582,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "Your name is Charlie. Charlie, Charlie...",
+          "timestamp_seconds": 501,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "How old are you? 53.",
+          "timestamp_seconds": 223,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "they can kiss my black ass",
+          "timestamp_seconds": 688,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.trespassing",
+          "source": "description and transcript",
+          "quote": "Officers responded to a call about a man who was trespassing on private property and refusing to leave.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.dui",
+          "source": "transcript",
+          "quote": "you've been drinking... you smell like you've been drinking... you're intoxicated",
+          "timestamp_seconds": 200,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.driving without license",
+          "source": "transcript",
+          "quote": "you don't have a driver's license? No, sir.",
+          "timestamp_seconds": 297,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Put your hands by your back... hands behind your back",
+          "timestamp_seconds": 1030,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "suspect.last_name",
+          "legal.case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
