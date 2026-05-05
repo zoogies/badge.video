@@ -270,5 +270,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:19:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-15",
+        "published_date": "2025-01-24T19:31:58Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": "Fort Worth",
+          "address_or_area": "8500 block of John T. White Rd.",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Worth Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": "Fort Worth"
+        }
+      },
+      "geo": {
+        "address_or_place": "8500 block of John T. White Rd.",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Deron",
+          "last_name": "Morris",
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault with a Deadly Weapon against a Public Servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated Assault with a Deadly Weapon (5 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault with a Deadly Weapon against a Public Servant (1 count)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Fort Worth officer fires at armed suspect who escapes and barricades himself; suspect arrested without further incident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-01-15T11:48:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "service weapon",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "barricade situation"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Fort Worth",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Wednesday, January 15, 2025, at approximately 11:48 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Fort Worth, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "8500 block of John T. White Rd.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "42-year-old Deron Morris",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with five counts of Aggravated Assault with a Deadly Weapon and one count of Aggravated Assault with a Deadly Weapon against a Public Servant",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired.",
+          "timestamp_seconds": 115.0,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He got a gun.",
+          "timestamp_seconds": 38.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

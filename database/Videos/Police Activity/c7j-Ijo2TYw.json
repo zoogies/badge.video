@@ -2020,5 +2020,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:38:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-08-13",
+        "location": {
+          "state": "South Carolina",
+          "state_abbreviation": "SC",
+          "county": "Saluda County",
+          "city": null,
+          "address_or_area": "Chapels Highway / Highway 39",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Saluda County Sheriff's Office",
+          "type": "sheriff",
+          "state": "South Carolina",
+          "county": "Saluda County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to stop for blue lights",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies stop a vehicle for speeding and failure to stop; suspect is arrested after field test on substance on vehicle hood falsely indicates cocaine, later determined to be bird droppings.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "false_positive_drug_test"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "bird poop",
+          "cocaine false positive",
+          "Saluda County"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "You're on the main highway coming in Saluta County from Newberry.",
+          "timestamp_seconds": 1.03,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "We're going to stop the Pope Street, Chapel's Highway.",
+          "timestamp_seconds": 0.11,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I'm going to jail for speeding. And for failure to stop for blue lights at this point.",
+          "timestamp_seconds": 2.06,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "So you're going to jail.",
+          "timestamp_seconds": 2.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I mean, I'm just going to charge him with a failure to stop for blue lights.",
+          "timestamp_seconds": 20.54,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "suspect name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

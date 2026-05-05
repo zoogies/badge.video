@@ -130,5 +130,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:28:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-03",
+        "published_date": "2025-05-22T21:04:18Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Contra Costa",
+          "city": "Concord",
+          "address_or_area": "Ellis Street near Clayton Road",
+          "location_name": "PetSmart parking lot at 1700 Willow Pass Road",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Concord Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Contra Costa",
+          "city": "Concord"
+        }
+      },
+      "geo": {
+        "address_or_place": "1700 Willow Pass Road",
+        "intersection": "Ellis Street & Clayton Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Eric",
+          "last_name": "Foreman",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript: \"Male black\" at 0:36-0:44",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "traffic violation (initial stop)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "attempted murder",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with a deadly weapon on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a handgun and ammunition by a convicted felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "hit-and-run",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing an investigation",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charged"
+      },
+      "event_summary": {
+        "short": "Armed suspect dodges police bullets during foot chase in Concord, CA; suspect not hit, later arrested by K9.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-04-03T22:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "foot pursuit",
+          "officer-involved shooting",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "foot_pursuit",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Concord",
+          "California",
+          "bodycam",
+          "foot chase",
+          "officer-involved shooting",
+          "K9",
+          "Contra Costa County"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 3, 2025, shortly after 10 pm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "37-year-old Eric Darrall Foreman, from Richmond",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "race_ethnicity",
+          "source": "transcript",
+          "quote": "Male black",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Concord, California... on Ellis Street near Clayton Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "charged Foreman with multiple counts of attempted murder, assault with a deadly weapon on a police officer, possession of a handgun and ammunition by a convicted felon, hit-and-run, and obstructing an investigation",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "officer involved shooting then occurred... a second officer involved shooting occurred",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "description",
+          "quote": "ultimately apprehended by a Contra Costa County Sheriff’s Office K9",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

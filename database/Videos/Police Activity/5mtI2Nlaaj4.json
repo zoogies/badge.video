@@ -745,5 +745,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:23:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-01-05",
+        "published_date": "2020-02-19",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "Griffin Avenue and Avenue 43",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Julio",
+          "last_name": "Rodriguez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "moderate"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a Deadly Weapon on a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "arrested"
+      },
+      "event_summary": {
+        "short": "LAPD officer shoots at fleeing armed suspect during foot pursuit; suspect not hit, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-01-05T01:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "9mm handgun",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "LAPD",
+          "foot pursuit",
+          "armed suspect",
+          "officer shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 5, 2020, around 1:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "area of Griffin and Avenue 43",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "identified as Julio Rodriguez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "description",
+          "quote": "arrested for Assault with a Deadly Weapon on a Peace Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "race_ethnicity",
+          "source": "transcript",
+          "quote": "Male Spanick",
+          "timestamp_seconds": 63,
+          "confidence": "moderate"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "A 9mm caliber firearm was recovered at scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "officer-involved shooting occurred",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "pursued him on foot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "noisy",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "precise coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

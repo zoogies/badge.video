@@ -35,5 +35,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:32:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2018-09-04",
+        "published_date": "2018-09-05",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pasco County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pasco County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Pasco County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Grand Theft Auto",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing to Elude",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Mischief",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child Neglect",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy Nick Carmack attempted traffic stop on stolen vehicle; driver and passenger fled on foot; K9 Shep apprehended one suspect; K9 Knox located second suspect; both arrested; infant child in vehicle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "k9_deployment"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "K9",
+          "child neglect",
+          "Pasco County"
+        ],
+        "content_warnings": [
+          "child endangerment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Pasco County Sheriff’s Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "a call from yesterday",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with Grand Theft Auto, Fleeing to Elude, Criminal Mischief, and Child Neglect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "both suspects were charged",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "deployed K9 Shep who quickly apprehended one of the individuals",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "description",
+          "quote": "Deputy Nick Carmack attempted traffic stop on stolen vehicle; driver and passenger fled on foot; K9 Shep apprehended one; K9 Knox located second",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "suspect names",
+          "precise location"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

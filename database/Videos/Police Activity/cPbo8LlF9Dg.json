@@ -590,5 +590,169 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:39:57Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-10-30",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Spokane County",
+          "city": "Spokane",
+          "address_or_area": "5th and Custer",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Spokane Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "Spokane County",
+          "city": "Spokane"
+        }
+      },
+      "geo": {
+        "address_or_place": "5th and Custer, Spokane, WA",
+        "intersection": "5th and Custer",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Luke",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Spokane police deployed a K9 on a suspect who resisted arrest after claiming to have a gun.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "suspect_resisting_arrest",
+          "k9_deployment"
+        ],
+        "crime_categories": [
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "spokane",
+          "k9",
+          "resisting_arrest"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Spokane",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Fifth in Custer",
+          "timestamp_seconds": 605,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "You're under arrest, Luke",
+          "timestamp_seconds": 610,
+          "confidence": "medium"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "You yelled that you had a gun",
+          "timestamp_seconds": 395,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "title",
+          "quote": "Deploy K9 On Suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect last name not confirmed; possibly 'Lesser' but unclear."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

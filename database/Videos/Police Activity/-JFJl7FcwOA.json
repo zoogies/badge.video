@@ -205,5 +205,187 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:13:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-20",
+        "published_date": "2026-02-05",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore City",
+          "city": "Baltimore",
+          "address_or_area": "6800 block of Bank Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Baltimore Police Department",
+          "type": "municipal",
+          "state": "Maryland",
+          "county": "Baltimore City",
+          "city": "Baltimore"
+        }
+      },
+      "geo": {
+        "address_or_place": "6800 block of Bank Street, Baltimore, MD",
+        "intersection": "Eastern Avenue near I-95",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jamal",
+          "last_name": "Muse",
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Threatening someone with a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging firearm during arrest attempt",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect fired gun during arrest attempt, officers returned fire, suspect killed",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2026-01-20T21:15:00-05:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Baltimore",
+          "Maryland",
+          "Jamal Muse",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Tuesday, January 20, 2026, around 9:15 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Baltimore, Maryland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "6800 block of Bank Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "40-year-old Jamal Muse of Baltimore",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "a man was threatening someone with a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "was struck and pronounced dead at the scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "No explicit latitude/longitude provided"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

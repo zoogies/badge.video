@@ -475,5 +475,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:35:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-07-25",
+        "published_date": "2016-10-18T01:40:23Z",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": null,
+          "city": "Layton",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Layton Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": null,
+          "city": "Layton"
+        }
+      },
+      "geo": {
+        "address_or_place": "Layton",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title, description",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Amanda",
+          "last_name": "Houghton",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Groping/sexual misconduct during search",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending litigation"
+      },
+      "event_summary": {
+        "short": "Woman arrested for DUI after rear-end collision, claims officer groped her during search; blood tests negative for drugs/alcohol.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_investigation"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault"
+        ],
+        "tags": [
+          "dashcam",
+          "bodycam",
+          "false arrest",
+          "lawsuit",
+          "pat-down",
+          "groping"
+        ],
+        "content_warnings": [
+          "sexual assault"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Footage from the July 25 incident",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "city of Layton",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Amanda Houghton",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "wrongfully arrested her for DUI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "description",
+          "quote": "groped her in the process",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "description",
+          "quote": "Houghton is being charged with DUI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "I'm going to place you under arrest for DUI",
+          "timestamp_seconds": 198,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "litigation is pending",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript, description",
+          "quote": "female officer wasn't called in; mentions 'my husband'",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

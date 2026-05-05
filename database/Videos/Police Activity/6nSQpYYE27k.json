@@ -430,5 +430,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:25:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-29",
+        "published_date": "2023-04-27T18:30:04Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": "Albuquerque",
+          "address_or_area": "4700 block of Glendale Rd NW",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Albuquerque Police Department",
+          "type": "municipal police",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": "Albuquerque"
+        }
+      },
+      "geo": {
+        "address_or_place": "4700 block of Glendale Rd NW",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Francisco",
+          "last_name": "Macias",
+          "age": 32,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on family member",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons offense (firing gun)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Narcotics intoxication",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "All charges dropped at request of victims"
+      },
+      "event_summary": {
+        "short": "Standoff and officer-involved shooting in Albuquerque, NM; suspect arrested with charges later dropped.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-03-29T18:30:00",
+        "initial_contact": "2023-03-29T19:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "standoff"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "standoff",
+          "bodycam",
+          "Albuquerque",
+          "NM"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshots"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 29, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "area of the 4700 block of Glendale Rd NW",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "32-year-old Francisco Macias",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "description",
+          "quote": "Macias was arrested and booked into jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "description",
+          "quote": "all charges against him have been dropped at the request of the victims",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

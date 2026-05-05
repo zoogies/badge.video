@@ -40,5 +40,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:13:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-10-15",
+        "published_date": "2020-10-17T14:45:18Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "alley between Dexter Avenue and John Street",
+          "location_name": "South Lake Union",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "alley between Dexter Avenue and John Street, Seattle, WA",
+        "intersection": "Dexter Avenue and John Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Caleb",
+          "last_name": "Pomazon",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "on paid administrative leave"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a flaming piece of lumber",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on officer with a deadly weapon (flaming lumber)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect threw a burning piece of lumber into a Seattle police patrol car with an officer inside; officer fired shots, suspect not hit, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-10-15T13:30:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "flaming lumber (2x2)",
+        "officer_weapon_used": "firearm and Taser",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "assault on officer",
+          "arson (fire)"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Seattle",
+          "SPD",
+          "burning lumber",
+          "patrol car fire"
+        ],
+        "content_warnings": [
+          "violence",
+          "fire",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "Around 1:30 PM, an officer was in their patrol vehicle...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Seattle, Washington State — The Seattle Police Department (SPD) has released body-worn...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "description",
+          "quote": "into King County Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "in an alley between Dexter Avenue and John Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "37-year-old suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Officer Caleb Pomazon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "flaming piece of lumber—believed to be a 2×2",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.initial_contact",
+          "source": "description",
+          "quote": "Around 1:30 PM",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "he's going to be in the alley, just north of Denny Park, on south of West Lake, to the east of Dexter",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

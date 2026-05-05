@@ -470,5 +470,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:25:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-03-29",
+        "published_date": "2021-04-17",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles County",
+          "city": "Los Angeles",
+          "address_or_area": "Intersection of 8th Street and Bixel Street, near 110 Freeway on-ramp",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles County",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "8th Street and Bixel Street intersection",
+        "intersection": "8th Street & Bixel Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Matthew",
+          "last_name": "Blaylock",
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "carrying concealed firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LAPD officers shot and killed an armed suspect after he refused to comply and reached for his gun during a foot pursuit.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-03-29T03:49:00",
+        "pursuit_started": "2021-03-29T03:49:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "LAPD",
+          "armed suspect",
+          "fatal shooting"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 29, 2021 around 3:49 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Los Angeles, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "near the intersection of 8th Street and Bixel Street, near the 110 Freeway on-ramp",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "38-year-old Matthew Blaylock",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "male black",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "succumbed to his injuries and was pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "succumbed to his injuries and was pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "Officer-Involved Shooting",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

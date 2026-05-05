@@ -30,5 +30,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:26:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-25",
+        "published_date": "2023-07-27",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Dallas County",
+          "city": "Cedar Hill",
+          "address_or_area": "950 E. Belt Line Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Cedar Hill Police",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Dallas County",
+          "city": "Cedar Hill"
+        }
+      },
+      "geo": {
+        "address_or_place": "950 E. Belt Line Road, Cedar Hill, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Bryan",
+          "last_name": "McGee",
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "critical, hospitalized"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Active shooting / shooting a doctor",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons offense (possession of firearm during crime)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Cedar Hill police engaged in a shootout with a suspect who shot a doctor at a medical building.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-07-25T12:17:00",
+        "initial_contact": "2023-07-25T12:21:00",
+        "pursuit_started": null,
+        "arrest": "2023-07-25T12:22:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "active_shooter",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "dashcam",
+          "shootout",
+          "medical building"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire",
+          "injury"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Cedar Hill, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "950 E. Belt Line Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On Tuesday, July 25, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "identified as 34-year-old Bryan McGee",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "34-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "five officers returned fire",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "active shooter inside a medical building ... shot a doctor",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

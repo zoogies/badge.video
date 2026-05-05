@@ -355,5 +355,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:30:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-02",
+        "published_date": "2025-12-05",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Marion",
+          "city": "Indianapolis",
+          "address_or_area": "900 block of North Grant Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indianapolis Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Indiana",
+          "county": "Marion",
+          "city": "Indianapolis"
+        }
+      },
+      "geo": {
+        "address_or_place": "900 block of North Grant Avenue",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address_or_area",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Cartonieo",
+          "last_name": "McBride",
+          "age": 36,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Unlawful Possession of a Firearm by a Serious Violent Felon",
+            "category": "weapons_offense",
+            "statute": "Level 4 Felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of a Firearm by a Domestic Batterer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Theft",
+            "category": "theft",
+            "statute": "Level 5 Felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Robbery",
+            "category": "robbery",
+            "statute": "Level 5 Felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Driving While Suspended",
+            "category": "traffic_stop",
+            "statute": "Class A Misdemeanor",
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officers shot unarmed suspect during warrant service after he reached for waistband.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-02T17:55:00",
+        "pursuit_started": null,
+        "arrest": "2025-10-02T17:55:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "firearm, less-lethal taser",
+        "shots_fired_by": [
+          "Detective Jones",
+          "Detective Virt",
+          "Detective Hunter"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "felony warrant service"
+        ],
+        "crime_categories": [
+          "warrant",
+          "shooting"
+        ],
+        "tags": [
+          "unarmed",
+          "bodycam",
+          "police shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshots"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 2, 2025, at about 5:55 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Indianapolis, Indiana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "900 block of north grant avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "36-year-old Cartonieo McBride",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "warrants for unlawful possession of a firearm by a serious violent felon, unlawful possession of a firearm by a domestic batterer, theft, robbery, and driving while suspended",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "Detective Hunter deployed her less lethal taser. Detective Jones then discharged his service weapon.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.weapon_found",
+          "source": "description",
+          "quote": "No firearm or other weapon was found in the vicinity of McBride.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome",
+          "source": "description",
+          "quote": "McBride was arrested ... transported to Eskenazi Hospital in critical condition.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.status",
+          "source": "transcript",
+          "quote": "Keep your hands up. ...",
+          "timestamp_seconds": 56,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

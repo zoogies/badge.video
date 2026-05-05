@@ -445,5 +445,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-22",
+        "published_date": "2022-09-09T18:39:30Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Benton County",
+          "city": "Kennewick",
+          "address_or_area": "7707 W. Deschutes Ave",
+          "location_name": "Circle K",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kennewick Police Department; Benton County Sheriff's Office",
+          "type": "local police; county sheriff",
+          "state": "Washington",
+          "county": "Benton County",
+          "city": "Kennewick"
+        }
+      },
+      "geo": {
+        "address_or_place": "7707 W. Deschutes Ave, Kennewick, WA",
+        "intersection": "Columbia Center Blvd & W. Deschutes Ave",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "West",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Weapons offense (firearm)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Shooting and chase of armed man in Kennewick, WA",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 18,
+        "pursuit_started": 75,
+        "arrest": 127
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "taser; firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "foot pursuit",
+          "officer-involved shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "shooting",
+          "chase"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Kennewick, Washington State — On August 22, 2022, just before 10:30 a.m. Kennewick Police Department Officers were dispatched to the Circle K at 7707 W. Deschutes Ave.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "Deputies and Officers attempted to wake up James West in the vehicle.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "West refused to comply with their commands and fired his weapon.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "The Deputy fired their weapon at West.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "Deputies and Officers arrested West and provided him with first aid",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.initial_contact",
+          "source": "transcript",
+          "quote": "Police!",
+          "timestamp_seconds": 18,
+          "confidence": "medium"
+        },
+        {
+          "field": "timeline.pursuit_started",
+          "source": "transcript",
+          "quote": "Chase, chase me.",
+          "timestamp_seconds": 75,
+          "confidence": "medium"
+        },
+        {
+          "field": "timeline.arrest",
+          "source": "transcript",
+          "quote": "one suspect down shot fired",
+          "timestamp_seconds": 127,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

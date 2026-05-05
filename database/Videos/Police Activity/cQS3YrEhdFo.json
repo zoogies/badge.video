@@ -1820,5 +1820,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-02-01",
+        "published_date": "2016-07-16",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Chatham",
+          "city": "Savannah",
+          "address_or_area": "Savannah residence",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Savannah-Chatham Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Georgia",
+          "county": "Chatham",
+          "city": "Savannah"
+        }
+      },
+      "geo": {
+        "address_or_place": "Savannah, Georgia",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Patrick",
+          "last_name": "Mumford",
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "description: 'not all black men look the same'",
+            "confidence": "high"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": "Clay",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "description: description implies similarity",
+            "confidence": "medium"
+          },
+          "status": "wanted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "violating probation stemming from drug offense",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "violation of probation (drug offense)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police tase and arrest Patrick Mumford after mistaking him for wanted suspect Michael Clay.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:10",
+        "pursuit_started": null,
+        "arrest": "after taser deployment"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mistaken_identity",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "taser",
+          "wrongful arrest",
+          "probation violation"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "taser"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "afternoon of Feb. 1",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Savannah-Chatham Metropolitan Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "Patrick Mumford, 24",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.race_ethnicity",
+          "source": "description",
+          "quote": "not all black men look the same",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Mumford was charged with violating probation—stemming from a nonviolent drug offense",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "All right, Tazen.",
+          "timestamp_seconds": 69,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.age",
+          "source": "description",
+          "quote": "Patrick Mumford, 24",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Savannah-Chatham Metropolitan Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_latitude",
+          "incident_longitude",
+          "case_number",
+          "disposition"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -335,5 +335,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-20",
+        "published_date": "2023-06-13T19:00:42Z",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Montgomery County",
+          "city": "Gaithersburg",
+          "address_or_area": "I-270 south of Route 28",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Montgomery County Department of Police",
+          "type": "municipal police",
+          "state": "Maryland",
+          "county": "Montgomery County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "I-270 south of Route 28, Gaithersburg, MD",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lawrence",
+          "last_name": "White",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearm while intoxicated",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspected drunken driver with a gun led police on a brief pursuit on I-270, crashed, and was ejected and killed.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-05-20T05:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "crash",
+          "fatality"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving",
+          "weapons_offense"
+        ],
+        "tags": [
+          "ejected",
+          "I-270",
+          "Gaithersburg",
+          "Montgomery County",
+          "Maryland"
+        ],
+        "content_warnings": [
+          "death",
+          "car crash"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 20, 2023, at approximately 5:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Gaithersburg, Maryland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location_details",
+          "source": "description",
+          "quote": "on I-270, south of route 28",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_identity",
+          "source": "description",
+          "quote": "37-year-old Lawrence White of Washington, D.C.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "See a gun, gun in his, on his lap.",
+          "timestamp_seconds": 64,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "The driver was ejected from the vehicle and was pronounced dead at the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "pursuit",
+          "source": "description",
+          "quote": "Officers initiated a brief pursuit",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Montgomery County Department of Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

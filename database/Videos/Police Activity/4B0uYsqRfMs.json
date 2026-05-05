@@ -930,5 +930,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:21:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-13",
+        "published_date": "2025-06-21T17:58:49Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Cameron County",
+          "city": "Brownsville",
+          "address_or_area": "Linda Street and Willow Street area, later near Southmost Road and East 23rd Street",
+          "location_name": null,
+          "confidence": "approximate"
+        },
+        "agency": {
+          "name": "Texas Department of Public Safety",
+          "type": "state police",
+          "state": "Texas",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Linda Street and Willow Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alberto",
+          "last_name": "Pintor Jr.",
+          "age": 25,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [
+          {
+            "label": "Aggravated Assault Against a Public Servant (2 counts)",
+            "category": "assault",
+            "statute": "1st Degree Felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Evading Arrest with Motor Vehicle",
+            "category": "evading",
+            "statute": "3rd Degree Felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Possession of a Firearm by a Felon",
+            "category": "weapons_offense",
+            "statute": "3rd Degree Felony",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Texas DPS trooper pursued and shot armed felony suspect after chase and foot pursuit",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-05-13T10:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "evading"
+        ],
+        "tags": [
+          "Texas",
+          "DPS",
+          "Brownsville",
+          "felon"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire",
+          "injuries"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 13, 2025, just after 10 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Brownsville, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "inferred from city",
+          "quote": "Brownsville is in Cameron County, Texas",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "25-year-old Alberto Pintor Jr., of Brownsville",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Pintor now faces a series of felony charges, including Two (2) counts of Aggravated Assault Against a Public Servant (1st Degree Felony), Evading Arrest with Motor Vehicle (3rd Degree Felony), Unlawful Possession of a Firearm by a Felon (3rd Degree Felony)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "Officers fired, striking him in the arm and pelvic area",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_pursuit",
+          "source": "description",
+          "quote": "Pintor refused to pull over and fled from the scene, leading officers on a chase",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "agents sprinting through yards and vaulting fences in pursuit",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

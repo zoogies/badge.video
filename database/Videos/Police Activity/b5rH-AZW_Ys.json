@@ -25,5 +25,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:35:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-14",
+        "published_date": "2025-02-15",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Thurston",
+          "city": "Olympia",
+          "address_or_area": "Tumwater area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Thurston County Sheriff's Office",
+          "type": "county",
+          "state": "Washington",
+          "county": "Thurston",
+          "city": "Olympia"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Harming a police dog",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on law enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies performed PIT maneuver and used K9 to arrest a DUI suspect after a pursuit in Olympia/Tumwater.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "DUI stop",
+          "K9 apprehension"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "PIT maneuver",
+          "K9",
+          "Olympia",
+          "Washington"
+        ],
+        "content_warnings": [
+          "use of force",
+          "K9 bite"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 14, 2025, early in the morning",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Olympia, Washington — On February 14, 2025...",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "The driver fled to the Tumwater area",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.name",
+          "source": "title",
+          "quote": "Deputies Use PIT Maneuver and K9 to Capture DUI Suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "The suspect was arrested for DUI, two counts of eluding, harming a police dog, and two counts of assault on LE.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "exited the vehicle and was placed under arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "One deputy and the suspect were both treated for minor injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "The driver fled the traffic stop. The driver fled to the Tumwater area... Deputies attempted to stop the driver and he fled again.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect race/ethnicity",
+          "precise location coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

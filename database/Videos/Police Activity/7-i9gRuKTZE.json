@@ -195,5 +195,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:26:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-21",
+        "published_date": "2022-09-02T16:42:09Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "7800 Radford Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "7800 Radford Avenue",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ramon",
+          "last_name": "Mosqueda",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "fled"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "pedestrian stop (known gang member)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "three counts of robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high",
+            "filed_date": "2022-08-04",
+            "note": "unrelated to this incident"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LAPD officer shot at suspect who was holding a gun-shaped butane lighter; suspect fled, later arrested for unrelated robbery",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-07-21T19:00:00-07:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "gun-shaped butane lighter (initially perceived as firearm)",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "pedestrian_stop",
+          "suspect_fled"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "LAPD",
+          "Foothill Division",
+          "Ramon Mosqueda",
+          "gun-shaped lighter"
+        ],
+        "content_warnings": [
+          "violence",
+          "police involved shooting"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 21, 2022, at 7:00 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "area of 7800 Radford Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "37-year-old Ramon Mosqueda",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "A black L-Shaped butane lighter was recovered at scene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Mosqueda had escaped the area",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Get away from the gun",
+          "timestamp_seconds": 44,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

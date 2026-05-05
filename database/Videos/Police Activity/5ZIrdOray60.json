@@ -40,5 +40,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:24:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-27",
+        "published_date": "2023-07-10",
+        "location": {
+          "state": "Arkansas",
+          "state_abbreviation": "AR",
+          "county": "Jefferson",
+          "city": "Pine Bluff",
+          "address_or_area": "I-530 near mile markers 30 to 43",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Arkansas State Police",
+          "type": "state police",
+          "state": "Arkansas",
+          "county": "Jefferson",
+          "city": "Pine Bluff"
+        }
+      },
+      "geo": {
+        "address_or_place": "I-530 near exit 43",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Casey",
+          "last_name": "Register",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Reckless driving",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/eluding police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of THC cannabis oil",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Arkansas State Police pursued a vehicle at high speeds on I-530; PIT maneuver caused crash into guard rail; suspect arrested after minor injuries; THC oil found.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-06-27T14:30:00",
+        "initial_contact": "2023-06-27T14:35:00",
+        "pursuit_started": "2023-06-27T14:35:00",
+        "arrest": "2023-06-27T14:45:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "police_chase"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "reckless_driving"
+        ],
+        "tags": [
+          "PIT maneuver",
+          "high-speed chase",
+          "I-530"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 27, 2023, at approximately 2:30 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Pine Bluff, Arkansas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "the driver, who was later identified as Casey Register",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "pursuit_maneuver",
+          "source": "description",
+          "quote": "Sgt. Preston was able to conduct a tactical vehicle intervention maneuver (TVI)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "drug_found",
+          "source": "description",
+          "quote": "a small bottle with a clear brown liquid believed to be THC cannabis oil",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county_fips",
+          "latitude",
+          "longitude",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript is garbled and not useful for extraction."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

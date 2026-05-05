@@ -1795,5 +1795,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:33:13Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-09-06",
+        "published_date": "2017-09-15",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Bronx",
+          "city": "Bronx",
+          "address_or_area": "370 Pratt Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New York City Police Department",
+          "type": "Municipal Police",
+          "state": "New York",
+          "county": "Bronx",
+          "city": "New York City"
+        }
+      },
+      "geo": {
+        "address_or_place": "370 Pratt Avenue, Bronx, NY",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript and description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Miguel",
+          "last_name": "Richards",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a weapon (knife and imitation firearm)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "NYPD officers fatally shot Miguel Richards during a wellness check after he refused to drop a knife and a toy pistol.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "firearm and taser",
+        "shots_fired_by": [
+          "NYPD officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "fatal shooting",
+          "mental health crisis"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "NYPD",
+          "wellness check"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Police fatally shot Miguel Richards, a 31-year-old Bronx man, on September 6.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "It's 9-370-370 Pratt Avenue",
+          "timestamp_seconds": 300,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Police fatally shot Miguel Richards",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "description",
+          "quote": "armed with a knife and what appeared to be a gun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "deadly police-involved encounter",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

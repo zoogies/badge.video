@@ -80,5 +80,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:38:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-05",
+        "published_date": "2016-03-07T22:39:43Z",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Calhoun County",
+          "city": "Battle Creek",
+          "address_or_area": "Hubband and Goodale Streets",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Battle Creek Police Department",
+          "type": "municipal police",
+          "state": "Michigan",
+          "county": "Calhoun County",
+          "city": "Battle Creek"
+        }
+      },
+      "geo": {
+        "address_or_place": "Hubband and Goodale Streets, Battle Creek, MI",
+        "intersection": "Hubband and Goodale Streets",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dariyone",
+          "last_name": "Clark-Brown",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with Intent to Murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding Police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Carrying a Concealed Weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving without a Valid License",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault with Intent to Murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding Police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Carrying a Concealed Weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving without a Valid License",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Driver shoots at police officer during traffic stop, flees, then barricades himself; arrested without incident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-03-05T15:15:00",
+        "pursuit_started": "2016-03-05T15:15:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "barricade"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense",
+          "fleeing_and_eluding"
+        ],
+        "tags": [
+          "dashcam",
+          "officer-involved shooting",
+          "Battle Creek"
+        ],
+        "content_warnings": [
+          "gun violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Saturday afternoon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Battle Creek",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "near Hubband and Goodale Streets",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Dariyone Zamone Clark-Brown",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He has a handgun.",
+          "timestamp_seconds": 91,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

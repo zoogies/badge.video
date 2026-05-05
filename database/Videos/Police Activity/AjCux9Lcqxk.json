@@ -860,5 +860,229 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:32:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-04",
+        "published_date": "2024-05-31",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": null,
+          "city": "Aurora",
+          "address_or_area": "1400 block of Clinton Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Aurora Police Department",
+          "type": "municipal police",
+          "state": "Colorado",
+          "county": null,
+          "city": "Aurora"
+        }
+      },
+      "geo": {
+        "address_or_place": "1400 block of Clinton Street, Aurora, Colorado",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_block",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jose Luis",
+          "last_name": "Rodriguez-Balderrama",
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "attempted murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "shooting",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "weapons offense",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Aurora police responded to a shooting call and later located the armed suspect, who was shot and killed by officers after refusing to comply.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-05-04T19:45:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer",
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "fatal_shooting",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "suspect_deceased",
+          "victim_injured",
+          "attempted_murder"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Saturday, May 4, 2024, about 7:45 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Aurora, Colorado",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "1400 block of Clinton Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "28-year-old Aurora resident, Jose Luis Rodriguez-Balderrama",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "204. Good attempt murder.",
+          "timestamp_seconds": 93,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "28-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "description",
+          "quote": "29-year-old Aurora man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Rodriguez-Balderrama was taken to a local hospital, where he was pronounced deceased.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "A 40-caliber handgun was recovered at the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County not explicitly stated; city may span multiple counties."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

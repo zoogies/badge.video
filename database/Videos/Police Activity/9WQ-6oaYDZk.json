@@ -880,5 +880,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:30:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-06-21",
+        "published_date": "2020-07-10T00:04:10Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Santa Clara",
+          "city": "Milpitas",
+          "address_or_area": "130 block of North Temple Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Milpitas Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Santa Clara",
+          "city": "Milpitas"
+        }
+      },
+      "geo": {
+        "address_or_place": "130 block of North Temple Drive",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brandeis",
+          "last_name": "Codde",
+          "age": 19,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stabbing",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on law enforcement officer with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Milpitas Police fatally shot a 19-year-old man who charged at them with a large knife after reportedly stabbing a 34-year-old man.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "large kitchen knife",
+        "officer_weapon_used": "Taser and service weapon",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "domestic_violence",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "stabbing"
+        ],
+        "tags": [
+          "knife",
+          "Taser",
+          "officer_involved_shooting",
+          "domestic_violence",
+          "mental_health"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "self_harm"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 21, 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Milpitas, California — ... the 130 block of North Temple Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "19-year-old Brandeis Codde",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "large kitchen knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "passed away from his injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "Taser was deployed but unsuccessful ... officer then used his service weapon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Age conflict: description says suspect is 19, transcript suggests 20. Victim age conflict: description says stabbing victim is 34, transcript implies father is 51."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

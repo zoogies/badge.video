@@ -360,5 +360,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:15:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-16",
+        "published_date": "2026-01-12T22:28:34Z",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore City",
+          "city": "Baltimore",
+          "address_or_area": "500 block of West Lanvale Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Baltimore Police Department",
+          "type": "municipal",
+          "state": "Maryland",
+          "county": "Baltimore City",
+          "city": "Baltimore"
+        }
+      },
+      "geo": {
+        "address_or_place": "North Charles Street and East 21st Street",
+        "intersection": "North Charles Street and East 21st Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Devin",
+          "last_name": "Thomas",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        },
+        {
+          "role": "passenger",
+          "first_name": "Andrew",
+          "last_name": "Brown",
+          "age": 61,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "detained"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with intent to injure",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Dangerous weapon with intent to injure",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Narcotics possession",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Dangerous weapon with intent to injure",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Baltimore police officers shot driver after he reversed toward them during a traffic stop pursuit.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-12-16T19:57:00",
+        "pursuit_started": "2025-12-16T19:57:00",
+        "arrest": "2025-12-16"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Baltimore",
+          "Maryland",
+          "Eastern District",
+          "bodycam",
+          "December 2025",
+          "narcotics",
+          "firearm recovered"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 16, 2025, at approximately 7:57 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Baltimore",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "driver, 37-year-old Devin Thomas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.first_name",
+          "source": "description",
+          "quote": "passenger, 61-year-old Andrew Brown",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "arrested and charged with assault and dangerous weapon with intent to injure",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "recovery of two firearms and narcotics",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire!",
+          "timestamp_seconds": 26,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number",
+          "disposition"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

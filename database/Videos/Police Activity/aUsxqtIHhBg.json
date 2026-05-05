@@ -760,5 +760,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:34:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-01-05",
+        "published_date": "2021-04-28",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Travis County",
+          "city": "Austin",
+          "address_or_area": "2500 block of Wickersham Lane",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Austin Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Travis County",
+          "city": "Austin"
+        }
+      },
+      "geo": {
+        "address_or_place": "2500 block of Wickersham Lane",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexander",
+          "last_name": "Gonzales",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated assault with a deadly weapon on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Off-duty and on-duty Austin police officers shoot and kill Alex Gonzales after alleged road rage incident.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer_gutierrez",
+          "officer_serrato"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "fatal_shooting",
+          "road_rage_incident"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "Austin",
+          "Texas",
+          "bodycam",
+          "police shooting",
+          "Alexander Gonzales"
+        ],
+        "content_warnings": [
+          "death",
+          "violence",
+          "gun violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "2500 block of Wickersham Lane",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on Tuesday, January 5, 2021",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "27-year-old Alexander Gonzales",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "allegation",
+          "source": "transcript",
+          "quote": "he pointed a gun at it",
+          "timestamp_seconds": 2.07,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Description states '2500 block of Wickersham Lane' but transcript dispatcher says '2400, Wickersham Lane' at 0:42. Prefer 2500 from description."
+        ],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": [
+        "Location conflict between 2400 and 2500 Wickersham Lane."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -240,5 +240,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:18:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-17",
+        "published_date": "2023-01-24T17:49:21Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Diego",
+          "city": "El Cajon",
+          "address_or_area": "800 block of La Cresta Boulevard, unincorporated El Cajon",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "San Diego Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "San Diego",
+          "city": "San Diego"
+        }
+      },
+      "geo": {
+        "address_or_place": "800 block of La Cresta Boulevard, unincorporated El Cajon, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Frank",
+          "last_name": "Brower",
+          "age": 77,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "confirmed"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Mary Ellen",
+          "last_name": "Carter",
+          "age": 66,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "description",
+            "confidence": "confirmed"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder (Stabbing)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons Offense (Reaching for Rifle)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shoot and kill suspect Frank Brower after he allegedly stabbed Mary Ellen Carter and reached for a rifle when confronted.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-01-17T15:55:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "homicide",
+          "domestic violence (prior stabbing)"
+        ],
+        "crime_categories": [
+          "homicide",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "helicopter footage",
+          "pharmacy stabbing"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 17, 2023, at 3:55 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "800 block of La Cresta Boulevard in unincorporated El Cajon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "I got a white male, blue hat",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].race_ethnicity",
+          "source": "description",
+          "quote": "66-year-old white female",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "female suffering from multiple stab wounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "reaching for something in the car, looks like he may have a rifle",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

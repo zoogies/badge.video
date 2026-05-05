@@ -640,5 +640,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:26:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-16",
+        "published_date": "2024-03-20",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia County",
+          "city": "Daytona Beach",
+          "address_or_area": "beach",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Volusia County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Daytona Beach",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alyssia",
+          "last_name": "Langley",
+          "age": 27,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Timothy",
+          "last_name": "Stephens",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child neglect",
+            "category": "neglect",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "alcohol possession on beach",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempt to escape custody",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "child neglect",
+          "alcohol possession",
+          "attempt to escape custody"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Couple found passed out on Daytona Beach with children missing; arrested for child neglect and alcohol possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-03-16",
+        "pursuit_started": null,
+        "arrest": "2024-03-16"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child neglect",
+          "public intoxication",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "neglect",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "beach",
+          "alcohol",
+          "children missing"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 16, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Daytona Beach, Florida — On March 16, 2024, Volusia County Sheriff's Deputies",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "27-year-olds Alyssia Langley",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Timothy Stephens",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Stephens faces charges of child neglect, alcohol possession and attempt to escape custody. Langley faces child neglect charges.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "description",
+          "quote": "Stephens runs away from the deputies and at least one chases after him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "smacking into the sand and appearing to be unconscious. He was taken to a hospital for evaluation",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

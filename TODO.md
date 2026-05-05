@@ -5,3 +5,4 @@
 - maybe we want to sort by outcome too
 - new page with full stats aggregated
 - if someone with maintainer permissions approves changes, we can later auto consider them when we write new data
+- some sort of sort for "help out" to classify missing counties or information

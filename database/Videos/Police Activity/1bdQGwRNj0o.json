@@ -45,5 +45,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:16:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-08-28",
+        "published_date": "2025-09-02",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": null,
+          "city": "Austin",
+          "address_or_area": "1807 West Slaughter Lane",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Austin Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": null,
+          "city": "Austin"
+        }
+      },
+      "geo": {
+        "address_or_place": "1807 West Slaughter Lane, Austin, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Raymond",
+          "last_name": "Howard",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "bystander",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, treated and released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Residential burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Home invasion",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Possession of a handgun during a burglary",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest (non-compliance)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Austin Police detectives attempted to arrest burglary suspect Raymond Howard at a business on Slaughter Lane. Howard brandished a handgun and a bystander intervened. Howard fired at least one round and detectives shot and killed him. The bystander was wounded.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-08-28T17:26:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "department-issued firearms",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "fugitive apprehension",
+          "burglary response"
+        ],
+        "crime_categories": [
+          "burglary",
+          "weapons_offense",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bystander intervention",
+          "fatal police shooting",
+          "armed suspect"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Thursday, August 28, 2025, at approximately 5 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "1807 West Slaughter Lane",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name",
+          "source": "description",
+          "quote": "33-year-old Raymond Lee Howard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots fired by suspect",
+          "source": "description",
+          "quote": "Howard … discharged at least one round",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect deceased",
+          "source": "description",
+          "quote": "Howard was pronounced deceased at 5:46 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "bystander intervention",
+          "source": "description",
+          "quote": "The bystander intervened and physically engaged Howard",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "coordinates",
+          "race_ethnicity",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "County not explicitly stated, inferred as Travis County may need verification"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

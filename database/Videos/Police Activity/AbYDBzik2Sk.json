@@ -160,5 +160,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-13",
+        "published_date": "2023-07-17",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Tulsa County",
+          "city": "Tulsa",
+          "address_or_area": "8th and Denver",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tulsa Police Department",
+          "type": "municipal police",
+          "state": "Oklahoma",
+          "county": "Tulsa County",
+          "city": "Tulsa"
+        }
+      },
+      "geo": {
+        "address_or_place": "8th and Denver, Tulsa, OK",
+        "intersection": "8th Street and Denver Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Miguel",
+          "last_name": "Hernandez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "description and transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Drug Paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony warrants: Burglary, Conspiracy, Larceny, Illegal Firearm Possession",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Drug Paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony warrants for Burglary, Conspiracy, Larceny, Illegal Firearm Possession out of Rogers County",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Tulsa police officer contacted suspect near 8th and Denver; suspect gave false name and fled on foot; bystander tackled him; suspect arrested on warrants and drug paraphernalia.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-07-13T11:30:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "foot pursuit",
+          "bystander intervention"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "drug_offense",
+          "warrant"
+        ],
+        "tags": [
+          "Tulsa",
+          "bodycam",
+          "bystander tackle"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 13, 2023, around 11:30 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "near 8th and Denver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "identified as Miguel Hernandez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "description and transcript",
+          "quote": "Hispanic male (transcript: 'Hispanic mill')",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest_charges",
+          "source": "description",
+          "quote": "arrested for: Resisting Arrest, Possession of Drug Paraphernalia, Felony warrants for Burglary, Conspiracy, Larceny, and Illegal Firearm Possession out of Rogers County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "bystander_tackle",
+          "source": "title and description",
+          "quote": "bystander tackle suspect running from Tulsa Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

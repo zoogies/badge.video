@@ -75,5 +75,171 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-02-19",
+        "published_date": "2026-02-23T22:55:35Z",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "Hartford",
+          "city": "Hartford",
+          "address_or_area": "990 Capitol Avenue",
+          "location_name": "Capitol Avenue apartment building",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Hartford Police Department",
+          "type": "municipal police",
+          "state": "Connecticut",
+          "county": "Hartford",
+          "city": "Hartford"
+        }
+      },
+      "geo": {
+        "address_or_place": "990 Capitol Avenue, Hartford, Connecticut",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Everard",
+          "last_name": "Walker",
+          "age": 53,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Knife threat / assault on officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "fatality (suspect died)"
+      },
+      "event_summary": {
+        "short": "Officer shoots and kills knife-wielding man during mental health crisis call in Hartford.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "Officer Alexander Clifford"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "mental_health",
+          "weapons_offense"
+        ],
+        "tags": [
+          "knife",
+          "Hartford",
+          "Connecticut",
+          "crisis call"
+        ],
+        "content_warnings": [
+          "death",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Hartford, Connecticut — On February 19, 2026... apartment building located at 990 Capitol Avenue in Hartford",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people",
+          "source": "description",
+          "quote": "53-year-old Everard Walker",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "description",
+          "quote": "Walker brandished a knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "Officer Clifford then fired several shots",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "later pronounced dead at Saint Francis Hospital",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "precise coordinates",
+          "zip code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

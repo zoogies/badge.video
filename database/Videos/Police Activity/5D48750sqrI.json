@@ -1840,5 +1840,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:22:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-19",
+        "published_date": "2026-01-30",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore City",
+          "city": "Baltimore",
+          "address_or_area": "1100 block of Park Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Baltimore Police Department",
+          "type": "municipal police",
+          "state": "Maryland",
+          "county": "Baltimore City",
+          "city": "Baltimore"
+        }
+      },
+      "geo": {
+        "address_or_place": "1100 block of Park Avenue, Baltimore, MD",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Autumn Elizabeth",
+          "last_name": "Denny",
+          "age": 48,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Kevin",
+          "last_name": "Wilson",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "involved"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "weapons charges",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "assault",
+          "weapons charges"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Baltimore police officer shot a woman armed with a knife and stun stick during a welfare check after tasers failed; she was taken into custody and hospitalized.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife, electrical stun stick",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare_check",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "knife",
+          "taser",
+          "de-escalation",
+          "mental_health"
+        ],
+        "content_warnings": [
+          "violence",
+          "shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 19, 2026",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "1100 block of Park Avenue, Baltimore, Maryland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "48-year-old Autumn Elizabeth Denny",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Officer Kevin Wilson, a three-year veteran",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Denny is currently facing assault and weapons charges",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "wielding a large knife ... an electrical stun stick",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "Multiple officers deployed their tasers ... one of the officers then discharged their service weapon, striking Denny",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Denny was transported to an area hospital for treatment of two gunshot wounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "de-escalation_attempts",
+          "source": "transcript",
+          "quote": "Drop the knife. Please drop the knife.",
+          "timestamp_seconds": 8.39,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

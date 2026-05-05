@@ -205,5 +205,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:36:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-05-29",
+        "published_date": "2020-07-30",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Maricopa",
+          "city": "Phoenix",
+          "address_or_area": "27th Avenue and Bethany Home Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Phoenix Police Department",
+          "type": "municipal",
+          "state": "Arizona",
+          "county": "Maricopa",
+          "city": "Phoenix"
+        }
+      },
+      "geo": {
+        "address_or_place": "27th Avenue and Bethany Home Road, Phoenix, AZ",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Omar",
+          "last_name": "Luna",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested and charged"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "fired weapon, uninjured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault on a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated Assault on a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Phoenix police officers responded to a 911 call about a man with a handgun; suspect Omar Luna fled, fired his weapon, and was shot by an officer; he was arrested and charged with aggravated assault on a police officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "Phoenix",
+          "police shooting",
+          "aggravated assault"
+        ],
+        "content_warnings": [
+          "violence",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "near 27th Avenue and Bethany Home Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "evening of May 29, 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_identity",
+          "source": "description",
+          "quote": "22-year-old Omar Luna",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race",
+          "source": "transcript",
+          "quote": "It's like white guy with shorts.",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_shots_fired",
+          "source": "description",
+          "quote": "One officer returned fire three times",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charge",
+          "source": "description",
+          "quote": "charged with one count of Aggravated Assault on a Police Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

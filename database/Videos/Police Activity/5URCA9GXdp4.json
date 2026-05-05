@@ -145,5 +145,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:23:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-02-21",
+        "published_date": "2016-02-22",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "2200 block of NE 85th Street",
+          "location_name": "Wedgwood neighborhood",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "2200 block of NE 85th Street, Seattle, WA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Che",
+          "last_name": "Taylor",
+          "age": 46,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a firearm by a convicted felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of cocaine and heroin",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Seattle police shot and killed 46-year-old Che Taylor after he allegedly reached for a handgun during a traffic stop in Wedgwood.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "police_shooting"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "fatal",
+          "dashcam",
+          "Seattle"
+        ],
+        "content_warnings": [
+          "death",
+          "violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "officers were investigating a suspicious car in the 2200 block of NE 85th Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "Sunday in Wedgwood. ... He has been identified as 46-year-old Che Taylor.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "46-year-old Che Taylor",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "the man died Sunday night at Harborview Medical Center",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "convicted violent felon whose criminal history includes convictions for assault, robbery and rape",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "description",
+          "quote": "possession of what appeared to be cocaine and black tar heroin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "Taylor reached for his handgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

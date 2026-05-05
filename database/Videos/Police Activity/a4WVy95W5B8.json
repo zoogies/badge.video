@@ -555,5 +555,242 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-04-05",
+        "published_date": "2023-04-17",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "San Juan County",
+          "city": "Farmington",
+          "address_or_area": "5305 Valley View Ave",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Farmington Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "San Juan County",
+          "city": "Farmington"
+        }
+      },
+      "geo": {
+        "address_or_place": "5305 Valley View Ave, Farmington, NM",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Robert",
+          "last_name": "Dotson",
+          "age": 52,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "witness",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic violence (original call)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated assault on officers (suspect pointing firearm)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Farmington Police responded to a domestic violence call but went to the wrong house. Homeowner Robert Dotson pointed a firearm at officers and was fatally shot. His wife also fired but was not injured.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-04-05T23:30:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officers",
+          "suspect",
+          "suspect's wife"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "wrong-address response",
+          "fatal encounter"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Farmington",
+          "New Mexico",
+          "wrong address",
+          "homeowner shot"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On Wednesday, April 5, at approximately 11:30 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "5305 Valley View Ave",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "52-year-old Robert Dotson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "52-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "fatally striking Dotson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "points a firearm at the officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "description",
+          "quote": "All three officers fired their weapons ... Dotson's wife ... begins firing at officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "title",
+          "quote": "Farmington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.state",
+          "source": "description",
+          "quote": "Farmington, New Mexico",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "title",
+          "quote": "Farmington Officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "classifications.incident_types",
+          "source": "title",
+          "quote": "Fatally Shoot Armed Homeowner After Responding to Wrong House",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "case_number",
+          "disposition"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript contains significant noise and may be inaccurate for some segments."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -330,5 +330,154 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:39:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-01-22",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "Dakota",
+          "city": "Eagan",
+          "address_or_area": "Highway 149",
+          "location_name": "3365 Highway 149",
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Eagan Police Department",
+          "type": "municipal",
+          "state": "Minnesota",
+          "county": "Dakota",
+          "city": "Eagan"
+        }
+      },
+      "geo": {
+        "address_or_place": "3365 Highway 149, Eagan, MN",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "address",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Duty to drive with due care",
+            "category": "distracted_driving",
+            "statute": "Minnesota Statute (under speed statute)",
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "citation issued"
+      },
+      "event_summary": {
+        "short": "Driver cited for reading a Kindle while driving on Highway 149 in Eagan, MN",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "distracted_driving"
+        ],
+        "tags": [
+          "reading",
+          "Kindle",
+          "distracted driving",
+          "citation"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "3365 Highway 149, Minnesota personalized Nora 8, Tom, Union Tom.",
+          "timestamp_seconds": 50
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "duty to drive with due care",
+          "timestamp_seconds": 134
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "I'm going to give you that back... citation",
+          "timestamp_seconds": 190
+        },
+        {
+          "field": "agency.name",
+          "source": "title",
+          "quote": "Eagan Police",
+          "timestamp_seconds": null
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

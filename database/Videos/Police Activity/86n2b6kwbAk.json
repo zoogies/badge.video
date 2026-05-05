@@ -390,5 +390,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:28:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-30",
+        "published_date": "2025-02-06T18:07:13Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": "Fort Worth",
+          "address_or_area": "1700 block of Skyline Dr.",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lake Worth Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": "Lake Worth"
+        }
+      },
+      "geo": {
+        "address_or_place": "1700 block of Skyline Dr., Fort Worth, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nicholas",
+          "last_name": "Sides",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Traffic violation",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading arrest",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging firearm at officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased"
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to pursuit and shootout; suspect killed.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "4:17 PM",
+        "initial_contact": "4:17 PM",
+        "pursuit_started": "4:17 PM",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "officer_involved_shooting",
+          "standoff"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "weapons_offense"
+        ],
+        "tags": [
+          "pursuit",
+          "shootout",
+          "SWAT",
+          "de-escalation"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, January 30, 2025, at around 4:17 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "ended at a residence in the 1700 block of Skyline Dr. in Fort Worth",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_mental_state",
+          "source": "transcript",
+          "quote": "I'm not going back to prison restaurant. I'll fucking kill myself first.",
+          "timestamp_seconds": 372,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

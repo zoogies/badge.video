@@ -345,5 +345,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:25:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-23",
+        "published_date": "2025-06-06",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "West 113th Street and Compton Avenue / East 105 Freeway on-ramp at Central Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "East 105 Freeway on-ramp at Central Avenue, Los Angeles, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "06037",
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Osmin",
+          "last_name": "Briseno",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured and arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child Abduction",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a Deadly Weapon (Firearm)",
+            "category": "assault with a deadly weapon",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Outstanding felony warrants",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect shot, taken into custody, and booked for unrelated charges"
+      },
+      "event_summary": {
+        "short": "Foot pursuit and officer-involved shooting after suspect reached into backpack during traffic stop",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-04-23T14:05:00",
+        "pursuit_started": "2025-04-23T14:05:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "officer_involved_shooting",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "warrant",
+          "kidnapping",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "child abduction",
+          "backpack",
+          "freeway",
+          "Los Angeles",
+          "LAPD",
+          "officer-involved shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 23, 2025, around 2:05 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Los Angeles, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "area of West 113th Street and Compton Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "36-year-old Osmin Briseno",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "wanted for Child Abduction",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "resulting in an Officer-Involved Shooting",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact coordinates",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

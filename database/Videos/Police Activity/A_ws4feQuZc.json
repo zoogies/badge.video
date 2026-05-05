@@ -230,5 +230,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:34:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-08",
+        "published_date": "2024-07-12",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Rensselaer County",
+          "city": "Troy",
+          "address_or_area": "2nd Avenue and 116th Street",
+          "location_name": "Hudson River",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Troy Police Department",
+          "type": "municipal",
+          "state": "New York",
+          "county": "Rensselaer County",
+          "city": "Troy"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "2nd Avenue and 116th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Melquan",
+          "last_name": "Simpson",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Cocaine possession",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Parole absconding",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Parolee drowned in Hudson River while fleeing police on bicycle.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "pursuit",
+          "water_rescue",
+          "death"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "warrant",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "parolee",
+          "bicycle",
+          "drowning",
+          "Hudson River"
+        ],
+        "content_warnings": [
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Monday, July 8, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Troy, N.Y.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "inferred",
+          "quote": "Troy is in Rensselaer County",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "33-year-old Melquan Simpson",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "description",
+          "quote": "33-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "possessed a quantity of cocaine",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "Simpson was later found dead under the water",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "Pull over. Pull over, man.",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Address '2nd Avenue and 116th Street' may be inaccurate; typical Troy streets are numbered differently."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1880,5 +1880,184 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:17:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-01",
+        "published_date": "2023-03-09",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Davis County",
+          "city": "Farmington",
+          "address_or_area": "145 East State Street",
+          "location_name": "US Post Office",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Farmington Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Davis County",
+          "city": "Farmington"
+        }
+      },
+      "geo": {
+        "address_or_place": "145 East State Street, Farmington, UT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Chase",
+          "last_name": "Allan",
+          "age": 25,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "No registration on vehicle",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to identify",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to officer-involved shooting after suspect refuses to comply and reaches for gun.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-03-01T15:22:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting",
+          "fatal_shooting"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "sovereign citizen",
+          "no registration"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "Farmington, Utah — On March 1, 2023, at approximately 3:22pm, a Farmington Police officer attempted a traffic stop... pulled into a parking stall at the US Post Office located at 145 East State Street.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "The driver was ultimately identified as 25-year-old Chase Allan.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.status",
+          "source": "description",
+          "quote": "Allan was taken to the hospital and later pronounced dead.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "A holster was found on Allan's right hip, as well as a gun on the floor of the driver side of the car.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Gun, gun, gun, gun, gun, gun!",
+          "timestamp_seconds": 57.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

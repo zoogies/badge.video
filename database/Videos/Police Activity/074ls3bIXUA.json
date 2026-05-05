@@ -80,5 +80,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:14:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-07-28",
+        "published_date": "2017-06-22T20:30:21Z",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "Nobles County",
+          "city": "Worthington",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Worthington Police Department",
+          "type": "municipal police",
+          "state": "Minnesota",
+          "county": "Nobles County",
+          "city": "Worthington"
+        }
+      },
+      "geo": {
+        "address_or_place": "by the courthouse",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Promvongsa",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Laotian American",
+            "source": "description",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Joe",
+          "last_name": "Joswiak",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon (car)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing a peace officer in a motor vehicle",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with revoked license",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Two counts of assault with a deadly weapon",
+          "One count of fleeing a peace officer in a motor vehicle",
+          "Possessing a small amount of marijuana",
+          "Driving with a revoked driver's license"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded not guilty"
+      },
+      "event_summary": {
+        "short": "Dashcam video shows excessive force arrest of Anthony Promvongsa by Worthington police officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "car",
+        "officer_weapon_used": "gun",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "excessive_force",
+          "arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "drug_offense",
+          "traffic_violation",
+          "fleeing"
+        ],
+        "tags": [
+          "dashcam",
+          "ACLU",
+          "Laotian",
+          "Worthington",
+          "Minnesota"
+        ],
+        "content_warnings": [
+          "violence",
+          "excessive force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on July 28, 2016",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Worthington Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with two counts of assault with a deadly weapon, one count of fleeing, possessing marijuana, driving with revoked license",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "Anthony Promvongsa, a 21-year-old Laotian American man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Get the fuck out of the car! Show me your fucking hands!",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "precise coordinates",
+          "zip code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

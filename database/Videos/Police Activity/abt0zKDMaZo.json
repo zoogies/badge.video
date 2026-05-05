@@ -30,5 +30,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-19",
+        "published_date": "2025-05-28",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Fond du Lac",
+          "city": "Fond du Lac",
+          "address_or_area": "Interstate 41 area, Fond du Lac County Airport, Johnson Street",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Fond du Lac County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Fond du Lac",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Fond du Lac, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "in custody"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing and eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "High-speed pursuit through Fond du Lac County, including airport runway, ending with PIT maneuver and arrest of 27-year-old male driver.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-05-19T07:56:00",
+        "pursuit_started": "2025-05-19T07:56:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "vehicle pursuit",
+          "felony stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "weapons_offense",
+          "reckless_driving"
+        ],
+        "tags": [
+          "high-speed chase",
+          "Fond du Lac",
+          "airport incursion",
+          "PIT maneuver",
+          "Wisconsin"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Monday, May 19, 2025, at approximately 7:56 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Fond du Lac, Wisconsin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Fond du Lac County Sheriff's Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "27-year-old male from Menasha",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "driver ... was also taken into custody",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "it's alleged that the suspects were contemplating shooting at the pursuing deputies",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "K9 located a backpack containing ... a loaded handgun that was thrown from the vehicle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "one deputy was treated and released from the hospital for injuries",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect names",
+          "charges",
+          "case number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

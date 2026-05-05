@@ -200,5 +200,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:28:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2019-04-11",
+        "published_date": "2019-04-12",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "DeLand",
+          "address_or_area": "State Road 44 near Volusia County Fairgrounds",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "State Road 44 near Volusia County Fairgrounds",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Phillip",
+          "last_name": "Marsh",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Thomas",
+          "last_name": "Dane",
+          "age": 54,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Firing at law enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearm during felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect died after being shot by deputies"
+      },
+      "event_summary": {
+        "short": "Police shootout with armed carjacking suspect in Florida",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2019-04-11T14:21:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit",
+          "carjacking"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "police shootout",
+          "Volusia County",
+          "Florida"
+        ],
+        "content_warnings": [
+          "gun violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "description",
+          "quote": "near Interstate 4 after the suspect carjacked a woman at gunpoint in Deltona, led deputies on a pursuit to the DeLand area",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.name",
+          "source": "description",
+          "quote": "Phillip Thomas Marsh, 30 (DOB 12/7/1988), of Lake Helen",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.name",
+          "source": "description",
+          "quote": "Sgt. Thomas Dane, 54, who has been a VCSO deputy for 30 years",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "description",
+          "quote": "carjacked a woman at gunpoint in Deltona",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "later pronounced dead",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

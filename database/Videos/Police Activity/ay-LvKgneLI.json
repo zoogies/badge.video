@@ -155,5 +155,227 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:34:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-09",
+        "published_date": "2025-05-22",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Webb County",
+          "city": "Laredo",
+          "address_or_area": "IH-35, neighborhoods, Lyon, Monterey, Mexico",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Texas Department of Public Safety",
+          "type": "state police",
+          "state": "Texas",
+          "county": "Webb",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Humberto",
+          "last_name": "Garcia",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "other",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "referred to USBP"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Smuggling of Persons",
+            "category": "human_smuggling",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading Arrest",
+            "category": "evading_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Stop and Render Aid",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Smuggling of Persons",
+          "Evading Arrest",
+          "Failure to Stop and Render Aid",
+          "Reckless Driving"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Smuggler crashed twice during high-speed pursuit, then fled on foot and was tased and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": "approximately [0:13]",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "human smuggling",
+          "crash"
+        ],
+        "crime_categories": [
+          "human_smuggling",
+          "traffic_stop",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "tags": [
+          "smuggling",
+          "Dodge Challenger",
+          "high-speed chase",
+          "taser deployment",
+          "Laredo",
+          "Webb County"
+        ],
+        "content_warnings": [
+          "pursuit",
+          "crash",
+          "taser deployment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 9, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Laredo, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Webb County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "TXDPS Troopers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Humberto Misael Garcia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "description",
+          "quote": "charged with smuggling of persons",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "a taser was deployed",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "intersection"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

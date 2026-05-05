@@ -70,5 +70,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:27:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-05",
+        "published_date": "2022-07-05T16:05:00Z",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": "Jefferson",
+          "city": "Louisville",
+          "address_or_area": "gas station between Russell and California neighborhoods, 18th and Broadway",
+          "location_name": null,
+          "confidence": "approximate"
+        },
+        "agency": {
+          "name": "Louisville Metro Police Department",
+          "type": "municipal",
+          "state": "Kentucky",
+          "county": "Jefferson",
+          "city": "Louisville"
+        }
+      },
+      "geo": {
+        "address_or_place": "gas station at 18th and Broadway, Louisville, KY",
+        "intersection": "18th Street and Broadway",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Nick",
+          "last_name": "Green",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        },
+        {
+          "role": "officer",
+          "first_name": "Noah",
+          "last_name": "Cole",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        },
+        {
+          "role": "victim",
+          "first_name": "Emma",
+          "last_name": null,
+          "age": "7 days",
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "saved"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Louisville police officers perform CPR on 7-day-old newborn at gas station, saving her life",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-07-05T20:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "medical_emergency",
+          "public_safety"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "newborn",
+          "CPR",
+          "Louisville",
+          "officer_saves_baby"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "shortly before 8 p.m. EDT",
+          "timestamp_seconds": null,
+          "confidence": "approximate"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Louisville, Kentucky",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "gas station between the Russell and California neighborhoods",
+          "timestamp_seconds": null,
+          "confidence": "approximate"
+        },
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "18th of Broadway",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "description",
+          "quote": "Officer Nick Green",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.first_name",
+          "source": "description",
+          "quote": "Officer Noah Cole",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.2.age",
+          "source": "description",
+          "quote": "seven-day-old baby girl",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "baby began breathing and crying out... now home, happy and healthy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code",
+          "geo.county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

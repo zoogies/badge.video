@@ -30,5 +30,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:32:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2015-06",
+        "published_date": "2017-03-09T00:43:56Z",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Owasso Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": null,
+          "city": "Owasso"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "police_officer",
+          "first_name": "Mike",
+          "last_name": "Denton",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not guilty of charges"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "high-speed chase",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "possession of a knife",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "assault and battery with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "reckless conduct with a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "not guilty"
+      },
+      "event_summary": {
+        "short": "Dashcam shows Owasso police officer hitting a suspect with a shotgun after a high-speed chase from Tulsa to Nowata, Oklahoma. Officer was acquitted of excessive force charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "shotgun",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "police_use_of_force",
+          "acquitted_officer"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "assault"
+        ],
+        "tags": [
+          "shotgun",
+          "taser",
+          "excessive force",
+          "Oklahoma",
+          "Owasso"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "Dashcam video from June 2015",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location_chase",
+          "source": "description",
+          "quote": "a chase that stretched from Tulsa to Nowata",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Owasso police officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Officer Mike Denton",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "description",
+          "quote": "found not guilty of assault and battery with a deadly weapon and reckless conduct with a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "the suspect – who had a knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "minimal",
+        "location_conflicts": [
+          "Chase spanned Tulsa County and Nowata County; exact arrest location unknown"
+        ],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "latitude",
+          "longitude",
+          "zip",
+          "incident exact date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -295,5 +295,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:21:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-08",
+        "published_date": "2026-02-03",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Ashtabula County",
+          "city": "Ashtabula",
+          "address_or_area": "Dwight Avenue and East 48th Street (pursuit start) / Anderson Road and Stanhope-Kelloggsville Road (end)",
+          "location_name": "Denmark Township",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Ashtabula County Sheriff's Office",
+          "type": "county",
+          "state": "Ohio",
+          "county": "Ashtabula County",
+          "city": "Ashtabula"
+        }
+      },
+      "geo": {
+        "address_or_place": "Anderson Road and Stanhope-Kelloggsville Road, Denmark Township, Ohio",
+        "intersection": "Anderson Road and Stanhope-Kelloggsville Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jerry",
+          "last_name": "Pegram",
+          "age": 54,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing and eluding police",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of firearm during felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug possession (throwing baggies)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Motorcycle rider fled deputies, crashed, then reached for a gun and was shot and killed by officers.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-09-08T14:41:00",
+        "pursuit_started": "2025-09-08T14:41:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "black pistol (holstered)",
+        "officer_weapon_used": "firearm (brand not specified)",
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "officer-involved shooting",
+          "use of force"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "motorcycle",
+          "ashtabula county",
+          "ohio",
+          "bci investigation"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Monday, September 08, 2025, at approximately 2:41 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Denmark Township, Ohio... area of Dwight Avenue and East 48th Street in the city of Ashtabula... area of Anderson Road and Stanhope-Kelloggsville Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "54-year-old Jerry Pegram",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "I've called shots fired. (5:29-5:31)",
+          "timestamp_seconds": 329,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "Pegram reached under his clothing and began to manipulate a black pistol... Officers removed a firearm from a holster",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "Pegram was eventually pronounced deceased on the scene.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "pursuit_duration",
+          "source": "description",
+          "quote": "vehicle pursuit lasted for 22 minutes and ended at 3:03 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

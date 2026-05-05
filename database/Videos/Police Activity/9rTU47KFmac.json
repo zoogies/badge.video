@@ -175,5 +175,171 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:30:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-09",
+        "published_date": "2023-07-28",
+        "location": {
+          "state": "Virginia",
+          "state_abbreviation": "VA",
+          "county": null,
+          "city": "Richmond",
+          "address_or_area": "3300 block of McGuire Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Richmond Police",
+          "type": "municipal",
+          "state": "Virginia",
+          "county": null,
+          "city": "Richmond"
+        }
+      },
+      "geo": {
+        "address_or_place": "3300 block of McGuire Drive",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Douglas",
+          "last_name": "Price",
+          "age": 61,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Narcotics-related (warrant)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "declined prosecution"
+      },
+      "event_summary": {
+        "short": "SWAT officer shot armed man during narcotics search warrant in Richmond, VA",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-01-09T04:47:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "swat_raid"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "narcotics",
+          "SWAT",
+          "bodycam",
+          "suspect_death"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 9, 2023, around 4:47 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Richmond, Virginia — ... in the 3300 block of McGuire Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "61-year-old Douglas Price",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "the Office of the Commonwealth Attorney declined prosecuting the officer ... back on active duty",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "limited",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

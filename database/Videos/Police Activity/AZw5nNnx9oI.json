@@ -255,5 +255,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:34:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-25",
+        "published_date": "2024-03-13T16:53:17Z",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Marion",
+          "city": "Indianapolis",
+          "address_or_area": "2600 block of Brookside Parkway North Drive",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Indianapolis Metropolitan Police Department",
+          "type": "municipal police",
+          "state": "Indiana",
+          "county": "Marion",
+          "city": "Indianapolis"
+        }
+      },
+      "geo": {
+        "address_or_place": "2600 block of Brookside Parkway North Drive, Indianapolis, IN",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Raphael",
+          "last_name": "Dekemper",
+          "age": 48,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a firearm by a serious violent felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal recklessness",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pointing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Invasion of privacy",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder / assault on police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect died at scene after being shot by officers"
+      },
+      "event_summary": {
+        "short": "IMPD officers exchanged gunfire with armed suspect during traffic stop; suspect killed.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-01-25T17:26:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting",
+          "warrant arrest"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "warrant",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "IMPD",
+          "Indianapolis",
+          "traffic stop",
+          "bodycam",
+          "shooting",
+          "warrant",
+          "murder suspect"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 25, 2024, around 5:26 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Indianapolis, Indiana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "2600 block of Brookside Parkway North Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "48-year-old Raphael Nafees Dekemper",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "Dekemper was transported to Eskenazi Hospital, where he later died.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "Dekemper’s warrants included possession of a firearm by a serious violent felon, criminal recklessness, pointing a firearm and invasion of privacy.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "Dekemper could be seen exiting the vehicle and appearing to point his firearm and firing at police. Gunfire then rang out between the suspect and officers.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Description mentions both 2600 block of Brookside Parkway North Drive and 2500 block of East 16th Street; the suspect was located at East 16th then traffic stop occurred at Brookside."
+        ],
+        "missing_critical_fields": [
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

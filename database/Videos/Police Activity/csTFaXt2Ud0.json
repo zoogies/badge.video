@@ -80,5 +80,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-03-01",
+        "published_date": "2017-03-02",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": "Jefferson County",
+          "city": "Louisville",
+          "address_or_area": "Magazine and 26th streets",
+          "location_name": "Russell neighborhood",
+          "confidence": "confirmed"
+        },
+        "agency": {
+          "name": "Louisville Metro Police Department",
+          "type": "municipal",
+          "state": "Kentucky",
+          "county": "Jefferson County",
+          "city": "Louisville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Magazine and 26th streets, Louisville, KY",
+        "intersection": "Magazine Street and 26th Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "street_intersection",
+        "confidence": "confirmed"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Bruce",
+          "last_name": "Warrick",
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized"
+        },
+        {
+          "role": "officer",
+          "first_name": "Sarah",
+          "last_name": "Stumler",
+          "age": 34,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "relieved of police powers"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Drug possession (alleged)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police respond to report of man doing drugs, officer shoots suspect hiding behind mattress in vacant house.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "vacant house",
+          "mattress",
+          "no weapon found"
+        ],
+        "content_warnings": [
+          "police shooting",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "an officer shot a man Wednesday in the Russell neighborhood",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Russell neighborhood",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "near Magazine and 26th streets",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Bruce Warrick, 38",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "Bruce Warrick, 38",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Officer Sarah Stumler",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "a man appeared to be doing drugs",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "firing one shot",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "shot in the abdomen",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "No weapon was found in the house",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "confirmed",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

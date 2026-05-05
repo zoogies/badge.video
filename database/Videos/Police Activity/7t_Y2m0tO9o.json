@@ -730,5 +730,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:27:35Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-20",
+        "published_date": "2025-12-22T23:10:31Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Newburgh Heights",
+          "address_or_area": "3865 West 21st Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Newburgh Heights Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Newburgh Heights"
+        }
+      },
+      "geo": {
+        "address_or_place": "3865 West 21st Street",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 11,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": "Black or African American",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "detained and released to parents"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 12,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": "Black or African American",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "detained and released to parents"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 8,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": "Black or African American",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "detained and released to parents"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of motor vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "handled through juvenile court"
+      },
+      "event_summary": {
+        "short": "11-year-old leads police on stolen car chase in Ohio; crashes into home; all three children detained and released to parents.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "juvenile_crime"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "juvenile",
+          "crash"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Newburgh Heights, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "3865 West 21st Street",
+          "timestamp_seconds": 144,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "11",
+          "timestamp_seconds": 386,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "three black juveniles",
+          "timestamp_seconds": 147,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "12 years old",
+          "timestamp_seconds": 328,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "No one inside the home or vehicle was injured",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "the children were released to their parents while charges are being handled through juvenile court",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

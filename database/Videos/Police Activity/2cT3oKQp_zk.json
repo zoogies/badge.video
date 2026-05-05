@@ -425,5 +425,147 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:18:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2019-12-08",
+        "published_date": "2019-12-20T21:12:09Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Harris County",
+          "city": "Houston",
+          "address_or_area": "15200 block of Clay Road",
+          "location_name": "Clay Road",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Harris County Constable Precinct 5",
+          "type": "county",
+          "state": "Texas",
+          "county": "Harris County",
+          "city": "Houston"
+        }
+      },
+      "geo": {
+        "address_or_place": "15200 block of Clay Road",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "48201",
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Harris County deputies rescue driver from burning car after crash into tree.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "rescue"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "rescue",
+          "burning car",
+          "trapped driver"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "15200 block of Clay Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "Sunday, December 8",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "20-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "transcript",
+          "quote": "We got him out just in time",
+          "timestamp_seconds": 190,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

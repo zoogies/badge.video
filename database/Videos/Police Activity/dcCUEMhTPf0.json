@@ -370,5 +370,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:41:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-30",
+        "published_date": "2024-07-12",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Greene",
+          "city": "Xenia",
+          "address_or_area": "190 South Orange Street (apartment complex)",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Xenia Police Division",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Greene",
+          "city": "Xenia"
+        }
+      },
+      "geo": {
+        "address_or_place": "190 South Orange Street, Xenia, OH",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kyle",
+          "last_name": "Berry",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, arrested, in custody"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felonious Assault (two counts) – pointing firearm at officers and at a civilian",
+            "category": "assault",
+            "statute": "Ohio Revised Code 2903.11",
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging a firearm in a parking lot",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felonious Assault (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Arraigned, bail set at $500,000; case pending grand jury"
+      },
+      "event_summary": {
+        "short": "Xenia police shot and wounded Kyle Berry after he pointed a gun at officers and a resident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-06-30T07:25:00",
+        "initial_contact": "2024-06-30T07:25:00",
+        "pursuit_started": null,
+        "arrest": "2024-06-30 (after hospital release)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Kimber semi-automatic pistol",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "shooting",
+          "domestic_related (implied by location)"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "felonious_assault",
+          "firearm",
+          "bodycam",
+          "mental_health (possible meth-induced psychosis)",
+          "dispatch_audio"
+        ],
+        "content_warnings": [
+          "gun violence",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 30, 2024 at 7:25 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Xenia Police in Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "190 South Orange Street",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Kyle Berry",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "23-year-old Kyle Berry",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "two counts of felonious assault",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "Shots were fired by officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "Berry was injured",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "A Kimber semi-automatic pistol was recovered",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [
+          "Description says 'near 190 Bellbrook Avenue' but transcript says '190 South Orange Street'. Both refer to same apartment complex; using transcript as primary source for address."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Address discrepancy between description and transcript.",
+        "Suspect's race/ethnicity not provided."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

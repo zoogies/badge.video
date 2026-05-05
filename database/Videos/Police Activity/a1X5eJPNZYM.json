@@ -605,5 +605,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2019-05-17",
+        "published_date": "2019-09-05",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Pasadena",
+          "address_or_area": "1500 block of Glen Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pasadena Police Department",
+          "type": "local",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Pasadena"
+        }
+      },
+      "geo": {
+        "address_or_place": "1500 block of Glen Avenue, Pasadena, CA",
+        "intersection": "Glen Avenue and Howard Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Warren",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "African-American",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "brandishing a firearm at officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect died at scene"
+      },
+      "event_summary": {
+        "short": "Police shootout with armed suspect in Pasadena, California",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2019-05-17T12:35:00",
+        "initial_contact": "2019-05-17T18:27:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "AR-15 assault rifle, two guns recovered",
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer",
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "fatal"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "bodycam",
+          "Pasadena",
+          "AR-15",
+          "armed suspect"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The shooting occurred May 17",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in the 1500 block of Glen Avenue at approximately 6:30 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "The suspect, identified as Daniel Warren",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "transcript",
+          "quote": "African-American mall standing on the corner",
+          "timestamp_seconds": 66,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "an AR-15 assault rifle",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "left an armed suspect dead",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Pasadena police released bodycam video",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "precise_coordinates",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

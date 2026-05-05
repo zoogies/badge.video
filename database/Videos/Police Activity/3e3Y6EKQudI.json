@@ -90,5 +90,240 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:20:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-31",
+        "published_date": "2026-02-24T00:13:00Z",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "El Paso County",
+          "city": "Colorado Springs",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Colorado Springs Police Department",
+          "type": "municipal police",
+          "state": "Colorado",
+          "county": "El Paso",
+          "city": "Colorado Springs"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Micaela",
+          "last_name": "Pasillas",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "James",
+          "last_name": "Mckinstry",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "involved"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disturbance",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Carrying a large knife",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempting to drive away in police car",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reaching for duty shotgun",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Menacing",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officer shoots woman after she reaches for shotgun inside patrol car during foot pursuit",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "disturbance",
+          "knife",
+          "shotgun",
+          "police car"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshots"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Saturday, January 31, 2026, at approximately 10 PM",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Colorado Springs, Colorado",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "30-year-old Micaela Pasillas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Colorado Springs Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_name",
+          "source": "description",
+          "quote": "Officer James Mckinstry",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charge",
+          "source": "description",
+          "quote": "charged with Felony Menacing",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire! [multiple times]",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "description",
+          "quote": "carrying a large knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "officer_age",
+          "suspect_race/ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

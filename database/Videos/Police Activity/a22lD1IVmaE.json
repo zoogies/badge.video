@@ -1000,5 +1000,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-01-02",
+        "published_date": "2020-02-29",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook County",
+          "city": "Chicago",
+          "address_or_area": "6000 block of West Wellington Avenue, Belmont Cragin neighborhood",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Chicago Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Cook County",
+          "city": "Chicago"
+        }
+      },
+      "geo": {
+        "address_or_place": "6000 block of West Wellington Avenue",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "street_block",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mariano",
+          "last_name": "Ocon",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "traffic violation (initial stop)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "possession of firearm during confrontation",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": "JD101830",
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mariano Ocon died from a self-inflicted gunshot wound and shots fired by Chicago police after running from a traffic stop.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "fatal shooting",
+          "traffic stop",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Chicago",
+          "COPA",
+          "self-inflicted gunshot"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on January 2, 2020",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "6000 block of West Wellington, Belmont Cragin neighborhood, Northwest Side",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Mariano Ocon, 30",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "died from a self-inflicted gunshot wound and shots fired by Chicago police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "He's cycling an empty weapon. [gunshot] He shot himself.",
+          "timestamp_seconds": 114,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "shots fired by Chicago police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "description",
+          "quote": "after running from a traffic stop",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

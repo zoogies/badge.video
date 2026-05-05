@@ -180,5 +180,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:21:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-08-05",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "just east of 2,800",
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "just east of 2,800",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 25,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Public indecency",
+            "category": "other",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police arrest naked suspect with history of mental illness",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_indecency",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "mental_health",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "naked_suspect",
+          "taser",
+          "officer_injured",
+          "bodycam",
+          "arrest"
+        ],
+        "content_warnings": [
+          "nudity",
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "25-year-old Man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "mental_illness_history",
+          "source": "description",
+          "quote": "has a history of mental illness",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injury",
+          "source": "description",
+          "quote": "The officer was injured during the arrest",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_rushed",
+          "source": "description",
+          "quote": "the suspect rushed toward him",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "taser_warning",
+          "source": "transcript",
+          "quote": "you will get tased",
+          "timestamp_seconds": 135,
+          "confidence": "high"
+        },
+        {
+          "field": "location_hint",
+          "source": "transcript",
+          "quote": "Just east of 2,800",
+          "timestamp_seconds": 56,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location",
+          "agency",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

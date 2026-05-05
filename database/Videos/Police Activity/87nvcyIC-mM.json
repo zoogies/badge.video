@@ -245,5 +245,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:28:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-20",
+        "published_date": "2024-12-16",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Madera County",
+          "city": "Oakhurst",
+          "address_or_area": "Highway 49 and State Route 41",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Madera County Sheriff's Office",
+          "type": "sheriff",
+          "state": "California",
+          "county": "Madera",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 49 and State Route 41, Oakhurst, CA",
+        "intersection": "Highway 49 and State Route 41",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Allen",
+          "last_name": "Scott Williams",
+          "age": 41,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Hit and run (multiple)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felon in possession of ammunition",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting K9 Obie (animal cruelty / assault on police animal)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect shot K9 Obie during foot pursuit after stolen vehicle chase in Madera County.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-11-20T15:30:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "shotgun",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft",
+          "assault",
+          "weapons_offense",
+          "warrant"
+        ],
+        "tags": [
+          "K9 shot",
+          "stolen vehicle",
+          "hit and run",
+          "felony warrants"
+        ],
+        "content_warnings": [
+          "violence",
+          "animal harm"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 20, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "in Oakhurst",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Madera County, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "41-year-old Allen Scott Williams of Mariposa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "shot K9 Obie with a shotgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "an exchange of gunfire occurred",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "description",
+          "quote": "a foot chase",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -395,5 +395,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:30:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-27",
+        "published_date": "2024-04-05T18:48:05Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Mateo",
+          "city": "Pacifica",
+          "address_or_area": "2562 Francisco Boulevard",
+          "location_name": "2562 Francisco Boulevard",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pacifica Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "San Mateo",
+          "city": "Pacifica"
+        }
+      },
+      "geo": {
+        "address_or_place": "2562 Francisco Boulevard",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description/transcript",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michelle",
+          "last_name": "Arrais",
+          "age": 50,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "Chinese",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": null,
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shooting her son",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Pointing a firearm at officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect died at scene"
+      },
+      "event_summary": {
+        "short": "Pacifica officers shot and killed woman who pointed gun at them after she shot her son.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-03-27T07:51:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm (9mm semi-automatic handgun)",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Pacifica",
+          "domestic violence"
+        ],
+        "content_warnings": [
+          "death",
+          "graphic_content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 27, 2024, at 7:51 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "2-562, Francisco Boulevard, Pacifica",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "50-year-old Michelle Arrais",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "transcript",
+          "quote": "My mom, Chinese woman",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "shooting",
+          "source": "transcript",
+          "quote": "shots fired",
+          "timestamp_seconds": 109,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -610,5 +610,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:14:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-26",
+        "published_date": "2024-05-27",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "100 Block of East Avenue 36",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "100 Block of East Avenue 36",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "John",
+          "last_name": "Lopez",
+          "age": 24,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shooting a family member",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempt Murder",
+            "category": "homicide",
+            "statute": "664/187(a) PC",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempt Murder",
+            "category": "homicide",
+            "statute": "664/187(a) PC",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested, awaiting booking"
+      },
+      "event_summary": {
+        "short": "Suspect shot a family member, fled on bicycle, led police on freeway chase, was struck by police vehicle and arrested. A small caliber firearm was recovered.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-04-26T11:45:00-07:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "small caliber firearm",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "shooting",
+          "domestic_violence",
+          "bicycle pursuit"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense",
+          "homicide_attempt"
+        ],
+        "tags": [
+          "freeway chase",
+          "family shooting",
+          "LAPD"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapon"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 26, 2024, around 11:45 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Los Angeles, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "24-year-old John Lopez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "description",
+          "quote": "booked for 664/187(a) PC, Attempt Murder",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "description",
+          "quote": "a Hollenbeck officer utilized his police vehicle to strike Lopez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "A small caliber firearm was recovered",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

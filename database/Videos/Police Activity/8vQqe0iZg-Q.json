@@ -540,5 +540,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:29:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-11",
+        "published_date": "2023-06-02",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Harris",
+          "city": "Houston",
+          "address_or_area": "10202 Forum Park Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Houston Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": "Harris",
+          "city": "Houston"
+        }
+      },
+      "geo": {
+        "address_or_place": "10202 Forum Park Drive, Houston, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Edwin",
+          "last_name": "Lopez",
+          "age": 41,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": "Hunter",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": "Bo",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated Assault Against a Public Servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated Assault Against a Public Servant",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Charged"
+      },
+      "event_summary": {
+        "short": "Houston police responded to a report of gunfire; suspect Edwin Lopez opened door and fired at officers, leading to an exchange of gunfire. Lopez later surrendered and was arrested. Officer Hunter injured by shrapnel.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Houston",
+          "police",
+          "bodycam",
+          "shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshot"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, May 11, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "10202 Forum Park Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "41-year-old Edwin Lopez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.charge",
+          "source": "description",
+          "quote": "charged with aggravated assault against a public servant",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_injury",
+          "source": "description",
+          "quote": "Officer Hunter was hit by shrapnel from Lopez's gun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire!",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_surrender",
+          "source": "transcript",
+          "quote": "Drop your gun!",
+          "timestamp_seconds": 233,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

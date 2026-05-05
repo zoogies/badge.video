@@ -90,5 +90,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:41:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-03",
+        "published_date": "2025-07-03T22:59:03Z",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Macon",
+          "city": "Macon",
+          "address_or_area": "PV Quick Stop",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Macon County Sheriff's Office",
+          "type": "county police",
+          "state": "Illinois",
+          "county": "Macon",
+          "city": "Macon"
+        }
+      },
+      "geo": {
+        "address_or_place": "PV Quick Stop, Macon, Illinois",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Oscar",
+          "last_name": "McCurry",
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured and in custody"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of a motor vehicle (police cruiser)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a stolen firearm (police shotgun)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated assault with a weapon (machete and shotgun)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Man steals squad car and police shotgun, then confronts officers in Macon, Illinois",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle theft",
+          "armed confrontation",
+          "standoff"
+        ],
+        "crime_categories": [
+          "theft",
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "squad car theft",
+          "machete",
+          "shotgun",
+          "officer-involved shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 3, 2025, Macon County Sheriff’s Office deputies responded to a 911 call at the PV Quick Stop in Macon for a man, 38-year-old Oscar McCurry of Macon, waving a machete at gas station patrons.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Macon, Illinois",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Macon County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "38-year-old Oscar McCurry of Macon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "officers fired at McCurry",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "waving a machete ... got out of the squad car with a shotgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "McCurry entered a squad car and drove around",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "Charges against McCurry for this incident are pending",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline",
+          "source": "transcript",
+          "quote": "He just stole a squad car.",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

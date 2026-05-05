@@ -375,5 +375,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:18:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-28",
+        "published_date": "2025-06-20",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Fulton County",
+          "city": "Sandy Springs",
+          "address_or_area": "State Route 400 near Holcomb Bridge Parkway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Sandy Springs Police Department",
+          "type": "municipal",
+          "state": "Georgia",
+          "county": "Fulton County",
+          "city": "Sandy Springs"
+        }
+      },
+      "geo": {
+        "address_or_place": "State Route 400 near Holcomb Bridge Parkway, Sandy Springs, GA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Demario",
+          "last_name": "Grooms",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding (99 in a 65)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Fleeing and Eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving in an Emergency Lane",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Obey a Traffic Control Device",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving while License Suspended",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Speeding (99 in a 65)",
+          "Reckless Driving",
+          "Felony Fleeing and Eluding",
+          "Driving in an Emergency Lane",
+          "Failure to Obey a Traffic Control Device",
+          "Driving while License Suspended"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Wanted suspect Demario Grooms fled a traffic stop on SR 400 in Sandy Springs, leading police on a pursuit before being arrested without incident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "[2:28]",
+        "pursuit_started": "[2:28]",
+        "arrest": "[8:24]"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "warrant",
+          "reckless_driving"
+        ],
+        "tags": [
+          "speeding",
+          "pursuit",
+          "felony fleeing",
+          "Sandy Springs",
+          "Georgia"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 28, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Sandy Springs, Georgia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Demario Grooms",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "Speeding (99 in a 65), Reckless Driving, Felony Fleeing and Eluding, Driving in an Emergency Lane, Failure to Obey a Traffic Control Device, Driving while License Suspended",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "Setting up for another pit.",
+          "timestamp_seconds": 543,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -265,5 +265,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:29:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-11",
+        "published_date": "2024-07-12T19:36:26Z",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "New Haven",
+          "city": "Waterbury",
+          "address_or_area": "900 block of Wolcott Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Waterbury Police Department",
+          "type": "municipal",
+          "state": "CT",
+          "county": "New Haven",
+          "city": "Waterbury"
+        }
+      },
+      "geo": {
+        "address_or_place": "900 block of Wolcott Street",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Bellido-Rosado",
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Car theft (stolen vehicle)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on officer (biting)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempt to disarm officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug possession (crack pipe)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Car theft suspect resists arrest, attempts to grab officer's gun in Waterbury, CT",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-07-11T10:23",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "car theft",
+          "resisting arrest",
+          "attempted disarming"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Waterbury",
+          "Connecticut"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, July 11, 2024, at around 10:23 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Waterbury, Connecticut",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "900 block of Wolcott Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "44-year-old Bellido-Rosado",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3] (attempt to disarm)",
+          "source": "transcript",
+          "quote": "Stop reaching for my gun",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2] (assault on officer)",
+          "source": "description",
+          "quote": "biting one of the officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

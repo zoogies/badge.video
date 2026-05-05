@@ -560,5 +560,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:23:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-05",
+        "published_date": "2025-08-07",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles County",
+          "city": "Los Angeles",
+          "address_or_area": "3900 block of South Western Avenue, near Martin Luther King Park",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles County",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "3900 block of South Western Avenue",
+        "intersection": "South Western Avenue and Martin Luther King Jr. Boulevard (approx.)",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "address_range",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ernesto",
+          "last_name": "Sepulveda",
+          "age": 26,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested_and_charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Discharging a firearm at an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a firearm by a prohibited person (possible)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LAPD officers attempted a pedestrian stop on suspect Ernesto Sepulveda; he fled and fired at officers, striking one in the legs. After a foot pursuit and malfunction of his firearm, he was taken into custody.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-07-05T15:45:00",
+        "pursuit_started": "2025-07-05T15:45:00",
+        "arrest": "2025-07-05"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "ghost gun",
+          "LAPD",
+          "foot chase",
+          "officer injured"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 5, 2025, at around 3:45 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Los Angeles, California",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "3900 block of South Western Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "26-year-old Ernesto Sepulveda",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "26-year-old Ernesto Sepulveda",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "black steel, 9mm, Polymer 80, 'Ghost Gun'",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "One officer was struck in the legs by gunfire. Sepulveda was transported to a local hospital for a laceration to his head.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "county_fips",
+          "latitude",
+          "longitude",
+          "case_number",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -205,5 +205,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:41:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-03-04",
+        "published_date": "2017-03-07T19:52:45Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Cleveland",
+          "address_or_area": "East 55th Street and St. Clair Avenue",
+          "location_name": "Cleveland gas station",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Ohio State Highway Patrol",
+          "type": "state police",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Cleveland"
+        }
+      },
+      "geo": {
+        "address_or_place": "East 55th Street and St. Clair Avenue, Cleveland, Ohio",
+        "intersection": "East 55th Street and St. Clair Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "OVI (Operating a Vehicle While Intoxicated)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Drug Paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police chase ends in crash at Cleveland gas station; driver and one passenger arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2017-03-04T22:30:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "crash",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "warrant",
+          "drug_offense"
+        ],
+        "tags": [
+          "high-speed chase",
+          "Cleveland",
+          "gas station crash"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "The pursuit began about 10:30 p.m. after a trooper attempted a traffic stop on Interstate 90 westbound on Sunday",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Cleveland",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "It ended when the Blazer's driver tried to turn right onto St. Clair Avenue from East 55th Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "He is facing OVI and fleeing charges",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3]",
+          "source": "description",
+          "quote": "she also faces a possession of drug paraphernalia charge",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_names",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript is garbled and unreliable"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

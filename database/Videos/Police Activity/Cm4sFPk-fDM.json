@@ -230,5 +230,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-14",
+        "published_date": "2023-05-25T16:00:53Z",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Pima County",
+          "city": "Tucson",
+          "address_or_area": "2700 block of East Grant Road",
+          "location_name": "restaurant near East Grant Road and North Treat Avenue",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tucson Police Department",
+          "type": "municipal police",
+          "state": "Arizona",
+          "county": "Pima County",
+          "city": "Tucson"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "East Grant Road and North Treat Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nicholas",
+          "last_name": "Sosa",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Jesse",
+          "last_name": "Chlopowicz",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "armed robbery with a firearm",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "pointing a firearm at officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Tucson police officer shot and killed an armed robbery suspect who pointed a gun at him near East Grant Road.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "rifle",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "armed robbery",
+          "barricade incident"
+        ],
+        "crime_categories": [
+          "robbery",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Tucson",
+          "Arizona",
+          "Pima County",
+          "TPD",
+          "officer-involved shooting",
+          "bodycam",
+          "surveillance"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 14, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Tucson, Arizona",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Nicholas Mauro Sosa",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Sgt. Jesse Chlopowicz",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "armed robbery with a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "fire, Josh fired!",
+          "timestamp_seconds": 127,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

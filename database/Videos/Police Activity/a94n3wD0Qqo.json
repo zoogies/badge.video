@@ -410,5 +410,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-09-26T19:24:03Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "address_or_area": "Wilshire Boulevard and Detroit Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Los Angeles",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "Wilshire Boulevard and Detroit Street, Los Angeles, CA",
+        "intersection": "Wilshire Boulevard and Detroit Street",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "06037",
+        "source": "description",
+        "precision": "street_level",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Timothy",
+          "last_name": "Camon",
+          "age": 53,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a Deadly Weapon on a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect armed with metal pipe strikes officer, subdued with bean bag rounds and taser, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "metal pipe",
+        "officer_weapon_used": [
+          "Taser",
+          "bean bag rounds"
+        ],
+        "shots_fired_by": [
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "LAPD",
+          "bean bag",
+          "tasered",
+          "assault with a deadly weapon"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Wilshire Boulevard was closed between La Brea and Cloverdale avenues",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "near Wilshire Boulevard and Detroit Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "identified as Timothy Camon, 53",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "assault with a deadly weapon on a police officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "taken into custody. He was later booked for assault with a deadly weapon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "transcript",
+          "quote": "He's got a tight, he has a pipe with him",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "transcript",
+          "quote": "Put the stick down",
+          "timestamp_seconds": 174,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Hey, pull up, tase them",
+          "timestamp_seconds": 205,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "used a Taser and fired bean bag rounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

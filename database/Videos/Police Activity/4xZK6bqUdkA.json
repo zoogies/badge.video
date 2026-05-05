@@ -95,5 +95,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:22:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-08-11",
+        "published_date": "2024-08-15",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin County",
+          "city": "Columbus",
+          "address_or_area": "1500 block of Worthington Street / 100 block of W. 8th Avenue",
+          "location_name": "Ohio State's south campus area",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Columbus Police",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Franklin County",
+          "city": "Columbus"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Asante",
+          "last_name": "Miller",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons offense (firearm)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased"
+      },
+      "event_summary": {
+        "short": "Columbus Police shootout with burglary suspect; suspect killed.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-08-11T08:00:00",
+        "initial_contact": "2024-08-11T08:00:00",
+        "pursuit_started": "2024-08-11T08:00:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "burglary",
+          "officer-involved shooting",
+          "standoff"
+        ],
+        "crime_categories": [
+          "burglary",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Columbus Police",
+          "bodycam",
+          "shootout",
+          "fatal",
+          "standoff"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Sunday, August 11, 2024, at approximately 8:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Columbus, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "1500 block of Worthington Street on a burglary in progress",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "21-year-old Asante Taaj Omar Miller",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_status",
+          "source": "description",
+          "quote": "Asante Taj Omar Miller died around 1:15 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency_name",
+          "source": "description",
+          "quote": "Columbus Police officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county (inferred)",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Spelling variation in suspect name: 'Asante Taaj Omar Miller' vs 'Asante Taj Omar Miller'"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

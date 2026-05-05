@@ -40,5 +40,171 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:32:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-11-09",
+        "published_date": "2016-11-10T22:48:11Z",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Dallas County",
+          "city": "Dallas",
+          "address_or_area": "McKenzie Street near Fair Park",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Mesquite Police Department",
+          "type": "municipal",
+          "state": "Texas",
+          "county": "Dallas County",
+          "city": "Mesquite"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of motor vehicle (stolen pickup)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading arrest with vehicle",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police chased a stolen pickup from Mesquite to Dallas; suspect abandoned vehicle and fled on foot but was arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-11-09T13:30:00",
+        "pursuit_started": "2016-11-09T13:30:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot chase",
+          "arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "Mesquite",
+          "Dallas",
+          "Fair Park"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "A police chase that started in Mesquite on Wednesday ended with officers arresting a man near Fair Park.",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "started in Mesquite ... ended ... on McKenzie Street in Dallas, near Fair Park",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "a pickup that had been stolen in Southlake ... driver sped off",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "officers were able to chase down and arrest the man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race",
+          "charges",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript contains only radio chatter and is not informative."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

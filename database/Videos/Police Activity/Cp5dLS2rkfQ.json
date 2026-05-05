@@ -1625,5 +1625,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-04",
+        "published_date": "2024-03-21T21:41:52Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Joaquin",
+          "city": "Stockton",
+          "address_or_area": "1600 block of E Bianchi Rd",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Stockton Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "San Joaquin",
+          "city": "Stockton"
+        }
+      },
+      "geo": {
+        "address_or_place": "1600 block of E Bianchi Rd, Stockton, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jaspreet",
+          "last_name": "Singh",
+          "age": 32,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Punjabi",
+            "source": "transcript",
+            "confidence": "medium"
+          },
+          "status": "critical condition"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Stockton police officer shoots suspect armed with a knife during domestic violence incident.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-02-04T20:00:00",
+        "initial_contact": "2024-02-04T20:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm, less-lethal shotgun, taser",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "domestic violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "knife",
+          "bodycam",
+          "Stockton",
+          "California"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 4, 2024, at approximately 8:00 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "1600 block of E Bianchi Rd",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Jasper Singh",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "he's 32",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race_ethnicity",
+          "source": "transcript",
+          "quote": "Punjabi",
+          "timestamp_seconds": 37,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

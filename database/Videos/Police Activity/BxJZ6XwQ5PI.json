@@ -815,5 +815,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:37:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-10-30",
+        "published_date": "2024-12-13T22:23:51Z",
+        "location": {
+          "state": "Missouri",
+          "state_abbreviation": "MO",
+          "county": "St. Louis County",
+          "city": "Breckenridge Hills",
+          "address_or_area": "Calvert Avenue and North Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "City of Breckenridge Hills Police Department",
+          "type": "municipal police",
+          "state": "Missouri",
+          "county": "St. Louis County",
+          "city": "Breckenridge Hills"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Calvert Avenue and North Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Je'von",
+          "last_name": "Henderson",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, transported to hospital"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault First Degree Special Victim",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Armed Criminal Action",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault First Degree Special Victim",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Armed Criminal Action",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police pursuit ends in shootout with armed driver after traffic stop in Breckenridge Hills, MO.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest",
+          "traffic_violation"
+        ],
+        "tags": [
+          "DWI",
+          "shootout",
+          "spike strips"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Wednesday, October 30, 2024, at 4:30 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city, location.county, location.state",
+          "source": "description",
+          "quote": "St. Louis County, Missouri — ... City of Breckenridge Hills Police Department ... intersection of Calvert Avenue and North Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "description",
+          "quote": "Detectives located a 9mm semi-automatic pistol and an AR15 style pistol in the vehicle driven by Henderson. Two fired 9mm casings were located inside Henderson's vehicle.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "the St. Louis County Prosecuting Attorney’s Office issued charges on suspect, Je’von Henderson, 30 years of age, for Assault First Degree Special Victim, Armed Criminal Action, and Resisting Arrest.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name, people[0].last_name, people[0].age",
+          "source": "description",
+          "quote": "suspect, Je’von Henderson, 30 years of age",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "I'm stopping you... driver... he",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "the vehicle has been spiked",
+          "timestamp_seconds": 644,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

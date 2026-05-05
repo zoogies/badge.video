@@ -25,5 +25,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:29:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-03-05",
+        "published_date": "2016-03-10",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Broward",
+          "city": "Fort Lauderdale",
+          "address_or_area": "Interstate 95 northbound emergency lane",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Florida Highway Patrol",
+          "type": "state police",
+          "state": "Florida",
+          "county": "Broward",
+          "city": "Fort Lauderdale"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fort Lauderdale, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Colleen",
+          "last_name": "Loughman",
+          "age": 43,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "driving under the influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Dashcam video shows arrest of drunk former teacher in Florida after she was found stopped on I-95 with toddler in backseat.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "dashcam",
+          "Florida",
+          "DUI",
+          "former teacher",
+          "toddler"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "late Saturday night",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Fort Lauderdale",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Florida Highway Patrol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Colleen Loughman, 43",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "title",
+          "quote": "drunk",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date exact",
+          "zip_code",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

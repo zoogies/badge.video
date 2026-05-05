@@ -70,5 +70,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:36:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-21",
+        "published_date": "2026-02-06T22:32:44Z",
+        "location": {
+          "state": "New Jersey",
+          "state_abbreviation": "NJ",
+          "county": "Hudson",
+          "city": "Jersey City",
+          "address_or_area": "Bergen and Virginia avenues",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Jersey City Police Department",
+          "type": "municipal",
+          "state": "New Jersey",
+          "county": "Hudson",
+          "city": "Jersey City"
+        }
+      },
+      "geo": {
+        "address_or_place": "Bergen Avenue and Virginia Avenue, Jersey City, NJ",
+        "intersection": "Bergen Avenue and Virginia Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Teshawn",
+          "last_name": "Rogers",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Discharging a firearm at police officers",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Jersey City police shot and killed Teshawn Rogers after he fired at officers.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-21T01:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "suspect_deceased",
+          "police_shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Jersey City",
+          "New Jersey",
+          "Street Crimes Unit",
+          "Teshawn Rogers"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 21, 2025, shortly after 1 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Jersey City, New Jersey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "area of Bergen and Virginia avenues",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "27-year-old Teshawn Rogers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "27-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "pronounced deceased at approximately 1:44 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "description",
+          "quote": "Rogers immediately discharged a firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "description",
+          "quote": "pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "description",
+          "quote": "discharged his weapon, striking Rogers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "latitude",
+          "longitude",
+          "charges"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "County inferred as Hudson County based on city; not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

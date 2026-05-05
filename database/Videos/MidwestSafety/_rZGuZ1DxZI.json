@@ -1880,5 +1880,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:12:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-31",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "McHenry County",
+          "city": "Crystal Lake",
+          "address_or_area": "Route 14",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Crystal Lake Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "McHenry County",
+          "city": "Crystal Lake"
+        }
+      },
+      "geo": {
+        "address_or_place": "Route 14, Crystal Lake, IL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Everisto",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Illegal Transportation/Possession of Alcohol",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting and Obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Illegal Transportation or Possession of Alcohol",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for swerving leads to DUI arrest after suspect refuses to exit vehicle, resulting in physical struggle and charges for DUI, resisting, and alcohol possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "DUI",
+          "Crystal Lake",
+          "Illinois"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Okay, you stop to see your friendly Crystal Lake.",
+          "timestamp_seconds": 203.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "I'm on the side of Route 14.",
+          "timestamp_seconds": 306.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Everista was charged with DUI, resisting and obstructing, and illegal transportation or possession of alcohol.",
+          "timestamp_seconds": 768.0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Everista was charged with DUI, resisting and obstructing, and illegal transportation or possession of alcohol.",
+          "timestamp_seconds": 768.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Okay, so Everisto?",
+          "timestamp_seconds": 147.0,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "agency.name exact"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

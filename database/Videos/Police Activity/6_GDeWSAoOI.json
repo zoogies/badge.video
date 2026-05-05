@@ -215,5 +215,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:26:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-23",
+        "published_date": "2024-06-14",
+        "location": {
+          "state": "Oregon",
+          "state_abbreviation": "OR",
+          "county": "Lane",
+          "city": "Eugene",
+          "address_or_area": "I-5 near milepost 197",
+          "location_name": "I-5 near Eugene",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Oregon State Police",
+          "type": "state_police",
+          "state": "Oregon",
+          "county": "Lane",
+          "city": "Eugene"
+        }
+      },
+      "geo": {
+        "address_or_place": "I-5 near Eugene",
+        "intersection": "milepost 197",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Elias",
+          "last_name": "Huizar",
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 1,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "rape of a minor",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "shooting at law enforcement",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased by suicide"
+      },
+      "event_summary": {
+        "short": "Pursuit and shootout with former Yakima police officer after kidnapping his son; suspect died from self-inflicted gunshot wound.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_pursuit",
+          "kidnapping",
+          "amber_alert"
+        ],
+        "crime_categories": [
+          "homicide",
+          "kidnapping",
+          "weapons_offense",
+          "vehicle_pursuit",
+          "sex_offense"
+        ],
+        "tags": [
+          "former_officer",
+          "amber_alert",
+          "self_inflicted_gunshot",
+          "child_rescue"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 23, 2024, Oregon State Troopers...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Eugene, Oregon — On the night of April 22, 2024... On April 23, 2024, Oregon State Troopers... heading southbound on I-5 near Eugene",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "39-year-old Elias Huizar",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "wanted in connection with two murders... kidnapped his own son... arrested for the rape of a 16-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Huizar was confirmed deceased by a self- inflicted gunshot wound and the 1-year-old child was safely rescued",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "2312 shots fired at me",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Race/ethnicity not explicitly stated; left null."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

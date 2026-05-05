@@ -220,5 +220,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:41:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-10-09",
+        "published_date": "2024-12-04T19:50:33Z",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Fulton County",
+          "city": "Atlanta",
+          "address_or_area": "Biscayne Drive NW",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Atlanta Police Department",
+          "type": "municipal police",
+          "state": "Georgia",
+          "county": "Fulton County",
+          "city": "Atlanta"
+        }
+      },
+      "geo": {
+        "address_or_place": "Biscayne Drive NW, Atlanta, GA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kenneth",
+          "last_name": "Whack",
+          "age": 33,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Burglary (1st Degree)",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Trespass/Damage to Property",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Firearm During the Commission of a Felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction of Law Enforcement Officers",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Burglary (1st Degree)",
+          "Criminal Trespass/Damage to Property",
+          "Possession of a Firearm During the Commission of a Felony",
+          "Obstruction of Law Enforcement Officers"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police apprehend burglary suspect attempting to escape over fence, recover stolen firearm.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "burglary",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "burglary",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stolen firearm",
+          "fence escape attempt"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 9th, 2024, at approximately 9:44AM",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Biscayne Drive NW",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Atlanta, Georgia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "33-year-old Kenneth Whack",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "charged with Burglary (1st Degree), Criminal Trespass/Damage to Property, Possession of a Firearm During the Commission of a Felony, and Obstruction of Law Enforcement Officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "apprehended by the responding officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "the victim's firearm which the suspect attempted to conceal under a bush",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency name confirmed",
+          "zip_code",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

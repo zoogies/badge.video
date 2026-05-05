@@ -160,5 +160,244 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:33:35Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-01-30",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": "Albuquerque",
+          "address_or_area": "Cracker Barrel near Sequoia and Coors Boulevard",
+          "location_name": "Cracker Barrel",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Albuquerque Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": "Albuquerque"
+        }
+      },
+      "geo": {
+        "address_or_place": "Cracker Barrel near Sequoia and Coors Boulevard, Albuquerque, NM",
+        "intersection": "Sequoia and Coors Boulevard",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "35001",
+        "source": "description",
+        "precision": "street_intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Lujan",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated assault on an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence - beating girlfriend",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Child abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Fleeing police / vehicle pursuit",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated assault on an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police chase suspect Anthony Lujan fled into a Cracker Barrel after crashing a truck; officers pursued and arrested him. No injuries.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "assault",
+          "domestic_violence"
+        ],
+        "tags": [
+          "Cracker Barrel",
+          "Albuquerque",
+          "Anthony Lujan",
+          "bodycam",
+          "police chase"
+        ],
+        "content_warnings": [
+          "domestic violence",
+          "child abuse"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "At an Albuquerque Cracker Barrel",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "description",
+          "quote": "near Sequoia and Coors Boulevard",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "description",
+          "quote": "Albuquerque police officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Anthony Lujan",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "Lujan is wanted... bond was set",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "aggravated assault on an officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "bond was set",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "No injuries were reported.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "believed Lujan was armed",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "geo.intersection",
+          "source": "description",
+          "quote": "Sequoia and Coors Boulevard",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.published_date",
+          "source": "metadata",
+          "quote": "2016-01-30T00:01:08Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_race_ethnicity",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript is garbled, used description as primary source",
+        "Incident date not specified; approximate based on published date"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

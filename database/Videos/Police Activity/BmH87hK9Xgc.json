@@ -140,5 +140,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:36:42Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-01-27",
+        "published_date": "2020-01-28T19:46:35Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "Daytona Beach",
+          "address_or_area": "Intersection of South Clara and West Beresford Avenue",
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": "Daytona Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "Intersection of South Clara and West Beresford Avenue",
+        "intersection": "South Clara Ave & West Beresford Ave",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sarah",
+          "last_name": "Yurman",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Running a stop sign",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Stolen vehicle (Orange County)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted fleeing and eluding law enforcement",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug possession (prescription pills and heroin)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempted fleeing and eluding law enforcement",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Narcotics charges",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Florida woman flips van during police chase after running stop sign and stealing vehicle",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-01-27T10:57:00",
+        "pursuit_started": "2020-01-27T10:57:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "traffic stop",
+          "rollover"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "drug_offense",
+          "theft"
+        ],
+        "tags": [
+          "florida woman",
+          "van chase",
+          "rollover crash",
+          "heroin",
+          "dog"
+        ],
+        "content_warnings": [
+          "crash",
+          "injuries"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "At about 10:57 a.m. Monday",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "intersection of South Clara and West Beresford Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "The driver, Sarah Yurman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "was injured in the crash and was taken to Halifax Health Medical Center",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "She's losing control. Signal 4, rollover",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

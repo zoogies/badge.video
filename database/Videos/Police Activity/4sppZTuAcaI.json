@@ -155,5 +155,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:22:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2019-02-07",
+        "published_date": "2019-02-08",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "10500 block of Midvale Avenue North",
+          "location_name": "apartment building",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "10500 block of Midvale Avenue North, Seattle, WA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic violence homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with a deadly weapon (knife)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Seattle police shoot and kill homicide suspect armed with knife in Northgate apartment",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "3:25 AM",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "large knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "domestic_violence",
+          "homicide"
+        ],
+        "crime_categories": [
+          "homicide",
+          "weapons_offense",
+          "domestic_violence"
+        ],
+        "tags": [
+          "Seattle",
+          "Northgate",
+          "knife",
+          "domestic violence",
+          "officer-involved shooting"
+        ],
+        "content_warnings": [
+          "death",
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "early Thursday morning",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "10500 block of Midvale Avenue North",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "description",
+          "quote": "a man armed with a large knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].sex_or_gender",
+          "source": "description",
+          "quote": "they found a deceased woman inside",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He's got a knife.",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "the officers fired their service weapons, fatally striking the suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.dispatch_call",
+          "source": "description",
+          "quote": "At 3:25 AM, officers ... were dispatched",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date (exact day is inferred)"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

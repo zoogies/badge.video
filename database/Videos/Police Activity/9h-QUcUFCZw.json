@@ -25,5 +25,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:30:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-04-29T04:08:24Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Dayton",
+          "address_or_area": "Gettysburg Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Dayton Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Montgomery",
+          "city": "Dayton"
+        }
+      },
+      "geo": {
+        "address_or_place": "Gettysburg Avenue, Dayton, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brandon",
+          "last_name": "Mann",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "illegal weapons dealing",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "failure to comply",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstruction of official business",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect hit by police car after vehicle pursuit and foot chase on Gettysburg Avenue, Dayton, Ohio.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "use of force"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "vehicle_pursuit",
+          "weapons_offense"
+        ],
+        "tags": [
+          "hit by police car",
+          "Dayton",
+          "Gettysburg Avenue",
+          "Brandon Mann"
+        ],
+        "content_warnings": [
+          "injury"
+        ],
+        "severity": "significant"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Dayton Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Montgomery County Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Gettysburg Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Brandom Lamar Mann (likely Brandon)",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "Mann",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "booked into Montgomery County Jail",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "failure to comply, resisting arrest and obstruction of official business charges",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "suspect hit by police car",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "taken to the hospital after the collision",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "chase was all captured on police dash cameras; car sped away",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "description",
+          "quote": "driver jumped from the car and ran along Gettysburg Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code",
+          "people[0].age",
+          "people[0].race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Name discrepancy: description says 'Brandom Lamar Mann' but later 'Brandon Mann'; assumed correct spelling.",
+        "Incident date not specified; video published 2017-04-29, event likely occurred earlier that week."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

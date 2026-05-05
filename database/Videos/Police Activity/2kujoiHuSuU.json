@@ -55,5 +55,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:19:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-05",
+        "published_date": "2023-07-11",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Tarrant",
+          "city": "Fort Worth",
+          "address_or_area": "Corner of Ross Ave and 32nd St",
+          "location_name": "Block party",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Worth Police Department",
+          "type": "municipal_police",
+          "state": "Texas",
+          "county": "Tarrant",
+          "city": "Fort Worth"
+        }
+      },
+      "geo": {
+        "address_or_place": "Ross Ave & 32nd St, Fort Worth, TX",
+        "intersection": "Ross Ave and 32nd St",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Billy",
+          "last_name": "Smith",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Bronshay",
+          "last_name": "Minter",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a deadly weapon (pointing firearm at a person)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons offense (possession of firearm during disturbance)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct / fighting",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Under investigation (suspects deceased)"
+      },
+      "event_summary": {
+        "short": "Fort Worth police officers shot and killed two armed men during response to a fireworks disturbance call.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-07-05T00:25:00",
+        "initial_contact": "2023-07-05T00:25:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "police shooting"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "shooting"
+        ],
+        "tags": [
+          "Fort Worth",
+          "fireworks",
+          "block party",
+          "armed suspects",
+          "double fatality"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "the corner of Ross Ave and 32nd street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On the evening of July 4 and into the early morning hours of July 5, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name_age",
+          "source": "description",
+          "quote": "21-year-old Billy Smith",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name_age",
+          "source": "description",
+          "quote": "30-year-old Bronshay Minter",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "dispatch_time",
+          "source": "description",
+          "quote": "At around 12:25 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shooting_justification",
+          "source": "description",
+          "quote": "Perceiving an imminent threat to a third party, the Fort Wort officer fired his handgun at Smith",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -185,5 +185,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:31:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2017-06-01",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Oakland County",
+          "city": "Royal Oak",
+          "address_or_area": "Meijers grocery store parking lot",
+          "location_name": "Meijer parking lot",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Royal Oak Police Department",
+          "type": "municipal",
+          "state": "Michigan",
+          "county": "Oakland County",
+          "city": "Royal Oak"
+        }
+      },
+      "geo": {
+        "address_or_place": "Meijer parking lot, Royal Oak, Michigan",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": "18",
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Stolen items",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police in Royal Oak, MI responded to a stolen vehicle report and found a man stabbing himself inside a car; officers broke the window, disarmed him, and applied a tourniquet.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "self-harm",
+          "mental_health",
+          "theft"
+        ],
+        "crime_categories": [
+          "theft",
+          "mental_health"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "self-stabbing",
+          "tourniquet",
+          "Royal Oak"
+        ],
+        "content_warnings": [
+          "self-harm",
+          "blood"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Police in Royal Oak possibly saved the life of a man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "parking lot of a Meijers grocery store",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.published_date",
+          "source": "metadata",
+          "quote": "2017-06-01T11:31:27Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "I'm 18.",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "man began stabbing himself several times in the leg with a knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "possible sighting of a stolen vehicle",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "description",
+          "quote": "Officers broke the window of the vehicle and knocked the knife from the suspect's hand",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

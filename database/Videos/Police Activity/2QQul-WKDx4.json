@@ -225,5 +225,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:18:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2019-09-13",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Baltimore City",
+          "city": "Baltimore",
+          "address_or_area": "Fairmount Ave and Caroline St",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Baltimore Police Department",
+          "type": "municipal",
+          "state": "Maryland",
+          "county": "Baltimore City",
+          "city": "Baltimore"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fairmount Ave and Caroline St, Baltimore, MD",
+        "intersection": "Fairmount Ave and Caroline St",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Weapons offense",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shootout after vehicle pursuit in Baltimore, Maryland.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": null,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "assault",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "shootout",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "Carolina in Fairmount",
+          "timestamp_seconds": 3.92,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He pointed a gun in us",
+          "timestamp_seconds": 1.17,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "transcript",
+          "quote": "They're shooting. Shots fired.",
+          "timestamp_seconds": 4.17,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "He's taken off. Go!",
+          "timestamp_seconds": 1.18,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_details",
+          "arrest_status"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not found",
+        "Suspect identity not available"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1090,5 +1090,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:26:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-04-13",
+        "published_date": "2022-04-25T16:05:16Z",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Pima County",
+          "city": "Tucson",
+          "address_or_area": "5700 block of E. Fairmount St.",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tucson Police Department",
+          "type": "municipal police",
+          "state": "Arizona",
+          "county": "Pima",
+          "city": "Tucson"
+        }
+      },
+      "geo": {
+        "address_or_place": "5700 block of E. Fairmount St.",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_block",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jaime",
+          "last_name": "Herrera",
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a deadly weapon (knives)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on an officer (throwing brick, biting)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal trespass (on roof)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police taser armed man who fought officers and climbed on roof; suspect later died in hospital.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health crisis",
+          "resisting arrest",
+          "weapons offense"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "taser",
+          "roof",
+          "bite",
+          "death"
+        ],
+        "content_warnings": [
+          "death",
+          "use of force",
+          "taser"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The incident that occurred in the 5700 block of E. Fairmount St. on the morning of April 13, 2022.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "5700 block of E. Fairmount St.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "34-year-old Jaime Herrera",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "34-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force (taser)",
+          "source": "description",
+          "quote": "an officer deployed his taser",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect bite on officer",
+          "source": "description",
+          "quote": "Herrera bit down on the officer’s thumb",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect death",
+          "source": "description",
+          "quote": "Nine days later, Herrera died at the hospital.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Tucson Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_race_ethnicity",
+          "geo_latitude_longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Cause of cardiac event unclear"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

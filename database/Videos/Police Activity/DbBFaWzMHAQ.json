@@ -710,5 +710,174 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:41:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-04",
+        "published_date": "2017-05-24T23:00:42Z",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Wayne",
+          "city": "Taylor",
+          "address_or_area": null,
+          "location_name": "Downriver area",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Taylor Police Department",
+          "type": "municipal police",
+          "state": "Michigan",
+          "county": "Wayne",
+          "city": "Taylor"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Calvin",
+          "last_name": "Jones",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure to identify / obstruction",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Taylor police officer shatters car window and arrests driver Calvin Jones after driver refuses to provide identification during a traffic stop.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "window break",
+          "failure to identify",
+          "pat-down",
+          "knife found"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "April 2016 traffic stop",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "Taylor police department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Calvin Jones",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "Failure to give me my information is the restful offense, okay?",
+          "timestamp_seconds": 72,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "You're going to jail is what's going on.",
+          "timestamp_seconds": 240,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "transcript",
+          "quote": "There's a knife right here.",
+          "timestamp_seconds": 360,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_age",
+          "suspect_race",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

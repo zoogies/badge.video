@@ -1170,5 +1170,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:37:48Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-11-14",
+        "published_date": "2025-12-15T21:04:25Z",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Wayne",
+          "city": "Detroit",
+          "address_or_area": "east side, Livernois Avenue area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Detroit Police Department",
+          "type": "local",
+          "state": "Michigan",
+          "county": "Wayne",
+          "city": "Detroit"
+        }
+      },
+      "geo": {
+        "address_or_place": "Detroit, Michigan",
+        "intersection": "Martin Luther King Boulevard and Cass Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description and transcript",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Terrance Markyce",
+          "last_name": "Davis",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript: 'black male, black jacket' at 3:59",
+            "confidence": "high"
+          },
+          "status": "in custody, critical condition"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "carjacking",
+            "category": "carjacking",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on federal agents",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted murder of ATF agents",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "shooting into occupied dwellings",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "carjacking",
+            "category": "carjacking",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assaulting ATF special agents",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted murder of ATF special agents",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "indicted, criminal proceedings ongoing"
+      },
+      "event_summary": {
+        "short": "Suspect exchanges gunfire with federal agents during escape attempt, arrested after being shot.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "law_enforcement"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "officer_involved_shooting",
+          "carjacking"
+        ],
+        "crime_categories": [
+          "carjacking",
+          "assault",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "fleeing",
+          "carjacking",
+          "ATF",
+          "Michigan",
+          "exchange of gunfire"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 14, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Detroit, Michigan",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name, last_name, age",
+          "source": "description",
+          "quote": "33-year-old Terrance Markyce Davis",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "indicted on charges including carjacking, assaulting and attempting to murder ATF Special Agents",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "Martin Luther King Boulevard and Cass Drive",
+          "timestamp_seconds": 1248,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "black male, black jacket",
+          "timestamp_seconds": 239,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

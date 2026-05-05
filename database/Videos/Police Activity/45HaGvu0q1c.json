@@ -410,5 +410,180 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:21:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2018-09-24T18:13:28Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "DeLand",
+          "address_or_area": "Woodland Food Mart (convenience store)",
+          "location_name": "Woodland Food Mart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": "DeLand"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": "Monacelli",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "attempted burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "property damage",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "attempted burglary",
+          "property damage"
+        ],
+        "case_number": null,
+        "disposition": "arrested and booked into Volusia County Jail"
+      },
+      "event_summary": {
+        "short": "Suspect gets stuck on a convenience store roof while attempting to break in, claiming he needed water.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "08:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "burglary_attempt",
+          "rescue"
+        ],
+        "crime_categories": [
+          "burglary",
+          "property_damage"
+        ],
+        "tags": [
+          "thirsty",
+          "stuck",
+          "roof"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "DeLand, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Michael Monacelli, 31",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "Michael Monacelli, 31",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "charges of attempted burglary and property damage",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "description",
+          "quote": "charges of attempted burglary and property damage",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "transcript",
+          "quote": "I needed water.",
+          "timestamp_seconds": 223,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "precise_address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

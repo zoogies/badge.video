@@ -425,5 +425,175 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:19:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-06",
+        "published_date": "2024-03-30",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Orange",
+          "city": "Fullerton",
+          "address_or_area": "1341 S. Brookhurst Rd",
+          "location_name": "McDonald's",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fullerton Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Orange",
+          "city": "Fullerton"
+        }
+      },
+      "geo": {
+        "address_or_place": "1341 S. Brookhurst Rd, Fullerton, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alejandro",
+          "last_name": "Campos Rios",
+          "age": 50,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possibly under influence of drugs",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "Assault on police officer (swinging belt)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shot and killed suspect with beanbag rounds outside McDonald's in Fullerton, CA.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-03-06T03:01:00",
+        "initial_contact": "2024-03-06T03:01:00",
+        "pursuit_started": null,
+        "arrest": "2024-03-06"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "belt",
+        "officer_weapon_used": "taser, beanbag rounds",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_involved_death",
+          "use_of_force_fatality"
+        ],
+        "crime_categories": [
+          "assault",
+          "drug_offense"
+        ],
+        "tags": [
+          "Fullerton",
+          "California",
+          "McDonald's",
+          "beanbag",
+          "taser",
+          "death"
+        ],
+        "content_warnings": [
+          "death",
+          "use_of_force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 6, 2024, at 3:01 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Fullerton, California — ... McDonalds, located at 1341 S. Brookhurst Rd.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "identified as 50-year-old Alejandro Campos Rios",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "description",
+          "quote": "later pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force_beanbag",
+          "source": "transcript",
+          "quote": "one of the beanbag projectiles deployed at Mr. Rios, penetrated his chest cavity",
+          "timestamp_seconds": 358,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

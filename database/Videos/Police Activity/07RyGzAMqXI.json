@@ -130,5 +130,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:14:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-16",
+        "published_date": "2026-01-15",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "San Diego",
+          "city": "San Diego",
+          "address_or_area": "2900 block of Balboa Drive",
+          "location_name": "Balboa Park",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "San Diego Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "San Diego",
+          "city": "San Diego"
+        }
+      },
+      "geo": {
+        "address_or_place": "2900 block of Balboa Drive, Balboa Park, San Diego",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "street_level",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Allen",
+          "last_name": "Baker",
+          "age": 55,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, injured"
+        },
+        {
+          "role": "officer",
+          "first_name": "Kellan",
+          "last_name": "Taeatafa-De La Rosa",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Evading police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging a firearm at an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempted Murder of a Peace Officer",
+            "category": "attempted_murder",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault on a Peace Officer With a Semi-Automatic Firearm",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Firearm by a Felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "San Diego police officer shoots armed suspect after foot pursuit in Balboa Park.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-12-16T16:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "foot_pursuit",
+          "suspect_shot"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "shootout",
+          "Balboa Park",
+          "San Diego"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 16, 2025, at about 4:00 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "2900 block of balboa drive in Balboa Park",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "55-year-old Allen Baker (also known as Tracy Diggs)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fire.",
+          "timestamp_seconds": 73,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Attempted Murder of a Peace Officer, Assault on a Peace Officer With a Semi-Automatic Firearm, Possession of a Firearm by a Felon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -790,5 +790,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:12:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-18",
+        "published_date": "2026-01-26T19:00:00Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Greendale",
+          "address_or_area": "Near I-894 and Loomis Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Greendale Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Greendale"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brian",
+          "last_name": "Anderson",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "OWI 6th offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second degree recklessly endangering safety",
+            "category": "reckless_endangerment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing from an officer",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "OWI 6th offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second degree recklessly endangering safety",
+            "category": "reckless_endangerment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing from an officer",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for erratic driving leads to pursuit; suspect attempts to jump off overpass, rescued by officers, arrested on multiple charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": 3.28,
+        "initial_contact": 0.33,
+        "pursuit_started": 3.28,
+        "arrest": 8.44
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "mental_health",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "fleeing",
+          "reckless_endangerment"
+        ],
+        "tags": [
+          "OWI",
+          "overpass",
+          "rescue"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 18th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Greendale Police Department in Wisconsin",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the suspect, Brian Anderson",
+          "timestamp_seconds": 524,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "faces multiple charges, including OWI 6th offense, second degree recklessly endangering safety, and fleeing from an officer",
+          "timestamp_seconds": 530,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "was taken into custody",
+          "timestamp_seconds": 524,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "race_ethnicity",
+          "age"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

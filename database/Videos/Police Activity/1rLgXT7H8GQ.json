@@ -915,5 +915,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:17:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-31",
+        "published_date": "2023-08-02T22:27:32Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion",
+          "city": "Summerfield",
+          "address_or_area": "Marathon gas station near South Highway 301 and SE Highway 42",
+          "location_name": "Marathon gas station",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Marion County Sheriff's Office",
+          "type": "county_police",
+          "state": "Florida",
+          "county": "Marion",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Marathon gas station near South Highway 301 and SE Highway 42",
+        "intersection": "South Highway 301 and SE Highway 42",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derry",
+          "last_name": "Lambert",
+          "age": 52,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "False Impersonation of a Law Enforcement Officer",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Use of Blue Lights",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful Use of a Badge",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Firearm during the Commission of a Felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Diazepam",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Introduction of Contraband into a Detention Facility",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man impersonates U.S. Marshal after running red light, arrested with firearm and drugs.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 20,
+        "pursuit_started": null,
+        "arrest": 171
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "impersonation",
+          "false_impersonation",
+          "blue_lights",
+          "badge",
+          "firearm",
+          "diazepam",
+          "contraband"
+        ],
+        "content_warnings": [
+          "police_impersonation",
+          "drug_possession"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Monday, July 31, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Summerfield, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Marathon gas station near South Highway 301 and SE Highway 42",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "52-year-old Derry Wayne Lambert",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "arrested 52-year-old Derry Wayne Lambert for False Impersonation of a Law Enforcement Officer, Unlawful Use of Blue Lights, Unlawful Use of a Badge, Possession of a Firearm during the Commission of a Felony, Possession of Diazepam, and Introduction of Contraband into a Detention Facility",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "impe rsonation_confirmation",
+          "source": "transcript",
+          "quote": "I know you're not a U.S. Marshal",
+          "timestamp_seconds": 402,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "So you're going to be arrested for an impersonating police officer",
+          "timestamp_seconds": 171,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

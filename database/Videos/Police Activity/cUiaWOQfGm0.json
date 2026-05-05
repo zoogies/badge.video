@@ -455,5 +455,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-03",
+        "published_date": "2025-06-17",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Los Angeles County",
+          "city": "Los Angeles",
+          "address_or_area": "900 block of East 118th Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Los Angeles Police Department",
+          "type": "municipal police",
+          "state": "California",
+          "county": "Los Angeles County",
+          "city": "Los Angeles"
+        }
+      },
+      "geo": {
+        "address_or_place": "900 block of East 118th Drive, Los Angeles, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "06037",
+        "source": "description",
+        "precision": "estimated",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Shamar",
+          "last_name": "Bennett",
+          "age": 26,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, transported to hospital"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "treated at scene"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault with a Deadly Weapon (ADW)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic Violence in Progress",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Corporal Injury on Spouse/Cohabitant",
+            "category": "domestic_violence",
+            "statute": "273.5(a) PC",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Corporal Injury on Spouse/Cohabitant",
+            "category": "domestic_violence",
+            "statute": "273.5(a) PC",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "LAPD officers shot a suspect armed with an AR-style BB gun during a domestic violence incident in Los Angeles.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "CO2 powered AR-style pistol (BB gun) capable of automatic fire",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "police shooting",
+          "BB gun",
+          "LAPD"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 3rd, 2025, at around 9:00 a.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "at a residence in the 900 block of East 118th Drive",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "suspect, later identified as 26-year-old Shamar Bennett",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "26-year-old Shamar Bennett",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_type",
+          "source": "description",
+          "quote": "The rifle Bennett was armed with was found to be a CO2 powered, AR-style pistol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "Bennett was absentee booked for 273.5(A)PC-Corporal Injury on a Spouse/Cohabitant",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_armed",
+          "source": "transcript",
+          "quote": "He has a rifle.",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_fake",
+          "source": "transcript",
+          "quote": "The gun is fake!",
+          "timestamp_seconds": 190,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

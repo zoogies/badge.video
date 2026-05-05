@@ -125,5 +125,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:21:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-10-13",
+        "published_date": "2024-11-08T20:45:17Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": "Albuquerque",
+          "address_or_area": "10800 block of Central Ave, east of Eubank",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Albuquerque Police Department",
+          "type": "municipal police",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": "Albuquerque"
+        }
+      },
+      "geo": {
+        "address_or_place": "10800 block of Central Ave, Albuquerque, NM",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Matthew",
+          "last_name": "Sanchez",
+          "age": 41,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Jeff",
+          "last_name": "Schwarzel",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic violence (assault)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felon in possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless discharge of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased, officer injured, investigation ongoing"
+      },
+      "event_summary": {
+        "short": "Albuquerque police responded to a domestic disturbance call; suspect Matthew Sanchez exited with a firearm, refused compliance, and was shot and killed. Officer Schwarzel was struck by friendly fire from Officer Torres.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "friendly_fire",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Albuquerque",
+          "New Mexico",
+          "APD",
+          "friendly fire",
+          "domestic disturbance"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 13, 2024, around 11:30 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Albuquerque, New Mexico... 10800 block of Central, east of Eubank",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "41-year-old Matthew Sanchez",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "friendly_fire",
+          "source": "description",
+          "quote": "One of the bullets went through the bicep and arm of the officer in front of her",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "Sanchez was killed, and Officer Schwarzel was struck in the hand and arm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "partial",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

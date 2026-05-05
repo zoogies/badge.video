@@ -1965,5 +1965,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-11-11",
+        "published_date": "2023-12-08",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": null,
+          "city": "Houston",
+          "address_or_area": "5201 Southwest Freeway (South Interstate U.S. Highway 59)",
+          "location_name": "Southwest Freeway at 5201",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Houston Police Department",
+          "type": "municipal police",
+          "state": "Texas",
+          "county": null,
+          "city": "Houston"
+        }
+      },
+      "geo": {
+        "address_or_place": "5201 Southwest Freeway, Houston, TX",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 19,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "J.",
+          "last_name": "Gibson",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Evading arrest with vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated assault on a police officer (shooting)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a firearm during a crime",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "19-year-old suspect fled from a stolen vehicle traffic stop, crashed, shot at officer, then was shot and killed by Houston police after a shootout.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-11-11 (time unknown)",
+        "pursuit_started": "2023-11-11 (time unknown)",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "fatal encounter",
+          "stolen vehicle"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "shooting",
+          "weapons_offense",
+          "theft"
+        ],
+        "tags": [
+          "bodycam",
+          "Houston",
+          "police shooting",
+          "19-year-old"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshot",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Saturday, November 11, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Houston, Texas",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "5201 Southwest Freeway (South Interstate U.S. Highway 59)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "title",
+          "quote": "19-year-old",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.status",
+          "source": "description",
+          "quote": "pronounced deceased",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer.status",
+          "source": "description",
+          "quote": "Officer J. Gibson, suffered a gunshot wound to the leg",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

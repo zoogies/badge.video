@@ -305,5 +305,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:24:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-09T22:16:00-04:00",
+        "published_date": "2025-11-06T22:34:50Z",
+        "location": {
+          "state": "New York",
+          "state_abbreviation": "NY",
+          "county": "Bronx",
+          "city": "Bronx",
+          "address_or_area": "1015 East Gun Hill Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New York City Police Department",
+          "type": "municipal police",
+          "state": "New York",
+          "county": "Bronx",
+          "city": "New York"
+        }
+      },
+      "geo": {
+        "address_or_place": "1015 East Gun Hill Road, Bronx, NY",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Antonio",
+          "last_name": "Morales",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "Nicholas",
+          "last_name": "Novak",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": "Santiago",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Gunpoint Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Possession of a Weapon in the Second Degree",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault in the Second Degree (Police Officer)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Endangerment in the First Degree",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Criminal Possession of a Weapon in the Second Degree",
+          "Assault in the Second Degree (Police Officer)",
+          "Reckless Endangerment in the First Degree"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "NYPD officers responded to a gunpoint robbery suspect at a Bronx apartment; the suspect fired shots inside, fled, struggled with a sergeant, then was shot by an officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-10-09T22:16:00-04:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": "service firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "foot pursuit",
+          "warrant service"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense",
+          "assault"
+        ],
+        "tags": [
+          "NYPD",
+          "Bronx",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "gunshot",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "October 9, 2025, at approximately 10:16 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "1015 East Gun Hill Road, Bronx, NY",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "18-year-old Antonio Morales",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "wanted for a gunpoint robbery",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "description",
+          "quote": "Morales discharged at least five rounds... Officer Santiago then discharged two rounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

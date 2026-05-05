@@ -1120,5 +1120,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:39:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-06-25",
+        "location": {
+          "state": "South Carolina",
+          "state_abbreviation": "SC",
+          "county": "Richland",
+          "city": "Forest Acres",
+          "address_or_area": "3415 Brookwood Court",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Forest Acres Police Department",
+          "type": "municipal police",
+          "state": "South Carolina",
+          "county": "Richland",
+          "city": "Forest Acres"
+        }
+      },
+      "geo": {
+        "address_or_place": "3415 Brookwood Court",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Antwon",
+          "last_name": "Gallmon",
+          "age": 17,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        },
+        {
+          "role": "officer",
+          "first_name": "Robert",
+          "last_name": "Cooper",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "paid administrative leave"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "failing to stop for blue lights",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving without a license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "failing to stop for blue lights",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving without a license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officer Robert Cooper fired seven shots at 17-year-old Antwon Gallmon during a traffic stop, leading to a chase and crash.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police_involved_shooting",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "Forest Acres",
+          "South Carolina",
+          "police shooting",
+          "dashcam",
+          "Richland County"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "police shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "the address that I'm at is 3415 Brookwood Court",
+          "timestamp_seconds": 416,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "A suburban Columbia officer fired seven shots at a driver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "description",
+          "quote": "Richland County detention center",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Antwon Gallmon, 17",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "description",
+          "quote": "charged with failing to stop for blue lights, possession of a stolen vehicle, possession of marijuana, driving without a license",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "title",
+          "quote": "Dashcam Shows Police Officer Shooting At Suspect 7 Times",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

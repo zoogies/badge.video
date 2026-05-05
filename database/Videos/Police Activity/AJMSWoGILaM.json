@@ -85,5 +85,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:33:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-18",
+        "published_date": "2023-12-01T23:51:12Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Riverside",
+          "city": "Thousand Palms",
+          "address_or_area": "Ramon Road and Robert Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Riverside County Sheriff's Department",
+          "type": "sheriff",
+          "state": "California",
+          "county": "Riverside",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Ramon Road and Robert Road",
+        "intersection": "Ramon Road and Robert Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jose Eduardo",
+          "last_name": "Rosales Perez",
+          "age": 34,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Kristian",
+          "last_name": "Galeana",
+          "age": 27,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted murder of a peace officer (3 counts)",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony hit and run",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempted murder of a peace officer (3 counts)",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy shot during traffic stop; suspect also shot and both hospitalized.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-10-18T19:08:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault_on_officer"
+        ],
+        "tags": [
+          "Riverside County",
+          "deputy involved shooting",
+          "attempted murder of peace officer"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 18, 2023, at 7:08 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "area of Ramon Road and Robert Road in the unincorporated area of Thousand Palms",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_names_and_ages",
+          "source": "description",
+          "quote": "34-year-old Jose Eduardo Rosales Perez... 27-year-old Kristian Galeana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "three counts of attempted murder of a peace officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "deputy_shot",
+          "source": "description",
+          "quote": "One deputy was struck by gunfire",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

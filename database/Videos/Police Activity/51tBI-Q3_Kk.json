@@ -25,5 +25,163 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:22:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-27",
+        "published_date": "2023-08-15",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City",
+          "address_or_area": "100-block of NW 4th Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Oklahoma City Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": "Oklahoma County",
+          "city": "Oklahoma City"
+        }
+      },
+      "geo": {
+        "address_or_place": "100-block of NW 4th Street, Oklahoma City, OK",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "address_range",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "William",
+          "last_name": "Lazarus",
+          "age": 33,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Stolen Property",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police taser and arrest robbery suspect fleeing on skateboard in Oklahoma City.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "theft"
+        ],
+        "tags": [
+          "taser",
+          "skateboard",
+          "warrant"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 27, 2023, Oklahoma City Police Sgt. Trayvion Jones attempted to arrest 33-year-old William Lazarus...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Oklahoma City Police Take Down Robbery Suspect",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "33-year-old William Lazarus",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "description",
+          "quote": "charges filed against Lazarus are robbery and possession of stolen property",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "poor",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "geo.coordinates",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

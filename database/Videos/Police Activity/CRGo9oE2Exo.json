@@ -100,5 +100,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:40:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2016-10-23",
+        "published_date": "2016-10-23T22:19:18Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Madera County",
+          "city": "Madera",
+          "address_or_area": "Howard Road at Schnoor Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Madera Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Madera County",
+          "city": "Madera"
+        }
+      },
+      "geo": {
+        "address_or_place": "Howard Road at Schnoor Avenue, Madera, CA",
+        "intersection": "Howard Road and Schnoor Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "uninjured"
+        },
+        {
+          "role": "civilian",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "minor injuries"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "fled"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure to yield",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with a deadly weapon on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at an occupied vehicle",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police pursuit and shootout in Madera, CA; suspect fired at officer's vehicle, officer and ride-along survived with minor injuries.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2016-10-23T04:34:00",
+        "pursuit_started": "2016-10-23T04:34:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "shooting",
+          "assault"
+        ],
+        "tags": [
+          "dashcam",
+          "pursuit",
+          "shootout",
+          "Madera",
+          "California"
+        ],
+        "content_warnings": [
+          "shooting"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 23, 2016, at 04:34 hours a Madera Police Officer attempted to make an enforcement stop",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Madera Police Officer",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "the passenger pointed a firearm out the window and fired approximately nine (9) rounds ... fired four more rounds",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "description",
+          "quote": "The civilian ride along received minor scratches from broken glass.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "description",
+          "quote": "The investigation is ongoing into identifying all persons in the vehicle.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "transcript",
+          "quote": "[0:38-0:59] Leterapal one shot's fired.",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect names",
+          "charges",
+          "case number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

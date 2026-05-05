@@ -60,5 +60,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:15:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-15",
+        "published_date": "2024-07-16T00:43:25Z",
+        "location": {
+          "state": "Tennessee",
+          "state_abbreviation": "TN",
+          "county": "Davidson County",
+          "city": "Madison",
+          "address_or_area": "Skyline Ridge Apartments",
+          "location_name": "Skyline Ridge Apartments",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Metro Nashville Police Department",
+          "type": "municipal police",
+          "state": "Tennessee",
+          "county": "Davidson",
+          "city": "Nashville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Skyline Ridge Apartments, Madison, TN",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Miqueal",
+          "last_name": "Williams",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, hospitalized"
+        },
+        {
+          "role": "officer",
+          "first_name": "Carlos",
+          "last_name": "Diaz",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, hospitalized"
+        },
+        {
+          "role": "officer",
+          "first_name": "Joseph",
+          "last_name": "Gonzales",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "uninjured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "indictment, bond set at $1 million"
+      },
+      "event_summary": {
+        "short": "Nashville officer shot while attempting to arrest murder suspect",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:09",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "semi-automatic pistol",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "warrant_arrest"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Nashville",
+          "murder suspect",
+          "officer shot",
+          "Madison"
+        ],
+        "content_warnings": [
+          "gun violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On Monday, July 15, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Madison, Tennessee",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.location_name",
+          "source": "description",
+          "quote": "Skyline Ridge Apartments",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "wanted on outstanding warrant for first-degree murder",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "A Criminal Court judge set a $1 million bond on the murder indictment",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "31-year-old Miqueal Williams",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.initial_contact",
+          "source": "transcript",
+          "quote": "Hands up, back up, back up, back up.",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "description",
+          "quote": "exchanged gunfire with Detective Diaz",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

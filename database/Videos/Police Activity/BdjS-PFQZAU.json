@@ -720,5 +720,239 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:35:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-08-20",
+        "published_date": "2025-08-29",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Oakland County",
+          "city": "West Bloomfield Township",
+          "address_or_area": "6433 Orchard Lake Road",
+          "location_name": "Planet Fitness",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "West Bloomfield Police Department",
+          "type": "municipal",
+          "state": "Michigan",
+          "county": "Oakland County",
+          "city": "West Bloomfield Township"
+        }
+      },
+      "geo": {
+        "address_or_place": "6433 Orchard Lake Road, West Bloomfield Township, MI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "address",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Wesley",
+          "last_name": "Joh",
+          "age": 58,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Asian",
+            "source": "transcript (\"Asian male\")",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on staff with metal object",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted assault on officer with vehicle",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault with intent to do great bodily harm",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Multiple counts of resisting police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Malicious destruction of property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending; bond set at $500,000; next court appearance Sept. 4, 2025"
+      },
+      "event_summary": {
+        "short": "Suspect crashes into police cruisers after attacking Planet Fitness staff with metal pipe, leading high-speed chase; arrested after Taser deployment.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "0:00-0:04",
+        "initial_contact": "1:35-1:38 (attempted run over)",
+        "pursuit_started": "1:44-1:49 (suspect fled in Lexus)",
+        "arrest": "6:26 (Taser deployed) to 7:16 (suspect in custody)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "metal pipe",
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "assault",
+          "use of force"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "vehicle_pursuit",
+          "property_damage"
+        ],
+        "tags": [
+          "Planet Fitness",
+          "Taser",
+          "high-speed chase",
+          "metal pipe"
+        ],
+        "content_warnings": [
+          "use of force",
+          "pursuit",
+          "arrest"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 20, 2025",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "West Bloomfield Township, Michigan",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Orchard Lake Road, 6433, Orchard Lake at Fitness",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Wesley, get out of the car now",
+          "timestamp_seconds": 402,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "description",
+          "quote": "58-year-old Wesley Joh",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "Asian male",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "coming after him now with a metal pipe",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "I got him. Got his foot.",
+          "timestamp_seconds": 429,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Taser, Taser! Taser!",
+          "timestamp_seconds": 380,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "nine-count felony complaint, stacking charges that include assault with intent to do great bodily harm, multiple counts of resisting police, and malicious destruction of property",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

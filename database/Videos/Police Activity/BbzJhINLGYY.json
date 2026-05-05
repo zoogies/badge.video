@@ -70,5 +70,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:35:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2018-11-16",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Salt Lake",
+          "city": "Millcreek",
+          "address_or_area": "Chevron at Brickyard Road",
+          "location_name": "Chevron at Brickyard Road",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Salt Lake City Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Salt Lake",
+          "city": "Salt Lake City"
+        }
+      },
+      "geo": {
+        "address_or_place": "Chevron at Brickyard Road, Millcreek, UT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "place",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Robert",
+          "last_name": "Ortega",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated sexual assault of a child",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Fleeing in a vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect arrested"
+      },
+      "event_summary": {
+        "short": "SLC officer shoots at suspect with warrant for child sexual assault; suspect flees, later arrested",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2018-11-05"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": [
+          "Taser",
+          "firearm"
+        ],
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer-involved shooting",
+          "vehicle pursuit",
+          "arrest"
+        ],
+        "crime_categories": [
+          "sex_offense",
+          "resisting_arrest",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "bodycam",
+          "SLCPD",
+          "Taser",
+          "firearm discharge"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons",
+          "sexual assault mention"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Chevron at Brickyard Road",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Robert Ortega (36)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "description",
+          "quote": "warrant for aggravated sexual assault of a child",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "description",
+          "quote": "a Taser was used and the officer discharged his firearm",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "description",
+          "quote": "The suspect was located on the morning of 11/5/18 by UPD and was taken into custody",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
