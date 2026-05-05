@@ -81,9 +81,11 @@ def test_pipeline_parser_classify_rebuilds_atlas_by_default():
 def test_pipeline_parser_supports_classifier_transcript_context():
     args = build_parser().parse_args(["classify"])
     assert args.transcript_context is None
+    assert args.include_untranscribed is False
 
     args = build_parser().parse_args(["classify", "--transcript-context", "text"])
     assert args.transcript_context == "text"
 
-    args = build_parser().parse_args(["pipeline", "--transcript-context", "none"])
+    args = build_parser().parse_args(["pipeline", "--transcript-context", "none", "--include-untranscribed"])
     assert args.transcript_context == "none"
+    assert args.include_untranscribed is True

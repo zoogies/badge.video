@@ -2,7 +2,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from llm_classifier import build_user_payload, classify_video_file
+from llm_classifier import build_user_payload, classify_video_file, classify_videos
 
 
 def test_dry_run_classifier_writes_generated_at(monkeypatch):
@@ -10,7 +10,11 @@ def test_dry_run_classifier_writes_generated_at(monkeypatch):
     monkeypatch.delenv("LLM_TRANSCRIPT_CONTEXT", raising=False)
     with tempfile.TemporaryDirectory() as tmpdir:
         path = Path(tmpdir) / "abc123.json"
-        path.write_text(json.dumps({"video_id": "abc123", "title": "Test"}))
+        path.write_text(json.dumps({
+            "video_id": "abc123",
+            "title": "Test",
+            "transcript": {"status": "available", "text": "hello", "segments": []},
+        }))
         assert classify_video_file(path) is True
         data = json.loads(path.read_text())
         assert data["classification"]["generated_at"].endswith("Z")
@@ -29,12 +33,50 @@ def test_classifier_respects_no_overwrite(monkeypatch):
         assert json.loads(path.read_text())["classification"]["result"] == "old"
 
 
+def test_classifier_skips_missing_transcript_by_default(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "dry_run")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        path = Path(tmpdir) / "abc123.json"
+        path.write_text(json.dumps({"video_id": "abc123", "title": "Test"}))
+        assert classify_video_file(path) is False
+        assert "classification" not in json.loads(path.read_text())
+
+
+def test_classifier_can_include_untranscribed(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "dry_run")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        path = Path(tmpdir) / "abc123.json"
+        path.write_text(json.dumps({"video_id": "abc123", "title": "Test"}))
+        assert classify_video_file(path, require_transcript=False) is True
+        assert json.loads(path.read_text())["classification"]["result"]["needs_human_review"] is True
+
+
+def test_classify_videos_continues_after_bad_json(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "dry_run")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        channel = root / "Channel"
+        channel.mkdir()
+        (channel / "bad.json").write_text("{")
+        good = channel / "good.json"
+        good.write_text(json.dumps({
+            "video_id": "good",
+            "transcript": {"status": "available", "text": "hello"},
+        }))
+
+        assert classify_videos(root, update_atlas=False) == 1
+        assert "classification" in json.loads(good.read_text())
+
+
 def test_classifier_uses_env_transcript_context(monkeypatch):
     monkeypatch.setenv("LLM_BACKEND", "dry_run")
     monkeypatch.setenv("LLM_TRANSCRIPT_CONTEXT", "text")
     with tempfile.TemporaryDirectory() as tmpdir:
         path = Path(tmpdir) / "abc123.json"
-        path.write_text(json.dumps({"video_id": "abc123", "transcript": {"text": "hello"}}))
+        path.write_text(json.dumps({
+            "video_id": "abc123",
+            "transcript": {"status": "available", "text": "hello"},
+        }))
         assert classify_video_file(path) is True
         data = json.loads(path.read_text())
         assert data["classification"]["transcript_context"] == "text"

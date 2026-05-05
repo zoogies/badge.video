@@ -38,11 +38,14 @@ def classify_video_file(
     video_json_path: Path,
     overwrite: bool = True,
     transcript_context: str | None = None,
+    require_transcript: bool = True,
 ) -> bool:
     settings = load_settings()
     transcript_context = transcript_context or settings["transcript_context"]
     video = json.loads(video_json_path.read_text(encoding="utf-8"))
     if video.get("classification") and not overwrite:
+        return False
+    if require_transcript and not has_available_transcript(video):
         return False
 
     prompt = PROMPT_PATH.read_text(encoding="utf-8")
@@ -84,6 +87,11 @@ def build_user_payload(video: dict, transcript_context: str = DEFAULT_TRANSCRIPT
         "transcript": build_transcript_context(video.get("transcript"), transcript_context),
     }
     return json.dumps(payload, ensure_ascii=False)
+
+
+def has_available_transcript(video: dict) -> bool:
+    transcript = video.get("transcript")
+    return isinstance(transcript, dict) and transcript.get("status") == "available"
 
 
 def build_transcript_context(transcript: dict | None, mode: str = DEFAULT_TRANSCRIPT_CONTEXT) -> dict | None:
@@ -230,16 +238,25 @@ def classify_videos(
     update_atlas: bool = True,
     atlas_path: Path = DEFAULT_ATLAS_PATH,
     transcript_context: str | None = None,
+    require_transcript: bool = True,
 ) -> int:
     paths = [video_json] if video_json else list(iter_video_files(videos_root))
     count = 0
     progress = tqdm(paths, desc="Classifying", unit="video")
     for path in progress:
         progress.set_postfix(generated=count)
-        if classify_video_file(path, overwrite=overwrite, transcript_context=transcript_context):
-            count += 1
-            progress.set_postfix(generated=count)
-            tqdm.write(f"classified {path}")
+        try:
+            if classify_video_file(
+                path,
+                overwrite=overwrite,
+                transcript_context=transcript_context,
+                require_transcript=require_transcript,
+            ):
+                count += 1
+                progress.set_postfix(generated=count)
+                tqdm.write(f"classified {path}")
+        except Exception as exc:
+            tqdm.write(f"classification error {path}: {exc}")
     print(f"Generated classifications for {count} video JSON files.")
     if update_atlas:
         rebuild_metadata_atlas(videos_root=videos_root, atlas_path=atlas_path)
@@ -254,6 +271,7 @@ def main() -> None:
     parser.add_argument("--no-atlas", action="store_true")
     parser.add_argument("--atlas-path", type=Path, default=DEFAULT_ATLAS_PATH)
     parser.add_argument("--transcript-context", choices=TRANSCRIPT_CONTEXT_OPTIONS)
+    parser.add_argument("--include-untranscribed", action="store_true")
     args = parser.parse_args()
 
     classify_videos(
@@ -263,6 +281,7 @@ def main() -> None:
         update_atlas=not args.no_atlas,
         atlas_path=args.atlas_path,
         transcript_context=args.transcript_context,
+        require_transcript=not args.include_untranscribed,
     )
 
 

@@ -80,6 +80,7 @@ def main() -> None:
             update_atlas=not args.no_atlas,
             atlas_path=args.atlas_path,
             transcript_context=args.transcript_context,
+            require_transcript=not args.include_untranscribed,
         )
     elif args.command == "atlas":
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -124,6 +125,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             update_atlas=not args.no_atlas,
             atlas_path=args.atlas_path,
             transcript_context=args.transcript_context,
+            require_transcript=not args.include_untranscribed,
         )
     elif not args.no_atlas:
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -215,6 +217,11 @@ def add_classify_options(parser: argparse.ArgumentParser) -> None:
         "--transcript-context",
         choices=TRANSCRIPT_CONTEXT_OPTIONS,
         help="Override LLM_TRANSCRIPT_CONTEXT for this run: timestamped_text keeps timestamps compactly, text is smaller, none sends only transcript metadata.",
+    )
+    parser.add_argument(
+        "--include-untranscribed",
+        action="store_true",
+        help="Classify videos even when no transcript is available.",
     )
 
 

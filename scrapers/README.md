@@ -54,6 +54,8 @@ uv run pipeline.py classify --no-overwrite
 
 Default classifier context sends scraped video metadata plus compact timestamped transcript text. It does not also send the full transcript text or JSON segment objects, so DeepSeek is not charged for duplicate transcript copies.
 
+Classifier runs skip videos without an available transcript by default, so this can run while transcripts are still being generated.
+
 You can set the default in `../.env`:
 
 ```env
@@ -75,7 +77,7 @@ uv run pipeline.py classify --no-overwrite --transcript-context segments
 Debug/metadata-only mode:
 
 ```powershell
-uv run pipeline.py classify --no-overwrite --transcript-context none
+uv run pipeline.py classify --no-overwrite --transcript-context none --include-untranscribed
 ```
 
 Single-video classifier test:
