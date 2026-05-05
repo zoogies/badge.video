@@ -2545,5 +2545,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-08-05",
+        "published_date": "2026-01-17T23:20:00Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Escambia",
+          "city": "Pensacola",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pensacola Police Department",
+          "type": "local",
+          "state": "Florida",
+          "county": "Escambia",
+          "city": "Pensacola"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Traffic violation - expired/unassigned tag",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on a law enforcement officer (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misuse of 911",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Case ongoing; bond posted ($15,000); misuse of 911 charge dropped."
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to arrest of female passenger after she refuses to exit vehicle, resulting in charges including battery on an officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force",
+          "arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "traffic_violation"
+        ],
+        "tags": [
+          "Pensacola",
+          "Florida",
+          "bodycam",
+          "traffic stop",
+          "taser",
+          "resisting arrest"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser deployment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Officer Spino, Pensacola Police Department.",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On August 5th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "an officer in Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officer Spino, Pensacola Police Department.",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "She's going to jail on multiple charges. Battery LEO times two. Resisting with violence. Resisting without violence. Misuse of 9-1-1.",
+          "timestamp_seconds": 1843,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The charge of misuse of 911 was later dropped. In court she has pleaded not guilty to the remaining charges. At this time the court case is still ongoing.",
+          "timestamp_seconds": 2063,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I'm going to tase you. ... Get out!",
+          "timestamp_seconds": 460,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "Ma'am, I need you to open the door and step out.",
+          "timestamp_seconds": 297,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race/ethnicity",
+          "precise location coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

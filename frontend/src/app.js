@@ -21,6 +21,10 @@ const els = {
   generatedAt: document.querySelector("#generatedAt"),
   recordCount: document.querySelector("#recordCount"),
   randomButton: document.querySelector("#randomButton"),
+  mobileFilterButton: document.querySelector("#mobileFilterButton"),
+  filterBackdrop: document.querySelector("#filterBackdrop"),
+  filterCloseButton: document.querySelector("#filterCloseButton"),
+  clearFiltersButton: document.querySelector("#clearFiltersButton"),
   searchInput: document.querySelector("#searchInput"),
   stateFilter: document.querySelector("#stateFilter"),
   countyFilter: document.querySelector("#countyFilter"),
@@ -29,6 +33,7 @@ const els = {
   reviewFilter: document.querySelector("#reviewFilter"),
   sortSelect: document.querySelector("#sortSelect"),
   mapMode: document.querySelector("#mapMode"),
+  mapCanvas: document.querySelector(".mapCanvas"),
   mapSvg: document.querySelector("#mapSvg"),
   mapLayer: document.querySelector("#mapLayer"),
   stateLayer: document.querySelector("#stateLayer"),
@@ -38,6 +43,8 @@ const els = {
   resetViewButton: document.querySelector("#resetViewButton"),
   resultSummary: document.querySelector("#resultSummary"),
   videoList: document.querySelector("#videoList"),
+  detailBackdrop: document.querySelector("#detailBackdrop"),
+  detailPanel: document.querySelector(".detailPanel"),
   detailEmpty: document.querySelector("#detailEmpty"),
   detailContent: document.querySelector("#detailContent"),
 };
@@ -52,6 +59,8 @@ let editDraft = null;
 let listScrollTop = 0;
 let scrollSelectedIntoView = false;
 let randomSortOrder = new Map();
+let mobileDetailOpen = false;
+let mobileFiltersOpen = false;
 
 async function boot() {
   const [videoResponse, countyResponse, stateResponse] = await Promise.all([
@@ -89,6 +98,8 @@ function initMap() {
   window.addEventListener("resize", debounce(() => {
     fitMapProjection();
     render();
+    syncMobileDetailState();
+    syncMobileFilterState();
   }, 150));
   fitMapProjection();
 }
@@ -106,10 +117,20 @@ function render() {
   listScrollTop = els.videoList.scrollTop;
   fillCountyFilter();
   const filtered = getFilteredVideos();
-  renderMap(filtered);
+  renderMap(getMapVideos());
   renderList(filtered);
   renderDetail(filtered.find(video => video.video_id === selectedVideoId) || null);
   els.videoList.scrollTop = listScrollTop;
+}
+
+function getMapVideos() {
+  const selectedCounty = els.countyFilter.value;
+  if (!selectedCounty) return getFilteredVideos();
+  const currentCounty = els.countyFilter.value;
+  els.countyFilter.value = "";
+  const videos = getFilteredVideos();
+  els.countyFilter.value = currentCounty;
+  return videos;
 }
 
 function getFilteredVideos() {
@@ -189,11 +210,11 @@ function renderCountyLayer(mode, stateCounts, countyCounts, max, selectedState, 
     .classed("selected", feature => {
       const stateMatch = selectedState && stateNameFromFeature(feature) === selectedState;
       const countyMatch = selectedCounty && normalizeCounty(feature.properties.NAME) === selectedCounty;
-      return Boolean(mode === "states" ? stateMatch : stateMatch && (!selectedCounty || countyMatch));
+      return Boolean(mode === "counties" && stateMatch && countyMatch);
     })
     .on("mousemove", (event, feature) => showTooltip(event, feature, mode, stateCounts, countyCounts))
     .on("mouseleave", hideTooltip)
-    .on("click", (event, feature) => selectMapFeature(feature, mode));
+    .on("click", (event, feature) => selectMapFeature(event, feature, mode));
 
   paths.exit().remove();
 }
@@ -204,18 +225,34 @@ function featureCount(feature, mode, stateCounts, countyCounts) {
   return stateCounts.get(abbr) || 0;
 }
 
-function selectMapFeature(feature, mode) {
+function selectMapFeature(event, feature, mode) {
+  event.stopPropagation();
   const stateName = stateNameFromFeature(feature);
   const county = normalizeCounty(feature.properties.NAME);
   if (mode === "counties") {
+    const countyWasSelected = els.stateFilter.value === stateName && els.countyFilter.value === county;
     els.stateFilter.value = stateName;
     fillCountyFilter();
-    els.countyFilter.value = county;
+    els.countyFilter.value = countyWasSelected ? "" : county;
   } else {
-    els.stateFilter.value = els.stateFilter.value === stateName ? "" : stateName;
-    els.countyFilter.value = "";
+    const stateWasSelected = els.stateFilter.value === stateName;
+    els.stateFilter.value = stateName;
     fillCountyFilter();
+    if (stateWasSelected) {
+      els.mapMode.value = "counties";
+      els.countyFilter.value = county;
+    } else {
+      els.countyFilter.value = "";
+    }
   }
+  render();
+}
+
+function clearMapSelection() {
+  if (!els.stateFilter.value && !els.countyFilter.value) return;
+  els.stateFilter.value = "";
+  els.countyFilter.value = "";
+  fillCountyFilter();
   render();
 }
 
@@ -248,6 +285,7 @@ function renderList(videos) {
     row.addEventListener("click", () => {
       listScrollTop = els.videoList.scrollTop;
       selectedVideoId = video.video_id;
+      mobileDetailOpen = true;
       render();
     });
     row.innerHTML = `
@@ -273,9 +311,10 @@ function renderList(videos) {
 
 function renderDetail(video) {
   if (!video) {
-  els.detailEmpty.classList.remove("hidden");
+    els.detailEmpty.classList.remove("hidden");
     els.detailContent.classList.add("hidden");
     els.detailContent.replaceChildren();
+    syncMobileDetailState(false);
     return;
   }
   els.detailEmpty.classList.add("hidden");
@@ -288,13 +327,21 @@ function renderDetail(video) {
         <h2>${escapeHtml(video.title)}</h2>
         <p>${escapeHtml(video.channel || "Unknown channel")}</p>
       </div>
-      <a class="iconButton" href="${escapeAttribute(video.url)}" target="_blank" rel="noreferrer" title="Open video in new tab" aria-label="Open video in new tab">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 3h7v7"></path>
-          <path d="M10 14 21 3"></path>
-          <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
-        </svg>
-      </a>
+      <div class="detailHeaderActions">
+        <a class="iconButton" href="${escapeAttribute(video.url)}" target="_blank" rel="noreferrer" title="Open video in new tab" aria-label="Open video in new tab">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 3h7v7"></path>
+            <path d="M10 14 21 3"></path>
+            <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
+          </svg>
+        </a>
+        <button id="detailCloseButton" class="iconButton detailCloseButton" type="button" title="Close details" aria-label="Close selected video details">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
     <div class="videoEmbed">
       <iframe
@@ -374,6 +421,53 @@ function renderDetail(video) {
   if (outcomeSelect) {
     outcomeSelect.addEventListener("change", () => addOutcome(video, outcomeSelect.value));
   }
+  els.detailContent.querySelector("#detailCloseButton")?.addEventListener("click", closeMobileDetail);
+  syncMobileDetailState(true);
+}
+
+function isMobileLayout() {
+  return window.matchMedia("(max-width: 850px), (max-width: 1000px) and (max-height: 650px) and (orientation: landscape), (max-width: 1100px) and (orientation: portrait), (max-width: 1270px) and (min-height: 900px)").matches;
+}
+
+function syncMobileDetailState(hasVideo = Boolean(selectedVideoId)) {
+  const open = Boolean(hasVideo && mobileDetailOpen && isMobileLayout());
+  document.body.classList.toggle("detailSheetOpen", open);
+  els.detailPanel?.classList.toggle("mobileOpen", open);
+  els.detailBackdrop?.classList.toggle("hidden", !open);
+}
+
+function closeMobileDetail() {
+  mobileDetailOpen = false;
+  syncMobileDetailState();
+}
+
+function syncMobileFilterState() {
+  const open = Boolean(mobileFiltersOpen && isMobileLayout());
+  document.body.classList.toggle("filtersSheetOpen", open);
+  els.mobileFilterButton?.setAttribute("aria-expanded", String(open));
+  els.filterBackdrop?.classList.toggle("hidden", !open);
+}
+
+function openMobileFilters() {
+  mobileFiltersOpen = true;
+  syncMobileFilterState();
+}
+
+function closeMobileFilters() {
+  mobileFiltersOpen = false;
+  syncMobileFilterState();
+}
+
+function clearFilters() {
+  els.searchInput.value = "";
+  els.stateFilter.value = "";
+  fillCountyFilter();
+  els.countyFilter.value = "";
+  els.crimeFilter.value = "";
+  els.channelFilter.value = "";
+  els.reviewFilter.value = "";
+  els.sortSelect.value = "published_desc";
+  render();
 }
 
 function fillSelect(select, label, values) {
@@ -1089,13 +1183,29 @@ for (const input of [
 }
 
 els.clearMapButton.addEventListener("click", () => {
-  els.stateFilter.value = "";
-  els.countyFilter.value = "";
-  render();
+  clearMapSelection();
 });
 
 els.resetViewButton.addEventListener("click", () => {
   d3.select(els.mapSvg).transition().duration(180).call(mapZoom.transform, d3.zoomIdentity);
+});
+
+els.mapCanvas.addEventListener("click", event => {
+  if (event.target.closest(".countyShape, .stateShape")) return;
+  clearMapSelection();
+});
+
+els.detailBackdrop.addEventListener("click", closeMobileDetail);
+els.mobileFilterButton.addEventListener("click", () => {
+  if (mobileFiltersOpen) closeMobileFilters();
+  else openMobileFilters();
+});
+els.filterCloseButton.addEventListener("click", closeMobileFilters);
+els.filterBackdrop.addEventListener("click", closeMobileFilters);
+els.clearFiltersButton.addEventListener("click", clearFilters);
+window.addEventListener("keydown", event => {
+  if (event.key === "Escape" && mobileDetailOpen) closeMobileDetail();
+  if (event.key === "Escape" && mobileFiltersOpen) closeMobileFilters();
 });
 
 els.randomButton.addEventListener("click", () => {
@@ -1103,6 +1213,7 @@ els.randomButton.addEventListener("click", () => {
   if (!videos.length) return;
   const randomVideo = videos[Math.floor(Math.random() * videos.length)];
   selectedVideoId = randomVideo.video_id;
+  mobileDetailOpen = true;
   scrollSelectedIntoView = true;
   render();
 });

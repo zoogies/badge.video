@@ -2105,5 +2105,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-20",
+        "published_date": "2025-05-09",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jocelyn",
+          "last_name": "Soto",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing after warning",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "likely"
+          },
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "likely"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Trespassing charge dismissed; pleaded no contest to resisting an officer without violence; sentenced to 12 months probation and $183 fines/costs."
+      },
+      "event_summary": {
+        "short": "Deputies in Florida responded to a home where a mother wanted her adult daughter removed. The daughter refused to leave, was trespassed, and then arrested after a physical struggle. She was tased during the arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "taser",
+          "family dispute"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "taser"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 20th, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "deputies in Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Jocelyn Soto",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "30-year-old woman",
+          "timestamp_seconds": 352,
+          "confidence": "high"
+        },
+        {
+          "field": "charge_resisting",
+          "source": "transcript",
+          "quote": "charged with resisting an officer without violence",
+          "timestamp_seconds": 1140,
+          "confidence": "high"
+        },
+        {
+          "field": "charge_trespassing",
+          "source": "transcript",
+          "quote": "trespassing",
+          "timestamp_seconds": 1140,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "trespassing was dismissed ... pleaded not guilty ... took a plea deal ... no contest ... 12 months probation ... $183",
+          "timestamp_seconds": 1140,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "I'm going to drive stun you",
+          "timestamp_seconds": 474,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

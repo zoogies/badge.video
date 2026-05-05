@@ -1200,5 +1200,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-17",
+        "published_date": "2023-10-26",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexander",
+          "last_name": "Funk",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Criminal Trespass",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possessing Criminal Tools",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Criminal Trespass",
+            "category": "trespass",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possessing Criminal Tools",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect trespassed at auto scrapyard, was trapped in a car lifted by a forklift, arrested, and charged with criminal trespass and possessing criminal tools.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 26,
+        "pursuit_started": null,
+        "arrest": 92
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespass",
+          "theft"
+        ],
+        "crime_categories": [
+          "trespass",
+          "theft"
+        ],
+        "tags": [
+          "forklift",
+          "scrapyard",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On October 17, 2023, officers received a call...",
+          "timestamp_seconds": 26,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "officers confirmed the suspect’s identity as Alexander Funk.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "The suspect was charged with Criminal Trespass and Possessing Criminal Tools.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "We started smashing his head against the cruiser.",
+          "timestamp_seconds": 649,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not provided in video metadata or transcript. Manual location identification required."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -250,5 +250,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:58:57Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-12-12",
+        "published_date": "2022-02-21T17:55:51Z",
+        "location": {
+          "state": "Missouri",
+          "state_abbreviation": "MO",
+          "county": "St. Louis County",
+          "city": "Ferguson",
+          "address_or_area": "600 block of Tiffin Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Ferguson Police Department",
+          "type": "local",
+          "state": "Missouri",
+          "county": "St. Louis County",
+          "city": "Ferguson"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jeremi",
+          "last_name": "Moore",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Flourishing a handgun",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shooting at officers / Assault on law enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "deceased"
+      },
+      "event_summary": {
+        "short": "Police shooting of armed suspect Jeremi Moore in Ferguson, Missouri after he fired at officers.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "police_shooting",
+          "officer_involved_shooting",
+          "fatal"
+        ],
+        "crime_categories": [
+          "shooting",
+          "homicide",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Ferguson",
+          "St. Louis County",
+          "Jeremi Moore"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "December police shooting ... Dec. 12",
+          "timestamp_seconds": null,
+          "confidence": "estimated"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Ferguson, Missouri",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "St. Louis County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "600 block of Tiffin Avenue",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Jeremi Moore",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "description",
+          "quote": "Jeremi Moore",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "35-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "died a short time later",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "description",
+          "quote": "The man pulled out a gun and shot at them. One of the officers shot back",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "flourishing a handgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "man flourishing a handgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "description",
+          "quote": "shot at officers",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date_year",
+          "geo.coordinates",
+          "zip_code",
+          "officer names"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date year not explicitly stated, assumed 2021 based on video publish date."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

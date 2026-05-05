@@ -222,9 +222,20 @@ h3 {
 
 .filters {
   display: grid;
-  grid-template-columns: minmax(220px, 2fr) repeat(5, minmax(130px, 1fr));
+  grid-template-columns: minmax(220px, 2fr) repeat(6, minmax(130px, 1fr));
   gap: 10px;
   padding: 12px;
+}
+
+.filterSheet {
+  display: contents;
+}
+
+.mobileFilterButton,
+.filterBackdrop,
+.filterCloseButton,
+.filterSheetHeader {
+  display: none;
 }
 
 label {
@@ -293,13 +304,17 @@ a:focus-visible {
 
 .mapTools {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: end;
   gap: 8px;
 }
 
 .mapTools select {
   width: 132px;
+}
+
+.mapTools .ghostButton {
+  white-space: nowrap;
 }
 
 .mapCanvas {
@@ -362,12 +377,17 @@ a:focus-visible {
   stroke: rgba(39, 245, 223, .38);
 }
 
-.stateShape.selected,
 .countyShape:hover,
 .countyShape.selected {
   fill: rgba(98, 255, 142, .82);
   stroke: #e8fffb;
   stroke-width: 1.1;
+}
+
+.stateShape.selected {
+  fill: rgba(0, 0, 0, 0);
+  stroke: var(--green);
+  stroke-width: 1.6;
 }
 
 .mapTooltip {
@@ -546,6 +566,11 @@ a:focus-visible {
   overflow: auto;
 }
 
+.detailBackdrop,
+.detailCloseButton {
+  display: none;
+}
+
 .emptyState {
   display: grid;
   min-height: 240px;
@@ -563,6 +588,12 @@ a:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
+}
+
+.detailHeaderActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
 }
 
 .detailHeader h2 {
@@ -765,57 +796,463 @@ li,
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 850px), (max-width: 1000px) and (max-height: 650px) and (orientation: landscape), (max-width: 1100px) and (orientation: portrait), (max-width: 1270px) and (min-height: 900px) {
+  html {
+    height: 100%;
+  }
+
+  html,
+  body,
+  .shell,
+  .videoList,
+  .detailPanel,
+  textarea {
+    scrollbar-gutter: auto;
+  }
+
   body {
-    height: auto;
-    overflow: auto;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
   }
 
   .shell {
-    display: block;
-    height: auto;
-    min-height: 100vh;
-    overflow: visible;
-    padding: 10px;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding: 8px;
   }
 
   .topbar,
-  .filters,
   .workspace {
-    display: grid;
-    grid-template-columns: 1fr;
+    max-width: none;
   }
 
   .topbar {
-    align-items: stretch;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 0 8px;
   }
 
-  .status,
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: .1em;
+  }
+
+  h1 {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .status {
+    flex: 0 0 auto;
+    justify-content: end;
+    gap: 6px;
+    margin-left: auto;
+  }
+
+  .status > span,
+  .statusButton {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  #generatedAt,
+  .statusButton span {
+    display: none;
+  }
+
+  .statusButton {
+    width: 34px;
+    justify-content: center;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 8px;
+    max-width: none;
+    overflow: visible;
+    padding: 8px;
+  }
+
+  .filters label {
+    min-width: 0;
+    gap: 4px;
+    font-size: 10px;
+    letter-spacing: .05em;
+  }
+
+  .filterSheet {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 31;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-height: min(78dvh, 620px);
+    border: 1px solid var(--cyan);
+    border-radius: 8px 8px 0 0;
+    background: #030808;
+    box-shadow: 0 -18px 50px rgba(0, 0, 0, .58);
+    overflow: auto;
+    padding: 12px;
+    transform: translateY(calc(100% + 16px));
+    transition: transform .18s ease;
+  }
+
+  .filterSheetHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .filterSheetHeader .ghostButton {
+    min-height: 32px;
+    padding: 6px 10px;
+  }
+
+  .filtersSheetOpen .filterSheet {
+    transform: translateY(0);
+  }
+
+  .filterBackdrop:not(.hidden) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(0, 0, 0, .62);
+  }
+
+  .mobileFilterButton {
+    display: inline-flex;
+    align-self: end;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 34px;
+    min-height: 34px;
+    border: 1px solid var(--cyan);
+    border-radius: 4px;
+    background: rgba(39, 245, 223, .12);
+    color: var(--text);
+    cursor: pointer;
+    padding: 7px 10px;
+  }
+
+  .mobileFilterButton svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .filterCloseButton {
+    display: inline-flex;
+    flex: 0 0 32px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    border: 1px solid #1c4644;
+    border-radius: 4px;
+    background: #020606;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .filterCloseButton svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  input,
+  select,
+  textarea {
+    min-height: 34px;
+    padding: 7px 8px;
+  }
+
+  .workspace {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 8px;
+    min-height: 0;
+    margin-top: 8px;
+  }
+
   .mapTools {
     justify-content: start;
   }
 
-  .mapPanel,
-  .resultsPanel,
-  .detailPanel {
+  .mapPanel {
     height: auto;
-    min-height: auto;
+    min-height: 0;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .resultsPanel {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .panelHeader {
+    align-items: start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .panelHeader h2 {
+    font-size: 15px;
+  }
+
+  .panelHeader p {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .mapPanel .panelHeader p {
+    display: none;
+  }
+
+  .mapTools {
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+
+  .mapTools select {
+    width: 104px;
+  }
+
+  .mapTools .ghostButton,
+  .mapTools select {
+    min-height: 32px;
+    padding: 6px 7px;
+    font-size: 12px;
   }
 
   .mapCanvas {
-    height: 62vh;
-    min-height: 360px;
+    height: clamp(230px, 40dvh, 350px);
+    min-height: 0;
+    touch-action: pan-y;
+  }
+
+  #mapSvg {
+    touch-action: pan-y;
   }
 
   .videoRow {
     grid-template-columns: minmax(0, 1fr) 10px;
+    padding: 9px;
   }
 
   .videoList {
     max-height: none;
+    min-height: 0;
+    overflow: auto;
+    padding-right: 2px;
+    overscroll-behavior: contain;
+  }
+
+  .detailBackdrop:not(.hidden) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, .62);
+  }
+
+  .detailPanel {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 21;
+    height: 88dvh;
+    min-height: 0;
+    border-radius: 8px 8px 0 0;
+    border-color: var(--cyan);
+    background: #030808;
+    box-shadow: 0 -18px 50px rgba(0, 0, 0, .58);
+    overflow: auto;
+    padding: 12px 12px 16px;
+    transform: translateY(calc(100% + 16px));
+    transition: transform .18s ease;
+  }
+
+  .detailPanel.mobileOpen {
+    transform: translateY(0);
+  }
+
+  .detailCloseButton {
+    display: inline-flex;
+  }
+
+  .detailHeader h2 {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .videoEmbed {
+    margin-top: 10px;
   }
 
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 850px) and (max-height: 720px) {
+  .shell {
+    padding: 6px;
+  }
+
+  .topbar {
+    padding-bottom: 6px;
+  }
+
+  .filters {
+    padding: 6px;
+  }
+
+  .workspace {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .mapPanel,
+  .resultsPanel {
+    padding: 8px;
+  }
+
+  .mapPanel .panelHeader {
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .mapCanvas {
+    height: clamp(150px, 27dvh, 200px);
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 650px) and (orientation: landscape) {
+  .shell {
+    grid-template-rows: auto minmax(0, 1fr);
+    padding: 6px;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .filters {
+    padding: 6px;
+  }
+
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, .9fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 6px;
+    height: 100%;
+    min-height: 0;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+
+  .mapPanel,
+  .resultsPanel {
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 8px;
+  }
+
+  .mapPanel {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .resultsPanel {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .mapPanel {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .mapPanel .panelHeader,
+  .resultsPanel .panelHeader {
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .mapPanel .panelHeader h2,
+  .resultsPanel .panelHeader h2 {
+    font-size: 14px;
+  }
+
+  .mapTools {
+    gap: 5px;
+  }
+
+  .mapTools select {
+    width: 92px;
+  }
+
+  .mapTools .ghostButton,
+  .mapTools select {
+    min-height: 30px;
+    padding: 5px 6px;
+    font-size: 11px;
+  }
+
+  .mapCanvas {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .videoRow {
+    padding: 8px;
+  }
+
+  .title {
+    line-height: 1.25;
+  }
+
+  .rowTags {
+    display: none;
+  }
+
+  .detailPanel {
+    inset: 4dvh 8px auto;
+    height: 92dvh;
+    border-radius: 8px;
   }
 }

@@ -960,5 +960,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-09-17",
+        "published_date": "2023-02-28T00:00:11Z",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": "Edmond",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Edmond Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": null,
+          "city": "Edmond"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault and Battery of a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault and Battery of a Police Officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Woman arrested for DUI after traffic stop in Edmond, Oklahoma; allegedly assaulted officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-09-17T02:09:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "woman",
+          "edmond",
+          "oklahoma"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "verbal_abuse"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 17th, 2022, at around 2:09 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Edmond Police Department in Oklahoma",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "I'm a black female",
+          "timestamp_seconds": 514,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with DUI and 2x counts of Assault and Battery of a Police Officer.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The suspect was charged with driving under the influence and two counts of assault and battery on a police officer.",
+          "timestamp_seconds": 529,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "You hit me in the face, you grab my neck, you grab my shirt.",
+          "timestamp_seconds": 260,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "suspect_name",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2370,5 +2370,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-12-06",
+        "published_date": "2025-07-27T21:10:00Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Brevard",
+          "city": "Cocoa Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 48,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to stop for a red light",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of fentanyl",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of fentanyl",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to stop for a red light",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea deal: pleaded no contest, found guilty. Sentenced to 9 months jail with 70 days suspended, 6-month driver's license suspension, $1,072.30 fines/costs."
+      },
+      "event_summary": {
+        "short": "Female driver stopped for speeding and red light; found with fentanyl and paraphernalia; charged, convicted after plea deal.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": 270
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "drug_arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "resisting_arrest",
+          "traffic_stop"
+        ],
+        "tags": [
+          "fentanyl",
+          "needle",
+          "nurse"
+        ],
+        "content_warnings": [
+          "drugs",
+          "needles"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On December 6th, 2024",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Cocoa Beach",
+          "timestamp_seconds": 24,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "I'm 48.",
+          "timestamp_seconds": 425,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "The suspect was charged with, resisting an officer without violence, possession of fentanyl, possession of drug paraphernalia, failure to stop for a red light and speeding.",
+          "timestamp_seconds": 1010,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She initially pleaded not guilty... but later took a plea deal and amended her plea to no contest. She was found guilty and sentenced to nine months jail was 70 days suspended. The court also ordered a six-month suspension of her Florida driver's license and to pay $1,072.30 in fines in court costs.",
+          "timestamp_seconds": 1037,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

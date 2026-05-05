@@ -62,41 +62,61 @@
           Search
           <input id="searchInput" type="search" placeholder="title, city, county, agency, crime">
         </label>
-        <label>
-          State
-          <select id="stateFilter"></select>
-        </label>
-        <label>
-          County
-          <select id="countyFilter"></select>
-        </label>
-        <label>
-          Crime
-          <select id="crimeFilter"></select>
-        </label>
-        <label>
-          Channel
-          <select id="channelFilter"></select>
-        </label>
-        <label>
-          Review
-          <select id="reviewFilter">
-            <option value="">All</option>
-            <option value="needs_review">Needs review</option>
-            <option value="reviewed">Human reviewed</option>
-          </select>
-        </label>
-        <label>
-          Sort
-          <select id="sortSelect">
-            <option value="published_desc">Published newest</option>
-            <option value="published_asc">Published oldest</option>
-            <option value="state">State</option>
-            <option value="crime">Crime</option>
-            <option value="review">Review status</option>
-            <option value="random">Random</option>
-          </select>
-        </label>
+        <button id="mobileFilterButton" class="mobileFilterButton" type="button" aria-expanded="false" aria-controls="mobileFilterSheet">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16"></path>
+            <path d="M7 12h10"></path>
+            <path d="M10 18h4"></path>
+          </svg>
+          <span>Filters</span>
+        </button>
+        <div id="filterBackdrop" class="filterBackdrop hidden"></div>
+        <div id="mobileFilterSheet" class="filterSheet" aria-label="Filter and sort options">
+          <div class="filterSheetHeader">
+            <button id="clearFiltersButton" class="ghostButton" type="button">Clear filters</button>
+            <button id="filterCloseButton" class="filterCloseButton" type="button" aria-label="Close filters">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <label>
+            State
+            <select id="stateFilter"></select>
+          </label>
+          <label>
+            County
+            <select id="countyFilter"></select>
+          </label>
+          <label>
+            Crime
+            <select id="crimeFilter"></select>
+          </label>
+          <label>
+            Channel
+            <select id="channelFilter"></select>
+          </label>
+          <label>
+            Review
+            <select id="reviewFilter">
+              <option value="">All</option>
+              <option value="needs_review">Needs review</option>
+              <option value="reviewed">Human reviewed</option>
+            </select>
+          </label>
+          <label>
+            Sort
+            <select id="sortSelect">
+              <option value="published_desc">Published newest</option>
+              <option value="published_asc">Published oldest</option>
+              <option value="state">State</option>
+              <option value="crime">Crime</option>
+              <option value="review">Review status</option>
+              <option value="random">Random</option>
+            </select>
+          </label>
+        </div>
       </section>
 
       <section class="workspace">
@@ -104,15 +124,15 @@
           <div class="panelHeader">
             <div>
               <h2>US Map</h2>
-              <p>Estimated by AI, which might not be accurate. You can help by submitting corrections!</p>
+              <p>Locations are AI-estimated. Please submit any corrections!</p>
             </div>
             <div class="mapTools">
               <select id="mapMode" aria-label="Map overlay mode">
                 <option value="states">States</option>
                 <option value="counties" selected>Counties</option>
               </select>
-              <button id="resetViewButton" class="ghostButton" type="button">Reset</button>
-              <button id="clearMapButton" class="ghostButton" type="button">Clear</button>
+              <button id="resetViewButton" class="ghostButton" type="button" title="Reset map view">Reset view</button>
+              <button id="clearMapButton" class="ghostButton" type="button" title="Clear selected state or county">Clear selection</button>
             </div>
           </div>
           <div class="mapCanvas">
@@ -136,6 +156,7 @@
           <div id="videoList" class="videoList"></div>
         </section>
 
+        <div id="detailBackdrop" class="detailBackdrop hidden"></div>
         <aside class="detailPanel" aria-label="Selected video">
           <div id="detailEmpty" class="emptyState">Select a video to inspect classification details.</div>
           <article id="detailContent" class="detailContent hidden"></article>

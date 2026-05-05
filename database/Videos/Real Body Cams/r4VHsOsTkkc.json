@@ -1665,5 +1665,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-06",
+        "published_date": "2025-06-28",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": "local Circle K",
+          "location_name": "Circle K",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "local",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alaria",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstruction of official business",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating a vehicle under the influence of alcohol",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "theft",
+          "obstruction",
+          "resisting arrest",
+          "OVI"
+        ],
+        "case_number": null,
+        "disposition": "pleaded not guilty to all charges; case ongoing"
+      },
+      "event_summary": {
+        "short": "Woman shoplifted from Circle K, then arrested after refusing to comply during traffic stop.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-05-06T00:00:00",
+        "initial_contact": "2025-05-06T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2025-05-06T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "traffic_stop",
+          "DUI"
+        ],
+        "crime_categories": [
+          "theft",
+          "dui",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "shopilfting",
+          "Circle K",
+          "Ohio",
+          "OVI",
+          "obstruction"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "title",
+          "quote": "On May 6th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Ohio",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Alaria, is that how you say your name?",
+          "timestamp_seconds": 424,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "title",
+          "quote": "woman",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "obstruction of official business, resisting arrest, and operating a vehicle under the influence of alcohol, theft, and trespassing",
+          "timestamp_seconds": 977,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she pleaded not guilty to all charges. At this time, her court case is still ongoing.",
+          "timestamp_seconds": 1055,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

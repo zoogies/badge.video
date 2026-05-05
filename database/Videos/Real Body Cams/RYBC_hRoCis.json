@@ -3185,5 +3185,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:25:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-11",
+        "published_date": "2025-02-07",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Destiny",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty, ordered to pay $330 in fines and court costs"
+      },
+      "event_summary": {
+        "short": "Intoxicated female refuses to exit car, resists arrest, bites officer, charged with disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "standoff",
+          "intoxicated",
+          "bite"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 11th, 2024, officers in Ohio received a 911 call",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in Ohio",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Destiny?",
+          "timestamp_seconds": 152,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "charged with disorderly conduct",
+          "timestamp_seconds": 1323,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "paid guilty to disorderly conduct and was ordered to pay $330 in fines and court costs",
+          "timestamp_seconds": 1326,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "You under arrest",
+          "timestamp_seconds": 494,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "You bit my hand",
+          "timestamp_seconds": 616,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "county",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

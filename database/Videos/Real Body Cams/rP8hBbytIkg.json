@@ -1285,5 +1285,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:24:35Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-23",
+        "published_date": "2022-12-29",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga County",
+          "city": "Seven Hills",
+          "address_or_area": "2480 Windy Tree",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Seven Hills Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Cuyahoga County",
+          "city": "Seven Hills"
+        }
+      },
+      "geo": {
+        "address_or_place": "2480 Windy Tree, Seven Hills, OH",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating a Vehicle Impaired (OVI) 1st Offense, Prohibited BAC .170, Failure to Control",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Operating a Vehicle Impaired 1st Offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Prohibited BAC .170",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Control",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Drunk councilman arrested after striking mailboxes and failing sobriety tests; BAC 0.264.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 42,
+        "pursuit_started": null,
+        "arrest": 838
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "drunk driving",
+          "councilman"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "On the 23rd of August 2022, at approximately 8:51 am",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Seven Hills Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address",
+          "source": "transcript",
+          "quote": "I have them stopped at 2480 Windy Tree",
+          "timestamp_seconds": 83,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "description",
+          "quote": "charged with Operating a Vehicle Impaired 1st Offense, Prohibited BAC .170, and Failure to Control",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.BAC",
+          "source": "description",
+          "quote": "breath sample which read 0.264 BAC",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're being arrested for OVI",
+          "timestamp_seconds": 838,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "zip code",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
