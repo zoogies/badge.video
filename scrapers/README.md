@@ -105,6 +105,29 @@ uv run pipeline.py classify --no-overwrite
 uv run pipeline.py atlas
 ```
 
+## Build Website Data
+
+Bake compact JSON for the static frontend. This rebuilds the atlas first and only includes classified videos by default.
+
+```powershell
+uv run pipeline.py site-data
+```
+
+Local website test:
+
+```powershell
+cd ..\frontend
+python -m http.server 5173
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
+
+The browser reads `frontend\public\data\videos.index.json`, not the full transcript-heavy video JSON files.
+
 One command version:
 
 ```powershell

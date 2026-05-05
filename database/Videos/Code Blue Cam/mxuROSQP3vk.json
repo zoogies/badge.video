@@ -1085,5 +1085,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:41:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-15",
+        "published_date": "2024-01-26T18:05:14Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Waukesha",
+          "city": "Waukesha",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Wisconsin",
+          "county": "Waukesha",
+          "city": "Waukesha"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 36,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "discharging bodily fluids at an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony discharging bodily fluids at an officer",
+            "count": 2,
+            "outcome": "one count guilty, others dismissed"
+          },
+          {
+            "label": "misdemeanor disorderly conduct",
+            "count": 1,
+            "outcome": "dismissed but read in"
+          }
+        ],
+        "case_number": null,
+        "disposition": "found guilty for one count of discharging bodily fluids, sentenced to 1.5 years jail and 2 years extended supervision"
+      },
+      "event_summary": {
+        "short": "Woman overdoses on vanilla extract at nursing home, becomes combative, spits on officers, charged.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "overdose",
+          "mental_health",
+          "assault"
+        ],
+        "crime_categories": [
+          "assault",
+          "mental_health",
+          "public_intoxication"
+        ],
+        "tags": [
+          "vanilla extract",
+          "overdose",
+          "spitting",
+          "nursing home"
+        ],
+        "content_warnings": [
+          "spitting",
+          "use of force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "police responded to an overdose call at a nursing home in Waukesha, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 15, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with felony discharging bodily fluids at an officer, times two, and misdemeanor disorderly conduct",
+          "timestamp_seconds": 932,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.age",
+          "source": "transcript",
+          "quote": "a 36-year-old new employee",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "exact address",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1305,5 +1305,227 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:00:27Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-07",
+        "published_date": "2025-08-05T20:33:47Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Portage",
+          "city": "Stevens Point",
+          "address_or_area": "West Clark and Water Creek",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Stevens Point Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Portage",
+          "city": "Stevens Point"
+        }
+      },
+      "geo": {
+        "address_or_place": "West Clark and Water Creek, Stevens Point, WI",
+        "intersection": "West Clark and Water Creek",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Keith",
+          "last_name": null,
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Road rage with a hammer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating while intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Vehicle fleeing/eluding an officer (felony)",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "OWI 3rd offense (misdemeanor)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/obstructing an officer (misdemeanor)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with ignition interlock device",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating while revoked",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty after no contest plea on October 9, 2024; sentenced to 3 years probation"
+      },
+      "event_summary": {
+        "short": "Road rage traffic stop escalates into confrontation, DUI arrest, threats to officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-06-07T20:44:00",
+        "initial_contact": "2024-06-07T20:44:00",
+        "pursuit_started": "2024-06-07T20:44:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "road_rage"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "hammer",
+          "threats",
+          "taser"
+        ],
+        "content_warnings": [
+          "threats_of_violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "around 8.44 p.m. on June 7th, 2024",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Stevens Point Police Department in Wisconsin",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "area of West Clark and Water Creek",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "36-year-old Keith",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "swung a hammer at the driver",
+          "timestamp_seconds": 59,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with a felony count of vehicle fleeing eluding ... misdemeanor charges of operating a vehicle while intoxicated third offense resisting obstructing an officer tampering with ignition interlock device operating while revoked",
+          "timestamp_seconds": 630,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "On October 9th, 2024, Keith was found guilty after pleading no contest ... sentenced to three years of probation",
+          "timestamp_seconds": 660,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "last_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1360,5 +1360,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:33:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-05",
+        "published_date": "2022-09-07",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee",
+          "city": "Glendale",
+          "address_or_area": "Port Washington Road and Bender Road",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Glendale Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Milwaukee",
+          "city": "Glendale"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Port Washington Road and Bender Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title_and_transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Tamika",
+          "last_name": "Holmes",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Under the Influence (2nd offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second Degree Recklessly Endangering Safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/Eluding an Officer Causing Injury",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Operating While Under the Influence (2nd offense)",
+          "Second Degree Recklessly Endangering Safety",
+          "Fleeing/Eluding an Officer Causing Injury"
+        ],
+        "case_number": null,
+        "disposition": "charged"
+      },
+      "event_summary": {
+        "short": "Drunk woman crashes vehicle during police chase in Glendale, Wisconsin, resulting in injuries and charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-08-05T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2022-08-05"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "vehicle_crash"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit",
+          "reckless_driving"
+        ],
+        "tags": [
+          "drunk driving",
+          "high-speed chase",
+          "crash",
+          "ejection"
+        ],
+        "content_warnings": [
+          "car crash",
+          "injuries"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 5, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Glendale, Wisconsin",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "Port Washington, approaching Bender",
+          "timestamp_seconds": 45,
+          "confidence": "medium"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "transcript",
+          "quote": "later identified as 30-year-old Tamika Holmes",
+          "timestamp_seconds": 100,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Tamika was charged with felony counts of operating while under the influence, second offense, second degree recklessly endangering safety and fleeing eluding an officer causing injury",
+          "timestamp_seconds": 720,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "Tamika and her passenger suffered non-life-threatening injuries",
+          "timestamp_seconds": 710,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

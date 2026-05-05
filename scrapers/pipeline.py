@@ -2,6 +2,7 @@ import argparse
 from pathlib import Path
 
 from add_transcripts import add_transcripts
+from build_frontend_data import DEFAULT_FRONTEND_DATA_DIR, build_frontend_data
 from llm_classifier import TRANSCRIPT_CONTEXT_OPTIONS, classify_videos
 from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 from scrape_channels import CHANNELS_FILE, VIDEOS_ROOT, scrape_youtube_videos
@@ -27,6 +28,7 @@ EXAMPLES = """Examples:
   uv run pipeline.py classify --no-overwrite
   uv run pipeline.py classify --transcript-context timestamped_text
   uv run pipeline.py atlas
+  uv run pipeline.py site-data
   uv run pipeline.py pipeline
   uv run pipeline.py pipeline --skip-videos
   uv run pipeline.py pipeline --skip-classify
@@ -84,6 +86,15 @@ def main() -> None:
         )
     elif args.command == "atlas":
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
+    elif args.command == "site-data":
+        build_frontend_data(
+            videos_root=args.videos_root,
+            atlas_path=args.atlas_path,
+            output_dir=args.output_dir,
+            repo_slug=args.repo,
+            rebuild_atlas=not args.no_atlas,
+            include_unclassified=args.include_unclassified,
+        )
     elif args.command == "pipeline":
         run_pipeline(args)
 
@@ -157,6 +168,13 @@ def build_parser() -> argparse.ArgumentParser:
     atlas = subparsers.add_parser("atlas", help="rebuild global frontend metadata filters")
     add_videos_root(atlas)
     add_atlas_options(atlas)
+
+    site_data = subparsers.add_parser("site-data", help="build compact static JSON for the frontend")
+    add_videos_root(site_data)
+    add_atlas_options(site_data, include_toggle=True)
+    site_data.add_argument("--output-dir", type=Path, default=DEFAULT_FRONTEND_DATA_DIR)
+    site_data.add_argument("--repo", default="zoogies/badge.video")
+    site_data.add_argument("--include-unclassified", action="store_true")
 
     pipeline = subparsers.add_parser("pipeline", help="run video search, transcript fetch, and classification")
     add_channel_paths(pipeline)

@@ -4675,5 +4675,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:46:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-10-30",
+        "published_date": "2025-11-28",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Waukesha",
+          "city": "Muskego",
+          "address_or_area": "Baylane Elementary School",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Muskego Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Waukesha",
+          "city": "Muskego"
+        }
+      },
+      "geo": {
+        "address_or_place": "Baylane Elementary School, Muskego, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": null,
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (4th offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony OWI 4th offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor Bail Jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on $10,000 cash bond with conditions of absolute sobriety and no contact with the elementary school"
+      },
+      "event_summary": {
+        "short": "Drunk substitute teacher arrested at elementary school for OWI and warrant.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-10-30T11:10:00",
+        "pursuit_started": null,
+        "arrest": "2025-10-30T14:48:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "school_incident",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "warrant"
+        ],
+        "tags": [
+          "drunk teacher",
+          "bodycam",
+          "arrest",
+          "school"
+        ],
+        "content_warnings": [
+          "alcohol"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's October 30, 2025, and the vibe is cheerful at a Muskego Elementary School in Wisconsin.",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Because you got arrested for the warrant in Waukesha County.",
+          "timestamp_seconds": 2537,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "It's October 30, 2025",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Ultimately, Christopher was charged with felony, operating while intoxicated, fourth offense, misdemeanor, bail jumping",
+          "timestamp_seconds": 2542,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "released on a $10,000 cash bond, with conditions to maintain absolute sobriety and have no contact with the elementary school.",
+          "timestamp_seconds": 2556,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You got a warrant. Just hand us your wrist.",
+          "timestamp_seconds": 888,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect.last_name",
+          "geo.latitude",
+          "geo.longitude",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

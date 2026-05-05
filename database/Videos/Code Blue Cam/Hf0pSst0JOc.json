@@ -2545,5 +2545,230 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:03:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-04-29",
+        "published_date": "2023-02-02",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Vernon",
+          "city": "Westby",
+          "address_or_area": "900 block Central",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Vernon County Sheriff's Office / Coon Valley Police",
+          "type": "municipal/county",
+          "state": "Wisconsin",
+          "county": "Vernon",
+          "city": "Westby"
+        }
+      },
+      "geo": {
+        "address_or_place": "Westby, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Amanda",
+          "last_name": "McCaig",
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "passenger",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Second-degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failing to stop",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second-degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high",
+            "disposition": "dismissed but read in"
+          },
+          {
+            "label": "Resisting/obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high",
+            "disposition": "guilty (no contest plea)"
+          },
+          {
+            "label": "Failing to stop",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high",
+            "disposition": "guilty (no contest plea)"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty on no contest plea for misdemeanor charges; felony dismissed but read in."
+      },
+      "event_summary": {
+        "short": "Woman driving 106 mph in 30 mph zone arrested after attempting to flee, charged with reckless endangerment and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "speeding"
+        ],
+        "crime_categories": [
+          "reckless_driving",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "speeding",
+          "106 mph",
+          "Westby",
+          "Vernon County",
+          "Coon Valley",
+          "mental health"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 29, 2022",
+          "timestamp_seconds": 0
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Westby, WI",
+          "timestamp_seconds": 0
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Vernon County Sheriff's office",
+          "timestamp_seconds": 0
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "35-year-old Amanda McCaig",
+          "timestamp_seconds": 53
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "35-year-old",
+          "timestamp_seconds": 53
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "felony second degree recklessly endangering safety",
+          "timestamp_seconds": 1215
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "misdemeanor counts of resisting failing to stop and resisting obstructing",
+          "timestamp_seconds": 1220
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She's arrested in the back.",
+          "timestamp_seconds": 1033
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2425,5 +2425,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:47:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-12-12",
+        "published_date": "2023-05-03T17:05:30Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Buffalo",
+          "city": "Belvidere",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Buffalo County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Buffalo",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jordan",
+          "last_name": null,
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "detained"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vehicle Fleeing/Eluding an Officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of THC (second offense)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping (two counts)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Without a Valid License (third offense within three years)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Vehicle Fleeing/Eluding an Officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of THC (second offense)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping (two counts)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Without a Valid License (third offense within three years)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea to vehicle fleeing/eluding; other charges dismissed. Sentenced to 3 years probation, 31 days jail credit, license revoked 6 months, fines $2,500+."
+      },
+      "event_summary": {
+        "short": "Traffic stop for speeding escalates into 11.5-mile pursuit ending with PIT maneuver; driver arrested with THC vapes and a legally carried firearm.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-12-12T00:00:00",
+        "pursuit_started": "2022-12-12T00:00:00",
+        "arrest": "2022-12-12T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (valid CCW)",
+        "officer_weapon_used": "firearm drawn",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "warrant"
+        ],
+        "tags": [
+          "pursuit",
+          "PIT maneuver",
+          "CCW",
+          "THC vape",
+          "bail jumping"
+        ],
+        "content_warnings": [
+          "police chase",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On December 12, 2022, a deputy was on patrol when he observed a speeding vehicle in Belvedere, Wisconsin.",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Belvedere, Wisconsin",
+          "timestamp_seconds": 5,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The 24-year-old male driver, later identified as Jordan",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Ultimately, a month later, he pled guilty to vehicle fleeing, eluding an officer. All his other charges were dismissed... He was given three years probation... 31 days of jail credit.",
+          "timestamp_seconds": 1157,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state_abbreviation",
+          "county",
+          "agency.name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "County inferred from city; agency name inferred from typical jurisdiction."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

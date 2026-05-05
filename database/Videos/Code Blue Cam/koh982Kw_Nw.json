@@ -1155,5 +1155,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:29:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2004-09-01",
+        "published_date": "2025-12-29",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Dunn County",
+          "city": "Menominee",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Dunn County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Dunn County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "speeding (85 in 55 mph zone)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "vehicle fleeing/eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating without a valid license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of THC (marijuana)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "operating with a restricted controlled substance (first offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "felony vehicle fleeing/eluding an officer",
+          "misdemeanor operating without a valid license",
+          "possession of THC",
+          "possession of paraphernalia",
+          "bail jumping",
+          "operating with a restricted controlled substance"
+        ],
+        "case_number": null,
+        "disposition": "Found guilty of vehicle fleeing/eluding; remaining charges dismissed but read in; sentence withheld, 2 years probation; later violated probation, ordered to serve 12 months in jail."
+      },
+      "event_summary": {
+        "short": "17-year-old male borrowed his mother's car without a license, led deputies on a high-speed chase after being signaled to stop, and was found with marijuana and paraphernalia; later charged with fleeing, drug possession, and other offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2004-09-01T20:40:00",
+        "pursuit_started": "2004-09-01T20:40:00",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "traffic_stop",
+          "drug_offense"
+        ],
+        "tags": [
+          "teen",
+          "mom's car",
+          "high-speed chase",
+          "marijuana",
+          "probation violation"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Around 8.40 p.m. on Sunday, September 1st, 2004",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a deputy with the Dunn County Sheriff's Office was patrolling a highway in Menominee, Wisconsin",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Dunn County Sheriff's Office",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "17 years old",
+          "timestamp_seconds": 622,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with felony vehicle fleeing eluding an officer misdemeanor operating without a valid license possession of t hc possession paraphernalia, bail jumping",
+          "timestamp_seconds": 1428,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty of vehicle fleeing, eluding an officer... sentence was withheld, and he was given two years of probation... violated his probation... ordered to serve 12 months in jail",
+          "timestamp_seconds": 1450,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "exact address",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1600,5 +1600,229 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:04:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-11",
+        "published_date": "2023-10-09T17:03:55Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Marathon",
+          "city": "Wausau",
+          "address_or_area": "closed business",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Wausau Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Marathon",
+          "city": "Wausau"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jeffrey",
+          "last_name": "Super",
+          "age": 65,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "using a computer to facilitate a child sex crime",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "child enticement",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession with intent to deliver methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "giving/selling drugs",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "using a computer to facilitate a child sex crime",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "child enticement",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "giving/selling drugs",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "possession of methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $5,000 cash bond"
+      },
+      "event_summary": {
+        "short": "65-year-old man arrested after arranging to meet a 15-year-old for sex, found with methamphetamine.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_enticement",
+          "undercover_sting",
+          "drug_possession"
+        ],
+        "crime_categories": [
+          "sex_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "child predator",
+          "undercover",
+          "methamphetamine"
+        ],
+        "content_warnings": [
+          "child sexual exploitation",
+          "drug use"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 11, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Wausau, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "county",
+          "source": "transcript",
+          "quote": "Marathon County Jail",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Jeffrey Super, age 65",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "possession with intent to deliver methamphetamine, child enticement, and using a computer to facilitate a child sex crime",
+          "timestamp_seconds": 543,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "felony counts of using a computer to facilitate a child sex crime, child enticement, giving selling drugs, and possession of meth",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "description",
+          "quote": "released on a $5,000 cash bond",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "timeline details"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript incorrectly states 2003; actual year is 2023 based on description."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

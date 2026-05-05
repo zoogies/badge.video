@@ -1745,5 +1745,236 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:29:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-01",
+        "published_date": "2023-01-20",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Portage County",
+          "city": "Stevens Point",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Portage County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Portage County",
+          "city": "Stevens Point"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nicole",
+          "last_name": "Golomsky",
+          "age": 33,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "cited and released"
+        },
+        {
+          "role": "passenger",
+          "first_name": "Irvin",
+          "last_name": "Saragosa",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating while suspended (driver's license)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to wear seatbelt (driver)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to have passenger wear seatbelt",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction (passenger)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Citations issued; no jail"
+      },
+      "event_summary": {
+        "short": "Traffic stop in Stevens Point, WI for suspended license; female driver became verbally confrontational; both driver and passenger cited for seatbelt violations; driver cited for operating while suspended; passenger threatened with obstruction.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "hatchet in door (passenger)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "suspended_license",
+          "seatbelt_violation"
+        ],
+        "tags": [
+          "confrontational",
+          "verbal abuse",
+          "suspended license",
+          "seatbelt"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 1st, 2003, a Portage County Sheriff's deputy...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Stevens Point, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Portage County Sheriff’s Deputy",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "33-year-old Nicole Golomsky",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "license female white",
+          "timestamp_seconds": 247,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "She's getting a seatbelt and a suspension",
+          "timestamp_seconds": 267,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "failure to have a passenger wear a seatbelt",
+          "timestamp_seconds": 711,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I'm going to write you for obstructing for not giving me your ID",
+          "timestamp_seconds": 728,
+          "confidence": "medium"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Why do you have a hatchet in your door?",
+          "timestamp_seconds": 685,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome",
+          "source": "transcript",
+          "quote": "Nicole was released and cited for failure to wear a seatbelt, operating while suspended and failure to have a passenger wear a seatbelt.",
+          "timestamp_seconds": 708,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact address",
+          "zip code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript says 2003 but context and description indicate 2023; assumed 2023."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

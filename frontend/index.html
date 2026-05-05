@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>badge.video</title>
+    <link rel="icon" type="image/png" href="./public/data/icon.png">
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">badge.video</div>
+          <h1>Interactive Bodycam Map</h1>
+        </div>
+        <div class="status">
+          <button id="randomButton" class="statusButton" type="button" title="Select random video" aria-label="Select random video">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5"></path>
+              <path d="M4 20 21 3"></path>
+              <path d="M21 16v5h-5"></path>
+              <path d="M15 15 21 21"></path>
+              <path d="M4 4l5 5"></path>
+            </svg>
+            <span>Random</span>
+          </button>
+          <span id="generatedAt">Loading data</span>
+          <span id="recordCount">0 videos</span>
+        </div>
+      </header>
+
+      <section class="filters" aria-label="Filters">
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="title, city, county, agency, crime">
+        </label>
+        <label>
+          State
+          <select id="stateFilter"></select>
+        </label>
+        <label>
+          County
+          <select id="countyFilter"></select>
+        </label>
+        <label>
+          Crime
+          <select id="crimeFilter"></select>
+        </label>
+        <label>
+          Review
+          <select id="reviewFilter">
+            <option value="">All</option>
+            <option value="needs_review">Needs review</option>
+            <option value="reviewed">Human reviewed</option>
+          </select>
+        </label>
+        <label>
+          Sort
+          <select id="sortSelect">
+            <option value="published_desc">Published newest</option>
+            <option value="published_asc">Published oldest</option>
+            <option value="state">State</option>
+            <option value="crime">Crime</option>
+            <option value="review">Review status</option>
+            <option value="random">Random</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="workspace">
+        <section class="mapPanel" aria-label="US state and county video volume">
+          <div class="panelHeader">
+            <div>
+              <h2>US Map</h2>
+              <p>Real county boundaries with state and county overlays</p>
+            </div>
+            <div class="mapTools">
+              <select id="mapMode" aria-label="Map overlay mode">
+                <option value="states">States</option>
+                <option value="counties">Counties</option>
+              </select>
+              <button id="resetViewButton" class="ghostButton" type="button">Reset</button>
+              <button id="clearMapButton" class="ghostButton" type="button">Clear</button>
+            </div>
+          </div>
+          <div class="mapCanvas">
+            <svg id="mapSvg" role="img" aria-label="Interactive United States map">
+              <g id="mapLayer">
+                <g id="stateLayer"></g>
+                <g id="countyLayer"></g>
+              </g>
+            </svg>
+            <div id="mapTooltip" class="mapTooltip hidden"></div>
+          </div>
+        </section>
+
+        <section class="resultsPanel" aria-label="Video results">
+          <div class="panelHeader">
+            <div>
+              <h2>Videos</h2>
+              <p id="resultSummary">No records loaded</p>
+            </div>
+          </div>
+          <div id="videoList" class="videoList"></div>
+        </section>
+
+        <aside class="detailPanel" aria-label="Selected video">
+          <div id="detailEmpty" class="emptyState">Select a video to inspect classification details.</div>
+          <article id="detailContent" class="detailContent hidden"></article>
+        </aside>
+      </section>
+    </main>
+    <script src="./vendor/d3.v7.min.js"></script>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

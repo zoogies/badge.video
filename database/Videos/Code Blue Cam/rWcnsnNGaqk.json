@@ -1105,5 +1105,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:12:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-05-22",
+        "published_date": "2026-01-02",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "La Crosse",
+          "address_or_area": "La Crosse Regional Airport",
+          "location_name": "La Crosse Regional Airport",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Campbell Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "Campbell"
+        }
+      },
+      "geo": {
+        "address_or_place": "La Crosse Regional Airport",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Edward",
+          "last_name": null,
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Trespassing on airport tarmac",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Misdemeanor resisting/obstructing an officer",
+          "Disorderly conduct",
+          "Bail jumping"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to resisting/obstructing; remaining charges dismissed but read in; sentenced to 120 days in La Crosse County Jail"
+      },
+      "event_summary": {
+        "short": "A man jumped the fence at La Crosse Regional Airport, was tased by police, and later charged and sentenced.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-05-22T16:30:00",
+        "initial_contact": "2021-05-22T16:30:00",
+        "pursuit_started": "2021-05-22T16:30:00",
+        "arrest": "2021-05-22T16:30:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "airport security breach",
+          "trespassing",
+          "excited delirium"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "mental_health"
+        ],
+        "tags": [
+          "airport",
+          "taser",
+          "excited delirium",
+          "fence jump"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "around 4.30 p.m. on May 22nd, 2021",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "La Crosse Regional Airport in Wisconsin",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "The suspect is 42-year-old Edward.",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Edward was charged with misdemeanor, resisting obstructing an officer, disorderly conduct, and bail jumping.",
+          "timestamp_seconds": 500,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "he pleaded guilty to resisting, obstructing an officer. All remaining charges were dismissed, but read in. In the end, Edward was sentenced to 120 days in the LaCross County Jail.",
+          "timestamp_seconds": 520,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

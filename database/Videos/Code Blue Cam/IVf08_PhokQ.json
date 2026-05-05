@@ -1155,5 +1155,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:17:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-01-24",
+        "published_date": "2022-04-27",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": "Broken Arrow",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Broken Arrow Police Department",
+          "type": "municipal",
+          "state": "Oklahoma",
+          "county": null,
+          "city": "Broken Arrow"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mariah",
+          "last_name": "Davis",
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Zane",
+          "last_name": "Bennett",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Petty Larceny",
+            "category": "theft",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Illegally Manufacturing an Explosive Device",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Petty Larceny",
+            "category": "theft",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Illegally Manufacturing an Explosive Device",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for stolen Legos leads to discovery of homemade explosive device; suspects charged.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-01-24T00:00:00",
+        "initial_contact": "2022-01-24T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2022-01-24T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "explosive_device"
+        ],
+        "crime_categories": [
+          "theft",
+          "weapons_offense"
+        ],
+        "tags": [
+          "stolen Legos",
+          "homemade bomb",
+          "bomb squad"
+        ],
+        "content_warnings": [
+          "explosives"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 24th, 2022",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Broken Arrow, Oklahoma",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "20-year-old Mariah Davis",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "20-year-old Zane Bennett",
+          "timestamp_seconds": 822,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Mariah was charged with petty larceny",
+          "timestamp_seconds": 1309,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "Zane was ultimately charged with illegally manufacturing and explosive device",
+          "timestamp_seconds": 1304,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "What that device is in the back of your car that looks like a bomb",
+          "timestamp_seconds": 294,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "address_or_area",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

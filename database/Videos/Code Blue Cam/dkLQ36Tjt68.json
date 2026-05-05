@@ -2820,5 +2820,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:34:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-10",
+        "published_date": "2023-12-22",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Lafayette",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Lafayette County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Lafayette",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kevin",
+          "last_name": null,
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "threats to law enforcement",
+            "category": "assault_on_officer",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery to officer",
+            "category": "assault_on_officer",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "battery threat to an officer (6 counts)",
+            "category": "assault_on_officer",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted battery threat to an officer (2 counts)",
+            "category": "assault_on_officer",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping (2 counts)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty on 3 counts of battery threat to officer; remaining charges dismissed but read in. Sentencing scheduled for February 2024."
+      },
+      "event_summary": {
+        "short": "Intoxicated man at a bar in Lafayette County, Wisconsin, became combative with deputies, leading to arrest, use of force, and multiple charges including battery to officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": {
+          "time": null,
+          "timestamp_seconds": null
+        },
+        "initial_contact": {
+          "time": null,
+          "timestamp_seconds": 0
+        },
+        "pursuit_started": null,
+        "arrest": {
+          "time": null,
+          "timestamp_seconds": null
+        }
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "bar incident",
+          "disturbance",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "assault_on_officer",
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "intoxication",
+          "threats",
+          "taser deployment",
+          "body camera"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 10, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "a bar in Lafayette, Wisconsin",
+          "timestamp_seconds": 5,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "39-year-old male named Kevin",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with felony counts of battery threat to an officer, times six, attempted battery threat to an officer, times two, and bail jumping times two",
+          "timestamp_seconds": 1270,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty, but only for three counts of battery threat to an officer... sentencing hearing is scheduled for February 2024",
+          "timestamp_seconds": 1315,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "a taser was deployed on Kevin",
+          "timestamp_seconds": 1226,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "First location mentioned as 'Lafayette, Wisconsin' but later bond referenced in 'La Crosse County'. Possible mis-transcription of 'La Crosse' as 'Lafayette'."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "address",
+          "last name",
+          "agency name exact"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

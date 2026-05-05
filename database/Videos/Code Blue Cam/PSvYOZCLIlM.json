@@ -4020,5 +4020,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:58:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-06",
+        "published_date": "2026-04-09T17:00:50Z",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Lyon",
+          "city": "Fernley",
+          "address_or_area": "Johnson Lane area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Nevada",
+          "county": "Lyon",
+          "city": "Fernley"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Guillermo",
+          "last_name": "Abote Savedra",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript: '5-5-Hispanic male' at [4:54-4:59]",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Kidnapping (three counts)",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Robbery with a deadly weapon (three counts)",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery with a weapon resulting in substantial bodily harm (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child abuse with substantial bodily harm (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child abuse (three counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False imprisonment (three counts)",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Kidnapping (three counts)",
+          "Kidnapping with substantial bodily harm (three counts)",
+          "Robbery with a deadly weapon (three counts)",
+          "Battery with a weapon resulting in substantial bodily harm (two counts)",
+          "Child abuse with substantial bodily harm (two counts)",
+          "Child abuse (three counts)",
+          "False imprisonment (three counts)"
+        ],
+        "case_number": null,
+        "disposition": "Found guilty, sentenced to minimum 15 years in prison"
+      },
+      "event_summary": {
+        "short": "Three children kidnapped, beaten, and hidden under a house in Fernley, Nevada; suspect arrested and convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-05-06T18:00:00Z",
+        "initial_contact": "2025-05-06T18:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2025-05-06"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Stick (broom handle) and rusty skiff (knife)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "kidnapping",
+          "child abuse",
+          "assault",
+          "battery"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "assault",
+          "battery",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "kidnapping",
+          "child abuse",
+          "Nevada",
+          "Fernley"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Fernley, Nevada",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "6th of May, 2025",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "23-year-old Guillermo Abote Savedra",
+          "timestamp_seconds": 404,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "5-5-Hispanic male",
+          "timestamp_seconds": 294,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "sentenced to a minimum of 15 years in prison",
+          "timestamp_seconds": 2340,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[]",
+          "source": "transcript",
+          "quote": "felony robbery with a deadly weapon, times three. Kidnapping, times three. Kidnapping with substantial bodily harm, times three. Battery with a weapon, resulting in substantial bodily harm, times two. child abuse with substantial bodily harm times two child abuse times three misdemeanor false imprisonment times three",
+          "timestamp_seconds": 2310,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

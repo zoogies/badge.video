@@ -2565,5 +2565,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:59:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-24",
+        "published_date": "2025-12-12",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Columbia County",
+          "city": "Pardeeville",
+          "address_or_area": "Quick Trip gas station",
+          "location_name": null,
+          "confidence": "likely"
+        },
+        "agency": {
+          "name": "Columbia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Columbia County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Marco",
+          "last_name": null,
+          "age": 46,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Threats to Law Enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony Battery Threat to an Officer (3 counts)",
+          "Bail Jumping",
+          "Misdemeanor Resisting",
+          "Obstructing an Officer",
+          "Disorderly Conduct",
+          "Operating with Prohibited Alcohol Concentration (3rd offense)",
+          "Operating While Intoxicated (3rd offense)"
+        ],
+        "case_number": null,
+        "disposition": "Guilty via no-contest plea on two counts of battery threat to an officer and operating with prohibited alcohol concentration; sentenced to 60 days jail and 36 months probation"
+      },
+      "event_summary": {
+        "short": "A drunk man at a gas station confronts a sheriff's deputy, leading to his arrest for OWI, threats, and disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-03-24T00:10:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "public_intoxication",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Columbia County Sheriff",
+          "Quick Trip",
+          "OWI",
+          "threats to officer"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Around 12.14 a.m. on March 24th, 2024",
+          "timestamp_seconds": 24.0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Columbia County, sheriff's deputy and subtracted into... at a Pardyville quick trip in Wisconsin",
+          "timestamp_seconds": 27.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "The man is 46-year-old Marco",
+          "timestamp_seconds": 372.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Because I'm Hispanic",
+          "timestamp_seconds": 256.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Marco was charged with felony, battery threat to an officer, times three, bail jumping, misdemeanor, resisting, obstructing an officer, disorderly conduct, operating with prohibited alcohol concentration, third offense, and operating while intoxicated, third offense",
+          "timestamp_seconds": 962.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Marco was found guilty due to a no-contest plea of two counts of battery threat to an officer and operating with a prohibited alcohol concentration. ... sentenced to 60 days in jail and 36 months of probation",
+          "timestamp_seconds": 1003.0,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I had a taser out",
+          "timestamp_seconds": 545.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last_name",
+          "agency_city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "City name 'Pardyville' in transcript likely refers to Pardeeville, Wisconsin."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

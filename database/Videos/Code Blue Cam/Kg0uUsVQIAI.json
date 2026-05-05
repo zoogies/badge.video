@@ -1095,5 +1095,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T03:28:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-02-28",
+        "published_date": "2023-02-27T18:04:07Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Walworth",
+          "city": "Genoa City",
+          "address_or_area": "Main Street area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Genoa City Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Walworth",
+          "city": "Genoa City"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brittany",
+          "last_name": "Anderson",
+          "age": 34,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Vehicle fleeing/eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Intoxicated (OWI) first offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and run / striking parked vehicles",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Two felony counts of vehicle fleeing/eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "OWI first offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty of fleeing/eluding; OWI first offense; sentence withheld, placed on probation for 4 years with 12 months jail time served"
+      },
+      "event_summary": {
+        "short": "Brittany Anderson fled from a traffic stop in Genoa City, WI, after striking parked cars, leading police on a chase that ended with a PIT maneuver. She was charged with fleeing/eluding and OWI, and sentenced to probation with jail time.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-02-28",
+        "pursuit_started": "2022-02-28",
+        "arrest": "2022-02-28"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "tags": [
+          "pit_maneuver",
+          "stop_sticks",
+          "felony_fleeing",
+          "owi"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 28, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Genoa City, Wisconsin",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Walworth County Sheriff's Deputy",
+          "timestamp_seconds": 155,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "34-year-old Brittany Anderson",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "34-year-old",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with two felony counts of vehicle fleeing eluding an officer",
+          "timestamp_seconds": 910,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "OWI first offense",
+          "timestamp_seconds": 918,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "sentence was withheld, and she was placed on probation for four years, with conditions of 12 months served in jail",
+          "timestamp_seconds": 925,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired",
+          "source": "transcript",
+          "quote": "No shots fired mentioned",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

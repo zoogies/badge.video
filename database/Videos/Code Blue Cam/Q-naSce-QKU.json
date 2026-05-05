@@ -1915,5 +1915,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:01:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-11-10",
+        "published_date": "2024-01-31",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Martin County",
+          "city": "Stuart",
+          "address_or_area": "Elliott Museum",
+          "location_name": "Elliott Museum",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Martin County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Martin County",
+          "city": "Stuart"
+        }
+      },
+      "geo": {
+        "address_or_place": "Elliott Museum, Stuart, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jason",
+          "last_name": "Dark",
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "burglary of an occupied structure",
+            "category": "burglary",
+            "statute": "felony",
+            "confidence": "high"
+          },
+          {
+            "label": "first-degree petty theft",
+            "category": "theft",
+            "statute": "misdemeanor",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony burglary of an occupied structure",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor first-degree petty theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $20,000 surety bond"
+      },
+      "event_summary": {
+        "short": "Martin County deputies arrest Jason Dark for burglary at Elliott Museum after he spent the night inside.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-11-10",
+        "pursuit_started": null,
+        "arrest": "2023-11-10"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "burglary",
+          "police_response"
+        ],
+        "crime_categories": [
+          "burglary",
+          "theft",
+          "weapons_offense"
+        ],
+        "tags": [
+          "museum",
+          "mental_health",
+          "veteran"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 10, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Elliott Museum in Stuart, FL",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Martin County Sheriff's deputies",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Jason",
+          "timestamp_seconds": 660,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Dark",
+          "timestamp_seconds": 667,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "42-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "Jason was charged with felony burglary of an occupied structure",
+          "timestamp_seconds": 920,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "misdemeanor first-degree petty theft",
+          "timestamp_seconds": 928,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He had a large knife",
+          "timestamp_seconds": 714,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
