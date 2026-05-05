@@ -1710,5 +1710,164 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:59:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-30",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Robin",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Online solicitation of a minor",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man arrested for attempting to meet a 13-year-old girl he met online.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child predator",
+          "online solicitation"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "child_predator",
+          "online_solicitation",
+          "13-year-old",
+          "foster child",
+          "Kick app",
+          "dick pics"
+        ],
+        "content_warnings": [
+          "sexual content",
+          "child exploitation"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Robin is there's not going to be a third time of this.",
+          "timestamp_seconds": 134,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "you sent this 13-year-old, two dick-picks at least.",
+          "timestamp_seconds": 335,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest_made",
+          "source": "transcript",
+          "quote": "You're under arrest?",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "I was thrown to the ground",
+          "timestamp_seconds": 206,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Area code 832 suggests Texas, but location not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

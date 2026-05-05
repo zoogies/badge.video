@@ -2080,5 +2080,236 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:01:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-21",
+        "published_date": "2024-10-28",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Shavada",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Ariana",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "disorderly conduct",
+          "resisting arrest",
+          "battery"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Neighbor dispute escalates to physical altercation, two women arrested for disorderly conduct, resisting arrest, and battery.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:38",
+        "pursuit_started": null,
+        "arrest": "11:28"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "shoe (thrown)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "neighbor_dispute",
+          "domestic_dispute"
+        ],
+        "crime_categories": [
+          "assault",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "arrest",
+          "neighbor",
+          "dispute"
+        ],
+        "content_warnings": [
+          "profanity",
+          "racial_slurs"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On January 21st, 2024.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 21st, 2004, officers were called...",
+          "timestamp_seconds": 24,
+          "confidence": "medium"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "apartment complex",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "you guys are both going to jail tonight",
+          "timestamp_seconds": 688,
+          "confidence": "high"
+        },
+        {
+          "field": "battery",
+          "source": "transcript",
+          "quote": "she threw a shoe at me and was spitting at me",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "resisting",
+          "source": "transcript",
+          "quote": "both in the Dale for resisting",
+          "timestamp_seconds": 1063,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "What's up, Shavada?",
+          "timestamp_seconds": 1385,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Ariana possibly",
+          "timestamp_seconds": 1400,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location and agency not specified; transcript contains profanity and racial slurs; suspect names inferred with low confidence."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

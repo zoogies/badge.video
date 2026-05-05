@@ -2275,5 +2275,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:00:42Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-03-25",
+        "published_date": "2025-08-25T20:00:52Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child abuse with a weapon (extension cord)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother arrested for using an extension cord on her child, causing welts and cuts.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": {
+          "time": "8:29",
+          "timestamp_seconds": 509,
+          "evidence": "Officer says 'Yes!' in response to 'Am I under arrest?'"
+        }
+      },
+      "weapons": {
+        "suspect_weapon_reported": "extension cord",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "child_abuse"
+        ],
+        "crime_categories": [
+          "domestic_violence"
+        ],
+        "tags": [
+          "extension cord",
+          "mother arrested",
+          "child abuse",
+          "witnesses"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "She hit me with an extension cord.",
+          "timestamp_seconds": 122,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest_made",
+          "source": "transcript",
+          "quote": "I need you to step out the car... Yes! ... Get out of the car, please.",
+          "timestamp_seconds": 509,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries_reported",
+          "source": "transcript",
+          "quote": "He has injuries on him. ... He has welts on his arms, on his legs, on his face, he's bleeding.",
+          "timestamp_seconds": 605,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 25th, 2025.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "city",
+          "county",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not identified; manual review needed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -4045,5 +4045,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:59:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-12-18",
+        "published_date": "2023-03-24",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia County",
+          "city": "Daytona Beach",
+          "address_or_area": "vacant lot across from Steve's diner on North A1A near Brookline and Atlantic",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Daytona Beach Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Volusia County",
+          "city": "Daytona Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "Daytona Beach, Florida",
+        "intersection": "North A1A and Brookline Ave / Atlantic Ave",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12127",
+        "source": "description and transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": "Howard",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, charges dropped"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Jessica",
+          "last_name": null,
+          "age": 29,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, charges pending"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing on private property",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "drug possession",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "trespassing",
+          "possession of illegal substances"
+        ],
+        "case_number": null,
+        "disposition": "Chris's charges dropped; Jessica's charges not dropped"
+      },
+      "event_summary": {
+        "short": "Couple found asleep in car on private property in Daytona Beach, arrested for trespassing and drug possession. Chris later filed complaint, officer suspended one day.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-12-18T06:00:00",
+        "initial_contact": "2021-12-18T06:00:00",
+        "pursuit_started": null,
+        "arrest": "2021-12-18"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "drug_offense",
+          "use_of_force_complaint"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Daytona Beach",
+          "Florida",
+          "trespassing",
+          "drugs",
+          "citizen complaint"
+        ],
+        "content_warnings": [
+          "drug use",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 18th, 2021.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Daytona Beach, FL",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Daytona Beach, FL",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Christopher Howard",
+          "timestamp_seconds": 439,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "title and description",
+          "quote": "trespassing and possession of dr*gs",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "he grabbed me up by my shirt and choked me out",
+          "timestamp_seconds": 2133,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "suspect_last_name (Jessica)",
+          "race_ethnicity",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

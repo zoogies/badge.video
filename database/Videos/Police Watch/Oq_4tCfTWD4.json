@@ -2045,5 +2045,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:00:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-03-28",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Palm Beach County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Terrance",
+          "last_name": null,
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Jamari",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "minor"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a minor",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child abuse",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies responded to a report of child abuse; Jamari alleged his cousin Terrance choked him and slammed his head against a wall. Terrance claimed self-defense but was arrested for battery.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "child_abuse"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "dcf",
+          "foster",
+          "child abuse",
+          "Palm Beach"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "agency",
+          "source": "transcript",
+          "quote": "My name is Stephanie Elles with Palm Beach County Sheriff Office.",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Later, officers arrested Terrance 38 and charged him with battery",
+          "timestamp_seconds": 1122,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "he pulled me by both of my feet out, and then he really slammed my head against the wall, like, two times.",
+          "timestamp_seconds": 98,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "hand around my neck choking",
+          "timestamp_seconds": 129,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "So, what am I arrested for a battery in the pina.",
+          "timestamp_seconds": 1093,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries",
+          "source": "transcript",
+          "quote": "I literally had a headache this morning. I had to go to the nurse and it's a knot right here.",
+          "timestamp_seconds": 695,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified; published date used as fallback."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

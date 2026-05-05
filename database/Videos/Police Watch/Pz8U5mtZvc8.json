@@ -2010,5 +2010,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:01:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-16",
+        "location": {
+          "state": "Alaska",
+          "state_abbreviation": "AK",
+          "county": "Fairbanks North Star",
+          "city": "Fairbanks",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fairbanks Police Department",
+          "type": "local",
+          "state": "Alaska",
+          "county": "Fairbanks North Star",
+          "city": "Fairbanks"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lillian",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Endangering the welfare of a child in the first degree",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Endangering the welfare of a child in the first degree",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother left toddler in freezing car for 35-36 minutes while on date",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_neglect"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "child endangerment",
+          "hypothermia",
+          "Fairbanks"
+        ],
+        "content_warnings": [
+          "child in danger"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "You came from Fairbanks?",
+          "timestamp_seconds": 234,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You will be going to jail. You'll see a judge tomorrow for the charge of endangering a welfare of a child in the first degree",
+          "timestamp_seconds": 796,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "she didn't know she was going to jail yet",
+          "timestamp_seconds": 788,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.short",
+          "source": "transcript",
+          "quote": "it was a nooky call... you left the child in the car... you did 36 minutes?",
+          "timestamp_seconds": 370,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "It's six degrees out right now.",
+          "timestamp_seconds": 393,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "agency name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

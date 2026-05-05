@@ -1155,5 +1155,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:00:43Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-26",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "none"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "34th and 50",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Aaron",
+          "last_name": null,
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 2,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated manslaughter of a child",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "violation of probation",
+            "category": "probation_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "aggravated manslaughter of a child",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "violation of probation",
+            "category": "probation_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charged"
+      },
+      "event_summary": {
+        "short": "Father shot and killed his 2-year-old son during a family argument.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": null,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "shooting",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting",
+          "domestic_violence"
+        ],
+        "tags": [
+          "father",
+          "child",
+          "family argument",
+          "probation"
+        ],
+        "content_warnings": [
+          "child death",
+          "gun violence"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "title",
+          "source": "title",
+          "quote": "Father Shoots and Kills His Own 2-Year-Old Son During Family Argument",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Aaron, 22 years old, was charged with aggravated manslaughter of a child and violation of probation.",
+          "timestamp_seconds": 680,
+          "confidence": "high"
+        },
+        {
+          "field": "victim_age",
+          "source": "transcript",
+          "quote": "How old's the baby that got injured? He's two, they're twins, two years old.",
+          "timestamp_seconds": 369,
+          "confidence": "high"
+        },
+        {
+          "field": "intersection",
+          "source": "transcript",
+          "quote": "I'm sitting here on 34th and 50.",
+          "timestamp_seconds": 573,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "state",
+          "county",
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location details are incomplete; the intersection 34th and 50 could not be geolocated without more context."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

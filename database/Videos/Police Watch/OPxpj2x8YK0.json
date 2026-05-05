@@ -1265,5 +1265,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:59:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-27",
+        "published_date": "2024-12-30T21:40:22Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": "Lake City",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Florida",
+          "county": null,
+          "city": "Lake City"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of lawnmower from Home Depot",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False identification to law enforcement",
+            "category": "fraud",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Outstanding warrant from another county",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "theft",
+          "fraud"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Shoplifter caught after stealing lawnmower from Home Depot during traffic stop; also gave fake ID and had outstanding warrant.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 12,
+        "pursuit_started": null,
+        "arrest": 480
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "theft",
+          "warrant"
+        ],
+        "tags": [
+          "shoplifting",
+          "fake ID",
+          "lawnmower",
+          "Home Depot"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On April 27th, 2024.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "brought it all the way to Lake City, Florida.",
+          "timestamp_seconds": 438,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "There's been an allegation that you didn't pay for your merchandise.",
+          "timestamp_seconds": 72,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "This is not even a valid... you gave us a whole other person's information that's another charge.",
+          "timestamp_seconds": 603,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "He has a warrant out of another county.",
+          "timestamp_seconds": 483,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

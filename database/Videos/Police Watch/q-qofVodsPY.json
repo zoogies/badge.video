@@ -1590,5 +1590,238 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T18:01:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-10-21",
+        "published_date": "2026-03-10",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Larry",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "battery (grabbing/rubbing)",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery (striking with vehicle)",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "battery",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man arrested for battery and DUI after grabbing a waitress at a bar and later hitting two people with his car at an ice cream shop.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "vehicle_pursuit",
+          "battery",
+          "dui"
+        ],
+        "crime_categories": [
+          "battery",
+          "dui",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "arrest",
+          "bar",
+          "ice_cream_shop",
+          "battery",
+          "dui",
+          "fleeing"
+        ],
+        "content_warnings": [
+          "sexual_harassment",
+          "use_of_vehicle_as_weapon"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On October 21st, 2022.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Everyone knows Larry, the cable guy.",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.battery",
+          "source": "transcript",
+          "quote": "You're under arrest. For what? For battery.",
+          "timestamp_seconds": 611,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.DUI",
+          "source": "transcript",
+          "quote": "You smell like alcohol? ... I had a beer earlier.",
+          "timestamp_seconds": 1028,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes.fleeing_and_eluding",
+          "source": "transcript",
+          "quote": "Larry was charged with ... fleeing and eluding",
+          "timestamp_seconds": 1131,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "Do you need an ambulance? Yes, sir.",
+          "timestamp_seconds": 842,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency",
+          "last_name",
+          "age",
+          "race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified; cannot determine jurisdiction."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

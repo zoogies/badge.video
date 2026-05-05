@@ -3910,5 +3910,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T17:59:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-03",
+        "published_date": "2024-01-04T18:00:41Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": "Jupiter",
+          "address_or_area": "Residence/Apartment",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "local police",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": "Jupiter"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12099",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Justin",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Brody",
+          "last_name": null,
+          "age": 2,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "safe"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child endangerment",
+            "category": "endangering the welfare of a child",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Obstruction of justice",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Father refuses to comply with police after being served a Marchman Act order, locks himself and his 2-year-old son in his truck, leading to a physical confrontation and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "civil commitment",
+          "child endangerment",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "mental_health",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Marchman Act",
+          "father",
+          "2-year-old",
+          "police standoff"
+        ],
+        "content_warnings": [
+          "child in danger",
+          "use of force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 3rd, 2023.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Officer: 'Listen, Justin.' (repeatedly)",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "location_city",
+          "source": "transcript",
+          "quote": "Justin: 'I'm from Jupiter.'",
+          "timestamp_seconds": 1305,
+          "confidence": "medium"
+        },
+        {
+          "field": "location_destination",
+          "source": "transcript",
+          "quote": "Officer: 'We would have already been down to Del Rey.'",
+          "timestamp_seconds": 1026,
+          "confidence": "medium"
+        },
+        {
+          "field": "victim_name",
+          "source": "transcript",
+          "quote": "Officer: 'He's Brody.'",
+          "timestamp_seconds": 1763,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "Officer: 'Roll over, stop resisting.'; 'All right, all right, all right, bro, all right.'",
+          "timestamp_seconds": 1620,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "precise location coordinates",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

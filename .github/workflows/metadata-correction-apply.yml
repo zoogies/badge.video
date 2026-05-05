@@ -71,9 +71,10 @@ jobs:
           git commit -m "Apply metadata correction from #$ISSUE_NUMBER"
           git push --set-upstream origin "$branch"
           rm -f issue_body.md validation.md correction_summary.json
+          pr_body="$(printf 'Applies the accepted metadata correction from #%s.\n\nCloses #%s.' "$ISSUE_NUMBER" "$ISSUE_NUMBER")"
           if pr_url="$(gh pr create \
             --title "$title" \
-            --body "Applies the accepted metadata correction from #$ISSUE_NUMBER." \
+            --body "$pr_body" \
             --label "pr opened" \
             --reviewer "zoogies")"; then
             gh issue comment "$ISSUE_NUMBER" --body "Opened PR: $pr_url"
