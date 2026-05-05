@@ -1,4 +1,5 @@
 import argparse
+import json
 import time
 from pathlib import Path
 
@@ -44,12 +45,13 @@ def add_transcripts(
     cookies_from_browser: str | None = None,
     verbose: bool = False,
     mark_unavailable: bool = False,
+    limit: int | None = None,
 ) -> int:
-    paths = [video_json] if video_json else list(iter_video_files(videos_root))
+    paths = select_transcript_paths(videos_root, video_json, overwrite=overwrite, limit=limit)
     count = 0
     progress = tqdm(paths, desc="Transcripts", unit="video")
     for index, path in enumerate(progress):
-        progress.set_postfix(added=count)
+        progress.set_postfix(added=count, current=path.stem)
         if index > 0 and delay_seconds > 0:
             time.sleep(delay_seconds)
         try:
@@ -72,7 +74,7 @@ def add_transcripts(
                 mark_unavailable=mark_unavailable,
             ):
                 count += 1
-                progress.set_postfix(added=count)
+                progress.set_postfix(added=count, current=path.stem)
                 tqdm.write(f"transcript added {path}")
         except TranscriptRateLimited as exc:
             tqdm.write(f"transcript rate limited {path}: {exc}")
@@ -84,6 +86,33 @@ def add_transcripts(
             tqdm.write(f"transcript error {path}: {exc}")
     print(f"Added transcripts to {count} video JSON files.")
     return count
+
+
+def select_transcript_paths(
+    videos_root: Path,
+    video_json: Path | None = None,
+    overwrite: bool = False,
+    limit: int | None = None,
+) -> list[Path]:
+    if video_json:
+        return [video_json]
+
+    selected = []
+    for path in iter_video_files(videos_root):
+        if not overwrite and _has_existing_transcript(path):
+            continue
+        selected.append(path)
+        if limit is not None and len(selected) >= limit:
+            break
+    return selected
+
+
+def _has_existing_transcript(path: Path) -> bool:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+    return bool(data.get("transcript"))
 
 
 def main() -> None:
@@ -108,6 +137,7 @@ def main() -> None:
     parser.add_argument("--cookies-from-browser")
     parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--mark-unavailable", action="store_true")
+    parser.add_argument("--limit", type=int)
     args = parser.parse_args()
 
     add_transcripts(
@@ -129,6 +159,7 @@ def main() -> None:
         cookies_from_browser=args.cookies_from_browser,
         verbose=args.verbose,
         mark_unavailable=args.mark_unavailable,
+        limit=args.limit,
     )
 
 

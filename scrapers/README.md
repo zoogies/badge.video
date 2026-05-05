@@ -52,6 +52,32 @@ Uses `LLM_BACKEND` from `../.env`.
 uv run pipeline.py classify --no-overwrite
 ```
 
+Default classifier context sends scraped video metadata plus compact timestamped transcript text. It does not also send the full transcript text or JSON segment objects, so DeepSeek is not charged for duplicate transcript copies.
+
+You can set the default in `../.env`:
+
+```env
+LLM_TRANSCRIPT_CONTEXT=timestamped_text
+```
+
+Cheaper mode without timestamps:
+
+```powershell
+uv run pipeline.py classify --no-overwrite --transcript-context text
+```
+
+Timestamped JSON segment mode, useful for debugging but more expensive:
+
+```powershell
+uv run pipeline.py classify --no-overwrite --transcript-context segments
+```
+
+Debug/metadata-only mode:
+
+```powershell
+uv run pipeline.py classify --no-overwrite --transcript-context none
+```
+
 Single-video classifier test:
 
 ```powershell
@@ -121,6 +147,7 @@ uv run pipeline.py transcripts --provider auto --allow-local-asr --delay-seconds
 YOUTUBE_API_KEY=...
 LLM_BACKEND=dry_run
 LLM_MODEL=deepseek-chat
+LLM_TRANSCRIPT_CONTEXT=timestamped_text
 DEEPSEEK_API_KEY=...
 OLLAMA_URL=http://localhost:11434/api/chat
 ```

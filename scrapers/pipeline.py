@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 
 from add_transcripts import add_transcripts
-from llm_classifier import classify_videos
+from llm_classifier import TRANSCRIPT_CONTEXT_OPTIONS, classify_videos
 from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 from scrape_channels import CHANNELS_FILE, VIDEOS_ROOT, scrape_youtube_videos
 from transcript_fetcher import (
@@ -25,6 +25,7 @@ EXAMPLES = """Examples:
   uv run pipeline.py transcripts --video-json "..\\database\\Videos\\Code Blue Cam\\-BgAVL1Vh7c.json" --provider local-asr --verbose
   uv run pipeline.py transcripts --delay-seconds 10 --retries 1
   uv run pipeline.py classify --no-overwrite
+  uv run pipeline.py classify --transcript-context timestamped_text
   uv run pipeline.py atlas
   uv run pipeline.py pipeline
   uv run pipeline.py pipeline --skip-videos
@@ -69,6 +70,7 @@ def main() -> None:
             cookies_from_browser=args.cookies_from_browser,
             verbose=args.verbose,
             mark_unavailable=args.mark_unavailable,
+            limit=args.limit,
         )
     elif args.command == "classify":
         classify_videos(
@@ -77,6 +79,7 @@ def main() -> None:
             overwrite=not args.no_overwrite,
             update_atlas=not args.no_atlas,
             atlas_path=args.atlas_path,
+            transcript_context=args.transcript_context,
         )
     elif args.command == "atlas":
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -110,6 +113,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             cookies_from_browser=args.cookies_from_browser,
             verbose=args.verbose,
             mark_unavailable=args.mark_unavailable,
+            limit=args.limit,
         )
 
     if not args.skip_classify:
@@ -119,6 +123,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             overwrite=not args.no_overwrite,
             update_atlas=not args.no_atlas,
             atlas_path=args.atlas_path,
+            transcript_context=args.transcript_context,
         )
     elif not args.no_atlas:
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -144,6 +149,7 @@ def build_parser() -> argparse.ArgumentParser:
     add_videos_root(classify)
     add_video_json(classify)
     classify.add_argument("--no-overwrite", action="store_true")
+    add_classify_options(classify)
     add_atlas_options(classify, include_toggle=True)
 
     atlas = subparsers.add_parser("atlas", help="rebuild global frontend metadata filters")
@@ -157,6 +163,7 @@ def build_parser() -> argparse.ArgumentParser:
     pipeline.add_argument("--skip-videos", action="store_true")
     pipeline.add_argument("--skip-transcripts", action="store_true")
     pipeline.add_argument("--skip-classify", action="store_true")
+    add_classify_options(pipeline)
     add_atlas_options(pipeline, include_toggle=True)
 
     return parser
@@ -200,6 +207,15 @@ def add_transcript_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--cookies-from-browser")
     parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--mark-unavailable", action="store_true")
+    parser.add_argument("--limit", type=int)
+
+
+def add_classify_options(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--transcript-context",
+        choices=TRANSCRIPT_CONTEXT_OPTIONS,
+        help="Override LLM_TRANSCRIPT_CONTEXT for this run: timestamped_text keeps timestamps compactly, text is smaller, none sends only transcript metadata.",
+    )
 
 
 if __name__ == "__main__":

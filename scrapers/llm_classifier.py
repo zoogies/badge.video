@@ -13,6 +13,8 @@ from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 
 PROMPT_PATH = Path(__file__).with_name("classifier_prompt.txt")
 DEFAULT_VIDEOS_ROOT = Path(__file__).parent.parent / "database" / "Videos"
+DEFAULT_TRANSCRIPT_CONTEXT = "timestamped_text"
+TRANSCRIPT_CONTEXT_OPTIONS = ("timestamped_text", "segments", "text", "none")
 
 
 def utc_now_iso() -> str:
@@ -25,26 +27,33 @@ def load_settings() -> dict:
     return {
         "backend": backend,
         "model": os.getenv("LLM_MODEL", "deepseek-chat" if backend == "deepseek" else "llama3.1"),
+        "transcript_context": os.getenv("LLM_TRANSCRIPT_CONTEXT", DEFAULT_TRANSCRIPT_CONTEXT),
         "deepseek_api_key": os.getenv("DEEPSEEK_API_KEY"),
         "deepseek_url": os.getenv("DEEPSEEK_API_URL", "https://api.deepseek.com/chat/completions"),
         "ollama_url": os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat"),
     }
 
 
-def classify_video_file(video_json_path: Path, overwrite: bool = True) -> bool:
+def classify_video_file(
+    video_json_path: Path,
+    overwrite: bool = True,
+    transcript_context: str | None = None,
+) -> bool:
     settings = load_settings()
+    transcript_context = transcript_context or settings["transcript_context"]
     video = json.loads(video_json_path.read_text(encoding="utf-8"))
     if video.get("classification") and not overwrite:
         return False
 
     prompt = PROMPT_PATH.read_text(encoding="utf-8")
-    user_payload = build_user_payload(video)
+    user_payload = build_user_payload(video, transcript_context=transcript_context)
     result = run_backend(settings, prompt, user_payload)
     video["classification"] = {
         "generated_at": utc_now_iso(),
         "backend": settings["backend"],
         "model": settings["model"],
         "prompt_path": str(PROMPT_PATH.name),
+        "transcript_context": transcript_context,
         "result": result,
     }
     video["human_reviewed"] = False
@@ -52,17 +61,90 @@ def classify_video_file(video_json_path: Path, overwrite: bool = True) -> bool:
     return True
 
 
-def build_user_payload(video: dict) -> str:
+def build_user_payload(video: dict, transcript_context: str = DEFAULT_TRANSCRIPT_CONTEXT) -> str:
+    if transcript_context not in TRANSCRIPT_CONTEXT_OPTIONS:
+        raise ValueError(f"Unsupported transcript_context: {transcript_context}")
+
     payload = {
-        "video_id": video.get("video_id"),
-        "title": video.get("title"),
-        "url": video.get("url"),
-        "published_at": video.get("published_at"),
-        "video_scraped_at": video.get("video_scraped_at"),
-        "description": video.get("description"),
-        "transcript": video.get("transcript"),
+        "video": {
+            "video_id": video.get("video_id"),
+            "title": video.get("title"),
+            "url": video.get("url"),
+            "published_at": video.get("published_at"),
+            "video_scraped_at": video.get("video_scraped_at"),
+            "channel": video.get("channel"),
+            "channel_id": video.get("channel_id"),
+            "description": video.get("description"),
+            "duration": video.get("duration"),
+            "view_count": video.get("view_count"),
+            "like_count": video.get("like_count"),
+            "comment_count": video.get("comment_count"),
+            "tags": video.get("tags"),
+        },
+        "transcript": build_transcript_context(video.get("transcript"), transcript_context),
     }
     return json.dumps(payload, ensure_ascii=False)
+
+
+def build_transcript_context(transcript: dict | None, mode: str = DEFAULT_TRANSCRIPT_CONTEXT) -> dict | None:
+    if not isinstance(transcript, dict):
+        return None
+
+    context = {
+        "status": transcript.get("status"),
+        "source": transcript.get("source"),
+        "language": transcript.get("language"),
+        "scraped_at": transcript.get("scraped_at"),
+        "segment_count": transcript.get("segment_count"),
+        "model": transcript.get("model"),
+        "details": transcript.get("details"),
+    }
+
+    if mode == "none":
+        return context
+
+    if mode == "text":
+        context["text"] = transcript.get("text")
+        return context
+
+    segments = [
+        segment
+        for segment in transcript.get("segments") or []
+        if isinstance(segment, dict) and segment.get("text")
+    ]
+    if mode == "timestamped_text":
+        context["timestamped_text"] = "\n".join(_format_timestamped_segment(segment) for segment in segments)
+        return context
+
+    context["segments"] = [
+        {
+            "start": segment.get("start"),
+            "end": segment.get("end"),
+            "text": segment.get("text"),
+        }
+        for segment in segments
+    ]
+    return context
+
+
+def _format_timestamped_segment(segment: dict) -> str:
+    start = _format_seconds(segment.get("start"))
+    end = _format_seconds(segment.get("end"))
+    text = " ".join(str(segment.get("text", "")).split())
+    if end:
+        return f"[{start}-{end}] {text}"
+    return f"[{start}] {text}"
+
+
+def _format_seconds(value) -> str:
+    if value is None:
+        return "?:??"
+    seconds = int(round(float(value)))
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f"{hours}:{minutes:02d}:{seconds:02d}"
+    return f"{minutes}:{seconds:02d}"
 
 
 def run_backend(settings: dict, system_prompt: str, user_payload: str) -> dict:
@@ -147,13 +229,14 @@ def classify_videos(
     overwrite: bool = True,
     update_atlas: bool = True,
     atlas_path: Path = DEFAULT_ATLAS_PATH,
+    transcript_context: str | None = None,
 ) -> int:
     paths = [video_json] if video_json else list(iter_video_files(videos_root))
     count = 0
     progress = tqdm(paths, desc="Classifying", unit="video")
     for path in progress:
         progress.set_postfix(generated=count)
-        if classify_video_file(path, overwrite=overwrite):
+        if classify_video_file(path, overwrite=overwrite, transcript_context=transcript_context):
             count += 1
             progress.set_postfix(generated=count)
             tqdm.write(f"classified {path}")
@@ -170,6 +253,7 @@ def main() -> None:
     parser.add_argument("--no-overwrite", action="store_true")
     parser.add_argument("--no-atlas", action="store_true")
     parser.add_argument("--atlas-path", type=Path, default=DEFAULT_ATLAS_PATH)
+    parser.add_argument("--transcript-context", choices=TRANSCRIPT_CONTEXT_OPTIONS)
     args = parser.parse_args()
 
     classify_videos(
@@ -178,6 +262,7 @@ def main() -> None:
         overwrite=not args.no_overwrite,
         update_atlas=not args.no_atlas,
         atlas_path=args.atlas_path,
+        transcript_context=args.transcript_context,
     )
 
 

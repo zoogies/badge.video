@@ -3,7 +3,7 @@ import tempfile
 from pathlib import Path
 
 import add_transcripts as add_transcripts_module
-from add_transcripts import add_transcripts
+from add_transcripts import add_transcripts, select_transcript_paths
 from transcript_fetcher import TranscriptRateLimited
 
 
@@ -92,3 +92,17 @@ def test_add_transcripts_defaults_to_no_overwrite(monkeypatch):
         add_transcripts(video_json=path, delay_seconds=0)
 
     assert observed["overwrite"] is False
+
+
+def test_select_transcript_paths_skips_existing_and_applies_limit():
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        channel = root / "Channel"
+        channel.mkdir()
+        (channel / "done.json").write_text(json.dumps({"video_id": "done", "transcript": {"status": "available"}}))
+        (channel / "one.json").write_text(json.dumps({"video_id": "one"}))
+        (channel / "two.json").write_text(json.dumps({"video_id": "two"}))
+
+        paths = select_transcript_paths(root, overwrite=False, limit=1)
+
+    assert [path.name for path in paths] == ["one.json"]

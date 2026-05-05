@@ -45,6 +45,8 @@ def test_pipeline_parser_supports_transcript_provider_options():
         "chrome",
         "--verbose",
         "--mark-unavailable",
+        "--limit",
+        "20",
     ])
     assert args.provider == "local-asr"
     assert args.allow_local_asr is True
@@ -57,6 +59,7 @@ def test_pipeline_parser_supports_transcript_provider_options():
     assert args.cookies_from_browser == "chrome"
     assert args.verbose is True
     assert args.mark_unavailable is True
+    assert args.limit == 20
 
 
 def test_pipeline_parser_transcripts_default_restart_safe():
@@ -73,3 +76,14 @@ def test_pipeline_parser_supports_atlas_command():
 def test_pipeline_parser_classify_rebuilds_atlas_by_default():
     args = build_parser().parse_args(["classify"])
     assert args.no_atlas is False
+
+
+def test_pipeline_parser_supports_classifier_transcript_context():
+    args = build_parser().parse_args(["classify"])
+    assert args.transcript_context is None
+
+    args = build_parser().parse_args(["classify", "--transcript-context", "text"])
+    assert args.transcript_context == "text"
+
+    args = build_parser().parse_args(["pipeline", "--transcript-context", "none"])
+    assert args.transcript_context == "none"

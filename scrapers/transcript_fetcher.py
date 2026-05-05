@@ -28,6 +28,7 @@ DEFAULT_ASR_FALLBACK_DEVICE = None
 DEFAULT_ASR_FALLBACK_COMPUTE_TYPE = "int8"
 PROVIDERS = ("auto", "direct", "ytdlp-subtitles", "local-asr")
 _CUDA_DLL_DIRECTORY_HANDLES = []
+_WHISPER_MODEL_CACHE = {}
 
 
 def utc_now_iso() -> str:
@@ -363,7 +364,7 @@ def _transcribe_audio(
         verbose,
         f"Running faster-whisper model {asr_model} on {audio_path.name} ({asr_device}, {asr_compute_type})",
     )
-    model = WhisperModel(asr_model, device=asr_device, compute_type=asr_compute_type)
+    model = _get_whisper_model(WhisperModel, asr_model, asr_device, asr_compute_type, verbose=verbose)
     segments_iter, info = model.transcribe(
         str(audio_path),
         language="en",
@@ -384,6 +385,14 @@ def _transcribe_audio(
             segments.append({"start": round(segment.start, 3), "end": round(segment.end, 3), "text": segment.text.strip()})
         progress.set_postfix(kept=len(segments))
     return info.language or "en", segments, {"device": asr_device, "compute_type": asr_compute_type}
+
+
+def _get_whisper_model(whisper_model_class, model_name: str, device: str, compute_type: str, verbose: bool = False):
+    key = (model_name, device, compute_type)
+    if key not in _WHISPER_MODEL_CACHE:
+        _log_verbose(verbose, f"Loading faster-whisper model {model_name} ({device}, {compute_type})")
+        _WHISPER_MODEL_CACHE[key] = whisper_model_class(model_name, device=device, compute_type=compute_type)
+    return _WHISPER_MODEL_CACHE[key]
 
 
 def _prepare_cuda_dll_paths() -> None:
