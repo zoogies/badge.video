@@ -50,5 +50,232 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:46:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-06",
+        "published_date": "2023-07-11",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery County",
+          "city": "Dayton",
+          "address_or_area": "Stewart Street and Hughes Place",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Dayton Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Montgomery County",
+          "city": "Dayton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Stewart Street and Hughes Place",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "D'ali",
+          "last_name": "Brown",
+          "age": 45,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "passenger",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not_charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "failure to comply",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felonious assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving under suspension",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "window tint violation",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "failure to comply",
+          "felonious assault on a police officer",
+          "obstructing official business",
+          "driving under suspension",
+          "window tint violation"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police pursued a vehicle in Dayton, Ohio; suspect D'ali Brown arrested after PIT maneuver.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "23:50",
+        "initial_contact": null,
+        "pursuit_started": "23:50",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "obstruction",
+          "traffic_violation"
+        ],
+        "tags": [
+          "pit maneuver",
+          "cruiser cam",
+          "chase"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 6, 2023, around 11:50 p.m.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "Dayton, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "description",
+          "quote": "near Stewart Street and Hughes Place",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect",
+          "source": "description",
+          "quote": "45-year-old D'ali Brown",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "failure to comply, felonious assault on a police officer, obstructing official business, driving under suspension, window tint",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "title",
+          "quote": "PIT Maneuver",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_drew_weapon",
+          "source": "description",
+          "quote": "one officer pulls his service weapon",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript_reference",
+          "source": "transcript",
+          "quote": "I got lethal",
+          "timestamp_seconds": 64,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

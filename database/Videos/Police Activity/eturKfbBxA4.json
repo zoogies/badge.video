@@ -35,5 +35,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:46:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-18",
+        "published_date": "2024-01-25",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Canadian County",
+          "city": null,
+          "address_or_area": "Interstate 40 at Cimarron Road",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Oklahoma Highway Patrol",
+          "type": "state police",
+          "state": "Oklahoma",
+          "county": "Canadian",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Interstate 40 at Cimarron Road",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Jesse",
+          "last_name": "Gregory",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, expected to recover"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Oklahoma trooper struck by SUV during traffic stop, thrown off highway.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "collision"
+        ],
+        "crime_categories": [
+          "traffic_stop"
+        ],
+        "tags": [
+          "trooper struck",
+          "highway crash",
+          "injury"
+        ],
+        "content_warnings": [
+          "injury"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Thursday, January 18, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Canadian County, Oklahoma ... on Interstate 40 at Cimarron Road",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.officer_name",
+          "source": "description",
+          "quote": "Trooper Jesse Gregory",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "description",
+          "quote": "All three individuals involved were treated and released, and Gregory is expected to recover.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "transcript",
+          "source": "transcript",
+          "quote": "Okay, that took a long stop. I'm not taking into jail.",
+          "timestamp_seconds": 4,
+          "confidence": "medium"
+        },
+        {
+          "field": "transcript.dispatch",
+          "source": "transcript",
+          "quote": "362 City Island's just hit by car, start EMS.",
+          "timestamp_seconds": 32,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City not explicitly stated, only county and road intersection."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

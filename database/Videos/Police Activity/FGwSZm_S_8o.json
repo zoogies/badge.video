@@ -145,5 +145,169 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:48:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2016-08-19T01:14:47Z",
+        "location": {
+          "state": "Wyoming",
+          "state_abbreviation": "WY",
+          "county": "Park County",
+          "city": null,
+          "address_or_area": "Highway 29 near 1290 North Bypair",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Park County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wyoming",
+          "county": "Park County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "1290 North Bypair, Highway 29",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title and description",
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        },
+        {
+          "role": "deceased",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police officer rescues man from burning car after highway accident; driver dies.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2016-08-19T03:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "rescue",
+          "vehicle accident",
+          "fire"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "bodycam",
+          "rescue",
+          "burning car",
+          "police",
+          "highway accident",
+          "fatality"
+        ],
+        "content_warnings": [
+          "death",
+          "fire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Hello, Park County, 911.",
+          "timestamp_seconds": 8,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "transcript",
+          "quote": "Park County, 911.",
+          "timestamp_seconds": 8,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "description",
+          "quote": "The driver of the vehicle ... burned to death in the fire.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "1290 North Bypair to Highway 29.",
+          "timestamp_seconds": 24,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "suspect identity",
+          "victim names"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

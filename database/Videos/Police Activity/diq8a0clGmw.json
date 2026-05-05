@@ -150,5 +150,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:42:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-24",
+        "published_date": "2023-10-26",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion",
+          "city": "Ocala",
+          "address_or_area": "N. Pine Ave. and SR 40",
+          "location_name": "Starbucks drive-thru",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Ocala Police Department",
+          "type": "police",
+          "state": "Florida",
+          "county": "Marion",
+          "city": "Ocala"
+        }
+      },
+      "geo": {
+        "address_or_place": "N. Pine Ave. and SR 40, Ocala, Florida",
+        "intersection": "N. Pine Ave. and SR 40",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": "Prouty",
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "theft of motor vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man attempts carjacking at Starbucks after vehicle pursuit; subdued by citizens and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "traffic stop",
+        "pursuit_started": "after traffic stop",
+        "arrest": "approximately 1:45 into video"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "carjacking",
+          "citizen_intervention"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "carjacking",
+          "robbery",
+          "burglary"
+        ],
+        "tags": [
+          "Florida",
+          "Ocala",
+          "Starbucks",
+          "good samaritans"
+        ],
+        "content_warnings": [
+          "violence",
+          "car crash"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On the morning of October 24, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Michael Prouty, 39",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location_city",
+          "source": "description",
+          "quote": "Ocala, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location_intersection",
+          "source": "transcript",
+          "quote": "he just crashed at 40 in Pine",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_race",
+          "source": "transcript",
+          "quote": "white male",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest",
+          "source": "transcript",
+          "quote": "Cuff him up",
+          "timestamp_seconds": 98,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Suspect also involved in incident in Villages (Sumter County) but primary location is Ocala, Marion County."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

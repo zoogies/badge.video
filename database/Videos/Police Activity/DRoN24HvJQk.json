@@ -105,5 +105,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:44:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2017-07-11",
+        "published_date": "2022-04-23",
+        "location": {
+          "state": "Kansas",
+          "state_abbreviation": "KS",
+          "county": "Leavenworth County",
+          "city": "Leavenworth",
+          "address_or_area": "1708 Rose Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Leavenworth Police Department",
+          "type": "municipal",
+          "state": "Kansas",
+          "county": "Leavenworth County",
+          "city": "Leavenworth"
+        }
+      },
+      "geo": {
+        "address_or_place": "1708 Rose Street",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": "Antonio",
+          "last_name": "Garcia",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Matthew",
+          "last_name": "Harrington",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [
+          {
+            "label": "involuntary manslaughter",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "mistrial declared; hung jury"
+      },
+      "event_summary": {
+        "short": "Leavenworth police officer fatally shoots Antonio Garcia after domestic dispute and knife threat.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 9,
+        "initial_contact": 18,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "fatal_shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "homicide"
+        ],
+        "tags": [
+          "bodycam",
+          "Leavenworth",
+          "Kansas",
+          "knife",
+          "involuntary_manslaughter",
+          "domestic dispute"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "The video was recorded on July 11th, 2017",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Leavenworth Police Department",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "1708 Rose Street",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "description",
+          "quote": "a grand jury indicted Harrington for involuntary manslaughter",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Put that knife away.",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "27 shots fired.",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [
+          "Description mentions 'Kansas City, Missouri' as a dateline, but incident location is Leavenworth, Kansas based on department and address."
+        ],
+        "missing_critical_fields": [
+          "age",
+          "race_ethnicity",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Race not explicitly stated; left null."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

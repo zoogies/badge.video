@@ -905,5 +905,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:43:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-05",
+        "published_date": "2022-08-13",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Cobb County",
+          "city": "Kennesaw",
+          "address_or_area": "McDonald's",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Kennesaw Police Department",
+          "type": "municipal police",
+          "state": "Georgia",
+          "county": "Cobb County",
+          "city": "Kennesaw"
+        }
+      },
+      "geo": {
+        "address_or_place": "McDonald's, Kennesaw, GA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Antoine",
+          "last_name": "Sims",
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felony murder (2018)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction or hindering law enforcement",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal trespass",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a controlled substance with intent to distribute (marijuana)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect called 911 over cold McDonald's fries, fled when asked to sign trespass notice, arrested on homicide warrant and new charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "[0:04] at McDonald's",
+        "pursuit_started": "[6:58] Sims fled after refusing to sign",
+        "arrest": "[7:21] Taser deployed, then handcuffed"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "customer dispute",
+          "foot pursuit",
+          "warrant arrest"
+        ],
+        "crime_categories": [
+          "homicide",
+          "drug_offense",
+          "resisting_arrest",
+          "trespassing"
+        ],
+        "tags": [
+          "McDonald's",
+          "cold fries",
+          "homicide suspect",
+          "taser",
+          "marijuana"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On Friday, August 5, 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Kennesaw, Georgia",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "24-year-old Antoine Sims",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "warrant",
+          "source": "description",
+          "quote": "active warrant out of Fulton County for not appearing in court for a homicide case",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Taser deployed!",
+          "timestamp_seconds": 7.21,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

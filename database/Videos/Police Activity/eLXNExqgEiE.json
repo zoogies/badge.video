@@ -705,5 +705,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:46:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-06-20",
+        "published_date": "2023-06-29",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Otero County",
+          "city": null,
+          "address_or_area": "Highway 50",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Colorado State Patrol",
+          "type": "state",
+          "state": "Colorado",
+          "county": "Otero County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 50, Otero County, Colorado",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Sanchez",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shots fired",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless driving causing crashes",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Theft of a patrol vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect died before charges could be filed"
+      },
+      "event_summary": {
+        "short": "A suspect handcuffed in a Colorado State Patrol car stole the vehicle and led a pursuit before crashing and dying.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-06-20T10:57:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "unknown"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "stolen police car",
+          "fatal crash"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft",
+          "weapons_offense",
+          "reckless_driving"
+        ],
+        "tags": [
+          "Colorado",
+          "Otero County",
+          "Colorado State Patrol",
+          "fatal",
+          "pursuit",
+          "stolen patrol car"
+        ],
+        "content_warnings": [
+          "graphic footage",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On June 20, 2023, at approximately 10:57 AM",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Otero County, Colorado — On June 20, 2023... along Highway 50, in Otero County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "The suspect was identified as Anthony Alphonso Sanchez III",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "description",
+          "quote": "The vehicle was reportedly called in as a \"shots fired\" call",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_theft",
+          "source": "transcript",
+          "quote": "He just stole the patrol car.",
+          "timestamp_seconds": 320,
+          "confidence": "high"
+        },
+        {
+          "field": "fatality",
+          "source": "description",
+          "quote": "The suspect later succumbed to injuries sustained at the time of the crash.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "precise coordinates",
+          "zip code",
+          "age",
+          "sex",
+          "race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript contains some garbled audio and unclear segments; key facts from description are reliable."
+      ]
+    }
+  },
+  "human_reviewed": false
 }
