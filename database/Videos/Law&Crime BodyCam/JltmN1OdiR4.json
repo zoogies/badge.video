@@ -1720,5 +1720,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:58:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-02-14",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": "Boca Raton",
+          "address_or_area": "motel",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": "Boca Raton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12099",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Amanda",
+          "last_name": "Teixeira",
+          "age": 29,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic battery",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for domestic battery after slapping boyfriend and throwing lamp at motel.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "battery"
+        ],
+        "tags": [
+          "bodycam",
+          "florida",
+          "meth",
+          "flakka",
+          "domestic_battery"
+        ],
+        "content_warnings": [
+          "drug use",
+          "domestic violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "motel in Boca Raton, Florida",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's 7 p.m. at a motel in Boca Raton",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "29-year-old Amanda Taxara",
+          "timestamp_seconds": 345,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "29-year-old",
+          "timestamp_seconds": 345,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "you are going to be placed under arrest for domestic battery",
+          "timestamp_seconds": 538,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you will be placed under arrest",
+          "timestamp_seconds": 538,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "arrest for domestic battery",
+          "timestamp_seconds": 538,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "he came at me with a knife",
+          "timestamp_seconds": 412,
+          "confidence": "high"
+        },
+        {
+          "field": "classifications.crime_categories",
+          "source": "transcript",
+          "quote": "domestic battery",
+          "timestamp_seconds": 538,
+          "confidence": "high"
+        },
+        {
+          "field": null,
+          "source": "transcript",
+          "quote": "I was smoking something... Meth or flakka",
+          "timestamp_seconds": 750,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency.name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2005,5 +2005,238 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:43:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-07-21",
+        "published_date": "2024-08-27",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Marion",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "suspect's residence",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Marion County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Ohio",
+          "county": "Marion",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jonathan",
+          "last_name": "Welch",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Jasper",
+          "last_name": "Brady",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with evidence",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Abuse of a corpse",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with evidence",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Abuse of a corpse",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to one count of murder; sentenced to 15 years to life"
+      },
+      "event_summary": {
+        "short": "Man confesses to killing and burying a stranger in his backyard; later pleads guilty to murder.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2020-07-21",
+        "initial_contact": "2020-07-21",
+        "pursuit_started": null,
+        "arrest": "2020-07-21"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "confession",
+          "homicide",
+          "burial"
+        ],
+        "crime_categories": [
+          "homicide"
+        ],
+        "tags": [
+          "true crime",
+          "police bodycam",
+          "confession",
+          "murder"
+        ],
+        "content_warnings": [
+          "murder",
+          "corpse",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "In the late afternoon of July 21st, 2020",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "dispatchers at Marion County receive a disturbing 911 call",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "My name is John Wells",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.name",
+          "source": "transcript",
+          "quote": "33-year-old Jasper Brady",
+          "timestamp_seconds": 1220,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.age",
+          "source": "transcript",
+          "quote": "33-year-old Jasper Brady",
+          "timestamp_seconds": 1220,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.race_ethnicity",
+          "source": "transcript",
+          "quote": "I shot a black man because I was on meth",
+          "timestamp_seconds": 944,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Jonathan was sentenced to an indefinite term of 15 years to life in prison",
+          "timestamp_seconds": 1500,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "cause of death as two gunshot wounds to the chest",
+          "timestamp_seconds": 1234,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location.city",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location state inferred from prison location; not explicitly stated in video."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

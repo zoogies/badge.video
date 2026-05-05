@@ -980,5 +980,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:32:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-05-06",
+        "published_date": "2023-12-31",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Brevard",
+          "city": "Cocoa",
+          "address_or_area": null,
+          "location_name": "Cocoa",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Cocoa Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Brevard",
+          "city": "Cocoa"
+        }
+      },
+      "geo": {
+        "address_or_place": "Cocoa, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Xavier",
+          "last_name": "Cummings",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Burglary",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Eluding law enforcement",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Possession of firearm by felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Firearm theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man steals two police cars during high-speed chase on I-95 in Cocoa, Florida; suspect arrested after pit maneuver and stopsticks.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-05-06T16:16:00",
+        "initial_contact": "2021-05-06T16:16:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "high-speed chase",
+          "vehicle theft",
+          "police car theft"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft",
+          "weapons_offense"
+        ],
+        "tags": [
+          "pit maneuver",
+          "stopsticks",
+          "Cocoa PD",
+          "Volusia County",
+          "I-95"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On Thursday, May 6th, 2021 at 416 p.m.",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Cocoa Police Department in Florida",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "33-year-old Xavier Cummings",
+          "timestamp_seconds": 770,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charges including suspicion of burglary, eluding law enforcement, possession of a firearm by a felon, and firearm theft",
+          "timestamp_seconds": 820,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Xavier Cummings was arrested",
+          "timestamp_seconds": 820,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript refers to 'Cocoa County' but Cocoa is a city in Brevard County, Florida."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

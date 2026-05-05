@@ -895,5 +895,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:56:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-12-21",
+        "published_date": "2025-03-25",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Salt Lake County",
+          "city": "Salt Lake City",
+          "address_or_area": "Primary Children's Hospital",
+          "location_name": "Primary Children's Hospital",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Logan Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Cache County",
+          "city": "Logan"
+        }
+      },
+      "geo": {
+        "address_or_place": "Primary Children's Hospital, Salt Lake City, UT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kayla",
+          "last_name": "Barlow",
+          "age": 33,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "James",
+          "last_name": null,
+          "age": 2,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "hospitalized"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child abuse by introducing bacteria into IV line",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "charge": "aggravated child abuse",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Mother accused of contaminating her son's IV line causing recurring bacterial infections; arrested and charged with aggravated child abuse.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 27,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_abuse",
+          "hospital_incident"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "IV contamination",
+          "Munchausen by proxy",
+          "bacterial infection"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "medical content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On December 21st, 2003, an officer arrives at Primary Children's Hospital",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Primary Children's Hospital in Salt Lake City, Utah",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "33-year-old Kayla Barlow",
+          "timestamp_seconds": 1071,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "arrested and charged with aggravated child abuse",
+          "timestamp_seconds": 1071,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "motion to dismiss her case was denied",
+          "timestamp_seconds": 1110,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Hospital is in Salt Lake City but agency is Logan Police Department; possible different jurisdictions."
+        ],
+        "missing_critical_fields": [
+          "exact arrest date",
+          "case number",
+          "child's last name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated; left null.",
+        "Agency location may conflict with incident location."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1535,5 +1535,180 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:47:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-01-14",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Lincoln",
+          "city": null,
+          "address_or_area": "Area 51",
+          "location_name": "Area 51",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lincoln County Sheriff's Office",
+          "type": "county sheriff",
+          "state": "Nevada",
+          "county": "Lincoln",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Area 51",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "place",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Seth",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing on a military installation",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man trespasses on Area 51, claims he can feel energy, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "trespassing"
+        ],
+        "tags": [
+          "Area 51",
+          "military installation",
+          "mental health crisis"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "from September 2025",
+          "timestamp_seconds": 464,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "your name is Seth? ... Yes, sir.",
+          "timestamp_seconds": 538,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "you're arrested right now for trespass in a military installation",
+          "timestamp_seconds": 504,
+          "confidence": "high"
+        },
+        {
+          "field": "mental_health_indicators",
+          "source": "transcript",
+          "quote": "I have been dealing with things that most people wouldn't understand ... I feel other people's energy",
+          "timestamp_seconds": 622,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "is machete a knife yes how big is it",
+          "timestamp_seconds": 786,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Area 51",
+          "timestamp_seconds": 35,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "transcript",
+          "quote": "deputies with the Lincoln County Sheriff's Office",
+          "timestamp_seconds": 72,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "suspect_age"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Date only given as month/year"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -905,5 +905,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:58:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-22",
+        "published_date": "2025-06-20",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Racine County",
+          "city": "Racine",
+          "address_or_area": "I-94 southbound",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Racine County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Racine County",
+          "city": "Racine"
+        }
+      },
+      "geo": {
+        "address_or_place": "Racine, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 33,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged and convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 51,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "reckless driving",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "pointing a firearm at a person",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "intentionally pointing a firearm at a person",
+            "category": "misdemeanor",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "misdemeanor",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded no contest to disorderly conduct, other charge dismissed; sentenced to $200 fine"
+      },
+      "event_summary": {
+        "short": "33-year-old woman brandishes handgun during road rage incident on I-94 in Racine, Wisconsin; charged and convicted of disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "[0:00-0:10]",
+        "initial_contact": "[0:44-0:54]",
+        "pursuit_started": null,
+        "arrest": "[1:56-2:04]"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "9mm handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "road_rage",
+          "traffic_stop",
+          "high_risk_traffic_stop"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "traffic_stop"
+        ],
+        "tags": [
+          "road rage",
+          "brandishing",
+          "CCW",
+          "children present",
+          "no shots fired"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On a summer afternoon in July 22",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Racine, Wisconsin",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "a 33-year-old woman",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "allegedly pointed a black handgun at him",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with misdemeanor counts of intentionally point a firearm at a person, disorderly conduct",
+          "timestamp_seconds": 518,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "found guilty of disorderly conduct after entering a no-contest plea. ... sentenced to pay only a $200 fine",
+          "timestamp_seconds": 530,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "transcript",
+          "quote": "unloaded 9mm handgun inside the glove box",
+          "timestamp_seconds": 438,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact incident date year inferred from timeline (published 2025, incident ~2.5 years prior = 2022)"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident year is not explicitly stated; estimated as 2022 based on 'almost two and a half years later' relative to published date 2025-06-20"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

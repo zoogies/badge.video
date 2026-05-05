@@ -2505,5 +2505,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:34:36Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-08-24",
+        "published_date": "2024-10-08T19:00:33Z",
+        "location": {
+          "state": "New Jersey",
+          "state_abbreviation": "NJ",
+          "county": "Monmouth",
+          "city": "Belmar",
+          "address_or_area": "Belmar Beach",
+          "location_name": "Belmar Beach",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Belmar Police Department",
+          "type": "city",
+          "state": "New Jersey",
+          "county": "Monmouth",
+          "city": "Belmar"
+        }
+      },
+      "geo": {
+        "address_or_place": "Belmar Beach",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ryan",
+          "last_name": "Schreiber",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Defiant Trespassing",
+            "category": "trespassing",
+            "statute": "2C:18-3B",
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": "2C:33-2A1",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Defiant Trespassing",
+            "category": "trespassing",
+            "statute": "2C:18-3B",
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": "2C:33-2A1",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded not guilty"
+      },
+      "event_summary": {
+        "short": "Man arrested on Belmar beach for refusing to pay beach badge, disorderly conduct, and resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "protest"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest",
+          "trespassing"
+        ],
+        "tags": [
+          "beach badge",
+          "Belmar",
+          "New Jersey",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "A man was arrested on a beach in Belmar, New Jersey on August 24, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Belmar, New Jersey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "2C183B is the defiant trespassing statute",
+          "timestamp_seconds": 254,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "You committed disorderly conduct, and I could have arrested you right then and there",
+          "timestamp_seconds": 863,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2].label",
+          "source": "transcript",
+          "quote": "Ryan is facing charges of disorderly conduct and resisting arrest",
+          "timestamp_seconds": 1392,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "ryan schreiber",
+          "timestamp_seconds": 153,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Court records show he later pleaded not guilty",
+          "timestamp_seconds": 1416,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident.latitude",
+          "incident.longitude",
+          "incident.zip_code",
+          "people[0].race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

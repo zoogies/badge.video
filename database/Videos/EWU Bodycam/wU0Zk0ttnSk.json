@@ -1380,5 +1380,167 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:28:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-10-16",
+        "published_date": "2025-04-24",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "New Haven",
+          "city": "Wallingford",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Wallingford Police Department",
+          "type": "municipal",
+          "state": "Connecticut",
+          "county": "New Haven",
+          "city": "Wallingford"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Donald",
+          "last_name": "Passmore",
+          "age": 62,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Weapons offense (possession of firearm during crisis)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Justified shooting (Connecticut Inspector General concluded use of force was reasonable, January 2025)"
+      },
+      "event_summary": {
+        "short": "A 911 call for a man in crisis leads to an officer-involved shooting in Wallingford, Connecticut, resulting in the death of Donald Passmore.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2003-10-16T02:30:00",
+        "initial_contact": "2003-10-16T02:30:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "Officer Gordon McCaskill",
+          "Officer Robert Belucci"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "shooting",
+          "weapons_offense",
+          "mental_health"
+        ],
+        "tags": [
+          "standoff",
+          "suicide by cop",
+          "bodycam",
+          "Connecticut"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death",
+          "suicide mention"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "At approximately 2.30 in the morning on October 16, 2003, a woman in Wallingford, Connecticut, makes a frantic call to 911",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a woman in Wallingford, Connecticut",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "Donald Passmore was 62 years old.",
+          "timestamp_seconds": 1510,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "In January 2025, the Connecticut Inspector General concluded that officers Robert Belucci and Gordon McCaskill were facing what they reasonably believed to be a threat of serious injury or death and found their use of force to be objectively reasonable and justified.",
+          "timestamp_seconds": 1489,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "coordinates",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

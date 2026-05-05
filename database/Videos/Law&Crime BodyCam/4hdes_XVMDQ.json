@@ -1075,5 +1075,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:01:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-17",
+        "published_date": "2024-06-10T21:00:04Z",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook",
+          "city": "Des Plaines",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Des Plaines Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Cook",
+          "city": "Des Plaines"
+        }
+      },
+      "geo": {
+        "address_or_place": "Des Plaines, Illinois",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "explicitly stated in title, description, and transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ladonis",
+          "last_name": "Rogers",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Austin",
+          "last_name": "Vargas",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession of cannabis",
+            "category": "drug_offense",
+            "statute": "Illinois vehicle code for possession of cannabis, passenger within a motor vehicle",
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated unlawful use of a weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "no valid firearm owner's ID card (Ladonis only)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "aggravated unlawful use of a weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released after arrest"
+      },
+      "event_summary": {
+        "short": "Two men arrested for weapons and marijuana during a St. Patrick's Day traffic stop in Des Plaines, IL.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "noise_complaint"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "St. Patrick's Day",
+          "bodycam",
+          "Des Plaines"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Bodycam footage shows ... in Des Plaines, Illinois on St. Patrick’s Day.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Police identify the man seen here as 20-year-old Ladonis Rogers",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Police identify this man as 21-year-old Austin Vargas",
+          "timestamp_seconds": 714,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "Both Ladonis and Austin were booked for aggravated unlawful use of a weapon.",
+          "timestamp_seconds": 1319,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "The driver reportedly admitted that everyone in the car had been smoking marijuana.",
+          "timestamp_seconds": 124,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date_year_uncertain",
+          "latitude/longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -110,5 +110,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:42:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-05-20",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Destiny",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "found guilty"
+        },
+        {
+          "role": "complainant",
+          "first_name": "Jermaine",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "harassment",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "threats",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "attempted felonious assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fourth-degree felony assault",
+            "category": "assault",
+            "statute": null,
+            "count": 2,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "guilty"
+      },
+      "event_summary": {
+        "short": "Pregnant woman bites police after domestic disturbance call, later found guilty of assault.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "just before 1 a.m.",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "brick",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic disturbance",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery"
+        ],
+        "tags": [
+          "pregnant",
+          "bite",
+          "domestic violence",
+          "911 call",
+          "felony assault"
+        ],
+        "content_warnings": [
+          "violence",
+          "pregnancy loss"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "Just before 1 a.m., a man who identifies himself as Jermaine calls 9-1-1, reporting that the mother of his child is outside his home harassing him",
+          "timestamp_seconds": 1,
+          "confidence": "low"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Destiny was found guilty of attempted felonious assault, as well as two counts of fourth-degree felony assault.",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.first_name",
+          "source": "transcript",
+          "quote": "Destiny was found guilty",
+          "timestamp_seconds": 54,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "She has a brick right now",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Stop, bite to me. Did that bite hurt?",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not identified in supplied text."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

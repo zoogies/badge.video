@@ -1915,5 +1915,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:21:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-02T21:00:13Z",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "Hartford County",
+          "city": "Windsor Locks",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Windsor Locks Police Department",
+          "type": "municipal",
+          "state": "Connecticut",
+          "county": "Hartford County",
+          "city": "Windsor Locks"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Erica",
+          "last_name": "Verona",
+          "age": 22,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Interfering with police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless endangerment",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Breach of peace",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Assault on a police officer (2 counts)",
+          "Interfering (2 counts)",
+          "Reckless endangerment (2 counts)",
+          "Breach of peace"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Welfare check leads to assault on officers and vehicle pursuit after suspect strikes officer with vape and flees.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "vape",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare_check",
+          "assault_on_officer",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "reckless_driving",
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "tags": [
+          "bodycam",
+          "GenZ",
+          "vape",
+          "mental_health"
+        ],
+        "content_warnings": [
+          "violence",
+          "assault"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's 5 p.m. in Windsor Locks, Connecticut",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "officers identify the woman seen here as 22-year-old Erica Verona",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "22-year-old Erica Verona",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Erica was booked for two counts of assault on a police officer...",
+          "timestamp_seconds": 1032,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "assault on a police officer",
+          "timestamp_seconds": 1033,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Windsor Locks, Connecticut",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "the officer says Erica struck him in the face with her vape",
+          "timestamp_seconds": 505,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

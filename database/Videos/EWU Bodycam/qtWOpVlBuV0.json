@@ -2415,5 +2415,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:55:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-06",
+        "published_date": "2025-12-04",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Nassau",
+          "city": "Fernandina Beach",
+          "address_or_area": "Hammerhead Bar parking lot",
+          "location_name": "Hammerhead Bar",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Nassau County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Nassau",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Tyler",
+          "last_name": "Merritt",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "officer",
+          "first_name": "William",
+          "last_name": "Woods",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "person": "Tyler Merritt",
+            "label": "Driving Under the Influence (DUI)",
+            "disposition": "adjudicated guilty"
+          },
+          {
+            "person": "Tyler Merritt",
+            "label": "Obstructing or Opposing a Police Officer Without Violence",
+            "disposition": "not prosecuted"
+          },
+          {
+            "person": "Tyler Merritt",
+            "label": "Careless Driving",
+            "disposition": "dismissed"
+          },
+          {
+            "person": "William Woods",
+            "label": "Battery",
+            "disposition": "pled not guilty, case ongoing"
+          },
+          {
+            "person": "William Woods",
+            "label": "Official Misconduct",
+            "disposition": "pled not guilty, case ongoing"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputy William Woods arrested for battery after pulling DUI suspect Tyler Merritt from patrol car, causing head injury.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui_arrest",
+          "use_of_force",
+          "officer_misconduct"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "DUI",
+          "battery",
+          "official misconduct",
+          "Nassau County",
+          "Fernandina Beach"
+        ],
+        "content_warnings": [
+          "violence",
+          "language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On July 6, 2025, the Nassau County Sheriff's Office is called to assist the city of Fernandina Beach Police Department",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Nassau County Sheriff's Office",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "his driver's license identifies him as 31-year-old Tyler Merritt",
+          "timestamp_seconds": 303,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Tyler is informed he's being arrested for suspected DUI",
+          "timestamp_seconds": 511,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].disposition",
+          "source": "transcript",
+          "quote": "He was adjudicated guilty of driving under the influence",
+          "timestamp_seconds": 1077,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[4]",
+          "source": "transcript",
+          "quote": "Deputy William Woods was later investigated and faces charges of battery and official misconduct. He's pled not guilty",
+          "timestamp_seconds": 1097,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I opened the door, he kicked towards it, and I snatched him at the same time, and he went straight down head first",
+          "timestamp_seconds": 880,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

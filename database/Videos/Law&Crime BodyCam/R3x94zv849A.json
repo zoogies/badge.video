@@ -1940,5 +1940,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:33:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-10-10",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lake County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "confirmed"
+        },
+        "agency": {
+          "name": "Lake County Sheriff's Office",
+          "type": "police",
+          "state": "Florida",
+          "county": "Lake County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Corin",
+          "last_name": "Perkins",
+          "age": 33,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing or eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "driving with revoked license",
+            "category": "dui",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "failure to register a vehicle",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          "fleeing or eluding",
+          "driving with revoked license",
+          "failure to register a vehicle"
+        ],
+        "case_number": null,
+        "disposition": "pleaded no contest, sentenced to 180 days in jail with credit for time served"
+      },
+      "event_summary": {
+        "short": "Florida woman flees traffic stop, abandons car, leads K9 on foot, arrested at nearby home",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "vehicle pursuit",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "tags": [
+          "bodycam",
+          "florida",
+          "k9",
+          "fleeing"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Lake County, Florida",
+          "timestamp_seconds": 19,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "33-year-old koren perkins",
+          "timestamp_seconds": 503,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "fleeing or eluding",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "description",
+          "quote": "driving with a revoked license",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.alleged_crimes[2].label",
+          "source": "description",
+          "quote": "failure to register a vehicle",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "pleaded no contest to multiple charges ... sentenced to 180 days in jail with credit for time served",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "taking off from a traffic stop and abandoning her car",
+          "timestamp_seconds": null,
+          "confidence": "confirmed"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "K-9 officer led police to a home",
+          "timestamp_seconds": 27,
+          "confidence": "confirmed"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

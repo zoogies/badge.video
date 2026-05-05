@@ -920,5 +920,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:56:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-11-21",
+        "published_date": "2024-12-13",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Greene",
+          "city": "Beavercreek",
+          "address_or_area": "Walmart",
+          "location_name": "Walmart",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Beavercreek Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Greene",
+          "city": "Beavercreek"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Walmart and Beaver Creek",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Benjamin",
+          "last_name": "Jones",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased by suicide"
+        },
+        {
+          "role": "victim",
+          "first_name": "Amanda",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "victim",
+          "first_name": "Tiara",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Mass shooting",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Shooter died by suicide"
+      },
+      "event_summary": {
+        "short": "Mass shooting at Beaver Creek Walmart; shooter committed suicide.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2003-11-21T20:35:00",
+        "initial_contact": "2003-11-21T20:41:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "rifle (assault rifle)",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "active shooter",
+          "mass shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "violent_crime"
+        ],
+        "tags": [
+          "Walmart",
+          "Beaver Creek",
+          "Benjamin Jones",
+          "suicide"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 21st, 2003, at approximately 8.35 p.m.",
+          "timestamp_seconds": 6,
+          "confidence": "low"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Hey, Walmart and Beaver Creek.",
+          "timestamp_seconds": 46,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect name",
+          "source": "transcript",
+          "quote": "Police later identified the shooter as 20-year-old Benjamin Jones.",
+          "timestamp_seconds": 262,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "transcript",
+          "quote": "with an assault rifle",
+          "timestamp_seconds": 378,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "Benjamin took his own life",
+          "timestamp_seconds": 702,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date (2003) seems inconsistent with video publish date (2024); may be transcription error.",
+        "State not explicitly stated; inferred from 'Beaver Creek' as Beavercreek, Ohio."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

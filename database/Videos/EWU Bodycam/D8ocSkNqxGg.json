@@ -1855,5 +1855,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:52:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-10",
+        "published_date": "2025-10-21T03:09:53Z",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": null,
+          "city": "Phoenix",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Phoenix Police",
+          "type": "municipal police",
+          "state": "Arizona",
+          "county": null,
+          "city": "Phoenix"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nuru",
+          "last_name": "Niyonkuru",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "William",
+          "last_name": "Miller",
+          "age": 50,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "vulnerable adult abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "vulnerable adult abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Caregiver Nuru Niyonkuru arrested after vulnerable adult William Miller died under suspicious circumstances; suspect had been drinking and left patient unattended in hot van.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "death",
+          "neglect"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "caregiver",
+          "vulnerable adult",
+          "death",
+          "alcohol",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "In Phoenix, Arizona on April 10, 2025",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "In Phoenix, Arizona on April 10, 2025",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "36-year-old Nuru Niancuru",
+          "timestamp_seconds": 125,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.name",
+          "source": "transcript",
+          "quote": "50-year-old William Miller",
+          "timestamp_seconds": 65,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "booked into jail on one count of vulnerable adult abuse",
+          "timestamp_seconds": 928,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "he's dead",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you are going to go to jail today",
+          "timestamp_seconds": 898,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not explicitly stated in provided text; left null.",
+        "County not explicitly stated; requires manual location review."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

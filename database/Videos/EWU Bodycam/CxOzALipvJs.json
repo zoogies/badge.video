@@ -1570,5 +1570,167 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:51:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-02-15",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Salt Lake County",
+          "city": "West Jordan",
+          "address_or_area": "My Place Hotel",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "West Jordan Police Department",
+          "type": "municipal",
+          "state": "Utah",
+          "county": "Salt Lake County",
+          "city": "West Jordan"
+        }
+      },
+      "geo": {
+        "address_or_place": "My Place Hotel, West Jordan, Utah",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "49035",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sheri",
+          "last_name": "Meyer",
+          "age": 54,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault on a police officer without a weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "assault on a police officer without a weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charges dropped"
+      },
+      "event_summary": {
+        "short": "West Jordan police responded to a domestic disturbance call at a hotel, mistakenly entered Sheri Meyer's room, and arrested her for alleged assault. Charges were later dropped.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "after 3 a.m.",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "wrongful arrest",
+          "domestic disturbance call"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "hotel",
+          "wrong room",
+          "charges dropped",
+          "lawsuit"
+        ],
+        "content_warnings": [
+          "use of force",
+          "partial nudity"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Sometime after 3 a.m. at the My Place Hotel in West Jordan, Utah",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "54-year-old Sherry Meyer",
+          "timestamp_seconds": 116,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Sherry was booked on several charges, including assault of police without a weapon.",
+          "timestamp_seconds": 906,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "charges were dropped almost immediately upon review by the district attorney.",
+          "timestamp_seconds": 917,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2285,5 +2285,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:58:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-26",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": null,
+          "city": "St. Paul",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "city"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Matthew",
+          "last_name": "Ecker",
+          "age": 45,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Alexandra",
+          "last_name": "Penig",
+          "age": 32,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty, sentenced to 30 years"
+      },
+      "event_summary": {
+        "short": "A married man shot and killed his secret girlfriend after a bar altercation, then staged the scene as a suicide.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "domestic violence"
+        ],
+        "crime_categories": [
+          "shooting",
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "murder",
+          "cover-up",
+          "Minnesota"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's nearly 1 a.m. at a bar in St. Paul, Minnesota",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "the man, later identified as 45-year-old Matthew Ecker",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "victim_name",
+          "source": "transcript",
+          "quote": "32-year-old Alexandra Penning (Penig)",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "charge",
+          "source": "transcript",
+          "quote": "Matthew was charged with second-degree murder",
+          "timestamp_seconds": 1548,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "After a short trial, Matthew was found guilty and sentenced to 30 years behind bars.",
+          "timestamp_seconds": 1640,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

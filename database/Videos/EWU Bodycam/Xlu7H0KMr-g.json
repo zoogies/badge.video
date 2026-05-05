@@ -1060,5 +1060,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:35:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-29",
+        "published_date": "2025-12-09",
+        "location": {
+          "state": "Tennessee",
+          "state_abbreviation": "TN",
+          "county": "Cocke County",
+          "city": "Newport",
+          "address_or_area": "Newport Medical Center parking lot",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Cocke County Sheriff's Office",
+          "type": "county sheriff",
+          "state": "Tennessee",
+          "county": "Cocke",
+          "city": "Newport"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Katrina",
+          "last_name": "Dukes",
+          "age": 40,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "public intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "death before adjudication"
+      },
+      "event_summary": {
+        "short": "Woman dies after arrest for public intoxication due to medical neglect",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-02-29T19:40:00",
+        "initial_contact": "2024-02-29T19:40:00",
+        "pursuit_started": null,
+        "arrest": "2024-02-29T19:45:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "death_in_custody",
+          "medical_emergency"
+        ],
+        "crime_categories": [
+          "public_intoxication"
+        ],
+        "tags": [
+          "diabetes",
+          "wrongful death",
+          "lawsuit"
+        ],
+        "content_warnings": [
+          "death",
+          "medical condition"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 29th, 2004, the Koch County Sheriff's Office in Tennessee responds swiftly",
+          "timestamp_seconds": 16,
+          "confidence": "low"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "She died a few days later on March 3, 2024",
+          "timestamp_seconds": 565,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Koch County Sheriff's Office in Tennessee",
+          "timestamp_seconds": 16,
+          "confidence": "medium"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "the Newport Medical Center calls 911 to report someone asking for narcotics in the parking lot",
+          "timestamp_seconds": 53,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "they find 40-year-old Katrina Dukes",
+          "timestamp_seconds": 60,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "transcript",
+          "quote": "she was arrested for drunkenness and public intoxication",
+          "timestamp_seconds": 250,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "She died a few days later on March 3, 2024",
+          "timestamp_seconds": 565,
+          "confidence": "high"
+        },
+        {
+          "field": "medical_condition",
+          "source": "transcript",
+          "quote": "Katrina had been diagnosed with diabetes melitus with hyperglycemia",
+          "timestamp_seconds": 178,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [
+          "County name appears as 'Koch' in early transcript but later as 'Cock'; likely 'Cocke'"
+        ],
+        "missing_critical_fields": [
+          "race/ethnicity not provided",
+          "exact coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident year conflict: transcript says 2004 and 2024; 2024 is likely correct based on context"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2355,5 +2355,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:06:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-07",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Osceola",
+          "city": "St. Cloud",
+          "address_or_area": null,
+          "location_name": "St. Cloud church",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "St. Cloud Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Osceola",
+          "city": "St. Cloud"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Fidel",
+          "last_name": "Rodriguez",
+          "age": 66,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "victim"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "simple battery",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Priest bites woman during communion dispute at Florida church.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "altercation",
+          "religious_dispute"
+        ],
+        "crime_categories": [
+          "battery"
+        ],
+        "tags": [
+          "priest",
+          "communion",
+          "church",
+          "bite",
+          "Florida"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "It's 2 p.m. at a church in St. Cloud, Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "66-year-old Father Fidel Rodriguez",
+          "timestamp_seconds": 655,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "66-year-old",
+          "timestamp_seconds": 655,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "believing Father Fidel Rodriguez committed simple battery",
+          "timestamp_seconds": 1318,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "bite mark on her right forearm",
+          "timestamp_seconds": 227,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "the state attorney's office has not yet charged him",
+          "timestamp_seconds": 1318,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_race_ethnicity",
+          "victim_name",
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

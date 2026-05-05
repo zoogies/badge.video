@@ -2005,5 +2005,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:47:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-30T21:00:12Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Bedford",
+          "address_or_area": "AutoZone parking lot",
+          "location_name": "AutoZone",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Bedford Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Bedford"
+        }
+      },
+      "geo": {
+        "address_or_place": "AutoZone parking lot, Bedford, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description, transcript",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": "Riley",
+          "last_name": "Jones",
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Darian",
+          "last_name": "Hobley",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "known"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shooting death of girlfriend",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Involuntary manslaughter",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to involuntary manslaughter and tampering with evidence; sentenced to 8-10.5 years in prison followed by 2 years parole"
+      },
+      "event_summary": {
+        "short": "Man shot and killed his girlfriend in an AutoZone parking lot after a toxic argument and car chase.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "shooting",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "ghost gun",
+          "involuntary manslaughter",
+          "sentenced"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Bedford, Ohio police respond to a shooting at an AutoZone parking lot",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.name",
+          "source": "description",
+          "quote": "20-year-old Riley Jones",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "22-year-old Darian Hobley",
+          "timestamp_seconds": 72,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "black male white pants",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon",
+          "source": "transcript",
+          "quote": "illegal ghost gun with no visible serial number",
+          "timestamp_seconds": 613,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "pleaded guilty to involuntary manslaughter and tampering with evidence... sentenced to eight to ten and a half years",
+          "timestamp_seconds": 1380,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1830,5 +1830,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:17:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-04-05",
+        "published_date": "2026-04-28",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": null,
+          "address_or_area": "Walker and Otichobit intersection",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Florida",
+          "county": "Palm Beach",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Walker and Otichobit",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nathaniel",
+          "last_name": "Rayman",
+          "age": 50,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "released on bond"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the Scene of a Crash with Injury",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated Assault with a Deadly Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Stop and Remain at Scene of Crash Involving Injury",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on $5,000 bond, awaiting court date"
+      },
+      "event_summary": {
+        "short": "Drunk teacher crashes into multiple vehicles, hitting a pregnant woman, after drinking heavily due to marital issues.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "vehicle",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_crash",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "assault",
+          "hit_and_run",
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "teacher",
+          "pregnant woman",
+          "Easter",
+          "mistaken identity"
+        ],
+        "content_warnings": [
+          "pregnancy",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "It's Easter Sunday in Palm Beach County, Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Nathaniel Rayman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "50-year-old Nathaniel Raymond",
+          "timestamp_seconds": 68,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "white male",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "booked for aggravated assault with a deadly weapon without intent to kill and failure to stop and remain at the scene of a crash involving injury",
+          "timestamp_seconds": 1286,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On Easter Sunday",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript mentions 'Nathaniel Raymond' but description says 'Nathaniel Rayman' - possible typo"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

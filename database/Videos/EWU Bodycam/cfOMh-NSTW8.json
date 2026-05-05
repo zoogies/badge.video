@@ -1695,5 +1695,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:47:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2022-12-22",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Lincoln County",
+          "city": "Glenco",
+          "address_or_area": "Co-ranch",
+          "location_name": "Marianne Morehouse's residence",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lincoln County Sheriff's Office",
+          "type": "sheriff",
+          "state": "New Mexico",
+          "county": "Lincoln County",
+          "city": "Glenco"
+        }
+      },
+      "geo": {
+        "address_or_place": "Co-ranch, Glenco, New Mexico",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "35027",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andrew",
+          "last_name": "McGill",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        },
+        {
+          "role": "victim",
+          "first_name": "Marianne",
+          "last_name": "Morehouse",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder of Marianne Morehouse",
+            "category": "homicide",
+            "statute": "Second-degree murder",
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with intent to commit a felony upon an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault with intent to commit a felony upon an officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Sentenced to 45 years in prison plus 5 years supervised probation"
+      },
+      "event_summary": {
+        "short": "Andrew McGill, in a drug-induced psychosis, killed Marianne Morehouse with an axe and later shot a deputy at a hospital.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "axe",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "axe",
+          "drug-induced psychosis",
+          "mental_health"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "murder"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.location_name",
+          "source": "transcript",
+          "quote": "A deputy has been dispatched to the vast co-ranch located in Glenco, New Mexico",
+          "timestamp_seconds": 658,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "chopped her head off with an axe",
+          "timestamp_seconds": 912,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "fired a shot directly into the arm of one of the deputies",
+          "timestamp_seconds": 525,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_age",
+          "race_ethnicity",
+          "precise_coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

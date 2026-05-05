@@ -140,5 +140,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:21:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-10",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": "Brooklyn Center",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Kimberly",
+          "last_name": "Potter",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Dante",
+          "last_name": "Wright",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "driving with suspended license",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "first-degree manslaughter",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "convicted and sentenced"
+      },
+      "event_summary": {
+        "short": "Officer Kimberly Potter mistakenly tases and shoots Daunte Wright during a traffic stop.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": [
+          "taser",
+          "firearm"
+        ],
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "homicide",
+          "warrant",
+          "traffic_violation"
+        ],
+        "tags": [
+          "Daunte Wright",
+          "Kimberly Potter",
+          "Brooklyn Center",
+          "bodycam",
+          "manslaughter"
+        ],
+        "content_warnings": [
+          "death",
+          "violence",
+          "use_of_force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "The city of Brooklyn Center agreed to pay",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Kimberly Potter was convicted",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Dante Wright is pronounced dead at the scene",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "first-degree manslaughter",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "Dante Wright is pronounced dead at the scene",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "state",
+          "county",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "incident_date not found in supplied text; known date April 11, 2021 but not extracted",
+        "state and county not explicitly stated; inferred from city, but not included"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

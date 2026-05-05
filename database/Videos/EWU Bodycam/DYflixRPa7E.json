@@ -1160,5 +1160,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:59:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2004-07-23",
+        "published_date": "2025-04-02",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach County",
+          "city": "West Palm Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Palm Beach County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Palm Beach County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "West Palm Beach",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12099",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derrick",
+          "last_name": "Shealey",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession of a destructive device resulting in property damage",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "possession of a destructive device resulting in property damage"
+        ],
+        "case_number": null,
+        "disposition": "not guilty plea, pending trial"
+      },
+      "event_summary": {
+        "short": "Couple wakes to explosions from homemade devices thrown onto their porch and vehicles in West Palm Beach, leading to arrest of neighbor Derrick Shealey.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2004-07-23T03:00:00",
+        "initial_contact": "2004-07-23T03:00:00",
+        "pursuit_started": null,
+        "arrest": "2004-12-18T18:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "explosion",
+          "property_damage"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "explosive_device"
+        ],
+        "tags": [
+          "fireworks",
+          "pipe bomb",
+          "neighbor dispute"
+        ],
+        "content_warnings": [
+          "explosions",
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "One receipt in particular stands out, showing his wife purchasing fireworks on July 4th, 2004, just 19 days before the explosion on July 23rd.",
+          "timestamp_seconds": 1110,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Florida deputies respond when a 911 call reports multiple explosions in a West Palm Beach neighborhood.",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "charging him with possession of a destructive device resulting in property damage.",
+          "timestamp_seconds": 650,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Derek Shealy was arrested",
+          "timestamp_seconds": 700,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Later that evening, Shealy was arrested by the Okeechobee Police Department at approximately 6 p.m.",
+          "timestamp_seconds": 655,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "After his arrest on December 18, 2004",
+          "timestamp_seconds": 880,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "suspect age",
+          "suspect race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

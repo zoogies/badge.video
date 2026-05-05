@@ -1050,5 +1050,175 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:38:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023",
+        "published_date": "2025-05-09T03:28:25Z",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Kane County",
+          "city": "Geneva",
+          "address_or_area": null,
+          "location_name": "Markland Center",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kane County Sheriff's Department",
+          "type": "sheriff",
+          "state": "Illinois",
+          "county": "Kane County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video metadata",
+        "precision": "approximate",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Isaiah",
+          "last_name": "Fields",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated criminal sexual assault",
+            "category": "sexual_assault",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          "aggravated criminal sexual assault"
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 25 years imprisonment"
+      },
+      "event_summary": {
+        "short": "A 43-year-old woman with profound disabilities at a care home in Geneva, Illinois, was found pregnant. Investigation led to employee Isaiah Fields who pled guilty to aggravated criminal sexual assault and was sentenced to 25 years.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "sexual_assault",
+          "disability_crime"
+        ],
+        "crime_categories": [
+          "sexual_assault"
+        ],
+        "tags": [
+          "Markland Center",
+          "Geneva Illinois",
+          "Kane County",
+          "Rett syndrome",
+          "preeclampsia"
+        ],
+        "content_warnings": [
+          "sexual assault",
+          "infant death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Geneva, Illinois",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Kane County detectives launched an urgent investigation",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "22-year-old Isaiah Fields",
+          "timestamp_seconds": 195,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Isaiah Fields pled guilty to aggravated criminal sexual assault and was sentenced to 25 years imprisonment",
+          "timestamp_seconds": 765,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "in late summer, 2003",
+          "timestamp_seconds": 50,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "The transcript mentions 'late summer, 2003' for the assault, but the incident was discovered in April 2024; likely a transcription error. Actual assault probably occurred in 2023."
+        ],
+        "missing_critical_fields": [
+          "incident_date (exact date not available)",
+          "case_number",
+          "arrest date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript contains timestamp error '2003' instead of likely '2023'."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

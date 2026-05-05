@@ -850,5 +850,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:57:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-10-06",
+        "published_date": "2025-05-20",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": null,
+          "city": "Oklahoma City",
+          "address_or_area": "rooftop of an apartment building",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Oklahoma City Police Department",
+          "type": "municipal police",
+          "state": "Oklahoma",
+          "county": null,
+          "city": "Oklahoma City"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christian",
+          "last_name": "Murrow",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault and Battery with a Dangerous Weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault and Battery upon a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault and Battery on an Emergency Medical Technician",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Malicious Injury to Property",
+            "category": "property damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing an Officer",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "3 counts Assault and Battery with a Dangerous Weapon",
+          "3 counts Assault and Battery upon a Police Officer",
+          "1 count Assault and Battery on an Emergency Medical Technician",
+          "1 count Malicious Injury to Property",
+          "1 count Obstructing an Officer"
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 5 years incarceration concurrent"
+      },
+      "event_summary": {
+        "short": "Man attacks officers from rooftop, arrested after police climb ladder",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-10-06T23:45:00",
+        "initial_contact": "2024-10-06T23:45:00",
+        "pursuit_started": null,
+        "arrest": "2024-10-07T00:15:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "fixed blade knife, shingles",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "rooftop confrontation",
+          "assault on officer"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "weapons_offense",
+          "obstruction"
+        ],
+        "tags": [
+          "Oklahoma City",
+          "rooftop",
+          "assault",
+          "police",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "just before midnight, on October 6, 2024",
+          "timestamp_seconds": 37,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Oklahoma City",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Oklahoma City Police Department",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Christian Murrow",
+          "timestamp_seconds": 124,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "35-year-old Christian Murrow",
+          "timestamp_seconds": 806,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "35-year-old Christian Murrow received a total of nine charges, including three counts of assault and battery with a dangerous weapon...",
+          "timestamp_seconds": 810,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "After entering a guilty plea, Christian was sentenced to a term of five years incarceration on each count to be served concurrently",
+          "timestamp_seconds": 832,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Christian is armed with what appears to be a fixed blade knife or sharp piece of metal",
+          "timestamp_seconds": 302,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "address",
+          "zip",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

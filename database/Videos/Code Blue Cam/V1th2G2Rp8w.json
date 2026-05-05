@@ -2920,5 +2920,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:35:24Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-04",
+        "published_date": "2025-12-01",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse",
+          "city": "Holmen",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Holmen Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse",
+          "city": "Holmen"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (felony)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating with Prohibited Alcohol Content",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Operating While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating with Prohibited Alcohol Content",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding Citation ($200)",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on $1,000 signature bond"
+      },
+      "event_summary": {
+        "short": "July 4, 2025 DUI stop in Holmen, WI leads to arrest and felony OWI charges",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-07-04T21:20:00",
+        "pursuit_started": null,
+        "arrest": "2025-07-04T21:20:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "independence day",
+          "insults",
+          "resisting verbal"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Around 9.20 p.m. on July 4th, 2025",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a Holman police officer",
+          "timestamp_seconds": 33,
+          "confidence": "moderate"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "this 44-year-old man",
+          "timestamp_seconds": 94,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with felony operating while intoxicated ... operating with prohibited alcohol content ... $200 speeding citation",
+          "timestamp_seconds": 1390,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're under REST RW.",
+          "timestamp_seconds": 708,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "released on a $1,000 signature bond",
+          "timestamp_seconds": 1400,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Assumed Holmen, WI based on 'Holman' spelling; Honoloska might be Onalaska; county inferred as La Crosse"
+        ],
+        "missing_critical_fields": [
+          "suspect name",
+          "specific address",
+          "latitude/longitude",
+          "ZIP code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

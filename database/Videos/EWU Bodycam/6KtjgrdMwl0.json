@@ -2480,5 +2480,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:27:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-20",
+        "published_date": "2025-02-21",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "New London County",
+          "city": "Groton",
+          "address_or_area": "VFW building (community center for veterans)",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Groton Police Department",
+          "type": "municipal",
+          "state": "Connecticut",
+          "county": "New London County",
+          "city": "Groton"
+        }
+      },
+      "geo": {
+        "address_or_place": "VFW building, Groton, CT",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description and transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Aaron",
+          "last_name": "Stanislav",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "first-degree threatening with a hazard to terrorize",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal attempt to escape from custody",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "interfering with a police officer",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "first-degree threatening with a hazard to terrorize",
+            "category": "threats",
+            "confidence": "high"
+          },
+          {
+            "label": "criminal attempt to escape from custody",
+            "category": "obstruction",
+            "confidence": "high"
+          },
+          {
+            "label": "interfering with a police officer",
+            "category": "obstruction",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police in Groton, CT located and arrested Aaron Stanislav after he posted disturbing livestreams referencing harming children. He was charged with threatening, attempted escape, and interfering.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-01-20",
+        "pursuit_started": null,
+        "arrest": "2025-01-20"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health",
+          "threat"
+        ],
+        "crime_categories": [
+          "threats",
+          "obstruction"
+        ],
+        "tags": [
+          "livestream",
+          "veteran",
+          "disturbing statements",
+          "Sandy Hook reference"
+        ],
+        "content_warnings": [
+          "graphic language",
+          "discussion of violence against children"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Now on January 20th, 2025, Aaron's live stream videos featuring disturbing messages about murdering children raise serious alarms with law enforcement.",
+          "timestamp_seconds": 100,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "officers in Groton, Connecticut hunt for 33-year-old former Marine Corps combat veteran",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Aaron Stanislav",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "33-year-old former Marine Corps combat veteran",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "charged with first-degree threatening with a hazard to terrorize, criminal attempt to escape from custody, and interfering with a police officer",
+          "timestamp_seconds": 1350,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Aaron is taken to a jail cell where he sleeps for the night",
+          "timestamp_seconds": 1020,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

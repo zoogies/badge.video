@@ -1815,5 +1815,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:40:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-02-17",
+        "published_date": "2025-12-12",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": null,
+          "city": "Rio Rancho",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rio Rancho Police Department",
+          "type": "municipal police",
+          "state": "New Mexico",
+          "county": null,
+          "city": "Rio Rancho"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rachel",
+          "last_name": "Archuleta",
+          "age": 38,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unknown"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a peace officer",
+            "category": "assault",
+            "statute": "felony",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting, evading, and obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": "misdemeanor",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony battery on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "filing_date": "2021-03-04",
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor resisting, evading, and obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "filing_date": "2021-03-04",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Boyfriend calls 911 over domestic dispute; police enter home and arrest girlfriend after alleged battery on officer; girlfriend's arm broken; she sues for excessive force.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": null,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-02-17T06:55:00",
+        "initial_contact": "2021-02-17T07:05:00",
+        "pursuit_started": null,
+        "arrest": "2021-02-17"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_disturbance",
+          "police_use_of_force",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "domestic_violence",
+          "911_call",
+          "body_camera",
+          "excessive_force"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "injury"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 17th, 21",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "calls the Rio Rancho Police Department in New Mexico",
+          "timestamp_seconds": 69,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "38-year-old Rachel Archiletta",
+          "timestamp_seconds": 100,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges.0.label",
+          "source": "transcript",
+          "quote": "Phelps filed criminal charges against Rachel for felony battery on a peace officer and two counts of misdemeanor resisting, evading, and obstructing",
+          "timestamp_seconds": 1128,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "her arm had indeed been broken",
+          "timestamp_seconds": 1111,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

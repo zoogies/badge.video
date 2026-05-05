@@ -1735,5 +1735,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:55:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-03",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rafael",
+          "last_name": "Rosas",
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child solicitation by electronic communication",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempt to commit criminal sexual penetration",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "child solicitation by electronic communication",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to child solicitation by electronic communication; sentenced to 9 months in jail and ordered to register as a sex offender."
+      },
+      "event_summary": {
+        "short": "Man arrested for attempting to meet a 15-year-old girl in Bernalillo County, later convicted of child solicitation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "predator_sting",
+          "child_luring"
+        ],
+        "crime_categories": [
+          "sex_offense"
+        ],
+        "tags": [
+          "child_solicitation",
+          "online_predator",
+          "sting"
+        ],
+        "content_warnings": [
+          "sexual_content"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "At 7 p.m. in Bernalillo County, New Mexico, where one suspected predator is about to take the bait",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Police identify the man seen here as 28-year-old Rafael Rosas",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "28-year-old Rafael Rosas",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "Rafael was taken to jail and booked for child solicitation by electronic communication",
+          "timestamp_seconds": 1257,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "attempt to commit criminal sexual penetration",
+          "timestamp_seconds": 1261,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He later accepted a deal and pleaded guilty to the solicitation charge ... sentenced to nine months behind bars and ordered to register as a convicted sex offender.",
+          "timestamp_seconds": 1264,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "address_or_area"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

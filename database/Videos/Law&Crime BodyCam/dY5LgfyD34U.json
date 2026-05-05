@@ -2135,5 +2135,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:34:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-04",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Hancock",
+          "city": "Findlay",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Findlay Police Department",
+          "type": "local_police",
+          "state": "Ohio",
+          "county": "Hancock",
+          "city": "Findlay"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sierra",
+          "last_name": "Eadie",
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "Brianna",
+          "last_name": "Gonzalez",
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "reckless homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "voluntary manslaughter",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "reckless homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "voluntary manslaughter",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman claims accidental shooting of girlfriend during bedroom cleaning; later charged with murder.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "14:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (380 caliber)",
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "shooting",
+          "homicide",
+          "accidental shooting (claimed)"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting"
+        ],
+        "tags": [
+          "accidental shooting",
+          "girlfriend",
+          "bodycam",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "death",
+          "gun violence"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Schindley Police Department",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "location.county",
+          "source": "title_description",
+          "quote": "Hancock County, Ohio",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "35-year-old Sierra Eadie",
+          "timestamp_seconds": 35,
+          "confidence": "high"
+        },
+        {
+          "field": "victim_name",
+          "source": "transcript",
+          "quote": "her girlfriend, 31-year-old Brianna Gonzalez",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charges of reckless homicide, voluntary manslaughter, and aggravated murder",
+          "timestamp_seconds": 1380,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "pronounced dead",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City inferred from police department name; may be inaccurate."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

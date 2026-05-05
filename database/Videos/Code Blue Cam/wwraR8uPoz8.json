@@ -1485,5 +1485,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:49:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-17",
+        "published_date": "2024-06-21",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Eau Claire County",
+          "city": "Eau Claire",
+          "address_or_area": "motel in Eau Claire",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Eau Claire County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Eau Claire County",
+          "city": "Eau Claire"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michelle",
+          "last_name": null,
+          "age": 45,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "driving with suspended license",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of THC",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of THC",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "found guilty; sentenced to 10 days jail or 80 hours community service"
+      },
+      "event_summary": {
+        "short": "Woman escapes handcuffs during traffic stop, charged with resisting and drug possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "handcuff escape",
+          "probation violation",
+          "suicide threat"
+        ],
+        "content_warnings": [
+          "use of force",
+          "suicide threat"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On February 17, 2024, an Eau Claire County Sheriff's deputy was monitoring traffic at a known drug hotspot motel in Eau Claire, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a motel in O'Clair, Wisconsin",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "45-year-old woman later identified as Michelle",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Michelle was charged with misdemeanor counts of resisting an officer and possession of THC",
+          "timestamp_seconds": 846,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty for both counts...sentenced her to 10 days in jail, which could be fulfilled by completing 80 hours of community service",
+          "timestamp_seconds": 860,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last_name",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

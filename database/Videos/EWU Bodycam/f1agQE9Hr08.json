@@ -1855,5 +1855,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:03:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-01",
+        "published_date": "2024-08-18",
+        "location": {
+          "state": "Virginia",
+          "state_abbreviation": "VA",
+          "county": "Henrico",
+          "city": "Henrico",
+          "address_or_area": "Regency Hotel, second floor hotel room",
+          "location_name": "Regency Hotel",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Henrico County Police Department",
+          "type": "local police",
+          "state": "Virginia",
+          "county": "Henrico",
+          "city": "Henrico"
+        }
+      },
+      "geo": {
+        "address_or_place": "Regency Hotel",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christine",
+          "last_name": "Chandler",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Incest",
+            "category": "sexual_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Incest",
+            "category": "sexual_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "dismissed"
+      },
+      "event_summary": {
+        "short": "Arrest of Chris Chan on incest warrant at Henrico hotel",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "warrant"
+        ],
+        "crime_categories": [
+          "sexual_offense"
+        ],
+        "tags": [
+          "incest",
+          "Chris Chan",
+          "internet personality",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "sexual content"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "What began as a routine arrest on August 1st, 2021 in Henrico, Virginia",
+          "timestamp_seconds": 31,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state_county",
+          "source": "transcript",
+          "quote": "Henrico, Virginia",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Henrico, Virginia",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Henrico County Police Department",
+          "timestamp_seconds": 107,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with incest. The victim was alleged to be Chris's mother.",
+          "timestamp_seconds": 1177,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "the charges were ultimately dismissed",
+          "timestamp_seconds": 1186,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Hi, I'm Christine Chandler.",
+          "timestamp_seconds": 86,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "I identify as female",
+          "timestamp_seconds": 195,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Regency and hotel",
+          "timestamp_seconds": 40,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "age",
+          "precise_location_address",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "The transcript mentions dismissal date as August 8, 2003, which is likely an error (should be 2023). Using as stated but noting discrepancy."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

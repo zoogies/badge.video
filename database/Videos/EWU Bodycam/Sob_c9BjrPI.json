@@ -565,5 +565,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:11:03Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2022-03-16",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Lincoln",
+          "city": "Alamo",
+          "address_or_area": "Area 51 / Nevada Test Site",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Lincoln County Sheriff's Office",
+          "type": "county",
+          "state": "Nevada",
+          "county": "Lincoln",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Area 51",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joseph",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "detained, issued citation"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Trespassing",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Citation issued; fine $640; court date December 8 at Alamo Justice Court"
+      },
+      "event_summary": {
+        "short": "Man detained for trespassing at Area 51, issued citation for $640.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "Area 51",
+          "Nevada Test Site",
+          "Lincoln County",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Bail in Nevada can be paid in lieu of fine.",
+          "timestamp_seconds": 109,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "The video was captured by a body cam worn by a Lincoln County Sheriff's deputy",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "head back to Alamo",
+          "timestamp_seconds": 232,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "transcript",
+          "quote": "Lincoln County Sheriff's deputy",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Joseph, all your stuff is in your front seat",
+          "timestamp_seconds": 267,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "You've trespassed on the test site",
+          "timestamp_seconds": 53,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're not under arrest. I want to clarify that. You're not in arrest right now. You're being detained.",
+          "timestamp_seconds": 64,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "your fine amount is $640",
+          "timestamp_seconds": 126,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race",
+          "charges",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

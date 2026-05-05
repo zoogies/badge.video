@@ -135,5 +135,183 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:22:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022",
+        "published_date": "2025-08-30",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Pershing",
+          "city": "Black Rock City",
+          "address_or_area": "One-Eyed Monster Camp",
+          "location_name": "Burning Man",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": "Nevada",
+          "county": "Pershing",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Burning Man, Black Rock City, NV",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "32027",
+        "source": "transcript inferred",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Scott",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic battery",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police arrest man for domestic battery at Burning Man 2022 after he punched a woman multiple times and made threats.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault"
+        ],
+        "tags": [
+          "Burning Man",
+          "domestic battery",
+          "arrest"
+        ],
+        "content_warnings": [
+          "violence",
+          "domestic abuse"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "At Burning Man 2022, police are called...",
+          "timestamp_seconds": 5,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "We're the primary aggressor in state of Nevada...",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.last_name",
+          "source": "transcript",
+          "quote": "Mr. Scott, do you where what's going on?",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "He grabbed her hair... punched the victim multiple times",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "he yelled that he wanted to kill the bitch",
+          "timestamp_seconds": 25,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "we're going to go ahead and play Shenderrest this time (likely 'place him under arrest')",
+          "timestamp_seconds": 32,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date exact day",
+          "suspect first name",
+          "agency name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcript has garbled phrases",
+        "Outcome of case not confirmed"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

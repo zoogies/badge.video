@@ -2845,5 +2845,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:27:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-27T20:00:32Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Forest County",
+          "city": null,
+          "address_or_area": "Highway 8 near Leona",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Forest County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Forest County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway 8, Leona, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mary",
+          "last_name": "Terry",
+          "age": 50,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "Donald",
+          "last_name": "Britten Jr.",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Homicide by intoxicated use of a motor vehicle",
+            "category": "vehicular_homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating while intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Homicide by intoxicated use of a vehicle",
+            "category": "vehicular_homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to homicide by intoxicated use of a vehicle; sentenced to 10 years prison plus 10 years extended supervision."
+      },
+      "event_summary": {
+        "short": "Drunk wife runs over and kills husband, later charged with vehicular homicide.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "911 call reporting a person in the roadway on Highway 8",
+        "initial_contact": "Deputies arrive at scene, find deceased victim, contact Mary Terry",
+        "pursuit_started": null,
+        "arrest": "Mary Terry arrested after field sobriety tests and breathalyzer"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicular_homicide",
+          "dui",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "dui",
+          "homicide"
+        ],
+        "tags": [
+          "bodycam",
+          "Wisconsin",
+          "DUI",
+          "homicide",
+          "Forest County",
+          "Mary Terry",
+          "Donald Britten"
+        ],
+        "content_warnings": [
+          "death",
+          "graphic content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "It's late October in Forest County, Wisconsin, when deputies receive an eerie 911 call.",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "yeah, there's a person that's hit outside of my house um right on highway 8 in leona",
+          "timestamp_seconds": 31,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "description",
+          "quote": "Mary Jane Terry, 50",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "victim_name",
+          "source": "description",
+          "quote": "Donald Britten Jr.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "you're going to be charged with reckless homicide by a motor vehicle",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "BAC",
+          "source": "transcript",
+          "quote": "299. 0.298.",
+          "timestamp_seconds": 675,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "pleaded guilty to the lesser charge of homicide by intoxicated use of a vehicle... sentenced to 10 years behind bars plus 10 years of extended supervision",
+          "timestamp_seconds": 1380,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

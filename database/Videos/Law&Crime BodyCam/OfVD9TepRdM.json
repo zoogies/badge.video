@@ -1955,5 +1955,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:19:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-29",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas",
+          "city": "St. Petersburg",
+          "address_or_area": "Walmart",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "St. Petersburg Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Pinellas",
+          "city": "St. Petersburg"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart, St. Petersburg, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nyakobo",
+          "last_name": "Mar",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Leaving a child unattended in a vehicle",
+            "category": "child_abuse",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Leaving a child unattended in a vehicle",
+            "category": "child_abuse",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded no contest"
+      },
+      "event_summary": {
+        "short": "Woman left two children locked in a hot car at a Florida Walmart, arrested and later pleaded no contest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_endangerment",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "child_abuse",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "Walmart",
+          "children hot car"
+        ],
+        "content_warnings": [
+          "child endangerment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "outside of a Walmart in St. Petersburg, Florida",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name, people[0].last_name, people[0].age",
+          "source": "transcript",
+          "quote": "30-year-old Nyacobo Marr",
+          "timestamp_seconds": 70,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "charged with leaving a child unattended in a vehicle and resisting arrest without violence",
+          "timestamp_seconds": 1005,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "She later pleaded no contest to the charges against her.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

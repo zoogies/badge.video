@@ -2735,5 +2735,229 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:25:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-15",
+        "published_date": "2025-04-29T22:15:09Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Cleveland",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Cleveland Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Cleveland"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Drahos",
+          "age": 59,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Tammy",
+          "last_name": "Dubuisson",
+          "age": 56,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "gross abuse of a corpse",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "tampering with evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "aggravated murder",
+          "gross abuse of a corpse",
+          "tampering with evidence",
+          "domestic violence"
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to involuntary manslaughter and other charges; sentenced to 14 years"
+      },
+      "event_summary": {
+        "short": "Suspect James Drahos confessed to killing his girlfriend Tammy Dubuisson and disposing of her body in a dumpster. He was arrested and later pleaded guilty to involuntary manslaughter, receiving a 14-year sentence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "officers at suspect's home",
+        "pursuit_started": null,
+        "arrest": "at hospital"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "domestic_violence",
+          "body_disposal"
+        ],
+        "crime_categories": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "confession",
+          "dumpster",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "graphic content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's a quiet afternoon at a home in Cleveland, Ohio",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.first_name",
+          "source": "transcript",
+          "quote": "We want to speak with you. We got an investigation going on. I just need you. Just come to me, please, James.",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.last_name",
+          "source": "description",
+          "quote": "Ohio police suspected James Drahos dumped Tammy Dubuisson's body",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.victim.first_name",
+          "source": "transcript",
+          "quote": "his longtime girlfriend, 56-year-old Tammy Dubison",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He later pleaded guilty to a lesser offense of involuntary manslaughter. ... He was sentenced to 14 years behind bars.",
+          "timestamp_seconds": 1905,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "Me and her got in there and she ran out the front door and that was it. ... I think it was about the 15th.",
+          "timestamp_seconds": 365,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "She died in the driveway.",
+          "timestamp_seconds": 1230,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "We are going to book you for aggravated murder and abusive corpse tonight.",
+          "timestamp_seconds": 1870,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "address_or_area",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

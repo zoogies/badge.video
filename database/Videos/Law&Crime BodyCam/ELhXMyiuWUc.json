@@ -2410,5 +2410,168 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:37:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-12",
+        "published_date": "2024-05-03",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Miami-Dade",
+          "city": "Miami",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Miami Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Miami-Dade",
+          "city": "Miami"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derek",
+          "last_name": "Rosa",
+          "age": 13,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and detained"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "First-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "First-degree murder (charged as adult)",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pending trial"
+      },
+      "event_summary": {
+        "short": "13-year-old Derek Rosa allegedly stabbed his mother to death in Miami, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "kitchen knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "juvenile crime",
+          "domestic violence"
+        ],
+        "crime_categories": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "arrest",
+          "child suspect",
+          "Miami"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Rosa himself called 911 on October 12 to report he had killed his own mother",
+          "timestamp_seconds": 53,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "We begin in Miami, Florida",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "13-year-old Derek Rosa",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "allegedly stabbing his mother more than 40 times",
+          "timestamp_seconds": 46,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Video is a compilation of multiple incidents; this extraction focuses on the first incident (Derek Rosa case)."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

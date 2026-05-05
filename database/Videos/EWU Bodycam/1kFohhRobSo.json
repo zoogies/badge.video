@@ -980,5 +980,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:17:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-25",
+        "published_date": "2025-02-21",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Otero",
+          "city": "Mescalero",
+          "address_or_area": "Highway 70 near Mescalero Reservation",
+          "location_name": "Our Lady of Guadalupe Church",
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Otero County Sheriff's Office",
+          "type": "sheriff",
+          "state": "New Mexico",
+          "county": "Otero",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Jacob",
+          "last_name": "Diaz-Austin",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged with first-degree murder"
+        },
+        {
+          "role": "victim",
+          "first_name": "Elijah",
+          "last_name": "Hadley",
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Mescalero Apache",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "first-degree murder"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Highway welfare check leads to fatal shooting of 17-year-old by deputy; deputy later charged with murder.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-06-25T22:00:00",
+        "initial_contact": "2024-06-25T22:00:00",
+        "pursuit_started": null,
+        "arrest": "2025-01-13"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "airsoft pistol",
+        "officer_weapon_used": "handgun",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare check",
+          "officer-involved shooting",
+          "fatal shooting"
+        ],
+        "crime_categories": [
+          "homicide"
+        ],
+        "tags": [
+          "deputy charged",
+          "Mescalero Apache",
+          "airsoft pistol"
+        ],
+        "content_warnings": [
+          "graphic violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 25th, in 2004...",
+          "timestamp_seconds": 29,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Mescalero, New Mexico",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "27-year-old deputy Jacob Diaz Austin",
+          "timestamp_seconds": 129,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "17-year-old Elijah Hadley",
+          "timestamp_seconds": 139,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with first-degree murder",
+          "timestamp_seconds": 559,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "airsoft pistol",
+          "timestamp_seconds": 509,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].race_ethnicity",
+          "source": "transcript",
+          "quote": "member of the nearby Mescalero Apache tribe",
+          "timestamp_seconds": 548,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Date discrepancy: transcript states '2004' initially but subsequent details indicate incident occurred in 2024."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

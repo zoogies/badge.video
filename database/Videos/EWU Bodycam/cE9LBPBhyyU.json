@@ -2670,5 +2670,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:46:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-02-19",
+        "published_date": "2024-07-29",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": null,
+          "city": "Reno",
+          "address_or_area": "Mustang area",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Nevada Highway Patrol",
+          "type": "state police",
+          "state": "Nevada",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Stephen",
+          "last_name": "Lara",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "suspicion of drug trafficking",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "civil forfeiture, money returned after lawsuit"
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to civil forfeiture of $86,900 from retired Marine",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "civil_forfeiture",
+          "controversial_stop"
+        ],
+        "crime_categories": [
+          "drug_offense"
+        ],
+        "tags": [
+          "highway_interdiction",
+          "cash_seizure",
+          "lawsuit"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 19, 2021, a retired Marine is pulled over",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "title",
+          "quote": "Nevada Highway Patrol",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "this is Reno, so we get people coming with a large amount of cash all the time to go gamble",
+          "timestamp_seconds": 423,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Officer Chris Brown pulls over Stephen Lara of Lubbock, Texas",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Officer Chris Brown pulls over Stephen Lara of Lubbock, Texas",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "the money wasn't returned to him until over six months later after the lawsuit was filed",
+          "timestamp_seconds": 1680,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "no pursuit mentioned",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No explicit race/ethnicity in text; left null"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

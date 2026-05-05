@@ -1770,5 +1770,164 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:09:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2012-09-16",
+        "published_date": "2024-12-11T00:51:13Z",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Weld County",
+          "city": null,
+          "address_or_area": "Highway 85",
+          "location_name": "railroad crossing near Fort Lupton and Platteville",
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": "Fort Lupton Police Department",
+          "type": "local",
+          "state": "Colorado",
+          "county": "Weld County",
+          "city": "Fort Lupton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Yareni",
+          "last_name": "Rios Gonzalez",
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "felony menacing (allegedly pulled a gun)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "road rage",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect received $8.5 million settlement from cities of Fort Lupton and Platteville on June 4, 2004 (likely typo; should be 2014)"
+      },
+      "event_summary": {
+        "short": "Officers stop suspect for road rage, place her in patrol car parked on railroad tracks, train hits car, suspect seriously injured.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_crash",
+          "train_collision",
+          "police_misconduct"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "train crash",
+          "felony menacing",
+          "police error"
+        ],
+        "content_warnings": [
+          "injury",
+          "police misconduct"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "respond to a 911 call regarding an incident of road rage in Weld County, Colorado",
+          "timestamp_seconds": 26,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name",
+          "source": "transcript",
+          "quote": "20-year-old Yerini Rios Gonzalez",
+          "timestamp_seconds": 754,
+          "confidence": "high"
+        },
+        {
+          "field": "settlement",
+          "source": "transcript",
+          "quote": "won an $8.5 million settlement from the cities of Fort Lupton and Platteville on June 4, 2004",
+          "timestamp_seconds": 1110,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Settlement date 'June 4, 2004' predates incident date; likely a typo (should be 2014)."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

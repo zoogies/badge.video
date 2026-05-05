@@ -1040,5 +1040,257 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:03:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-03",
+        "published_date": "2023-09-29",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Monroe County",
+          "city": "Tavernier",
+          "address_or_area": "Overseas Highway",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Monroe County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Tavernier, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title, description, transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Claude",
+          "last_name": null,
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Violation of restraining order (stalking)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Impersonating a law enforcement officer",
+            "category": "fraud",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False report of a crime",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated stalking (felony)",
+            "category": "stalking",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Impersonating a law enforcement officer (felony)",
+            "category": "fraud",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful use of a two-way communication device (felony)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misuse of the 911 system (misdemeanor)",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False report of a crime (misdemeanor)",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A man in Tavernier, FL violated a restraining order by stalking his ex-girlfriend and impersonated a New York State Trooper to report her as a drunk driver. He was arrested and charged with multiple felonies and misdemeanors.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 147,
+        "initial_contact": 233,
+        "pursuit_started": null,
+        "arrest": 414
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "stalking",
+          "impersonation",
+          "false report"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "warrant",
+          "fraud"
+        ],
+        "tags": [
+          "restraining order",
+          "fake 911 call",
+          "bond"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "title",
+          "quote": "Tavernier, FL",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "During March 2022",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "a 36-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The ex-boyfriend was identified as a 36-year-old named Claude.",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "Claude was charged with felony counts of aggravated stalking",
+          "timestamp_seconds": 659,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "impersonating a law enforcement officer",
+          "timestamp_seconds": 663,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[2]",
+          "source": "transcript",
+          "quote": "unlawful use of a two-way communication device",
+          "timestamp_seconds": 665,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[3]",
+          "source": "transcript",
+          "quote": "misdemeanor counts of misuse of the 911 system",
+          "timestamp_seconds": 668,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[4]",
+          "source": "transcript",
+          "quote": "false report of a crime",
+          "timestamp_seconds": 671,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "Monroe County Sheriff's Office",
+          "timestamp_seconds": 125,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date_day",
+          "suspect_last_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

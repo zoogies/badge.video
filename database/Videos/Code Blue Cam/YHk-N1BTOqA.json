@@ -1790,5 +1790,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:59:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-08-08",
+        "published_date": "2025-09-01",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Kenosha",
+          "city": "Kenosha",
+          "address_or_area": "Southport Marina",
+          "location_name": "Southport Marina",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kenosha Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Kenosha",
+          "city": "Kenosha"
+        }
+      },
+      "geo": {
+        "address_or_place": "Southport Marina, Kenosha, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Frank",
+          "last_name": null,
+          "age": 61,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "impersonating a peace officer",
+            "category": "impersonating_officer",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "false imprisonment",
+            "category": "false_imprisonment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "intentionally pointing a firearm at a person",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "felony impersonating a peace officer to aid in the commission of a crime",
+          "false imprisonment",
+          "misdemeanor intentionally point a firearm at a person",
+          "disorderly conduct"
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to impersonating a peace officer; other charges dismissed but read in; sentenced to 90 days in Kenosha County Jail and $3,000 fines"
+      },
+      "event_summary": {
+        "short": "61-year-old Frank brandished a firearm at teenagers and falsely claimed to be a U.S. Marshal at Southport Marina in Kenosha, Wisconsin; he was arrested and later pleaded guilty to impersonating a peace officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-08-08T20:03:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police impersonation",
+          "firearm brandishing"
+        ],
+        "crime_categories": [
+          "impersonating_officer",
+          "weapons_offense",
+          "false_imprisonment"
+        ],
+        "tags": [
+          "fake cop",
+          "gun pulled",
+          "teens",
+          "marina"
+        ],
+        "content_warnings": [
+          "language",
+          "firearm"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "At approximately 803 p.m. on Thursday, August 8th, 2024",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Southport Marina, Kenosha Marina by the pool",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "61-year-old Frank",
+          "timestamp_seconds": 39,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "impersonating a police officer",
+          "timestamp_seconds": 1145,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Frank pleaded guilty to impersonating a peace officer. ... sentenced to 90 days in the Kenosha County Jail and ordered to pay $3,000 in fines",
+          "timestamp_seconds": 1406,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "suspect last name",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

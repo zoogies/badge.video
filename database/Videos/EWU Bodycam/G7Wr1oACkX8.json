@@ -1740,5 +1740,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:08:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-04-22",
+        "published_date": "2023-05-14",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Flagler",
+          "city": "Bunnell",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Flagler County Sheriff's Office",
+          "type": "Sheriff",
+          "state": "Florida",
+          "county": "Flagler",
+          "city": "Bunnell"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christina",
+          "last_name": "Coe",
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Gilbert",
+          "last_name": "Bridewell",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child Neglect (Felony)",
+            "category": "child_neglect",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Three counts of felony child neglect without great bodily harm",
+          "Reduced to one misdemeanor count of contributing to the delinquency of a child"
+        ],
+        "case_number": null,
+        "disposition": "Charges reduced to misdemeanor"
+      },
+      "event_summary": {
+        "short": "Children rescued from deplorable home conditions; parents arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-04-22T01:30:00",
+        "pursuit_started": null,
+        "arrest": "2021-04-22"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_welfare_check",
+          "rescue"
+        ],
+        "crime_categories": [
+          "child_neglect",
+          "drug_offense"
+        ],
+        "tags": [
+          "child neglect",
+          "cockroach infestation",
+          "house of horrors"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "neglect"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 22nd, 2021",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a home in Bunnell, Florida",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "26-year-old Christina Coe",
+          "timestamp_seconds": 153,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "27-year-old Gilbert Bridewell",
+          "timestamp_seconds": 158,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with three counts of felony child neglect without great bodily harm. The charges were eventually reduced to a single misdemeanor of contributing to the delinquency of a child.",
+          "timestamp_seconds": 1085,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "^Flakler County^ likely a transcription error for Flagler County"
+        ],
+        "missing_critical_fields": [
+          "address",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Transcription error: 'Flakler County' interpreted as Flagler County."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

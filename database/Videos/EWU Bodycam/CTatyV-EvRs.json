@@ -3050,5 +3050,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:50:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-02-09",
+        "published_date": "2022-09-23",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Flagler County",
+          "city": "Palm Coast",
+          "address_or_area": "Buddy Taylor Middle School",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Flagler County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Flagler County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Buddy Taylor Middle School, Palm Coast, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "place",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mark",
+          "last_name": "McNeil",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Child Neglect",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest (Non-Violent)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Driving Under the Influence",
+          "Felony Child Neglect",
+          "Resisting Arrest"
+        ],
+        "case_number": null,
+        "disposition": "Sentenced to 18 months in prison on July 11, 2022"
+      },
+      "event_summary": {
+        "short": "Drunk school bus driver arrested after driving with 40 middle school students on board; later sentenced to 18 months in prison.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2020-02-09T14:00:00",
+        "pursuit_started": null,
+        "arrest": "2020-02-09"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "school_bus_incident",
+          "DUI"
+        ],
+        "crime_categories": [
+          "dui",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "school bus",
+          "drunk driving",
+          "child endangerment",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Buddy Taylor Middle School, located in Palm Coast, Florida",
+          "timestamp_seconds": 95,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "Everything started at approximately 2 p.m. on February 9th, 2020.",
+          "timestamp_seconds": 69,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Mark McNeil.",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "driving under the influence, felony child neglect, and resisting arrest",
+          "timestamp_seconds": 1076,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Mark was sentenced to 18 months in prison.",
+          "timestamp_seconds": 1440,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "He's hitting me.",
+          "timestamp_seconds": 1006,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].statute",
+          "source": "transcript",
+          "quote": "blood alcohol readings came in at point 31 and point 32, approximately four times the legal limit",
+          "timestamp_seconds": 1340,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county_fips",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

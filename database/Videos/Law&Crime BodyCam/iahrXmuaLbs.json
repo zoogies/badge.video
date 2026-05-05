@@ -1110,5 +1110,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:53:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10",
+        "published_date": "2024-03-13",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga",
+          "city": "Euclid",
+          "address_or_area": "Speedway gas station parking lot",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Euclid Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Euclid"
+        }
+      },
+      "geo": {
+        "address_or_place": "Speedway gas station parking lot, Euclid, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "39035",
+        "source": "description, transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Corrione",
+          "last_name": "Lawrence",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "receiving stolen property",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to comply",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "weapon under disability",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "improperly handling a firearm in a motor vehicle",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "charge": "felony assault",
+            "statute": null
+          },
+          {
+            "charge": "three counts of failure to comply",
+            "statute": null
+          },
+          {
+            "charge": "possessing a weapon while under disability",
+            "statute": null
+          },
+          {
+            "charge": "improperly handling a firearm in a motor vehicle",
+            "statute": null
+          },
+          {
+            "charge": "receiving stolen property",
+            "statute": null
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Ohio police pursued a man driving an allegedly stolen vehicle in Euclid; he fled, dragged an officer, and was arrested. He was charged with multiple offenses including assault and weapons violations.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (missing magazine)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "assault_on_officer",
+          "stolen_vehicle"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "weapons_offense",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "fentanyl",
+          "Euclid",
+          "Ohio",
+          "police chase",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "police_pursuit",
+          "drug_use"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "October 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Euclid, Ohio",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "description",
+          "quote": "Corrione Lawrence",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "29-year-old Corianne Lawrence",
+          "timestamp_seconds": 610,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Corian Lawrence was booked and charged with felony assault, three counts of failure to comply, possessing a weapon while under disability, improperly handling a firearm in a motor vehicle, and receiving stolen property.",
+          "timestamp_seconds": 857,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "race_ethnicity",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

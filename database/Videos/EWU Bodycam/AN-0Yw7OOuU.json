@@ -1795,5 +1795,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:37:10Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-17",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "San Juan",
+          "city": "Farmington",
+          "address_or_area": "Navajo Street and Dustin Avenue",
+          "location_name": "Farmington",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Farmington Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "San Juan",
+          "city": "Farmington"
+        }
+      },
+      "geo": {
+        "address_or_place": "Navajo Street, Farmington, NM",
+        "intersection": "Dustin and Apache",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Boe",
+          "last_name": "Wilson",
+          "age": 18,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Mass shooting",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased"
+      },
+      "event_summary": {
+        "short": "Mass killing in Farmington, NM: three women killed, suspect shot dead by police; two officers wounded.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "automatic weapon, AR",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect",
+          "officers"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "mass shooting",
+          "active shooter"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Farmington",
+          "New Mexico",
+          "mass shooting",
+          "officer involved shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "suicide by cop"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "Farmington police officer Benjamin Jimet",
+          "timestamp_seconds": 196,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "18-year-old Boe Wilson",
+          "timestamp_seconds": 1200,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "18-year-old Boe Wilson",
+          "timestamp_seconds": 1200,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "three homicides",
+          "timestamp_seconds": 1098,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "four deceased on scene including the killer himself",
+          "timestamp_seconds": 1100,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "he's got automatic weapon",
+          "timestamp_seconds": 251,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "geo.coordinates",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not explicitly stated in text; video published in 2024, event likely in 2023."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

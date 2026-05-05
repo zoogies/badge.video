@@ -1800,5 +1800,255 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:15:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-12-03",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Alachua",
+          "city": "Gainesville",
+          "address_or_area": "Walgreens parking lot at 13th Street and 39th Avenue",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Gainesville Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Alachua",
+          "city": "Gainesville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walgreens, 13th Street and 39th Avenue, Gainesville, FL",
+        "intersection": "13th Street and 39th Avenue",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12001",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Amanda",
+          "last_name": "Janzen",
+          "age": 38,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and sentenced"
+        },
+        {
+          "role": "victim",
+          "first_name": "Anna",
+          "last_name": "Terrell",
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder of Anna Terrell",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder of male victim",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child neglect (five counts)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing law enforcement",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Second-degree murder",
+          "Attempted murder",
+          "Five counts of child neglect",
+          "Fleeing law enforcement"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded no contest to all charges, adjudicated guilty, sentenced to life imprisonment for murder plus 30 years for remaining charges, no contact with children until recommended by therapist."
+      },
+      "event_summary": {
+        "short": "During a Christmas Day custody exchange at a Walgreens parking lot in Gainesville, Florida, Amanda Janzen allegedly shot and killed Anna Terrell and injured the father, then fled with her five children, leading police on a 13-mile high-speed chase. She was later arrested and charged.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (likely Glock)",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "custody dispute",
+          "domestic violence",
+          "shooting",
+          "vehicle pursuit"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault",
+          "drug_offense",
+          "warrant"
+        ],
+        "tags": [
+          "Christmas",
+          "custody exchange",
+          "Walgreens",
+          "high-speed chase",
+          "mother suspect"
+        ],
+        "content_warnings": [
+          "violence",
+          "child endangerment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "parking lot of a Florida Walgreens",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "Christmas Day at a Walgreens parking lot in Gainesville, Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "Shooting's at Walgreens 13 and 39",
+          "timestamp_seconds": 44,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Amanda Jensen",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Jensen",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "38-year-old Amanda Jansen",
+          "timestamp_seconds": 301,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "31-year-old Anna Terrell dead",
+          "timestamp_seconds": 104,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Amanda was charged with second-degree murder, attempted murder, five counts of child neglect, neglect and fleeing law enforcement",
+          "timestamp_seconds": 1220,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she later pleaded no contest to the charges and was adjudicated guilty on all eight counts. She was sentenced to life behind bars for the murder charge, followed by an additional 30 years for the remaining charges",
+          "timestamp_seconds": 1227,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "coordinates",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified, only 'Christmas Day' mentioned; published date is before Christmas 2025, suggesting possible date error or incident from previous year."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -3665,5 +3665,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:52:00Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04-02",
+        "published_date": "2025-08-14T01:35:41Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": null,
+          "address_or_area": "Paloma Avenue",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Bernalillo County Sheriff's Office",
+          "type": "sheriff",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Paloma Avenue",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Colbert",
+          "age": 59,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "Marion",
+          "last_name": "Colbert",
+          "age": 83,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder of Marion Colbert",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to report a death",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to report violent death",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled no contest to second-degree murder and failure to report violent death; sentenced to 9 years in New Mexico Department of Corrections"
+      },
+      "event_summary": {
+        "short": "Man found living with mother's decaying corpse; later pleaded no contest to murder",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-04-02T00:00:00",
+        "initial_contact": "2024-04-02T00:00:08",
+        "pursuit_started": null,
+        "arrest": "2024-04-02"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "death investigation",
+          "welfare check"
+        ],
+        "crime_categories": [
+          "homicide"
+        ],
+        "tags": [
+          "elderly victim",
+          "caregiver",
+          "mother-son",
+          "corpse"
+        ],
+        "content_warnings": [
+          "graphic descriptions",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 2nd, 2024",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "deputies from the Bernalillo County Sheriff's Office in New Mexico",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Bernalillo County Sheriff's Office",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "59-year-old James Colbert",
+          "timestamp_seconds": 129,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.first_name",
+          "source": "transcript",
+          "quote": "83-year-old Marion Colbert",
+          "timestamp_seconds": 641,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "James Colbert eventually pled no contest to murder in the second degree and failure to report of violent death. He was sentenced to nine years in the New Mexico Department of Corrections.",
+          "timestamp_seconds": 2102,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "his mother passed away",
+          "timestamp_seconds": 96,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date stated as April 2, 2004 in one part of transcript, but context suggests 2024. Used 2024."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

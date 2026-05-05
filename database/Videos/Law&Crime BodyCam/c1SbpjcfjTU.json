@@ -2305,5 +2305,234 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:26:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-04-05",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": "Cleveland",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Cleveland Police",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": null,
+          "city": "Cleveland"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Delante",
+          "last_name": "Geiger",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 60,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Stabbing",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felonious Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with Evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Having Weapons Under Disability",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty, sentenced to 16-20 years"
+      },
+      "event_summary": {
+        "short": "Police in Cleveland, Ohio rescue a 60-year-old woman who was kidnapped, beaten, and locked in a storage container by Delante Geiger.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "kidnapping",
+          "rescue"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "storage container",
+          "confidential informant",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "violence",
+          "adult content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's just after 3.30 p.m. in Cleveland, Ohio",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "31 year old, Delante Edmund Geiger",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "31 year old",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.age",
+          "source": "transcript",
+          "quote": "I'm 60",
+          "timestamp_seconds": 975,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.rescue",
+          "source": "transcript",
+          "quote": "Hey, how do you get to her? ... In the black box?",
+          "timestamp_seconds": 953,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Delante Edmund Geiger pled guilty to felonious assault, kidnapping, tampering with evidence and having weapons under disability",
+          "timestamp_seconds": 1350,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "He was sentenced to 16 to 20 years in prison",
+          "timestamp_seconds": 1356,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Description spells suspect name as 'Dalontay Reshawn', but transcript confirms 'Delante Edmund Geiger'"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

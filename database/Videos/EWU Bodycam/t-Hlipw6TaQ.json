@@ -1110,5 +1110,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:11:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-10-24",
+        "published_date": "2025-03-13",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Sacramento County",
+          "city": null,
+          "address_or_area": "Sacramento County Sheriff's Department",
+          "location_name": "Sacramento County Sheriff's Department",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Sacramento County Sheriff's Department",
+          "type": "sheriff",
+          "state": "California",
+          "county": "Sacramento",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Marvin",
+          "last_name": "Morales",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "resigned"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited and released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession of narcotics (suspect)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "intentional use of seized narcotics (deputy)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "deputy resigned"
+      },
+      "event_summary": {
+        "short": "Deputy Marvin Morales overdosed in bathroom after allegedly smoking seized methamphetamine.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-10-24T20:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "overdose",
+          "drug_use",
+          "internal_affairs_investigation"
+        ],
+        "crime_categories": [
+          "drug_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "police misconduct",
+          "resignation"
+        ],
+        "content_warnings": [
+          "drug use",
+          "medical emergency"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On October 24, 2023, panic ensues at the Sacramento County Sheriff's Department",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Sacramento County Sheriff's Department in California",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "people",
+          "source": "transcript",
+          "quote": "Deputy Marvin Morales",
+          "timestamp_seconds": 43,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "investigators concluded that Deputy Morales intentionally used the narcotics he seized",
+          "timestamp_seconds": 547,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "he submitted a formal resignation letter on February 2, 2004",
+          "timestamp_seconds": 569,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "transcript",
+          "quote": "small glass pipe and an orange torch lighter in the bathroom",
+          "timestamp_seconds": 500,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -180,5 +180,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:25:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2002-01-23",
+        "published_date": "2024-01-08",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King",
+          "city": "Seattle",
+          "address_or_area": "Thomas and Dexter Avenue North",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Seattle Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "King",
+          "city": "Seattle"
+        }
+      },
+      "geo": {
+        "address_or_place": "Thomas and Dexter Avenue North",
+        "intersection": "Thomas Ave N & Dexter Ave N",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Otterer",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        },
+        {
+          "role": "suspect",
+          "first_name": "Dave",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Seattle police officers make derogatory comments about a deceased woman, accidentally recorded.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": null,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2002-01-23T00:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_misconduct",
+          "accidental_recording"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "Seattle Police",
+          "derogatory comments",
+          "limited value",
+          "2002"
+        ],
+        "content_warnings": [
+          "death",
+          "inappropriate language"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 23rd, 2002",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Seattle Police Dispatchers",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "address_or_area",
+          "source": "transcript",
+          "quote": "Thomas and Dexter Avenue North",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.age",
+          "source": "transcript",
+          "quote": "She was 26 anyway",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.death",
+          "source": "transcript",
+          "quote": "But she is dead.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Officer Dave",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Officer Daniel Otterer",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "case_number",
+          "disposition"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No explicit crime category; incident involves police misconduct comments.",
+        "No charges or case number available."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

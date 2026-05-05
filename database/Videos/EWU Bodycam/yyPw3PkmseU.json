@@ -1370,5 +1370,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:39:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-21",
+        "published_date": "2024-12-21T21:33:12Z",
+        "location": {
+          "state": "New Hampshire",
+          "state_abbreviation": "NH",
+          "county": null,
+          "city": "Bedford",
+          "address_or_area": "Country Inn and Suites",
+          "location_name": "Country Inn and Suites",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Country Inn and Suites, Bedford",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Theodore",
+          "last_name": "Luckey",
+          "age": 42,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "incarcerated"
+        },
+        {
+          "role": "victim",
+          "first_name": "Nathan",
+          "last_name": "Cashman",
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "David",
+          "last_name": "Hanford",
+          "age": 60,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "First-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea; two life sentences without parole"
+      },
+      "event_summary": {
+        "short": "Theodore Luckey murdered two men at a hotel in Bedford, New Hampshire.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": 2,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-08-21T16:30:00",
+        "pursuit_started": null,
+        "arrest": "2021-08-21"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "machete",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "assault"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault"
+        ],
+        "tags": [
+          "murder",
+          "machete",
+          "hotel",
+          "domestic violence"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "murder"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "shortly after 4.30 on August 21st, 2021",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Country Inn and Suites in Bedford, New Hampshire",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Theodore Luckey",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "42-year-old Theodore Lucky",
+          "timestamp_seconds": 49,
+          "confidence": "medium"
+        },
+        {
+          "field": "victim.name",
+          "source": "transcript",
+          "quote": "28-year-old Nathan Cashman",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.name",
+          "source": "transcript",
+          "quote": "60-year-old David Hanford",
+          "timestamp_seconds": 1025,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "Theodore pled guilty to two counts of murder in the first degree. He received two life sentences without the possibility of parole.",
+          "timestamp_seconds": 1427,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "with the black. The black guy with the red hair had a machete in his hand.",
+          "timestamp_seconds": 301,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "agency.name",
+          "zip_code",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect last name conflict: transcript says 'Lucky', description says 'Luckey'."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

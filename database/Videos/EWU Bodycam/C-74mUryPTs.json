@@ -1660,5 +1660,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:44:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2012-11-11",
+        "published_date": "2025-03-29",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas County",
+          "city": "Treasure Island",
+          "address_or_area": "R. Bar parking lot",
+          "location_name": "R. Bar",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pinellas County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Pinellas County",
+          "city": "Treasure Island"
+        }
+      },
+      "geo": {
+        "address_or_place": "Treasure Island, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mark",
+          "last_name": "McCown",
+          "age": 61,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Thomas",
+          "last_name": "McCown",
+          "age": 86,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Leaving the scene of a crash involving death",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "DUI (impairment factor)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Leaving the scene of a crash involving death",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 10 years probation, substance abuse evaluation, driver's license revoked 3 years"
+      },
+      "event_summary": {
+        "short": "Son runs over and kills his father with truck in bar parking lot, then leaves scene; later claims no memory.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2012-11-11T21:00:00",
+        "pursuit_started": null,
+        "arrest": "2012-11-12"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "hit_and_run",
+          "traffic_incident",
+          "fatal_accident"
+        ],
+        "crime_categories": [
+          "hit_and_run",
+          "dui"
+        ],
+        "tags": [
+          "father-son",
+          "Veterans Day",
+          "surveillance footage",
+          "plea deal"
+        ],
+        "content_warnings": [
+          "death",
+          "graphic descriptions"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Just before 9 p.m. on November 11, 2012",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Pinellas County deputies arrive at the R. Bar in Treasure Island, Florida",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "victim_name_age",
+          "source": "transcript",
+          "quote": "86-year-old veteran Thomas Tom McCown",
+          "timestamp_seconds": 72,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name_age",
+          "source": "transcript",
+          "quote": "Tom's son, 61-year-old Mark McCown",
+          "timestamp_seconds": 194,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with leaving the scene of a crash involving death",
+          "timestamp_seconds": 1026,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "sentenced to 10 years of probation ... driver's license revoked for a period of three years",
+          "timestamp_seconds": 1032,
+          "confidence": "high"
+        },
+        {
+          "field": "BAC",
+          "source": "transcript",
+          "quote": "blood alcohol level tested at 0.039",
+          "timestamp_seconds": 998,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Title uses 'McKeown' but transcript consistently uses 'McCown'; using McCown."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

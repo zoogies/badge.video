@@ -1720,5 +1720,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:48:57Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-04-16",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Manatee County",
+          "city": "Bradenton",
+          "address_or_area": null,
+          "location_name": "hotel in Bradenton",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Florida",
+          "county": "Manatee County",
+          "city": "Bradenton"
+        }
+      },
+      "geo": {
+        "address_or_place": "hotel in Bradenton",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Steven",
+          "last_name": "Kozens",
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, charged with first-degree murder, later pleaded guilty to second-degree murder, sentenced to 60 years"
+        },
+        {
+          "role": "victim",
+          "first_name": "Jennifer",
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to second-degree murder, sentenced to 60 years"
+      },
+      "event_summary": {
+        "short": "Police respond to a 911 call from a hotel in Bradenton, Florida, where a housekeeper found a body under a mattress. The suspect, Steven Kozens, confessed to stabbing his girlfriend during a fight.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "911 call from hotel staff",
+        "initial_contact": "officers arrive at hotel",
+        "pursuit_started": null,
+        "arrest": "Steven Kozens brought in for questioning"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife (flip open)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "stabbing",
+          "hotel",
+          "body under mattress",
+          "confession"
+        ],
+        "content_warnings": [
+          "violence",
+          "murder"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Bodycam footage shows Florida police responding to a 911 call from hotel staff in Bradenton.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "victim",
+          "source": "transcript",
+          "quote": "a 26-year-old Manatee County woman",
+          "timestamp_seconds": 88,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect",
+          "source": "transcript",
+          "quote": "27-year-old Steven Kozens",
+          "timestamp_seconds": 393,
+          "confidence": "high"
+        },
+        {
+          "field": "confession",
+          "source": "transcript",
+          "quote": "she tried to stab me okay",
+          "timestamp_seconds": 489,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "you're gonna get charged with murder ... second-degree murder",
+          "timestamp_seconds": 1274,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "Stephen was charged with first-degree murder but court records show he later accepted a deal and pleaded guilty to second degree murder. He was sentenced to 60 years behind bars.",
+          "timestamp_seconds": 1324,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency_name",
+          "victim_last_name",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1880,5 +1880,230 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:19:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-29",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Vanderburgh County",
+          "city": "Evansville",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Evansville Police Department",
+          "type": "municipal",
+          "state": "Indiana",
+          "county": "Vanderburgh County",
+          "city": "Evansville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "David",
+          "last_name": "Shonabaum",
+          "age": 28,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Angel",
+          "last_name": "Schonabaum",
+          "age": 28,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "pleaded guilty"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Delaina",
+          "last_name": "Thurman",
+          "age": 25,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "pleaded guilty"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 0,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Neglect of a Dependent Resulting in Serious Injury",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Neglect of a Dependent",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "David found guilty, sentenced to 16 years. Angel pleaded guilty, sentenced to 4 years with probation. Delaina pleaded guilty, sentenced to 2 years probation."
+      },
+      "event_summary": {
+        "short": "6-month-old baby found with over 50 rat bites in filthy home in Evansville, Indiana.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_neglect",
+          "rat_infestation"
+        ],
+        "crime_categories": [
+          "other"
+        ],
+        "tags": [
+          "rat bites",
+          "infant",
+          "neglect",
+          "Indiana"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "graphic injuries"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "description",
+          "quote": "Evansville, Indiana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "David Shonabaum, 28",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "description",
+          "quote": "Angel Schonabaum, 28",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].first_name",
+          "source": "description",
+          "quote": "Delaina Thurman, 25",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "description",
+          "quote": "Law&Crime BodyCam (implied Evansville PD)",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "description",
+          "quote": "David was charged with neglect... found guilty by a jury and sentenced to 16 years",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Angel pleaded guilty to one count of neglect... sentenced 4 years probation. Delana pleaded guilty to two counts... sentenced 2 years probation.",
+          "timestamp_seconds": 1748,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "address",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Age discrepancy: description says David 28, transcript says 31"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1090,5 +1090,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:36:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-01-02",
+        "published_date": "2026-02-23",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": "Milwaukee",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Milwaukee Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": "Milwaukee"
+        }
+      },
+      "geo": {
+        "address_or_place": "Milwaukee, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video transcription",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kevin",
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Violation of restraining order",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle pursuit",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession with intent to deliver controlled substance",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony vehicle fleeing/eluding an officer causing property damage",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second degree recklessly endangering safety",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession with intent to deliver controlled substance",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty of fleeing and possession; sentenced to 3 years prison + 3 years extended supervision"
+      },
+      "event_summary": {
+        "short": "Suspect violated restraining order, led police on pursuit, abandoned car, boarded a school bus, arrested, later found guilty of fleeing and drug possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "restraining order violation",
+          "school bus",
+          "Milwaukee"
+        ],
+        "content_warnings": [
+          "police chase"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "It's 3.13 p.m. on January 2nd, 2025",
+          "timestamp_seconds": 35,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Milwaukee's police officers are waiting outside a suspect's residence in Wisconsin",
+          "timestamp_seconds": 37,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "23-year-old Kevin",
+          "timestamp_seconds": 133,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Kevin was charged with felony vehicle fleeing eluding an officer causing property damage second degree recklessly endangering safety possession with intent to deliver controlled substance misdemeanor obstructing an officer",
+          "timestamp_seconds": 596,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "he was found guilty of fleeing an officer and possession with intent to deliver substances... sentenced to three years in the Wisconsin State Prison, followed by three years of extended supervision",
+          "timestamp_seconds": 617,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "exact_address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

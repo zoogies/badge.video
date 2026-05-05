@@ -1230,5 +1230,180 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:23:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-27",
+        "published_date": "2023-04-08",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Flagler",
+          "city": "Palm Coast",
+          "address_or_area": "Wawa gas station",
+          "location_name": "Wawa gas station",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Florida Highway Patrol",
+          "type": "state police",
+          "state": "Florida",
+          "county": "Flagler",
+          "city": "Palm Coast"
+        }
+      },
+      "geo": {
+        "address_or_place": "Wawa gas station",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Austin",
+          "last_name": "Tuning",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "fired from Holly Hill Police Department; charged with DUI"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving Under the Influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Parking violation (over line of handicapped spot without plaque)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Driving Under the Influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "fired from job; charged with DUI"
+      },
+      "event_summary": {
+        "short": "Off-duty police officer fired and charged with DUI after being stopped by state trooper for parking violation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-11-27T02:30:00",
+        "pursuit_started": null,
+        "arrest": "2022-11-27T02:30:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_investigation"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "DUI",
+          "police officer",
+          "Florida",
+          "Holly Hill Police Department",
+          "Palm Coast"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "on Sunday, November 27, 2022",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Palm Coast community",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "This is Austin Tuning",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "charged with driving under the influence",
+          "timestamp_seconds": 658,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "is quickly placed into the car",
+          "timestamp_seconds": 264,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location.county",
+          "location.latitude",
+          "location.longitude",
+          "location.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

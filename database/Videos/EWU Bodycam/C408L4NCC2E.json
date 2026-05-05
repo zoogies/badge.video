@@ -2935,5 +2935,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:44:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2019-03-13",
+        "published_date": "2024-11-04",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Pinal",
+          "city": "Maricopa",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Maricopa Police Department",
+          "type": "municipal",
+          "state": "Arizona",
+          "county": "Pinal",
+          "city": "Maricopa"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Machelle",
+          "last_name": "Hobson",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "description in transcript: 'White female, she's brown hair.'",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Ryan",
+          "last_name": "Hackney",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Logan",
+          "last_name": "Hackney",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "child neglect",
+            "category": "neglect",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "false imprisonment",
+            "category": "unlawful_restraint",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "seven counts of child abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "charges dismissed due to defendant's death"
+      },
+      "event_summary": {
+        "short": "Police respond to welfare check at home of YouTube family, discover seven adopted children allegedly abused and starved by mother Machelle Hobson.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2019-03-13",
+        "initial_contact": "2019-03-13",
+        "pursuit_started": null,
+        "arrest": "2019-03-14"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "pepper spray",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare_check",
+          "child_abuse",
+          "neglect"
+        ],
+        "crime_categories": [
+          "assault",
+          "neglect"
+        ],
+        "tags": [
+          "YouTube",
+          "fantastic adventures",
+          "foster care",
+          "green room"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On March 13th, 2019, police in Maricopa, Arizona, field a call...",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "police in Maricopa, Arizona",
+          "timestamp_seconds": 65,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "White female, she's brown hair.",
+          "timestamp_seconds": 215,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges.0",
+          "source": "transcript",
+          "quote": "seven counts of child",
+          "timestamp_seconds": 1620,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "died on November 12, 2019",
+          "timestamp_seconds": 1688,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "address",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

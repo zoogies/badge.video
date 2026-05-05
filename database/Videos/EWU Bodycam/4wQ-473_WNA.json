@@ -1955,5 +1955,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:23:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-12-14",
+        "published_date": "2024-09-14T20:03:05Z",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Sonoma",
+          "city": "Petaluma",
+          "address_or_area": "Michaels",
+          "location_name": "Michaels",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Petaluma Police Department",
+          "type": "local",
+          "state": "California",
+          "county": "Sonoma",
+          "city": "Petaluma"
+        }
+      },
+      "geo": {
+        "address_or_place": "Michaels, Petaluma, CA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Katie",
+          "last_name": "Sorensen",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Falsely reporting a crime",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Three counts of falsely reporting a crime",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Convicted on one count; sentenced to 90 days jail (60 work release), 4-hour implicit bias training, 12 months informal probation, prohibited from social media, warrantless search"
+      },
+      "event_summary": {
+        "short": "Katie Sorensen falsely reported an attempted kidnapping at a Michaels store in Petaluma, California. Police investigation found the claim baseless and charged her with false reporting.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2020-12-14",
+        "initial_contact": "2020-12-14",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "false report",
+          "hoax"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "false reporting",
+          "attempted kidnapping hoax",
+          "social media"
+        ],
+        "content_warnings": [
+          "deception"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On December 14, 2020 in Petaluma, California, Katie Sorensen made this call",
+          "timestamp_seconds": 74,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Petaluma, California",
+          "timestamp_seconds": 74,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "at the Michaels here in Petaluma",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Katie Sorensen",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Katie Sorensen was charged with three counts of falsely reporting a crime, and on June 29, 2003, she was convicted on one of those counts. She was subsequently ordered to serve 90 days in jail, 60 of which could be served on a work release program, and she was required to complete a four-hour implicit bias training. She was also placed on 12 months of informal probation, where she was prohibited from having a social media presence in order to submit to warrantless search and seizure of her electronic devices.",
+          "timestamp_seconds": 1460,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

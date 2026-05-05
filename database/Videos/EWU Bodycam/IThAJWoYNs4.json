@@ -1005,5 +1005,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:15:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-11-15",
+        "published_date": "2025-05-23",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Clark",
+          "city": "Battle Ground",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Battle Ground Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "Clark",
+          "city": "Battle Ground"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andre",
+          "last_name": "Terwilleger",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Animal Cruelty in the First Degree (5 counts)",
+            "category": "animal_cruelty",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Animal Cruelty in the Second Degree (4 counts)",
+            "category": "animal_cruelty",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police respond to animal cruelty report, find multiple deceased and living dogs in garage; suspect Andre Terwilleger arrested months later.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2025-03-07"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "animal_cruelty",
+          "neglect"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "animal_cruelty",
+          "dog_deaths",
+          "hoarding",
+          "neglect"
+        ],
+        "content_warnings": [
+          "animal_death",
+          "graphic_content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 15, 24 in Battleground Washington",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Battleground Washington",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "title",
+          "quote": "Andre Terwilleger",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "35-year-old Andre Twilliger",
+          "timestamp_seconds": 55,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "warrant to arrest Andre for suspicion of five counts of animal cruelty in the first degree and four counts of animal cruelty in the second degree",
+          "timestamp_seconds": 1127,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Andre Twilliger was located and taken into custody",
+          "timestamp_seconds": 1140,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.arrest",
+          "source": "transcript",
+          "quote": "March 7, 2025",
+          "timestamp_seconds": 1137,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location.address_or_area",
+          "agency.name",
+          "legal.case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Last name discrepancy: title uses Terwilleger, transcript uses Twilliger"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

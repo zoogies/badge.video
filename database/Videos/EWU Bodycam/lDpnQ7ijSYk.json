@@ -2045,5 +2045,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:27:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2020-12-08",
+        "published_date": "2024-04-17T20:36:44Z",
+        "location": {
+          "state": "Connecticut",
+          "state_abbreviation": "CT",
+          "county": "Hartford",
+          "city": "Rocky Hill",
+          "address_or_area": "near Dunkin Donuts, Rocky Hill",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Meriden Police Department",
+          "type": "municipal police",
+          "state": "Connecticut",
+          "county": "New Haven",
+          "city": "Meriden"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alan",
+          "last_name": "Ganter",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "victim",
+          "first_name": "Thomas",
+          "last_name": "Procuglio",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript (911 call)",
+            "confidence": "high"
+          },
+          "status": "victim"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault in the Third Degree",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Breach of Peace",
+            "category": "disturbing_the_peace",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Assault in the Third Degree",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Breach of Peace",
+            "category": "disturbing_the_peace",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Accelerated rehabilitation granted; charges to be dismissed if program completed by January 2025"
+      },
+      "event_summary": {
+        "short": "Off-duty police officer punches driver during road rage incident",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "road_rage"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "off-duty officer",
+          "road rage",
+          "dash cam footage"
+        ],
+        "content_warnings": [
+          "violence",
+          "assault"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Shortly afternoon on December 8, 2020",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "on the streets of Rocky Hill, Connecticut",
+          "timestamp_seconds": 59,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "transcript",
+          "quote": "Comes back to an Alan Janter.",
+          "timestamp_seconds": 237,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with breach of peace and assault in the third degree",
+          "timestamp_seconds": 1114,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Gantor was given accelerated rehabilitation by the court. If he completes the program without further incident by January 2025, the charges will be dismissed.",
+          "timestamp_seconds": 1157,
+          "confidence": "high"
+        },
+        {
+          "field": "people.victim.race_ethnicity",
+          "source": "transcript",
+          "quote": "And was he white, black, Hispanic? White.",
+          "timestamp_seconds": 75,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county (inferred)",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": [
+        "County inferred from city and state; not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

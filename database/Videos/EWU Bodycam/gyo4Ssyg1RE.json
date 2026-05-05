@@ -1525,5 +1525,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:09:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2004-08-24",
+        "published_date": "2025-01-26",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga County",
+          "city": "Maple Heights",
+          "address_or_area": "Signature Medical Center",
+          "location_name": "Signature Health Maple Heights",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Maple Heights Police Department",
+          "type": "local",
+          "state": "Ohio",
+          "county": "Cuyahoga",
+          "city": "Maple Heights"
+        }
+      },
+      "geo": {
+        "address_or_place": "Signature Medical Center, Maple Heights, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jason",
+          "last_name": "Halasz",
+          "age": 24,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript: 'white guy' (timestamp 7:14-7:16)",
+            "confidence": "high"
+          },
+          "status": "incarcerated"
+        },
+        {
+          "role": "victim",
+          "first_name": "Adam",
+          "last_name": "Brown",
+          "age": 49,
+          "sex_or_gender": "male",
+          "race_ethnicity": null,
+          "status": "survived"
+        },
+        {
+          "role": "witness",
+          "first_name": "Rachel",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": null,
+          "status": null
+        },
+        {
+          "role": "witness",
+          "first_name": "Tommy",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": null,
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felonious assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felonious assault (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to attempted murder; other charges dropped. Sentenced to 11-16.5 years in prison."
+      },
+      "event_summary": {
+        "short": "Patient Jason Halasz stabbed nurse practitioner Adam Brown multiple times at a medical clinic in Maple Heights, Ohio.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2004-08-24T13:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": "2004-08-24"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "stabbing",
+          "workplace violence"
+        ],
+        "crime_categories": [
+          "assault",
+          "homicide"
+        ],
+        "tags": [
+          "mental health",
+          "schizophrenia",
+          "hospital",
+          "2004",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "stabbing"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Just after 1 p.m. on August 24, 2004",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Signature Health Maple Heights",
+          "timestamp_seconds": 33,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Cuyahoga County",
+          "timestamp_seconds": 60,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "white guy",
+          "timestamp_seconds": 434,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Jason pleaded guilty to attempted murder... sentenced to a minimum of 11 years and a maximum of 16 years and six months",
+          "timestamp_seconds": 879,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Suspect name discrepancy: description says 'Jason Halasz', transcript says 'Jason Hollez'. Using description name as likely correct."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

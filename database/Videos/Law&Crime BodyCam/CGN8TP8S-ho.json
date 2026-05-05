@@ -1200,5 +1200,169 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:28:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-02-14T20:00:07Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": null,
+          "city": "Albuquerque",
+          "address_or_area": "Whataburger drive-thru",
+          "location_name": "Whataburger",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Albuquerque Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": null,
+          "city": "Albuquerque"
+        }
+      },
+      "geo": {
+        "address_or_place": "Whataburger",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alfredo",
+          "last_name": "Alvidrez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, out on bail"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While Intoxicated (DWI) - 5th offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "DWI - 5th offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded not guilty, granted bail pending outcome"
+      },
+      "event_summary": {
+        "short": "Intoxicated driver passes out in Whataburger drive-thru with multiple whiskey bottles",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI arrest"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "DWI",
+          "Whataburger",
+          "Albuquerque",
+          "Jim Beam",
+          "intoxicated"
+        ],
+        "content_warnings": [
+          "alcohol abuse"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Albuquerque, New Mexico",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Alfredo Alvindrez",
+          "timestamp_seconds": 694,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime",
+          "source": "description",
+          "quote": "arrested for driving while intoxicated — his fifth DWI charge",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "number_of_bottles",
+          "source": "transcript",
+          "quote": "four empty Jim Beam bottles",
+          "timestamp_seconds": 804,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "zip_code",
+          "age",
+          "exact address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

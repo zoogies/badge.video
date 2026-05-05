@@ -1450,5 +1450,205 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:28:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-09",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Stark",
+          "city": null,
+          "address_or_area": "Perry Township, near Southway, Denmont, Clark, and Hazelbrook",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Perry Township Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Stark",
+          "city": "Perry Township"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "39151",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "William",
+          "last_name": "Wackerly",
+          "age": 83,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Felonious Assault",
+            "category": "assault",
+            "statute": "ORC 2903.11",
+            "confidence": "medium"
+          },
+          {
+            "label": "Failure to Comply with Order or Signal of Police Officer",
+            "category": "fleeing_eluding",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Operating Vehicle at Slow Speed Impeding Traffic",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Active Warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "83-year-old William 'Wild Bill' Wackerly flees police on a lawnmower, evading arrest for a day before being apprehended and charged with multiple offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": 0,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "warrant",
+          "assault",
+          "resisting_arrest",
+          "fleeing_eluding",
+          "traffic_stop"
+        ],
+        "tags": [
+          "elderly",
+          "lawnmower",
+          "wild bill",
+          "perry township",
+          "ohio",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser deployment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Perry Township, Ohio",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name, people[0].last_name",
+          "source": "transcript",
+          "quote": "83-year-old William Wackerly, also known as Wild Bill",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "83-year-old William Wackerly",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "William was booked for felonious assault, failure to comply with the order or signal of an officer, resisting arrest, operating a vehicle out of slow speed, impeding traffic, and more.",
+          "timestamp_seconds": 1048,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "The officer deploys a taser, but it's no match for William's thick leather jacket.",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Yeah, you're going to jail.",
+          "timestamp_seconds": 537,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "precise latitude/longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

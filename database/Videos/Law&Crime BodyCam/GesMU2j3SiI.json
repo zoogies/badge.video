@@ -1955,5 +1955,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:45:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-02-28",
+        "location": {
+          "state": "New Jersey",
+          "state_abbreviation": "NJ",
+          "county": "Monmouth",
+          "city": "Belmar",
+          "address_or_area": "Ocean Avenue near the boardwalk",
+          "location_name": "Belmar boardwalk",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Belmar Police Department",
+          "type": "municipal police",
+          "state": "New Jersey",
+          "county": "Monmouth",
+          "city": "Belmar"
+        }
+      },
+      "geo": {
+        "address_or_place": "Belmar boardwalk, Ocean Avenue, Belmar, New Jersey",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "34025",
+        "source": "video title, description, and transcript",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jason",
+          "last_name": "Nagy",
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "driving while intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault by auto",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal mischief",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "property damage",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "causing or risking widespread injury or damage",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "assault by auto",
+          "criminal mischief",
+          "property damage",
+          "causing or risking widespread injury or damage",
+          "DUI",
+          "reckless driving",
+          "careless driving",
+          "open container",
+          "multiple other traffic citations"
+        ],
+        "case_number": null,
+        "disposition": "found guilty"
+      },
+      "event_summary": {
+        "short": "Drunk driver plows through Belmar boardwalk, nearly hitting pedestrians, and crashes into another car. Arrested and later found guilty.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-02-28T09:00:00",
+        "pursuit_started": null,
+        "arrest": "2025-02-28T09:xx:xx"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "boardwalk incident",
+          "vehicle crash"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "Drunk driving",
+          "Belmar",
+          "boardwalk",
+          "New Jersey"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Belmar, New Jersey",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "description",
+          "quote": "Jason Nagy, 44",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Court record show he was later found guilty",
+          "timestamp_seconds": 1280,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're under arrest",
+          "timestamp_seconds": 265,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

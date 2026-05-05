@@ -1055,5 +1055,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:27:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-01-16",
+        "published_date": "2023-12-02",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Dayton",
+          "address_or_area": "McDonald's",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Butler Township Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Montgomery",
+          "city": "Butler Township"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Laticka",
+          "last_name": "Hancock",
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "failure to disclose personal information",
+            "category": "other",
+            "statute": "Ohio Revised Code",
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "failure to disclose personal information",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested at McDonald's over 30-cent cheese dispute; officer punches her and is convicted of assault.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-01-16T16:40:00",
+        "initial_contact": "2023-01-16T16:41:00",
+        "pursuit_started": null,
+        "arrest": "2023-01-16T16:45:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "fist",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police use of force",
+          "public disturbance"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "assault",
+          "failure_to_identify"
+        ],
+        "tags": [
+          "McDonald's",
+          "cheese dispute",
+          "viral",
+          "police brutality"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "When officers arrived to mediate a simple dispute at a McDonald's in Dayton, Ohio on January 16th, 2003",
+          "timestamp_seconds": 19,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Dayton, Ohio",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Butler Township",
+          "timestamp_seconds": 31,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Laticka Hancock",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "31-year-old Latika Hancock",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "booked on two criminal charges, failure to disclose personal information and resisting arrest",
+          "timestamp_seconds": 637,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I punched her in her mouth",
+          "timestamp_seconds": 500,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You're under arrest",
+          "timestamp_seconds": 311,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "no stitches, nothing like that",
+          "timestamp_seconds": 520,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date may be 2023, not 2003 as transcribed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

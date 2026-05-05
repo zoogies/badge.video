@@ -1710,5 +1710,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:37:27Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2023-08-20",
+        "location": {
+          "state": "Oklahoma",
+          "state_abbreviation": "OK",
+          "county": "Tulsa County",
+          "city": "Tulsa",
+          "address_or_area": "Tulsa, Oklahoma",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Tulsa Police Department",
+          "type": "city_police",
+          "state": "Oklahoma",
+          "county": "Tulsa County",
+          "city": "Tulsa"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 12,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "placed in psychological treatment program"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 9,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stabbing of a 9-year-old brother",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "12-year-old girl stabs her 9-year-old brother multiple times in Tulsa, Oklahoma; victim dies.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "sibling_violence",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "homicide",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "juvenile",
+          "sibling-stabbing",
+          "ADHD-medication"
+        ],
+        "content_warnings": [
+          "child-death",
+          "graphic-content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It was January of 2003 in Tulsa, Oklahoma",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "It was January of 2003",
+          "timestamp_seconds": 17,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "the young victim did not survive",
+          "timestamp_seconds": 313,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "knife",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "12-year-old daughter",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.age",
+          "source": "transcript",
+          "quote": "9-year-old son",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name",
+          "victim_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No charges filed as of video publication",
+        "Names redacted due to minors"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

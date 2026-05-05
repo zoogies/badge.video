@@ -2535,5 +2535,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:40:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-04",
+        "published_date": "2025-03-21",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Washington",
+          "city": "St. George",
+          "address_or_area": "A restaurant in St. George",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "St. George Police Department",
+          "type": "municipal police",
+          "state": "Utah",
+          "county": "Washington",
+          "city": "St. George"
+        }
+      },
+      "geo": {
+        "address_or_place": "St. George, Utah",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ida",
+          "last_name": "Lorenzo",
+          "age": 49,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and booked"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 19,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "sexual battery",
+            "category": "assault",
+            "statute": "Class A sexual battery",
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Class B misdemeanor sexual battery (reduced)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea in abeyance for one year, no contact with victim, no crimes, mental health evaluation"
+      },
+      "event_summary": {
+        "short": "Utah woman arrested for sexual battery after pulling down teen's skirt in restaurant.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-04",
+        "pursuit_started": null,
+        "arrest": "2024-04 (next day after initial contact)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_altercation",
+          "sexual_incident",
+          "viral_video"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "Karen",
+          "bodycam",
+          "viral"
+        ],
+        "content_warnings": [
+          "sexual harassment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "title",
+          "quote": "St. George, Utah",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "In April 2024",
+          "timestamp_seconds": 58,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Ida Lorenzo",
+          "timestamp_seconds": 87,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "She is 19 years old",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "Class A sexual battery",
+          "timestamp_seconds": 1527,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "plea in abeyance, no contact, mental health evaluation",
+          "timestamp_seconds": 1588,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date_day",
+          "precise_location"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

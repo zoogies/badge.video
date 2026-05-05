@@ -1965,5 +1965,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:28:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-04",
+        "published_date": "2025-10-08",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Kitsap",
+          "city": "Bremerton",
+          "address_or_area": "Salvation Army parking lot",
+          "location_name": "Salvation Army",
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": "Bremerton Police Department",
+          "type": "municipal police",
+          "state": "Washington",
+          "county": "Kitsap",
+          "city": "Bremerton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": "Scaletta-Teates",
+          "age": 49,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested, awaiting trial"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Criminal impersonation in the first degree",
+            "category": "impersonation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a firearm in the second degree",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "awaiting trial"
+      },
+      "event_summary": {
+        "short": "Man impersonating police officer at Salvation Army in Bremerton, Washington.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-09-04T19:00:00",
+        "pursuit_started": null,
+        "arrest": "2025-09-05T07:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "impersonation",
+          "security guard impersonation"
+        ],
+        "crime_categories": [
+          "impersonation",
+          "weapons_offense"
+        ],
+        "tags": [
+          "fake cop",
+          "convicted felon",
+          "Bremerton"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the evening of September 4, 2025",
+          "timestamp_seconds": 68,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Bremerton, Washington",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "inference",
+          "quote": "Bremerton is in Kitsap County",
+          "timestamp_seconds": null,
+          "confidence": "low"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "49-year-old Michael Skeletta Teats",
+          "timestamp_seconds": 456,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Criminal impersonation in the first degree",
+          "timestamp_seconds": 964,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "unlawful possession of a firearm in the second degree",
+          "timestamp_seconds": 964,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county_fips",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County inferred from city; not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2335,5 +2335,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:16:56Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-03-03",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Miami-Dade",
+          "city": "Miami Gardens",
+          "address_or_area": "community center",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Miami Gardens Police",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Miami-Dade",
+          "city": "Miami Gardens"
+        }
+      },
+      "geo": {
+        "address_or_place": "community center, Miami Gardens",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sharon",
+          "last_name": "Cox",
+          "age": 62,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "incarcerated"
+        },
+        {
+          "role": "victim",
+          "first_name": "Patricia",
+          "last_name": "Garner",
+          "age": 67,
+          "sex_or_gender": "female",
+          "race_ethnicity": null,
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": null,
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Hit and run with serious bodily injury",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the scene of an accident",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Leaving the scene of an accident involving serious bodily injuries",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Leaving the scene of a fatal accident",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 4 years"
+      },
+      "event_summary": {
+        "short": "Hit-and-run at Miami Gardens community center leaves one dead and two injured; suspect Sharon Cox arrested and later sentenced.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "hit_and_run"
+        ],
+        "crime_categories": [
+          "hit_and_run"
+        ],
+        "tags": [
+          "fatal hit-and-run",
+          "community center",
+          "elderly suspect"
+        ],
+        "content_warnings": [
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Miami Gardens, Florida",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "62-year-old Sharon Cox",
+          "timestamp_seconds": 3,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "black female",
+          "timestamp_seconds": 316,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Sharon ultimately pleaded guilty to multiple charges tied to the fatal hit and run, and was sentenced to four years behind bars.",
+          "timestamp_seconds": 1230,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

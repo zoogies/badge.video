@@ -1700,5 +1700,248 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:17:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-11-11T22:01:01Z",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Cowlitz County",
+          "city": "Longview",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Longview Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "Cowlitz County",
+          "city": "Longview"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexander",
+          "last_name": "Rogers",
+          "age": 51,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "witness description in transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Dawn",
+          "last_name": "Peters",
+          "age": 64,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Andrew",
+          "last_name": "Peters",
+          "age": 73,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony harassment",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "first-degree murder",
+          "first-degree attempted murder",
+          "felony harassment"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Police in Longview, Washington stopped Alexander Rogers for a license plate issue; hours later, he allegedly stabbed two people, killing Dawn Peters and injuring Andrew Peters. He was arrested a week later in Los Angeles.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife (stabbing)",
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "homicide",
+          "stabbing",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "homicide"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "murder",
+          "license plate"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "title",
+          "quote": "Longview, Washington",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Alexander Lee Rogers",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "51-year-old Alexander Lee Rogers",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "Dawn Peters",
+          "timestamp_seconds": 540,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "64-year-old Dawn Peters",
+          "timestamp_seconds": 540,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "transcript",
+          "quote": "Dawn was pronounced dead",
+          "timestamp_seconds": 625,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].first_name",
+          "source": "transcript",
+          "quote": "Andrew Peters",
+          "timestamp_seconds": 542,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "Alexander was charged with first-degree murder",
+          "timestamp_seconds": 1643,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "suspect was located and taken into custody",
+          "timestamp_seconds": 1640,
+          "confidence": "high"
+        },
+        {
+          "field": "classifications.crime_categories",
+          "source": "transcript",
+          "quote": "stabbing attack that left one woman dead",
+          "timestamp_seconds": 445,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "address_or_area",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

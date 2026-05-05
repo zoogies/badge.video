@@ -175,5 +175,192 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:40:18Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-04",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "owner",
+          "first_name": "Nicole",
+          "last_name": "Eskis",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "no charges"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "bitten by dog"
+        },
+        {
+          "role": "officer",
+          "first_name": null,
+          "last_name": "Olli",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "no disciplinary action"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "dog bite",
+            "category": "assault",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "board ruled shooting justified"
+      },
+      "event_summary": {
+        "short": "Dog bites man, then turns on police. Police shoot dog. Board rules justified.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "911 call",
+        "initial_contact": "dog bite",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "dog teeth",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "animal attack",
+          "police shooting"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "dog",
+          "bite",
+          "police",
+          "shooting",
+          "justified"
+        ],
+        "content_warnings": [
+          "animal death"
+        ],
+        "severity": "unknown"
+      },
+      "evidence": [
+        {
+          "field": "incident_summary",
+          "source": "title",
+          "quote": "Dog Bites Man, Then Turns on Police",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.owner",
+          "source": "transcript",
+          "quote": "the dog's owner, Nicole Ieskis",
+          "timestamp_seconds": 11,
+          "confidence": "high"
+        },
+        {
+          "field": "people.officer",
+          "source": "transcript",
+          "quote": "against Officer Olli",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "the shooting... justified",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "some unclear phrases",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available in video metadata or transcript"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

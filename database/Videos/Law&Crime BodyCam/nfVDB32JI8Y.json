@@ -2220,5 +2220,238 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:14:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-12-12T21:30:06Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Westerville",
+          "address_or_area": "Walmart",
+          "location_name": "Walmart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Westerville Police Department",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Westerville"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart, Westerville, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mary",
+          "last_name": "Higgins",
+          "age": 36,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Jamar",
+          "last_name": "Rudolph",
+          "age": 37,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "criminal trespass",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of fentanyl",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "active arrest warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Mary Higgins pleaded guilty to assault; all other charges dismissed. Entered rehabilitation program. Jamar Rudolph arrested on warrant."
+      },
+      "event_summary": {
+        "short": "Woman arrested after calling 911 on Walmart employee; bystander with warrant also arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "warrant",
+          "assault",
+          "drug_offense"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "drug_offense",
+          "warrant",
+          "trespassing"
+        ],
+        "tags": [
+          "Walmart",
+          "bystander arrest",
+          "warrant",
+          "fentanyl",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "use of force",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "suspect name and age",
+          "source": "description",
+          "quote": "Mary Higgins, 36",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect name and age",
+          "source": "transcript",
+          "quote": "37-year-old Jamar Rudolph",
+          "timestamp_seconds": 1503,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Walmart in Westerville, Ohio",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "charges for Mary",
+          "source": "transcript",
+          "quote": "Mary was booked for assault, resisting arrest, and criminal trespass.",
+          "timestamp_seconds": 2307,
+          "confidence": "high"
+        },
+        {
+          "field": "additional drug charge",
+          "source": "transcript",
+          "quote": "Additional charges were added after she allegedly had fentanyl stashed in her bra at the jail.",
+          "timestamp_seconds": 2314,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "Mary later pleaded guilty to just the assault charge while all other charges were dismissed and was entered into a rehabilitation program.",
+          "timestamp_seconds": 2314,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest of bystander",
+          "source": "description",
+          "quote": "bystander allegedly intervened... arrested for having an active arrest warrant",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "Jamar warrant",
+          "source": "transcript",
+          "quote": "an active warrant",
+          "timestamp_seconds": 1537,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "precise location coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

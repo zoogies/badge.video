@@ -2070,5 +2070,210 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:04:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-12-08",
+        "published_date": "2025-12-15",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Pinellas",
+          "city": "St. Pete Beach",
+          "address_or_area": "Rick's Reef Bar, Gulf Boulevard",
+          "location_name": "Postcard Inn Hotel",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pinellas County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Pinellas",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Lessa",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "deputy description in transcript: 'white-fi'",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault (alleged by server)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Destruction of government property (threatened charge)",
+            "category": null,
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Misdemeanor disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Arrested and transported to Pinellas County Jail; formal charges unclear"
+      },
+      "event_summary": {
+        "short": "Anthony Lessa, a 23-year-old pilot from Pennsylvania, arrested for disorderly intoxication after throwing food and allegedly assaulting a server at Rick's Reef Bar on St. Pete Beach, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "18:36",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disorderly_conduct",
+          "public_intoxication",
+          "assault"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "disorderly_conduct",
+          "assault"
+        ],
+        "tags": [
+          "gator nuggets",
+          "pilot",
+          "St. Pete Beach",
+          "Pinellas County"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the night of December 8, 2003, on St. Pete Beach in Florida",
+          "timestamp_seconds": 32,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "on St. Pete Beach in Florida",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "A Pinellas County deputy quickly arrives",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "A Pinellas County deputy",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].full_name",
+          "source": "transcript",
+          "quote": "He is Anthony Lesser. Lessa.",
+          "timestamp_seconds": 738,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "Anthony is 23 years old and from Pennsylvania",
+          "timestamp_seconds": 747,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Somebody just walk in here in mid-20s, white-fi, blue shirt, black shorts?",
+          "timestamp_seconds": 174,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "was arrested for misdemeanor disorderly intoxication",
+          "timestamp_seconds": 1134,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date 'December 8, 2003' may be erroneous given video publish date 2025; possible typo for 2023."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

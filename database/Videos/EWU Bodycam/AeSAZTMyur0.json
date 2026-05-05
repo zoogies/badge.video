@@ -1095,5 +1095,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:35:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-09-16",
+        "published_date": "2026-04-23",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Cowlitz",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Cowlitz County Sheriff's Office",
+          "type": "county",
+          "state": "Washington",
+          "county": "Cowlitz",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jeremy",
+          "last_name": "Williams",
+          "age": 49,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of child pornography",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Dealing in child pornography",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Possession of depictions of a minor engaged in sexually explicit conduct in the first degree (3 counts)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea; sentenced to 61 months prison, 36 months probation, sex offender registration"
+      },
+      "event_summary": {
+        "short": "School principal arrested for CSAM possession and distribution",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-09-16",
+        "pursuit_started": null,
+        "arrest": "2025-09-16"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "investigation",
+          "arrest"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "CSAM",
+          "school principal",
+          "internet crime"
+        ],
+        "content_warnings": [
+          "child exploitation"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "In the afternoon hours on September 16th, 2025",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Cowlitz County Sheriff's Office",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].full_name",
+          "source": "transcript",
+          "quote": "49-year-old Jeremy Peter Williams",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "charged with a combined 13 counts of possession of depictions of a minor engaged in sexually explicit conduct and dealing in depictions of a minor",
+          "timestamp_seconds": 615,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Crime category not in preferred list; using 'unknown'"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

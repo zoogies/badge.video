@@ -1970,5 +1970,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:08:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2005-06-05",
+        "published_date": "2025-10-27",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Eau Claire County",
+          "city": "Eau Claire",
+          "address_or_area": null,
+          "location_name": "public park",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brett",
+          "last_name": null,
+          "age": 43,
+          "sex_or_gender": "Male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "threats to a law enforcement officer",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "bail jumping",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony threats to a law enforcement officer",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "bail jumping (times two)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "misdemeanor resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "low"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty of threat to a law enforcement officer; other charges dropped. Sentence withheld, 2 years probation, 75 days jail if violated."
+      },
+      "event_summary": {
+        "short": "A 43-year-old man went ballistic in a park, shoving people and acting disorderly. He resisted arrest, was subdued by multiple officers, and later charged with multiple offenses. He was found guilty of threatening an officer and placed on probation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "resisting_arrest",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest",
+          "unknown"
+        ],
+        "tags": [
+          "public_park",
+          "mental_health",
+          "homeless"
+        ],
+        "content_warnings": [
+          "strong_language",
+          "use_of_force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "The police were contacted on June 5, 2005, in regards to a disorderly man...",
+          "timestamp_seconds": 13,
+          "confidence": "low"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "at a public park in O'Clair, Wisconsin",
+          "timestamp_seconds": 24,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "43-year-old Brett",
+          "timestamp_seconds": 29,
+          "confidence": "low"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Brett was charged with felony threats to a law enforcement officer, bail jumping times two, misdemeanor, resisting an officer, and disorderly conduct.",
+          "timestamp_seconds": 1517,
+          "confidence": "low"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "He was eventually found guilty of threat to a law enforcement officer. The rest of the charges were dropped. Ultimately, his sentence was withheld, and he was placed on two years of probation, though he would be jailed for 75 days if he violates his probation conditions.",
+          "timestamp_seconds": 1524,
+          "confidence": "low"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Get on the ground or you're going to be tased?",
+          "timestamp_seconds": 55,
+          "confidence": "low"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          {
+            "field": "city",
+            "value": "O'Clair",
+            "reason": "Transcript says 'O'Clair, Wisconsin' but likely refers to Eau Claire. No official confirmation."
+          }
+        ],
+        "missing_critical_fields": [
+          "agency_name",
+          "last_name",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location 'O'Clair' is likely a transcription error for Eau Claire, Wisconsin. Manual confirmation needed.",
+        "Suspect's last name not provided."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

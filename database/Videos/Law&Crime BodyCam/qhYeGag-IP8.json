@@ -1470,5 +1470,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:29:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-05-19",
+        "published_date": "2024-06-17",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion",
+          "city": null,
+          "address_or_area": "Dallas Inn bar",
+          "location_name": "Dallas Inn",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Marion County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Marion",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Summer",
+          "last_name": "Yoder",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "battery on a law enforcement officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [
+          {
+            "label": "trespassing",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "battery on a law enforcement officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies trespass a woman from a Florida bar after repeated requests; she is arrested for kicking an officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "trespassing",
+          "bar disturbance",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Florida",
+          "bodycam",
+          "Summer Yoder",
+          "Law&Crime",
+          "bar",
+          "intoxication",
+          "battery on officer"
+        ],
+        "content_warnings": [
+          "strong language",
+          "arrest"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on May 19",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "It's almost closing time in Marion County, Florida",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "location.confidence",
+          "source": "description, transcript",
+          "quote": "Description says Sumter County (family), transcript says Marion County (bar)",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Summer Yoder",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "booked for two counts of battery on a law enforcement officer, trespassing, resisting arrest, and disorderly intoxication",
+          "timestamp_seconds": 1107,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Description says Sumter County (her family) but transcript places bar in Marion County. Likely bar is in Marion County and suspect resides in Sumter County."
+        ],
+        "missing_critical_fields": [
+          "city",
+          "age",
+          "charges details",
+          "case number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not explicitly stated; left null.",
+        "Location county conflict resolved by transcript over description."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

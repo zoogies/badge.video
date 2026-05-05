@@ -1635,5 +1635,186 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:31:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-06-24",
+        "published_date": "2023-07-24",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Marion County",
+          "city": "Indianapolis",
+          "address_or_area": "pizza shop parking lot",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indianapolis Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Indiana",
+          "county": "Marion County",
+          "city": "Indianapolis"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Blossom",
+          "last_name": "Kirby",
+          "age": 35,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child neglect",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "two counts of child neglect",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "sentenced to one year in prison"
+      },
+      "event_summary": {
+        "short": "Officers rescue two infants found in milk crates on a bicycle; mother arrested for child neglect.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "child_neglect"
+        ],
+        "crime_categories": [
+          "other"
+        ],
+        "tags": [
+          "milk crate",
+          "bicycle",
+          "infant",
+          "rescue"
+        ],
+        "content_warnings": [
+          "child_endangerment"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the morning of June 24, 2022",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officer Gets with the Indianapolis Metropolitan Police Department",
+          "timestamp_seconds": 79,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Lassen Kirby",
+          "timestamp_seconds": 172,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "the 35-year-old's name",
+          "timestamp_seconds": 180,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with two counts of child neglect",
+          "timestamp_seconds": 787,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "sentenced to one year in prison",
+          "timestamp_seconds": 795,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "one of the babies had 103 degree temperature, the other one had like 101",
+          "timestamp_seconds": 778,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "legal.case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

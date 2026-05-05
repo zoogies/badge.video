@@ -675,5 +675,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:41:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2015-03-06",
+        "published_date": "2022-11-29",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Utah County",
+          "city": "Salem",
+          "address_or_area": "Spanish Fork River bridge",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": "Jennifer",
+          "last_name": "Grossbeck",
+          "age": 25,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": "Lily",
+          "last_name": null,
+          "age": 1.5,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "survived"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving under the influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother and daughter crash into Spanish Fork River; mother dies, infant survives after prolonged rescue.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_crash",
+          "water_rescue"
+        ],
+        "crime_categories": [
+          "dui"
+        ],
+        "tags": [
+          "bodycam",
+          "car crash",
+          "river",
+          "infant rescue",
+          "mother deceased",
+          "drug involvement"
+        ],
+        "content_warnings": [
+          "death",
+          "child in danger"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On March 6, 2015, 25-year-old Jennifer Lynn Grossbeck",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Salem, Utah",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Salem, Utah",
+          "timestamp_seconds": 22,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.county",
+          "source": "inferred",
+          "quote": "Salem and Springville are in Utah County",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Jennifer Lynn Grossbeck",
+          "timestamp_seconds": 15,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "her 18-month-old daughter, Lily",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "appeared to have died from blunt force injury to the head and was killed on impact",
+          "timestamp_seconds": 408,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "Lynn allegedly took the drug Clonopin before leaving the home",
+          "timestamp_seconds": 171,
+          "confidence": "low"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "killed on impact",
+          "timestamp_seconds": 408,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "Lily appeared miraculously unharmed... but the race against the clock",
+          "timestamp_seconds": 419,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "agency.type"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

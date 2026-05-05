@@ -2405,5 +2405,200 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:52:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-07-27",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Doña Ana",
+          "city": "Las Cruces",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Cruces Police Department",
+          "type": "municipal_police",
+          "state": "New Mexico",
+          "county": "Doña Ana",
+          "city": "Las Cruces"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Yvonne",
+          "last_name": "LaGardi",
+          "age": 40,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child Abuse (hitting child with mop handle)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child Abuse (forcing children to smoke cigarettes)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Child Abuse (pepper spraying children)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Mother arrested twice for child abuse allegations including pepper spraying and forcing children to smoke cigarettes.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "warrant"
+        ],
+        "crime_categories": [
+          "assault",
+          "domestic_violence"
+        ],
+        "tags": [
+          "child abuse",
+          "pepper spray",
+          "bodycam",
+          "police arrest"
+        ],
+        "content_warnings": [
+          "child abuse",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "just before 5 p.m. in Las Cruces, New Mexico",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "40-year-old Yvonne LaGardi",
+          "timestamp_seconds": 123,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "40-year-old Yvonne LaGardi",
+          "timestamp_seconds": 123,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0.label",
+          "source": "transcript",
+          "quote": "hit one of her teenage children with a mop handle leaving multiple welts",
+          "timestamp_seconds": 136,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1.label",
+          "source": "transcript",
+          "quote": "forced her children to smoke cigarettes until one threw up and pepper sprayed them",
+          "timestamp_seconds": 492,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.2.label",
+          "source": "transcript",
+          "quote": "pepper sprayed her kids on multiple occasions",
+          "timestamp_seconds": 492,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "description",
+          "quote": "arrested twice in the first week of June 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "It's a felony.",
+          "timestamp_seconds": 400,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2690,5 +2690,214 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:38:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-12-17",
+        "published_date": "2026-01-05",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Kenosha County",
+          "city": "Kenosha",
+          "address_or_area": "Highway 60 near funeral home",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kenosha Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Kenosha County",
+          "city": "Kenosha"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Emily",
+          "last_name": null,
+          "age": 46,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding / Reckless Driving",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Stop for Police",
+            "category": "fleeing_eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery to a Police Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Stop",
+            "category": "fleeing_eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_order",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty of resisting/obstructing and disorderly conduct; remaining charges dismissed. Sentenced to $200 fine, no jail or probation."
+      },
+      "event_summary": {
+        "short": "Drunk mom leads police on high-speed chase, becomes combative, arrested for OWI and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2024-12-17T18:05:00",
+        "pursuit_started": "2024-12-17T18:05:00",
+        "arrest": "2024-12-17T18:10:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "drunk driving",
+          "high-speed chase",
+          "combative suspect",
+          "Kenosha"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Around 605 p.m. on December 17th, 2024",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "an officer from the Kenosha Police Department",
+          "timestamp_seconds": 46,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "the 46-year-old female driver",
+          "timestamp_seconds": 156,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Okay, Emily, I'm gonna read this to you.",
+          "timestamp_seconds": 590,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with battery threat to an officer misdemeanor resisting obstructing an officer resisting failing to stop and disorderly conduct",
+          "timestamp_seconds": 1515,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty of resisting, obstructing an officer and disorderly conduct... no jail or probation and only ordered to pay $200 in fines",
+          "timestamp_seconds": 1532,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "people[0].last_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

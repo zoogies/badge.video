@@ -3900,5 +3900,216 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:49:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-04-05",
+        "published_date": "2024-05-24",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": null,
+          "city": "Rio Rancho",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rio Rancho Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": null,
+          "city": "Rio Rancho"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Henry",
+          "last_name": "Cardana",
+          "age": 86,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "June Ann",
+          "last_name": "Fannel",
+          "age": 82,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "plea agreement (likely)"
+      },
+      "event_summary": {
+        "short": "Henry Cardana shot and killed his partner, June Ann Fannel, after police ignored warning signs during a morning welfare check.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2003-04-05T00:00:00",
+        "initial_contact": "2003-04-05T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2003-04-05T00:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "gun",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "shooting",
+          "homicide",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting",
+          "domestic_violence"
+        ],
+        "tags": [
+          "elderly",
+          "hospice",
+          "caregiver",
+          "police_response",
+          "911_call"
+        ],
+        "content_warnings": [
+          "death",
+          "gun_violence",
+          "elderly_abuse"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the morning of April 5, 2003",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Rio Rancho, New Mexico",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "description",
+          "quote": "arrest of Henry Cardana",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people.victim.name",
+          "source": "transcript",
+          "quote": "82-year-old June Ann Fannel",
+          "timestamp_seconds": 296,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Henry Cardana, 86, was charged with first-degree murder",
+          "timestamp_seconds": 3350,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "motion for settlement ... likely end in a plea agreement",
+          "timestamp_seconds": 3412,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "case_number",
+          "address",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "County not explicitly stated; inferred from city (Sandoval County is likely but not confirmed)."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

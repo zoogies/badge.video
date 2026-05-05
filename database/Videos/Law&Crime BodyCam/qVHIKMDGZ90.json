@@ -1430,5 +1430,210 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:32:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-03-29",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "McHenry",
+          "city": "Crystal Lake",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Crystal Lake Police Department",
+          "type": "local police",
+          "state": "Illinois",
+          "county": "McHenry",
+          "city": "Crystal Lake"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ellie",
+          "last_name": "Masukevich",
+          "age": 18,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated battery of a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Illegal possession of liquor by a person under 21",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "DUI",
+          "5 counts aggravated battery on a peace officer",
+          "Resisting arrest",
+          "Illegal possession of liquor by a person under 21"
+        ],
+        "case_number": null,
+        "disposition": "pled not guilty, case pending"
+      },
+      "event_summary": {
+        "short": "Teenager Ellie Masukevich was arrested for DUI and battery of a peace officer after a traffic stop in Crystal Lake, Illinois.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "19:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "arrest",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "assault",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "Illinois",
+          "teen",
+          "DUI",
+          "battery"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "What started as a potential DUI arrest spirals out of control in less than 10 minutes in Crystal Lake, Illinois.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].full_name",
+          "source": "description",
+          "quote": "Ellie Masukevich made it very clear she was not happy when officers put her in handcuffs.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "Deputies identify the suspect as then 18-year-old Ellie Masukevich",
+          "timestamp_seconds": 56,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Ellie Masukevich was charged with DUI five counts of aggravated battery on a peace officer, resisting arrest, and a legal possession of liquor by a person under 21.",
+          "timestamp_seconds": 918,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She later pled not guilty to the charges, and that case is still pending.",
+          "timestamp_seconds": 927,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "I'm a officer with Crystal Lake Police Department.",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.published_date",
+          "source": "metadata",
+          "quote": "2024-03-29T19:45:03Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -3310,5 +3310,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:39:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-12-24",
+        "location": {
+          "state": "North Dakota",
+          "state_abbreviation": "ND",
+          "county": "Grand Forks County",
+          "city": "Grand Forks",
+          "address_or_area": "Altru Hospital",
+          "location_name": "Grand Forks",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Grand Forks Police Department",
+          "type": "municipal",
+          "state": "North Dakota",
+          "county": "Grand Forks County",
+          "city": "Grand Forks"
+        }
+      },
+      "geo": {
+        "address_or_place": "Grand Forks, North Dakota",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joshua",
+          "last_name": "Temple",
+          "age": 40,
+          "sex_or_gender": "Male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        },
+        {
+          "role": "victim",
+          "first_name": "Whitney",
+          "last_name": "Temple",
+          "age": 33,
+          "sex_or_gender": "Female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Terrorizing",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Endangering an eligible adult",
+            "category": "elder_abuse",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Endangering an eligible adult",
+            "category": "elder_abuse",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Terrorizing",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence (felony)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic violence (misdemeanor)",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea agreement: guilty to endangering an eligible adult and terrorizing; domestic violence charges dismissed. Sentenced to 5 years concurrent for each count, plus 2 years probation."
+      },
+      "event_summary": {
+        "short": "Joshua Temple arrested for domestic violence against his wife, Dr. Whitney Temple, a cancer patient, after she recorded his abuse. He was charged and later sentenced to 5 years.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "Hospital staff called police to trespass Josh Temple from Altru Hospital.",
+        "pursuit_started": null,
+        "arrest": "Joshua Temple arrested at his home after officer interviewed Whitney Temple."
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Clorox wipes shoved in mouth, laundry used as weapon, hands/fists",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "caregiver_abuse"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "battery"
+        ],
+        "tags": [
+          "cancer patient",
+          "recorded abuse",
+          "bodycam",
+          "true crime"
+        ],
+        "content_warnings": [
+          "domestic violence",
+          "abuse",
+          "death"
+        ],
+        "severity": "severe"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "A hospital administrator in Grand Forks, North Dakota, calls the police",
+          "timestamp_seconds": 100,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I'm gonna place you under arrest for terrorizing and aggravated assault",
+          "timestamp_seconds": 1789,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "40-year-old Josh Temple",
+          "timestamp_seconds": 146,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "Whitney Temple ... was 33 years old",
+          "timestamp_seconds": 2218,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "All True Hospital",
+          "timestamp_seconds": 135,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

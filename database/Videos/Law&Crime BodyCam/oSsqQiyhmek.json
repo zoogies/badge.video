@@ -1535,5 +1535,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:21:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-05-30",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": "Fairfield Township",
+          "location_name": "Bank in Fairfield Township",
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": "Hamilton Police Department",
+          "type": "local",
+          "state": "Ohio",
+          "county": null,
+          "city": "Hamilton"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fairfield Township, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ann",
+          "last_name": "Mayers",
+          "age": 74,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Aggravated robbery with a deadly weapon",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with evidence",
+            "category": "other",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated robbery (deadly weapon)",
+            "category": "robbery",
+            "statute": null
+          },
+          {
+            "label": "Tampering with evidence",
+            "category": "other",
+            "statute": null
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to aggravated robbery; tampering charge dismissed; sentenced to 4 years imprisonment."
+      },
+      "event_summary": {
+        "short": "74-year-old woman robs bank with handgun, later arrested and sentenced to 4 years.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "bank robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense"
+        ],
+        "tags": [
+          "elderly suspect",
+          "grandma",
+          "scam"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Fairfield Township, Ohio",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "74-year-old Ann Mayers",
+          "timestamp_seconds": 304,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "description",
+          "quote": "74-year-old woman",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "description",
+          "quote": "handgun",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "description",
+          "quote": "four-year prison sentence",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

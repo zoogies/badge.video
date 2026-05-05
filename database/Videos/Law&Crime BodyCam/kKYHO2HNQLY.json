@@ -2035,5 +2035,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T09:01:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-16",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Marinette",
+          "city": "Marinette",
+          "address_or_area": null,
+          "location_name": "Marinette, Wisconsin",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Marinette Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": "Marinette",
+          "city": "Marinette"
+        }
+      },
+      "geo": {
+        "address_or_place": "Peshtigo National Bank",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Philip",
+          "last_name": "Lenz",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Bank robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a vehicle without owner's consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Robbery of a financial institution",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a vehicle without owner's consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Defendant pleaded guilty to robbery charge; sentenced to 5 years imprisonment and 6 years supervised probation; other charge dismissed."
+      },
+      "event_summary": {
+        "short": "Bank robbery suspect Philip Lenz arrested at Walmart after borrowing a car and changing clothes.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "bank robbery",
+          "arrest"
+        ],
+        "crime_categories": [
+          "robbery",
+          "theft"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "bank robber",
+          "Wisconsin",
+          "Marinette"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "It's 2 p.m. in Marionette, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Police would later identify the suspect as 33-year-old Philip Lenz",
+          "timestamp_seconds": 71,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Philip, right now you're going to be booked in for bank robbery and for operating a motor vehicle without owner's consent",
+          "timestamp_seconds": 1078,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Court records show he later pleaded guilty to the robbery charge, while the other charge was dismissed. The 33-year-old was sentencing stuff five years behind bars, with an additional six years of supervised probation.",
+          "timestamp_seconds": 1188,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "exact_address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City name in transcript as 'Marionette' but assumed to be 'Marinette'.",
+        "Suspect last name appears as both 'Lenz' and 'Lenss'; selected 'Lenz' based on transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2000,5 +2000,167 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:14:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-12-06",
+        "published_date": "2024-07-20T22:45:41Z",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Clark",
+          "city": "Las Vegas",
+          "address_or_area": "UNLV Beam Hall",
+          "location_name": "University of Nevada, Las Vegas",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Vegas Metropolitan Police Department",
+          "type": "municipal",
+          "state": "Nevada",
+          "county": "Clark",
+          "city": "Las Vegas"
+        }
+      },
+      "geo": {
+        "address_or_place": "University of Nevada, Las Vegas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": "Polito",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript",
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Mass shooting",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "University of Nevada, Las Vegas mass shooting on December 6, 2023, resulting in three fatalities and one injury; suspect killed by police.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "mass shooting",
+          "active shooter",
+          "school shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "homicide"
+        ],
+        "tags": [
+          "UNLV",
+          "Las Vegas",
+          "police shooting",
+          "mass shooting"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "It's December 6, 2003",
+          "timestamp_seconds": 70,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "University of Nevada, Las Vegas",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Anthony James Polito",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "The killing of the suspect was mercifully clean",
+          "timestamp_seconds": 1350,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_age",
+          "exact_time_of_day",
+          "precise_geo"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript misstates year as 2003; actual date is 2023 confirmed by context."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

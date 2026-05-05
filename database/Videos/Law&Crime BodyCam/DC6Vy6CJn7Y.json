@@ -2670,5 +2670,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:33:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-15",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Marion",
+          "city": "Ocala",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12083",
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Edward III",
+          "age": 43,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Unlawful sexual activity with a minor",
+            "category": "sexual_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Offenses against students by an authority figure",
+            "category": "sexual_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Travel to meet a minor for illegal sexual conduct",
+            "category": "sexual_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misuse of two-way communication device to facilitate a felony",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Unlawful sexual activity with a minor",
+          "Offenses against students by an authority figure",
+          "Travel to meet a minor for illegal sexual conduct",
+          "Misuse of two-way communication device to facilitate a felony"
+        ],
+        "case_number": null,
+        "disposition": "pleaded not guilty"
+      },
+      "event_summary": {
+        "short": "High school football coach arrested for alleged sexual relationship with 16-year-old student.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "sexual_misconduct",
+          "school_related"
+        ],
+        "crime_categories": [
+          "sexual_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "Florida",
+          "high school coach",
+          "sexual relationship with student"
+        ],
+        "content_warnings": [
+          "sexual content involving minor"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "It's January in Ocala, Florida",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "James Edward III, 43",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "43-year-old James Ford III",
+          "timestamp_seconds": 70,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "You're going to be charged with unlawful sexual activity with a minor... authority figure... travel to meet a minor for sex... misuse of two-way communication device",
+          "timestamp_seconds": 1384,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "James pleaded not guilty to the remaining charges",
+          "timestamp_seconds": 1447,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "You are going to be a place under arrest",
+          "timestamp_seconds": 1026,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency_name",
+          "charges_case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

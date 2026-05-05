@@ -220,5 +220,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:08:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-10-16",
+        "published_date": "2026-04-20",
+        "location": {
+          "state": "Nevada",
+          "state_abbreviation": "NV",
+          "county": "Washoe County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Motel 6",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Nevada",
+          "county": "Washoe County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ronald",
+          "last_name": "Zendahas",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault with a deadly weapon (chainsaw)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated man wielding chainsaw at Motel 6 shot and killed by police after crashing vehicle into wall.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "[0:42-0:46]",
+        "pursuit_started": "[0:51-0:52]",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "chainsaw",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "standoff",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "public_intoxication"
+        ],
+        "tags": [
+          "chainsaw",
+          "motel",
+          "intoxication",
+          "deadly_force"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On October 16, 2003, the Washoe County District Attorney ruled the use of force was justified under Nevada law.",
+          "timestamp_seconds": 112,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Washoe County District Attorney",
+          "timestamp_seconds": 112,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "36-year-old Renaul Zendahas",
+          "timestamp_seconds": 8,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "36-year-old Renaul Zendahas",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "Ronald Zendahas is pronounced dead on scene.",
+          "timestamp_seconds": 99,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "wielding a running chainsaw",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "a GSW to the head",
+          "timestamp_seconds": 94,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "Stop the car.",
+          "timestamp_seconds": 51,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "address_or_area",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect first name inconsistency: 'Renaul' vs 'Ronald' in transcript; used 'Ronald' from later mention."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

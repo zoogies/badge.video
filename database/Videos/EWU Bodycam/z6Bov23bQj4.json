@@ -2260,5 +2260,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:40:56Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-25T19:16:29Z",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "Navajo",
+          "city": null,
+          "address_or_area": "Interstate 40 eastbound, near exit in Navajo County",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Navajo County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Arizona",
+          "county": "Navajo",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Raul Alexis",
+          "last_name": "Arellano-Romero",
+          "age": 32,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Dey",
+          "last_name": "Pizarro",
+          "age": 13,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "missing (found)"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Kidnapping (warrant)",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Interference with custody",
+            "category": "custody_interference",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Interference with custody",
+            "category": "custody_interference",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Case remains open and ongoing"
+      },
+      "event_summary": {
+        "short": "Routine traffic stop in Navajo County, Arizona leads to discovery of a 13-year-old missing girl from Alabama, traveling with 32-year-old Raul Alexis Arellano-Romero, who was arrested on a warrant for kidnapping and charged with interference with custody.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "missing_person",
+          "custody_interference"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "custody_interference"
+        ],
+        "tags": [
+          "missing child",
+          "interstate travel",
+          "online grooming"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Navajo County, Arizona",
+          "timestamp_seconds": 60,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "32-year-old man",
+          "timestamp_seconds": 32,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "13-year-old girl",
+          "timestamp_seconds": 1416,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "warrant for your arrest for kidnapping",
+          "timestamp_seconds": 1950,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "charged with interference with custody",
+          "timestamp_seconds": 2015,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified; vehicle occupant race/ethnicity not stated"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

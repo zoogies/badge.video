@@ -1665,5 +1665,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T08:29:36Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-08",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Flagler County",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Walmart",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Flagler County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Flagler County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Amber",
+          "last_name": "McCann",
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Grand Theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Trafficking Methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug Possession (Methamphetamine, Marijuana)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Controlled Substance",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Trafficking Methamphetamine",
+          "Drug Possession",
+          "Grand Theft",
+          "Possession of a Controlled Substance"
+        ],
+        "case_number": null,
+        "disposition": "pending"
+      },
+      "event_summary": {
+        "short": "Woman arrested for shoplifting at Walmart, claiming she was playing a 'stealing game' called 21; deputies found stolen merchandise, methamphetamine, marijuana, safes with a firearm and precious metals.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "drug_possession",
+          "firearm_discovery"
+        ],
+        "crime_categories": [
+          "theft",
+          "drug_offense",
+          "weapons_offense"
+        ],
+        "tags": [
+          "Walmart",
+          "bodycam",
+          "Flagler County",
+          "methamphetamine"
+        ],
+        "content_warnings": [
+          "drug use",
+          "strong language"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "It's after 5 p.m. in Flagler County, Florida",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Police identify the woman seen here as 30-year-old Amber McCann",
+          "timestamp_seconds": 120,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "30-year-old Amber McCann",
+          "timestamp_seconds": 120,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Deputies find more than $1,000 worth of stolen property",
+          "timestamp_seconds": 259,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "Deputies discover suspected drugs, paraphernalia, and a large safe",
+          "timestamp_seconds": 330,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "uncovering about 62 grams of methamphetamine, 11 grams of marijuana",
+          "timestamp_seconds": 873,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Deputies immediately find a firearm concealed in the safe",
+          "timestamp_seconds": 560,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Amber McCann is facing multiple charges including trafficking of methamphetamine, drug possession, grand theft, and possession of a controlled substance",
+          "timestamp_seconds": 984,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Amber is cuffed and taken to a patrol car",
+          "timestamp_seconds": 193,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "address",
+          "incident_date",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

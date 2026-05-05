@@ -1695,5 +1695,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:53:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-09-24",
+        "published_date": "2025-11-25",
+        "location": {
+          "state": "Virginia",
+          "state_abbreviation": "VA",
+          "county": "Prince William",
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Park Valley Church",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Prince William County Police Department",
+          "type": "local",
+          "state": "Virginia",
+          "county": "Prince William",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rui",
+          "last_name": "Jiang",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "threats to commit mass violence",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carrying dangerous weapons at a place of worship",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "attempted aggravated murder of multiple persons",
+            "category": "attempted_murder",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "Felony warrant for threats and writing",
+          "Summons for having dangerous weapons at a place of worship",
+          "Attempted aggravated murder of multiple persons",
+          "Obstructing congregants in free exercise of religious beliefs with a dangerous weapon and attempt to kill",
+          "Transmitting online threats",
+          "Violating a firearms law"
+        ],
+        "case_number": null,
+        "disposition": "Convicted and sentenced to 25 years in prison and 5 years supervised release"
+      },
+      "event_summary": {
+        "short": "Woman reports ex-boyfriend making threats online; police find him armed at church and detain him; later convicted of attempted obstruction and weapons charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mass shooting thwarted",
+          "threats",
+          "mental health intervention"
+        ],
+        "crime_categories": [
+          "threats",
+          "weapons_offense",
+          "attempted_murder"
+        ],
+        "tags": [
+          "church",
+          "social media threats",
+          "mental health"
+        ],
+        "content_warnings": [
+          "threats of violence",
+          "mental health discussion"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Emergency dispatchers get a call on the morning of September 24th, 2003",
+          "timestamp_seconds": 48,
+          "confidence": "low"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "he's at Park Valley Falls Church",
+          "timestamp_seconds": 142,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "35-year-old Rui Jang",
+          "timestamp_seconds": 148,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "transcript",
+          "quote": "Are you armed today? ... I am a legal carrier.",
+          "timestamp_seconds": 264,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "they arrested him on a felony warrant for threats and writing and a summons for having dangerous weapons at a place of worship",
+          "timestamp_seconds": 1087,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "Rui Jiang was convicted in March 2025 ... sentenced to 25 years in prison",
+          "timestamp_seconds": 1137,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Incident date '2003' conflicts with conviction date 2025; likely a transcript error for '2023'."
+        ],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date stated as 2003 in transcript, but likely incorrect given 2025 conviction; should be verified."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

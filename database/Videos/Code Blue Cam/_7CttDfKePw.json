@@ -830,5 +830,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:09:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-19",
+        "published_date": "2022-06-10",
+        "location": {
+          "state": "Texas",
+          "state_abbreviation": "TX",
+          "county": "Potter",
+          "city": null,
+          "address_or_area": "I-40",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Potter County Sheriff's Department",
+          "type": "sheriff",
+          "state": "Texas",
+          "county": "Potter",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "I-40 near Potter County, Texas",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "video description and transcript",
+        "precision": "unknown",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kyle",
+          "last_name": "Willica",
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Monique",
+          "last_name": "D. Raw",
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Ricardo",
+          "last_name": "Rodriguez",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Intentional crash into police vehicle",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Drug trafficking",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Possession with intent to distribute methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Conspiracy to distribute methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Kyle Willica and Ricardo Rodriguez sentenced to 20 years each; Monique D. Raw sentenced to 8 years; total 48 years federal prison"
+      },
+      "event_summary": {
+        "short": "Three drug traffickers sentenced to 48 years after intentionally crashing into a police vehicle during a traffic stop in Texas.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 35,
+        "pursuit_started": 49,
+        "arrest": 514
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "drug_trafficking"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "assault"
+        ],
+        "tags": [
+          "methamphetamine",
+          "federal_sentencing",
+          "police_crash"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On August 19th, 2021",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Potter County Sheriff's deputies were conducting traffic enforcement in a marked unit on I-40 in Texas",
+          "timestamp_seconds": 36,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "31-year-old Kyle Willica",
+          "timestamp_seconds": 350,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].name",
+          "source": "transcript",
+          "quote": "26-year-old Monique D. Raw",
+          "timestamp_seconds": 344,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].name",
+          "source": "transcript",
+          "quote": "35-year-old Ricardo Rodriguez",
+          "timestamp_seconds": 357,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "the three drug traffickers were sentenced to a total of 48 years in prison. Kyle and Ricardo pleaded guilty to possession with intent to distribute meth and were each given 20 years. Monique pleaded guilty to conspiracy to distribute meth and was sentenced to eight years.",
+          "timestamp_seconds": 1218,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "the RAV-4 kept accelerating, and a white Infinity QX-30 suddenly struck the deputies",
+          "timestamp_seconds": 49,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

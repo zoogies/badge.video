@@ -1685,5 +1685,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T05:24:29Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-03-20",
+        "published_date": "2025-05-29",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Duval",
+          "city": "Jacksonville",
+          "address_or_area": "residential street near Commissioner Drive",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Jacksonville Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Duval",
+          "city": "Jacksonville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Patrick",
+          "last_name": "Julianel",
+          "age": 35,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession of marijuana under 20 grams",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "possession of marijuana under 20 grams",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Adjudication withheld; possession charge dropped; sentenced to 12 months probation, 100 hours community service, substance abuse evaluation, $1,000 donation to Police Memorial Fund, apology letter"
+      },
+      "event_summary": {
+        "short": "YouTuber Patrick Julianel arrested for marijuana possession and resisting arrest after a wellness check in Jacksonville, FL.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "wellness check",
+          "arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "YouTuber",
+          "marijuana",
+          "resisting arrest",
+          "Jacksonville"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "On March 20th, 2004, officers in Jacksonville, Florida receive reports...",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "transcript",
+          "quote": "35-year-old Patrick Thomas Julianel is the creator behind...",
+          "timestamp_seconds": 164,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "formally charged with resisting an officer with violence, as well as possession of marijuana under 20 grams",
+          "timestamp_seconds": 777,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Respectfully, we had to fight you to get those on",
+          "timestamp_seconds": 439,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date appears as 2004 in transcript but likely 2024 based on context; extracted as 2024-03-20."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1320,5 +1320,178 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:45:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-01",
+        "published_date": "2024-07-31",
+        "location": {
+          "state": "Utah",
+          "state_abbreviation": "UT",
+          "county": "Iron County",
+          "city": "Cedar City",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "city"
+        },
+        "agency": {
+          "name": "Iron County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Utah",
+          "county": "Iron County",
+          "city": "Cedar City"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sarah",
+          "last_name": "Mills",
+          "age": 50,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "animal cruelty (9 counts)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "cruelty to animals (9 counts)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty; sentenced to 60 days jail, 12 months probation, fine $690"
+      },
+      "event_summary": {
+        "short": "Woman calls 911 for mental crisis; deputies discover 19 malnourished dogs in uninhabitable home.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-07-01T08:00:00",
+        "initial_contact": "2023-07-01T08:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "animal hoarding",
+          "mental health crisis"
+        ],
+        "crime_categories": [
+          "animal cruelty"
+        ],
+        "tags": [
+          "animal cruelty",
+          "mental health",
+          "hoarding",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "animal cruelty",
+          "unsanitary conditions"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "a little past 8 in the morning on July 1st, 2023",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "A woman in Cedar City, Utah",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Iron County, Utah",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "I'm 50.",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Sarah Mills pled guilty to nine counts of cruelty",
+          "timestamp_seconds": 1080,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Race/ethnicity not explicitly stated; left null."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

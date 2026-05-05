@@ -1575,5 +1575,196 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T06:42:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-07-26",
+        "published_date": "2025-03-15T21:08:14Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "Port Orange",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Volusia County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ava",
+          "last_name": null,
+          "age": 11,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "False report of a crime",
+            "category": "false_report",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Making a false police report concerning the use of a firearm in a violent manner",
+            "category": "felony",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misuse of 911",
+            "category": "misdemeanor",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "11-year-old girl prank-called 911 claiming an armed kidnapping, leading to a felony charge.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "09:45",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "hoax",
+          "false_report"
+        ],
+        "crime_categories": [
+          "false_report",
+          "misuse_of_911"
+        ],
+        "tags": [
+          "prank",
+          "juvenile",
+          "911_abuse"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On July 26, 2003",
+          "timestamp_seconds": 27,
+          "confidence": "low"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Volusia County Sheriff's Office",
+          "timestamp_seconds": 1631,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Port Orange",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Ava",
+          "timestamp_seconds": 728,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "11-year-old",
+          "timestamp_seconds": 700,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "charged with making a false police report concerning the use of a firearm in a violent manner, a felony",
+          "timestamp_seconds": 1634,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "misuse of 911, a misdemeanor",
+          "timestamp_seconds": 1640,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript mentions 'Beluga County' and 'Belugia Regional Juvenile Detention Center', but context and later reference indicate Volusia County, Florida."
+        ],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "exact_address",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date appears as 2003 which may be a transcription error; video published in 2025."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

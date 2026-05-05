@@ -1535,5 +1535,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T07:30:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-10",
+        "published_date": "2025-05-16",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Dayton",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Dayton Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Montgomery",
+          "city": "Dayton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Javon",
+          "last_name": "Owensby",
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Jocelyn",
+          "last_name": "House",
+          "age": 24,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "survived"
+        },
+        {
+          "role": "witness",
+          "first_name": "Jason",
+          "last_name": "Hornaday",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted Murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felonious Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Domestic Violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Attempted Murder",
+          "Felonious Assault",
+          "Domestic Violence"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty; sentenced to 15-20.5 years in prison under Ohio's Reagan-Tokes law"
+      },
+      "event_summary": {
+        "short": "Domestic attack: Javon Owensby stabbed and beat Jocelyn House with a knife and baseball bat; victim survived after extensive surgery.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-02-10T00:00:00",
+        "initial_contact": "2024-02-10T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2024-02-12"
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife and baseball bat",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "assault"
+        ],
+        "crime_categories": [
+          "assault",
+          "domestic_violence"
+        ],
+        "tags": [
+          "domestic violence",
+          "stabbing",
+          "baseball bat",
+          "attempted murder",
+          "Ohio"
+        ],
+        "content_warnings": [
+          "violence",
+          "domestic abuse",
+          "gore"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Dispatchers from the Dayton Police Department received the chilling call",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Just after midnight, on February 10th, 24",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Javon Owensby was charged with attempted murder, felonious assault, and domestic violence.",
+          "timestamp_seconds": 737,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "On September 16, 2004, he was sentenced to 15 to 20 and a half years in prison",
+          "timestamp_seconds": 750,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript year '2004' and '2003' likely refer to 2024 and 2023 respectively; used as stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }
