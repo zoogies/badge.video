@@ -3405,5 +3405,221 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:17:11Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-02",
+        "published_date": "2025-04-18",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "West Salem",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "West Salem Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "West Salem"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic battery",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "physical abuse of an elder person",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony physical abuse of an elder person intentionally causing bodily harm",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor resisting/obstructing an officer",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor disorderly conduct",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony bail jumping",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating while revoked",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $1,000 signature bond, later arrested for bail jumping and operating while revoked"
+      },
+      "event_summary": {
+        "short": "Grandson attacked grandmother with popsicle stick, arrested after resisting police; charged with elder abuse, resisting, disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-04-02T00:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "popsicle stick",
+        "officer_weapon_used": "OC spray, taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "domestic_violence",
+          "resisting_arrest",
+          "drug_offense"
+        ],
+        "tags": [
+          "elder abuse",
+          "Delta 8 THC",
+          "paranoia"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the morning of April 2nd, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "West Salem, Wisconsin",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with felony physical abuse of an elder person... misdemeanor counts of resisting, obstructing an officer, and disorderly conduct",
+          "timestamp_seconds": 1440,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "OC spray was deployed directly to his face... reduced to 1,200 volts of electricity",
+          "timestamp_seconds": 468,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "popsicle stick in his hand",
+          "timestamp_seconds": 117,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency.name",
+          "suspect.name",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Agency name inferred from context; not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

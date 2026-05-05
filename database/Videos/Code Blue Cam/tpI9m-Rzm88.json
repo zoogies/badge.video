@@ -2010,5 +2010,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T04:22:14Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-24",
+        "published_date": "2023-12-13",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "La Crosse",
+          "address_or_area": "Alaska Court",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "La Crosse Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "La Crosse"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Noah",
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic disturbance",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "false imprisonment (felony)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping (2 counts)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting or obstructing an officer (misdemeanor)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct (2 counts, misdemeanor)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery (2 counts, misdemeanor)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal damage to property (misdemeanor)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated man arrested after domestic disturbance and brief vehicle evasion in La Crosse.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "alcohol",
+          "intoxication",
+          "handcuff complaint"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On March 24, 2023, officers were called to a domestic disturbance in La Crosse, WI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in La Crosse, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "identified as a 23-year-old male named Noah",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Noah was charged with felony counts of false imprisonment. Bail jumping times two. Misdemeanor counts of resisting, obstructing an officer, disorderly conduct times two, battery times two, and criminal damage to property.",
+          "timestamp_seconds": 816,
+          "confidence": "high"
+        },
+        {
+          "field": "address_or_area",
+          "source": "transcript",
+          "quote": "on Alaska Court",
+          "timestamp_seconds": 132,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript mentions 'LaCross' but description uses 'La Crosse'; using 'La Crosse'."
+        ],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "last_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
