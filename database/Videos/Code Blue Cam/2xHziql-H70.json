@@ -1860,5 +1860,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:57:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09-02",
+        "published_date": "2023-10-19",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "La Crosse",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "La Crosse Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "La Crosse"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Gunner",
+          "last_name": null,
+          "age": 27,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "operating while revoked",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to install ignition interlock device",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating while revoked",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to install ignition interlocked device",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on $1,000 signature bond a few days later"
+      },
+      "event_summary": {
+        "short": "Traffic stop for seatbelt violation leads to arrest of driver with revoked license; suspect resists and injures himself.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "seatbelt",
+          "revoked license",
+          "OWI",
+          "resisting arrest",
+          "self-inflicted injury"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On September 2, 2023, an officer spotted a driver not wearing a seat belt",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "in La Crosse, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "the officer identified the driver as a 27-year-old male named Gunner.",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Gunner was charged with misdemeanor counts of resisting, obstructing an officer, operating while revoked, failure to install ignition interlocked device, and bail jumping.",
+          "timestamp_seconds": 832,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "he was released just a few days later on a $1,000 signature bond with no conditions.",
+          "timestamp_seconds": 847,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "transcript",
+          "quote": "an investigator says with the Campbell Police Department.",
+          "timestamp_seconds": 28,
+          "confidence": "medium",
+          "note": "Conflict with location suggesting La Crosse Police Department."
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Description says La Crosse, WI; transcript mentions Campbell Police Department."
+        ],
+        "missing_critical_fields": [
+          "suspect last name",
+          "exact address/coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": [
+        "Agency name conflict: description implies La Crosse PD, transcript says Campbell PD."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

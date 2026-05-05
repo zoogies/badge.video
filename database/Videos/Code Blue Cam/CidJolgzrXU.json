@@ -1585,5 +1585,235 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:28:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-07-29",
+        "published_date": "2026-03-20",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "West Dallas",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Wisconsin",
+          "county": null,
+          "city": "West Dallas"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andrew",
+          "last_name": null,
+          "age": 57,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted, sentenced to 4 years prison"
+        },
+        {
+          "role": "passenger",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged but not prosecuted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "possession with intent to deliver",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "vehicle fleeing/eluding",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree recklessly endangering safety",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "felony vehicle fleeing/eluding",
+          "second-degree recklessly endangering safety",
+          "possession with intent (second offense)",
+          "bail-jumping",
+          "misdemeanor obstructing an officer"
+        ],
+        "case_number": null,
+        "disposition": "Guilty of second-degree recklessly endangering safety and possession with intent; remaining charges dismissed. Sentenced to 4 years prison and 4 years extended supervision."
+      },
+      "event_summary": {
+        "short": "Drug deal observation leads to vehicle pursuit and crash, suspect flees on foot, canine finds drugs, arrest made.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-07-29T19:15:00",
+        "pursuit_started": "2025-07-29T19:16:00",
+        "arrest": "2025-07-29T19:30:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "drug_deal",
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "use_of_force",
+          "arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "tags": [
+          "Wisconsin",
+          "West Dallas",
+          "Code Blue Cam",
+          "bodycam",
+          "police chase",
+          "canine search"
+        ],
+        "content_warnings": [
+          "drug use",
+          "vehicle crash",
+          "taser"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Around 7.15 p.m. on July 29th, 2025",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "West Dallas, Wisconsin",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Andrew was charged with felony, vehicle fleeing, eluding an officer. Second-degree recklessly endangering safety, possession with intent, second offense, bail-jumping, misdemeanor obstructing an officer.",
+          "timestamp_seconds": 872,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "later identified as 57-year-old Andrew",
+          "timestamp_seconds": 510,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "57-year-old",
+          "timestamp_seconds": 510,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Taser, bro?",
+          "timestamp_seconds": 426,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He was found guilty of second-degree recklessly endangering safety and possession with intent... sentenced to four years in prison, followed by four years of extended supervision.",
+          "timestamp_seconds": 880,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last name of suspect",
+          "county",
+          "agency name",
+          "exact coordinates",
+          "ZIP code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

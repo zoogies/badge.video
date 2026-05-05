@@ -2050,5 +2050,173 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:13:56Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-09",
+        "published_date": "2025-01-12",
+        "location": {
+          "state": "Indiana",
+          "state_abbreviation": "IN",
+          "county": "Marion",
+          "city": "Indianapolis",
+          "address_or_area": "Interstate 465 at Shadeland Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indianapolis Metropolitan Police Department",
+          "type": "municipal police",
+          "state": "Indiana",
+          "county": "Marion",
+          "city": "Indianapolis"
+        }
+      },
+      "geo": {
+        "address_or_place": "Interstate 465",
+        "intersection": "Shadeland Avenue and I-465",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jonathan",
+          "last_name": "Becker",
+          "age": 23,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Impersonation of a public servant",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating a motor vehicle with a false plate",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Released on $250 cash bond"
+      },
+      "event_summary": {
+        "short": "Fake cop pulls over real police sergeant on interstate",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2023-09",
+        "pursuit_started": null,
+        "arrest": "2023-10-18"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "impersonation",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "impersonation",
+          "traffic_violation"
+        ],
+        "tags": [
+          "fake cop",
+          "IMPD",
+          "Indiana"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "In September 2003 (likely 2023), an on-duty sergeant...",
+          "timestamp_seconds": 0,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Indianapolis Metropolitan Police Department",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "23-year-old Jonathan Becker",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "charged with impersonation of a public servant, a level six felony offense",
+          "timestamp_seconds": 1187,
+          "confidence": "high"
+        },
+        {
+          "field": "timeline.arrest",
+          "source": "transcript",
+          "quote": "following day, records show that John had been taken into custody",
+          "timestamp_seconds": 1197,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript says 'September 2003' but context suggests 2023; date adjusted accordingly."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

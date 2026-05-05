@@ -1250,5 +1250,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:22:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-04-10",
+        "published_date": "2024-04-18T17:04:57Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Columbia",
+          "city": "Portage",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Portage Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": "Columbia",
+          "city": "Portage"
+        }
+      },
+      "geo": {
+        "address_or_place": "Portage, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jennifer",
+          "last_name": null,
+          "age": 31,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Probation violation",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Intentionally ramming police car",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle fleeing/eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second-degree recklessly endangering safety",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle fleeing eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail jumping (two counts)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor criminal damage to property",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty via no-contest plea to vehicle fleeing/eluding; other charges dismissed but read in; sentence withheld; 3 years probation."
+      },
+      "event_summary": {
+        "short": "Woman intentionally smashes into police car during probation check, leads high-speed pursuit, surrenders.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "assault_on_police"
+        ],
+        "crime_categories": [
+          "assault",
+          "vehicle_pursuit",
+          "reckless_driving"
+        ],
+        "tags": [
+          "probation violation",
+          "high-speed pursuit",
+          "police car ramming"
+        ],
+        "content_warnings": [
+          "fast-paced pursuit",
+          "police involvement"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.date",
+          "source": "description",
+          "quote": "On April 10, 2023, officers pulled over a female driver...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "violating their probation rules in Portage, Wisconsin.",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "A 31-year-old female named Jennifer",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "31-year-old female",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "She just smoked our squad. She's taken off.",
+          "timestamp_seconds": 186,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "second-degree recklessly endangering safety",
+          "timestamp_seconds": 614,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1].label",
+          "source": "transcript",
+          "quote": "vehicle fleeing eluding an officer",
+          "timestamp_seconds": 618,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty due to a no-contest plea for vehicle fleeing eluding an officer... sentence was withheld, and she was given three years of probation.",
+          "timestamp_seconds": 630,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude/longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

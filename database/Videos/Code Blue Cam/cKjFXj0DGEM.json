@@ -1860,5 +1860,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:29:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-10",
+        "published_date": "2026-02-09",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Walton County",
+          "city": "Santa Rosa Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Walton County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Walton County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city_county",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": "Pearson",
+          "age": 61,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Police impersonation",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Falsely displaying marks on vehicle",
+            "category": "other",
+            "statute": "Florida State statute",
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Operating with intent to mislead official agency vehicle",
+            "category": "misdemeanor",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $25,000 surety bond, court case ongoing"
+      },
+      "event_summary": {
+        "short": "Man driving a fake police car arrested on warrant for police impersonation in Walton County, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest",
+          "police_impersonation"
+        ],
+        "crime_categories": [
+          "warrant",
+          "traffic_stop"
+        ],
+        "tags": [
+          "fake police car",
+          "Walton County",
+          "Florida",
+          "police impersonation"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "It is around noon on May 10th, 2025",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "Walton County Sheriff's deputies are about to pull over this Ford Explorer",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "near Santa Rosa Beach in Florida",
+          "timestamp_seconds": 215,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "61-year-old James Pearson",
+          "timestamp_seconds": 35,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "For police impersonation and falsely displaying stuff on a vehicle",
+          "timestamp_seconds": 643,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with misdemeanor operating with intent to mislead official agency vehicle",
+          "timestamp_seconds": 1326,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "released on a $25,000 surety bond while his court case is ongoing",
+          "timestamp_seconds": 1332,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "shotgun locked up in the rack",
+          "timestamp_seconds": 606,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "exact address or intersection",
+          "zip code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

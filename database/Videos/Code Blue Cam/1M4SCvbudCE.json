@@ -330,5 +330,165 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:52:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-06-24",
+        "published_date": "2022-07-06T19:51:40Z",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Towns",
+          "city": "Hiawassee",
+          "address_or_area": "near Valero and Napa",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Hiawassee Police Department",
+          "type": "local",
+          "state": "Georgia",
+          "county": "Towns",
+          "city": "Hiawassee"
+        }
+      },
+      "geo": {
+        "address_or_place": "Hiawassee, Georgia",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "reckless driving",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for reckless driving leads to jurisdictional argument between sheriff and police sergeant.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "law_enforcement_confrontation"
+        ],
+        "crime_categories": [
+          "traffic_stop"
+        ],
+        "tags": [
+          "reckless driving",
+          "jurisdictional dispute",
+          "GBI investigation"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 24th, 2022, Sergeant James, with the Hiawassey Police Department, conducted a traffic stop",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "in Hiawassey, Georgia",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "You're very recklessly from the city all the way here, man, in and out of traffic, not using a turn your signal.",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "After Sergeant James handed the driver as traffic citation",
+          "timestamp_seconds": 148,
+          "confidence": "high"
+        },
+        {
+          "field": "classifications.incident_types",
+          "source": "title",
+          "quote": "Sheriff and Police Sergeant Threaten to Arrest Each Other",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race/ethnicity",
+          "precise coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

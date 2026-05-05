@@ -1780,5 +1780,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:52:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-22",
+        "published_date": "2023-07-21T17:04:20Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Columbia",
+          "city": null,
+          "address_or_area": "Wisconsin River Bridge area",
+          "location_name": "Wisconsin River Bridge",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Columbia County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Columbia",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Wisconsin River Bridge",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Michael",
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Speeding in construction zone",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/eluding police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless endangerment",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated first-degree robbery (warrant)",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony first degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle fleeing, eluding an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plead guilty to both charges; withheld sentence; 240-day jail term; 7 years probation"
+      },
+      "event_summary": {
+        "short": "High-speed chase from Juneau County into Columbia County, Wisconsin; suspect fled on foot after PIT maneuver and taser attempt; arrested; later found to have an active warrant for aggravated first-degree robbery in Minnesota.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "reckless_driving",
+          "robbery"
+        ],
+        "tags": [
+          "code blue cam",
+          "police chase"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 22, 2023, the Wisconsin State Patrol notified dispatch",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "leading into Columbia County, Wisconsin",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "26-year-old male named Michael",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "26-year-old male named Michael",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3]",
+          "source": "transcript",
+          "quote": "aggravated first-degree robbery",
+          "timestamp_seconds": 955,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "felony first degree recklessly endangering safety",
+          "timestamp_seconds": 1417,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "vehicle fleeing, eluding an officer",
+          "timestamp_seconds": 1425,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "pleaded guilty to both charges, resulting in a withheld sentence in a 240-day jail term along with seven years of probation",
+          "timestamp_seconds": 1437,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "city",
+          "zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

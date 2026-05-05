@@ -1515,5 +1515,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:20:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-12-31",
+        "published_date": "2023-01-24",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Fond du Lac County",
+          "city": "Fond du Lac",
+          "address_or_area": null,
+          "location_name": "Fond du Lac",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fond du Lac County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Fond du Lac County",
+          "city": "Fond du Lac"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derek",
+          "last_name": "Triplett",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "First-Degree Recklessly Endangering Safety",
+            "category": "reckless_endangerment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Vehicle Without Consent (two counts)",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle Fleeing/Eluding an Officer (two counts)",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing/Eluding Causing Injury and Property Damage",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping",
+            "category": "bail_jumping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Revoked",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police pursuit of a stolen vehicle in Fond du Lac, WI on December 31, 2022. The suspect, Derek Triplett, fled at high speeds, crashed into a deputy's vehicle, and was arrested with minor injuries. He faced multiple felony charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "stolen_vehicle",
+          "crash"
+        ],
+        "crime_categories": [
+          "theft",
+          "fleeing",
+          "reckless_driving",
+          "warrant"
+        ],
+        "tags": [
+          "pursuit",
+          "crash",
+          "arrest",
+          "high-speed",
+          "Fond du Lac"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 31, 2022, police were in a brief pursuit of a stolen vehicle in Fond du Lac, WI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Fond du Lac, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "believed the operator was 30-year-old Derek Triplett Jr.",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "30-year-old Derek Triplett Jr.",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Derek was charged with felony counts of first-degree recklessly endangering safety, operating vehicle without consent, times two. Second offense. Vehicle fleeing, eluding an officer, times two, and fleeing eluding an officer causing injury and property damage.",
+          "timestamp_seconds": 1320,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "address",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

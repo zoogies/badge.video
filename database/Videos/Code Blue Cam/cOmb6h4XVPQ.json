@@ -790,5 +790,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:30:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-11",
+        "published_date": "2021-11-14",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Marshfield",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Marshfield Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Marshfield"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Gerald",
+          "last_name": "Pearson",
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing/Eluding Police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Warrants",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "High-speed pursuit and arrest of Gerald Pearson in Marshfield, Wisconsin after an hour-long chase involving spike strips and PIT maneuver.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 73,
+        "pursuit_started": 73,
+        "arrest": 420
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police chase",
+          "traffic stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "warrant"
+        ],
+        "tags": [
+          "high-speed chase",
+          "taser",
+          "spike strips",
+          "PIT maneuver"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 11, 2021, police attempted a traffic stop on a 44-year-old man in Marshfield, WI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "in Marshfield, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Gerald, you're going to get tased.",
+          "timestamp_seconds": 420,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Gerald Pearson",
+          "timestamp_seconds": 110,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "description",
+          "quote": "a 44-year-old man",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "You got felony warrants",
+          "timestamp_seconds": 614,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

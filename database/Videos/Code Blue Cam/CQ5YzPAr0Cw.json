@@ -1065,5 +1065,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:30:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-11-28",
+        "published_date": "2021-12-23",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": "Monroe County",
+          "city": null,
+          "address_or_area": "1 mile north of the residence",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "sheriff",
+          "state": null,
+          "county": "Monroe County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lucas",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disturbance",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "destruction of property",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "armed with a knife",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies responded to a disturbance call; suspect Lucas, armed with a knife, refused to comply, was tased and beanbagged, then arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "taser, beanbag",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disturbance",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "knife",
+          "taser",
+          "beanbag",
+          "negotiation"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "taser",
+          "beanbag"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On November 28, 2021",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "Monroe County Sheriff’s Office",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Lucas, can you help us out here",
+          "timestamp_seconds": 127,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "description",
+          "quote": "disturbance call",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "description",
+          "quote": "destroyed a residence",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes[2].label",
+          "source": "description",
+          "quote": "armed with a knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "description",
+          "quote": "armed with a knife",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "taser taser",
+          "timestamp_seconds": 456,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "city",
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

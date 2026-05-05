@@ -1065,5 +1065,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:50:02Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2026-01-01",
+        "published_date": "2026-01-30T18:03:36Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": null,
+          "address_or_area": "I-43 near Milwaukee County",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Milwaukee County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "I-43 near Milwaukee County",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Zachariah",
+          "last_name": null,
+          "age": 23,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI) - second offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second-degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony second-degree recklessly endangering safety",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor operating while intoxicated (second offense)",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "released on $7,500 cash bond with conditions"
+      },
+      "event_summary": {
+        "short": "Drunk driver drives wrong way on I-43, crashes into two squad cars; arrested for OWI and recklessly endangering safety.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2026-01-01T02:36:00",
+        "initial_contact": "2026-01-01T02:36:00",
+        "pursuit_started": null,
+        "arrest": "2026-01-01"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "DUI",
+          "wrong-way driver",
+          "vehicle crash"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "drunk driving",
+          "OWI",
+          "squad car crash"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "around 236 a m on thursday january 1st 2026",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "milwaukee county sheriff's sergeant",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "milwaukee county sheriff's sergeant",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Zachariah seems to have no idea",
+          "timestamp_seconds": 305,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "23-year-old Zachariah",
+          "timestamp_seconds": 305,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "charged with felony, second-degree recklessly endangering safety",
+          "timestamp_seconds": 1018,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[1]",
+          "source": "transcript",
+          "quote": "Misdemeanor, operating while intoxicated, second offense",
+          "timestamp_seconds": 1023,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you're under us for OWI and second degree recklessly endangering safety",
+          "timestamp_seconds": 947,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

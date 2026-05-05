@@ -1970,5 +1970,188 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:00:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-09-24",
+        "published_date": "2025-06-17",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Oneida County",
+          "city": "Rhinelander",
+          "address_or_area": "Walmart",
+          "location_name": "Walmart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rhinelander Police Department",
+          "type": "local police",
+          "state": "Wisconsin",
+          "county": "Oneida County",
+          "city": "Rhinelander"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart, Rhinelander, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kyle",
+          "last_name": null,
+          "age": 20,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting/obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "misdemeanor retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor resisting/obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "guilty via no-contest plea; sentenced to 90 days jail with 55 days credit"
+      },
+      "event_summary": {
+        "short": "Suspect stole from Walmart and parked across the street, was arrested for retail theft and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "10:22",
+        "pursuit_started": null,
+        "arrest": "11:24"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "Walmart",
+          "bodycam",
+          "Wisconsin",
+          "retail theft"
+        ],
+        "content_warnings": [
+          "use of force",
+          "resisting arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Fast forward to September 24.",
+          "timestamp_seconds": 567,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Walmart asset protection in Rhinelander, Wisconsin",
+          "timestamp_seconds": 568,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "20-year-old Kyle",
+          "timestamp_seconds": 578,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "retail theft and resisting",
+          "timestamp_seconds": 770,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you're under arrest",
+          "timestamp_seconds": 683,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect.last_name",
+          "agency.name",
+          "location.address_or_area"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

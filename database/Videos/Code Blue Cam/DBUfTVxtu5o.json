@@ -1530,5 +1530,223 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:33:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-28",
+        "published_date": "2022-08-31",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Barron County",
+          "city": "Rice Lake",
+          "address_or_area": "Quick Trip convenience store",
+          "location_name": "Rice Lake",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Rice Lake Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Barron County",
+          "city": "Rice Lake"
+        }
+      },
+      "geo": {
+        "address_or_place": "Rice Lake, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "title, description, transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joshua",
+          "last_name": "Springer",
+          "age": 39,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating while intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating after revocation",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony OWI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor resisting",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor disorderly conduct",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Dismissed upon prosecutor's motion due to suspect's death"
+      },
+      "event_summary": {
+        "short": "Rice Lake police respond to 911 hang-up, suspect Joshua Springer found at gas station, refuses to exit, rams squad cars, arrested for OWI and resisting; charges later dismissed after his death.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-08-28T00:00:00Z",
+        "initial_contact": "2021-08-28T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2021-08-28T00:00:00Z"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "reckless_driving"
+        ],
+        "tags": [
+          "OWI",
+          "revoked license",
+          "domestic disturbance",
+          "ramming police vehicles"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On August 28, 2021",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Rice Lake, Wisconsin",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "39-year-old Joshua Springer",
+          "timestamp_seconds": 27,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "charges were dismissed on the prosecutor's motion because of Joshua's passing in September 2021",
+          "timestamp_seconds": 596,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Joshua was charged with felony OWI and misdemeanor counts of resisting and disorderly conduct times two.",
+          "timestamp_seconds": 589,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "charges were dismissed on the prosecutor's motion because of Joshua's passing",
+          "timestamp_seconds": 596,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "officers threatened to break window, he rammed squad cars, then was pulled out",
+          "timestamp_seconds": 250,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "county_fips",
+          "address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

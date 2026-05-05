@@ -2535,5 +2535,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:55:49Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-12-12",
+        "published_date": "2024-11-10",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Waukesha",
+          "city": "Brookfield",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Brookfield Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Waukesha",
+          "city": "Brookfield"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ashley",
+          "last_name": "Corbyn",
+          "age": 36,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "False reporting of an emergency (swatting)",
+            "category": "false_report",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting or obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony false reporting of an emergency",
+            "category": "false_report",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor resisting/obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Found guilty (no-contest plea) on false reporting; resisting charge dismissed but read in. Sentenced to 1.5 years initial confinement and 1.5 years extended supervision."
+      },
+      "event_summary": {
+        "short": "Woman called in false shooting report multiple times; arrested for swatting and obstructing; later convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2023-12-12T00:00:00Z",
+        "initial_contact": "2023-12-12T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": "2023-12-12T00:00:00Z"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "swatting",
+          "false reporting"
+        ],
+        "crime_categories": [
+          "false_report",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "swatting",
+          "fake shooting",
+          "intoxicated suspect",
+          "felony warrant"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 12, 2023, police received a report of a man firing shots at a home in Brookfield, WI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Brookfield, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.last_name",
+          "source": "transcript",
+          "quote": "36-year-old Ashley Corbyn",
+          "timestamp_seconds": 342,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Ashley was found guilty due to a no-contest plea of false reporting of an emergency. ... sentenced to a year and six months of initial confinement, followed by a year and six months of extended supervision.",
+          "timestamp_seconds": 1385,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Ashley, you got to come with us. ... You're in police custody.",
+          "timestamp_seconds": 740,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2095,5 +2095,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:31:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-08-06",
+        "published_date": "2024-11-15T18:10:55Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "La Crosse",
+          "address_or_area": "South side",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "La Crosse Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "La Crosse"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Josh",
+          "last_name": null,
+          "age": 38,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly conduct while armed",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail jumping (felony)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony bail jumping (2 counts)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor disorderly conduct while armed",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty on one count of bail jumping after no-contest plea; other charges dismissed but read in. Sentenced to 2 days in La Crosse County Jail."
+      },
+      "event_summary": {
+        "short": "Man with pellet gun arrested after confrontation during visit to baby mama's house, charged with bail jumping and disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "0:00",
+        "initial_contact": "0:50",
+        "pursuit_started": null,
+        "arrest": "1:50"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "high_risk_stop"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "warrant",
+          "drug_offense"
+        ],
+        "tags": [
+          "pellet_gun",
+          "baby_mama",
+          "bail_jumping"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "In August, 23, police were dispatched",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "La Crosse, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "38-year-old Josh",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "Josh was charged with two felony counts of bail jumping, misdemeanor counts of disorderly conduct while armed, and possession of drug paraphernalia",
+          "timestamp_seconds": 150,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Josh was found guilty on one count of bail jumping after entering a no-contest plea. All other charges were dismissed, but read in. He was ultimately sentenced to two days in the La Crosse County Jail.",
+          "timestamp_seconds": 156,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "precise_address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

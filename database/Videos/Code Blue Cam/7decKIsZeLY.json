@@ -1205,5 +1205,242 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:09:19Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-07-13",
+        "published_date": "2023-09-09",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Monroe County",
+          "city": "Tomah",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "Sheriff's Office",
+          "state": "Wisconsin",
+          "county": "Monroe County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Penny",
+          "last_name": null,
+          "age": 52,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Stolen vehicle",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "High-speed chase",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Second degree recklessly endangering safety",
+            "category": "reckless_endangerment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicle fleeing/eluding an officer",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Taking vehicle without consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail jumping (4 counts)",
+            "category": "bail_jumping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal damage to property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a controlled substance",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Bench warrant issued for failure to appear"
+      },
+      "event_summary": {
+        "short": "Woman steals vehicle, leads high-speed chase, crashes, and is arrested in Tomah, WI",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "foot pursuit",
+          "arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "vehicle_pursuit",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stolen vehicle",
+          "high-speed chase",
+          "taser deployment",
+          "drugs"
+        ],
+        "content_warnings": [
+          "drug use",
+          "high-speed chase"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On July 13, 2023",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Tomah, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Monroe County Sheriff's Office",
+          "timestamp_seconds": 8,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "52-year-old female named Penny",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "52-year-old female",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Penny was charged with felony counts of second degree recklessly endangering safety...",
+          "timestamp_seconds": 703,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "we have her in custody",
+          "timestamp_seconds": 344,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect.last_name",
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

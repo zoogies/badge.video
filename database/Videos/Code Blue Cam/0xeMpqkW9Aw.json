@@ -1245,5 +1245,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:49:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-10",
+        "published_date": "2022-09-04",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Monroe",
+          "city": "Wilton",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Monroe",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daisy",
+          "last_name": "Mendoza",
+          "age": 22,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal damage to property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery/threat to an officer (3 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Discharging bodily fluids (3 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail jumping (2 counts)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct (2 counts)",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "22-year-old Daisy Mendoza fled from deputies, resisted arrest, and was charged with multiple offenses including battery to officers and discharging bodily fluids.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "foot_pursuit",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "spit mask",
+          "battery to officer",
+          "bail jumping",
+          "foot pursuit",
+          "female suspect"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On August 10, 2022, Monroe County Sheriff's deputies were advised of a female causing a disturbance in Wilton, WI.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "description",
+          "quote": "Wilton, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "the 22-year-old female later identified as Daisy Mendoza",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Daisy was charged with felony counts of battery threat to an officer, times three. Discharging bodily fluids, times three, and bail jumping. Misdemeanor counts of resisting, disorderly conduct, times two, and bail jumping.",
+          "timestamp_seconds": 1536,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "deputies placed a spit mask on Daisy and used a leg strap",
+          "timestamp_seconds": 55,
+          "confidence": "high"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "transcript",
+          "quote": "she took off running in the street into the marsh",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "zip_code",
+          "exact address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript states 'August 10, 2002' but context and description indicate 2022; used 2022 from description."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

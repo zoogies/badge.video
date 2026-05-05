@@ -2085,5 +2085,204 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:08:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-11-07",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "Kittitas",
+          "city": "Ellensburg",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kittitas County Sheriff's Office",
+          "type": "county",
+          "state": "Washington",
+          "county": "Kittitas",
+          "city": "Ellensburg"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "John",
+          "last_name": "McCartney",
+          "age": 71,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "harassment (threats to kill)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony harassment",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony resisting arrest",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Deputies responded to a trespassing and harassment report, encountered a 71-year-old man claiming to be a federal agent with a fake badge, used taser after he refused to drop a stick and threatened officers, arrested him on felony charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "stick",
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "mental_health",
+          "imposter",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "harassment",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "fake badge",
+          "elderly suspect",
+          "taser"
+        ],
+        "content_warnings": [
+          "strong language",
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_location",
+          "source": "transcript",
+          "quote": "Kidditas County Sheriff's deputies received a report about a man trespassing on private property in Ellensburg, Washington",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 25th, 2003, at around 454 p.m.",
+          "timestamp_seconds": 30,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "What's your name, sir? William Wallace. You're not William Wallace. William Wallace! Don! William Wallace McCartney!",
+          "timestamp_seconds": 493,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_age",
+          "source": "transcript",
+          "quote": "a 71-year-old man named John",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "he'd reportedly threatened to kill the homeowner",
+          "timestamp_seconds": 120,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "He was booked on two felony counts, harassment and resisting arrest",
+          "timestamp_seconds": 913,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript states incident date as 2003, which conflicts with video publish date of 2025. Likely transcription error; date treated as unknown."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

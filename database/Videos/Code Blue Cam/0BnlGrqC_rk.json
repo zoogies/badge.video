@@ -3060,5 +3060,238 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:47:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-06-16",
+        "published_date": "2023-06-08",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Dane",
+          "city": "Madison",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "University of Wisconsin-Madison Police Department",
+          "type": "university",
+          "state": "Wisconsin",
+          "county": "Dane",
+          "city": "Madison"
+        }
+      },
+      "geo": {
+        "address_or_place": "Madison, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Aurora",
+          "last_name": null,
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Julia",
+          "last_name": null,
+          "age": 30,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery to an Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Battery Threat to an Officer",
+            "category": "assault",
+            "disposition": "dismissed on prosecutor's motion"
+          },
+          {
+            "label": "Misdemeanor Resisting/Obstructing an Officer",
+            "category": "resisting_arrest",
+            "disposition": "guilty - deferred prosecution program"
+          },
+          {
+            "label": "OWI First Offense",
+            "category": "dui",
+            "disposition": "citation upheld"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Aurora: guilty of resisting, other charges dismissed; OWI citation. Julia: pleaded no contest to resisting."
+      },
+      "event_summary": {
+        "short": "Traffic stop escalates after driver backs into police car; driver and passenger resist, officer uses taser.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2022-06-16T00:00:00Z",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_check",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "OWI",
+          "taser",
+          "female_suspects",
+          "UWPD"
+        ],
+        "content_warnings": [
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 16th, 2022, an officer observed a vehicle exhibiting strange behavior in Madison, Wisconsin.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Madison, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Dane County",
+          "timestamp_seconds": 932,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "26-year-old female named Aurora",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "30-year-old female passenger named Julia",
+          "timestamp_seconds": 295,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "OWI first offense",
+          "timestamp_seconds": 1377,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "resisting causing injury",
+          "timestamp_seconds": 1377,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "transcript",
+          "quote": "a taser was deployed",
+          "timestamp_seconds": 353,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "an officer sustained minor injuries and was taken to a hospital",
+          "timestamp_seconds": 633,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "address_or_area",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

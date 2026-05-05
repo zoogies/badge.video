@@ -1685,5 +1685,251 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:19:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-01",
+        "published_date": "2023-06-23",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Monroe",
+          "city": "Warrens",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "city"
+        },
+        "agency": {
+          "name": "Monroe County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Monroe",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nicholas",
+          "last_name": null,
+          "age": 28,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing/Eluding Police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Revoked",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Vehicle Fleeing/Eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor Resisting/Obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Revoked",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on $1,000 cash bond"
+      },
+      "event_summary": {
+        "short": "Man evades police to care for grandmother, arrested after pursuit and taser incident in Warrens, Wisconsin.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "traffic_stop",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "resisting_arrest",
+          "warrant"
+        ],
+        "tags": [
+          "evade",
+          "grandmother",
+          "spike strips",
+          "taser",
+          "warrant"
+        ],
+        "content_warnings": [
+          "use_of_taser",
+          "pursuit"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On May 1, 2023, a Monroe County deputy in Warrens, WI, attempted to pull over a vehicle...",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "Warrens, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "This is the Monroe County Sheriff's Office.",
+          "timestamp_seconds": 152,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "What's your name, sir? Nicholas.",
+          "timestamp_seconds": 853,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "How old are you, Nicholas? 28.",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with felony vehicle fleeing, eluding an officer, misdemeanor counts of resisting, obstructing an officer, operating while revoked, and bail jumping.",
+          "timestamp_seconds": 1063,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I'm going to hit you again. (taser deployment)",
+          "timestamp_seconds": 488,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Hands behind your back.",
+          "timestamp_seconds": 505,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "only to have the vehicle briefly slow down before promptly fleeing the scene.",
+          "timestamp_seconds": 50,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "he immediately fled on foot.",
+          "timestamp_seconds": 456,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "last_name",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

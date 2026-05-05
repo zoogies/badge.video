@@ -2310,5 +2310,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:24:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-06-07",
+        "published_date": "2021-06-15",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse",
+          "city": "La Crosse",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "La Crosse Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse",
+          "city": "La Crosse"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Lenny",
+          "last_name": "Gumns",
+          "age": 50,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving under the influence of alcohol (4th offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating with prohibited alcohol content (4th offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Active warrants",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony 4th offense drunk driving",
+          "Felony 4th offense operating with prohibited alcohol content"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "50-year-old man intentionally drove drunk to be arrested on active warrants after a traffic stop in La Crosse, Wisconsin.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "[0:00-0:01]",
+        "pursuit_started": null,
+        "arrest": "[13:38-13:39]"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "warrant"
+        ],
+        "tags": [
+          "intentional",
+          "warrant",
+          "fourth offense"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "On June 7th, police observed a vehicle that was having difficulty maintaining its lane in La Crosse, Wisconsin.",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "On June 7th, police observed a vehicle...",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the 50-year-old man was identified as Lenny Leroy-Gumns",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "he had been drinking vodka all day and that he was driving around drunk on purpose to get pulled over for his warrants",
+          "timestamp_seconds": 290,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "Lenny Leroy Gums was charged with felony fourth offense drunk driving and felony fourth offense operating with a prohibited alcohol content",
+          "timestamp_seconds": 1300,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2090,5 +2090,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:23:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-02-24",
+        "published_date": "2023-10-29",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "La Crosse",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "La Crosse Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "La Crosse"
+        }
+      },
+      "geo": {
+        "address_or_place": "La Crosse, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description, transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Shalen",
+          "last_name": null,
+          "age": 21,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "seatbelt violation",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating after revocation (OAR)",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding (foot)",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "resisting/obstructing an officer",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting failing to stop",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "operating while revoked",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Dismissed about a month later; factored into sentencing for other open cases; 18 months probation."
+      },
+      "event_summary": {
+        "short": "Female driver fled traffic stop for seatbelt violation, fled on foot into her house, was arrested after de-escalation, charged with multiple misdemeanors, later dismissed but given probation.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "de-escalation"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "foot_pursuit",
+          "resisting_arrest",
+          "warrant"
+        ],
+        "tags": [
+          "seatbelt",
+          "OAR",
+          "bail jumping",
+          "probation"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "in lacrosse, Wisconsin",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "named Shalen",
+          "timestamp_seconds": 58,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "21-year-old female",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Shailen was charged with misdemeanor counts of resisting obstructing an officer, resisting failing to stop, operating while revoked, and bail jumping.",
+          "timestamp_seconds": 1251,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "About a month later, her charges were dismissed, but were factored into the sentencing for her other open cases. ... she was only given 18 months of probation.",
+          "timestamp_seconds": 1266,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "On February 24, 2023",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect last name",
+          "precise address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -2660,5 +2660,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:46:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-12-13",
+        "published_date": "2026-02-13",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Fond du Lac County",
+          "city": null,
+          "address_or_area": "Behind Papa John's, then along Butler Street and Arndt Street",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fond du Lac County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Fond du Lac County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Deandre",
+          "last_name": "Bradshaw",
+          "age": 33,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Wanted felon with multiple felony warrants including battery, firearms, drug possession, trespassing, disorderly conduct",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding (high-speed pursuit)",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal damage to property (ramming parked vehicles)",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless endangerment",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Drug possession (marijuana, oxycodone, amphetamine, methamphetamine)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony fleeing/eluding an officer causing property damage",
+          "First degree recklessly endangering safety (two counts)",
+          "Bail jumping (seven counts)",
+          "Misdemeanor hit and run",
+          "Resisting/obstructing an officer",
+          "Possession of THC",
+          "Operating with a restricted controlled substance (first offense)",
+          "Traffic citations totaling nearly $5,000"
+        ],
+        "case_number": null,
+        "disposition": "Guilty/no contest plea to fleeing/eluding, two counts bail jumping, operating with restricted controlled substance; remaining charges dismissed. Sentenced to 5 years prison and 5 years extended supervision."
+      },
+      "event_summary": {
+        "short": "Fond du Lac County deputies attempted a high-risk traffic stop on wanted felon Deandre Bradshaw, who fled in a vehicle, rammed parked cars, led a high-speed pursuit, then fled on foot before being arrested with K9 assistance.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "C. 13:00 December 13, 2024 (Flock alert)",
+        "initial_contact": "Papa John's parking lot",
+        "pursuit_started": "After ramming parked vehicles",
+        "arrest": "Near Pick 'n Save after foot pursuit"
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "high-speed pursuit",
+          "traffic stop",
+          "foot pursuit",
+          "felony warrant arrest",
+          "drug-related"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "drug_offense",
+          "warrant",
+          "property_damage",
+          "assault"
+        ],
+        "tags": [
+          "Fond du Lac County",
+          "Wisconsin",
+          "bodycam",
+          "chase",
+          "K9",
+          "Taser"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force",
+          "drug use"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "On December 13, 2024",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "description",
+          "quote": "Fond du Lac County Sheriff's deputies",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "Deandre Bradshaw",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "33-year-old DeAndre Bradshaw",
+          "timestamp_seconds": 64,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "you know how it is when it comes to a black male",
+          "timestamp_seconds": 638,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "sentenced to five years in state prison, followed by five years of extended supervision",
+          "timestamp_seconds": 1387,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "precise coordinates",
+          "zip code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Race identified from explicit witness statement in transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

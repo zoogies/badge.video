@@ -3910,5 +3910,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:01:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-11",
+        "published_date": "2023-07-16",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse",
+          "city": "Onalaska",
+          "address_or_area": "motel",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Onalaska Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "La Crosse",
+          "city": "Onalaska"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rhonda",
+          "last_name": null,
+          "age": 45,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal damage to property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "discharging bodily fluids at an officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony discharging bodily fluids at an officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor criminal damage to property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "guilty of criminal damage to property; other charges dismissed but read in; sentenced to 108 days in county jail"
+      },
+      "event_summary": {
+        "short": "Woman causes disturbance at Onalaska motel, spits on officers, arrested and later found guilty of property damage.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-11-11",
+        "initial_contact": "2022-11-11",
+        "pursuit_started": null,
+        "arrest": "2022-11-11"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disturbance",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "property_damage",
+          "assault"
+        ],
+        "tags": [
+          "spitting",
+          "bail_jumping",
+          "Onalaska"
+        ],
+        "content_warnings": [
+          "spitting",
+          "explicit_language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 11th, 2022, police responded to a motel due to a reported disturbance in Annalaska, Wisconsin.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "police were called to a disturbance at an Onalaska, WI motel.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "I'm Rhonda.",
+          "timestamp_seconds": 29,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "45-year-old female named Miranda.",
+          "timestamp_seconds": 14,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she was only found guilty of criminal damage to property. All other charges were dismissed, but read in. Ultimately, she was sentenced to 108 days in county jail.",
+          "timestamp_seconds": 239,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript says 'Annalaska' but description says Onalaska; Onalaska is correct."
+        ],
+        "missing_critical_fields": [
+          "suspect last name",
+          "exact address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1885,5 +1885,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:15:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-24",
+        "published_date": "2026-01-16T18:00:36Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Winnebago",
+          "city": "Oshkosh",
+          "address_or_area": "bus stop",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Oshkosh Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Winnebago",
+          "city": "Oshkosh"
+        }
+      },
+      "geo": {
+        "address_or_place": "bus stop",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Anthony",
+          "last_name": null,
+          "age": 44,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced to 12 months in state prison"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 41,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released on $1,000 signature bond, case ongoing"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Public indecency (lewd and lascivious behavior)",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony discharging bodily fluids at an officer",
+          "Battery threats to an officer (2 counts)",
+          "Misdemeanor lewd lascivious behavior in public",
+          "Disorderly conduct"
+        ],
+        "case_number": null,
+        "disposition": "Anthony pleaded no contest to one count of battery threat to an officer; remaining charges dismissed. Sentenced to 12 months state prison followed by 24 months extended supervision. Female's case ongoing."
+      },
+      "event_summary": {
+        "short": "Couple caught engaging in public indecency at a bus stop in Oshkosh, WI. Male suspect arrested and sentenced to prison for battery threat to officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2025-04-24T14:20:00",
+        "initial_contact": "2025-04-24T14:20:00",
+        "pursuit_started": null,
+        "arrest": "2025-04-24"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_indecency",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "other"
+        ],
+        "tags": [
+          "bus stop",
+          "public indecency",
+          "probation violation",
+          "no contact order"
+        ],
+        "content_warnings": [
+          "sexual content"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Oshkosh, Wisconsin",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "April 24th, 2025",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Anthony",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.age",
+          "source": "transcript",
+          "quote": "44-year-old Anthony",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.age",
+          "source": "transcript",
+          "quote": "41-year-old female",
+          "timestamp_seconds": 71,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "felony discharging bodily fluids at an officer, battery threats to an officer times two, misdemeanor lewd lascivious behavior in public, disorderly conduct",
+          "timestamp_seconds": 1422,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty due to no contest plea of one count of battery threat to an officer, remaining charges dismissed. Anthony sentenced to 12 months in state prison",
+          "timestamp_seconds": 1452,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect last name",
+          "exact address",
+          "race/ethnicity",
+          "ZIP code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

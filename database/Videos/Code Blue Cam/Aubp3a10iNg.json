@@ -1210,5 +1210,185 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T02:20:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-04-06",
+        "published_date": "2025-08-13T20:00:41Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa",
+          "address_or_area": "McDonald's near Mayfair",
+          "location_name": "McDonald's",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Wauwatosa Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Jellin",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of a firearm by a convicted felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting or obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony possession of a firearm by a convicted felon",
+          "Misdemeanor resisting/obstructing an officer"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect arrested after fleeing from stolen vehicle and possessing a firearm.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "stolen_vehicle_recovery"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "McDonald's",
+          "DoorDash",
+          "Wisconsin"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 6th, 2025, at approximately 1246 p.m.",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "officers from the Wauotosa Police Department in Wisconsin",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "transported to Milwaukee County Jail",
+          "timestamp_seconds": 603,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "21-year-old Jellin",
+          "timestamp_seconds": 191,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Felony possession of a firearm by a convicted felon and misdemeanor resisting obstructing an officer",
+          "timestamp_seconds": 607,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "You just left the gun.",
+          "timestamp_seconds": 125,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "precise_coordinates",
+          "officer_information"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not explicitly stated; not inferred."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

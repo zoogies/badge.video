@@ -330,5 +330,176 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T01:57:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-06-11",
+        "published_date": "2021-08-03",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "La Crosse County",
+          "city": "French Island",
+          "address_or_area": "French Island",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Holmen Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "La Crosse County",
+          "city": "Holmen"
+        }
+      },
+      "geo": {
+        "address_or_place": "French Island, WI",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Tommy",
+          "last_name": "Martin",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "at large"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing/eluding police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man leads police on high-speed chase through French Island, crashes through fence to escape onto I-90, vehicle found unoccupied in La Crosse, suspect at large.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "high-speed chase"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "reckless_driving"
+        ],
+        "tags": [
+          "fence crash",
+          "I-90",
+          "fleeing police",
+          "unoccupied vehicle"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "description",
+          "quote": "on June 11, 2021",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "throughout French Island, WI",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "description",
+          "quote": "29-year-old, Tommy Lavelle Martin",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "description",
+          "quote": "The man is still at large.",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "description",
+          "quote": "led police on a chase throughout French Island, WI before crashing through a fence to escape onto I-90",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "charges",
+          "case_number",
+          "suspect race/ethnicity",
+          "precise incident address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }
