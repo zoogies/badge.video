@@ -1250,5 +1250,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:00:40Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-29",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lake",
+          "city": "Lady Lake",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Lady Lake Police Department",
+          "type": "police",
+          "state": "Florida",
+          "county": "Lake",
+          "city": "Lady Lake"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alexis",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving with a suspended license (third offense)",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Xanax",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Driving with a suspended license (third offense)",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Xanax",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Released on C-bond the next day"
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to drug possession arrest and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "drug_possession",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "traffic_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "drug paraphernalia",
+          "methamphetamine",
+          "Xanax",
+          "suspended license"
+        ],
+        "content_warnings": [
+          "drug use"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "with today's case out of Lady Lake Police Department",
+          "timestamp_seconds": 551,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "taken to Lake County Jail",
+          "timestamp_seconds": 493,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "she was charged with her third driving with a suspended license offense, possession of methamphetamine, possession of Xanax, possession of drug paraphernalia, resisting without violence",
+          "timestamp_seconds": 505,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She was then taken to Lake County Jail without further incident",
+          "timestamp_seconds": 490,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The suspect, now identified as Alexis",
+          "timestamp_seconds": 178,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

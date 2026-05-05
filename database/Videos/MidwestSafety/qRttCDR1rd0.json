@@ -1540,5 +1540,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:38:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-07-27",
+        "published_date": "2026-03-30T19:00:00Z",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Doña Ana County",
+          "city": "Las Cruces",
+          "address_or_area": "Lowe's Home Improvement store",
+          "location_name": "Lowe's Home Improvement",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Las Cruces Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "Doña Ana County",
+          "city": "Las Cruces"
+        }
+      },
+      "geo": {
+        "address_or_place": "Lowe's Home Improvement, Las Cruces, NM",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joshua",
+          "last_name": "Lopez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Miles",
+          "last_name": "Luciano",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Brandishing a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Interference with commerce by threats or violence (Hobbs Act)",
+            "category": "robbery",
+            "statute": "18 U.S.C. § 1951",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Lopez: Guilty plea, sentenced to 7 years 2 months and 3 years supervised release. Luciano: Guilty plea, sentenced to 3 years 10 months and 3 years supervised release."
+      },
+      "event_summary": {
+        "short": "Off-duty Border Patrol agent witnesses an armed robbery at a Lowe's in Las Cruces, NM, leading to a vehicle pursuit and officer-involved shooting. Both suspects apprehended; one injured.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "armed_robbery",
+          "vehicle_pursuit",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "border_patrol",
+          "las_cruces",
+          "lowes",
+          "fbi",
+          "hobbs_act"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence",
+          "injuries"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On July 27, 2022 at a Lowe's Home Improvement store in Las Cruces, New Mexico",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "On July 27, 2022 at a Lowe's Home Improvement store in Las Cruces, New Mexico",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Yes, okay, yeah, that's Josh Lopez.",
+          "timestamp_seconds": 1052,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].last_name",
+          "source": "transcript",
+          "quote": "But you have to confirm your Miles Luciano list? Yes.",
+          "timestamp_seconds": 1442,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "He was charged with one count of interference with commerce by threats or violence",
+          "timestamp_seconds": 1455,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "In May 23, he pleaded guilty and was sentenced to three years and ten months in prison... sentenced to seven years and two months in prison",
+          "timestamp_seconds": 1499,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "five sixty two central shots fire shot fire",
+          "timestamp_seconds": 619,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county_fips",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

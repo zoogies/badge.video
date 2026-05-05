@@ -185,5 +185,170 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:23:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2022-11-02",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "Hennepin",
+          "city": "Crystal",
+          "address_or_area": "Parking lot",
+          "location_name": "Crystal, Minnesota",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Crystal Minnesota Police",
+          "type": "municipal police",
+          "state": "Minnesota",
+          "county": "Hennepin",
+          "city": "Crystal"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "incarcerated"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Ramming police vehicle",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Sentenced to 2 years imprisonment"
+      },
+      "event_summary": {
+        "short": "Shoplifting suspect rammed police cars and other vehicles during pursuit, resulting in a two-year prison sentence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "shop lifting",
+          "assault on police"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "ramming police",
+          "amputee suspect"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Crystal Minnesota Police, a suburb of Minneapolis",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "resulted in a two-year sentence",
+          "timestamp_seconds": 897,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "he is incarcerated in a Minnesota prison",
+          "timestamp_seconds": 900,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "title",
+          "quote": "Shoplifting Suspect Rams All the Cars",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1315,5 +1315,194 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:02:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-01-01",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Rock",
+          "city": "Janesville",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "city_level"
+        },
+        "agency": {
+          "name": "Rock County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Rock",
+          "city": "Janesville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "subject",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, transported to hospital"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Multi-vehicle crash on highway; car split in half by snowplow; driver trapped but survived.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_crash",
+          "multi-vehicle_crash",
+          "weather_related"
+        ],
+        "crime_categories": [
+          "unknown"
+        ],
+        "tags": [
+          "rock county",
+          "snowplow",
+          "icy conditions",
+          "field sobriety test"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Officers and firefighters in Rock County, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Rock County, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "We've been behind the plow since Janesville",
+          "timestamp_seconds": 313,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "firefighters are able to get the man stuck underneath the car out and need to get him to a hospital immediately",
+          "timestamp_seconds": 194,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "We were able to independently confirm that all involved parties survived",
+          "timestamp_seconds": 656,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "you're not going to be placed in custody for OWI... I just had to verify it based on the crash",
+          "timestamp_seconds": 614,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "the male who was field sobriety tested",
+          "timestamp_seconds": 640,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "transcript",
+          "quote": "the man stuck underneath the car out and need to get him to a hospital immediately",
+          "timestamp_seconds": 194,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_names"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not available; video published 2026-01-01."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

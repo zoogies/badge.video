@@ -1945,5 +1945,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-11-15",
+        "published_date": "2023-10-17",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Sheboygan County",
+          "city": "Sheboygan",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Sheboygan Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Sheboygan County",
+          "city": "Sheboygan"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Danielle",
+          "last_name": "Merzig",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempting to take a vehicle without consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating while intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing from a motor vehicle accident involving injury",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Attempting to take a vehicle without consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating while intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to felony counts of attempting to take a vehicle without consent and operating while intoxicated; sentenced to 5 years at Milwaukee Women's Correctional Facility"
+      },
+      "event_summary": {
+        "short": "Female carjacker leaves dog behind during crime spree in Sheboygan",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-11-15T17:16:00",
+        "initial_contact": "2022-11-15T17:16:00",
+        "pursuit_started": null,
+        "arrest": "2022-11-15T17:16:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "Taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "carjacking",
+          "dui",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "theft",
+          "dui",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "carjacking",
+          "dog",
+          "Sheboygan",
+          "drunk driving",
+          "taser"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 15, 2022, at approximately 5.16 p.m.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Sheboygan PD officers were dispatched to the scene of an accident",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Danielle Merzig pled guilty to felony counts of attempting to take a vehicle without consent, and operating while intoxicated.",
+          "timestamp_seconds": 1100,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Danielle Merzig pled guilty to felony counts of attempting to take a vehicle without consent, and operating while intoxicated.",
+          "timestamp_seconds": 1100,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "I switch to Taser, I tell her to get out of the car several times she does and I drive stun her in the thigh a bunch of times",
+          "timestamp_seconds": 1007,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect.age",
+          "suspect.race_ethnicity",
+          "geo.coordinates",
+          "geo.address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

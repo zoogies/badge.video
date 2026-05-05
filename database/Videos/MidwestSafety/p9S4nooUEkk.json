@@ -1420,5 +1420,187 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:14:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-05",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Kane",
+          "city": "Aurora",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Illinois",
+          "county": "Kane",
+          "city": "Aurora"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving with suspended license",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving with suspended license (warrant)",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A pastor was arrested twice for retail theft in Aurora, Illinois; first at Walmart for sports cards, then three days later at Meyer for multiple items, with an additional warrant for driving with a suspended license.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shop theft",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "theft",
+          "warrant"
+        ],
+        "tags": [
+          "pastor",
+          "church",
+          "shoplifting",
+          "Aurora",
+          "Illinois"
+        ],
+        "content_warnings": [],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "if you have something out of Kane County",
+          "timestamp_seconds": 115,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "a pastor for a local church in the Aurora, Illinois area",
+          "timestamp_seconds": 575,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "charged with retail theft",
+          "timestamp_seconds": 248,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "a warrant he previously had for driving with a suspended license",
+          "timestamp_seconds": 580,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "Officers find the mail running in a field",
+          "timestamp_seconds": 264,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency_name",
+          "suspect_name",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

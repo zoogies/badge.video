@@ -1760,5 +1760,248 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:08:42Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-17",
+        "location": {
+          "state": "California",
+          "state_abbreviation": "CA",
+          "county": "Orange",
+          "city": "Laguna Beach",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Laguna Beach Police Department",
+          "type": "municipal",
+          "state": "California",
+          "county": "Orange",
+          "city": "Laguna Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "witness",
+          "first_name": "Michael",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery on a peace officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving with suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating vehicle with expired registration (>6 months)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to obey traffic control device",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disobeying red light",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Ex-girlfriend leads police on chase with her lawyer ex-boyfriend as passenger; she is arrested and charged with multiple offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "resisting_arrest",
+          "reckless_driving",
+          "traffic_stop",
+          "assault"
+        ],
+        "tags": [
+          "lawyer passenger",
+          "ex-girlfriend chase",
+          "battery on officer"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I'm in Haldah Beach in Laguna Beach, California.",
+          "timestamp_seconds": 306,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "westbound on Hollandale Beachville",
+          "timestamp_seconds": 31,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "This suspect was charged with two counts of battery on a peace officer, resisting, obstructive with violence, resisting, obstructing without violence, driving with a suspended license, fleeing, eluding, operating a motor vehicle with a registration expired for over six months, failure to obey and disobeying a red light.",
+          "timestamp_seconds": 696,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "She is innocent unless proven guilty in a court of law.",
+          "timestamp_seconds": 701,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "You're just gonna have to hang tight for me, Michael.",
+          "timestamp_seconds": 241,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript mentions 'Hollandale Beachville' and 'Haldah Beach in Laguna Beach'. Likely Laguna Beach, CA."
+        ],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated; left null."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

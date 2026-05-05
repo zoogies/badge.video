@@ -1890,5 +1890,231 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:11:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-03-03",
+        "published_date": "2024-08-25",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": "Brown Street",
+          "location_name": "Brown Street and South Street area",
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "local",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brandon",
+          "last_name": "Whiteside",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "officer description in transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Open container of alcohol while operating a motor vehicle",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to comply",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Failure to comply",
+          "Obstruction",
+          "Possession of marijuana",
+          "Open container of liquor while operating a vehicle"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for open container leads to foot chase and arrest; suspect charged with multiple offenses.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "pursuit",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "open container",
+          "marijuana",
+          "obstruction"
+        ],
+        "content_warnings": [
+          "language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "It's March 3rd, 2023",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "He's a black male, thin build, light skin, tattoos on his face",
+          "timestamp_seconds": 274,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "open container of alcohol while operating a motor vehicle",
+          "timestamp_seconds": 94,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "obstructing",
+          "timestamp_seconds": 595,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.2",
+          "source": "transcript",
+          "quote": "failure to comply",
+          "timestamp_seconds": 1181,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.3",
+          "source": "transcript",
+          "quote": "possession of marijuana",
+          "timestamp_seconds": 1181,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.last_name",
+          "source": "transcript",
+          "quote": "Mr. Whiteside",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Brandon",
+          "timestamp_seconds": 420,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "my mom is in Cleveland",
+          "timestamp_seconds": 890,
+          "confidence": "low"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "speets are 60 going southbound on Brown Street",
+          "timestamp_seconds": 237,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location state inferred from channel and mention of Cleveland; county and specific city not determined."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -515,5 +515,187 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:01:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-04-13",
+        "published_date": "2023-05-18",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Wauwatosa Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": "Wauwatosa"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Washington",
+          "age": 21,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "traffic violations",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony fleeing/eluding",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor gun possession",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "convicted of felony fleeing/eluding and misdemeanor gun possession, sentenced to 2 years probation, 6 days time served, bond $500"
+      },
+      "event_summary": {
+        "short": "Vehicle pursuit ends with crash into utility pole, suspect arrested, convicted of fleeing and gun possession.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "fleeing",
+          "weapons_offense"
+        ],
+        "tags": [
+          "crash",
+          "utility pole",
+          "probation"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On April 13, 2022",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Waywatosa Police Department",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.last_name",
+          "source": "transcript",
+          "quote": "Washington",
+          "timestamp_seconds": 132,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "I'm only 21",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity.value",
+          "source": "transcript",
+          "quote": "I know I'm black",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.convictions",
+          "source": "transcript",
+          "quote": "convicted of felony fleeing, eluding, and misdemeanor gun possession",
+          "timestamp_seconds": 195,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "first_name",
+          "address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

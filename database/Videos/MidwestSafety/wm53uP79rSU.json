@@ -3125,5 +3125,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-11-09T19:01:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": "Ravenna",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "known_city"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Reggie",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        },
+        {
+          "role": "complainant",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "summons"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Tamara",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Menacing",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing Official Business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "Battery",
+          "Aggravated Menacing",
+          "Resisting Arrest",
+          "Obstructing Official Business"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Gas station worker and customer get into physical altercation over lottery ticket dispute; worker charged with battery, aggravated menacing, resisting, and obstructing; sister charged with obstruction.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "battery",
+          "disorderly_conduct",
+          "weapons_offense"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "disorderly_conduct",
+          "weapons_offense"
+        ],
+        "tags": [
+          "lottery dispute",
+          "tire iron",
+          "bodycam"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "This is Ravenna. (0:57-0:58)",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Ravenna, Ohio (11:50-11:55)",
+          "timestamp_seconds": 710,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.first_name",
+          "source": "transcript",
+          "quote": "Reggie (4:02-4:03)",
+          "timestamp_seconds": 242,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Reggie himself was charged with battery, aggravated menacing, and resisting, obstructing. (23:46-23:52)",
+          "timestamp_seconds": 1426,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect_2.status",
+          "source": "transcript",
+          "quote": "while Reggie's sister was charged with obstruction (23:46-23:52)",
+          "timestamp_seconds": 1426,
+          "confidence": "high"
+        },
+        {
+          "field": "people.complainant.sex_or_gender",
+          "source": "transcript",
+          "quote": "he (multiple times)",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "suspect_last_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "County not explicitly stated; inferred but not confirmed. Race/ethnicity not identified as not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

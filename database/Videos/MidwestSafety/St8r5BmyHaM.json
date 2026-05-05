@@ -1020,5 +1020,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:58:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-08-18T17:00:30Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Rock County",
+          "city": null,
+          "address_or_area": "County M and Kennedy",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Rock County Sheriff's Office",
+          "type": "county",
+          "state": "Wisconsin",
+          "county": "Rock County",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 18,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing/Eluding Police",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Vehicle Without Consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Fleeing an Officer (felony)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Vehicle Without Consent (felony)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Reckless Driving (misdemeanor)",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to fleeing an officer; other charges dismissed. Sentenced to 18 months probation and $5,000 restitution. Eligible for expungement upon successful completion."
+      },
+      "event_summary": {
+        "short": "Teen driving stolen car from Facebook Marketplace flees police, crashes into tree, arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 0,
+        "initial_contact": 0,
+        "pursuit_started": 0,
+        "arrest": 600
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police chase",
+          "traffic stop",
+          "vehicle crash"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft",
+          "reckless_driving"
+        ],
+        "tags": [
+          "car theft",
+          "Facebook Marketplace",
+          "teen",
+          "Rock County",
+          "Wisconsin"
+        ],
+        "content_warnings": [
+          "crash",
+          "injury"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "An officer with the Rock County Sheriff's Office",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.address_or_area",
+          "source": "transcript",
+          "quote": "eastbound and County M at Kennedy",
+          "timestamp_seconds": 15,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "being that you're 18",
+          "timestamp_seconds": 523,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].sex_or_gender",
+          "source": "transcript",
+          "quote": "female driver",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "fleeing an officer that's a felony ... operating a motor vehicle without their consent ... that's also a felony",
+          "timestamp_seconds": 553,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She pled guilty to fleeing an officer in exchange for the dismissal of the other two charges. She was ordered 18 months of probation and assessed restitution fines of $5,000.",
+          "timestamp_seconds": 689,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "What could have been a simple traffic stop quickly turned into a highly dangerous chase",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "suspect name",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

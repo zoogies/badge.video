@@ -1475,5 +1475,218 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-10-28T20:00:21Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": "sheriff",
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ezekiel",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault on a gas station clerk",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "criminal damage to a gas pump",
+            "category": "vandalism",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "theft of beer",
+            "category": "theft",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal damage over $1,000",
+            "category": "vandalism",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "aggravated battery with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "contributing delinquency of a minor",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A teen repeatedly stole beer from a gas station, assaulted the clerk, damaged a gas pump with a bat, and was arrested after a confrontation with police and his father.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "bat",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "robbery",
+          "assault",
+          "vandalism"
+        ],
+        "crime_categories": [
+          "robbery",
+          "assault",
+          "weapons_offense",
+          "vandalism"
+        ],
+        "tags": [
+          "gas station",
+          "teen",
+          "bodycam",
+          "father-son"
+        ],
+        "content_warnings": [
+          "violence",
+          "assault"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Ezekiel was charged with robbery",
+          "timestamp_seconds": 628,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Ezekiel was charged with robbery, criminal damage over $1,000, aggravated battery with a deadly weapon, battery on a peace officer, and contributing delinquency of a minor.",
+          "timestamp_seconds": 628,
+          "confidence": "high"
+        },
+        {
+          "field": "assault_on_clerk",
+          "source": "transcript",
+          "quote": "punches me in the nose",
+          "timestamp_seconds": 26,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_weapon",
+          "source": "transcript",
+          "quote": "He comes up with a bat, starts swinging it, threatening. And he goes outside and breaks one of our pumps.",
+          "timestamp_seconds": 121,
+          "confidence": "high"
+        },
+        {
+          "field": "arrest_made",
+          "source": "transcript",
+          "quote": "They're going to put you in detox.",
+          "timestamp_seconds": 358,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified; may be inferred from channel context but not stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

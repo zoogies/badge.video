@@ -380,5 +380,206 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:20:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-07-13",
+        "published_date": "2023-12-24",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Racine",
+          "city": null,
+          "address_or_area": "Highway K, pilot gas station",
+          "location_name": "Petro gas station",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Racine County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Wisconsin",
+          "county": "Racine",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Highway K, Racine County, Wisconsin",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "John",
+          "last_name": "McCarthy",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted murder of a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect John McCarthy attempted to carjack an undercover deputy, leading to an exchange of gunfire; the suspect then shot himself and died.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2021-07-13T00:00:00",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "carjacking",
+          "homicide",
+          "robbery"
+        ],
+        "crime_categories": [
+          "homicide",
+          "robbery",
+          "assault"
+        ],
+        "tags": [
+          "undercover",
+          "gas station",
+          "Racine County",
+          "Wisconsin",
+          "bodycam",
+          "dashcam"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "suicide"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "July 13th, 2021, a shooting was reported at a pilot gas station.",
+          "timestamp_seconds": 13,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Racine County 911. Where's your emergency?",
+          "timestamp_seconds": 25,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Petro gas station on Highway K.",
+          "timestamp_seconds": 30,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "It's a white person.",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "The suspect is John McCorm. McCarthy, McCarthy had the locks to his apartment changed the day before.",
+          "timestamp_seconds": 90,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "only one plus the shooter succumbed to injuries.",
+          "timestamp_seconds": 360,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "both the undercover officer and the suspect would be hit by gunfire.",
+          "timestamp_seconds": 350,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect name may be misheard; transcript shows 'John McCorm' then 'McCarthy'."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

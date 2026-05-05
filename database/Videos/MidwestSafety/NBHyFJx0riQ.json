@@ -610,5 +610,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:43:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-12-07",
+        "published_date": "2026-02-01T19:00:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": "Columbus",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Columbus Police",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": null,
+          "city": "Columbus"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "officer",
+          "first_name": "Caitlin",
+          "last_name": "Robinson",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, released"
+        },
+        {
+          "role": "victim",
+          "first_name": "Corey",
+          "last_name": "Tennis",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Officer Caitlin Robinson fatally struck Corey Tennis while responding to a call at a red light intersection in Columbus, Ohio.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 0,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police_vehicle_crash",
+          "police_involved_fatality"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "red_light_crash",
+          "seatbelt_not_used",
+          "officer_caused_crash"
+        ],
+        "content_warnings": [
+          "death"
+        ],
+        "severity": "fatal"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "This incident occurred on December 7th, 2025 in Columbus, Ohio.",
+          "timestamp_seconds": 436,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Columbus, Ohio",
+          "timestamp_seconds": 436,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Columbus police officer Caitlin Robinson",
+          "timestamp_seconds": 449,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "30-year-old Corey Tennis",
+          "timestamp_seconds": 453,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "pronounced dead at the hospital",
+          "timestamp_seconds": 457,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "transcript",
+          "quote": "pronounced dead at the hospital",
+          "timestamp_seconds": 457,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "Officer Robinson was also transported to a hospital, received treatment, and was later released in stable condition.",
+          "timestamp_seconds": 461,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "30-year-old Corey Tennis",
+          "timestamp_seconds": 453,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "address",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1050,5 +1050,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-10",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": null,
+          "city": null,
+          "address_or_area": "Interstate near Dollar General",
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Lansk Sheriff's Office",
+          "type": "sheriff",
+          "state": "Georgia",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Hayden",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted aggravated assault on peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Improper or erratic lane change",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Willful obstruction of law enforcement",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony aggravated assault on a peace officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony fleeing eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony purchase, possession, manufacturing, distribution, or sale of marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony trafficking methamphetamine",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea deal: pleaded guilty to one count aggravated assault on peace officer and trafficking methamphetamine; sentenced to 15 years (first 5 in prison, remainder on probation) and fined $1,500."
+      },
+      "event_summary": {
+        "short": "During a traffic stop for a lane violation, the suspect admitted to having marijuana, then barricaded himself in his vehicle and fled, nearly hitting an officer. After a high-speed pursuit involving spike strips and a PIT maneuver, he was arrested. A bag of methamphetamine was recovered. He later pleaded guilty to aggravated assault and meth trafficking.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:04",
+        "pursuit_started": "3:47",
+        "arrest": "4:10"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "drug_offense",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "vehicle_pursuit",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "methamphetamine",
+          "marijuana",
+          "PIT maneuver",
+          "spike strips",
+          "plea deal"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Georgia State Patrol's pursuit policy",
+          "timestamp_seconds": 483,
+          "confidence": "medium"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "I'm deputy Davis, the Lansk Sheriff's Office",
+          "timestamp_seconds": 17,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "The suspect, Hayden, was charged",
+          "timestamp_seconds": 758,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Two counts of felony aggravated assault on a peace officer",
+          "timestamp_seconds": 760,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He took a plea deal... sentenced to 15 years with the first five years being in prison",
+          "timestamp_seconds": 776,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Deputy identifies as Lansk Sheriff's Office, but narration references Georgia State Patrol; could be Lansk in Georgia or elsewhere."
+        ],
+        "missing_critical_fields": [
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "County and city not identified; location may be misattributed to Georgia based on narration."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

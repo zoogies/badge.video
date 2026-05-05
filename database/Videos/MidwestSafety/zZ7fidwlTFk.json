@@ -1920,5 +1920,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:11:55Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-12-21",
+        "location": {
+          "state": "Arkansas",
+          "state_abbreviation": "AR",
+          "county": "Sebastian County",
+          "city": null,
+          "address_or_area": "Dillards parking garage",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Rebecca",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Theft of property under $1000",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated assault on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated assault on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high",
+            "evidence": {
+              "source": "transcript",
+              "quote": "Rebecca was charged with aggravated assault on a peace officer",
+              "timestamp_seconds": 840
+            }
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high",
+            "evidence": {
+              "source": "transcript",
+              "quote": "resisting, fleeing an officer",
+              "timestamp_seconds": 840
+            }
+          },
+          {
+            "label": "Fleeing an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high",
+            "evidence": {
+              "source": "transcript",
+              "quote": "resisting, fleeing an officer",
+              "timestamp_seconds": 840
+            }
+          },
+          {
+            "label": "Theft of property under $1000",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high",
+            "evidence": {
+              "source": "transcript",
+              "quote": "theft of property worth less than $1,000",
+              "timestamp_seconds": 844
+            }
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman shoplifts from Dillards, flees from police, and is arrested after a struggle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "fleeing",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "assault",
+          "resisting_arrest"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Rebecca",
+          "timestamp_seconds": 598,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Sebastian County Detention Center",
+          "timestamp_seconds": 713,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Rebecca was charged with aggravated assault on a peace officer, resisting, fleeing an officer, theft of property worth less than $1,000, and her two warrants",
+          "timestamp_seconds": 840,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "location.city",
+          "agency.name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

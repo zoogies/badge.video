@@ -1675,5 +1675,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:22:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-20",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Glendale",
+          "address_or_area": "Northport Washington Road",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Glendale Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Glendale"
+        }
+      },
+      "geo": {
+        "address_or_place": "Northport Washington Road",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "street",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Marlita",
+          "last_name": "Williams",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Armed Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Misdemeanor Battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Criminal Damage to Property",
+            "category": "property_crime",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating Motor Vehicle without Owner's Consent",
+            "category": "vehicle_theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding",
+            "category": "fleeing_eluding",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Second-Degree Recklessly Endangering Safety",
+            "category": "reckless_endangerment",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Armed Robbery",
+            "category": "robbery",
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding",
+            "category": "fleeing_eluding",
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to armed robbery and fleeing/eluding; other charges dismissed; sentenced to 8 years in prison; serving at Tauchita Women's Correctional Institution; eligible for mandatory release March 2028 (assuming typo in transcript)"
+      },
+      "event_summary": {
+        "short": "Police chase of armed carjacker in Glendale, WI, suspect's children were in the vehicle.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "armed_robbery"
+        ],
+        "crime_categories": [
+          "robbery",
+          "fleeing_eluding",
+          "vehicle_theft"
+        ],
+        "tags": [
+          "carjacking",
+          "kids_involved",
+          "pit_maneuver"
+        ],
+        "content_warnings": [
+          "child_involvement"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "officers with the Glendale Police Department in Wisconsin received information",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "spotted on Northport Washington Road",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the driver identified as Marlita Williams",
+          "timestamp_seconds": 430,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "arrested and charged with armed robbery, misdemeanor battery, criminal damage to property, operating a motor vehicle without the owner's consent, fleeing and eluding, and second-degree recklessly endangering safety",
+          "timestamp_seconds": 436,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She reached a plea deal... pled guilty to armed robbery and fleeing and alluding in exchange for the other charges to be dismissed... given a maximum sentence of eight years",
+          "timestamp_seconds": 464,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "There's a BB gun in the back seat.",
+          "timestamp_seconds": 400,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "age",
+          "race_ethnicity",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not available",
+        "County not explicitly stated, inferred from context"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

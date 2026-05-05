@@ -120,5 +120,183 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:24:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-05-16",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police serve warrant, suspect produces gun, officer fires, suspect apprehended and treated.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": 52
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "warrant_service",
+          "officer_involved_shooting"
+        ],
+        "crime_categories": [
+          "warrant",
+          "weapons_offense"
+        ],
+        "tags": [
+          "police",
+          "shooting",
+          "warrant",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunfire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "Ma'am, I have a warrant for him.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "Fire! Shots fire!",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "We have him in custody.",
+          "timestamp_seconds": 52,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "The suspect was medically treated by the officer and survived.",
+          "timestamp_seconds": 57,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Don't touch your gun!",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "transcript",
+          "quote": "9440 officer-in-bobs shoot!",
+          "timestamp_seconds": 21,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "low",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency",
+          "incident_date",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available; possible Midwest region from channel, but not confirmed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1325,5 +1325,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:12:08Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-30T19:00:36Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nathan",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting or Obstructing a Peace Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting, Obstructing a Peace Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated male walking in traffic, charged with resisting, disorderly conduct, and aggravated assault.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "public_intoxication",
+          "resisting_arrest",
+          "disorderly_conduct",
+          "assault"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "bodycam",
+          "midwest_safety",
+          "drunk",
+          "alcohol"
+        ],
+        "content_warnings": [
+          "alcohol",
+          "aggressive behavior"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "He was charged with resisting, obstructing a peace officer, disorderly conduct and aggravated assault.",
+          "timestamp_seconds": 696,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "Nathan.",
+          "timestamp_seconds": 220,
+          "confidence": "medium"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "I got this arm. Go ahead to cup this arm. I got the other.",
+          "timestamp_seconds": 396,
+          "confidence": "medium"
+        },
+        {
+          "field": "foot_pursuit",
+          "source": "transcript",
+          "quote": "I'm chasing you.",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified; assumed Midwest based on channel name."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1895,5 +1895,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:21Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-02-25",
+        "published_date": "2024-05-22",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Bay",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Bay County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Bay",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Violation of probation (warrant)",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Positive drug test for amphetamines",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony battery against a law enforcement officer (two counts)",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony battery with prior domestic violence",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty on all charges, sentenced to 2 years 8 months prison"
+      },
+      "event_summary": {
+        "short": "Suspect with warrant for probation violation flees on foot, tracked by K9, arrested and later charged with battery on officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "foot_pursuit",
+          "k9_tracking"
+        ],
+        "crime_categories": [
+          "warrant",
+          "drug_offense",
+          "battery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "probation violation",
+          "K9",
+          "bodycam",
+          "Florida",
+          "Bay County"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 25th, 2022",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Bay County Sheriff's Office in Florida",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Bay County Sheriff's Office",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "white male wearing a green shirt",
+          "timestamp_seconds": 126,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged for two counts of felony battery against a law enforcement officer... felony battery with prior domestic violence and resisting an officer without violence",
+          "timestamp_seconds": 1176,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He pled and was found guilty on all charges... sentenced two years and eight months in prison",
+          "timestamp_seconds": 1203,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

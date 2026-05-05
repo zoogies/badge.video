@@ -2685,5 +2685,172 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:09:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-02-25T20:00:21Z",
+        "location": {
+          "state": "Missouri",
+          "state_abbreviation": "MO",
+          "county": "Jefferson",
+          "city": "Arnold",
+          "address_or_area": "Central and Arnold intersection",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "local_police",
+          "state": "Missouri",
+          "county": "Jefferson",
+          "city": "Arnold"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "Central and Arnold",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "street_level",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Bonnie",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "Resisting",
+          "Operating a Vehicle While Intoxicated",
+          "Probation Hold"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for brake light and wide turn leads to OWI arrest and blood test positive for methamphetamine.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0.0,
+        "pursuit_started": null,
+        "arrest": 365.0
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_check"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "traffic stop",
+          "DUI",
+          "methamphetamine",
+          "resisting arrest"
+        ],
+        "content_warnings": [
+          "drug use"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "on the central from Arnold at the stoplight",
+          "timestamp_seconds": 17,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "you are under arrest for OWI",
+          "timestamp_seconds": 373,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with resisting, operating a vehicle while intoxicated, and probation hold",
+          "timestamp_seconds": 1024,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Bonnie",
+          "timestamp_seconds": 40,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency.name",
+          "suspect.last_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

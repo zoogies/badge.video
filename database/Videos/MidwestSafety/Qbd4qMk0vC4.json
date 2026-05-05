@@ -1950,5 +1950,220 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:27:25Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-02-03",
+        "location": {
+          "state": "Arkansas",
+          "state_abbreviation": "AR",
+          "county": "Faulkner County",
+          "city": "Mayflower",
+          "address_or_area": null,
+          "location_name": "Highway near Mayflower",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Mayflower Police Department",
+          "type": "municipal",
+          "state": "Arkansas",
+          "county": "Faulkner County",
+          "city": "Mayflower"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Derek",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding (93 in 75 mph zone)",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Open Container of Alcohol in Motor Vehicle",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Possession of Open Alcohol Containers in a Motor Vehicle",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening a Public Servant (threatening force)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Careless Driving (2 counts)",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Refusal to Provide Blood Alcohol Concentration",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "First Offense Driving While Intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop for excessive speed leads to DUI arrest. Suspect refused field sobriety tests and resisted arrest. Multiple open containers found. Suspect charged with DUI, resisting, open container, careless driving, and refusal to provide BAC.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui_check"
+        ],
+        "crime_categories": [
+          "dui",
+          "traffic_stop",
+          "resisting_arrest",
+          "reckless_driving"
+        ],
+        "tags": [
+          "DUI",
+          "CDL",
+          "speeding",
+          "open container",
+          "resisting arrest"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I'm Officer Stevie in the Mayflower Police Department.",
+          "timestamp_seconds": 622,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "I've reason to believe that you are driving while intoxicated",
+          "timestamp_seconds": 653,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name's Derek.",
+          "timestamp_seconds": 713,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "charged with possession of open alcohol containers in a motor vehicle resisting arrest threatening force two counts of careless driving refusal to give a blood alcohol concentration resisting arrest and his first driving while intoxicated offense",
+          "timestamp_seconds": 759,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "people[0].last_name",
+          "people[0].age",
+          "people[0].race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Video contains two distinct incidents; only the second incident (Mayflower, AR DUI) is represented in this extraction."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

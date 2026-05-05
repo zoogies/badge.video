@@ -89,3 +89,6 @@ def test_pipeline_parser_supports_classifier_transcript_context():
     args = build_parser().parse_args(["pipeline", "--transcript-context", "none", "--include-untranscribed"])
     assert args.transcript_context == "none"
     assert args.include_untranscribed is True
+
+    args = build_parser().parse_args(["classify", "--classify-workers", "8"])
+    assert args.classify_workers == 8

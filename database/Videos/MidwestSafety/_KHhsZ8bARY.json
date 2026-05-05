@@ -1635,5 +1635,246 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:12:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-28",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Ohio State Patrol",
+          "type": "state police",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Stephen",
+          "last_name": "Jones",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "sentenced to 40 years"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Ronnie",
+          "last_name": "Oliver",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not yet sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with intent to murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony weapons offenses",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault with intent to murder",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony weapons offenses",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Stephen Jones pleaded guilty and sentenced to 40 years; Ronnie Oliver not yet sentenced"
+      },
+      "event_summary": {
+        "short": "Two suspects carjacked a truck, shot the occupants killing one, then led Ohio State Patrol on a pursuit during which they shot at officers. Both arrested and charged with multiple felonies.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "carjacking",
+          "shooting"
+        ],
+        "crime_categories": [
+          "homicide",
+          "robbery",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "carjacking",
+          "pursuit",
+          "Ohio State Patrol",
+          "shooting"
+        ],
+        "content_warnings": [
+          "violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Ohio State Patrol officers locate the two suspects",
+          "timestamp_seconds": 385,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Both suspects were charged with one count of homicide, one count of armed robbery, two counts of assault with intent to murder, one count of carjacking, and four counts of felony weapons offenses",
+          "timestamp_seconds": 980,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "On December 6, 2024, Stephen pleaded guilty to all nine counts... Stephen was sentenced to 40 years in prison",
+          "timestamp_seconds": 1005,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status",
+          "source": "transcript",
+          "quote": "Ronnie has not yet been sentenced",
+          "timestamp_seconds": 1000,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "the other later died of his injuries",
+          "timestamp_seconds": 975,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "county",
+          "incident_location_precise"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Video appears to contain two separate incidents; extraction focused on the second incident (Ohio carjacking/pursuit) due to more detailed information."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

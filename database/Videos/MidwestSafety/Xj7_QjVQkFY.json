@@ -3490,5 +3490,212 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:05:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-05-05",
+        "published_date": "2025-08-09",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Palm Beach",
+          "city": "Jupiter",
+          "address_or_area": "Blowing Rocks Marina",
+          "location_name": "Intracoastal Waterway near Jupiter Island",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Martin County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Martin",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Blowing Rocks Marina, Jupiter, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Nikolai",
+          "last_name": "Vilkoff",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Grand Theft (Yacht)",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Burglary of a Dwelling (Yacht) with Damage >$1000",
+            "category": "burglary",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated Fleeing Causing Damage",
+            "category": "fleeing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "First-degree grand theft",
+          "Attempting to flee a police boat",
+          "Burglary of a dwelling resulting in damage over $1,000",
+          "Resisting an officer with violence",
+          "Aggravated fleeing causing damage",
+          "Misdemeanor fleeing without violence"
+        ],
+        "case_number": null,
+        "disposition": "Pleaded not guilty; next hearing October 1, 2025"
+      },
+      "event_summary": {
+        "short": "Stolen yacht pursuit leads to arrest of Russian national in Martin County, Florida.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "theft",
+          "burglary",
+          "fleeing",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stolen yacht",
+          "water pursuit",
+          "Russian national",
+          "Martin County",
+          "Jupiter",
+          "Florida"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On May 5th, 2025, a deputy with the Martin County Sheriff's Office responded...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "stolen from a marina in Jupiter, Florida, near West Palm Beach.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "stolen from Blowing Rocks Marina",
+          "timestamp_seconds": 48,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "a deputy with the Martin County Sheriff's Office",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Nikolai Vilkoff, a Russian national",
+          "timestamp_seconds": 2180,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with first-degree grand theft, attempting to flee a police boat, burglary of a dwelling resulting in damage over $1,000, resisting an officer with violence, aggravated fleeing causing damage, and one misdemeanor count of fleeing without violence.",
+          "timestamp_seconds": 2220,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "He entered a plea of not guilty, and his next court hearing is scheduled for October 1st.",
+          "timestamp_seconds": 2256,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [
+          "Incident location is Jupiter, Palm Beach County, but responding agency is Martin County Sheriff's Office (Martin County). The pursuit likely crossed county lines."
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip code",
+          "suspect age",
+          "suspect race/ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

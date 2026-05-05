@@ -2130,5 +2130,237 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-03-19",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": "Jefferson County",
+          "city": "Louisville",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Louisville Metro Police Department",
+          "type": "municipal",
+          "state": "Kentucky",
+          "county": "Jefferson County",
+          "city": "Louisville"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": "Jonah",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "rescued"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Moisez",
+          "last_name": "May",
+          "age": 36,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Human trafficking",
+            "category": "human_trafficking",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Wanton endangerment",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Terroristic threatening",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Harassment with physical contact",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Intimidating a participant in the legal process",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony kidnapping",
+          "Felony human trafficking (5 counts)",
+          "Felony intimidating a participant in the legal process",
+          "Felony first-degree wanton endangerment",
+          "Assault",
+          "Terroristic threatening",
+          "Harassment with physical contact"
+        ],
+        "case_number": null,
+        "disposition": "Guilty verdict, sentenced to 30 years in prison, eligible for parole after 6 years (20% of sentence)."
+      },
+      "event_summary": {
+        "short": "Police rescue woman chained to floor in basement after 911 call; suspect arrested, convicted of kidnapping and human trafficking.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "kidnapping",
+          "human_trafficking",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "human_trafficking",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "rescue",
+          "confinement",
+          "chain"
+        ],
+        "content_warnings": [
+          "violence",
+          "sexual_content"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officers from the Louisville Metro Police Department in Kentucky are dispatched",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "this case eventually went to a jury trial in Jefferson County, Kentucky",
+          "timestamp_seconds": 1605,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.name",
+          "source": "transcript",
+          "quote": "36-year-old Moisez May",
+          "timestamp_seconds": 1419,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "He's Hispanic",
+          "timestamp_seconds": 51,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "The judge later sentenced Moisez to 30 years in prison with the eligibility for parole after serving 20% of his sentence",
+          "timestamp_seconds": 1622,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "the suspect has returned to the house... patrol officers pull up... arrest",
+          "timestamp_seconds": 1128,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -3020,5 +3020,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:08:52Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-16",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Justin",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Terroristic threatening",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "Felony terroristic threatening in the first degree",
+          "Two counts terroristic threatening in the second degree",
+          "Second degree assault on a family or household member",
+          "Felony interference with a law enforcement officer",
+          "Resisting arrest"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police respond to a disturbance involving a suspect who allegedly assaulted his mother, threatened her, and barricaded himself. After negotiations, officers used a taser and arrested him.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "assault",
+          "domestic_violence",
+          "resisting_arrest",
+          "weapons_offense"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Hey Justin.",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime_domestic_battery",
+          "source": "transcript",
+          "quote": "he shoved her",
+          "timestamp_seconds": 1530,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crime_threat",
+          "source": "transcript",
+          "quote": "you're going to see your soul leave your body",
+          "timestamp_seconds": 308,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force_taser",
+          "source": "transcript",
+          "quote": "we need medical for dart removal",
+          "timestamp_seconds": 780,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Justin was arrested for felony terroristic threatening...",
+          "timestamp_seconds": 1244,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified, likely Midwest but cannot confirm"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

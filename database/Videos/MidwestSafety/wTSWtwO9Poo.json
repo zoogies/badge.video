@@ -1515,5 +1515,177 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:04:15Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-31T19:00:51Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": "Metro Park",
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": "Metro Park's Police Department",
+          "type": "police_department",
+          "state": "Ohio",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "known"
+          },
+          "status": "sentenced"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "known"
+          },
+          {
+            "label": "abduction",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "known"
+          },
+          {
+            "label": "menacing",
+            "category": "threats",
+            "statute": null,
+            "confidence": "known"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 30 months in Ohio State prisons"
+      },
+      "event_summary": {
+        "short": "Man abducts woman from park, arrested after police respond to suspicious activity.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "abduction",
+          "assault"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "assault"
+        ],
+        "tags": [
+          "camouflage",
+          "middle_of_the_night",
+          "park"
+        ],
+        "content_warnings": [
+          "violence",
+          "abduction"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Officers from the Metro Park's Police Department in Ohio",
+          "timestamp_seconds": 3,
+          "confidence": "known"
+        },
+        {
+          "field": "suspect.race_ethnicity.value",
+          "source": "transcript",
+          "quote": "I have a black male",
+          "timestamp_seconds": 52,
+          "confidence": "known"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "You're under arrest and we're going to transport you to jail for assault, abduction, and menacing.",
+          "timestamp_seconds": 749,
+          "confidence": "known"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "On November 10th, he pleaded guilty, and Department of Corrections records indicate he was sentenced to two and a half years in Ohio State prisons.",
+          "timestamp_seconds": 782,
+          "confidence": "known"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "city",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified",
+        "Location limited to state only"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

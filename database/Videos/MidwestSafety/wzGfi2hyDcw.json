@@ -2780,5 +2780,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:04:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-10-19",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": null,
+          "city": "Princeton",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "estimated"
+        },
+        "agency": {
+          "name": null,
+          "type": "Sheriff's Office",
+          "state": "Minnesota",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Princeton",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "estimated"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Scott",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempting to disarm a peace officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "disorderly conduct",
+          "resisting",
+          "attempting to disarm a peace officer"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Intoxicated man arrested for disorderly conduct and resisting after neighbor dispute over dogs.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "neighbor_dispute",
+          "intoxication"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest",
+          "weapons_offense"
+        ],
+        "tags": [
+          "taser",
+          "intoxicated"
+        ],
+        "content_warnings": [
+          "use_of_force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "you're under arrest for disorderly conduct",
+          "timestamp_seconds": 291,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Taser deployed",
+          "timestamp_seconds": 322,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "He's got a wound to his lower neck, presumably from a taser dart.",
+          "timestamp_seconds": 388,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Scott's charges are disorderly conduct, resisting and attempting to disarm a peace officer.",
+          "timestamp_seconds": 910,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "You're going to jail.",
+          "timestamp_seconds": 459,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "I picked off a dog in Princeton.",
+          "timestamp_seconds": 83,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "auto-generated",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "county"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Title suggests racism but transcript does not support; may be editorialized.",
+        "Video contains multiple incidents; only first incident extracted."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

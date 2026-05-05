@@ -345,5 +345,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:28:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2025-02-18",
+        "published_date": "2025-04-19",
+        "location": {
+          "state": "District of Columbia",
+          "state_abbreviation": "DC",
+          "county": null,
+          "city": "Washington",
+          "address_or_area": "Georgia Avenue",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Metropolitan Police Department of the District of Columbia",
+          "type": "municipal police",
+          "state": "District of Columbia",
+          "county": null,
+          "city": "Washington"
+        }
+      },
+      "geo": {
+        "address_or_place": "Georgia Avenue, Washington, DC",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Surafield",
+          "last_name": "Zerihun",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted carjacking",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Brandishing a knife",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Suspect attempted to carjack a police officer, brandished a knife, was shot and killed.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2025-02-18",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "carjacking_attempt",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "robbery"
+        ],
+        "tags": [
+          "knife",
+          "carjacking",
+          "officer_involved_shooting",
+          "fatal"
+        ],
+        "content_warnings": [
+          "violence",
+          "death",
+          "use_of_force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "driving north on Georgia Avenue",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On February 18th, 2025",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect identity",
+          "source": "transcript",
+          "quote": "29-year-old Surafield Zerihun from Northwest Washington",
+          "timestamp_seconds": 343,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "transcript",
+          "quote": "suspect brandishes a knife and begins slashing at the officer",
+          "timestamp_seconds": 21,
+          "confidence": "high"
+        },
+        {
+          "field": "carjacking",
+          "source": "transcript",
+          "quote": "officer fired as the suspect was carjacking a woman",
+          "timestamp_seconds": 309,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "the suspect was pronounced dead",
+          "timestamp_seconds": 339,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "description",
+          "quote": "both out of DC",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -4050,5 +4050,227 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:58:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-12-05",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Osceola",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Indian River County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Indian River",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Curtis",
+          "last_name": "Kimbrough",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Shooting",
+            "category": "shooting",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hostage Taking",
+            "category": "hostage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Firearm by Convicted Felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "suspect deceased"
+      },
+      "event_summary": {
+        "short": "Hostage situation with pursuit ends in fatal officer-involved shooting in Florida",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "rifle",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "hostage/barricade",
+          "vehicle pursuit",
+          "foot pursuit",
+          "officer-involved shooting"
+        ],
+        "crime_categories": [
+          "shooting",
+          "kidnapping",
+          "weapons_offense",
+          "drug_offense"
+        ],
+        "tags": [
+          "hostage",
+          "pursuit",
+          "fatal shooting",
+          "Kimbrough"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "In Osceola County, Florida, south of Orlando",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Deputies were requested to make contact with the suspect, Curtis Kimbrough",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3]",
+          "source": "transcript",
+          "quote": "Curtis had been recently released from prison after serving a five-year sentence for trafficking meth and possessing a firearm as a convicted felon",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He's showing a gun on the left side",
+          "timestamp_seconds": 612,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.fatality",
+          "source": "transcript",
+          "quote": "I got brain matter on his shoulder. He's gone.",
+          "timestamp_seconds": 2547,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "both hostages were treated at a local hospital",
+          "timestamp_seconds": 2722,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "zip_code",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

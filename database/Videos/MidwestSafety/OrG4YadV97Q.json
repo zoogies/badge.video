@@ -1815,5 +1815,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:07:24Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-11-28",
+        "published_date": "2024-07-13",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Washington",
+          "city": "West Bend",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "West Bend Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Washington",
+          "city": "West Bend"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 31,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": 15,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "recovered"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Child enticement",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Using a computer to entice a minor into unlawful sexual activity",
+            "category": "sex_offense",
+            "statute": "18 U.S.C. § 2422(b)",
+            "confidence": "high"
+          },
+          {
+            "label": "Transporting a minor across state lines",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Using a computer to entice a minor into Kentucky",
+            "category": "federal_sex_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Commission of a sex offense required to register as a sex offender",
+            "category": "sex_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to first charge; second charge dropped. Sentenced to 15 years federal prison and 10 years supervised release."
+      },
+      "event_summary": {
+        "short": "Police stop a 31-year-old sex offender who transported a 15-year-old girl from Kentucky to Wisconsin; he was arrested, extradited, and sentenced to 15 years in federal prison.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "missing_person",
+          "child_abduction"
+        ],
+        "crime_categories": [
+          "sex_offense",
+          "child_enticement"
+        ],
+        "tags": [
+          "child predator",
+          "interstate",
+          "West Bend",
+          "Wisconsin",
+          "Kentucky"
+        ],
+        "content_warnings": [
+          "child sexual exploitation",
+          "kidnapping"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On November 28, 2021, officers with the West Bend, Wisconsin Police Department received an attempt to locate from Logan County, Kentucky",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "officers with the West Bend, Wisconsin Police Department",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "he's 30, 31",
+          "timestamp_seconds": 545,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].age",
+          "source": "transcript",
+          "quote": "she's 15",
+          "timestamp_seconds": 557,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "I think of child enticement, maybe using a computer that facilitated sex crime",
+          "timestamp_seconds": 545,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He pled guilty to the first charge in exchange for the second charge to be dropped at sentencing. He was sentenced to 15 years in federal prison and 10 years of mandatory supervision.",
+          "timestamp_seconds": 1308,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "case_number",
+          "suspect_name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

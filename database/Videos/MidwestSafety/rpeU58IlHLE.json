@@ -1315,5 +1315,189 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:50:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-02-23",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Adam",
+          "last_name": "Jones",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "alcohol intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "terroristic threatening",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "alcohol intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "terroristic threatening",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to charges for airport incident; received two-year conditional discharge"
+      },
+      "event_summary": {
+        "short": "Retired NFL player Adam 'Pacman' Jones forced a plane full of passengers to deboard after a dispute over a non-working charging port, leading to his arrest for disorderly conduct, terroristic threatening, and alcohol intoxication.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "airport incident",
+          "public intoxication",
+          "disorderly conduct"
+        ],
+        "crime_categories": [
+          "public_intoxication",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "NFL",
+          "airport",
+          "deboarding",
+          "celebrities",
+          "arrest"
+        ],
+        "content_warnings": [
+          "strong language"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "he was charged with alcohol intoxication, terroristic threatening and disorderly conduct for his actions at the airport.",
+          "timestamp_seconds": 456,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "This plane that was about to take off is being forced to de-board by Adam Pacman Jones",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.published_date",
+          "source": "metadata",
+          "quote": "published_at: 2026-02-23T19:00:00Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location",
+          "agency",
+          "incident_date",
+          "people.age",
+          "people.race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

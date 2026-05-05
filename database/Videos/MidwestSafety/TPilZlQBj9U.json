@@ -1440,5 +1440,179 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:59:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-08-15T20:00:11Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Flagler",
+          "city": null,
+          "address_or_area": "Camino Del Ray",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Flagler County Sheriff's Office",
+          "type": "county",
+          "state": "Florida",
+          "county": "Flagler",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Camino Del Ray",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Donald",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": null,
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated battery with a deadly weapon",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "simple battery",
+            "category": "battery",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea to battery, completed diversion program"
+      },
+      "event_summary": {
+        "short": "Millionaire driver accused of hitting construction worker with Porsche",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "vehicle (Porsche)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "battery",
+          "traffic_incident"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "weapons_offense"
+        ],
+        "tags": [
+          "aggravated battery",
+          "plea deal",
+          "diversion program",
+          "Porsche",
+          "construction worker"
+        ],
+        "content_warnings": [
+          "violence",
+          "use of vehicle as weapon"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "I'm Deputy Lane with the Flagler County Sheriff's Office",
+          "timestamp_seconds": 168,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "There Donald that resides here",
+          "timestamp_seconds": 149,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "aggravated battery with a deadly weapon",
+          "timestamp_seconds": 440,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "plea agreement... downgraded to simple battery... completed diversion program",
+          "timestamp_seconds": 955,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "I have a problem caused to make an arrest for an aggravated battery",
+          "timestamp_seconds": 623,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City not explicitly stated; may need manual verification"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

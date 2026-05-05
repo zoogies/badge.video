@@ -1220,5 +1220,210 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:26:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-11-09",
+        "published_date": "2023-08-03",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Marshfield",
+          "address_or_area": null,
+          "location_name": "Marshfield, Wisconsin",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Marshfield Police Department",
+          "type": "police",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Marshfield"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Francisco",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Causing Injury While Operating with PAC <0.15%",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and Run",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Bail Jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Causing Injury While Operating with PAC <0.15%",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Under the Influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Hit and Run",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea; sentenced to 1 year probation including 30 days jail and ignition lock"
+      },
+      "event_summary": {
+        "short": "Drunk driver crashes into vehicle carrying mother and infant, causing injury to child; suspect arrested and later convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui",
+          "traffic_collision"
+        ],
+        "crime_categories": [
+          "dui",
+          "reckless_driving"
+        ],
+        "tags": [
+          "DUI",
+          "crash",
+          "infant",
+          "Marshfield"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "police officers from the Marshfield Police Department in Wisconsin",
+          "timestamp_seconds": 19,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "transcript",
+          "quote": "On November 9th, 2021",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Francisco, I'm asking you a question.",
+          "timestamp_seconds": 427,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "causing injury while operating within a peak alcohol content of less than 0.15%",
+          "timestamp_seconds": 554,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "found guilty due to a guilty plea. For this, he was sentenced to one-year probation, which includes 30 days in jail.",
+          "timestamp_seconds": 595,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "18-month-old had an injury to their collarbone",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "county",
+          "zip_code",
+          "exact address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

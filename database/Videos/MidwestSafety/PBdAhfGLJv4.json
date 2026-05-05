@@ -1645,5 +1645,195 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:15:30Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-03-21",
+        "published_date": "2024-01-12T20:43:07Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Broward",
+          "city": "Fort Lauderdale",
+          "address_or_area": null,
+          "location_name": "doctor's office",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Lauderdale Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Broward",
+          "city": "Fort Lauderdale"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "threat to shoot up doctor's office",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of weapon by convicted felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "resisting an officer with violence",
+          "two counts of disorderly conduct"
+        ],
+        "case_number": null,
+        "disposition": "pled nolo contendere to resisting officer with violence and two counts of disorderly conduct; other charges dropped"
+      },
+      "event_summary": {
+        "short": "Suspect threatened to shoot up a doctor's office, arrested after resisting officers. Found to be a convicted felon with a small tool.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun (threat, but none found)",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "reported_threat",
+          "officer_involved",
+          "arrest",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "resisting_arrest",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "threat to shoot",
+          "Fort Lauderdale",
+          "doctor's office",
+          "convicted felon",
+          "profanity"
+        ],
+        "content_warnings": [
+          "use of force",
+          "profanity"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On March 21st, 2022, at approximately 205 p.m., an officer with the Fort Lauderdale Police Department responded to a disturbance at a doctor's office.",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "an officer with the Fort Lauderdale Police Department responded to a disturbance at a doctor's office.",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "The suspect threatened to shoot the place up if a doctor did not see him.",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "A pat search revealed a small tool tucked in the suspect's sock resembling a screwdriver. Later, it would be discovered that the suspect is a convicted felon and is prohibited from carrying weapons.",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "eventually pled not guilty to resisting an officer with violence and two counts of disorderly conduct. All other charges were dropped when he later changed his plea to solo contendere",
+          "timestamp_seconds": 612,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "suspect age",
+          "suspect race/ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

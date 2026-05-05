@@ -1275,5 +1275,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:09:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-06-11",
+        "published_date": "2025-09-04",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Dane",
+          "city": "McFarland",
+          "address_or_area": null,
+          "location_name": "McFarland",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "McFarland Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Dane",
+          "city": "McFarland"
+        }
+      },
+      "geo": {
+        "address_or_place": "McFarland",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Francisco",
+          "last_name": "Martinez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Hispanic",
+            "source": "transcript witness description and officer confirmation",
+            "confidence": "high"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (4th offense)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing and Eluding an Officer (felony)",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operating While Revoked",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Failure to Install Ignition Interlock Device",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "OWI (4th offense)",
+            "status": "guilty plea",
+            "disposition": "1 year prison + 1 year extended supervision, license revoked 3 years"
+          },
+          {
+            "label": "Fleeing and Eluding (2 felony counts)",
+            "status": "dismissed but read in"
+          },
+          {
+            "label": "Resisting, Operating while revoked, Failure to install interlock (misdemeanors)",
+            "status": "dismissed"
+          },
+          {
+            "label": "Refusing to submit to alcohol testing",
+            "status": "guilty plea"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea agreement: guilty to OWI, other charges dropped; later charged and pleaded guilty to refusal. Currently serving sentence with Wisconsin DOC, eligible for extended supervision December 2026."
+      },
+      "event_summary": {
+        "short": "Officer initiated traffic stop on vehicle with revoked license; suspect fled, officer used spike strip, suspect abandoned vehicle and fled on foot; one suspect (Francisco Martinez) arrested; second suspect not located. Martinez had prior conviction for OWI hit-and-run causing death.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:00-0:06",
+        "pursuit_started": "0:44-1:06 (vehicle took off)",
+        "arrest": "7:50-8:08 (suspect apprehended in woods)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "spike strip",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "dui",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "spike_strip",
+          "canine_search",
+          "prior_homicide_due_to_OWI"
+        ],
+        "content_warnings": [
+          "discussion_of_death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 11, 24, an officer with the McFarland Police Department",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "McFarland Police Department southeast of Madison, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "The suspect, identified as Francisco Martinez",
+          "timestamp_seconds": 844,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.race_ethnicity",
+          "source": "transcript",
+          "quote": "Mexican. Okay, Hispanic male? Yeah.",
+          "timestamp_seconds": 215,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "the vehicle's taken off on me",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I just spiked him",
+          "timestamp_seconds": 44,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Martinez was charged with two felony counts of fleeing and eluding an officer, an OWI, his fourth time... also charged with three misdemeanors, resisting an officer, operating while revoked, and failure to install an ignition interlock device",
+          "timestamp_seconds": 869,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Martinez entered a plea agreement... plea to OWI... one year in prison and one year of extended supervision",
+          "timestamp_seconds": 892,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "latitude",
+          "longitude",
+          "county_fips"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

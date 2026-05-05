@@ -1385,5 +1385,203 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:47:12Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-09-24",
+        "published_date": "2025-11-26",
+        "location": {
+          "state": "Maryland",
+          "state_abbreviation": "MD",
+          "county": "Frederick",
+          "city": null,
+          "address_or_area": "outside a Costco distribution center",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Frederick County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Maryland",
+          "county": "Frederick",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": "Costco distribution center",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Matthew",
+          "last_name": "Watley",
+          "age": 46,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": "Candace",
+          "last_name": "Thompson",
+          "age": 46,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "second-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pleaded guilty to second-degree murder; sentenced to 40 years in prison"
+      },
+      "event_summary": {
+        "short": "During a welfare check, police discover a dead body inside a semi-truck driven by the victim's domestic partner, leading to a standoff and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2003-09-24T02:00:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare_check",
+          "discovery_of_body",
+          "domestic_violence"
+        ],
+        "crime_categories": [
+          "homicide",
+          "domestic_violence"
+        ],
+        "tags": [
+          "semi-truck",
+          "welfare check",
+          "dead body"
+        ],
+        "content_warnings": [
+          "death",
+          "violence"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On September 24th, 2003, at around 2 a.m.",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "officers with the Frederick County Sheriff's Office in Maryland",
+          "timestamp_seconds": 6,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "The driver of the semi-truck was identified as 46-year-old Matthew Sidney Watley.",
+          "timestamp_seconds": 1043,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].first_name",
+          "source": "transcript",
+          "quote": "The victim found dead inside the cab was 46-year-old Candace Thompson.",
+          "timestamp_seconds": 1063,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Watley would later plead guilty to second-degree murder, and in October 2025, was sentenced to 40 years in prison",
+          "timestamp_seconds": 1128,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "officers recovered a claw hammer and two folding knives from the driver's side door",
+          "timestamp_seconds": 1121,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "city",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

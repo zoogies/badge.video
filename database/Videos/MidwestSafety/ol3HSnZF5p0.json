@@ -2105,5 +2105,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:05:20Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-12",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": null,
+          "city": "Seattle",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Emily",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged and pleaded guilty"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "aggravated assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor assault on juvenile referees",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony aggravated assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor assault (two counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "The man pleaded guilty to assault and received 80 hours community service."
+      },
+      "event_summary": {
+        "short": "Father pushes two juvenile referees during a hockey game; later pleads guilty to assault.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "assault",
+          "youth_sports",
+          "referee_assault"
+        ],
+        "crime_categories": [
+          "assault"
+        ],
+        "tags": [
+          "hockey",
+          "referee",
+          "Seattle",
+          "father",
+          "plea"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "But in the next case in Seattle, Washington, the crime actually happens on the court rink.",
+          "timestamp_seconds": 496,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "Emily though was arrested and is going to be lodged for assault police officer for punching me in the head multiple times.",
+          "timestamp_seconds": 421,
+          "confidence": "high"
+        },
+        {
+          "field": "people[2].status",
+          "source": "transcript",
+          "quote": "pleading guilty to the assault but avoiding jail time. He was sentenced to 80 hours of community service.",
+          "timestamp_seconds": 1080,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "he assaulted two juvenile referees.",
+          "timestamp_seconds": 613,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "One of them has a back injury.",
+          "timestamp_seconds": 619,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

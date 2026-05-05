@@ -1965,5 +1965,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:39:35Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-06",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Orlando Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Orange",
+          "city": "Orlando"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assault on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Assault on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man removed from Spirit Airlines flight, arrested for assault on law enforcement after spitting on airport staff.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "airport_incident",
+          "airline_dispute",
+          "public_disorder"
+        ],
+        "crime_categories": [
+          "assault",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Brum, instead of sucking in Florida for $45,000.",
+          "timestamp_seconds": 503,
+          "confidence": "low"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "or OPD will be called.",
+          "timestamp_seconds": 358,
+          "confidence": "low"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "This suspect was charged with resisting with violence, resisting without violence, assault on a law enforcement officer and disorderly conduct.",
+          "timestamp_seconds": 780,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.description",
+          "source": "transcript",
+          "quote": "He started spitting in my face.",
+          "timestamp_seconds": 364,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "precise_location"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

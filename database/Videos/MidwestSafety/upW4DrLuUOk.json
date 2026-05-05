@@ -670,5 +670,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:00:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-08-02",
+        "published_date": "2023-05-30",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee County",
+          "city": "Milwaukee",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": null,
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee County",
+          "city": "Milwaukee"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested, charged, convicted"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing an officer with a vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree recklessly endangering safety",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "fleeing an officer with a vehicle",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree recklessly endangering safety",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to fleeing; sentenced to 6 months house of correction concurrent with probation."
+      },
+      "event_summary": {
+        "short": "Police pursuit of shooting suspects in Milwaukee leads to arrests.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": null,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "traffic_stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "traffic_stop"
+        ],
+        "tags": [
+          "shooting suspect",
+          "high speed chase",
+          "foot chase"
+        ],
+        "content_warnings": [
+          "chase",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "on August 2nd, 2022",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "police officers in Milwaukee, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Milwaukee, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The first suspect was charged with one count of fleeing an officer with a vehicle and one count of second-degree recklessly endangering safety.",
+          "timestamp_seconds": 430,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "he pled and was found guilty of fleeing an officer with a vehicle. For this, he was sentenced to six months in a house of correction, which would run concurrently with his two years of probation",
+          "timestamp_seconds": 440,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "There was a black male with the phone",
+          "timestamp_seconds": 230,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "The incident quickly escalates into a high-speed chase",
+          "timestamp_seconds": 20,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "a second officer simultaneously pursues the other suspect",
+          "timestamp_seconds": 150,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Seven to 50, we got one to custody.",
+          "timestamp_seconds": 150,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "agency name",
+          "suspect names"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

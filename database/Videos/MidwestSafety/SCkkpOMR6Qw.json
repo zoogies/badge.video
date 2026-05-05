@@ -1405,5 +1405,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:57:42Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-05-04",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee",
+          "city": "Glendale",
+          "address_or_area": "Bayshore Mall",
+          "location_name": "Bayshore Mall",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Glendale Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee",
+          "city": "Glendale"
+        }
+      },
+      "geo": {
+        "address_or_place": "Bayshore Mall",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": 17,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript: 'male black' at 2:33-2:45",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Large group of teens at Bayshore Mall, multiple fights, 13 arrests, 7 pepper sprayed.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "pepper spray",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "large crowd disturbance",
+          "mall brawl",
+          "spring break incident"
+        ],
+        "crime_categories": [
+          "disorderly_conduct",
+          "resisting_arrest",
+          "obstruction",
+          "trespassing"
+        ],
+        "tags": [
+          "teenagers",
+          "Glendale",
+          "Bayshore Mall",
+          "Wisconsin",
+          "pepper spray"
+        ],
+        "content_warnings": [
+          "use of pepper spray",
+          "fights"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Body cam from Glendale, Wisconsin, shows a massive group...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "Bayshore Mall",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Glendale Police",
+          "timestamp_seconds": 201,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "The arrested were charged with resisting, obstructing, and disorderly conduct.",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "That's a 17-year-old?",
+          "timestamp_seconds": 284,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "We're chasing a male black, gray t-shirt, gray pants",
+          "timestamp_seconds": 153,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "total of 13 arrests",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "seven individuals hit with pepper spray",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "We're chasing a male black...",
+          "timestamp_seconds": 153,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

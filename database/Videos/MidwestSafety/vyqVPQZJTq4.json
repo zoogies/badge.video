@@ -2770,5 +2770,209 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:02:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-09-10",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Charlotte County",
+          "city": "Punta Gorda",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Charlotte County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Charlotte County",
+          "city": "Punta Gorda"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Samantha",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "unharmed"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Peace Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Battery",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a Peace Officer (2 counts)",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled guilty to one charge, no contest to others; 12 months probation and counseling (August 2024)"
+      },
+      "event_summary": {
+        "short": "Intoxicated woman arrested for battery on husband and officers after domestic dispute.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "domestic_violence",
+          "assault",
+          "battery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "domestic_dispute",
+          "intoxicated",
+          "mother",
+          "child_present"
+        ],
+        "content_warnings": [
+          "strong_language",
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "our local hospital right here in Punta Gorda",
+          "timestamp_seconds": 1342,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Samantha was charged with battery, another two counts of battery on a peace officer, and resisting with violence",
+          "timestamp_seconds": 1403,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "in August 2024, she pled guilty to one charge and no contest to the remaining charges. As part of her plea agreement, she will be on probation for 12 months and attend counseling.",
+          "timestamp_seconds": 1427,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "Come take your daughter. I guess I'm going to jail.",
+          "timestamp_seconds": 373,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "geo.coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

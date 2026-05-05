@@ -1265,5 +1265,178 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:16:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-09-01",
+        "published_date": "2025-04-19",
+        "location": {
+          "state": "District of Columbia",
+          "state_abbreviation": "DC",
+          "county": null,
+          "city": "Washington",
+          "address_or_area": "McDonald's drive-thru",
+          "location_name": "McDonald's",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "D.C. Police",
+          "type": "municipal police",
+          "state": "District of Columbia",
+          "county": null,
+          "city": "Washington"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Justin",
+          "last_name": "Robinson",
+          "age": 25,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving under the influence",
+            "category": "dui",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police shoot and kill armed man asleep in McDonald's drive-thru",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "vehicle_crash"
+        ],
+        "crime_categories": [
+          "dui",
+          "weapons_offense"
+        ],
+        "tags": [
+          "McDonald's",
+          "Washington D.C.",
+          "bodycam",
+          "violence interrupter",
+          "Cure the Streets"
+        ],
+        "content_warnings": [
+          "graphic_violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On September 1st, 2024, D.C. police arrived at the scene of a vehicle that crashed into a McDonald's drive-thru.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "description",
+          "quote": "both out of DC",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "the driver was later identified as 25-year-old Justin Robinson",
+          "timestamp_seconds": 677,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "the driver was pronounced dead on the scene",
+          "timestamp_seconds": 669,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "You're too drunk to drive.",
+          "timestamp_seconds": 67,
+          "confidence": "medium"
+        },
+        {
+          "field": "outcome",
+          "source": "transcript",
+          "quote": "the U.S. Attorney's Office for the District of Columbia announced that there was insufficient evidence to pursue charges against the two officers",
+          "timestamp_seconds": 839,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "precise address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

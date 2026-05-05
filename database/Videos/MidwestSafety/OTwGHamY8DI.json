@@ -1110,5 +1110,219 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:08:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2003-06-02",
+        "published_date": "2025-06-15",
+        "location": {
+          "state": "New Mexico",
+          "state_abbreviation": "NM",
+          "county": "Bernalillo",
+          "city": "Albuquerque",
+          "address_or_area": "Gas station, then Coors Boulevard area",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Albuquerque Police Department",
+          "type": "municipal",
+          "state": "New Mexico",
+          "county": "Bernalillo",
+          "city": "Albuquerque"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "35001",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Sleeping in vehicle (welfare check)",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Fleeing police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated assault with a firearm",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Possessing a firearm by a serious violent felon",
+          "Aggravated fleeing a law enforcement officer",
+          "Aggravated assault on a peace officer",
+          "Receiving a stolen motor vehicle",
+          "Receiving stolen property",
+          "Possession of a controlled substance",
+          "Possession of drug paraphernalia",
+          "Leaving the scene of an accident",
+          "Failure to surrender license and registration"
+        ],
+        "case_number": null,
+        "disposition": "Plea: guilty to possessing firearm as serious violent felon and two counts of possessing controlled substance. Sentence: 4 years New Mexico DOC, 2 years parole, 2 years supervised probation."
+      },
+      "event_summary": {
+        "short": "Welfare check escalates to vehicle pursuit and foot chase; suspect armed with handgun, officers fire warning shots and use taser; arrest made.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": "June 2, 2003",
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": "firearm, taser",
+        "shots_fired_by": [
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "welfare check",
+          "vehicle pursuit",
+          "foot pursuit",
+          "firearm involved",
+          "taser deployment"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "assault",
+          "drug_offense",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "sleeping in car",
+          "stolen vehicle",
+          "prior warrants",
+          "plea agreement"
+        ],
+        "content_warnings": [
+          "violence",
+          "firearms"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 2nd, 2003",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Albuquerque Police Department in New Mexico",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Albuquerque",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "officers with the Albuquerque Police Department",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "he pointed a handgun",
+          "timestamp_seconds": 567,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.shots_fired_by",
+          "source": "transcript",
+          "quote": "Get the gun, two to the air",
+          "timestamp_seconds": 180,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "He was charged with possessing a firearm by a serious, violent felon...",
+          "timestamp_seconds": 697,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "he pled guilty to possessing a firearm as a serious violent felon and two counts of possessing a controlled substance. He was sentenced to four years...",
+          "timestamp_seconds": 717,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect name",
+          "precise address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1200,5 +1200,193 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:41:01Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-05-01",
+        "published_date": "2024-03-09T20:09:08Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Broward",
+          "city": "Fort Lauderdale",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Lauderdale Police Department",
+          "type": "municipal police",
+          "state": "Florida",
+          "county": "Broward",
+          "city": "Fort Lauderdale"
+        }
+      },
+      "geo": {
+        "address_or_place": "Fort Lauderdale",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Edgar",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Street racing/takeover",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Carrying concealed firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Display of weapon during commission of a felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pled nolo contendere; received 6 months probation and $700 in fines."
+      },
+      "event_summary": {
+        "short": "Armed street racing incident in Fort Lauderdale resulting in arrest and charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "reckless_driving",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "reckless_driving",
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "street racing",
+          "Fort Lauderdale",
+          "bodycam",
+          "Florida"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On May 1st, 2022, officers responded to a street takeover.",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officers in Fort Lauderdale put together an action plan",
+          "timestamp_seconds": 114,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "According to court documents, Edgar was charged with...",
+          "timestamp_seconds": 745,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Edgar pled Nolo Contendere... six months of probation and incurred $700 in fines.",
+          "timestamp_seconds": 754,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect last name",
+          "precise location",
+          "agency name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

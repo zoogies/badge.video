@@ -1,7 +1,10 @@
 import json
+import threading
+import time
 import tempfile
 from pathlib import Path
 
+import llm_classifier
 from llm_classifier import build_user_payload, classify_video_file, classify_videos
 
 
@@ -66,6 +69,34 @@ def test_classify_videos_continues_after_bad_json(monkeypatch):
 
         assert classify_videos(root, update_atlas=False) == 1
         assert "classification" in json.loads(good.read_text())
+
+
+def test_classify_videos_can_run_with_workers(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "dry_run")
+    active = 0
+    max_active = 0
+    lock = threading.Lock()
+
+    def fake_classify_video_file(path, **kwargs):
+        nonlocal active, max_active
+        with lock:
+            active += 1
+            max_active = max(max_active, active)
+        time.sleep(0.05)
+        with lock:
+            active -= 1
+        return True
+
+    monkeypatch.setattr(llm_classifier, "classify_video_file", fake_classify_video_file)
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        channel = root / "Channel"
+        channel.mkdir()
+        for index in range(4):
+            (channel / f"{index}.json").write_text("{}")
+
+        assert llm_classifier.classify_videos(root, update_atlas=False, workers=2) == 4
+        assert max_active == 2
 
 
 def test_classifier_uses_env_transcript_context(monkeypatch):

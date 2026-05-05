@@ -650,5 +650,191 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:04:54Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-07-09",
+        "published_date": "2025-02-14T20:00:29Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Kenosha",
+          "city": "Pleasant Prairie",
+          "address_or_area": "near Highway C and I-94",
+          "location_name": "Pleasant Prairie",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pleasant Prairie Police Department",
+          "type": "local",
+          "state": "Wisconsin",
+          "county": "Kenosha",
+          "city": "Pleasant Prairie"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jalisa",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Fleeing an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "First degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Fleeing an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "First degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Not guilty plea, awaiting plea hearing scheduled for March 2025"
+      },
+      "event_summary": {
+        "short": "Driver fled from traffic stop, reached speeds over 100 mph, spun out, and was arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle pursuit",
+          "traffic stop"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "reckless_driving"
+        ],
+        "tags": [
+          "high-speed chase",
+          "Pleasant Prairie",
+          "Wisconsin"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "an officer with the Pleasant Prairie Police Department in Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Pleasant Prairie Police Department",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Jalisa",
+          "timestamp_seconds": 418,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "One high commit female black",
+          "timestamp_seconds": 78,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "charged with two felonies, fleeing an officer and first degree recklessly endangering safety",
+          "timestamp_seconds": 460,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she is awaiting a plea hearing scheduled for March 2025. She has entered a plea of not guilty",
+          "timestamp_seconds": 472,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date.year"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Transcript says incident date July 9th, 2003, but context suggests 2024; please verify."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

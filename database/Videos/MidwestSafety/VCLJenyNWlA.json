@@ -2225,5 +2225,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:02:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-11-25",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": null,
+          "city": "Moline",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "likely"
+        },
+        "agency": {
+          "name": "Moline Police Department",
+          "type": "municipal police",
+          "state": "Illinois",
+          "county": null,
+          "city": "Moline"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": "Drikwan",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released with citation"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released with citation"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Unlawful Use of a Weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "likely"
+          },
+          {
+            "label": "Obstructing and Resisting a Peace Officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "likely"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "citations issued; no jail"
+      },
+      "event_summary": {
+        "short": "Police encounter a couple with a gun in plain view in a bar parking lot in Moline. The male is cited for unlawful use of a weapon, the female for obstructing.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "weapons_violation"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "bodycam",
+          "unlawful use of weapon",
+          "Moline",
+          "police",
+          "gun"
+        ],
+        "content_warnings": [
+          "handcuffing",
+          "use of force"
+        ],
+        "severity": "low"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Don't bring guns to our bars in Moline",
+          "timestamp_seconds": 275,
+          "confidence": "likely"
+        },
+        {
+          "field": "alleged_crimes[0].label",
+          "source": "transcript",
+          "quote": "unlawful use of weapon",
+          "timestamp_seconds": 191,
+          "confidence": "likely"
+        },
+        {
+          "field": "alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "obstructing and resisting",
+          "timestamp_seconds": 921,
+          "confidence": "likely"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Drikwan was charged with unlawful use of a weapon",
+          "timestamp_seconds": 952,
+          "confidence": "likely"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "She's gonna end up just getting a ticket",
+          "timestamp_seconds": 564,
+          "confidence": "likely"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "officer names"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

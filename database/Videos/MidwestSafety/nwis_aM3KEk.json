@@ -2470,5 +2470,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:53:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-04-13",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Waukesha",
+          "city": "Muskego",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "moderate"
+        },
+        "agency": {
+          "name": null,
+          "type": "local",
+          "state": "Wisconsin",
+          "county": "Waukesha",
+          "city": "Muskego"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sierra",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "passenger",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Operating While Intoxicated (OWI) - first offense",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Resisting an officer (read in, dismissed)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded guilty to threatening an officer; resisting charge read in and dismissed; sentenced to 13 months jail, 18 months extended supervision, 2 years probation, $500+ fines."
+      },
+      "event_summary": {
+        "short": "Police stop vehicle for crossing center line; suspect Sierra, under 21, admits to drinking; field sobriety tests and breathalyzer show intoxication; arrested for OWI; resists arrest; later charged with resisting and threatening an officer; pleads guilty to threatening.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "underage_drinking",
+          "parent_fail",
+          "restraint_chair"
+        ],
+        "content_warnings": [
+          "strong_language",
+          "resistance"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "I got to Muskego at like 1120, and I met my dad at the bar, which was Mugsy's",
+          "timestamp_seconds": 128.0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Wisconsin is one of 13 states that adopted a not-a-drop law",
+          "timestamp_seconds": 451.0,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Sierra",
+          "timestamp_seconds": 54.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "You are under arrest for O.W.I.",
+          "timestamp_seconds": 520.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "Her charge of resisting arrest was read in, but dismissed in return for her pleading guilty to the charge of threatening an officer",
+          "timestamp_seconds": 1631.0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "she will serve 13 months in jail, 18 months extended supervision and an additional two years of probation, in addition to over $500 in fines",
+          "timestamp_seconds": 1655.0,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "officers sometimes employ the use of a restraint chair",
+          "timestamp_seconds": 1231.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency_name",
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race",
+          "victim",
+          "officer_names"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

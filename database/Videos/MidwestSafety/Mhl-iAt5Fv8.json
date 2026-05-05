@@ -1965,5 +1965,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:30:59Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-04-25T19:00:30Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": "Flether County Sheriff's Office",
+          "type": "sheriff's office",
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Stephen",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": "Victoria",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Hit and Run",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Marijuana",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Trespassing on School Grounds",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Couple arrested after hit-and-run and pursuit",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": true,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "hit-and-run",
+          "vehicle pursuit"
+        ],
+        "crime_categories": [
+          "hit_and_run",
+          "drug_offense",
+          "resisting_arrest",
+          "trespassing"
+        ],
+        "tags": [
+          "hit-and-run",
+          "marijuana",
+          "trespassing"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "This is the Flether County Sheriff's Office canine unit.",
+          "timestamp_seconds": 36,
+          "confidence": "low"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Stephen with a ph.",
+          "timestamp_seconds": 697,
+          "confidence": "high"
+        },
+        {
+          "field": "people.1.first_name",
+          "source": "transcript",
+          "quote": "Victoria.",
+          "timestamp_seconds": 638,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "Police are called to a hit and run after a vehicle blows through an intersection and strikes multiple vehicles.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "They were arrested for resisting and possession of marijuana. They were also arrested for trespassing on school grounds",
+          "timestamp_seconds": 1113,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "They were arrested for resisting and possession of marijuana.",
+          "timestamp_seconds": 1113,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "you got scrapes all over your hand knees",
+          "timestamp_seconds": 554,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "I'm going to release the dog and you will get bit.",
+          "timestamp_seconds": 144,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Flether County is likely a transcription error; actual county unknown."
+        ],
+        "missing_critical_fields": [
+          "incident_date",
+          "state",
+          "county",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not explicitly stated; inferred from Halifax emergency room mention but not confirmed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

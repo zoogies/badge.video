@@ -2960,5 +2960,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:58:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-28",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "DUI",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Running red light",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "No proof of insurance",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A traffic stop for running a red light leads to DUI arrest and multiple charges for both driver and passenger after resisting and battery on officers.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "dui"
+        ],
+        "crime_categories": [
+          "dui",
+          "resisting_arrest",
+          "assault",
+          "public_intoxication"
+        ],
+        "tags": [],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "metadata",
+          "quote": "published at 2025-01-28T20:00:23Z",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes[0].label (DUI)",
+          "source": "transcript",
+          "quote": "The suspect who was the driver blew two breath samples that resulted in a blood alcohol concentration of 0.279 and 0.281",
+          "timestamp_seconds": 1807,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes (charges list)",
+          "source": "transcript",
+          "quote": "She was given citations for running a red light, no proof of insurance, and DUI. She was also charged with disorderly intoxication. Two counts of resisting without violence. Two counts of resisting with violence and two counts of battery on a peace officer.",
+          "timestamp_seconds": 1814,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].status (passenger charges)",
+          "source": "transcript",
+          "quote": "her girlfriend was charged with two counts of battery on a peace officer, two counts of resisting with violence, one count of resisting without violence, and one count of disorderly intoxication.",
+          "timestamp_seconds": 1836,
+          "confidence": "high"
+        },
+        {
+          "field": "location (not found)",
+          "source": "none",
+          "quote": "No location identified in video metadata or transcript.",
+          "timestamp_seconds": null,
+          "confidence": "unknown"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "low",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information found in video metadata or transcript. Manual review required to determine state, county, and city."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

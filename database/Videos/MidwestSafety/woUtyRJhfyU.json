@@ -2210,5 +2210,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:46Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2023-05-06",
+        "published_date": "2024-12-15",
+        "location": {
+          "state": "Washington",
+          "state_abbreviation": "WA",
+          "county": "King County",
+          "city": "Kent",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Kent Police Department",
+          "type": "municipal",
+          "state": "Washington",
+          "county": "King County",
+          "city": "Kent"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kayla",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "other",
+          "first_name": "Alex",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly Conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Tampering with Property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Tampering with Property",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Resisting Arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Shoplifter Kayla was trespassed from a store in Kent, Washington. She threw buckets in anger and was arrested for disorderly conduct and resisting arrest. Officers also found drugs and paraphernalia but did not charge due to a new city ordinance. She was eventually charged with tampering with property and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "trespass",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "shoplifting",
+          "Kent",
+          "Washington",
+          "bodycam",
+          "drug_paraphernalia"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "This arrest took place in Kent, Washington on May 6th, 2023",
+          "timestamp_seconds": 362,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Kent, Washington",
+          "timestamp_seconds": 362,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.0",
+          "source": "transcript",
+          "quote": "You're under arrest for disorderly conduct",
+          "timestamp_seconds": 380,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.1",
+          "source": "transcript",
+          "quote": "you're under arrest for resisting arrest",
+          "timestamp_seconds": 381,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Kayla",
+          "timestamp_seconds": 613,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "suspect_age",
+          "county_mentioned"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "County inferred from city/state; not explicitly stated."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -2155,5 +2155,181 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:11:07Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-30T19:00:00Z",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Montgomery",
+          "city": "Beaver Creek",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Beaver Creek Police Department",
+          "type": "local_police",
+          "state": "Ohio",
+          "county": "Montgomery",
+          "city": "Beaver Creek"
+        }
+      },
+      "geo": {
+        "address_or_place": "Beaver Creek, Ohio",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sam",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Warrant for resisting arrest",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony aggravated arson",
+            "category": "arson",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony inducing panic",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Suspect with warrant barricades himself in house, sets fire, eventually tasered and arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": 13.5
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "barricade",
+          "standoff",
+          "arson"
+        ],
+        "crime_categories": [
+          "arson",
+          "resisting_arrest",
+          "warrant"
+        ],
+        "tags": [
+          "barricaded subject",
+          "arson",
+          "taser"
+        ],
+        "content_warnings": [
+          "fire",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Two officers in Beaver Creek, Ohio, approach a house for a suspect with a warrant for his arrest.",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Hey, Sam, it's the Beaver Creek Police. Can you come to the door?",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "Sam was charged with felony aggravated arson, felony inducing panic, resisting arrest, disorderly conduct, and his warrant for resisting.",
+          "timestamp_seconds": 1630,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "exact_address"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

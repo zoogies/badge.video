@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -14,6 +15,7 @@ from metadata_atlas import DEFAULT_ATLAS_PATH, rebuild_metadata_atlas
 PROMPT_PATH = Path(__file__).with_name("classifier_prompt.txt")
 DEFAULT_VIDEOS_ROOT = Path(__file__).parent.parent / "database" / "Videos"
 DEFAULT_TRANSCRIPT_CONTEXT = "timestamped_text"
+DEFAULT_CLASSIFY_WORKERS = 4
 TRANSCRIPT_CONTEXT_OPTIONS = ("timestamped_text", "segments", "text", "none")
 
 
@@ -24,10 +26,12 @@ def utc_now_iso() -> str:
 def load_settings() -> dict:
     load_dotenv(Path(__file__).parent.parent / ".env")
     backend = os.getenv("LLM_BACKEND", "dry_run").lower()
+    default_workers = 1 if backend == "ollama" else DEFAULT_CLASSIFY_WORKERS
     return {
         "backend": backend,
         "model": os.getenv("LLM_MODEL", "deepseek-chat" if backend == "deepseek" else "llama3.1"),
         "transcript_context": os.getenv("LLM_TRANSCRIPT_CONTEXT", DEFAULT_TRANSCRIPT_CONTEXT),
+        "classify_workers": _env_int("LLM_CLASSIFY_WORKERS", default_workers),
         "deepseek_api_key": os.getenv("DEEPSEEK_API_KEY"),
         "deepseek_url": os.getenv("DEEPSEEK_API_URL", "https://api.deepseek.com/chat/completions"),
         "ollama_url": os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat"),
@@ -51,6 +55,7 @@ def classify_video_file(
     prompt = PROMPT_PATH.read_text(encoding="utf-8")
     user_payload = build_user_payload(video, transcript_context=transcript_context)
     result = run_backend(settings, prompt, user_payload)
+    latest_video = json.loads(video_json_path.read_text(encoding="utf-8"))
     video["classification"] = {
         "generated_at": utc_now_iso(),
         "backend": settings["backend"],
@@ -59,9 +64,20 @@ def classify_video_file(
         "transcript_context": transcript_context,
         "result": result,
     }
-    video["human_reviewed"] = False
-    video_json_path.write_text(json.dumps(video, indent=2, ensure_ascii=False), encoding="utf-8")
+    latest_video["classification"] = video["classification"]
+    latest_video["human_reviewed"] = False
+    video_json_path.write_text(json.dumps(latest_video, indent=2, ensure_ascii=False), encoding="utf-8")
     return True
+
+
+def _env_int(name: str, default: int) -> int:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    try:
+        return max(1, int(value))
+    except ValueError:
+        return default
 
 
 def build_user_payload(video: dict, transcript_context: str = DEFAULT_TRANSCRIPT_CONTEXT) -> str:
@@ -239,24 +255,59 @@ def classify_videos(
     atlas_path: Path = DEFAULT_ATLAS_PATH,
     transcript_context: str | None = None,
     require_transcript: bool = True,
+    workers: int | None = None,
 ) -> int:
+    settings = load_settings()
+    workers = max(1, settings["classify_workers"] if workers is None else workers)
     paths = [video_json] if video_json else list(iter_video_files(videos_root))
     count = 0
-    progress = tqdm(paths, desc="Classifying", unit="video")
-    for path in progress:
-        progress.set_postfix(generated=count)
-        try:
-            if classify_video_file(
-                path,
-                overwrite=overwrite,
-                transcript_context=transcript_context,
-                require_transcript=require_transcript,
-            ):
-                count += 1
+    if len(paths) <= 1:
+        workers = 1
+
+    if workers == 1:
+        progress = tqdm(paths, desc="Classifying", unit="video")
+        for path in progress:
+            progress.set_postfix(generated=count)
+            try:
+                if classify_video_file(
+                    path,
+                    overwrite=overwrite,
+                    transcript_context=transcript_context,
+                    require_transcript=require_transcript,
+                ):
+                    count += 1
+                    progress.set_postfix(generated=count)
+                    tqdm.write(f"classified {path}")
+            except Exception as exc:
+                tqdm.write(f"classification error {path}: {exc}")
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(
+                    classify_video_file,
+                    path,
+                    overwrite=overwrite,
+                    transcript_context=transcript_context,
+                    require_transcript=require_transcript,
+                ): path
+                for path in paths
+            }
+            progress = tqdm(
+                as_completed(futures),
+                total=len(futures),
+                desc=f"Classifying ({workers} workers)",
+                unit="video",
+            )
+            for future in progress:
+                path = futures[future]
                 progress.set_postfix(generated=count)
-                tqdm.write(f"classified {path}")
-        except Exception as exc:
-            tqdm.write(f"classification error {path}: {exc}")
+                try:
+                    if future.result():
+                        count += 1
+                        progress.set_postfix(generated=count)
+                        tqdm.write(f"classified {path}")
+                except Exception as exc:
+                    tqdm.write(f"classification error {path}: {exc}")
     print(f"Generated classifications for {count} video JSON files.")
     if update_atlas:
         rebuild_metadata_atlas(videos_root=videos_root, atlas_path=atlas_path)
@@ -272,6 +323,7 @@ def main() -> None:
     parser.add_argument("--atlas-path", type=Path, default=DEFAULT_ATLAS_PATH)
     parser.add_argument("--transcript-context", choices=TRANSCRIPT_CONTEXT_OPTIONS)
     parser.add_argument("--include-untranscribed", action="store_true")
+    parser.add_argument("--classify-workers", type=int, default=None)
     args = parser.parse_args()
 
     classify_videos(
@@ -282,6 +334,7 @@ def main() -> None:
         atlas_path=args.atlas_path,
         transcript_context=args.transcript_context,
         require_transcript=not args.include_untranscribed,
+        workers=args.classify_workers,
     )
 
 

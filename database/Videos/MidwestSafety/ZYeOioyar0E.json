@@ -1930,5 +1930,166 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:11:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-03-22",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "A woman returned to a gas station with a stick after a dispute over a lighter purchase, leading to a confrontation with a bystander who claimed to be a federal agent and drew a gun. Police arrived and charged her with resisting arrest and disorderly conduct.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "stick",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "disorderly_conduct",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "resisting_arrest"
+        ],
+        "tags": [
+          "gas station",
+          "stick",
+          "federal agent",
+          "Karen"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "This suspect was charged with resisting arrest and disorderly conduct.",
+          "timestamp_seconds": 918,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "This suspect was charged with resisting arrest and disorderly conduct.",
+          "timestamp_seconds": 918,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "this woman had this weapon... black weapon in her hand, look like a stick or baton",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.officer_weapon_used",
+          "source": "transcript",
+          "quote": "I just draw down. Hey, police drop the weapons",
+          "timestamp_seconds": 215,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "location",
+          "agency",
+          "date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available in video metadata or transcript"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

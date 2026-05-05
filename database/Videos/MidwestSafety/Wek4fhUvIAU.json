@@ -1355,5 +1355,230 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:23Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2002-09-09",
+        "published_date": "2026-01-12",
+        "location": {
+          "state": "Georgia",
+          "state_abbreviation": "GA",
+          "county": "Ware",
+          "city": "Waycross",
+          "address_or_area": "Ameris Bank on Memorial Drive",
+          "location_name": "Ameris Bank",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Waycross Police Department",
+          "type": "local police",
+          "state": "Georgia",
+          "county": "Ware",
+          "city": "Waycross"
+        }
+      },
+      "geo": {
+        "address_or_place": "Ameris Bank on Memorial Drive, Waycross, GA",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "address",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Matthew",
+          "last_name": "McCloskey",
+          "age": 34,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript (0:16-0:23)",
+            "confidence": "high"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "accomplice",
+          "first_name": "Stephen",
+          "last_name": "Hamm",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "charged"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Bank Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "False Imprisonment",
+            "category": "false imprisonment",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Bank Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Armed Robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": "14 years federal prison, 3 years supervised release"
+      },
+      "event_summary": {
+        "short": "SWAT team responds to man's third bank robbery, leading to hostage situation and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": 2,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife",
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "bank robbery",
+          "hostage situation",
+          "SWAT response"
+        ],
+        "crime_categories": [
+          "robbery",
+          "kidnapping"
+        ],
+        "tags": [
+          "bank robbery",
+          "SWAT",
+          "hostage",
+          "Waycross",
+          "Georgia",
+          "FBI"
+        ],
+        "content_warnings": [
+          "violence",
+          "weapons"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On September 9th, 2002, in Waycross, Georgia.",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "On September 9th, 2002, in Waycross, Georgia.",
+          "timestamp_seconds": 23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "34-year-old Matthew McCloskey",
+          "timestamp_seconds": 274,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity.value",
+          "source": "transcript",
+          "quote": "He was white.",
+          "timestamp_seconds": 16,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0].label",
+          "source": "transcript",
+          "quote": "The main suspect, Matthew McCloskey, was charged with bank robbery and kidnapping.",
+          "timestamp_seconds": 833,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He was ultimately given 14 years in federal prison and placed under three years of supervised release.",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Where's the knife? He threw it down somewhere.",
+          "timestamp_seconds": 641,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

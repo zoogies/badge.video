@@ -565,5 +565,171 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:34:05Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-01-21",
+        "location": {
+          "state": "Alabama",
+          "state_abbreviation": "AL",
+          "county": "Tuscaloosa",
+          "city": "Northport",
+          "address_or_area": null,
+          "location_name": "Northport Police Department",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Northport Police Department",
+          "type": "municipal police",
+          "state": "Alabama",
+          "county": "Tuscaloosa",
+          "city": "Northport"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Sharon",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "incompetent to stand trial, held at state facility"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Felony battery on a law enforcement officer",
+          "Felony resisting with violence"
+        ],
+        "case_number": null,
+        "disposition": "Found incompetent to stand trial; case ongoing"
+      },
+      "event_summary": {
+        "short": "Woman arrested after making complaints at police station, charged with battery and resisting, later found incompetent to stand trial.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "police interaction",
+          "mental health"
+        ],
+        "crime_categories": [
+          "assault",
+          "battery",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "karen",
+          "incompetent to stand trial",
+          "public intoxication"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "person_name",
+          "source": "transcript",
+          "quote": "This suspect, Sharon, was charged with felony battery...",
+          "timestamp_seconds": 585,
+          "confidence": "high"
+        },
+        {
+          "field": "agency_name",
+          "source": "transcript",
+          "quote": "you're issued a trespass for the northport police department",
+          "timestamp_seconds": 511,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "charged with felony battery on a law enforcement officer and felony resisting with violence",
+          "timestamp_seconds": 585,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "a judge deemed she was incompetent to stand trial",
+          "timestamp_seconds": 599,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "zip_code",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1760,5 +1760,230 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:19:16Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-15",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": "Carlsbad",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": "Carlsbad Police Department",
+          "type": "municipal police",
+          "state": null,
+          "county": null,
+          "city": "Carlsbad"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Colby",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Arson",
+            "category": "arson",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of controlled substances",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Arson",
+            "category": "arson",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of controlled substances",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Woman arrested for lighting homeless person's belongings on fire and attempting to ignite them with aerosol and lighter.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "aerosol can and lighter",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arson",
+          "assault",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "arson",
+          "assault",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "homeless",
+          "mental health",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "violence",
+          "fire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Well, this is Carlsbad, right? We're the Carlsbad Police Department.",
+          "timestamp_seconds": 544,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Colby.",
+          "timestamp_seconds": 75,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "I'm thinking, arson, ag salt.",
+          "timestamp_seconds": 718,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "she sprayed him and got him on the back and then tried to light him on fire",
+          "timestamp_seconds": 244,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[2]",
+          "source": "transcript",
+          "quote": "Resisting.",
+          "timestamp_seconds": 864,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3]",
+          "source": "transcript",
+          "quote": "Kobe was charged with arson, assault, resisting, and possession of controlled substances.",
+          "timestamp_seconds": 924,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "she has that spray bottle and a lighter and she lit my mattress on fire",
+          "timestamp_seconds": 180,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "State not determined from text; Carlsbad could be in California or New Mexico."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

@@ -1280,5 +1280,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:46:36Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-05-14",
+        "published_date": "2023-12-11",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Whitehall",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Whitehall Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Whitehall"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "low"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "LaSanya",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "running a red light",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault on a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "misdemeanor resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "plea deal, released on time served (2 days in jail)"
+      },
+      "event_summary": {
+        "short": "Female driver runs red light, causes accident, kicks officer, arrested and charged with resisting arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-05-14T21:32:00",
+        "initial_contact": "2022-05-14T21:32:00",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_accident",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "whitehall",
+          "ohio",
+          "red_light",
+          "kick_officer",
+          "plea_deal"
+        ],
+        "content_warnings": [
+          "violence"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On May 14th, 2022 at 9.32 p.m.",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "officers from the Whitehall Police Department in Ohio",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect.first_name",
+          "source": "transcript",
+          "quote": "LaSanya.",
+          "timestamp_seconds": 616,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "after running a red light causing a major accident and kicking an officer",
+          "timestamp_seconds": 680,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "court documents indicate that the suspect took a plea deal and was charged with a misdemeanor resisting arrest.",
+          "timestamp_seconds": 684,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "She was released on time served having spent a total of two days in jail.",
+          "timestamp_seconds": 688,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race",
+          "zip_code",
+          "county_fips",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1860,5 +1860,236 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:01:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-15",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Cook",
+          "city": "Hickory Hills",
+          "address_or_area": "Walgreens",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Hickory Hills Police Department",
+          "type": "municipal police",
+          "state": "Illinois",
+          "county": "Cook",
+          "city": "Hickory Hills"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walgreens",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mykea",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": "Black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated fleeing/eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Retail theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/Obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated fleeing/eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Improper lane usage (2 counts)",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disobeying stop sign (3 counts)",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Aggravated speeding",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Two female shoplifters flee from Walgreens in Hickory Hills, IL, leading to a vehicle and foot chase; both are arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "retail theft",
+          "vehicle pursuit",
+          "foot pursuit"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "shoplifting",
+          "walgreens",
+          "hickory hills",
+          "midwest safety"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "We're with Hickory Hills",
+          "timestamp_seconds": 506,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "Two female blacks",
+          "timestamp_seconds": 192,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Mykea",
+          "timestamp_seconds": 440,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "the female that was caught first was charged with retail theft and resisting, obstructing",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "the female that was caught second ... was charged with retail theft, resisting, obstructing, aggravated fleeing, eluding, two counts of improper lane usage, three counts of disobeying a stop sign, and aggravated speeding",
+          "timestamp_seconds": 528,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "pursuit has been terminated",
+          "timestamp_seconds": 128,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "fair",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

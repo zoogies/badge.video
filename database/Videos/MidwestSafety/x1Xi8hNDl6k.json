@@ -1765,5 +1765,199 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:04:37Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-03-05",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Hendry",
+          "city": null,
+          "address_or_area": "convenience store",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Hendry County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Hendry",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Macarius",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "black",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "shoplifting",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "petty theft",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Shoplifter returned to store after deputy call, arrested after non-compliance and taser deployment.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "shoplifting",
+          "resisting arrest"
+        ],
+        "crime_categories": [
+          "theft",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "gas station",
+          "bodycam",
+          "taser",
+          "petty theft"
+        ],
+        "content_warnings": [
+          "use of force",
+          "taser deployment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "description",
+          "quote": "we have a call with the Hendry County Sheriff's Department",
+          "timestamp_seconds": 539,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "description",
+          "quote": "Hendry County Sheriff's Department",
+          "timestamp_seconds": 539,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.race_ethnicity",
+          "source": "transcript",
+          "quote": "Is he black? He's black.",
+          "timestamp_seconds": 63,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Macarius was charged with petty theft and resisting without violence.",
+          "timestamp_seconds": 634,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "they had to take him down and he wouldn't comply so then he gets tased",
+          "timestamp_seconds": 577,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "Macarius was charged with petty theft",
+          "timestamp_seconds": 634,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "address",
+          "zip_code",
+          "latitude",
+          "longitude",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

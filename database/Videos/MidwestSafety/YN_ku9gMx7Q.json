@@ -215,5 +215,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:07:47Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-02-18",
+        "published_date": "2022-02-28",
+        "location": {
+          "state": "Minnesota",
+          "state_abbreviation": "MN",
+          "county": "Hennepin County",
+          "city": "Minnetonka",
+          "address_or_area": "East 394 at Plymouth Road",
+          "location_name": "Interstate 394 near Plymouth Road",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Minnesota State Patrol",
+          "type": "state police",
+          "state": "Minnesota",
+          "county": "Hennepin County",
+          "city": "Minnetonka"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": "East 394 and Plymouth Road",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "description",
+        "precision": "intersection",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Joseph Paul",
+          "last_name": "Maness",
+          "age": 20,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and bonded out"
+        },
+        {
+          "role": "victim",
+          "first_name": "A.",
+          "last_name": "Caraveo",
+          "age": 30,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "witness/passenger",
+          "first_name": "N.",
+          "last_name": "Irias",
+          "age": 21,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured, non-life threatening"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Wrong-way driving",
+            "category": "traffic violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving under the influence (DUI)",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vehicular homicide",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": "22502267",
+        "disposition": "suspect posted $150,000 bond, retained attorney"
+      },
+      "event_summary": {
+        "short": "Wrong-way driver causes fatal head-on crash on I-394 in Minnetonka, killing 30-year-old male; suspect allegedly told police 'sorry bro'.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "wrong-way driving",
+          "fatal crash",
+          "DUI"
+        ],
+        "crime_categories": [
+          "dui",
+          "homicide"
+        ],
+        "tags": [
+          "wrong-way driver",
+          "fatal",
+          "Minnesota",
+          "I-394"
+        ],
+        "content_warnings": [
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.address_or_area",
+          "source": "description",
+          "quote": "Location: East 394 at Plymouth, MINNETONKA, Hennepin County",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.incident_date",
+          "source": "description",
+          "quote": "Date/Time:02/18/2022 03:58",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0]",
+          "source": "description",
+          "quote": "Joseph Paul Maness, Saint Anthony, MN, USA, Male Age: 20",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1]",
+          "source": "description",
+          "quote": "A. Caraveo, Melrose, MN, USA, Male Age: 30, Injury type:Fatal",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1]",
+          "source": "transcript",
+          "quote": "allegedly admitting he had 10,000 drinks and apparently blew a .2 BAC",
+          "timestamp_seconds": 182,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome",
+          "source": "description",
+          "quote": "Information believed complete; Fatal crash",
+          "timestamp_seconds": null,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "was then able to post a $150,000 bond and has retained a private attorney",
+          "timestamp_seconds": 140,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

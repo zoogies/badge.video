@@ -1400,5 +1400,215 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:50:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-16",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Portage",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": "Ohio",
+          "county": "Portage",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Christopher",
+          "last_name": "McCormick",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Arson",
+            "category": "fire",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vandalism",
+            "category": "property_damage",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Menacing by Stalking",
+            "category": "harassment",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Violating a Protection Order (4 counts)",
+            "category": "court_order_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Arson",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Vandalism",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Menacing by Stalking",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Violation of a Protection Order",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Firefighter Christopher McCormick set a playground on fire in Portage County, Ohio. He was arrested and charged with arson, vandalism, menacing by stalking, and violating protection orders.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "gasoline, lighter, pocket knife",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arson",
+          "fire",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "arson",
+          "vandalism",
+          "drug_offense",
+          "mental_health"
+        ],
+        "tags": [
+          "firefighter",
+          "playground",
+          "protection_order"
+        ],
+        "content_warnings": [],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "playground in Ohio",
+          "timestamp_seconds": 41,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "as a sheriff in Portage County",
+          "timestamp_seconds": 224,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Christopher McCormick",
+          "timestamp_seconds": 160,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "arrested and charged",
+          "timestamp_seconds": 780,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Christopher was charged with vandalism, menacing by stalking, four counts of violating a protection order and arson.",
+          "timestamp_seconds": 777,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "age",
+          "race_ethnicity",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Suspect stated incident date as November 17, 2012, but this is likely incorrect given video publish date; date not confirmed."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

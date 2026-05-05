@@ -1105,5 +1105,180 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:33:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-08",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Volusia",
+          "city": "Smyrna Beach",
+          "address_or_area": "bar hosting end-of-year staff party",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Smyrna Beach Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Volusia",
+          "city": "Smyrna Beach"
+        }
+      },
+      "geo": {
+        "address_or_place": "Smyrna Beach, Florida",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "12127",
+        "source": "transcript",
+        "precision": "city",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Patricia",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Disorderly intoxication",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting an officer with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Battery on a law enforcement officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [
+          "Resisting an officer with violence",
+          "Disorderly intoxication"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Former school employee, intoxicated, confronts ex-principal at staff party, attempts to drive, arrested after resisting and kicking officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "dui_investigation",
+          "public_intoxication",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "dui",
+          "public_intoxication",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "school_employee",
+          "staff_party",
+          "intoxicated",
+          "former_employee"
+        ],
+        "content_warnings": [
+          "strong_language"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Today, we have a strange case out of Smyrna Beach, Florida.",
+          "timestamp_seconds": 555,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "what's your name Patricia",
+          "timestamp_seconds": 91,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Patricia was charged with resisting an officer with violence and disorderly intoxication.",
+          "timestamp_seconds": 521,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "She's going to go to jail on night.",
+          "timestamp_seconds": 291,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_last_name",
+          "suspect_age",
+          "suspect_race_ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

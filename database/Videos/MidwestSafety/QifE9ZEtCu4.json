@@ -4715,5 +4715,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:34:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-03-22",
+        "published_date": "2025-06-13",
+        "location": {
+          "state": "Colorado",
+          "state_abbreviation": "CO",
+          "county": "Boulder County",
+          "city": "Boulder",
+          "address_or_area": "King Soopers grocery store at Broadway and Table Mesa",
+          "location_name": "King Soopers",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Boulder Police Department",
+          "type": "local",
+          "state": "Colorado",
+          "county": "Boulder County",
+          "city": "Boulder"
+        }
+      },
+      "geo": {
+        "address_or_place": "King Soopers, 3600 Table Mesa Dr, Boulder, CO",
+        "intersection": "Broadway and Table Mesa",
+        "latitude": 39.9865,
+        "longitude": -105.2586,
+        "zip_code": "80305",
+        "county_fips": "08013",
+        "source": "transcript",
+        "precision": "approximate",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": "middle-aged",
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "White",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "First-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Attempted first-degree murder",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "First-degree assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of large capacity magazine during felony",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "10 counts of first-degree murder",
+          "38 counts of attempted first-degree murder",
+          "1 count of first-degree assault",
+          "6 counts of possessing a large capacity magazine"
+        ],
+        "case_number": null,
+        "disposition": "Guilty on all charges; sentenced to 10 consecutive life sentences without parole plus 1334 years"
+      },
+      "event_summary": {
+        "short": "Mass shooting at King Soopers grocery store in Boulder, Colorado; 10 victims killed, including a police officer; suspect arrested and convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "Ruger AR-556 pistol, 9mm handgun",
+        "officer_weapon_used": "unknown",
+        "shots_fired_by": [
+          "suspect",
+          "police"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "mass_shooting",
+          "active_shooter"
+        ],
+        "crime_categories": [
+          "homicide",
+          "shooting",
+          "weapons_offense"
+        ],
+        "tags": [
+          "mass shooting",
+          "Boulder",
+          "King Soopers",
+          "officer down"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "mass casualty"
+        ],
+        "severity": "critical"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "On a Monday afternoon in Boulder, Colorado... at a King Supers grocery store.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect description",
+          "source": "transcript",
+          "quote": "white male, middle-aged, dark hair, beard, black vest, green shirt",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome: arrest",
+          "source": "transcript",
+          "quote": "suspect came out... handcuffed",
+          "timestamp_seconds": 45,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons",
+          "source": "transcript",
+          "quote": "Ruger AR-556 pistol and a 9-millimeter handgun",
+          "timestamp_seconds": 22,
+          "confidence": "high"
+        },
+        {
+          "field": "legal disposition",
+          "source": "transcript",
+          "quote": "sentenced to 10 consecutive life sentences without the possibility of parole, plus 1,334 years in prison",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date (extracted from external knowledge due to transcript lack)",
+          "suspect name"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": [
+        "Incident date inferred from external knowledge; not explicitly in video metadata or transcript"
+      ]
+    }
+  },
+  "human_reviewed": false
 }

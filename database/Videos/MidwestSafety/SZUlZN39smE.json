@@ -1130,5 +1130,252 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:58:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-01-07",
+        "published_date": "2026-02-20",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Cuyahoga County",
+          "city": "Maple Heights",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Maple Heights Police Department",
+          "type": "municipal",
+          "state": "Ohio",
+          "county": "Cuyahoga County",
+          "city": "Maple Heights"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Neil",
+          "last_name": "Miller",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "kidnapping",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "abduction",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to comply with an officer",
+            "category": "failure_to_comply",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing official business",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "abduction",
+            "category": "kidnapping",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to comply with an officer",
+            "category": "failure_to_comply",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Sentenced to 18 months in prison for abduction and failure to comply; kidnapping and obstructing dropped per plea deal."
+      },
+      "event_summary": {
+        "short": "Officer kidnapped during welfare check, leading to vehicle pursuit and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "kidnapping",
+          "vehicle_pursuit",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "kidnapping",
+          "vehicle_pursuit",
+          "foot_pursuit",
+          "warrant"
+        ],
+        "tags": [
+          "welfare check",
+          "spike strips",
+          "plea deal",
+          "abduction"
+        ],
+        "content_warnings": [
+          "kidnapping",
+          "pursuit"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 7, 24, an officer with the Maple Heights Police Department...",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "southeast of Cleveland, Ohio",
+          "timestamp_seconds": 3,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Maple Heights Police Department",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Maple Heights is in Cuyahoga County inferred from Ohio geography",
+          "timestamp_seconds": null,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Neil Miller",
+          "timestamp_seconds": 1452,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].last_name",
+          "source": "transcript",
+          "quote": "Neil Miller",
+          "timestamp_seconds": 1452,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].status",
+          "source": "transcript",
+          "quote": "transported to Maple Heights Jail and booked... enter a not guilty plea... sentenced to 18 months",
+          "timestamp_seconds": 1452,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "booked on counts of abduction, kidnapping, failure to comply with an officer and obstructing official business",
+          "timestamp_seconds": 1452,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "pleading guilty to abduction and failure to comply... sentenced to 18 months in prison",
+          "timestamp_seconds": 1500,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.vehicle_pursuit",
+          "source": "transcript",
+          "quote": "Speeds are 80 miles an hour... we need to stop this vehicle",
+          "timestamp_seconds": 240,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "He's circling back. He's going back to the car.",
+          "timestamp_seconds": 360,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "spikes... ram his car",
+          "timestamp_seconds": 330,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "age",
+          "race_ethnicity",
+          "precise_location"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

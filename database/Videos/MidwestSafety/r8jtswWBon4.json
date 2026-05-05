@@ -1940,5 +1940,208 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:43:22Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-11-11",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Orange",
+          "city": "Orlando",
+          "address_or_area": "Universal Studios",
+          "location_name": "Universal Studios",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Orlando Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Orange",
+          "city": "Orlando"
+        }
+      },
+      "geo": {
+        "address_or_place": "Universal Studios, Orlando, FL",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "unknown",
+        "confidence": "high"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "James",
+          "last_name": null,
+          "age": 51,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Inappropriate touching of a minor (sexual battery)",
+            "category": "sexual_assault",
+            "statute": null,
+            "confidence": "low"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Battery on a Law Enforcement Officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Felony Resisting an Officer with Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly Conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "arrested and charged"
+      },
+      "event_summary": {
+        "short": "Man accused of touching 12-year-old girl at Universal Studios; arrested after struggle with police.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "sexual_misconduct",
+          "use_of_force",
+          "resisting_arrest"
+        ],
+        "crime_categories": [
+          "sexual_assault",
+          "assault",
+          "resisting_arrest",
+          "public_intoxication"
+        ],
+        "tags": [
+          "Universal Studios",
+          "Florida",
+          "child victim",
+          "bodycam"
+        ],
+        "content_warnings": [
+          "sexual content involving minor",
+          "use of force"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location",
+          "source": "transcript",
+          "quote": "This 12-year-old girl at Universal Studios in Florida reports a much older man",
+          "timestamp_seconds": 0.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "I'm 51 years old",
+          "timestamp_seconds": 401.0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.first_name",
+          "source": "transcript",
+          "quote": "This suspect, James, was charged with felony battery on a law enforcement officer.",
+          "timestamp_seconds": 939.0,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "This suspect, James, was charged with felony battery on a law enforcement officer. Felony resisting an officer with violence and disorderly conduct.",
+          "timestamp_seconds": 939.0,
+          "confidence": "high"
+        },
+        {
+          "field": "allegations",
+          "source": "transcript",
+          "quote": "allegedly brushed his hand against her breast.",
+          "timestamp_seconds": 2.0,
+          "confidence": "medium"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Give it me our tasers.",
+          "timestamp_seconds": 667.0,
+          "confidence": "high"
+        },
+        {
+          "field": "agency",
+          "source": "transcript",
+          "quote": "supervisor here for Orlando Police Department",
+          "timestamp_seconds": 730.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect.last_name",
+          "victim.identity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Race not explicitly stated; not inferred.",
+        "Incident date not specified in sources."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

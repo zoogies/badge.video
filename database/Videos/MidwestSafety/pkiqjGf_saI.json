@@ -2435,5 +2435,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:18:04Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-07-10",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "Pearl Street",
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jaden",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "other",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "cited"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "carrying a concealed weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving against traffic on a one-way street",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of a false ID",
+            "category": null,
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "plea agreement, sentence withheld, two years probation"
+      },
+      "event_summary": {
+        "short": "Traffic stop for wrong-way driving leads to discovery of a firearm, foot pursuit, and arrest. Suspect charged with carrying a concealed weapon and resisting.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": 120,
+        "arrest": 180
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "weapon_discovery"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "resisting_arrest",
+          "traffic_violation"
+        ],
+        "tags": [
+          "concealed weapon",
+          "false ID",
+          "wrong way driving"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "You were going the wrong way on Pearl Street.",
+          "timestamp_seconds": 7,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "you know my name, David",
+          "timestamp_seconds": 13,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "I'm like Jaden",
+          "timestamp_seconds": 46,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon",
+          "source": "transcript",
+          "quote": "I saw the gun",
+          "timestamp_seconds": 113,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "So far resisting and carrying a weapon.",
+          "timestamp_seconds": 120,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "as part of a plea agreement, his sentence was withheld, and he is currently serving two years of probation.",
+          "timestamp_seconds": 472,
+          "confidence": "high"
+        },
+        {
+          "field": "badge_number",
+          "source": "transcript",
+          "quote": "badge number two fine yep he wasn't here yeah that was officer laying right here yep 2780",
+          "timestamp_seconds": 378,
+          "confidence": "high"
+        },
+        {
+          "field": "female_charges",
+          "source": "transcript",
+          "quote": "cited for possession of a false ID and driving against traffic on a one-way street",
+          "timestamp_seconds": 470,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

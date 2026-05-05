@@ -1340,5 +1340,225 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:53:53Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-03-29",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Fond du Lac",
+          "city": "Fond du Lac",
+          "address_or_area": "Second Street",
+          "location_name": "Fondulac",
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Kyle",
+          "last_name": "McHale",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested and convicted"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "domestic violence",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "arson",
+            "category": "arson",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal damage to property",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "mistreatment of animals",
+            "category": "other",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting/obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "felony arson of a building without owner's consent",
+          "three counts of felony bail jumping",
+          "two counts of battery with domestic abuse modifier",
+          "disorderly conduct with domestic abuse modifier",
+          "felony criminal damage to property over $2,500",
+          "felony mistreatment of animals",
+          "resisting/obstructing"
+        ],
+        "case_number": null,
+        "disposition": "pleaded no contest to arson and one count of bail jumping; sentenced to 8.5 years prison and 11.5 years extended supervision; ordered to pay $8,284 restitution"
+      },
+      "event_summary": {
+        "short": "After a domestic dispute, a male suspect barricaded himself with a gas can and lighter, resulting in a house fire. He was arrested and later convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": [
+          "gas can",
+          "lighter",
+          "knife"
+        ],
+        "officer_weapon_used": [
+          "taser"
+        ],
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "domestic_violence",
+          "fire"
+        ],
+        "crime_categories": [
+          "arson",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "standoff",
+          "house fire"
+        ],
+        "content_warnings": [
+          "violence",
+          "fire"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "In Fondulac, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "medium"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Kyle, we gotta help you, bud.",
+          "timestamp_seconds": 320,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "McCail was later charged with felony arson ... three counts of felony bail jumping...",
+          "timestamp_seconds": 661,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He was sentenced to eight and a half years in prison and 11 and a half years of extended supervision.",
+          "timestamp_seconds": 683,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "He said he grabbed the gas can and then had a whitt. ... He might have knives on too.",
+          "timestamp_seconds": 62,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "agency"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "City spelled 'Fondulac' in transcript; assumed to be Fond du Lac."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

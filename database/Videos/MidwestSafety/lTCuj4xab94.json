@@ -2130,5 +2130,211 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:23:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-08-01",
+        "published_date": "2026-02-02",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Columbus",
+          "address_or_area": "818",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Columbus Police",
+          "type": "municipal police",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Columbus"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Benjamin",
+          "last_name": "Wheeler",
+          "age": 40,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Domestic disturbance/threatening family",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "Felony warrant",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Brandishing a knife at officers",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Barricade and resisting",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect pronounced dead at scene"
+      },
+      "event_summary": {
+        "short": "SWAT standoff with Benjamin Wheeler ends in shooting death after he threatens family, barricades himself, and stabs officers.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knife (possibly shotgun)",
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "swat_standoff",
+          "officer_involved_shooting",
+          "barricade_situation"
+        ],
+        "crime_categories": [
+          "warrant",
+          "weapons_offense",
+          "domestic_violence",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "SWAT",
+          "standoff",
+          "knife",
+          "shooting",
+          "Columbus"
+        ],
+        "content_warnings": [
+          "gunfire",
+          "violence",
+          "death",
+          "stabbing"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On August 1st, 2024, Columbus Police in Ohio responded to a disturbance at a home involving 40-year-old Benjamin Wheeler.",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Columbus Police in Ohio",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.address_or_area",
+          "source": "transcript",
+          "quote": "We're outside of 818.",
+          "timestamp_seconds": 810,
+          "confidence": "low"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "40-year-old Benjamin Wheeler",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.age",
+          "source": "transcript",
+          "quote": "40-year-old Benjamin Wheeler",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "The suspect, Benjamin Wheeler, was pronounced dead at the scene.",
+          "timestamp_seconds": 1235,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.shots_fired",
+          "source": "transcript",
+          "quote": "I've fired.",
+          "timestamp_seconds": 1140,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "zip_code",
+          "full_address",
+          "exact coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Title appears clickbait but incident is real based on transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

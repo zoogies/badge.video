@@ -2590,5 +2590,226 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:03:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-08-11",
+        "location": {
+          "state": "Kentucky",
+          "state_abbreviation": "KY",
+          "county": null,
+          "city": "Murray",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Murray Police Department",
+          "type": "municipal",
+          "state": "Kentucky",
+          "county": null,
+          "city": "Murray"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Cody",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "criminal trespass",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "assault",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "cruelty to animals",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "failure to maintain required insurance",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Man flees police on horseback, later arrested after traffic stop; multiple charges including disorderly conduct, resisting, and animal cruelty.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic stop",
+          "animal-related"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "assault",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "horse chase",
+          "mule",
+          "taser",
+          "drunk",
+          "raccoon",
+          "Cowboy Cody"
+        ],
+        "content_warnings": [
+          "use of force - taser",
+          "animal cruelty"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "Murray, this individual is slaying on us from the horse.",
+          "timestamp_seconds": 2,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "Murray, he's southbound on 4th Street.",
+          "timestamp_seconds": 480,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "my name's codey",
+          "timestamp_seconds": 618,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Cowboy Cody was charged with multiple counts of disorderly conduct, resisting, obstructing, criminal trespass, fleeing, eluding, assault, cruelty to animals, and failure to maintain required insurance",
+          "timestamp_seconds": 1102,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "Do not reach that fucking gun",
+          "timestamp_seconds": 507,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.use_of_force",
+          "source": "transcript",
+          "quote": "you're going to taste again",
+          "timestamp_seconds": 491,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "last_name",
+          "age",
+          "race_ethnicity"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified; two incidents occurred 7 months apart but dates unknown.",
+        "County not explicitly stated; inferred city is Murray, Kentucky."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

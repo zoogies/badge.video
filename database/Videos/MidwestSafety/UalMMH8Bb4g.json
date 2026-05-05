@@ -1095,5 +1095,222 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:59:45Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-02-11",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Waukesha",
+          "city": "Delafield",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Delafield Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Waukesha",
+          "city": "Delafield"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Catherine",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "medium"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "felony fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "disorderly conduct",
+            "category": "public_intoxication",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "unregistered vehicle (expired plates)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting or failing to stop",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          },
+          {
+            "label": "resisting obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "medium"
+          }
+        ],
+        "case_number": null,
+        "disposition": "ongoing, bail forfeited, case still ongoing"
+      },
+      "event_summary": {
+        "short": "Traffic stop for expired plates escalates to felony fleeing and eluding after suspect refuses to stop and drives to her residence; officers use shatterball to break window and arrest her.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "shatterball",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "rich karen",
+          "expired plates",
+          "fleeing",
+          "shatterball"
+        ],
+        "content_warnings": [
+          "use of force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "at the city of Delafield Police Department",
+          "timestamp_seconds": 491,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "going to the Waukesha County Jail tonight",
+          "timestamp_seconds": 523,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.state",
+          "source": "transcript",
+          "quote": "Waukesha County Jail",
+          "timestamp_seconds": 523,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Catherine, this is the police department",
+          "timestamp_seconds": 155,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "I am a white American woman",
+          "timestamp_seconds": 442,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "felony fleeing and alluding, state disorderly conduct and you're getting a traffic citation for your unregistered vehicle",
+          "timestamp_seconds": 524,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "bail has since been forfeited as her case is still ongoing",
+          "timestamp_seconds": 583,
+          "confidence": "medium"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "Shatterball up",
+          "timestamp_seconds": 184,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "medium",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect last name",
+          "ZIP",
+          "coordinates"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

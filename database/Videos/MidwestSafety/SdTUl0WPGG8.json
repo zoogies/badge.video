@@ -1265,5 +1265,197 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:57:38Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2026-04-06T19:00:00Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Brown County",
+          "city": "DePere",
+          "address_or_area": "Walmart",
+          "location_name": "Walmart",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "DePere Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Brown County",
+          "city": "DePere"
+        }
+      },
+      "geo": {
+        "address_or_place": "Walmart",
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "55009",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andrew",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Failure to comply with officers attempting to take a person into custody",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Terrorist threats",
+            "category": "threats",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Failure to comply (pleaded no contest)",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disorderly conduct (pleaded no contest)",
+            "category": "disorderly_conduct",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Pleaded no contest to failure to comply and disorderly conduct; sentenced to 1.5 years prison and 2 years extended supervision"
+      },
+      "event_summary": {
+        "short": "Armed standoff at Walmart in DePere, Wisconsin",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "knives",
+        "officer_weapon_used": "pepper ball, taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "armed standoff",
+          "barricade"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "threats",
+          "resisting_arrest",
+          "disorderly_conduct"
+        ],
+        "tags": [
+          "Walmart",
+          "DePere",
+          "Wisconsin",
+          "SWAT",
+          "standoff",
+          "knife"
+        ],
+        "content_warnings": [
+          "weapons",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Officers in DePere, Wisconsin, respond to a Walmart",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.first_name",
+          "source": "transcript",
+          "quote": "This suspect, whose real name is Andrew",
+          "timestamp_seconds": 959,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Felony terrorist threats, disorderly conduct, and resisting obstructing",
+          "timestamp_seconds": 959,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "He took a plea deal... sentenced to one and a half years in prison and two years of extended supervision",
+          "timestamp_seconds": 970,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect last name",
+          "age"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

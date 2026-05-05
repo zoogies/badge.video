@@ -1035,5 +1035,229 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:04:13Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-08-03",
+        "published_date": "2025-10-29",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Saginaw County",
+          "city": "Saginaw",
+          "address_or_area": "east side of Saginaw near a convenience store",
+          "location_name": "Convenience store on Saginaw's east side",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Michigan State Police",
+          "type": "state police",
+          "state": "Michigan",
+          "county": "Saginaw County",
+          "city": "Saginaw"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Dwayne",
+          "last_name": "Smith",
+          "age": 57,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted and incarcerated"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "armed robbery",
+            "category": "robbery",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felony fleeing and eluding",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felon in possession of ammunition",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "felon in possession of a firearm",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carrying a dangerous weapon with unlawful intent",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "carrying a concealed weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "third offense felony firearm (five counts)",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "fleeing and eluding",
+          "felon in possession of ammunition",
+          "felon in possession of a firearm",
+          "carrying a dangerous weapon with unlawful intent",
+          "carrying a concealed weapon",
+          "five counts of third offense felony firearm"
+        ],
+        "case_number": null,
+        "disposition": "convicted of armed robbery and third offense felony firearm; sentenced to Lakeland Correctional Facility with earliest release May 21, 2059"
+      },
+      "event_summary": {
+        "short": "Suspect fled from police after armed robbery, crashed into a power pole trapping a sergeant, was later arrested after failing to appear in court, and convicted.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2021-08-03",
+        "pursuit_started": "2021-08-03",
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "firearm",
+        "officer_weapon_used": null,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "robbery",
+          "vehicle pursuit",
+          "crash",
+          "arrest"
+        ],
+        "crime_categories": [
+          "robbery",
+          "weapons_offense",
+          "vehicle_pursuit"
+        ],
+        "tags": [
+          "armed robbery",
+          "fleeing",
+          "crash",
+          "electricity",
+          "police chase",
+          "K-9"
+        ],
+        "content_warnings": [
+          "weapons",
+          "violence",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On August 3rd, 2021, Michigan State Police spotted a silver SUV leaving the area of a reported armed robbery",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "outside a convenience store on Saginaw's east side",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Michigan State Police",
+          "timestamp_seconds": 5,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "57-year-old Dwayne K. Smith",
+          "timestamp_seconds": 447,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Smith was convicted of armed robbery and third offense felony firearm... He is currently serving his sentence at Lakeland Correctional Facility",
+          "timestamp_seconds": 598,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.shots_fired",
+          "source": "transcript",
+          "quote": "the suspect had fired several rounds during the confrontation",
+          "timestamp_seconds": 14,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.latitude",
+          "geo.longitude",
+          "geo.zip_code",
+          "legal.case_number",
+          "timeline.arrest"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

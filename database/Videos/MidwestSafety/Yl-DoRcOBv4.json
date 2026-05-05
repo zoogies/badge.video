@@ -1955,5 +1955,201 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:07:39Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2004-06-06",
+        "published_date": "2025-01-23",
+        "location": {
+          "state": "Michigan",
+          "state_abbreviation": "MI",
+          "county": "Calhoun County",
+          "city": "Battle Creek",
+          "address_or_area": "Washington and Van Buren",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Battle Creek Police Department",
+          "type": "municipal",
+          "state": "Michigan",
+          "county": "Calhoun County",
+          "city": "Battle Creek"
+        }
+      },
+      "geo": {
+        "address_or_place": "Washington and Van Buren",
+        "intersection": "Washington and Van Buren",
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": "transcript",
+        "precision": "intersection",
+        "confidence": "medium"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": "white",
+            "source": "transcript",
+            "confidence": "high"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "fleeing and eluding",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "felony fleeing and eluding",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "misdemeanor reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "plea deal: felony fleeing charge dismissed, pleaded guilty to reckless driving"
+      },
+      "event_summary": {
+        "short": "Motorcyclist flees from police after running red light, later arrested at his home.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "2004-06-06",
+        "pursuit_started": "2004-06-06",
+        "arrest": "2004-06-06"
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "reckless_driving"
+        ],
+        "tags": [
+          "motorcycle",
+          "bodycam",
+          "fleeing",
+          "plea_deal"
+        ],
+        "content_warnings": [
+          "language"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On June 6th, 2004",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Battle Creek Police Department in Michigan",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Battle Creek",
+          "timestamp_seconds": 1,
+          "confidence": "high"
+        },
+        {
+          "field": "location.intersection",
+          "source": "transcript",
+          "quote": "Washington and Van Buren",
+          "timestamp_seconds": 34,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].race_ethnicity",
+          "source": "transcript",
+          "quote": "white male suspect with a red beard",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges[0]",
+          "source": "transcript",
+          "quote": "I'm not giving you the citations... but you are going to get the one for the reckless driving",
+          "timestamp_seconds": 355,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "His felony fleeing charge was dismissed, and he pled guilty to reckless driving",
+          "timestamp_seconds": 930,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "suspect_age",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

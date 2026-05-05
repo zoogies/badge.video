@@ -1715,5 +1715,182 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:58Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-06-10",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Douglas",
+          "city": "Superior",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Superior Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Douglas",
+          "city": "Superior"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Ian",
+          "last_name": "Kuypers",
+          "age": 22,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "released"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving wrong way on one-way street",
+            "category": "traffic_violation",
+            "statute": "city ordinance",
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting or obstructing an officer",
+            "category": "resisting_arrest",
+            "statute": "city ordinance",
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Acquitted of resisting charge on July 16, 2024; lawsuit filed"
+      },
+      "event_summary": {
+        "short": "Traffic stop for wrong-way driving led to high-risk stop, taser deployment, and subsequent lawsuit.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "use_of_force"
+        ],
+        "crime_categories": [
+          "traffic_violation",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "taser",
+          "lawsuit",
+          "DoorDash"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "taser deployment"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "against the City of Superior, Wisconsin",
+          "timestamp_seconds": 917,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.agency.name",
+          "source": "transcript",
+          "quote": "Superior Police Department officers",
+          "timestamp_seconds": 908,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "My name is Ian Kuypers",
+          "timestamp_seconds": 525,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "While 22-year-old Ian Kuypers",
+          "timestamp_seconds": 900,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "On July 16, 2024, a jury acquitted Ian of that charge",
+          "timestamp_seconds": 913,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "the use of a taser during the traffic stop",
+          "timestamp_seconds": 953,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude",
+          "longitude",
+          "zip_code"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

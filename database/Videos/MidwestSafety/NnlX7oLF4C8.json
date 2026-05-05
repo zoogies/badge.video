@@ -1115,5 +1115,224 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:49:06Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-08-27",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Rock Island",
+          "city": "Moline",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Moline Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Rock Island",
+          "city": "Moline"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Randy",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Possession with intent to deliver a controlled substance",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Unlawful possession of a weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Armed habitual criminal",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving while license suspended or revoked",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Uninsured vehicle",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Improper lane usage",
+            "category": "traffic_violation",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Possession with intent to deliver controlled substance",
+          "Unlawful possession of a weapon",
+          "Armed habitual criminal",
+          "Resisting arrest",
+          "Driving while license suspended or revoked",
+          "Uninsured vehicle",
+          "Improper lane usage"
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to discovery of cocaine, firearms, and ammunition; suspect arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 10,
+        "pursuit_started": null,
+        "arrest": 199
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "drug_find",
+          "firearms_find",
+          "resisting_arrest",
+          "foot_pursuit"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "weapons_offense",
+          "resisting_arrest",
+          "traffic_violation"
+        ],
+        "tags": [
+          "cocaine",
+          "firearm",
+          "open_container",
+          "Moline",
+          "Illinois"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Hello, sir. I'm Officer Murphy with Moline.",
+          "timestamp_seconds": 10,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "randy r a and you were trying to find...",
+          "timestamp_seconds": 75,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "Randy was arrested for possession with intent to deliver controlled substance, unlawful possession of a weapon, armed habitual criminal, and resisting arrest. He was cited for driving while his license was suspended or revoked, an uninsured vehicle, and improper lane usage.",
+          "timestamp_seconds": 584,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrrest_made",
+          "source": "transcript",
+          "quote": "Randy was arrested",
+          "timestamp_seconds": 584,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.foot_pursuit",
+          "source": "transcript",
+          "quote": "Don't we try to take off running, dude. You're not going to run. You just tried to.",
+          "timestamp_seconds": 199,
+          "confidence": "high"
+        },
+        {
+          "field": "weapons.suspect_weapon_reported",
+          "source": "transcript",
+          "quote": "There's a gun on the back and try to run it.",
+          "timestamp_seconds": 228,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect last name",
+          "suspect age",
+          "suspect race/ethnicity"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

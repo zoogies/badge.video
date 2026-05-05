@@ -1770,5 +1770,183 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:57:31Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-05-19T19:00:17Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Abner",
+          "last_name": "Mon",
+          "age": null,
+          "sex_or_gender": null,
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Reckless driving",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Driving with suspended license",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "Resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "confirmed"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "TikToker livestreams himself fleeing police after doing burnouts, leads to brief pursuit and arrest.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "mental_health_crisis"
+        ],
+        "crime_categories": [
+          "reckless_driving",
+          "resisting_arrest",
+          "traffic_stop"
+        ],
+        "tags": [
+          "TikTok",
+          "livestream",
+          "burnout",
+          "suspended license"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "suspect_first_name",
+          "source": "transcript",
+          "quote": "My name, A, B, N-E-R.",
+          "timestamp_seconds": 107,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_last_name",
+          "source": "transcript",
+          "quote": "That's my last name. M-O-N.",
+          "timestamp_seconds": 113,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "Abner was charged with reckless driving, driving with a suspended license and resisting arrest.",
+          "timestamp_seconds": 820,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Taser!",
+          "timestamp_seconds": 356,
+          "confidence": "high"
+        },
+        {
+          "field": "vehicle_pursuit",
+          "source": "transcript",
+          "quote": "While the officer runs the suspect's information, the suspect gets back in his truck and drives away, prompting the officer to call for even more backup and initiate a pursuit.",
+          "timestamp_seconds": 126,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Location not specified in provided text; cannot determine state/county/city."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

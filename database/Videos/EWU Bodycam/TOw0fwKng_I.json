@@ -2890,5 +2890,176 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:57:26Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2024-02-27",
+        "published_date": "2026-02-27T03:44:51Z",
+        "location": {
+          "state": "Arizona",
+          "state_abbreviation": "AZ",
+          "county": "La Paz",
+          "city": "Cibola",
+          "address_or_area": "near Cibola, off Highway 78",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "California Highway Patrol",
+          "type": "state police",
+          "state": "California",
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "victim",
+          "first_name": "Amanda",
+          "last_name": "Nenigar",
+          "age": 26,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [],
+        "charges": [],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "26-year-old Amanda Nenigar dies in Arizona desert after 911 dispatcher misinterprets GPS coordinates.",
+        "outcome": {
+          "arrest_made": null,
+          "injuries_reported": null,
+          "shots_fired": null,
+          "fatality": true,
+          "use_of_force": null,
+          "vehicle_pursuit": null,
+          "foot_pursuit": null
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2024-02-27T00:00:00Z",
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "missing_person",
+          "death_investigation",
+          "911_dispatcher_error"
+        ],
+        "crime_categories": [],
+        "tags": [
+          "GPS coordinates",
+          "hypothermia",
+          "mental health",
+          "substance abuse"
+        ],
+        "content_warnings": [
+          "death",
+          "nudity",
+          "miscarriage discussion"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On the morning of February 27, 2024, 26-year-old Amanda Ann Ninnaker calls 911",
+          "timestamp_seconds": 38,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "the city of Sibola",
+          "timestamp_seconds": 413,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "La Paz County deputies",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "La Paz County deputies",
+          "timestamp_seconds": 854,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "26-year-old Amanda Ann Ninnaker",
+          "timestamp_seconds": 42,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "La Paz County deputies ... confirm the grim discovery",
+          "timestamp_seconds": 1054,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Dispatcher initially thought location near Blythe, CA; actual location in La Paz County, AZ",
+          "Car found near Cibola, AZ; body found 1 mile from car"
+        ],
+        "missing_critical_fields": [
+          "latitude",
+          "longitude",
+          "zip_code",
+          "case number",
+          "charges"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Race/ethnicity not stated; not inferred.",
+        "Manner of death undetermined; no foul play evidence."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

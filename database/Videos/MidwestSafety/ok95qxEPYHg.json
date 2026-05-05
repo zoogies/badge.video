@@ -3765,5 +3765,217 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:04:33Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-01-11",
+        "published_date": "2024-06-14T20:00:16Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Milwaukee",
+          "city": "West Allis",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "West Allis Police Department",
+          "type": "municipal police",
+          "state": "Wisconsin",
+          "county": "Milwaukee",
+          "city": "West Allis"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Martin",
+          "last_name": "Martinez Rodriguez",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "convicted"
+        },
+        {
+          "role": "victim",
+          "first_name": "Donisha",
+          "last_name": "Harrods",
+          "age": 20,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Hit and Run Resulting in Death",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Felony Hit and Run Resulting in Death",
+            "category": "hit_and_run",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea; sentenced to 8 years prison, 4 years extended supervision, 5 years license revocation, restitution"
+      },
+      "event_summary": {
+        "short": "Fatal hit-and-run pedestrian crash; suspect arrested 16 hours later on January 12, 2022.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": true,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": "2022-01-11T00:00:00",
+        "initial_contact": "2022-01-11T00:00:00",
+        "pursuit_started": null,
+        "arrest": "2022-01-11T16:00:00"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "fatal hit-and-run",
+          "pedestrian fatality"
+        ],
+        "crime_categories": [
+          "hit_and_run",
+          "homicide"
+        ],
+        "tags": [
+          "pedestrian",
+          "hit-and-run",
+          "fatal",
+          "West Allis",
+          "Wisconsin",
+          "2022"
+        ],
+        "content_warnings": [
+          "death",
+          "injury"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "On January 11th, 2022",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "West Alice Police Department in Wisconsin",
+          "timestamp_seconds": 4,
+          "confidence": "medium"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Milwaukee County Medical Examiner's Office",
+          "timestamp_seconds": 1832,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.name",
+          "source": "transcript",
+          "quote": "Donisha Harrods",
+          "timestamp_seconds": 1541,
+          "confidence": "high"
+        },
+        {
+          "field": "victim.age",
+          "source": "transcript",
+          "quote": "She's 20.",
+          "timestamp_seconds": 1504,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect.name",
+          "source": "transcript",
+          "quote": "Martin Aurelio Martinez Rodriguez",
+          "timestamp_seconds": 2559,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "Martin changed his plea to guilty for the felony charge of a hit and run resulting in death.",
+          "timestamp_seconds": 2735,
+          "confidence": "high"
+        },
+        {
+          "field": "disposition",
+          "source": "transcript",
+          "quote": "sentenced eight years in prison with 231 days of credit, along with four years of extended supervision... license revoked for five years",
+          "timestamp_seconds": 2745,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript says 'West Alice' but likely 'West Allis' based on context and Milwaukee County."
+        ],
+        "missing_critical_fields": [
+          "exact address",
+          "zip code",
+          "latitude/longitude",
+          "case number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "City name may be mis-transcribed; verify West Allis, Wisconsin."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

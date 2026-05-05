@@ -56,6 +56,18 @@ Default classifier context sends scraped video metadata plus compact timestamped
 
 Classifier runs skip videos without an available transcript by default, so this can run while transcripts are still being generated.
 
+Classifier API calls run concurrently by default for remote backends. Tune this per run:
+
+```powershell
+uv run pipeline.py classify --no-overwrite --classify-workers 8
+```
+
+Or set the default in `../.env`:
+
+```env
+LLM_CLASSIFY_WORKERS=8
+```
+
 You can set the default in `../.env`:
 
 ```env

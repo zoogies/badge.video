@@ -83,6 +83,7 @@ def main() -> None:
             atlas_path=args.atlas_path,
             transcript_context=args.transcript_context,
             require_transcript=not args.include_untranscribed,
+            workers=args.classify_workers,
         )
     elif args.command == "atlas":
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -137,6 +138,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             atlas_path=args.atlas_path,
             transcript_context=args.transcript_context,
             require_transcript=not args.include_untranscribed,
+            workers=args.classify_workers,
         )
     elif not args.no_atlas:
         rebuild_metadata_atlas(videos_root=args.videos_root, atlas_path=args.atlas_path)
@@ -240,6 +242,12 @@ def add_classify_options(parser: argparse.ArgumentParser) -> None:
         "--include-untranscribed",
         action="store_true",
         help="Classify videos even when no transcript is available.",
+    )
+    parser.add_argument(
+        "--classify-workers",
+        type=int,
+        default=None,
+        help="Number of concurrent classifier API calls. Defaults to LLM_CLASSIFY_WORKERS or 4.",
     )
 
 

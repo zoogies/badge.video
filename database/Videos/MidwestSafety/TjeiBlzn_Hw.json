@@ -1820,5 +1820,242 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:59:09Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-09-02",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "New Berlin",
+          "address_or_area": "Racine Avenue",
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "New Berlin Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "New Berlin"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Alyanya",
+          "last_name": "Feltz",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "child abuse",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "child neglect",
+            "category": "domestic_violence",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "bail jumping",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "confirmed"
+          },
+          {
+            "label": "operating a motor vehicle while intoxicated",
+            "category": "dui",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "child abuse",
+            "confidence": "high",
+            "disposition": "guilty plea"
+          },
+          {
+            "label": "child neglect",
+            "confidence": "high",
+            "disposition": "guilty plea"
+          },
+          {
+            "label": "bail jumping",
+            "confidence": "high",
+            "disposition": "dismissed"
+          },
+          {
+            "label": "child neglect (male suspect)",
+            "confidence": "high",
+            "disposition": "charged"
+          },
+          {
+            "label": "OWI (male suspect)",
+            "confidence": "high",
+            "disposition": "citation"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Alyanya Feltz sentenced to 2 years prison + 3 years extended supervision for child neglect and abuse charges"
+      },
+      "event_summary": {
+        "short": "Woman punches toddler during traffic stop in New Berlin, WI; both parents arrested for child abuse/neglect and OWI.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "0:00",
+        "pursuit_started": null,
+        "arrest": "11:50 (Alyanya), 13:34 (male)"
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "domestic_violence",
+          "child_abuse"
+        ],
+        "crime_categories": [
+          "traffic_stop",
+          "dui",
+          "assault",
+          "domestic_violence"
+        ],
+        "tags": [
+          "bodycam",
+          "child abuse",
+          "OWI",
+          "New Berlin"
+        ],
+        "content_warnings": [
+          "child abuse"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "Over New Berlin, I was on Racine Avenue.",
+          "timestamp_seconds": 467,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "New Berlin Police Department in Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.child_abuse",
+          "source": "transcript",
+          "quote": "she backhands the kid right in front of him",
+          "timestamp_seconds": 940,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes.child_neglect",
+          "source": "transcript",
+          "quote": "you're under arrest right now for child neglect",
+          "timestamp_seconds": 814,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges.OWI",
+          "source": "transcript",
+          "quote": "breathalyzer resulted in a 0.331",
+          "timestamp_seconds": 435,
+          "confidence": "high"
+        },
+        {
+          "field": "people.suspect1.name",
+          "source": "transcript",
+          "quote": "Alyanya Feltz",
+          "timestamp_seconds": 876,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "On November 26, 2004, she pleaded guilty... sentenced to two years in prison plus an additional three years",
+          "timestamp_seconds": 882,
+          "confidence": "medium"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "high",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "latitude/longitude",
+          "county"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

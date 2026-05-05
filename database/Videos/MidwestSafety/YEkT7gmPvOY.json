@@ -1945,5 +1945,190 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:07:17Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-07-23T19:00:37Z",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Lee County",
+          "city": "Fort Myers",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Fort Myers Police Department",
+          "type": "municipal",
+          "state": "Florida",
+          "county": "Lee County",
+          "city": "Fort Myers"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "J.D.",
+          "last_name": "Irons",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "witness",
+          "first_name": "Rebecca",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "not arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Resisting/Obstruction",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of a Weapon by a Convicted Felon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          "Resisting obstruction",
+          "Possession of a weapon by a convicted felon"
+        ],
+        "case_number": null,
+        "disposition": "Guilty plea, sentenced to 15 years in federal prison"
+      },
+      "event_summary": {
+        "short": "Traffic stop led to foot pursuit and standoff; suspect J.D. Irons arrested for resisting and weapon possession, later sentenced to 15 years for federal charges.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": 0,
+        "arrest": 1110
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun",
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "foot_pursuit",
+          "standoff"
+        ],
+        "crime_categories": [
+          "resisting_arrest",
+          "weapons_offense"
+        ],
+        "tags": [
+          "bodycam",
+          "police",
+          "Fort Myers",
+          "Florida",
+          "felon with gun"
+        ],
+        "content_warnings": [
+          "weapons",
+          "drugs"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.city",
+          "source": "transcript",
+          "quote": "J.D. Irons, Four Myers, Police",
+          "timestamp_seconds": 518,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Four Myers Police Department",
+          "timestamp_seconds": 521,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "J.D. was charged with resisting obstruction and possession of a weapon by a convicted felon",
+          "timestamp_seconds": 838,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "U.S. District Judge Sherry Polster Chappelle sentenced J.D. to 15 years in federal prison",
+          "timestamp_seconds": 860,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [
+          "Transcript says 'Four Myers' but likely refers to Fort Myers, Florida"
+        ],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect race",
+          "suspect age"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date unclear; transcript mentions July 24, 2004 but likely a transcription error for 2024."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

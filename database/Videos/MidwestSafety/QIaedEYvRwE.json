@@ -1765,5 +1765,213 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:33:51Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-11-01",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "battery on law enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "battery on law enforcement",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting with violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "trespassing",
+            "category": "trespassing",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Security guard acting erratically, claiming to hear voices, refused to leave property, arrested after resisting and biting officer.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "arrest",
+          "use_of_force",
+          "mental_health"
+        ],
+        "crime_categories": [
+          "trespassing",
+          "resisting_arrest",
+          "assault"
+        ],
+        "tags": [
+          "security_guard",
+          "mental_health",
+          "taser"
+        ],
+        "content_warnings": [
+          "use_of_force",
+          "mental_health_crisis"
+        ],
+        "severity": "medium"
+      },
+      "evidence": [
+        {
+          "field": "suspect_sex_or_gender",
+          "source": "transcript",
+          "quote": "She was saying that she speaks to demons and that she hears voices.",
+          "timestamp_seconds": 189.0,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "You are under arrest. For what? Transpacement. Resisting arresting, violence, and trespassment.",
+          "timestamp_seconds": 183.0,
+          "confidence": "high"
+        },
+        {
+          "field": "charges",
+          "source": "transcript",
+          "quote": "The suspect was arrested for battery on law enforcement, resisting with violence and trespassing.",
+          "timestamp_seconds": 640.0,
+          "confidence": "high"
+        },
+        {
+          "field": "officer_weapon_used",
+          "source": "transcript",
+          "quote": "Head's up. You will get tased.",
+          "timestamp_seconds": 130.0,
+          "confidence": "high"
+        },
+        {
+          "field": "injuries_reported",
+          "source": "transcript",
+          "quote": "She bit you? No, it's not really broken.",
+          "timestamp_seconds": 412.0,
+          "confidence": "high"
+        },
+        {
+          "field": "use_of_force",
+          "source": "transcript",
+          "quote": "Why are you tasing me?",
+          "timestamp_seconds": 152.0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "state",
+          "county",
+          "city",
+          "incident_date",
+          "suspect_name",
+          "agency_name"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "No location information available from title, description, or transcript."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

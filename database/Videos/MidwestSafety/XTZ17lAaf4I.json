@@ -1605,5 +1605,228 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:34Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-02-18",
+        "location": {
+          "state": "Florida",
+          "state_abbreviation": "FL",
+          "county": "Santa Rosa",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Santa Rosa Sheriff's Office",
+          "type": "sheriff",
+          "state": "Florida",
+          "county": "Santa Rosa",
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Mary",
+          "last_name": "Lee",
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving While License Suspended",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Controlled Substance (Methamphetamine)",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of Drug Paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Obstructing Without Violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Obstructing without violence",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Driving while license suspended",
+            "category": "traffic",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of controlled substance without prescription",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to arrest for drug possession and obstruction",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": "taser",
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "arrest"
+        ],
+        "crime_categories": [
+          "traffic",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "methamphetamine",
+          "taser",
+          "suspended_license",
+          "obstruction"
+        ],
+        "content_warnings": [
+          "drug_use",
+          "arrest",
+          "use_of_force"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Deputy Grown and Boom with Santa Rosa Sheriff's Office",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Santa Rosa Sheriff's Office",
+          "timestamp_seconds": 24,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "First name is Mary Lee",
+          "timestamp_seconds": 128,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "you're under arrest",
+          "timestamp_seconds": 469,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.use_of_force",
+          "source": "transcript",
+          "quote": "has to be tased",
+          "timestamp_seconds": 857,
+          "confidence": "medium"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "Marley was charged with obstructing without violence, driving while license suspended, possession of controlled substance without prescription and possession of drug paraphernalia",
+          "timestamp_seconds": 880,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[1].label",
+          "source": "transcript",
+          "quote": "plastic bag of crystalline substance that fell out of her clothes, and it tested positive for methamphetamine",
+          "timestamp_seconds": 870,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "address"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

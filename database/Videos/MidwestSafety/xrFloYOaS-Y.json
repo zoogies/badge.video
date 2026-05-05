@@ -410,5 +410,198 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:06:28Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2022-03-21",
+        "published_date": "2023-07-29T18:31:02Z",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": "Kenosha",
+          "city": "Pleasant Prairie",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Pleasant Prairie Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": "Kenosha",
+          "city": "Pleasant Prairie"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "operator fleeing an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "second-degree recklessly endangering safety",
+            "category": "reckless_driving",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving vehicle without owner's consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "possession of THC",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "operator fleeing an officer",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "driving vehicle without owner's consent",
+            "category": "theft",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "pled guilty to fleeing and driving without consent, found guilty, ordered restitution $2,650, license revoked 1 year, probation 2 years withheld"
+      },
+      "event_summary": {
+        "short": "Pursuit of stolen vehicle ends in crash and arrest; driver convicted of fleeing and driving without consent.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "stolen_vehicle"
+        ],
+        "crime_categories": [
+          "vehicle_pursuit",
+          "theft",
+          "drug_offense",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "stop sticks",
+          "crash",
+          "stolen vehicle"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Early in the afternoon, on March 21st, 22",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "location.state, location.county, location.city, agency",
+          "source": "transcript",
+          "quote": "Pleasant Prairie Police Department near Kenosha, Wisconsin",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "people.0.sex_or_gender",
+          "source": "transcript",
+          "quote": "she was ordered to pay a restitution... her Department of Transportation license revoked",
+          "timestamp_seconds": 562,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "the driver was charged as an operator fleeing an officer, and causing damage, with second-degree recklessly endangering safety, of driving a vehicle without the owner's consent, and with having possession of THC",
+          "timestamp_seconds": 541,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "reckless endangerment and possession of THC were both dismissed... For fleeing an officer and driving without the owner's consent, she was found guilty due to a guilty plea... ordered to pay a restitution of $2,650... Department of Transportation license revoked for one year... two years of probation",
+          "timestamp_seconds": 550,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "available",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "suspect_name",
+          "suspect_age",
+          "suspect_race"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

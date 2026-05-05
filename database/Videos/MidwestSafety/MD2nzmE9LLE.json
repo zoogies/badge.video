@@ -1920,5 +1920,169 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:29:48Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-01-09T20:00:09Z",
+        "location": {
+          "state": null,
+          "state_abbreviation": null,
+          "county": null,
+          "city": null,
+          "address_or_area": "behind a closed gas station",
+          "location_name": "gas station",
+          "confidence": "unknown"
+        },
+        "agency": {
+          "name": null,
+          "type": "police",
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Jesus",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "battery on a peace officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "resisting arrest",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "charge": "battery on a peace officer",
+            "count": 2
+          },
+          {
+            "charge": "resisting arrest",
+            "count": 1
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Police encounter a homeless man behind a closed gas station; after erratic behavior and disrobing, he throws beads at an officer and is arrested.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": null,
+        "officer_weapon_used": null,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "resisting_arrest",
+          "assault_on_officer"
+        ],
+        "crime_categories": [
+          "assault",
+          "resisting_arrest",
+          "mental_health"
+        ],
+        "tags": [
+          "homeless",
+          "bodycam",
+          "mental health"
+        ],
+        "content_warnings": [],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "suspect_charge",
+          "source": "transcript",
+          "quote": "Jesus was charged with two counts of battery on a peace officer and resisting.",
+          "timestamp_seconds": 704,
+          "confidence": "high"
+        },
+        {
+          "field": "location_description",
+          "source": "transcript",
+          "quote": "behind a gas station that's closed",
+          "timestamp_seconds": 620,
+          "confidence": "medium"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "Jesus",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "state",
+          "city",
+          "agency_name",
+          "case_number"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

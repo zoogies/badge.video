@@ -5205,5 +5205,207 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:37:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-05-26",
+        "location": {
+          "state": "Wisconsin",
+          "state_abbreviation": "WI",
+          "county": null,
+          "city": "Appleton",
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Appleton Police Department",
+          "type": "municipal",
+          "state": "Wisconsin",
+          "county": null,
+          "city": "Appleton"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Brian",
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Second degree recklessly endangering safety",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of THC",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of drug paraphernalia",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Threatening battery to a police officer",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Probation violation",
+            "category": "unknown",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Endangering safety by use of a dangerous weapon",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Brian was sentenced to 45 days in jail for the first incident. An injunction for firearm restriction approved until March 24, 2026."
+      },
+      "event_summary": {
+        "short": "In Wisconsin, a man named Brian brandished a firearm at a neighbor and later pointed a gun at police, leading to multiple charges and a jail sentence.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": null,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": false,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": "handgun, pellet guns",
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "weapons offense",
+          "mental health"
+        ],
+        "crime_categories": [
+          "weapons_offense",
+          "drug_offense",
+          "assault"
+        ],
+        "tags": [
+          "Wisconsin",
+          "Appleton",
+          "veteran",
+          "mental health"
+        ],
+        "content_warnings": [],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "some cities in Wisconsin but not Appleton",
+          "timestamp_seconds": 27.1,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "He was charged with second degree recklessly endangering safety, possession of THC, and possession of drug paraphernalia.",
+          "timestamp_seconds": 30.23,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "Brian was sentenced to 45 days in jail. An injunction for a firearm restriction was also approved and will be effective until March 24th, 2026.",
+          "timestamp_seconds": 30.23,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Brian",
+          "timestamp_seconds": 16.1,
+          "confidence": "high"
+        },
+        {
+          "field": "agency.name",
+          "source": "transcript",
+          "quote": "Appleton Police Department",
+          "timestamp_seconds": 19.18,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[3].label",
+          "source": "transcript",
+          "quote": "Brian was charged with threatening battery to a police officer or a family, probation violation, and endangering safety by use of a dangerous weapon.",
+          "timestamp_seconds": 47.2,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "county",
+          "latitude",
+          "longitude"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "medium",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not provided; county not specified; race/ethnicity not stated but inferred from context? Not used."
+      ]
+    }
+  },
+  "human_reviewed": false
 }

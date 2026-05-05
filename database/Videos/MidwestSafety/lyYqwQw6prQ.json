@@ -1575,5 +1575,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T14:24:32Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": "2021-03-05",
+        "published_date": "2026-02-27",
+        "location": {
+          "state": "Ohio",
+          "state_abbreviation": "OH",
+          "county": "Franklin",
+          "city": "Columbus",
+          "address_or_area": "Interstate 270 and surrounding roads",
+          "location_name": "Columbus, Ohio",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Franklin County Sheriff's Office",
+          "type": "sheriff",
+          "state": "Ohio",
+          "county": "Franklin",
+          "city": "Columbus"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": "39049",
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Andrew",
+          "last_name": "Teague",
+          "age": 43,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Threats to kill family members and discharge firearm into residence",
+            "category": "assault",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Warrant for arrest",
+            "category": "warrant",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Wrong-way driving and fleeing from police",
+            "category": "vehicle_pursuit",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Suspect deceased; grand jury declined to indict officers"
+      },
+      "event_summary": {
+        "short": "43-year-old Andrew Teague, wanted for threats and firearms incidents, led Franklin County deputies and Columbus police on a wrong-way pursuit reaching 106 mph, ended in a head-on collision. Teague exited his vehicle, fired at officers, and was fatally shot.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": true
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": true,
+        "shots_fired_by": [
+          "suspect",
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "vehicle_pursuit",
+          "wrong-way chase",
+          "officer-involved shooting",
+          "domestic violence"
+        ],
+        "crime_categories": [
+          "assault",
+          "weapons_offense",
+          "vehicle_pursuit",
+          "shooting"
+        ],
+        "tags": [
+          "fatal",
+          "pursuit",
+          "parole",
+          "warrant"
+        ],
+        "content_warnings": [
+          "graphic content",
+          "violence"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident_date",
+          "source": "transcript",
+          "quote": "Ten days later, on March 5th, 2021, Teague threatened to kill his girlfriend and her 16-year-old son.",
+          "timestamp_seconds": 47,
+          "confidence": "high"
+        },
+        {
+          "field": "location",
+          "source": "transcript",
+          "quote": "In Columbus, Ohio, deputies with the Franklin County Sheriff's Office",
+          "timestamp_seconds": 4,
+          "confidence": "high"
+        },
+        {
+          "field": "suspect_name",
+          "source": "transcript",
+          "quote": "43-year-old Andrew Teague",
+          "timestamp_seconds": 12,
+          "confidence": "high"
+        },
+        {
+          "field": "alleged_crimes",
+          "source": "transcript",
+          "quote": "Teague was on parole and had a warrant out for his arrest in reference to an incident a month prior, where he threatened to kill his brother's family, including the children, and fired multiple rounds into his house.",
+          "timestamp_seconds": 18,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome_fatality",
+          "source": "transcript",
+          "quote": "43-year-old Andrew Teague was pronounced dead at the scene",
+          "timestamp_seconds": 128,
+          "confidence": "high"
+        },
+        {
+          "field": "shots_fired",
+          "source": "transcript",
+          "quote": "Shots fired.",
+          "timestamp_seconds": 93,
+          "confidence": "high"
+        },
+        {
+          "field": "weapon_suspect",
+          "source": "transcript",
+          "quote": "Officers quickly located a 40-caliber Smith and Wesson near his body",
+          "timestamp_seconds": 147,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "geo.coordinates",
+          "geo.zip_code",
+          "timeline.times"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

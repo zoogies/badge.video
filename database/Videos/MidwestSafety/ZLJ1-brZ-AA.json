@@ -1045,5 +1045,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T16:10:41Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-30",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Brown County",
+          "city": null,
+          "address_or_area": "Highway 107 near Brown County Mile Marker 4",
+          "location_name": null,
+          "confidence": "medium"
+        },
+        "agency": {
+          "name": "Meredosia Police Department",
+          "type": "municipal",
+          "state": "Illinois",
+          "county": "Morgan County",
+          "city": "Meredosia"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Daniel",
+          "last_name": "Bowen Payne",
+          "age": 29,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "victim",
+          "first_name": null,
+          "last_name": "Helmick",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Attempted first-degree murder of a police officer",
+            "category": "homicide",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Speeding (54 in a 25 zone)",
+            "category": "traffic_stop",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Aggravated discharge of a firearm at a police officer",
+            "category": "weapons_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": "Plea deal - sentenced to 28.5 years in prison"
+      },
+      "event_summary": {
+        "short": "Suspect shot police chief during pursuit after traffic stop for speeding.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": true,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": null,
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": true,
+        "officer_weapon_used": false,
+        "shots_fired_by": [
+          "suspect"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "vehicle_pursuit",
+          "officer_involved_shooting",
+          "attempted_assassination"
+        ],
+        "crime_categories": [
+          "shooting",
+          "assault",
+          "weapons_offense"
+        ],
+        "tags": [
+          "attempted murder",
+          "police chief",
+          "bodycam",
+          "Illinois",
+          "Meredosia",
+          "Chapin"
+        ],
+        "content_warnings": [
+          "violence",
+          "gunshot"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "location.state",
+          "source": "transcript",
+          "quote": "Maradosia police officer in Illinois",
+          "timestamp_seconds": 9,
+          "confidence": "high"
+        },
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "We are now in Brown County",
+          "timestamp_seconds": 657,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].first_name",
+          "source": "transcript",
+          "quote": "Daniel Bowen Payne",
+          "timestamp_seconds": 1525,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].age",
+          "source": "transcript",
+          "quote": "The 29-year-old suspect",
+          "timestamp_seconds": 1525,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.disposition",
+          "source": "transcript",
+          "quote": "sentenced to 28 and a half years in prison",
+          "timestamp_seconds": 1088,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "city",
+          "coordinates"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

@@ -1070,5 +1070,202 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:57:50Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2025-10-11T19:00:47Z",
+        "location": {
+          "state": "Wyoming",
+          "state_abbreviation": "WY",
+          "county": "Hot Springs County",
+          "city": "Thermopolis",
+          "address_or_area": null,
+          "location_name": "Buck Laramore's residence",
+          "confidence": "high"
+        },
+        "agency": {
+          "name": "Thermopolis Police Department",
+          "type": "municipal police",
+          "state": "Wyoming",
+          "county": "Hot Springs County",
+          "city": "Thermopolis"
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": "Buck",
+          "last_name": "Laramore",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "deceased"
+        },
+        {
+          "role": "officer",
+          "first_name": "Mike",
+          "last_name": "Mascorro",
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "injured"
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Interference with a peace officer",
+            "category": "obstruction",
+            "statute": null,
+            "confidence": "high",
+            "evidence": {
+              "quote": "Mascoor went to Buck's residence to arrest him for interference with a peace officer by providing false information",
+              "timestamp_seconds": 317
+            }
+          }
+        ],
+        "charges": [],
+        "case_number": null,
+        "disposition": "Officer cleared of criminal wrongdoing; suspect deceased."
+      },
+      "event_summary": {
+        "short": "Thermopolis police sergeant shot and killed suspect Buck Laramore during attempted arrest for interference; officer seriously wounded.",
+        "outcome": {
+          "arrest_made": false,
+          "injuries_reported": true,
+          "shots_fired": true,
+          "fatality": true,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": "3.5 hours before shooting (at McDonald's)",
+        "pursuit_started": null,
+        "arrest": null
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": "firearm",
+        "shots_fired_by": [
+          "officer"
+        ]
+      },
+      "classifications": {
+        "incident_types": [
+          "officer_involved_shooting",
+          "warrantless_entry"
+        ],
+        "crime_categories": [
+          "homicide",
+          "obstruction"
+        ],
+        "tags": [
+          "Thermopolis",
+          "bodycam",
+          "Wyoming",
+          "wrongful death lawsuit"
+        ],
+        "content_warnings": [
+          "graphic violence",
+          "death"
+        ],
+        "severity": "high"
+      },
+      "evidence": [
+        {
+          "field": "incident.location.city",
+          "source": "transcript",
+          "quote": "Thermopolis, Wyoming",
+          "timestamp_seconds": 0,
+          "confidence": "high"
+        },
+        {
+          "field": "incident.location.county",
+          "source": "transcript",
+          "quote": "Hot Springs County",
+          "timestamp_seconds": 59,
+          "confidence": "high"
+        },
+        {
+          "field": "people[0].name",
+          "source": "transcript",
+          "quote": "Buck Laramore",
+          "timestamp_seconds": 106,
+          "confidence": "high"
+        },
+        {
+          "field": "people[1].name",
+          "source": "transcript",
+          "quote": "Sergeant Mike Mascorro",
+          "timestamp_seconds": 28,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes[0]",
+          "source": "transcript",
+          "quote": "interference with a peace officer by providing false information",
+          "timestamp_seconds": 317,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.fatality",
+          "source": "transcript",
+          "quote": "Buck was pronounced dead on scene",
+          "timestamp_seconds": 822,
+          "confidence": "high"
+        },
+        {
+          "field": "outcome.injuries_reported",
+          "source": "transcript",
+          "quote": "Mascorro suffered a life-threatening shot through his arm and into his chest",
+          "timestamp_seconds": 809,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident date",
+          "exact address",
+          "latitude/longitude"
+        ],
+        "requires_manual_location_review": false
+      },
+      "confidence": "high",
+      "needs_human_review": false,
+      "warnings": []
+    }
+  },
+  "human_reviewed": false
 }

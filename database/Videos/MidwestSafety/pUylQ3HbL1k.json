@@ -1820,5 +1820,233 @@
       "device": "cuda",
       "compute_type": "int8_float16"
     }
-  }
+  },
+  "classification": {
+    "generated_at": "2026-05-05T15:21:44Z",
+    "backend": "deepseek",
+    "model": "deepseek-v4-flash",
+    "prompt_path": "classifier_prompt.txt",
+    "transcript_context": "timestamped_text",
+    "result": {
+      "schema_version": "1.1",
+      "incident": {
+        "incident_date": null,
+        "published_date": "2024-11-07T20:00:31Z",
+        "location": {
+          "state": "Illinois",
+          "state_abbreviation": "IL",
+          "county": "Rock Island",
+          "city": null,
+          "address_or_area": null,
+          "location_name": null,
+          "confidence": "low"
+        },
+        "agency": {
+          "name": null,
+          "type": null,
+          "state": null,
+          "county": null,
+          "city": null
+        }
+      },
+      "geo": {
+        "address_or_place": null,
+        "intersection": null,
+        "latitude": null,
+        "longitude": null,
+        "zip_code": null,
+        "county_fips": null,
+        "source": null,
+        "precision": "unknown",
+        "confidence": "unknown"
+      },
+      "people": [
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "male",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": "arrested"
+        },
+        {
+          "role": "suspect",
+          "first_name": null,
+          "last_name": null,
+          "age": null,
+          "sex_or_gender": "female",
+          "race_ethnicity": {
+            "value": null,
+            "source": null,
+            "confidence": "unknown"
+          },
+          "status": null
+        }
+      ],
+      "legal": {
+        "alleged_crimes": [
+          {
+            "label": "Driving with revoked license",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of controlled substance with intent to manufacture or deliver",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disobeying traffic control device",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operation of uninsured motor vehicle",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "charges": [
+          {
+            "label": "Driving with revoked license",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Possession of controlled substance with intent to manufacture or deliver",
+            "category": "drug_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Resisting/obstructing",
+            "category": "resisting_arrest",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Disobeying traffic control device",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          },
+          {
+            "label": "Operation of uninsured motor vehicle",
+            "category": "traffic_offense",
+            "statute": null,
+            "confidence": "high"
+          }
+        ],
+        "case_number": null,
+        "disposition": null
+      },
+      "event_summary": {
+        "short": "Traffic stop leads to drug arrest in Rock Island County.",
+        "outcome": {
+          "arrest_made": true,
+          "injuries_reported": false,
+          "shots_fired": false,
+          "fatality": false,
+          "use_of_force": true,
+          "vehicle_pursuit": false,
+          "foot_pursuit": false
+        }
+      },
+      "timeline": {
+        "dispatch_call": null,
+        "initial_contact": 0,
+        "pursuit_started": null,
+        "arrest": 696
+      },
+      "weapons": {
+        "suspect_weapon_reported": false,
+        "officer_weapon_used": false,
+        "shots_fired_by": []
+      },
+      "classifications": {
+        "incident_types": [
+          "traffic_stop",
+          "drug_investigation"
+        ],
+        "crime_categories": [
+          "drug_offense",
+          "traffic_stop",
+          "resisting_arrest"
+        ],
+        "tags": [
+          "drug_dealer",
+          "bodycam",
+          "heroin",
+          "Rock Island County"
+        ],
+        "content_warnings": [
+          "drug use",
+          "arrest"
+        ],
+        "severity": "moderate"
+      },
+      "evidence": [
+        {
+          "field": "location.county",
+          "source": "transcript",
+          "quote": "Rock Island County Jail",
+          "timestamp_seconds": 696,
+          "confidence": "high"
+        },
+        {
+          "field": "event_summary.outcome.arrest_made",
+          "source": "transcript",
+          "quote": "The male suspect was transported to Rock Island County Jail on no bond",
+          "timestamp_seconds": 696,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.charges",
+          "source": "transcript",
+          "quote": "the male suspect was charged with driving with a revoked driver's license, possession of controlled substance with intent to manufacture or deliver, resisting, obstructing, disobeying a traffic control device and operation of an uninsured motor vehicle",
+          "timestamp_seconds": 732,
+          "confidence": "high"
+        },
+        {
+          "field": "legal.alleged_crimes",
+          "source": "transcript",
+          "quote": "a clear plastic baggie with a brown-like substance inside of it... field test provided a positive result for heroin",
+          "timestamp_seconds": 531,
+          "confidence": "high"
+        }
+      ],
+      "extraction_quality": {
+        "transcript_quality": "good",
+        "location_conflicts": [],
+        "missing_critical_fields": [
+          "incident_date",
+          "suspect_name",
+          "city"
+        ],
+        "requires_manual_location_review": true
+      },
+      "confidence": "moderate",
+      "needs_human_review": true,
+      "warnings": [
+        "Incident date not specified"
+      ]
+    }
+  },
+  "human_reviewed": false
 }
